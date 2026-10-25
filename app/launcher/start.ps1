@@ -15,7 +15,7 @@ if($LASTEXITCODE -ne 0 -or -not $linuxRoot.StartsWith('/')){throw 'WSL 尚未完
 $entry=$linuxRoot+'/launcher/wsl-entry.sh'
 if($Stop){& $wsl -d $Distribution --exec bash $entry stop $linuxRoot;exit $LASTEXITCODE}
 function Identity($port){try{return (Invoke-RestMethod -Uri "http://127.0.0.1:$port/api/bootstrap" -TimeoutSec 2).service_identity}catch{return $null}}
-function Matches($value){return ($null -ne $value -and $value.release_id -eq 'photonguard-rc9-single-slit-20261021' -and $value.package_root -eq $linuxRoot -and $value.source_commit -eq '176976938f9a6d0603c4799339623227aae35c90')}
+function Matches($value){return ($null -ne $value -and $value.release_id -eq 'photonguard-rc9-local-example-20261025' -and $value.package_root -eq $linuxRoot -and $value.source_commit -eq '176976938f9a6d0603c4799339623227aae35c90')}
 function Open-Ready($port){$url="http://127.0.0.1:$port/experiments";$boot=Invoke-RestMethod -Uri "http://127.0.0.1:$port/api/bootstrap" -TimeoutSec 5;if(-not $boot.runtime.workers_enabled){throw '计算服务未启用，未按成功启动处理。'};if(-not $NoBrowser){Start-Process $url};Write-Host ('工作台已打开：'+$url);Write-Host '关闭浏览器不会删除记录。结束使用时双击“停止工作台.bat”。';[pscustomobject]@{status='READY';url=$url;workers_enabled=$true;source_commit=$boot.service_identity.source_commit}|ConvertTo-Json -Compress}
 $state=Join-Path $root 'data/service.json'
 if(Test-Path -LiteralPath $state){try{$saved=Get-Content -Raw -LiteralPath $state|ConvertFrom-Json;if(Matches (Identity $saved.port)){Open-Ready $saved.port;exit 0}}catch{}}
@@ -28,7 +28,12 @@ try{
     if($LASTEXITCODE -ne 0){throw '运行环境准备未完成。可检查网络后再次双击启动，已有下载会复用。'}
     $port=$null
     foreach($candidate in 8766..8785){$id=Identity $candidate;if(Matches $id){Open-Ready $candidate;exit 0};$probe=New-Object Net.Sockets.TcpListener([Net.IPAddress]::Loopback,$candidate);try{$probe.Start();$port=$candidate;break}catch{}finally{$probe.Stop()}}
-    if($null -eq $port){throw '试用端口被占用，请关闭自己不再使用的工作台后重试。'}
+    # Windows/WSL may reserve the entire preferred range. Ask Windows for an
+    # available port without changing system exclusions or stopping services.
+    if($null -eq $port){
+        $probe=New-Object Net.Sockets.TcpListener([Net.IPAddress]::Loopback,0)
+        try{$probe.Start();$port=$probe.LocalEndpoint.Port}catch{throw '未能分配可用的本地端口，请稍后重试。'}finally{$probe.Stop()}
+    }
     $logs=Join-Path $root 'logs';New-Item -ItemType Directory -Path $logs -Force|Out-Null
     $stamp=Get-Date -Format 'yyyyMMdd-HHmmss-fff'
     # Every path is a quoted native argument, never executable shell text.

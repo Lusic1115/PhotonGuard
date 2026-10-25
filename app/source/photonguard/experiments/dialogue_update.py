@@ -42,9 +42,18 @@ def compile_goal_plan(state,parent):
     return response
 
 
-def update(state,text,event_id,*,request=None,model_obj=None,evidence_review=None):
+def update(state,text,event_id,*,request=None,model_obj=None,evidence_review=None,builtin_example=None):
     """Pure interpreter/reducer. Complete deterministic facts outrank stale questions."""
     mid=event_id;interpretation=parse_update(text,state,mid) if request is None else None
+    if builtin_example:
+        from .builtin_examples import interpretation as interpret_example
+        interpretation=interpret_example(text,mid)
+        # Explicit values in this template have source spans. Do not label
+        # them as numerical defaults merely because their values are equal.
+        state=copy.deepcopy(state)
+        for op in interpretation['confirmed_operations']:
+            if state['facts'].get(op['field'],{}).get('source_kind')=='numeric_default':
+                state['facts'].pop(op['field'])
     ops=form_operations(request) if request is not None else interpretation['confirmed_operations']
     issues=[];notes=[]
     if evidence_review is not None and interpretation is not None and model_obj is not None:
@@ -171,12 +180,15 @@ def action(store,s,data):
         s['session_issue']={'kind':'UNSUPPORTED_SCOPE','text':error}
         store.event(s,'SESSION_SCOPE_REJECTED',{'input_text':text,'new_computation':False});store.save(s);return s
     state=None if kind=='explore_case' else copy.deepcopy(s.get('fact_state'))
+    from .builtin_examples import eligible
+    builtin_example=eligible(s,data,text,case_id)
+    if builtin_example:case_id=builtin_example['case_id']
     mode='specified' if parent else s['kind'];model_obj=None;model_response=None;normalizations=[];model_error=None;evidence_review=None
     if case_id and state is None:
         state=fs.seed(case_id,mode,parent)
         # Old pending records migrate only independently bound raw facts, never
         # model-written specs. Completed records remain untouched.
-        if kind!='explore_case' and s.get('library_context') and s.get('text'):
+        if not builtin_example and kind!='explore_case' and s.get('library_context') and s.get('text'):
             for index,part in enumerate(s['text'].split('\n\n补充资料：\n')):
                 state=update(state,part,'migration-'+str(index))
             store.event(s,'PENDING_FACTS_MIGRATED',{'source_text_sha256':digest(s['text']),'verified_fact_ids':[f['fact_id'] for f in state['facts'].values() if f['status']=='resolved'],'old_record_id_preserved':True})
@@ -238,7 +250,7 @@ def action(store,s,data):
     if kind=='explore_case':s=store.create({'kind':'specified','text':text or json.dumps(request,ensure_ascii=False)})
     if kind=='undo_fact':state=fs.undo(state,event_id)
     else:
-        try:state=update(state,text,event_id,request=request,model_obj=model_obj,evidence_review=evidence_review)
+        try:state=update(state,text,event_id,request=request,model_obj=model_obj,evidence_review=evidence_review,builtin_example=builtin_example)
         except (ValueError,TypeError,KeyError) as exc:
             model_error={'kind':'MODEL_OUTPUT_INVALID','text':str(exc)}
             state=update(state,text,event_id,request=request)

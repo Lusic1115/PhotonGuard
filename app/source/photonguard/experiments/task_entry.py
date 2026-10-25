@@ -27,6 +27,11 @@ def start(store,data):
         s=create(store,{'model':data['model'],'teaching':True});decision={'mode':'inverse','model':data['model'],'source':'EXPLICIT_TEACHING_SELECTION'}
     else:
         decision=route(text,data.get('mode'))
+        from .builtin_examples import match
+        example=match(text) if data.get('mode') in (None,'forward') and data.get('csv_text') is None else None
+        if example:
+            decision.update(mode='forward',model=None,case_id=example['case_id'],source=example['source'],example=example,
+                            reason='采用与完整原文一致的内置单缝示例；整理计划后仍需核对并批准计算。')
         if data.get('csv_text') is not None:
             if data.get('mode')=='forward':raise WorkflowError('数据反向分析与正向比较分开开始')
             decision['mode']='inverse'

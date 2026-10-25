@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-21",
+  "date": "2026-10-25",
   "scope": "Current public project, excluding this manifest",
   "files": [
     {
@@ -24,8 +24,8 @@
     },
     {
       "path": "app/launcher/server.py",
-      "bytes": 2918,
-      "sha256": "9c6f95400700d0069e212f0941e0632ead24f95ecee2f49931efb058af275cc4"
+      "bytes": 2920,
+      "sha256": "296f8d5f0cb9b286d5995e266e16573110037303500dc569380b3f8182359f6c"
     },
     {
       "path": "app/launcher/setup-wsl.ps1",
@@ -34,8 +34,8 @@
     },
     {
       "path": "app/launcher/start.ps1",
-      "bytes": 4777,
-      "sha256": "57b569edc853d7c25c1e14e144e92981a3b319b6eb045dfe71237e0447fdb0b7"
+      "bytes": 5091,
+      "sha256": "50f6592260fcdd8ff03c44c05dbcdfc2eacdc7bdeeaad1c726c75bceb7c3875a"
     },
     {
       "path": "app/launcher/wsl-entry.sh",
@@ -44,8 +44,8 @@
     },
     {
       "path": "app/MANIFEST.json",
-      "bytes": 77232,
-      "sha256": "5e575ef719dc6ea9bb68330eeb3abe5998dbdfc361579fbc6aa9674f0d4d000c"
+      "bytes": 77467,
+      "sha256": "b17f09f6fdb0ca231eec3ff2c6210788537e7d5e7afa14ddf39e8bd4e20abd7a"
     },
     {
       "path": "app/source/.gitignore",
@@ -873,6 +873,11 @@
       "sha256": "1d8dbcc94e4895a8340f18d72dc5f59871999198e97d763f7aff822655692198"
     },
     {
+      "path": "app/source/photonguard/experiments/builtin_examples.py",
+      "bytes": 3511,
+      "sha256": "ad7a61d3e932c4d067ae71ce2e8ecce6e76f0f2add009bd313213d23d1669204"
+    },
+    {
       "path": "app/source/photonguard/experiments/candidate_recipes.py",
       "bytes": 1945,
       "sha256": "2936ba42a894025d430565e512c8a857c1156af3fb47bc3461a4b32b60d6ded0"
@@ -929,8 +934,8 @@
     },
     {
       "path": "app/source/photonguard/experiments/dialogue_update.py",
-      "bytes": 25881,
-      "sha256": "3ffe77bb441e80e19c4e5feb05c29df1be3de66b59944b8126f00189d56e0004"
+      "bytes": 26639,
+      "sha256": "de57f6d5f99e62e1e2c2eb0739196ad588801cb8e32504b6f66d2ea6d7a81a6c"
     },
     {
       "path": "app/source/photonguard/experiments/evidence_review.py",
@@ -1164,8 +1169,8 @@
     },
     {
       "path": "app/source/photonguard/experiments/task_entry.py",
-      "bytes": 3397,
-      "sha256": "f0060d351cf9b965c44b24ce690339067f6d21c426bfa0df4ec47a5320bc8b30"
+      "bytes": 3830,
+      "sha256": "7991da2e5140e4f869e35d7bbbccfe7bb3f3c575e2ebc79865cfa9d85e388dc7"
     },
     {
       "path": "app/source/photonguard/experiments/task_flow.py",
@@ -1414,8 +1419,8 @@
     },
     {
       "path": "app/source/photonguard/workflow_assets/experiments.js",
-      "bytes": 158948,
-      "sha256": "2ba472d2bc2e50f04929f47ec07d752ef72fd0ef0e20f78549fef236a080a1fa"
+      "bytes": 161208,
+      "sha256": "7d952d8b6e482d99463ce7084a36b58ebe8395f379ad74ad253902bf6a6004e4"
     },
     {
       "path": "app/source/photonguard/workflow_assets/index.html",
@@ -2743,6 +2748,11 @@
       "sha256": "d3d0f6286070e02838bee506f64e5b234d49e1792f003a68b3e038318dd46233"
     },
     {
+      "path": "app/source/tests/test_home_example.py",
+      "bytes": 8174,
+      "sha256": "309008add99a85bf83970adf2f41c17f1627aef4f79a3ad903ffd8a9eb72aebb"
+    },
+    {
       "path": "app/source/tests/test_independent_checker_v1.py",
       "bytes": 3704,
       "sha256": "8ce9cced395cba2d0750c1375d00784f6f321fef5ad78e0264ad60ab8c85d2e3"
@@ -3179,8 +3189,8 @@
     },
     {
       "path": "app/SOURCE_MANIFEST.json",
-      "bytes": 71843,
-      "sha256": "db86c5732fe2b7bb0f5b36405957015d525bd104d885982c3b32ac1574801bed"
+      "bytes": 72064,
+      "sha256": "adf7ecebea475db372d7905e1e9cd4f78356aa5a5805880f8dc8813a3b4faac1"
     },
     {
       "path": "app/停止工作台.bat",
@@ -3214,18 +3224,18 @@
     },
     {
       "path": "docs/交付来源.md",
-      "bytes": 1175,
-      "sha256": "c536ac4d65e8a4e9321f11b2e6fc125decceebb97e4d38b08f1e59504843f9ec"
+      "bytes": 1424,
+      "sha256": "fe77508f0bd85f97e055fa2acef14c68f92230bd3ae4ded2e892b6a0efe5feb0"
     },
     {
       "path": "docs/使用指南.md",
-      "bytes": 2899,
-      "sha256": "6606134c6b755ade7c68544a85017881948898818cd7b4e83f2f001449f7bfda"
+      "bytes": 3193,
+      "sha256": "b9562dbbeaaf3494383bb9c906eb5c67c73ed98a43034b6eb478b42562fac30e"
     },
     {
       "path": "docs/单缝入门示例.md",
-      "bytes": 2491,
-      "sha256": "eec404ee496eaf8acb81ddcff53bc6c048425be8d6907a9e97a78e4289f7edf2"
+      "bytes": 3016,
+      "sha256": "6f9bda43e81eb3d8dd031e663e9e6f0a340200692ec8c58ccea70ba4079e7cf0"
     },
     {
       "path": "LICENSE",
@@ -3264,8 +3274,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8504,
-      "sha256": "df6c8fdaf4d227c394757ffcbade45608a7fa6abb33d3cb2352b6068fe9c5b08"
+      "bytes": 8693,
+      "sha256": "518e5cc3225def550e417bc5fae8a55849f74ba4a7b54736b83b27d3d25da40a"
     },
     {
       "path": "THIRD_PARTY_NOTICE.md",
