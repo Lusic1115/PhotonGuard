@@ -6,7 +6,7 @@ AI 连续实验工作台 · 薄膜 / 单缝与双缝衍射 / 高斯光束 · `0.
 
 PhotonGuard 将自然语言目标、实验条件、数值计算和后续分析组织在同一个任务中。使用者可以描述目标、导入 CSV、比较候选，再带着已保存的结果修改目标或安排下一次观测。
 
-[下载完整项目](https://github.com/zhouqiuyu114514-beep/PhotonGuard/archive/refs/heads/main.zip) · [快速开始](#快速开始) · [实际案例](#实际案例) · [AI连接与额度](docs/使用指南.md#ai连接与次数设置)
+[下载完整项目](https://github.com/zhou2022f1/PhotonGuard/archive/refs/heads/main.zip) · [快速开始](#快速开始) · [实际案例](#实际案例) · [AI连接与额度](docs/使用指南.md#ai连接与次数设置)
 
 ![PhotonGuard 工作台](assets/工作台.png)
 
@@ -130,4 +130,4 @@ PhotonGuard/
 
 ## 反馈与维护
 
-请在 [Issues](https://github.com/zhouqiuyu114514-beep/PhotonGuard/issues) 提供系统版本、操作步骤与错误信息，并先去除Key和个人数据。当前功能定型，后续以使用修整、兼容性和文档维护为主。
+请在 [Issues](https://github.com/zhou2022f1/PhotonGuard/issues) 提供系统版本、操作步骤与错误信息，并先去除Key和个人数据。当前功能定型，后续以使用修整、兼容性和文档维护为主。

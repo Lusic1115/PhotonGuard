@@ -4,7 +4,7 @@
 
 ## 交付与当前状态
 
-- 精确 base commit：`1c070c05be7bdac7656a290a68a04f17eccd2fc1`，私有仓库 `https://github.com/zhouqiuyu114514-beep/aic`。
+- 精确 base commit：`1c070c05be7bdac7656a290a68a04f17eccd2fc1`，仓库现址 `https://github.com/zhou2022f1/PhotonGuard`（保留上述历史 base commit）。
 - 本 checkpoint 是在此 base 上的未推送工作区修改。补丁和完整源码快照由本次交付提供；使用前核对其 SHA-256 清单。不要覆盖已有本地修改。
 - 新增 `prepare-task`：从重新校验的 AST 导入候选生成未知量留空的任务草稿、脚本观察清单和中文说明。
 - CLI `confirm`：检查完整性/支持范围，`--candidate` 可同时核对导入来源/谱段；创建锁采用独占方式，拒绝覆盖已有锁。核心物理阈值、tmm、求解器、受限动作保持原样。

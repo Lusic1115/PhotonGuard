@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-25",
+  "date": "2026-10-29",
   "scope": "Current public project, excluding this manifest",
   "files": [
     {
@@ -44,8 +44,8 @@
     },
     {
       "path": "app/MANIFEST.json",
-      "bytes": 77467,
-      "sha256": "b17f09f6fdb0ca231eec3ff2c6210788537e7d5e7afa14ddf39e8bd4e20abd7a"
+      "bytes": 76822,
+      "sha256": "8e3989df562b5de2a595b915b8d2be796797ce4466386b25f204c63ec6c0e0d3"
     },
     {
       "path": "app/source/.gitignore",
@@ -209,8 +209,8 @@
     },
     {
       "path": "app/source/docs/LOCAL_CODEX_HANDOFF_ZH.md",
-      "bytes": 6494,
-      "sha256": "ecbf7db427556854da3cb52b9b8d1274d25f4aac58db056f055930a46a345226"
+      "bytes": 6528,
+      "sha256": "8b58e924dba95911a7d5b816ec06a79a71888d54ee285d4c9af2051d69203a63"
     },
     {
       "path": "app/source/docs/LOCAL_CODEX_WORKFLOW_HANDOFF_ZH.txt",
@@ -3189,8 +3189,8 @@
     },
     {
       "path": "app/SOURCE_MANIFEST.json",
-      "bytes": 72064,
-      "sha256": "adf7ecebea475db372d7905e1e9cd4f78356aa5a5805880f8dc8813a3b4faac1"
+      "bytes": 71429,
+      "sha256": "3d3fc651a28c5926c26add23345a90af2e6e8bf41d8249d262c247378187616c"
     },
     {
       "path": "app/停止工作台.bat",
@@ -3229,8 +3229,8 @@
     },
     {
       "path": "docs/使用指南.md",
-      "bytes": 3193,
-      "sha256": "b9562dbbeaaf3494383bb9c906eb5c67c73ed98a43034b6eb478b42562fac30e"
+      "bytes": 3183,
+      "sha256": "e17ac8171e8fd24afd7f354ba7f271e7ee14c245b8d868fac9fc21517e48fef7"
     },
     {
       "path": "docs/单缝入门示例.md",
@@ -3274,8 +3274,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8693,
-      "sha256": "518e5cc3225def550e417bc5fae8a55849f74ba4a7b54736b83b27d3d25da40a"
+      "bytes": 8673,
+      "sha256": "e070adc7bb422f47131ca0739d772259334742d32b2d81bd493f43ec276668e9"
     },
     {
       "path": "THIRD_PARTY_NOTICE.md",
