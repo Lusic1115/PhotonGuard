@@ -1,6 +1,7 @@
 {
-  "date": "2026-10-29",
-  "scope": "Current public project, excluding this manifest",
+  "version": "0.2.0rc28",
+  "source_commit": "03f3a95af52317fa9d57d018fa3b07d65d1b2da5",
+  "scope": "Public distribution excluding this manifest",
   "files": [
     {
       "path": ".gitattributes",
@@ -18,14 +19,19 @@
       "sha256": "aaaf235b2778edf0d97e1f50de0b8e008ec92bcf3199b829dc8be6bb31377a2b"
     },
     {
+      "path": "app/launcher/photonguard.ico",
+      "bytes": 43207,
+      "sha256": "f30bc0c80d13dd46fc285f3ce94fda6293159495e6e350a6cb53d5b44d72d0c1"
+    },
+    {
       "path": "app/launcher/runtime-sources.json",
       "bytes": 11310,
       "sha256": "79ca3abf83e7b8587281ccbf3ae4429fcee57a95d80796faa41c3b3d486a8c1d"
     },
     {
       "path": "app/launcher/server.py",
-      "bytes": 2920,
-      "sha256": "296f8d5f0cb9b286d5995e266e16573110037303500dc569380b3f8182359f6c"
+      "bytes": 2976,
+      "sha256": "6875ad566dc70919288372a2e4b9cace033aa84dfcb6674ede3dbd86fd61ad19"
     },
     {
       "path": "app/launcher/setup-wsl.ps1",
@@ -34,8 +40,8 @@
     },
     {
       "path": "app/launcher/start.ps1",
-      "bytes": 5091,
-      "sha256": "50f6592260fcdd8ff03c44c05dbcdfc2eacdc7bdeeaad1c726c75bceb7c3875a"
+      "bytes": 5287,
+      "sha256": "6a103e4be4a709985f10a55e17ed39500b9262a7731f84071872c203878a6218"
     },
     {
       "path": "app/launcher/wsl-entry.sh",
@@ -44,8 +50,8 @@
     },
     {
       "path": "app/MANIFEST.json",
-      "bytes": 76822,
-      "sha256": "8e3989df562b5de2a595b915b8d2be796797ce4466386b25f204c63ec6c0e0d3"
+      "bytes": 86219,
+      "sha256": "4c224cc4a8673d2eee92f1bd8053ce79f84606b3df99a91493f98ca719dca36a"
     },
     {
       "path": "app/source/.gitignore",
@@ -609,8 +615,8 @@
     },
     {
       "path": "app/source/photonguard/__init__.py",
-      "bytes": 111,
-      "sha256": "30d5ae998218c0bb82f8687146e21815d19154f9c44a18d33906687adf0a6a89"
+      "bytes": 74,
+      "sha256": "3b4fb3214f9e2b67fb3f56feca6c0d25e7129884a42b9b97580e4fe6efb5a09c"
     },
     {
       "path": "app/source/photonguard/__main__.py",
@@ -873,6 +879,16 @@
       "sha256": "1d8dbcc94e4895a8340f18d72dc5f59871999198e97d763f7aff822655692198"
     },
     {
+      "path": "app/source/photonguard/experiments/bounded_goal.py",
+      "bytes": 23928,
+      "sha256": "aa4866a1d5e9c5d40aee8ec819ae24d1b0bbb8033a46472213f64331b3b420bd"
+    },
+    {
+      "path": "app/source/photonguard/experiments/bounded_intake.py",
+      "bytes": 11793,
+      "sha256": "3dc780d8036ba42cfab76ba17d3b7eddab92f46b47617f2ad83779f1359dfbba"
+    },
+    {
       "path": "app/source/photonguard/experiments/builtin_examples.py",
       "bytes": 3511,
       "sha256": "ad7a61d3e932c4d067ae71ce2e8ecce6e76f0f2add009bd313213d23d1669204"
@@ -899,8 +915,8 @@
     },
     {
       "path": "app/source/photonguard/experiments/case_workflow.py",
-      "bytes": 14664,
-      "sha256": "57d25b131d707a0d01d09b0960a15b3cf77252aff90aaea1f3e41059a3fd8299"
+      "bytes": 17407,
+      "sha256": "8492788d902f67c585969a162df607441214d1837cd63c729826c841cb170c1f"
     },
     {
       "path": "app/source/photonguard/experiments/cli.py",
@@ -919,13 +935,18 @@
     },
     {
       "path": "app/source/photonguard/experiments/contracts.py",
-      "bytes": 10093,
-      "sha256": "fec9a97c8e0ba3e1999edf88caab30467fd333abfbb2229685db7b066ae1c198"
+      "bytes": 11285,
+      "sha256": "ce4263ea0da8eb5414c1b480ebdcc273b2eac3d5e3e052d69cb727296384c217"
     },
     {
       "path": "app/source/photonguard/experiments/contrast_calibration.py",
       "bytes": 9434,
       "sha256": "9e28e261666b4c29c57f115de3026b57c1eca112b2cf96a1d6ced7577c76ecaa"
+    },
+    {
+      "path": "app/source/photonguard/experiments/csv_intake.py",
+      "bytes": 15108,
+      "sha256": "364ada383fae03f631303b889ba72fadd58442e7a9a06d7a7a4ff9ea24711028"
     },
     {
       "path": "app/source/photonguard/experiments/decision_preferences.py",
@@ -944,8 +965,8 @@
     },
     {
       "path": "app/source/photonguard/experiments/executor.py",
-      "bytes": 7635,
-      "sha256": "e4c67d9e9320ec581543f16278e4a7cf68fc2619527dde118ebd10f8cf1b1bce"
+      "bytes": 8966,
+      "sha256": "f06c369bc550a0de8d50c4b416f83f1080e2e0b8d1df3df937fe90fc8ec1ab6b"
     },
     {
       "path": "app/source/photonguard/experiments/fact_binding.py",
@@ -959,8 +980,8 @@
     },
     {
       "path": "app/source/photonguard/experiments/film_inverse.py",
-      "bytes": 14177,
-      "sha256": "c7f520cc832dd24ad573e70f7d7fc53ca48804bd50c28bae473aad508d472ccc"
+      "bytes": 17942,
+      "sha256": "57976809f55cc2d8533f23708a6ec11c18dbb17b1408ba93106675da551c3167"
     },
     {
       "path": "app/source/photonguard/experiments/film_verification.py",
@@ -973,14 +994,19 @@
       "sha256": "b996546274ed927bbf3ef2a48b1397b6a2e891bfde75c26d9c4d5e4d6bead40b"
     },
     {
+      "path": "app/source/photonguard/experiments/general_tutoring.py",
+      "bytes": 3014,
+      "sha256": "1c03f8989e57c691cb969ed01b0bf499aa91c6484b1f2345c7e0ca0d00f0c2f4"
+    },
+    {
       "path": "app/source/photonguard/experiments/goal_design.py",
       "bytes": 19308,
       "sha256": "e32ed0970c7bf97e39bb61b0c5c3b5b6f150327587988d9df9f6a0cd77b9c987"
     },
     {
       "path": "app/source/photonguard/experiments/goals.py",
-      "bytes": 2969,
-      "sha256": "4c69c300565c099e08de74402ba576e1e89165bf6d275cc9c095b18bfbf30ade"
+      "bytes": 3464,
+      "sha256": "f1a3f61fbbd236dbe8d91f77e76ab8a424173c60072ca5b9cc9121cbd76608d3"
     },
     {
       "path": "app/source/photonguard/experiments/inference.py",
@@ -1024,8 +1050,8 @@
     },
     {
       "path": "app/source/photonguard/experiments/inverse_models.py",
-      "bytes": 13991,
-      "sha256": "d65aad7aa0b91af139b7917bbe69d9adbdd93671271ec64d121beadb3aa2c605"
+      "bytes": 14011,
+      "sha256": "c1517975925122e9f1d41a0475b8fbacc07ffae14a6929201e5a3409f92d3c8b"
     },
     {
       "path": "app/source/photonguard/experiments/inverse_profiles.py",
@@ -1034,13 +1060,183 @@
     },
     {
       "path": "app/source/photonguard/experiments/inverse_report.py",
-      "bytes": 23587,
-      "sha256": "7eabc3c40f88ac7460e0f39d0cc29f82e14196ec5df6e0c42b726d0ad17a8d31"
+      "bytes": 25011,
+      "sha256": "1e66ae09f791948bdfc4f7c4b4bffcfc77cb67dc6796acc60aa2ad994d42e62a"
     },
     {
       "path": "app/source/photonguard/experiments/inverse_worker.py",
       "bytes": 972,
       "sha256": "a33afa5e18745038d181bfa1c41e14cb88cad7665d61f2f820dafc93f247ea35"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_answer_review.py",
+      "bytes": 3263,
+      "sha256": "138a352987fba75ac8d41292431200047f207abbaa65151edc905881f657caad"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_cards.json",
+      "bytes": 61994,
+      "sha256": "114afe98f37556f5db3944959dc444126806554d04fe96e95b6beeddc2807de6"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_catalog.py",
+      "bytes": 30151,
+      "sha256": "82a120ca6b64ee792e67cfa31d1d25f508e3e4908ec0329976c06096f6ea7c5d"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_context.py",
+      "bytes": 4024,
+      "sha256": "b63b5ec1bac9da7a8fa2e2d53f20912644307bc50de7ad51c377eebc92a44ded"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_conventions.py",
+      "bytes": 2657,
+      "sha256": "1c3d1ab5e23a8e0dd4467283a59a4d83732489f62cebe5901eb6561fc3889a3a"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_data/pack-electromagnetic-foundations.json",
+      "bytes": 112141,
+      "sha256": "f5cc836b84dbf365df24b8c3c0fd4379cd2768c2e4e251d41fe5e67816d6876e"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_data/pack-fiber-integrated-optics.json",
+      "bytes": 332412,
+      "sha256": "49eb07ab58d36521f90261d03cdd1a3b8645e45c934df985ca40741502286c49"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_data/pack-fourier-imaging.json",
+      "bytes": 122968,
+      "sha256": "30421c6398a6a046f5bf292101d83688d655ff0a83a29e7081eca89c0a11e391"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_data/pack-geometrical-imaging.json",
+      "bytes": 115867,
+      "sha256": "830a1a8bf63f7e7a3e0db2093ceb76af7b9559324733a32a7b3cf24cb0a1ea95"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_data/pack-guided-photonics-connections.json",
+      "bytes": 80492,
+      "sha256": "59ca03fa7a8d95fd32b789072eee9abbe3ed4f698655b908f3a06abb6ee98e8c"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_data/pack-laser-resonators.json",
+      "bytes": 115710,
+      "sha256": "001deb0d5229c65ab7a8e3dd219914ec6ffcea40e13aec5631c54a7f1e200ed7"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_data/pack-nonlinear-coupled-waves.json",
+      "bytes": 157501,
+      "sha256": "a8d3f5c289bccf1d71cfaeda59e1bad5eb02ae1f7accbe701b555e1d66d53daa"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_data/pack-nonlinear-foundations.json",
+      "bytes": 64123,
+      "sha256": "809687e3eba5c41e336c9e1a64b477af8bd91b5cc5e4216e5a0e1dfc8511382a"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_data/pack-optical-mathematics.json",
+      "bytes": 138471,
+      "sha256": "d55b053ec845cbc70bf127f9d085f62f335e28fd9f8022df7f6e05290402fc88"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_data/pack-optical-measurement.json",
+      "bytes": 308831,
+      "sha256": "f20cbea3fc4a49bb2b4ed60bc353398680006a73a79e793523e46fa146ca3782"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_data/pack-optics-core.json",
+      "bytes": 101719,
+      "sha256": "085ce068f2fecf27481015a155ad7c6214ce6f7fbb35c342e93f128caeb61b2d"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_data/pack-polarization-coherence.json",
+      "bytes": 74700,
+      "sha256": "5ddfb5710fff937297b75e7721c3550394edc511310f1612ac53f3e8b090ad11"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_data/pack-quantum-foundations.json",
+      "bytes": 295664,
+      "sha256": "a5576c31e0eca497bf1f9e2ef68256199ef731ab7ec242b94c4292e1e720a244"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_data/pack-ultrafast-pulse-learning.json",
+      "bytes": 97395,
+      "sha256": "8a09a9e2d1cf4fdc6537313fe5cc0d5a4dce81a7ff0c4102f750d4566ca1c798"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_data/study-topics.json",
+      "bytes": 66810,
+      "sha256": "afabc9155e91a198c7234540e0ff67e55b6701b84908cbe847fdad499f23fb2b"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_experiment.py",
+      "bytes": 5531,
+      "sha256": "1d855e45cfa75ec331bfc2b74fde350975af9b08dd5021d850fde2e98695fc84"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_learning.py",
+      "bytes": 38327,
+      "sha256": "9bde420bfb3b29bfb8f8295861dc5a0acb9c1cccf02895cc956762abb90dfbb5"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_math.py",
+      "bytes": 38275,
+      "sha256": "abaa9a8b68716d1037fd74ae9bd4554bfe1ed47bc01d2668f2325631a4180893"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_pack.py",
+      "bytes": 2595,
+      "sha256": "a8aa53c72ca74bf582add9186ccc0f803011b8996ca9bace75d4ca9b64f36604"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_retrieval.py",
+      "bytes": 13248,
+      "sha256": "8ed563ddf8121da6938ea65b905c4b41e3eef33c3c6f6bb93127ca8581b74986"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_routes.py",
+      "bytes": 4376,
+      "sha256": "02141f866b7138ea4a31331304648526eb7546b868f743b90d9b4ec0a9e021d8"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_server.py",
+      "bytes": 2096,
+      "sha256": "63bf66ba387242f6c3517aa97062340b431d051948e928e75e4d81b98d4bd491"
+    },
+    {
+      "path": "app/source/photonguard/experiments/knowledge_sessions.py",
+      "bytes": 7255,
+      "sha256": "dd1256c4cbf315c6c63356cc7b6575984df49b784f64f5190c09ee0f845120da"
+    },
+    {
+      "path": "app/source/photonguard/experiments/learning_followup.py",
+      "bytes": 29529,
+      "sha256": "4dd37734df3b75ad500ded49fa217431d3a592bfeca971e5b50ff7ff56f07e79"
+    },
+    {
+      "path": "app/source/photonguard/experiments/learning_lessons.py",
+      "bytes": 11987,
+      "sha256": "cca72f2db03c3a7ef15e55d8de3f08fc52d2bf1ad274e962b0dcba29e24e139b"
+    },
+    {
+      "path": "app/source/photonguard/experiments/learning_record.py",
+      "bytes": 7659,
+      "sha256": "f8a41405bfc904273655f986b32af1ff360c0d1fea9c250544ddb6f24edc19a3"
+    },
+    {
+      "path": "app/source/photonguard/experiments/learning_routes.py",
+      "bytes": 1957,
+      "sha256": "f6f5cbc899377cb933189eff6410d256e2afdcce8db167f3ab6bdc93e1579b08"
+    },
+    {
+      "path": "app/source/photonguard/experiments/learning_session.py",
+      "bytes": 8761,
+      "sha256": "47077a3425383ef4d698082f9314d313ba063f546d75b243ee5961670709b939"
+    },
+    {
+      "path": "app/source/photonguard/experiments/learning_units.py",
+      "bytes": 507,
+      "sha256": "db2e15122b00e0de0ae666e9e2b405de55ea3c3cb6d170fb9d8e7e91a2b9df17"
     },
     {
       "path": "app/source/photonguard/experiments/measurement_plan.py",
@@ -1064,13 +1260,13 @@
     },
     {
       "path": "app/source/photonguard/experiments/observation_group.py",
-      "bytes": 31130,
-      "sha256": "2f443f8c2123bfb4b66f4fe833a65cc80d4643ef218d1ea00d7b3f1583696bc8"
+      "bytes": 38469,
+      "sha256": "8ea555aee1dd8114df579e3fca905b50869f19f8009b3cedb5dd69c282b0b750"
     },
     {
       "path": "app/source/photonguard/experiments/observation_workflow.py",
-      "bytes": 14542,
-      "sha256": "c177db3817525f1b1c65962c907761926d26908cfd7c43e0f8b9f2c19091bd0f"
+      "bytes": 14654,
+      "sha256": "b90caa371c69e35725b9815d3c0dc2cac0fcf1227d93ae7874b9355e8d81bb3e"
     },
     {
       "path": "app/source/photonguard/experiments/observations.py",
@@ -1079,13 +1275,13 @@
     },
     {
       "path": "app/source/photonguard/experiments/optics.py",
-      "bytes": 22165,
-      "sha256": "b7cd3cb45f6757e8d0603f3fb615cf8b9aed87140159665c22625fd19a4c9b8b"
+      "bytes": 22857,
+      "sha256": "ca621e737f831e28d1d3c33dbc9b90ba87330c6286f6f42ee31fc3e7a1669639"
     },
     {
       "path": "app/source/photonguard/experiments/planner.py",
-      "bytes": 21429,
-      "sha256": "82722873d4b8ec7b9f227d726d3b1d6adf8d78a1ab3d3f033259756fb9cdb19b"
+      "bytes": 21678,
+      "sha256": "d77f19e2cfaf4a7c6a84bce779b603892c32a198897f5f1fcc0ef36a41b979ad"
     },
     {
       "path": "app/source/photonguard/experiments/record_view.py",
@@ -1109,23 +1305,23 @@
     },
     {
       "path": "app/source/photonguard/experiments/research_actions.py",
-      "bytes": 15200,
-      "sha256": "c34d35f6a644b80fb04d90aa93db2f1b4e08b38189a1d3a69153f53ba7b1b58d"
+      "bytes": 16800,
+      "sha256": "f2527cf0d9a0f5e4d686fcdb4aa086a98db1ec345b98cf4dfae94b57211ac8d4"
     },
     {
       "path": "app/source/photonguard/experiments/research_advice.py",
-      "bytes": 19004,
-      "sha256": "fb71885adc79331e1f076ca7c192772ff6a3e0fa8c4f08a513c2d09c620a6be4"
+      "bytes": 20861,
+      "sha256": "45c5a181329a1c2868027be393c10cf609c7b1a24ddd3e926ac09ad1262991cf"
     },
     {
       "path": "app/source/photonguard/experiments/research_steps.py",
-      "bytes": 2891,
-      "sha256": "dfe0c50be26a73907c2ecbf49885b1790dc8a207bd174c6963e64787b86ba37d"
+      "bytes": 2910,
+      "sha256": "75a24b3d33444b0e069c796c2f9a95917a60f90dfc878a77c75719e79cb0a6e7"
     },
     {
       "path": "app/source/photonguard/experiments/result_reuse.py",
-      "bytes": 5913,
-      "sha256": "2a59050af137a140d1b4b945623ead6a80096769447cd26c31ae673020e4c70b"
+      "bytes": 6016,
+      "sha256": "6438f55b9a973a5ba12c7afefebf0c27dc81c70b2bb69bcb1e70dc2606033f7a"
     },
     {
       "path": "app/source/photonguard/experiments/reuse.py",
@@ -1139,8 +1335,8 @@
     },
     {
       "path": "app/source/photonguard/experiments/service.py",
-      "bytes": 34315,
-      "sha256": "3bd19d32f12fd2e008c893d18ba3a4c0e95da044992167bc8808aa4b1eb8ff3b"
+      "bytes": 42294,
+      "sha256": "3b52ddac7c8d906290814e49b06a2c5509941eaf54aa72196d61003d5ca0b380"
     },
     {
       "path": "app/source/photonguard/experiments/session_ai.py",
@@ -1158,6 +1354,16 @@
       "sha256": "0a45b995d111fef67ea44054f3cfa0762529cf128c9556f674f9f08667281e02"
     },
     {
+      "path": "app/source/photonguard/experiments/slit_formula.py",
+      "bytes": 1052,
+      "sha256": "abb9cc7fbac2123586a3271cfbb349973b42d9adfc4c99e747a50bc0ce0af73f"
+    },
+    {
+      "path": "app/source/photonguard/experiments/slit_goal.py",
+      "bytes": 31170,
+      "sha256": "49cf8c94f4fed4626ec4bbf5656aef0e29e62b0b0d2df704bf7c133231dde4cb"
+    },
+    {
       "path": "app/source/photonguard/experiments/study.py",
       "bytes": 21938,
       "sha256": "a8c0903dad8959901c2230300e5c4d67e6931af9d579839d907830fb447648da"
@@ -1169,13 +1375,13 @@
     },
     {
       "path": "app/source/photonguard/experiments/task_entry.py",
-      "bytes": 3830,
-      "sha256": "7991da2e5140e4f869e35d7bbbccfe7bb3f3c575e2ebc79865cfa9d85e388dc7"
+      "bytes": 6156,
+      "sha256": "3c452d0bc6caf6f04db26d4856c619b78b6dc55d8ffa6dbe70f74bced7e8ac5a"
     },
     {
       "path": "app/source/photonguard/experiments/task_flow.py",
-      "bytes": 7543,
-      "sha256": "51b79c7b2ce992c9f595c2f0468b073b6be10957faa0fdaf14b389f6894f7911"
+      "bytes": 7828,
+      "sha256": "ba80244ae71868a55b2ea6bc42370bd8cc1b968cae457121c870fe75e85c5783"
     },
     {
       "path": "app/source/photonguard/experiments/task_view.py",
@@ -1186,6 +1392,16 @@
       "path": "app/source/photonguard/experiments/teaching_acquisition.py",
       "bytes": 2921,
       "sha256": "f93f94f70b23b3a19a8b82c977ba1d46cbf730e97339b6deeee856aa84381696"
+    },
+    {
+      "path": "app/source/photonguard/experiments/tutor.py",
+      "bytes": 86758,
+      "sha256": "961f2aaccf18cb3d883a73a681358e75ccc07efa4cd77b9c4979be9718d774b1"
+    },
+    {
+      "path": "app/source/photonguard/experiments/workbench_operations.py",
+      "bytes": 2845,
+      "sha256": "5ad11741f098a6552087e03caf077cea31b8d16cdc6f9b9558d9a28ce6a9cb86"
     },
     {
       "path": "app/source/photonguard/experiments/worker.py",
@@ -1394,8 +1610,8 @@
     },
     {
       "path": "app/source/photonguard/workflow.py",
-      "bytes": 74573,
-      "sha256": "fbdd6fbfa2d011c01f0c1974259e6c8cf644410c11dd71633edab3e29a411e5f"
+      "bytes": 76161,
+      "sha256": "a95229c88af7018e8c7d4de15f94e19d72f2412f8745716f87825314679a0cc8"
     },
     {
       "path": "app/source/photonguard/workflow_assets/app.js",
@@ -1403,24 +1619,34 @@
       "sha256": "720b1f9345d749e57370478503d8eedeb11b196cc8d9bfac9ecb96c409dfe207"
     },
     {
+      "path": "app/source/photonguard/workflow_assets/bounded-goal.js",
+      "bytes": 23054,
+      "sha256": "1336aae817c1c2e1f291f914072cd4a282c42238394926bed3fc032dbe1d5c35"
+    },
+    {
       "path": "app/source/photonguard/workflow_assets/certificate-report.css",
       "bytes": 1134,
       "sha256": "46cdcf4cfd665c335136e1741e8371b12395501536480ed3139349b787c126c1"
     },
     {
+      "path": "app/source/photonguard/workflow_assets/csv-intake.js",
+      "bytes": 15644,
+      "sha256": "bec6d86ed3188e70240764ff27369e504b275eb0f9b06b30c6552eb9d5c83b3c"
+    },
+    {
       "path": "app/source/photonguard/workflow_assets/experiments.css",
-      "bytes": 12823,
-      "sha256": "1501cc266cb03344ade5950e32084fd0c36a4da1b2cecf177f7d91b813cb0f8d"
+      "bytes": 22322,
+      "sha256": "ddbf6a9d4c7f0a2db4e88434e631f59a72158b4e2f227b4a94efddb4468a29e8"
     },
     {
       "path": "app/source/photonguard/workflow_assets/experiments.html",
-      "bytes": 2471,
-      "sha256": "4315a54db6cb94d0da4f506bb3c1b96c32f199571f4bca88084ded3725f3e94e"
+      "bytes": 4136,
+      "sha256": "2e36c933d1df11d1cfcb774b2acb3be5aed74ff7f67013206a1eb60cff78fb6d"
     },
     {
       "path": "app/source/photonguard/workflow_assets/experiments.js",
-      "bytes": 161208,
-      "sha256": "7d952d8b6e482d99463ce7084a36b58ebe8395f379ad74ad253902bf6a6004e4"
+      "bytes": 205687,
+      "sha256": "ae67dddf37d11892a775d470d44cbd4d2302c1ec1665c6786944d704dcb06332"
     },
     {
       "path": "app/source/photonguard/workflow_assets/index.html",
@@ -1431,6 +1657,41 @@
       "path": "app/source/photonguard/workflow_assets/intake.js",
       "bytes": 15185,
       "sha256": "4955f4c6b91c9190b05a7da207ab43d65391358d45c74730229563a267e7f057"
+    },
+    {
+      "path": "app/source/photonguard/workflow_assets/KaTeX-LICENSE.txt",
+      "bytes": 1107,
+      "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3"
+    },
+    {
+      "path": "app/source/photonguard/workflow_assets/katex.min.js",
+      "bytes": 276701,
+      "sha256": "e8d885505949f3a5f4abdd5dd0d53696bd1371ad26ffbf4f310dcd77c8cdae89"
+    },
+    {
+      "path": "app/source/photonguard/workflow_assets/knowledge.css",
+      "bytes": 6857,
+      "sha256": "60d4e25d435d7d886a9b6d49ac7b51fde5649b8eb6d191f22f7361e402c3fb1f"
+    },
+    {
+      "path": "app/source/photonguard/workflow_assets/knowledge.html",
+      "bytes": 6496,
+      "sha256": "489597930188966356046217a97127721f1510d3f7af38c2ff12b3e756ef9fbb"
+    },
+    {
+      "path": "app/source/photonguard/workflow_assets/knowledge.js",
+      "bytes": 34893,
+      "sha256": "a4b5383385275b63699ad0789781c1a88f8b5cc3e3feac5ae2ccb0d9f00c4676"
+    },
+    {
+      "path": "app/source/photonguard/workflow_assets/knowledge_figures.js",
+      "bytes": 9731,
+      "sha256": "d55f83d8b67ede560b257bbcef4e1108fdb99c9810e8dfbdd65ccee2baee6bfc"
+    },
+    {
+      "path": "app/source/photonguard/workflow_assets/learning.js",
+      "bytes": 51284,
+      "sha256": "8cae609cac98100ef1b6f6424946edecae38607c216f158512b0e06c3189cd06"
     },
     {
       "path": "app/source/photonguard/workflow_assets/mode-report.css",
@@ -1448,9 +1709,24 @@
       "sha256": "853dde25bc48f2921609281d3d0ac4abc55abdb814a118f521290b36fe71c0af"
     },
     {
+      "path": "app/source/photonguard/workflow_assets/optical-apparatus.js",
+      "bytes": 8304,
+      "sha256": "a49f24b585d31d03cfe4e93b88022a75e2ff31c7972b03dab08291d79e775ebf"
+    },
+    {
       "path": "app/source/photonguard/workflow_assets/repair.js",
       "bytes": 18995,
       "sha256": "9e05d64e815023b47035654d38a65b01b34e28893057faf97092f879e22930d7"
+    },
+    {
+      "path": "app/source/photonguard/workflow_assets/slit-comparison.js",
+      "bytes": 7954,
+      "sha256": "55ff047f8d1cf341fdebd5c7287be93fa8bfbbe99df70090bc4fdcce81ba91f8"
+    },
+    {
+      "path": "app/source/photonguard/workflow_assets/study_text.js",
+      "bytes": 1005,
+      "sha256": "df748b1294f570cce6f12dbab1eaf68f51a80496eef0c6e2881e85bf37250e16"
     },
     {
       "path": "app/source/photonguard/workflow_assets/style.css",
@@ -1474,8 +1750,8 @@
     },
     {
       "path": "app/source/pyproject.toml",
-      "bytes": 994,
-      "sha256": "c907554a9583107ef62e5b29b5bded84f1b9e3938c566ed2dcc50371aa5d78a1"
+      "bytes": 1067,
+      "sha256": "10206874d99a7f64c6c601e6a48a23d13e32482533fce3c6b12dc1cc3e5dbb13"
     },
     {
       "path": "app/source/README.md",
@@ -1484,8 +1760,8 @@
     },
     {
       "path": "app/source/release/claims.json",
-      "bytes": 16045,
-      "sha256": "dc142ba3bcb9d20ead969a88b3e51de1b227f4deaa4e82c82835e8c5e0a55a9a"
+      "bytes": 20968,
+      "sha256": "c5fb5c08257b40c28a865224a93a03433a6dfd497200fde6f85d90e9f53892ed"
     },
     {
       "path": "app/source/release/CURRENT_FACTS_ZH.md",
@@ -2533,6 +2809,11 @@
       "sha256": "1c1bbe2bd713496e4118f649f0c12d8f7dbc1a37c7bb5a8ddc0b1edd9a815234"
     },
     {
+      "path": "app/source/tests/knowledge_acceptance_cases.json",
+      "bytes": 3128,
+      "sha256": "db869f4cf3f9aa1d61d98d263016aedf4174205804a51be1924e227f50d6847f"
+    },
+    {
       "path": "app/source/tests/test_ai_repair.py",
       "bytes": 20716,
       "sha256": "36fdc86373c0e6cfac8f0993cc30b3eeba9e719c084942e995272739b3963f1c"
@@ -2613,6 +2894,11 @@
       "sha256": "b19afb23e00104b76147a017aee34d4a9650c10305d50269bb84e7ea8a76d6ad"
     },
     {
+      "path": "app/source/tests/test_continuous_study.py",
+      "bytes": 3701,
+      "sha256": "685dd7d6ebc2e47e39848254f98609860ccb07c9a679734f9143fb7a8d5f5427"
+    },
+    {
       "path": "app/source/tests/test_contrast_calibration.py",
       "bytes": 3937,
       "sha256": "111ee1d176c47d802c221a93475b2334035897637a07dc604634b641b030a262"
@@ -2626,6 +2912,11 @@
       "path": "app/source/tests/test_core.py",
       "bytes": 3199,
       "sha256": "609e96f99661dc8ee54cff7d5af4895f069315a846cadc4084d022121795b0ab"
+    },
+    {
+      "path": "app/source/tests/test_csv_intake.py",
+      "bytes": 4144,
+      "sha256": "acadefd8fa454543efc2c133e05d13740ebb1b91859cf3f7967bfff64a4ce68a"
     },
     {
       "path": "app/source/tests/test_decision_preferences.py",
@@ -2684,8 +2975,8 @@
     },
     {
       "path": "app/source/tests/test_experiment_service.py",
-      "bytes": 25017,
-      "sha256": "e8e19fad44e1f770565cd672c5baabea78026892042f3fdd3caa768b00a6748d"
+      "bytes": 28207,
+      "sha256": "e9631827f094c7105214a6c3b341321f0f62d0c6860c9130ac95654e4fab4d94"
     },
     {
       "path": "app/source/tests/test_experiment_study.py",
@@ -2699,8 +2990,8 @@
     },
     {
       "path": "app/source/tests/test_film_inverse.py",
-      "bytes": 3876,
-      "sha256": "362ca50fc7532927f5ac0baa7c7a37860562971dabc5a17eb3c7be69e56ca3cf"
+      "bytes": 6625,
+      "sha256": "b022e1109dbc2179ecb79fc2b3ba8001e5b8f761d04981c75514899be053b22e"
     },
     {
       "path": "app/source/tests/test_film_stack_intake.py",
@@ -2709,8 +3000,13 @@
     },
     {
       "path": "app/source/tests/test_final_polish.py",
-      "bytes": 9114,
-      "sha256": "215e9972d3588b5522eaf75e9a2e7217c9d4467fbd7709261e7859862d77a8ef"
+      "bytes": 8697,
+      "sha256": "bc07e1196aa800ca9f9a1fb0379af6ee733aa915213f3c7c8185274b2a0298b4"
+    },
+    {
+      "path": "app/source/tests/test_finals_learning.py",
+      "bytes": 45352,
+      "sha256": "6a816f517285632c5601ca14297e52461dc8d78fbdccb4899210e602f64b9219"
     },
     {
       "path": "app/source/tests/test_gaussian_assumption_intake.py",
@@ -2786,6 +3082,31 @@
       "path": "app/source/tests/test_inverse_reuse.py",
       "bytes": 8594,
       "sha256": "64680fd7dcb0687e4fef2bbfeb080150220b179007b64499f6eaa8bc1dc7d26e"
+    },
+    {
+      "path": "app/source/tests/test_knowledge_catalog.py",
+      "bytes": 8503,
+      "sha256": "a0ddf69d758fcee15c64b01eed67929c0edc958817787cf382cc6a3ad935f00a"
+    },
+    {
+      "path": "app/source/tests/test_knowledge_expansion.py",
+      "bytes": 4054,
+      "sha256": "ed2d86b7b774b0aff1e6b904fe41a510d2f6d5aa6dca01820bd223cb9ac88d28"
+    },
+    {
+      "path": "app/source/tests/test_knowledge_study.py",
+      "bytes": 15581,
+      "sha256": "573c98aa833c91f23c43cf0ac7a96da2414f57ba9478ce81d1306d7196e40dca"
+    },
+    {
+      "path": "app/source/tests/test_learning_conversation.py",
+      "bytes": 19116,
+      "sha256": "1a1d4f53e7db92f2c07f31501ecf18a9dfd1ec60bbda3b05b83cbe0383a49101"
+    },
+    {
+      "path": "app/source/tests/test_learning_semantics.py",
+      "bytes": 14043,
+      "sha256": "da1a0f908759d9e58c0ed6025bf09810215c017b79c4a5dbf7b261fa6ac5c1a8"
     },
     {
       "path": "app/source/tests/test_live_gate_posix.py",
@@ -2873,6 +3194,11 @@
       "sha256": "f97df106149c9936cbd63703d2ca186b16da6d5762e610b4ce9996d8235fd462"
     },
     {
+      "path": "app/source/tests/test_open_knowledge_quality.py",
+      "bytes": 7193,
+      "sha256": "6b7f2395d05530c955a56ff4fa124b6fafd467ddd71d7af0feff0b8378eae954"
+    },
+    {
       "path": "app/source/tests/test_personal_ai_binding.py",
       "bytes": 10103,
       "sha256": "593b7546d33a06b88033c2ca57dcc85d86dce2e07115ad2dba0c631ca7631889"
@@ -2909,8 +3235,8 @@
     },
     {
       "path": "app/source/tests/test_research_advice.py",
-      "bytes": 8465,
-      "sha256": "3cc068d8500da5a1013b5b25740967f73507e788597fb78017b3ac48492b0175"
+      "bytes": 11811,
+      "sha256": "b191488d2fec028e4f4b5e47d7d1e72ce50c448661ad6200021119fecff0d807"
     },
     {
       "path": "app/source/tests/test_research_budget.py",
@@ -2961,6 +3287,21 @@
       "path": "app/source/tests/test_semantic_evidence_review.py",
       "bytes": 9782,
       "sha256": "9e7f96b776b6751b1f1040ce4e82b635300132edd66f2e7723f00bce2de85507"
+    },
+    {
+      "path": "app/source/tests/test_semifinal_conversation_context.py",
+      "bytes": 5493,
+      "sha256": "5eaf5bab116f8d7e80de9b55ffa00bf0da0b9f477a4ad52fb22dcadd00229880"
+    },
+    {
+      "path": "app/source/tests/test_semifinal_final_quality.py",
+      "bytes": 3403,
+      "sha256": "028ed7cddfc1e6c020d00d65ed10f91fa4c96ed575d06edf0674e1108a5b78a8"
+    },
+    {
+      "path": "app/source/tests/test_semifinal_learning.py",
+      "bytes": 2336,
+      "sha256": "c5f36b2e065255f1cab302e2f803ba3c4c952c5cba25e486f8fda5763d2e879c"
     },
     {
       "path": "app/source/tests/test_shared_trace_proposal.py",
@@ -3178,6 +3519,31 @@
       "sha256": "5cb6b002658140239b613b0eca32906a45e509ee20b8c53d21887d4a4d603353"
     },
     {
+      "path": "app/source/validation/continuous_learning_evidence.py",
+      "bytes": 16050,
+      "sha256": "dca97fd83f2af4e97351432b31948349facb1e5533817e6e2b0912adcdf459f5"
+    },
+    {
+      "path": "app/source/validation/continuous_learning_live.py",
+      "bytes": 5397,
+      "sha256": "24ecd3a653255bb444b1e1f111fdd5074fdef7bc0f48a707f3061de772dc7bec"
+    },
+    {
+      "path": "app/source/validation/finals_evidence.py",
+      "bytes": 16279,
+      "sha256": "f746c64556bcc884e663ff903c2b803cf2f376cdb01a424fede2da2e5158840e"
+    },
+    {
+      "path": "app/source/validation/frozen_learning.py",
+      "bytes": 3222,
+      "sha256": "4a4d8bf5c573c530e951d08d06fbc5c6c8050fc3bb678dacabbb257fb353b8cc"
+    },
+    {
+      "path": "app/source/validation/guided_tutor_live.py",
+      "bytes": 8661,
+      "sha256": "9d41197a49311c2d904192a29c67f9554204a0d287c41173caf9a550687c11c4"
+    },
+    {
       "path": "app/source/WORKFLOW_SOURCE_MANIFEST.sha256",
       "bytes": 15190,
       "sha256": "dfbb559860ba2d3e6cb3732e24bd8fcb3a1a5eb85d48b35c8ed3f9613fdeea28"
@@ -3189,8 +3555,8 @@
     },
     {
       "path": "app/SOURCE_MANIFEST.json",
-      "bytes": 71429,
-      "sha256": "3d3fc651a28c5926c26add23345a90af2e6e8bf41d8249d262c247378187616c"
+      "bytes": 80107,
+      "sha256": "e8956182be365a4f7b8f3eb097e6d1c4ff90544d41722f41934d8c97808263be"
     },
     {
       "path": "app/停止工作台.bat",
@@ -3224,18 +3590,43 @@
     },
     {
       "path": "docs/交付来源.md",
-      "bytes": 1424,
-      "sha256": "fe77508f0bd85f97e055fa2acef14c68f92230bd3ae4ded2e892b6a0efe5feb0"
+      "bytes": 2131,
+      "sha256": "9f777f1ac35432bb9cc04a0b1c1b3c1db9806c47136d01563bb68a90172b9e8c"
     },
     {
       "path": "docs/使用指南.md",
-      "bytes": 3183,
-      "sha256": "e17ac8171e8fd24afd7f354ba7f271e7ee14c245b8d868fac9fc21517e48fef7"
+      "bytes": 3171,
+      "sha256": "abcf64c7bf7d0e4801655c0aec1884445fd12443afffc0a3ffa07edb18801431"
+    },
+    {
+      "path": "docs/半决赛候选版使用.md",
+      "bytes": 2283,
+      "sha256": "7863aed70cb678dc9e9e81fcf0ce967fe6e122a0f25e8d6579cf88e19770b097"
     },
     {
       "path": "docs/单缝入门示例.md",
       "bytes": 3016,
       "sha256": "6f9bda43e81eb3d8dd031e663e9e6f0a340200692ec8c58ccea70ba4079e7cf0"
+    },
+    {
+      "path": "docs/总决赛研发版使用指南.md",
+      "bytes": 7802,
+      "sha256": "a940bfb9f7349e0e1c77d8f5d609f0cd315b13fc02c4d16d9aff467b333ac566"
+    },
+    {
+      "path": "docs/知识包说明.md",
+      "bytes": 2573,
+      "sha256": "21cbf3140ab945e46f4832ec5b05f7cc6fa56bc9e67e11b25837d98151915b4e"
+    },
+    {
+      "path": "docs/示例专题包.json",
+      "bytes": 7036,
+      "sha256": "9640c4456c47fd687a8977cd35abdd4b2ee8272a706606deff5469a925d2c324"
+    },
+    {
+      "path": "knowledge-schema.md",
+      "bytes": 2491,
+      "sha256": "c2e9fb8f2eb1aefed53d2150fa585efeee3ee1a2daf8a4622d78c1c1b9693982"
     },
     {
       "path": "LICENSE",
@@ -3274,13 +3665,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 8673,
-      "sha256": "e070adc7bb422f47131ca0739d772259334742d32b2d81bd493f43ec276668e9"
+      "bytes": 10824,
+      "sha256": "da95a60f46dc5c9545141cc23d06d147b0a003cb1f9684c2ad9583fbb74681b6"
     },
     {
       "path": "THIRD_PARTY_NOTICE.md",
-      "bytes": 1052,
-      "sha256": "731fedfc687a0bd56f85be6cf0cc16c9ef6da15914ccfda3aa85fd4957bb5187"
+      "bytes": 1184,
+      "sha256": "d1f4613885617407d34340cfd19c041fb24fcd24d2d5f3bf6d97625fbc32793e"
     },
     {
       "path": "停止工作台.bat",

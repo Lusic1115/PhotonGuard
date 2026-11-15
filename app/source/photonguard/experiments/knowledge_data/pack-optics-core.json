@@ -1,0 +1,2478 @@
+{
+  "id": "optics-core",
+  "version": "1.1.1",
+  "sources": {
+    "pol": {
+      "title": "MIT 2.71 · Lecture 22 Polarization",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2014/c683c04243df558f6048cc11924ff44f_MIT2_71S14_lec22_notes.pdf",
+      "author": "Nick Fang",
+      "edition": "2014 课程讲义",
+      "section": "A. Light polarization and Jones Matrix；B. Birefringence",
+      "accessed": "2026-11-12",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用条款，第三方素材另计）",
+      "rights": "REFERENCE_ONLY",
+      "fingerprint": "sha256:5030ea877e377634c43e8094ec85410faaf04709fac39c765c5a03360d752199",
+      "excluded_material": "正文、图表、练习、逐段翻译及原始文献均不随包分发。"
+    },
+    "stokes": {
+      "title": "MIT 6.661 · Lecture 13",
+      "url": "https://ocw.mit.edu/courses/6-661-receivers-antennas-and-signals-spring-2003/a7ae1cf17a91424ce08a70c21bb17215_lecture13.pdf",
+      "author": "David H. Staelin",
+      "edition": "2003 课程讲义",
+      "section": "Partially Polarized Narrowband Radiation；Stokes Parameters",
+      "accessed": "2026-11-12",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用条款，第三方素材另计）",
+      "rights": "REFERENCE_ONLY",
+      "fingerprint": "sha256:5d94aeab1805cffc4eaebbcc50dd3559a5930483a244b634c320ef45114eb29b",
+      "excluded_material": "正文、图表、练习、逐段翻译及原始文献均不随包分发。"
+    },
+    "fourier": {
+      "title": "MIT 2.71 · Lecture 19 The 4F System",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2009/1f37d811580bb5d181f7d51877e4e5ea_MIT2_71S09_lec19.pdf",
+      "author": "George Barbastathis、Colin Sheppard、Se Baek Oh",
+      "edition": "2009 课程讲义",
+      "section": "Fourier transform by a lens；Imaging and spatial filtering in 4F",
+      "accessed": "2026-11-12",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用条款，第三方素材另计）",
+      "rights": "REFERENCE_ONLY",
+      "fingerprint": "sha256:ea5b71aa3fef59c0b1dd80cdf200555cd491a96fcc535b81e140681ed7daf70f",
+      "excluded_material": "正文、图表、练习、逐段翻译及原始文献均不随包分发。"
+    },
+    "transfer": {
+      "title": "MIT 2.71 · Lecture 22 Coherent and Incoherent Imaging",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2009/bebe78c6a2ae2603a0d1a3ea85e0b4ca_MIT2_71S09_lec22.pdf",
+      "author": "George Barbastathis、Colin Sheppard、Se Baek Oh",
+      "edition": "2009 课程讲义",
+      "section": "Temporal and spatial coherence；PSF、OTF、MTF",
+      "accessed": "2026-11-12",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用条款，第三方素材另计）",
+      "rights": "REFERENCE_ONLY",
+      "fingerprint": "sha256:84e201cf604a7c6bcfe20d73f8f53c39b1c2bd14265e5007d1482c58edead82b",
+      "excluded_material": "正文、图表、练习、逐段翻译及原始文献均不随包分发。"
+    },
+    "geometric": {
+      "title": "OpenStax University Physics 3 · Thin Lenses",
+      "url": "https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses",
+      "author": "Samuel J. Ling、Jeff Sanny、William Moebs",
+      "edition": "Volume 3 在线版",
+      "section": "§2.4 Thin Lenses；Thin Lens Equation",
+      "accessed": "2026-11-12",
+      "license": "CC BY-NC-SA 4.0（以 OpenStax 当前许可声明为准）",
+      "rights": "REFERENCE_ONLY",
+      "fingerprint": "sha256:626c7b31ec80e3fbb42fdf5e067bb34d03ee2d76c58677e7fc3a9846bc821774",
+      "excluded_material": "正文、图表、练习、逐段翻译及原始文献均不随包分发。"
+    },
+    "geo": {
+      "title": "MIT 2.71 · Lecture 7 Ray tracing and optical systems",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2009/b94356337153e44979e50cadda2bdcd4_MIT2_71S09_lec07.pdf",
+      "author": "George Barbastathis、Colin Sheppard、Se Baek Oh",
+      "edition": "2009 课程讲义",
+      "section": "Aperture Stop & Entrance Pupil；paraxial ray tracing",
+      "accessed": "2026-11-12",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用条款，第三方素材另计）",
+      "rights": "REFERENCE_ONLY",
+      "fingerprint": "sha256:83c79558a844e9457ad1d7271e07c964525923362d1c44ad1ccccc7b7a693b7c",
+      "excluded_material": "正文、图表、练习、逐段翻译及原始文献均不随包分发。"
+    },
+    "aberrations": {
+      "title": "MIT 2.71 · Lecture 8 Aberrations",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2009/31708ff6004c40b6ea7ac507e3f25a17_MIT2_71S09_lec08.pdf",
+      "author": "George Barbastathis、Colin Sheppard、Se Baek Oh",
+      "edition": "2009 课程讲义",
+      "section": "Chromatic aberration；spherical aberration",
+      "accessed": "2026-11-12",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用条款，第三方素材另计）",
+      "rights": "REFERENCE_ONLY",
+      "fingerprint": "sha256:0523fbee7b0ec27427862d00bf9ea68dd40a502934bd92fbb33288a730749b51",
+      "excluded_material": "正文、图表、练习、逐段翻译及原始文献均不随包分发。"
+    },
+    "disp": {
+      "title": "MIT 6.974 · Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf",
+      "author": "Franz X. Kärtner",
+      "edition": "2006 课程讲义",
+      "section": "Chapter 2 · wave propagation, dispersion and optical waveguides",
+      "accessed": "2026-11-12",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用条款，第三方素材另计）",
+      "rights": "REFERENCE_ONLY",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "excluded_material": "正文、图表、练习、逐段翻译及原始文献均不随包分发。"
+    },
+    "ultra": {
+      "title": "MIT 6.977 · Ultrafast Optics",
+      "url": "https://ocw.mit.edu/courses/6-977-ultrafast-optics-spring-2005/f806ff596f9bffb74003360e2c05c086_MIT6_977S05_textbook.pdf",
+      "author": "Franz X. Kärtner",
+      "edition": "2005 课程讲义",
+      "section": "Pulse propagation、group velocity dispersion and pulse shape",
+      "accessed": "2026-11-12",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用条款，第三方素材另计）",
+      "rights": "REFERENCE_ONLY",
+      "fingerprint": "sha256:d91d518607e60913bc6d532f006553cffdbcb9119c0268b8906ac1017c855f69",
+      "excluded_material": "正文、图表、练习、逐段翻译及原始文献均不随包分发。"
+    },
+    "fiber": {
+      "title": "MIT 6.974 · Optical Fibres",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/fb095f719b1e2239974fddca264f80d9_optical_fibres.pdf",
+      "author": "Franz X. Kärtner",
+      "edition": "2006 课程讲义",
+      "section": "§2.7.6 Optical Fibres，印刷页 146–151",
+      "accessed": "2026-11-12",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用条款，第三方素材另计）",
+      "rights": "REFERENCE_ONLY",
+      "fingerprint": "sha256:70bca6483f874fafee4abdf79be03af3edb26e8fe54eaddca26189f022811d8f",
+      "excluded_material": "正文、图表、练习、逐段翻译及原始文献均不随包分发。"
+    },
+    "laser": {
+      "title": "MIT 6.974 · Laser Dynamics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf",
+      "author": "Franz X. Kärtner",
+      "edition": "2006 课程讲义",
+      "section": "Laser Dynamics · population inversion、rate equations and threshold",
+      "accessed": "2026-11-12",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用条款，第三方素材另计）",
+      "rights": "REFERENCE_ONLY",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "excluded_material": "正文、图表、练习、逐段翻译及原始文献均不随包分发。"
+    },
+    "cav": {
+      "title": "MIT 6.974 · Mirrors, Interferometers and Thin-Film Structures",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/98fcc94d2216c26db424e294c28d459a_mirror_inter_thn.pdf",
+      "author": "Franz X. Kärtner",
+      "edition": "2006 课程讲义",
+      "section": "§2.3 · interferometers and resonant transmission",
+      "accessed": "2026-11-12",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用条款，第三方素材另计）",
+      "rights": "REFERENCE_ONLY",
+      "fingerprint": "sha256:b8c2faed0ce4903612c6de8025ffcd65d7bcbce467cbb9a9a2ba6968d9603b92",
+      "excluded_material": "正文、图表、练习、逐段翻译及原始文献均不随包分发。"
+    },
+    "qpm": {
+      "title": "Quasi-Phase-Matched Second Harmonic Generation · Tuning and Tolerances",
+      "url": "https://web.stanford.edu/~rlbyer/PDF_AllPubs/1992/265.pdf",
+      "author": "M. M. Fejer、G. A. Magel、D. H. Jundt、R. L. Byer",
+      "edition": "IEEE JQE 28(11), 1992；DOI 10.1109/3.161322",
+      "section": "§II · Basic Theory and spatial harmonics",
+      "accessed": "2026-11-12",
+      "license": "IEEE © 1992",
+      "rights": "REFERENCE_ONLY",
+      "fingerprint": "sha256:63d857083c93436ce7429a3345b06665347aaec0c84f4df16c3556839d919adc",
+      "excluded_material": "正文、图表、练习、逐段翻译及原始文献均不随包分发。"
+    },
+    "quantum": {
+      "title": "MIT 6.453 · Quantum Optical Communication, Lecture 20",
+      "url": "https://ocw.mit.edu/courses/6-453-quantum-optical-communication-fall-2016/9ce9bc2348c03d846497f16999109059_MIT6_453F16_Lect20_Notes.pdf",
+      "author": "Jeffrey H. Shapiro",
+      "edition": "2016 课程讲义",
+      "section": "Spontaneous Parametric Downconversion",
+      "accessed": "2026-11-12",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用条款，第三方素材另计）",
+      "rights": "REFERENCE_ONLY",
+      "fingerprint": "sha256:2e2f0f7319c567cf986dd7f75eb32419812984baac1aebc3d20798b055c0ecaf",
+      "excluded_material": "正文、图表、练习、逐段翻译及原始文献均不随包分发。"
+    },
+    "grating": {
+      "title": "OpenStax University Physics 3 · Diffraction Gratings",
+      "url": "https://openstax.org/books/university-physics-volume-3/pages/4-4-diffraction-gratings",
+      "author": "Samuel J. Ling、Jeff Sanny、William Moebs",
+      "edition": "Volume 3 在线版",
+      "section": "§4.4 Diffraction Gratings；衍射角和邻近谱线分辨",
+      "accessed": "2026-11-12",
+      "license": "CC BY-NC-SA 4.0（以 OpenStax 当前许可声明为准）",
+      "rights": "REFERENCE_ONLY",
+      "fingerprint": "sha256:26b0b2db1648a8b72491117d50a798c1f570a04047343fafd8a83d47e069ef76",
+      "excluded_material": "正文、图表、练习、逐段翻译及原始文献均不随包分发。"
+    },
+    "detector": {
+      "title": "Hamamatsu · Guide to Selecting a Photodetector",
+      "url": "https://hub.hamamatsu.com/us/en/technical-notes/detector-selection/the-wits-guide-to-selecting-a-photodetector.html",
+      "author": "Hamamatsu Photonics",
+      "edition": "技术说明在线版",
+      "section": "Wavelength；quantum efficiency and responsivity",
+      "accessed": "2026-11-12",
+      "license": "Hamamatsu Photonics 版权",
+      "rights": "REFERENCE_ONLY",
+      "fingerprint": "sha256:96cda9ad56dc0d78fca5382bf9d7c0e42576290da026543172bfb274518dc0a9",
+      "excluded_material": "正文、图表、练习、逐段翻译及原始文献均不随包分发。"
+    },
+    "mit-dispersion-table": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=45",
+      "section": "Chapter 2，Table 2.4：群速度、群时延、色散导数，阅读器第 45 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅引用原站资料，正文为项目中文讲解。"
+    },
+    "delft-half-wave": {
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap4_Polarisation/Polarization_2022_01Clean.html#half-wave-plates",
+      "fingerprint": "sha256:4d119b6735b38967485a166fc5b60ea3509465c6b3972ae0710feb5432ebf598",
+      "title": "Interactive Optics · Polarisation",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "section": "Half-Wave Plates，快慢轴 Jones 矩阵及线偏振镜像关系",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "只链接原站，正文为项目讲解。"
+    }
+  },
+  "entries": [
+    {
+      "id": "polarization",
+      "title": "偏振",
+      "terms": [
+        "polarization",
+        "光的偏振"
+      ],
+      "topic": "wave",
+      "level": "intro",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "偏振描述光的电场在横截面中的方向和随时间变化的轨迹。",
+      "body": "把光沿传播方向看，电场尖端可能沿直线、圆或椭圆运动。两正交分量的振幅比和相位差决定完全偏振光的轨迹；相同光强可以对应不同偏振。",
+      "example": "从同一束光取等幅横向分量，比较同相与相差 π/2 时的轨迹。",
+      "caution": "说明观察方向；使用旋向时还须写明相位符号约定。",
+      "conditions": [
+        "适用于这里讨论的准单色横波。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [],
+      "related": [
+        "linear-polarizer",
+        "jones-vector"
+      ],
+      "sources": [
+        "pol"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "linear-polarizer",
+      "title": "线偏振片",
+      "terms": [
+        "polarizer",
+        "偏振片",
+        "检偏器"
+      ],
+      "topic": "wave",
+      "level": "intro",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "理想线偏振片只透过沿透射轴的电场分量。",
+      "body": "入射线偏振和透射轴成角时，出射场是电场在轴上的投影。光强与场幅平方成正比，所以转动偏振片得到余弦平方曲线，可借此判断入射线偏振方向。",
+      "example": "两偏振轴相差 45°，透射强度为理想平行轴情形的一半。",
+      "caution": "理想器件输出只保留透射轴分量。被滤除的正交分量没有可读出的出射相位；真实元件的消光比有限，正交时可能仍有漏光。",
+      "conditions": [
+        "理想偏振片，入射为完全线偏振。"
+      ],
+      "formula": "I = I₀ cos²θ",
+      "variables": "I₀ 与 I 用同一强度单位，θ 为入射电场与透射轴的夹角。",
+      "prerequisites": [
+        "polarization"
+      ],
+      "related": [
+        "waveplate"
+      ],
+      "sources": [
+        "pol"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "waveplate",
+      "title": "波片",
+      "terms": [
+        "waveplate",
+        "延迟器",
+        "相位延迟片"
+      ],
+      "topic": "wave",
+      "level": "intro",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "波片在两正交本征偏振间引入相位延迟。",
+      "body": "入射场分到快轴和慢轴后，因传播常数不同积累不同相位；两分量出射时重新叠加。调整厚度、波长或入射偏振方向，便可改变输出偏振态。",
+      "example": "用同一偏振片检验波片平行和转过 45° 时的输出。",
+      "caution": "快轴方位和器件设计波长都应随实验记录。",
+      "conditions": [
+        "正入射、均匀双折射板、忽略损耗。"
+      ],
+      "formula": "δ = 2π Δn d / λ₀",
+      "variables": "δ 用 rad，Δn = n慢 − n快，d 与真空波长 λ₀ 同单位。",
+      "prerequisites": [
+        "polarization",
+        "birefringence"
+      ],
+      "related": [
+        "half-waveplate",
+        "quarter-waveplate"
+      ],
+      "sources": [
+        "pol"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "half-waveplate",
+      "title": "半波片",
+      "terms": [
+        "half-wave plate",
+        "HWP",
+        "λ/2波片"
+      ],
+      "topic": "wave",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "半波片在两本征偏振分量之间引入 π 的相对延迟。",
+      "body": "在波片快慢轴坐标中，入射线偏振的分量正比于 (cosδ, sinδ)，δ=α_in−θ。理想半波延迟在略去公共相位后把第二分量反号，得到 (cosδ, −sinδ)，即角 −δ。转回实验室坐标，α_out=θ−δ=2θ−α_in。",
+      "example": "入射方向 10°、快轴 35° 时，出射方向为 60°，以 180° 为周期。",
+      "caution": "角度应相对同一实验室坐标定义，线偏振方向以 180° 为周期。",
+      "conditions": [
+        "在设计波长使用理想半波片，入射为线偏振。"
+      ],
+      "formula": "α_out = 2θ − α_in (mod π)",
+      "variables": "θ、α_in、α_out 分别为快轴、入射和出射方向，使用同一角度单位。",
+      "prerequisites": [
+        "waveplate",
+        "linear-polarizer"
+      ],
+      "related": [
+        "quarter-waveplate"
+      ],
+      "sources": [
+        "delft-half-wave"
+      ],
+      "review": "2026-11-13 · 已按原始资料修订",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "半波片角度式从快慢轴 Jones 分量的相对反号得到。",
+          "sources": [
+            "delft-half-wave"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quarter-waveplate",
+      "title": "四分之一波片",
+      "terms": [
+        "quarter-wave plate",
+        "QWP",
+        "λ/4波片"
+      ],
+      "topic": "wave",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "四分之一波片的两本征分量相对延迟为 π/2 模 2π。",
+      "body": "线偏振与快轴成 45° 时，等幅的两分量出射后正交相位，组成圆偏振；角度偏离时通常形成椭圆。输入沿一条轴时，只有一个分量，仍是线偏振。",
+      "example": "在波片后转动线检偏器，理想圆偏振的透射强度随检偏角保持不变。",
+      "caution": "仅凭检偏器透射恒定无法区分圆偏振和完全非偏振光。",
+      "conditions": [
+        "理想波片，设计波长，单色完全偏振。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "waveplate"
+      ],
+      "related": [
+        "half-waveplate",
+        "stokes-parameters"
+      ],
+      "sources": [
+        "pol"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "jones-vector",
+      "title": "琼斯矢量",
+      "terms": [
+        "Jones vector",
+        "Jones",
+        "琼斯矩阵"
+      ],
+      "topic": "wave",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "琼斯矢量以两个复振幅表示完全偏振光。",
+      "body": "选定横向坐标后，两个分量的复数保留各自振幅和相位。串联光学元件可按传播顺序相乘，最先作用的矩阵写在输入矢量旁；变换轴时先处理基底旋转。",
+      "example": "水平方向输入写成 (1, 0)ᵀ，再用 45° 线偏振片投影。",
+      "caution": "部分偏振光需用统计量描述，可改用斯托克斯矢量和穆勒矩阵。",
+      "conditions": [
+        "固定频率、完全偏振、选定共同相位和坐标约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "polarization"
+      ],
+      "related": [
+        "stokes-parameters"
+      ],
+      "sources": [
+        "pol"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "stokes-parameters",
+      "title": "斯托克斯参量",
+      "terms": [
+        "Stokes parameters",
+        "Stokes",
+        "偏振度"
+      ],
+      "topic": "wave",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "斯托克斯参量用强度差和总强度描述偏振状态。",
+      "body": "四个量通常记录总强度、水平与垂直分量差、±45° 分量差及两圆偏振分量差。可由检偏器配合波片得到这些量，并包含部分偏振的情形。",
+      "example": "等强度的水平与垂直非相干混合，前三个差量均应为零。",
+      "caution": "S₃ 的正负取决于所选圆偏振约定；总强度为零时偏振度无定义。",
+      "conditions": [
+        "测量平均强度，约定圆偏振方向。"
+      ],
+      "formula": "DoP = √(S₁² + S₂² + S₃²) / S₀",
+      "variables": "Sᵢ 同单位，DoP 为 0 至 1 的无量纲量。",
+      "prerequisites": [
+        "polarization"
+      ],
+      "related": [
+        "jones-vector"
+      ],
+      "sources": [
+        "stokes"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "birefringence",
+      "title": "双折射",
+      "terms": [
+        "birefringence",
+        "快轴",
+        "慢轴"
+      ],
+      "topic": "wave",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "双折射材料的不同本征偏振经历不同折射率。",
+      "body": "两正交偏振分量在材料中传播时，传播相位的积累速度可能不同。用同一波长对比两分量可以计算相位延迟，波片和部分非线性相位匹配都利用这类性质。",
+      "example": "对石英板调输入线偏振方向，比较平行本征轴和斜入射偏振的出射状态。",
+      "caution": "双折射数值取决于传播方向、材料和波长。",
+      "conditions": [
+        "透明均匀介质，固定传播方向。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "polarization"
+      ],
+      "related": [
+        "waveplate",
+        "phase-mismatch"
+      ],
+      "sources": [
+        "pol"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "spatial-frequency",
+      "title": "空间频率",
+      "terms": [
+        "spatial frequency",
+        "空间周期",
+        "频谱"
+      ],
+      "topic": "fourier",
+      "level": "intro",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "空间频率描述一个图样每单位长度重复的次数。",
+      "body": "把明暗分布拆为不同周期和方向的成分时，缓慢变化对应低空间频率，密集条纹对应较高频率。二维频率还包含变化方向，条纹延伸方向垂直于对应频率矢量。",
+      "example": "条纹周期 0.2 mm 的基频是 5 周/mm。",
+      "caution": "角空间频率比周频率多一个 2π 因子，FFT 坐标必须注明约定。",
+      "conditions": [
+        "以周期图样为例，采用每单位长度的周数约定。"
+      ],
+      "formula": "ν = 1/p",
+      "variables": "p 用 mm 时 ν 用 周/mm。",
+      "prerequisites": [],
+      "related": [
+        "fourier-plane",
+        "diffraction-grating"
+      ],
+      "sources": [
+        "fourier"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "fourier-plane",
+      "title": "傅里叶面",
+      "terms": [
+        "Fourier plane",
+        "后焦面",
+        "空间频谱面"
+      ],
+      "topic": "fourier",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "理想透镜后焦面将不同横向空间频率分布到不同位置。",
+      "body": "在近轴和相干照明条件下，物场放在前焦面时，后焦面的复振幅按比例给出物场傅里叶变换。焦面相机通常记录强度，所以读到的是频谱幅值的平方。",
+      "example": "将频率翻倍的光栅置于前焦面，比较一级衍射斑离光轴的距离。",
+      "caution": "在这套布置中物面位于透镜前焦面，频谱面位于透镜后焦面。从强度图不能直接读出频谱相位；截断口径也会改变可见频谱。",
+      "conditions": [
+        "单色标量场、薄透镜、近轴、物面位于前焦面。"
+      ],
+      "formula": "x_f = λ f ν_x",
+      "variables": "λ 为介质中波长，f 为焦距，x_f 为后焦面坐标；长度单位一致。",
+      "prerequisites": [
+        "spatial-frequency"
+      ],
+      "related": [
+        "four-f-system",
+        "abbe-imaging"
+      ],
+      "sources": [
+        "fourier"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "abbe-imaging",
+      "title": "阿贝成像",
+      "terms": [
+        "Abbe imaging",
+        "Abbe",
+        "阿贝成像原理",
+        "阿贝衍射极限",
+        "阿贝分辨率"
+      ],
+      "topic": "fourier",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "阿贝成像从物体衍射出的空间频率被物镜收集并重组的角度解释图像形成。",
+      "body": "周期结构产生零级和高阶衍射，能进入物镜孔径的分量在像面重组。正入射相干光照下，如果只收集到零级，理想周期样品的条纹结构就不会被再现。",
+      "example": "观察光栅时缩小物镜有效孔径，先看高阶斑消失，再看像面条纹对比下降。",
+      "caution": "照明方式、孔径和分辨判据都会改变极限条件。",
+      "conditions": [
+        "标量近轴成像，说明照明相干性及孔径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "spatial-frequency",
+        "fourier-plane"
+      ],
+      "related": [
+        "spatial-filtering",
+        "objective-na"
+      ],
+      "sources": [
+        "fourier"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "spatial-filtering",
+      "title": "空间滤波",
+      "terms": [
+        "spatial filtering",
+        "频域滤波",
+        "空间低通",
+        "空间高通"
+      ],
+      "topic": "fourier",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "空间滤波通过选择性改变空间频谱来控制像的细节和对比。",
+      "body": "在 4f 光路的共同焦面放掩模，可对不同频率分别衰减或改变相位。中心小孔保留附近低频，主要表现为平滑；阻去中心低频可以强调变化较快的边缘。",
+      "example": "分别放中心小孔与中心挡片，比较同一图样的大尺度亮度和细线。",
+      "caution": "掩模切换影响光能与相位，比较时保持同一曝光和强度标尺。",
+      "conditions": [
+        "理想 4f 相干成像，近轴标量近似。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "fourier-plane",
+        "abbe-imaging"
+      ],
+      "related": [
+        "four-f-system",
+        "pupil-function"
+      ],
+      "sources": [
+        "fourier"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "four-f-system",
+      "title": "4f 光路",
+      "terms": [
+        "4f",
+        "4-f system",
+        "4f系统"
+      ],
+      "topic": "fourier",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "4f 系统以两次焦面变换把物面、中间频谱面和最终像面连接起来。",
+      "body": "物面在第一透镜前焦面，两透镜的焦面重合，像面在第二透镜后焦面。中间面既可观察衍射级，也可安装振幅或相位掩模来编辑被传递的空间频率。",
+      "example": "用 100 mm 与 200 mm 焦距透镜搭建，物像线性倍率为 −2。",
+      "caution": "不同焦距时总长度为 2(f₁ + f₂)；先对准同轴再安掩模。",
+      "conditions": [
+        "理想薄透镜和近轴传播。"
+      ],
+      "formula": "M = −f₂/f₁",
+      "variables": "f₁、f₂ 用同一长度单位，负号表示倒像。",
+      "prerequisites": [
+        "fourier-plane"
+      ],
+      "related": [
+        "spatial-filtering"
+      ],
+      "sources": [
+        "fourier"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "pupil-function",
+      "title": "光瞳函数",
+      "terms": [
+        "pupil function",
+        "出瞳函数",
+        "复光瞳"
+      ],
+      "topic": "fourier",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "光瞳函数描述瞳面各位置对复振幅的传输。",
+      "body": "光瞳中的振幅项可以表达孔径边界、遮挡或渐晕，相位项可以表达离焦和像差。同一孔径口径下，不同相位分布仍会导致不同点像与对比度。",
+      "example": "比较无像差圆孔和相同圆孔叠加二次相位的点像。",
+      "caution": "给定光瞳时应注明采用的坐标面和归一化，避免混用物方和像方尺度。",
+      "conditions": [
+        "标量衍射，指定视场、波长和瞳面。"
+      ],
+      "formula": "P = A exp(iφ)",
+      "variables": "A 为振幅透射，φ 为相位（rad）。",
+      "prerequisites": [
+        "fourier-plane"
+      ],
+      "related": [
+        "psf",
+        "optical-transfer-function"
+      ],
+      "sources": [
+        "fourier"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "psf",
+      "title": "点扩散函数",
+      "terms": [
+        "PSF",
+        "point spread function",
+        "点像"
+      ],
+      "topic": "fourier",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "点扩散函数描述系统对理想点输入的响应。",
+      "body": "相干成像可先用振幅点响应再对叠加场取平方；非相干成像则用强度点扩散函数与物体强度卷积。实际测量可用小点光源近似，但需考虑点本身的大小。",
+      "example": "用同一光源改变系统焦面位置，比较焦内和离焦的点像宽度。",
+      "caution": "读文献时区分振幅 PSF 与强度 PSF。",
+      "conditions": [
+        "使用卷积表达时假定线性、空间不变及对应照明模型。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "pupil-function"
+      ],
+      "related": [
+        "optical-transfer-function",
+        "diffraction-airy"
+      ],
+      "sources": [
+        "transfer"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "optical-transfer-function",
+      "title": "光学传递函数",
+      "terms": [
+        "OTF",
+        "optical transfer function"
+      ],
+      "topic": "fourier",
+      "level": "advanced",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "在空间不变的非相干成像中，OTF 描述空间频率的复对比传递。",
+      "body": "取强度点扩散函数的归一化傅里叶变换，可得到各频率的增益和相位。模值是 MTF，相位给出相位传递信息；直流归一化后从 1 开始。",
+      "example": "比较相同圆孔的在焦与离焦 OTF，观察相位或高频对比随焦面改变。",
+      "caution": "OTF 可为复数；用一条 MTF 曲线不能恢复完整相位响应。",
+      "conditions": [
+        "线性平移不变、空间非相干强度成像、非零透过能量。"
+      ],
+      "formula": "OTF(ν) = F{PSF}(ν) / F{PSF}(0)",
+      "variables": "ν 为空间频率，OTF 无量纲，PSF 为强度响应。",
+      "prerequisites": [
+        "psf"
+      ],
+      "related": [
+        "mtf"
+      ],
+      "sources": [
+        "transfer"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "mtf",
+      "title": "调制传递函数",
+      "terms": [
+        "MTF",
+        "modulation transfer function",
+        "对比度传递"
+      ],
+      "topic": "fourier",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "MTF 衡量成像系统传递各空间频率对比度的能力。",
+      "body": "对比度传递随频率变化，比只给一个分辨极限更能反映成像表现。对线性空间不变的非相干系统，正弦亮度图样的像与物调制度之比等于该频率的 MTF。",
+      "example": "测量 10 周/mm 正弦条纹，物调制度 0.8、像调制度 0.4，则 MTF 为 0.5。",
+      "caution": "不同倍率、视场或波长的 MTF 比较需换算到同一参考面。",
+      "conditions": [
+        "线性非相干成像，使用正弦调制度或等效校准方法。"
+      ],
+      "formula": "MTF = abs(OTF)；调制度 = (I_max − I_min)/(I_max + I_min)",
+      "variables": "各 I 使用同一强度标尺，分母非零。",
+      "prerequisites": [
+        "optical-transfer-function"
+      ],
+      "related": [
+        "psf"
+      ],
+      "sources": [
+        "transfer"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "coherent-imaging",
+      "title": "相干与非相干成像",
+      "terms": [
+        "coherent imaging",
+        "incoherent imaging",
+        "相干成像",
+        "非相干成像"
+      ],
+      "topic": "fourier",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "相干成像叠加复场，完全非相干成像叠加强度。",
+      "body": "两个彼此相干的物点可以在像面形成相长或相消项；完全非相干时，相对相位的统计平均使交叉项消失。同一孔径下因此要选择相应的振幅或强度传递模型。",
+      "example": "两个等强光点的像有重叠，比较相位固定与独立变化时的中心亮度。",
+      "caution": "部分相干时需要补充照明相干模型。",
+      "conditions": [
+        "线性标量成像，分别考虑完全相干和完全非相干两极限。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "optics-coherence",
+        "psf"
+      ],
+      "related": [
+        "optical-transfer-function"
+      ],
+      "sources": [
+        "transfer"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "thin-lens",
+      "title": "薄透镜成像",
+      "terms": [
+        "thin lens",
+        "透镜公式",
+        "物距",
+        "像距"
+      ],
+      "topic": "imaging",
+      "level": "intro",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "薄透镜公式以焦距和物距预测近轴像距。",
+      "body": "把折射集中在一个理想平面，取物距为物到镜的距离，沿出射光方向给实像距离取正。成像位置可与穿过透镜光心的光线一起确定成像倍率与倒正。",
+      "example": "焦距 50 mm 的会聚透镜放在物体前方 100 mm，理想实像距为 100 mm、倒立等大。",
+      "caution": "厚透镜和多元件系统应从主面量距；跨教材时核对正负约定。",
+      "conditions": [
+        "近轴、薄透镜，物像两侧介质相同；实物和实像距离取正。"
+      ],
+      "formula": "1/f = 1/s + 1/s′；M = −s′/s",
+      "variables": "各距离同单位，M 无量纲。",
+      "prerequisites": [
+        "optics-refraction"
+      ],
+      "related": [
+        "numerical-f-number",
+        "paraxial-approximation"
+      ],
+      "sources": [
+        "geometric"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "paraxial-approximation",
+      "title": "近轴近似",
+      "terms": [
+        "paraxial approximation",
+        "小角度近似",
+        "近轴光线"
+      ],
+      "topic": "imaging",
+      "level": "intro",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "近轴近似只保留相对光轴的小角度和低阶横向量。",
+      "body": "对接近轴的光线，正弦和正切都可按弧度近似为角度，因此许多成像关系可用线性方程处理。增大孔径或视场后，被省略的高阶项会影响焦点和像差。",
+      "example": "比较 5° 与 45° 时 sinθ/θ，观察线性近似误差怎样变化。",
+      "caution": "误差容限由使用目标决定，不存在适合所有系统的固定最大角。",
+      "conditions": [
+        "以光轴为基准，使用弧度并评估高阶误差。"
+      ],
+      "formula": "sinθ ≈ tanθ ≈ θ",
+      "variables": "θ 用 rad，近似误差随 角度绝对值增大。",
+      "prerequisites": [
+        "optics-refraction"
+      ],
+      "related": [
+        "thin-lens",
+        "spherical-aberration"
+      ],
+      "sources": [
+        "geo"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "objective-na",
+      "title": "物镜数值孔径",
+      "terms": [
+        "NA",
+        "数值孔径",
+        "objective NA",
+        "物镜孔径",
+        "显微镜数值孔径",
+        "镜头数值孔径",
+        "镜头的数值孔径"
+      ],
+      "topic": "imaging",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "物镜数值孔径用物方介质折射率和接收光锥半角度量集光范围。",
+      "body": "更大的物方光锥能采集更倾斜的传播分量。给定波长时，这影响能传入成像系统的空间频率范围，并影响衍射点像的尺度及细节对比。",
+      "example": "空气中半角 30° 的物镜 NA 为 0.5；同角度时换浸没介质会改变 NA。",
+      "caution": "必须注明物方还是像方，光锥半角不能当成全角。",
+      "conditions": [
+        "给定物方均匀介质和物镜的实际限制孔径。"
+      ],
+      "formula": "NA = n sinθ",
+      "variables": "n 无量纲，θ 为物方最大接收半角。",
+      "prerequisites": [
+        "optics-refraction"
+      ],
+      "related": [
+        "abbe-imaging",
+        "fiber-numerical-aperture"
+      ],
+      "sources": [
+        "transfer"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "numerical-f-number",
+      "title": "焦比与光圈值",
+      "terms": [
+        "f-number",
+        "F数",
+        "光圈值",
+        "焦比"
+      ],
+      "topic": "imaging",
+      "level": "intro",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "焦比是有效焦距与入瞳直径的比值。",
+      "body": "在相同焦距下增加入瞳直径会减小 f 数，使远处物体在理想像面形成更大的光锥。摄影中可用它比较通光尺度；实际曝光仍依赖透过率与照明。",
+      "example": "焦距 50 mm、入瞳直径 25 mm 的镜头为 f/2。",
+      "caution": "入瞳是从物方看到的孔径光阑像，未必等于可见镜片的直径。",
+      "conditions": [
+        "给定有效焦距和入瞳，有限物距需分清标称与工作 f 数。"
+      ],
+      "formula": "N = f/D_EP",
+      "variables": "f 与入瞳直径 D_EP 同长度单位。",
+      "prerequisites": [
+        "thin-lens"
+      ],
+      "related": [
+        "aperture-stop",
+        "objective-na"
+      ],
+      "sources": [
+        "geo"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "aperture-stop",
+      "title": "孔径光阑与入瞳",
+      "terms": [
+        "aperture stop",
+        "entrance pupil",
+        "入瞳",
+        "孔径光阑"
+      ],
+      "topic": "imaging",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "孔径光阑限制轴上物点的光束，入瞳是它经前组光学元件所成的像。",
+      "body": "系统有多个开口时，限制轴上通光锥的开口决定孔径光阑。物方观察其像可定义入瞳，像方观察其像则定义出瞳；这三者在多片镜头里可位于不同位置。",
+      "example": "从镜头物方观察同一个光阑，改变前组设置，看它的表观直径是否变化。",
+      "caution": "视场光阑限制可看到的范围，判断时应区分被截断的是轴上光锥还是视场。",
+      "conditions": [
+        "采用几何光线追迹，指定轴上物点与系统顺序。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "thin-lens"
+      ],
+      "related": [
+        "numerical-f-number",
+        "pupil-function"
+      ],
+      "sources": [
+        "geo"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "spherical-aberration",
+      "title": "球差",
+      "terms": [
+        "spherical aberration",
+        "球面像差"
+      ],
+      "topic": "imaging",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "球差指同一轴上物点发出的不同孔径高度的光线不能落在同一个理想像点。",
+      "body": "即使波长固定、目标在光轴上，近轴光线和边缘光线也可能在不同轴向位置交轴。缩小有效孔径常减少边缘光线贡献，同时改变亮度与衍射模糊。",
+      "example": "比较使用同一球面透镜的全口径和收小光圈的轴上点像。",
+      "caution": "观察到模糊时应分别检查失焦、球差和衍射，单张图往往不足以归因。",
+      "conditions": [
+        "几何像差讨论用单色、对中系统和轴上物点。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "paraxial-approximation"
+      ],
+      "related": [
+        "chromatic-aberration",
+        "psf"
+      ],
+      "sources": [
+        "aberrations"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "chromatic-aberration",
+      "title": "色差",
+      "terms": [
+        "chromatic aberration",
+        "轴向色差",
+        "横向色差",
+        "色像差"
+      ],
+      "topic": "imaging",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "色差来源于系统的光学性能随波长改变。",
+      "body": "材料色散使不同颜色可能有不同焦距或倍率。轴向色差表现为最佳焦面随颜色移动；横向色差表现为离轴像高随颜色改变，两者可在同一系统并存。",
+      "example": "分别用红光和蓝光找轴上点的最佳焦面，再比较离轴点的位置。",
+      "caution": "色边还可能由探测器采样或后处理引入，需结合测量条件判断。",
+      "conditions": [
+        "比较同一物点和镜头设置下的两个或多个波长。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "thin-lens",
+        "material-dispersion"
+      ],
+      "related": [
+        "spherical-aberration"
+      ],
+      "sources": [
+        "aberrations"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "material-dispersion",
+      "title": "材料色散",
+      "terms": [
+        "material dispersion",
+        "折射率色散",
+        "正常色散"
+      ],
+      "topic": "foundations",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "材料色散指介质的折射率随频率或波长改变。",
+      "body": "不同频率分量在同一材料中积累不同相位。连续波实验可以看到角度或焦点的颜色差异，短脉冲实验则会看到频率分量群延迟的差异。",
+      "example": "比较玻璃棱镜对红光和蓝光的出射角。",
+      "caution": "讨论正常或反常色散时说明使用的波长、频率或群延迟量。",
+      "conditions": [
+        "均匀介质，先确定波长范围和损耗是否可忽略。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "optics-refraction"
+      ],
+      "related": [
+        "phase-velocity",
+        "group-velocity",
+        "group-velocity-dispersion"
+      ],
+      "sources": [
+        "disp"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "phase-velocity",
+      "title": "相速度",
+      "terms": [
+        "phase velocity",
+        "相位速度"
+      ],
+      "topic": "foundations",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "相速度是单频波某一固定相位点移动的速度。",
+      "body": "跟踪等相位波峰时，波峰位移由角频率与传播常数决定。脉冲同时包含一组频率；色散时，波峰移动速度和窄带包络的速度可能不同。",
+      "example": "无色散、n = 1.5 的材料中，相速度约为 2.0×10⁸ m/s。",
+      "caution": "判断能量或信息传播时要区分相速度、群速度和信号前沿。",
+      "conditions": [
+        "均匀介质的实波数传播分量。"
+      ],
+      "formula": "v_p = ω/k = c/n",
+      "variables": "ω 用 rad/s，k 用 rad/m，v_p 用 m/s。",
+      "prerequisites": [
+        "optics-wavefront"
+      ],
+      "related": [
+        "group-velocity"
+      ],
+      "sources": [
+        "disp"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "group-velocity",
+      "title": "群速度",
+      "terms": [
+        "group velocity",
+        "组速度",
+        "包络速度"
+      ],
+      "topic": "foundations",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "群速度是窄带波包包络在弱失真条件下的传播速度。",
+      "body": "将传播常数在载频附近线性展开，斜率给出单位长度的群延迟，倒数给出群速度。窄带和低损耗时，脉冲峰值的移动常可近似使用该速度。",
+      "example": "对同一介质比较两个邻近频率的传播常数斜率，估算通过 1 m 的延迟。",
+      "caution": "强吸收或强展宽时，输出峰值可能因重塑移动，解读需要完整脉冲模型。",
+      "conditions": [
+        "窄带、弱失真，在给定模式和载频处求导。"
+      ],
+      "formula": "v_g = (dβ/dω)⁻¹；n_g = c/v_g",
+      "variables": "β 用 rad/m，ω 用 rad/s，v_g 用 m/s。",
+      "prerequisites": [
+        "phase-velocity",
+        "material-dispersion"
+      ],
+      "related": [
+        "group-index",
+        "group-velocity-dispersion"
+      ],
+      "sources": [
+        "disp"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "group-index",
+      "title": "群折射率",
+      "terms": [
+        "group index",
+        "群指数",
+        "n_g"
+      ],
+      "topic": "guided",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "群折射率以真空光速和模式群速度之比表示群延迟。",
+      "body": "同一模式有 β=2πn_eff/λ₀，且 ω=2πc/λ₀。对 ω 用链式法则得到 n_g=c·dβ/dω=n_eff−λ₀dn_eff/dλ₀。若 n_eff=A+Bλ₀，则 n_g=A+Bλ₀−λ₀B=A，群延迟在这个严格线性区间为常数。",
+      "example": "严格线性 n_eff 代入可消去斜率项 Bλ₀，二阶群速度色散为零。有限测点近似线性只约束可分辨的曲率。",
+      "caution": "只使用一个波长的有效折射率无法得到色散导数。",
+      "conditions": [
+        "固定波导结构及同一连续模式，取窄带小信号。"
+      ],
+      "formula": "n_g = n_eff − λ₀ (dn_eff/dλ₀)",
+      "variables": "n_eff 与 n_g 无量纲，λ₀ 和导数的长度单位对应。",
+      "prerequisites": [
+        "group-velocity",
+        "effective-index"
+      ],
+      "related": [
+        "group-velocity-dispersion"
+      ],
+      "sources": [
+        "mit-dispersion-table"
+      ],
+      "review": "2026-11-13 · 已按原始资料修订",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "群速度和群速度色散分别使用传播常数的一阶及二阶导数。",
+          "sources": [
+            "mit-dispersion-table"
+          ]
+        },
+        {
+          "kind": "DERIVED",
+          "statement": "群折射率公式及 n_eff 严格线性时的相消由链式法则推导。",
+          "sources": [
+            "mit-dispersion-table"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "group-velocity-dispersion",
+      "title": "群速度色散",
+      "terms": [
+        "GVD",
+        "group velocity dispersion",
+        "β2",
+        "二阶色散"
+      ],
+      "topic": "foundations",
+      "level": "advanced",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "群速度色散量化群延迟随角频率改变的速度。",
+      "body": "传播常数在中心频率附近的二阶项给不同频率分量不同群延迟，可改变短脉冲宽度和瞬时频率。输出展宽程度还取决于入射脉冲已有的啁啾和传播长度。",
+      "example": "比较同一块玻璃对皮秒脉冲和飞秒脉冲的相对影响，后者通常带宽更宽。",
+      "caution": "β₂ 与光纤工程常用色散参数 D 的单位和符号定义不同。",
+      "conditions": [
+        "窄带展开，线性传播并忽略更高阶项时使用 β₂。"
+      ],
+      "formula": "β₂ = d²β/dω²",
+      "variables": "β₂ 用 s²/m；常见工程表示为 ps²/km。",
+      "prerequisites": [
+        "group-velocity"
+      ],
+      "related": [
+        "pulse-chirp"
+      ],
+      "sources": [
+        "ultra"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "pulse-chirp",
+      "title": "脉冲啁啾",
+      "terms": [
+        "chirp",
+        "啁啾",
+        "线性啁啾",
+        "脉冲展宽"
+      ],
+      "topic": "laser",
+      "level": "advanced",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "啁啾描述脉冲的瞬时频率随时间变化。",
+      "body": "给定复电场相位后，时间相位的导数给瞬时频率偏移。一个有二次时间相位的脉冲呈线性啁啾；适当的反号群延迟色散可以补偿某些传播引入的啁啾。",
+      "example": "比较同样的光谱强度、不同光谱相位的脉冲，时域宽度可能不同。",
+      "caution": "只量光谱强度无法重建光谱相位，需要额外测量或假设。",
+      "conditions": [
+        "使用解析信号，明确指数和频率正负约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "group-velocity-dispersion"
+      ],
+      "related": [
+        "transform-limited-pulse"
+      ],
+      "sources": [
+        "ultra"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "transform-limited-pulse",
+      "title": "变换极限脉冲",
+      "terms": [
+        "transform limited pulse",
+        "傅里叶极限",
+        "时带积"
+      ],
+      "topic": "laser",
+      "level": "advanced",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "变换极限脉冲在给定光谱幅度下达到由傅里叶关系约束的最小 RMS 时宽。",
+      "body": "光谱相位为常数或只含线性项时，频率分量在时域集中，线性项只平移脉冲到达时刻。时宽与带宽的乘积会随所用宽度定义及脉冲包络形状而改变。",
+      "example": "理想高斯强度 FWHM 100 fs 时，变换极限频率 FWHM 约 4.4 THz。",
+      "caution": "把波长带宽换算频率带宽时需考虑中心波长，宽带情况下用完整变换。",
+      "conditions": [
+        "高斯数值采用强度 FWHM，复频谱只有常数及线性相位。"
+      ],
+      "formula": "Δt_FWHM Δν_FWHM ≈ 0.441（高斯）",
+      "variables": "Δt 用 s、Δν 用 Hz。",
+      "prerequisites": [
+        "pulse-chirp"
+      ],
+      "related": [
+        "optics-coherence"
+      ],
+      "sources": [
+        "ultra"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "fiber-acceptance-angle",
+      "title": "光纤接受角",
+      "terms": [
+        "acceptance angle",
+        "接受锥",
+        "接收角",
+        "入纤角度",
+        "角度太大",
+        "传不进去"
+      ],
+      "topic": "guided",
+      "level": "intro",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "接受角描述阶跃多模光纤在指定入射介质中接收光线的最大轴向半角。",
+      "body": "入射光先在端面折射，再在纤芯与包层界面传播。角度偏离轴过多时，芯包界面上的入射角可能低于临界角，子午光线会向包层透射，因而难以沿纤芯导引。",
+      "example": "同一根光纤先在空气、再在液体中测接受锥；外介质改变时半角随之改变。",
+      "caution": "接受角是理想光线模型量，实际耦合还依赖端面、光斑与模式重叠。",
+      "conditions": [
+        "直阶跃多模光纤、平端面、子午光线。"
+      ],
+      "formula": "n_ext sinθ_max = √(n_core² − n_clad²)",
+      "variables": "θ_max 为入射侧对轴半角；n_core > n_clad，各 n 无量纲。",
+      "prerequisites": [
+        "optics-total-internal-reflection"
+      ],
+      "related": [
+        "fiber-numerical-aperture"
+      ],
+      "sources": [
+        "fiber"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "fiber-numerical-aperture",
+      "title": "光纤数值孔径",
+      "terms": [
+        "NA",
+        "数值孔径",
+        "fiber NA",
+        "光纤NA",
+        "光纤的数值孔径",
+        "接收数值孔径"
+      ],
+      "topic": "guided",
+      "level": "intro",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "阶跃光纤的数值孔径用芯包折射率差描述光线接受能力。",
+      "body": "在多模阶跃光纤的子午光线模型中，端面接收条件将芯包界面的临界角与外侧接受锥联系起来。折射率差增大时，固定外部介质下接受锥通常变宽。",
+      "example": "若纤芯 n = 1.46、包层 n = 1.45，NA 约为 0.171，空气半角约 9.8°。",
+      "caution": "单模耦合效率通常用模式场的重叠积分评估，不能单凭 NA 确定。",
+      "conditions": [
+        "直阶跃多模光纤，材料折射率取同一波长。"
+      ],
+      "formula": "NA = √(n_core² − n_clad²)",
+      "variables": "n_core 和 n_clad 为纤芯与包层折射率。",
+      "prerequisites": [
+        "fiber-acceptance-angle"
+      ],
+      "related": [
+        "fiber-v-number",
+        "objective-na"
+      ],
+      "sources": [
+        "fiber"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "fiber-v-number",
+      "title": "光纤归一化频率 V",
+      "terms": [
+        "V-number",
+        "V数",
+        "V 数",
+        "光纤单模截止",
+        "归一化频率"
+      ],
+      "topic": "guided",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "V 数将光纤芯半径、真空波长与数值孔径合成无量纲参数。",
+      "body": "阶跃圆形光纤中，V 越大通常可导引更多横模。在弱导近似下，当 V 小于约 2.405 时，高阶 LP 模截止，光纤可按单一空间模式工作。",
+      "example": "纤芯半径 4 μm、NA = 0.12，1.55 μm 时 V 约 1.95。",
+      "caution": "a 是半径而非直径；2.405 条件特指圆形阶跃、弱导光纤。",
+      "conditions": [
+        "圆形阶跃折射率光纤，弱导近似。"
+      ],
+      "formula": "V = 2π a NA / λ₀",
+      "variables": "芯半径 a 和真空波长 λ₀ 用同一长度单位。",
+      "prerequisites": [
+        "fiber-numerical-aperture"
+      ],
+      "related": [
+        "fiber-lp-modes",
+        "effective-index"
+      ],
+      "sources": [
+        "fiber"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "fiber-lp-modes",
+      "title": "光纤 LP 模式",
+      "terms": [
+        "LP modes",
+        "LP01",
+        "LP11",
+        "线偏振近似模式"
+      ],
+      "topic": "guided",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "弱导圆形光纤的横向场常以近似线偏振的 LP 模式分类。",
+      "body": "芯包折射率接近时，可把矢量模式的近简并组用两个横向指标表示。LP₀₁ 是基模，随归一化频率增大，LP₁₁ 等更高阶模式可能变成导模。",
+      "example": "在同一弱导光纤上改变波长，先用 V 数判断是否能支持 LP₁₁。",
+      "caution": "LP 标记是弱导近似，高折射率对比结构需使用矢量模式。",
+      "conditions": [
+        "均匀圆截面、弱导阶跃光纤。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "fiber-v-number"
+      ],
+      "related": [
+        "effective-index"
+      ],
+      "sources": [
+        "fiber"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "effective-index",
+      "title": "模式有效折射率",
+      "terms": [
+        "effective index",
+        "n_eff",
+        "模态折射率",
+        "有效折射率"
+      ],
+      "topic": "guided",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "有效折射率把模式轴向传播常数归一化到真空波数。",
+      "body": "导模的场同时分布在芯层和包层，其相位推进可由一个模式传播常数描述。不同模式、波长与波导尺寸可对应不同有效折射率，并影响干涉相位和相位匹配。",
+      "example": "两个模式的 n_eff 相差 0.01，传播相同长度后相位差由该差乘真空波数和长度给出。",
+      "caution": "有效折射率随模式和频率变化，单个值不足以推断群延迟。",
+      "conditions": [
+        "固定波导截面、频率和指定的传播模。"
+      ],
+      "formula": "n_eff = β/k₀；k₀ = 2π/λ₀",
+      "variables": "β、k₀ 用 rad/m，λ₀ 用 m。",
+      "prerequisites": [
+        "optics-refraction"
+      ],
+      "related": [
+        "group-index",
+        "phase-mismatch"
+      ],
+      "sources": [
+        "fiber"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "evanescent-field",
+      "title": "倏逝场",
+      "terms": [
+        "evanescent field",
+        "消逝波",
+        "倏逝波"
+      ],
+      "topic": "guided",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "倏逝场在界面法向呈指数衰减，同时可以沿界面保持相位传播。",
+      "body": "全内反射时，低折射率侧仍需有满足界面条件的场。该场的法向波数为虚数，幅度随距离指数衰减；把第二介质移近到这一尺度内可产生耦合。",
+      "example": "在全反射棱镜旁逐渐靠近另一棱镜，比较间隙变化时的耦合光。",
+      "caution": "区别电场幅度和强度的衰减长度，两者相差一倍。",
+      "conditions": [
+        "平坦界面、单色入射，第二介质均匀且无吸收。"
+      ],
+      "formula": "E(z) ∝ e^(−κz)",
+      "variables": "z 为离界面法向距离，κ 用 m⁻¹。",
+      "prerequisites": [
+        "optics-total-internal-reflection"
+      ],
+      "related": [
+        "effective-index"
+      ],
+      "sources": [
+        "disp"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "stimulated-emission",
+      "title": "受激辐射",
+      "terms": [
+        "stimulated emission",
+        "受激发射"
+      ],
+      "topic": "laser",
+      "level": "intro",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "入射光场可以诱导激发态体系向较低能态跃迁并向相关模式发射。",
+      "body": "受激跃迁的速率受驱动场和跃迁性质影响。把增益介质放进光学腔后，往返场可持续得到放大；能否起振还取决于反转、泵浦和腔损耗。",
+      "example": "思考同一跃迁中，外来共振光如何同时引起受激吸收和受激辐射。",
+      "caution": "受激辐射存在并不保证净增益，仍要比较相关能级占据和损耗。",
+      "conditions": [
+        "考虑接近共振的跃迁，并区分自发和受激过程。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "optics-wavefront"
+      ],
+      "related": [
+        "population-inversion",
+        "laser-threshold"
+      ],
+      "sources": [
+        "laser"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "population-inversion",
+      "title": "粒子数反转",
+      "terms": [
+        "population inversion",
+        "布居反转",
+        "反转粒子数"
+      ],
+      "topic": "laser",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "粒子数反转表示跃迁的上能级有效占据高于下能级。",
+      "body": "在简化非简并能级中，上态粒子多于下态时，受激发射可超过受激吸收。泵浦、弛豫和能级寿命共同决定能否维持反转；存在简并时要按简并度比较。",
+      "example": "比较典型三能级和四能级图，下激光能级的排空速度会改变建立反转的难度。",
+      "caution": "反转条件描述介质增益，激光是否起振还需检查腔损耗。",
+      "conditions": [
+        "给定参与跃迁的上下能级和简并度。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "stimulated-emission"
+      ],
+      "related": [
+        "laser-threshold"
+      ],
+      "sources": [
+        "laser"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "fabry-perot",
+      "title": "法布里–珀罗腔",
+      "terms": [
+        "Fabry–Perot",
+        "Fabry Perot",
+        "FP腔",
+        "法布里珀罗",
+        "法布里-珀罗腔"
+      ],
+      "topic": "laser",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "两反射面使光在腔内多次往返，形成相位选择性的透射或反射谱。",
+      "body": "当往返传播和反射的总相位是 2π 的整数倍时，各次透射光可相长叠加。扫描频率可看到周期性的共振峰；镜损耗和反射率决定峰宽及对比。",
+      "example": "改变两镜间距，观察相邻透射峰的频率间隔怎样改变。",
+      "caution": "镜面镀层的反射相位、介质色散和斜入射都会改变共振条件。",
+      "conditions": [
+        "一维平面腔、法向入射；下式忽略反射相位色散。"
+      ],
+      "formula": "2 n L = m λ₀",
+      "variables": "L 为单程几何腔长，n 为相位折射率，m 为整数。",
+      "prerequisites": [
+        "optics-coherence"
+      ],
+      "related": [
+        "free-spectral-range",
+        "cavity-finesse"
+      ],
+      "sources": [
+        "cav"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "free-spectral-range",
+      "title": "自由光谱范围",
+      "terms": [
+        "FSR",
+        "free spectral range",
+        "自由谱距",
+        "腔模间距"
+      ],
+      "topic": "laser",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "自由光谱范围是同一模族相邻共振频率的间隔。",
+      "body": "共振条件要求总往返相位跨越一个 2π 周期，因此频率间隔约等于往返群延迟的倒数。线形腔往返两次经过腔长；环形腔以整个环路作为往返路径。",
+      "example": "空气中的 15 cm 线形腔，FSR 约 1 GHz。",
+      "caution": "频率间隔不能直接当成固定的波长间隔，宽谱时用各自共振波长计算。",
+      "conditions": [
+        "单一模族、小间隔内色散缓慢，忽略镜面群延迟时用简式。"
+      ],
+      "formula": "FSR ≈ c/(2 n_g L)",
+      "variables": "L 用 m，n_g 是群折射率，FSR 用 Hz。",
+      "prerequisites": [
+        "fabry-perot",
+        "group-velocity"
+      ],
+      "related": [
+        "cavity-finesse"
+      ],
+      "sources": [
+        "cav"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "cavity-finesse",
+      "title": "腔精细度",
+      "terms": [
+        "finesse",
+        "腔精细度",
+        "精细度",
+        "法布里-珀罗精细度"
+      ],
+      "topic": "laser",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "腔精细度是自由光谱范围与单个共振峰频宽的比值。",
+      "body": "固定模间距时，增加有效反射或减少腔损耗通常使共振峰变窄，精细度提高。测量时取同一模族和频率扫描上的相邻峰及单峰半高全宽。",
+      "example": "相邻峰相距 1 GHz、一个峰的频率 FWHM 为 10 MHz，精细度为 100。",
+      "caution": "精细度与 Q 的分子不同：前者用模间距，Q 用中心频率。",
+      "conditions": [
+        "峰形清晰可分，使用同一扫描的频率标尺。"
+      ],
+      "formula": "𝓕 = FSR / Δν_FWHM",
+      "variables": "两项同频率单位，𝓕 无量纲。",
+      "prerequisites": [
+        "free-spectral-range"
+      ],
+      "related": [
+        "cavity-quality-factor"
+      ],
+      "sources": [
+        "cav"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "cavity-quality-factor",
+      "title": "谐振腔品质因数 Q",
+      "terms": [
+        "cavity Q",
+        "quality factor",
+        "Q factor",
+        "品质因子"
+      ],
+      "topic": "laser",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "谐振腔的 Q 值描述存储能量相对于每弧度振荡损耗的大小。",
+      "body": "在高 Q 的孤立共振近似下，可用中心频率与能量响应的频率半高全宽之比估计 Q。对同一中心频率，较窄共振代表能量衰减较慢。",
+      "example": "中心频率约 200 THz、峰宽 100 MHz，对应 Q 约 2×10⁶。",
+      "caution": "报告是含外耦合的加载 Q 还是只计内部损耗的本征 Q。",
+      "conditions": [
+        "线性、孤立窄峰，频谱使用功率或能量响应。"
+      ],
+      "formula": "Q = ν₀/Δν_FWHM",
+      "variables": "ν₀ 与 Δν 同单位，Q 无量纲。",
+      "prerequisites": [
+        "fabry-perot"
+      ],
+      "related": [
+        "cavity-finesse"
+      ],
+      "sources": [
+        "cav"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "laser-longitudinal-modes",
+      "title": "激光纵模",
+      "terms": [
+        "longitudinal modes",
+        "轴向模式",
+        "纵模",
+        "谐振腔纵模",
+        "多纵模"
+      ],
+      "topic": "laser",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "激光纵模是同一横向模式下满足腔往返相位条件的一组频率。",
+      "body": "增益谱内可同时包含多个腔共振。只有增益能补偿各自损耗的模才可能振荡，实际输出还受到饱和、模式竞争和频率选择元件的影响。",
+      "example": "把增益曲线与腔共振梳画在同一频率轴，数出增益较强区内的候选模。",
+      "caution": "单纵模不等于单横模；纵模间隔也不是单峰线宽。",
+      "conditions": [
+        "给定腔长、模族、增益谱与损耗。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "free-spectral-range",
+        "stimulated-emission"
+      ],
+      "related": [
+        "laser-threshold",
+        "gaussian-tem00"
+      ],
+      "sources": [
+        "laser"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "laser-threshold",
+      "title": "激光阈值",
+      "terms": [
+        "laser threshold",
+        "起振阈值",
+        "激射阈值"
+      ],
+      "topic": "laser",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "激光阈值对应小信号往返增益刚好补偿往返损耗。",
+      "body": "泵浦提高粒子数反转，使腔内场每次往返的放大逐渐抵消镜面透射、吸收和散射。超过阈值后增益可因饱和而被钳制在与损耗平衡的水平。",
+      "example": "保持泵浦不变，改用透射更大的输出镜，检查增益余量是否仍够起振。",
+      "caution": "必须在同一约定下比较场增益或功率增益，分贝与线性量也要一致。",
+      "conditions": [
+        "连续波小信号阈值，给定纵模和腔损耗。"
+      ],
+      "formula": "G_rt T_rt = 1",
+      "variables": "G_rt 为往返功率增益，T_rt 为其余环节的往返功率传输率。",
+      "prerequisites": [
+        "population-inversion",
+        "fabry-perot"
+      ],
+      "related": [
+        "laser-longitudinal-modes"
+      ],
+      "sources": [
+        "laser"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "second-harmonic",
+      "title": "二次谐波产生",
+      "terms": [
+        "SHG",
+        "second harmonic generation",
+        "倍频",
+        "二次谐波"
+      ],
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "二次谐波产生由介质二阶非线性将基频光转化为两倍频率的光。",
+      "body": "基频电场的平方项包含二倍角频率分量，可作为新光场的源。不同位置产生的二倍频场能否相干累加，取决于基频、谐波及介质之间的相位关系。",
+      "example": "用 1064 nm 基频在适当介质中产生二次谐波，输出真空波长为 532 nm。",
+      "caution": "频率倍增不代表功率倍增，转换受耦合、损耗、晶体条件及泵浦强度影响。",
+      "conditions": [
+        "具有有效二阶响应，窄带；波长换算使用真空值。"
+      ],
+      "formula": "ω₂ = 2ω₁；λ₂ = λ₁/2",
+      "variables": "ω 用 rad/s，λ 为真空波长。",
+      "prerequisites": [
+        "optics-wavefront"
+      ],
+      "related": [
+        "phase-mismatch",
+        "quasi-phase-matching"
+      ],
+      "sources": [
+        "qpm"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "phase-mismatch",
+      "title": "相位失配",
+      "terms": [
+        "phase mismatch",
+        "Δk",
+        "相位匹配"
+      ],
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "相位失配是非线性极化源和所生成光波的传播相位推进速率之差。",
+      "body": "倍频时，基频贡献两份传播相位，而二倍频波按本身波数传播。若两者不匹配，各段新生成的场会逐渐偏相，后续贡献可能抵消先前的增长。",
+      "example": "在一块晶体中改变温度或波长，可改变折射率并扫描倍频相位匹配条件。",
+      "caution": "不同文献对 Δk 的正负定义不同，代入 QPM 条件时使用统一约定。",
+      "conditions": [
+        "共线窄带二次谐波，本文取生成波减去两倍基频波数。"
+      ],
+      "formula": "Δk = k₂ω − 2k_ω",
+      "variables": "k 与 Δk 用 rad/m，固定同一传播轴。",
+      "prerequisites": [
+        "second-harmonic",
+        "material-dispersion"
+      ],
+      "related": [
+        "coherence-length-shg",
+        "quasi-phase-matching"
+      ],
+      "sources": [
+        "qpm"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "coherence-length-shg",
+      "title": "倍频相干长度",
+      "terms": [
+        "SHG coherence length",
+        "倍频相干长度",
+        "相干长度",
+        "失配相干长度"
+      ],
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "倍频相干长度是二倍频波与源的相对相位推进 π 所需的距离。",
+      "body": "均匀有失配的介质中，在低转换且基频近似不变时，生成场积累到一个相干长度后，再继续传播可能出现抵消。一阶周期极化用约两个相干长度作为完整周期。",
+      "example": "若 abs(Δk) = 0.3 rad/μm，相干长度约 10.5 μm，完整翻转周期约 20.9 μm。",
+      "caution": "倍频失配相干长度与光源时间相干性对应的相干长度含义不同。",
+      "conditions": [
+        "均匀介质、共线倍频、Δk 非零。"
+      ],
+      "formula": "L_c = π/abs(Δk)",
+      "variables": "以同一长度单位写波数与 L_c。",
+      "prerequisites": [
+        "phase-mismatch"
+      ],
+      "related": [
+        "periodic-poling"
+      ],
+      "sources": [
+        "qpm"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "periodic-poling",
+      "title": "周期极化",
+      "terms": [
+        "periodic poling",
+        "PPLN",
+        "周期极化铌酸锂",
+        "畴反转"
+      ],
+      "topic": "nonlinear",
+      "level": "advanced",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "周期极化通过周期性翻转铁电晶体畴来调制有效二阶非线性。",
+      "body": "畴反转可改变相关非线性系数的符号，使已偏离相位的新生成场再次朝有利方向累加。典型一阶设计下，等宽相邻两畴合起来定义一个周期。",
+      "example": "若相干长度约 9 μm，可从完整周期约 18 μm 的一阶设计入手。",
+      "caution": "极化周期随实际温度、波长、偏振和波导几何而变；制造还受占空比约束。",
+      "conditions": [
+        "铁电材料中适用的非线性张量分量翻转，近似 50% 占空比。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "coherence-length-shg"
+      ],
+      "related": [
+        "quasi-phase-matching"
+      ],
+      "sources": [
+        "qpm"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "quasi-phase-matching",
+      "title": "准相位匹配",
+      "terms": [
+        "QPM",
+        "quasi-phase matching",
+        "准匹配"
+      ],
+      "topic": "nonlinear",
+      "level": "advanced",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "准相位匹配以周期调制的空间谐波补偿非线性过程的相位失配。",
+      "body": "在共线倍频中，可以用周期结构提供的倒格矢抵消基频和二倍频场之间的失配。此设计还需考虑采用哪个空间谐波、有效非线性系数及波长温度容差。",
+      "example": "给定失配绝对值 0.3 rad/μm，估计一阶完整周期约 20.9 μm。",
+      "caution": "QPM 容差与材料、长度、几何和有效系数有关；周期相等并不足以保证效率。",
+      "conditions": [
+        "共线平面波近似、均匀周期调制，选定倒格矢方向。"
+      ],
+      "formula": "Δk_eff = Δk − m(2π/Λ)",
+      "variables": "Λ 为完整极化周期，m 为带符号的空间谐波阶数。",
+      "prerequisites": [
+        "phase-mismatch",
+        "periodic-poling"
+      ],
+      "related": [
+        "second-harmonic",
+        "coherence-length-shg"
+      ],
+      "sources": [
+        "qpm"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "spdc",
+      "title": "自发参量下转换",
+      "terms": [
+        "SPDC",
+        "spontaneous parametric down-conversion",
+        "光子对产生"
+      ],
+      "topic": "nonlinear",
+      "level": "advanced",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "自发参量下转换在二阶非线性介质中以泵浦光产生信号和闲频光子对。",
+      "body": "信号和闲频的可用频率与方向受到能量守恒、相位匹配和泵浦条件约束。在简并情形两光子的频率相等，改变收集模式会改变实验所观察到的谱和计数。",
+      "example": "在频率简并近似下，405 nm 泵浦对应两路约 810 nm 的真空波长。",
+      "caution": "观察符合计数还要处理偶然符合和探测效率，光子对产生不自动保证所需纠缠态。",
+      "conditions": [
+        "二阶介质、弱泵浦近似，选定相位匹配与收集几何。"
+      ],
+      "formula": "ω_p = ω_s + ω_i",
+      "variables": "p、s、i 分别为泵浦、信号和闲频，频率用同一单位。",
+      "prerequisites": [
+        "phase-mismatch"
+      ],
+      "related": [
+        "quasi-phase-matching"
+      ],
+      "sources": [
+        "quantum"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "michelson-interferometer",
+      "title": "迈克耳孙干涉仪",
+      "terms": [
+        "Michelson interferometer",
+        "迈克耳孙",
+        "迈克尔逊干涉"
+      ],
+      "topic": "wave",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "迈克耳孙干涉仪将入射场分到两个反射臂后再合束，比较往返光程。",
+      "body": "移动一个臂的平面镜时，光路在去程和回程各增加一次，合束相位随之改变。记录条纹移动数可反推位移，但振动、空气折射率和光源相干性都会影响读数。",
+      "example": "空气中 632.8 nm 光源，镜移动约 316.4 nm 时中心强度经历一整周期。",
+      "caution": "区分镜移动量和两臂光程差的变化，后者有双程因子。",
+      "conditions": [
+        "法向反射，单一移动臂，外介质折射率均匀。"
+      ],
+      "formula": "ΔOPD = 2nΔx；Δφ = 2π ΔOPD/λ₀",
+      "variables": "n 为臂介质折射率，Δx、ΔOPD、λ₀ 同长度单位。",
+      "prerequisites": [
+        "optics-coherence"
+      ],
+      "related": [
+        "fringe-visibility"
+      ],
+      "sources": [
+        "cav"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "fringe-visibility",
+      "title": "干涉条纹可见度",
+      "terms": [
+        "fringe visibility",
+        "条纹对比度",
+        "干涉可见度",
+        "可见度"
+      ],
+      "topic": "measurement",
+      "level": "intro",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "可见度以相邻亮暗强度的归一化差量化条纹对比。",
+      "body": "同样的相干程度下，两束光强不平衡会压低可见度；背景光、探测器饱和和振动也会改变观察值。比较不同光程差的可见度前，应保持两束光强和曝光可比。",
+      "example": "亮纹 900、暗纹 100，若两者是同一线性单位且背景处理一致，可见度为 0.8。",
+      "caution": "有相机非线性或暗电流时应先校准；可见度还不能单独说明损耗来源。",
+      "conditions": [
+        "线性光强标尺，非零总强度，亮暗代表同一局部条纹。"
+      ],
+      "formula": "V = (I_max − I_min)/(I_max + I_min)",
+      "variables": "I_max 和 I_min 同单位，V 无量纲。",
+      "prerequisites": [
+        "optics-coherence"
+      ],
+      "related": [
+        "michelson-interferometer"
+      ],
+      "sources": [
+        "transfer"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "temporal-coherence",
+      "title": "时间相干性",
+      "terms": [
+        "temporal coherence",
+        "时间相干",
+        "光源相干长度",
+        "相干长度",
+        "相干时间"
+      ],
+      "topic": "wave",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "时间相干性量化同一光场在不同时刻保持相位关联的程度。",
+      "body": "让同一光源的两份光经过不同延迟再合束，可用条纹可见度随延迟的变化表征时间相干。光谱较窄通常对应较长相干时间；精确换算取决于谱形和宽度定义。",
+      "example": "在迈克耳孙干涉仪中逐步改变光程差，对比窄线宽光与宽带光的可见条纹范围。",
+      "caution": "此处的光源相干长度与非线性相位失配定义的倍频相干长度不同。",
+      "conditions": [
+        "平稳光源，强度平衡并控制空间重叠。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "optics-coherence",
+        "fringe-visibility"
+      ],
+      "related": [
+        "coherence-length-shg"
+      ],
+      "sources": [
+        "transfer"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "spatial-coherence",
+      "title": "空间相干性",
+      "terms": [
+        "spatial coherence",
+        "横向相干",
+        "空间相干"
+      ],
+      "topic": "wave",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "空间相干性量化光场在不同空间点之间的相位关联。",
+      "body": "把同一波前两个位置的光取出并叠加，可从条纹可见度判断二者的空间相干性。相互独立的宽展光源不同位置发出的波会按不同相位叠加，跨越过大间距时可见度可能下降。",
+      "example": "在双缝实验中保持光谱与曝光不变，改变缝间距，比较条纹对比。",
+      "caution": "应分别控制光程差与横向位置，避免将时间相干损失误认为空间相干变化。",
+      "conditions": [
+        "准单色稳态光源，控制两束光强、偏振及探测积分时间。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "optics-coherence",
+        "fringe-visibility"
+      ],
+      "related": [
+        "coherent-imaging",
+        "temporal-coherence"
+      ],
+      "sources": [
+        "transfer"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "grating-resolving-power",
+      "title": "光栅光谱分辨本领",
+      "terms": [
+        "grating resolving power",
+        "光栅分辨本领",
+        "光谱分辨率",
+        "相邻谱线分辨"
+      ],
+      "topic": "wave",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "光栅分辨本领表示在给定衍射级次区分两条相邻谱线的能力。",
+      "body": "理想情况下，参与相干叠加的刻线越多，主要衍射峰越窄。在瑞利约定下，第 m 级的本征分辨本领与照明刻线数 N 的乘积相关；实际仪器还受狭缝、像差和探测像素影响。",
+      "example": "600 nm 处用一阶衍射、照亮 1200 条刻线，理想最小可分差约 0.5 nm。",
+      "caution": "N 是实际照明的刻线数；不同级次可能发生谱重叠。",
+      "conditions": [
+        "等间距光栅，近似均匀相干照明，采用瑞利判据。"
+      ],
+      "formula": "R = λ/Δλ ≈ abs(m)N",
+      "variables": "λ、Δλ 同单位，m 为级次，N 为照明刻线数。",
+      "prerequisites": [
+        "diffraction-grating",
+        "diffraction-resolution"
+      ],
+      "related": [
+        "spatial-frequency"
+      ],
+      "sources": [
+        "grating"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "photodiode-responsivity",
+      "title": "光电探测响应度",
+      "terms": [
+        "responsivity",
+        "photodiode responsivity",
+        "A/W",
+        "光电二极管响应度"
+      ],
+      "topic": "measurement",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "光电响应度是单位入射光功率引起的光生电流。",
+      "body": "在线性区，给定波长的入射功率乘以响应度可换算光生电流。波长改变时，每瓦光对应的光子数和材料量子效率都可能改变，因此响应度需按波长读取。",
+      "example": "响应度 0.4 A/W 时，10 μW 对应约 4 μA 光生电流，暗电流另计。",
+      "caution": "核对探测器线性范围、暗电流和实际波长，并说明功率是在何处标定。",
+      "conditions": [
+        "稳态线性光电二极管、无内部增益、单色光。"
+      ],
+      "formula": "ℛ = I_photo/P；ℛ = ηqλ₀/(hc)",
+      "variables": "ℛ 用 A/W，I_photo 用 A，P 用 W，η 为外量子效率。",
+      "prerequisites": [],
+      "related": [
+        "fringe-visibility"
+      ],
+      "sources": [
+        "detector"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "optical-aberrations",
+      "title": "像差",
+      "terms": [
+        "aberration",
+        "aberrations",
+        "成像像差"
+      ],
+      "topic": "imaging",
+      "level": "intro",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "像差描述成像结果相对理想成像的偏离。",
+      "body": "几何像差可以用光线在理想像点附近的交会偏差描述，也可从光瞳波前偏差讨论其成像效果。球差在轴上就可能出现，色差随波长变化，彗差常见于离轴点。",
+      "example": "依次固定波长、改变孔径、移动视场位置，观察各条件下点像怎样变化。",
+      "caution": "判断具体像差前应分开衍射、离焦、探测器采样及装调偏心。",
+      "conditions": [
+        "指定视场、波长、孔径与参考理想像点。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "paraxial-approximation"
+      ],
+      "related": [
+        "spherical-aberration",
+        "chromatic-aberration",
+        "coma"
+      ],
+      "sources": [
+        "aberrations"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "coma",
+      "title": "彗差",
+      "terms": [
+        "coma",
+        "彗形像差",
+        "离轴点像"
+      ],
+      "topic": "imaging",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "彗差可使离轴点形成带有不对称尾部的像。",
+      "body": "不同孔径区域对离轴物点的成像位置和放大率可能不同，叠加后形成向一侧展开的斑点。比较视场两侧的点像，有助于发现光学设计或装调引起的非对称。",
+      "example": "用星点测量，依次查看光轴中心和视场边缘的小亮点。",
+      "caution": "偏心和倾斜也会引入类似点像，诊断需结合对中检查。",
+      "conditions": [
+        "单色成像，对比相同焦面和孔径下的不同视场。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "optical-aberrations"
+      ],
+      "related": [
+        "spherical-aberration",
+        "psf"
+      ],
+      "sources": [
+        "aberrations"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "gain-bandwidth",
+      "title": "增益带宽",
+      "terms": [
+        "gain bandwidth",
+        "增益谱宽",
+        "增益谱"
+      ],
+      "topic": "laser",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "增益带宽描述增益介质可有效放大光的频率范围。",
+      "body": "增益曲线由跃迁线形和介质状态决定。若腔共振间隔比增益带宽小，增益区间可包含多个纵模；实际振荡需逐个比较增益与损耗，并考虑增益饱和与模式竞争。",
+      "example": "在相同增益谱中，把腔的 FSR 从 1 GHz 改为 500 MHz，检查落在谱内的候选模数量。",
+      "caution": "增益带宽、腔共振峰宽以及激光输出线宽是三个分别测量的量。",
+      "conditions": [
+        "小信号增益谱，注明用于定义带宽的强度或增益门限。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "stimulated-emission"
+      ],
+      "related": [
+        "laser-longitudinal-modes",
+        "cavity-linewidth"
+      ],
+      "sources": [
+        "laser"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "cavity-linewidth",
+      "title": "腔共振线宽",
+      "terms": [
+        "cavity linewidth",
+        "线宽",
+        "共振峰宽",
+        "腔线宽"
+      ],
+      "topic": "laser",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "腔共振线宽通常用单个腔共振峰的频率半高全宽描述。",
+      "body": "用可调窄线宽光源扫过一个孤立峰，先确定响应基线和峰值，再读出半高两点的频率差。与 FSR 联用可得精细度，与中心频率联用可得加载 Q。",
+      "example": "测得 FSR 为 500 MHz、精细度为 50，腔共振线宽约 10 MHz。",
+      "caution": "腔共振线宽描述被动腔响应；激光输出线宽还与噪声和测量时间有关。",
+      "conditions": [
+        "单一孤立腔模，使用功率响应和一致的扫频标定。"
+      ],
+      "formula": "Δν_FWHM = FSR/𝓕",
+      "variables": "两频率量同单位，𝓕 为无量纲精细度。",
+      "prerequisites": [
+        "free-spectral-range"
+      ],
+      "related": [
+        "cavity-finesse",
+        "cavity-quality-factor",
+        "gain-bandwidth"
+      ],
+      "sources": [
+        "cav"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "optical-path-length",
+      "title": "光程",
+      "terms": [
+        "optical path length",
+        "OPL",
+        "光程差",
+        "OPD"
+      ],
+      "topic": "foundations",
+      "level": "intro",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "光程是沿传播路径对相位折射率的长度加权。",
+      "body": "在透明均匀介质中，几何长度乘折射率得到光程。两条相干路径的光程差可转化为传播相位差；界面反射若引入额外相位，需要单独计入。",
+      "example": "同波长下，1 mm 厚且 n = 1.5 的平板替代等厚空气，会增加约 0.5 mm 光程。",
+      "caution": "光程用于相位计算，短脉冲通过时间应使用群折射率或群延迟。",
+      "conditions": [
+        "单色几何光路，指定真空波长和实际折射率。"
+      ],
+      "formula": "OPL = ∫ n(s) ds；Δφ = 2π ΔOPL/λ₀",
+      "variables": "OPL、s、λ₀ 用同一长度单位。",
+      "prerequisites": [
+        "optics-refraction",
+        "optics-wavefront"
+      ],
+      "related": [
+        "michelson-interferometer",
+        "group-index"
+      ],
+      "sources": [
+        "cav"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "detector-dark-current",
+      "title": "探测器暗电流",
+      "terms": [
+        "dark current",
+        "暗电流",
+        "暗背景"
+      ],
+      "topic": "measurement",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "暗电流是光电探测器无入射光时仍流过的电流。",
+      "body": "暗电流与器件温度、反向偏压和结构有关，会形成可测基线，并伴随噪声。获取暗读数时应遮光并维持同样的温度、偏压和积分条件。",
+      "example": "相同偏压下先遮光读 0.2 μA，再照明读 4.2 μA，净平均光生电流约 4.0 μA。",
+      "caution": "扣除平均暗电流只能去除偏置，不能消除已经出现的随机噪声。",
+      "conditions": [
+        "给定偏置、电流读出及温度，并在无光条件测量。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "photodiode-responsivity"
+      ],
+      "related": [
+        "fringe-visibility"
+      ],
+      "sources": [
+        "detector"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    },
+    {
+      "id": "group-delay",
+      "title": "群延迟",
+      "terms": [
+        "group delay",
+        "包络延迟",
+        "群时延"
+      ],
+      "topic": "foundations",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "definition": "群延迟是系统相位随角频率的一阶导数所对应的窄带包络延时。",
+      "body": "若传递因子写为 exp[iφ(ω)]、时间因子写为 exp[−iωt]，相位的一阶展开平移时域包络。均匀介质传播时它等于传播长度乘以单位长度群延迟。",
+      "example": "两根同类型光纤长度相差 2 m，群折射率 1.5 时对应约 10 ns 群延迟差。",
+      "caution": "有的工程约定使用相反符号；宽带强色散时需观察完整时域波形。",
+      "conditions": [
+        "给定相位符号约定和载频，包络窄带且弱失真。"
+      ],
+      "formula": "τ_g = dφ/dω = L n_g/c（均匀传播）",
+      "variables": "τ_g 用 s，ω 用 rad/s，L 用 m。",
+      "prerequisites": [
+        "group-velocity"
+      ],
+      "related": [
+        "group-index",
+        "group-velocity-dispersion"
+      ],
+      "sources": [
+        "ultra"
+      ],
+      "review": "2026-11-12 · 来源定位、术语、单位及条件核对"
+    }
+  ]
+}

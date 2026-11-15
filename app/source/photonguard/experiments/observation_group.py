@@ -7,10 +7,9 @@ import os
 from pathlib import Path
 import subprocess
 import sys
-import threading
 from ..core import digest
 from ..workflow import WorkflowError, atomic_json
-from . import inverse_models as models, observations, gaussian_inference
+from . import csv_intake, inverse_models as models, observations, gaussian_inference
 
 
 def defaults(model):
@@ -41,8 +40,39 @@ def group_entry(ds, settings, filename):
             'approved':False,'raw_file':filename,'observation':{'kind':'UNKNOWN'}}
 
 
-def create(store, data):
-    allowed={'model','teaching','csv_text','source_kind','source_name','license','position_unit','diameter_conversion'}
+def imported_data(data, model):
+    raw = data.get('csv_text')
+    if {'csv_mapping','csv_preview_sha256'} & data.keys():
+        canonical, audit = csv_intake.materialize(raw, model, data.get('csv_mapping'), data.get('csv_preview_sha256'))
+        return raw, canonical, parse(canonical, model, {**data, 'position_unit': None, 'diameter_conversion': False}), audit
+    return raw, raw, parse(raw, model, data), None
+
+
+def save_data(folder, filename, raw, canonical, entry, audit):
+    (folder/filename).write_bytes(canonical.encode('utf-8'))
+    if audit:
+        original_name = 'source-' + filename.removeprefix('scan-')
+        (folder/original_name).write_bytes(raw.encode('utf-8'))
+        audit['source_file'] = original_name
+        audit['sha256'] = digest(audit)
+        entry['intake'] = audit
+
+
+def original_file(store, s, index):
+    if type(index) is not int or not 0 <= index < len(s.get('groups', [])):
+        raise WorkflowError('没有这份采集。', 404)
+    group = s['groups'][index]
+    name = group.get('intake', {}).get('source_file', group['raw_file'])
+    if name not in (f'source-{index}.csv', f'scan-{index}.csv'):
+        raise WorkflowError('采集文件路径无效。', 409)
+    path = store.folder(s['id'])/name
+    if path.is_symlink() or not path.is_file():
+        raise WorkflowError('采集原文件不可读取。', 409)
+    return path
+
+
+def create(store, data, *, study_origin=None):
+    allowed={'model','teaching','csv_text','source_kind','source_name','license','position_unit','diameter_conversion','csv_mapping','csv_preview_sha256'}
     if not isinstance(data,dict) or set(data)-allowed or data.get('model') not in models.MODELS:raise WorkflowError('反向分析导入字段无效')
     model=data['model'];teaching=data.get('teaching') is True;settings=defaults(model)
     if teaching:
@@ -59,19 +89,22 @@ def create(store, data):
             text=simulator.acquire(store.owner.root/'private-teaching',s['id'],commitment['commitment_sha256'],model=model,acquisition_index=0,
                                    lower=-.6 if model==models.SLIT else -60,upper=.6 if model==models.SLIT else 140,points=81 if model==models.SLIT else 21)
         ds=parse(text,model,{'source_kind':'SYNTHETIC_TEACHING','source_name':'独立冻结教学对象 · 初始采集','license':'CC0-1.0'})
+        canonical,audit=text,None
     else:
-        text=data.get('csv_text');ds=parse(text,model,data)
+        text,canonical,ds,audit=imported_data(data,model)
         # Imported data never inherits teaching physical facts or search ranges.
         settings['fixed']={};settings['bounds']={}
         s=store.create({'kind':'specified','text':'反向分析 CSV；来源：'+ds['source_name']});commitment=None
-    (store.folder(s['id'])/'scan-0.csv').write_bytes(text.encode())
+    entry=group_entry(ds,settings,'scan-0.csv')
+    save_data(store.folder(s['id']),'scan-0.csv',text,canonical,entry,audit)
     s.update(kind='inverse',domain='diffraction' if model==models.SLIT else 'gaussian',title='宽度与间距反演' if model==models.SLIT else '高斯光束反演',
-             inverse_root=s['id'],inverse_settings=settings,groups=[group_entry(ds,settings,'scan-0.csv')],teaching_object=commitment,
+             inverse_root=s['id'],inverse_settings=settings,groups=[entry],teaching_object=commitment,
              inverse_profiles={},questions=ds['questions'],parameter_sources={'origin':'EXPLICIT_TEACHING_SELECTION' if teaching else 'USER_CSV_METADATA'},
              inverse_ledger={'fit_runs_reserved':0,'profile_runs_reserved':0,'max_fit_runs':4,'max_profile_runs':6,'acquisitions_reserved':0,'max_acquisitions':2,
                              'residual_calls_reserved':0,'max_residual_calls':300000,'actual_residual_calls':0,'measurement_plans':0,'max_measurement_plans':6,
                              'forward_plans':0,'max_forward_plans':2})
     if model==models.FILM:s.update(domain='film',title='单层膜厚度与补测波长')
+    if study_origin:s['study_origin']=study_origin
     if teaching:s['groups'][0]['observation']={'kind':'POINT_SAMPLE'}
     store.save(s);store.event(s,'INVERSE_IMPORTED',{'source_kind':ds['source_kind'],'dataset_sha256':ds['sha256'],'teaching_object_commitment':commitment})
     return s
@@ -82,13 +115,17 @@ def verify(store,s):
     verify_calibration(store,s)
     for proposal in s.get('measurement_history',[])+([s['measurement_plan']] if s.get('measurement_plan') else []):
         if proposal.get('sha256')!=digest({k:v for k,v in proposal.items() if k!='sha256'}):raise WorkflowError('补采建议证据发生变化',409)
-    for g in s['groups']:
+    for index,g in enumerate(s['groups']):
         p=store.folder(s['id'])/g['raw_file']
         if p.is_symlink() or not p.resolve().is_relative_to(store.folder(s['id']).resolve()):raise WorkflowError('数据路径无效')
-        observations.verify(g['dataset'],p.read_bytes())
+        canonical=p.read_bytes();observations.verify(g['dataset'],canonical)
+        if g.get('intake'):
+            csv_intake.verify(g['intake'],original_file(store,s,index).read_bytes(),canonical)
     if s.get('inverse_plan'):
         p=s['inverse_plan'];models.verify_plan(p)
         if p['groups']!=s['groups'] or p['settings']!=s['inverse_settings']:raise WorkflowError('版本与计划不一致',409)
+        if 'comparison' in p and p['comparison']!=film_comparison(store,s,s['groups'],s['inverse_settings']):
+            raise WorkflowError('新增观测对应的旧拟合发生变化',409)
     if s.get('inverse_job_result'):
         folder=store.folder(s['id'])/'inverse-execution';manifest=json.loads((folder/'manifest.json').read_text())
         for name,h in manifest.items():
@@ -106,7 +143,11 @@ def verify(store,s):
 
 def revise(store,s,*,keep_results=False):
     child=store.create({'kind':'specified','text':s['text']})
-    for g in s['groups']:(store.folder(child['id'])/g['raw_file']).write_bytes((store.folder(s['id'])/g['raw_file']).read_bytes())
+    for index,g in enumerate(s['groups']):
+        (store.folder(child['id'])/g['raw_file']).write_bytes((store.folder(s['id'])/g['raw_file']).read_bytes())
+        if g.get('intake'):
+            original=original_file(store,s,index)
+            (store.folder(child['id'])/original.name).write_bytes(original.read_bytes())
     child.update(kind='inverse',domain=s['domain'],title=s['title']+' · 后续版本',parent_id=s['id'],family_id=s['family_id'],inverse_root=s['inverse_root'],
                  inverse_settings=copy.deepcopy(s['inverse_settings']),groups=copy.deepcopy(s['groups']),teaching_object=s.get('teaching_object'),
                  parameter_sources=copy.deepcopy(s.get('parameter_sources',{})),inverse_profiles={})
@@ -117,11 +158,73 @@ def revise(store,s,*,keep_results=False):
     if s.get('acquisition_constraints'):child['acquisition_constraints']=copy.deepcopy(s['acquisition_constraints'])
     for key in ('decision_preferences','contrast_calibration','research_origin'):
         if s.get(key):child[key]=copy.deepcopy(s[key])
-    for key in ('task_goal_text','task_entry'):
+    for key in ('task_goal_text','task_entry','data_interpretation'):
         if key in s:child[key]=copy.deepcopy(s[key])
     if keep_results:
         child.update(inverse_result=copy.deepcopy(s.get('inverse_result')),inverse_profiles=copy.deepcopy(s.get('inverse_profiles',{})),inverse_reference_parent=s['id'])
+        if s.get('knowledge_basis'):child['knowledge_basis']=copy.deepcopy(s['knowledge_basis'])
     store.save(child);return child
+
+
+def remap(store, s, data):
+    if set(data) - {'type','expected_revision','group_index','csv_mapping','csv_preview_sha256','approve'} or data.get('approve') is not True:
+        raise WorkflowError('请确认另存这次列解释。',409)
+    if s.get('teaching_object'):
+        raise WorkflowError('冻结的教学对象使用其原始列；导入自己的 CSV 可另存解释。',409)
+    index=data.get('group_index')
+    original=original_file(store,s,index).read_bytes().decode('utf-8')
+    previous=s['groups'][index];ds=previous['dataset'];cfg=s['inverse_settings']
+    source={'source_kind':ds['source_kind'],'source_name':ds['source_name'],'license':ds['license']}
+    raw,canonical,updated,audit=imported_data({**source,'csv_text':original,'csv_mapping':data.get('csv_mapping'),
+                                              'csv_preview_sha256':data.get('csv_preview_sha256')},cfg['model'])
+    if previous.get('intake',{}).get('preview_sha256')==audit['preview_sha256']:
+        raise WorkflowError('这份列解释与当前版本一致。')
+    if any(other['dataset']['raw_sha256']==updated['raw_sha256'] for i,other in enumerate(s['groups']) if i!=index):
+        raise WorkflowError('新列解释与另一份分析数据完全相同，请核对是否重复采集。',409)
+    receipt=digest({'from':s['id'],'group':index,'preview':audit['preview_sha256']})
+    for path in store.root.glob('*/case.json'):
+        child=store.get(path.parent.name)
+        if child.get('parent_id')==s['id'] and child.get('data_interpretation',{}).get('receipt')==receipt:
+            return child
+    child=revise(store,s)
+    entry=group_entry(updated,cfg,previous['raw_file'])
+    entry['conditions']=copy.deepcopy(previous['conditions'])
+    save_data(store.folder(child['id']),previous['raw_file'],raw,canonical,entry,audit)
+    child['groups'][index]=entry
+    child.pop('comparison_origin',None)
+    child.pop('acquisition_expectation',None)
+    child['data_interpretation']={'record_id':s['id'],'group_index':index,'receipt':receipt,
+        'original_sha256':audit['original_sha256'],'previous_analysis_sha256':ds['raw_sha256'],
+        'analysis_sha256':updated['raw_sha256']}
+    child['questions']=['请重新核对改动采集的数值尺度和物理条件，再批准分析。']
+    store.save(child);store.event(child,'CSV_INTERPRETATION_REVISED',child['data_interpretation']);return child
+
+
+def film_comparison(store,s,groups,cfg):
+    origin=s.get('comparison_origin') or {}
+    if cfg['model']!=models.FILM or not origin.get('record_id') or not origin.get('fit_result_id'):
+        return None
+    parent=store.get(origin['record_id'])
+    prior=parent.get('inverse_result') or {}
+    old_groups=parent.get('groups',[])
+    if (parent['family_id']!=s['family_id'] or prior.get('id')!=origin['fit_result_id']
+            or cfg!=parent['inverse_settings'] or not 1<=len(old_groups)<len(groups)
+            or groups[:len(old_groups)]!=old_groups or not prior.get('modes')):
+        return None
+    verify(store,parent)
+    modes=[]
+    for row in prior['modes']:
+        thickness=row['parameters']['thickness_nm']
+        modes.append({'thickness_nm':thickness,'interval_nm':row.get('interval',[thickness,thickness])})
+    return {'record_id':parent['id'],'fit_result_id':prior['id'],'group_count':len(old_groups),'modes':modes}
+
+
+def build_fit_plan(store,s,groups,cfg):
+    comparison=film_comparison(store,s,groups,cfg)
+    if comparison:
+        from .film_inverse import plan as film_plan
+        return film_plan(groups,cfg,comparison)
+    return models.plan(groups,cfg)
 
 
 def root_record(store,s):return s if s['inverse_root']==s['id'] else store.get(s['inverse_root'])
@@ -156,7 +259,9 @@ def run_job(store,ident):
         atomic_json(folder/'manifest.json',{f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in folder.iterdir() if f.is_file()})
         with store.lock:
             s=store.get(ident);s.update(status='COMPLETED',inverse_job_result=result)
-            if p['operation']=='fit':s['inverse_result']=result
+            if p['operation']=='fit':
+                s['inverse_result']=result
+                store.record_knowledge_basis(s)
             else:s['inverse_profiles'][result['parameter']]=result
             if s.get('task_execution',{}).get('status')=='RUNNING':
                 s['task_execution']['status']='COMPLETED';s['task_execution']['steps'].append({'id':'fit','status':'COMPLETED','result_id':result['id'],'resources':result['resources']})
@@ -215,8 +320,16 @@ def forward(store,s,data):
     store.save(child);s['forward_children']=[child['id']];store.save(s);store.event(child,'MODEL_ESTIMATE_ACCEPTED',child['estimate_origin']);return child
 
 
+def invalidate_catalog_plan(s):
+    if s.get('task_plan'):
+        s.setdefault('task_plan_history',[]).append(s.pop('task_plan'))
+    if s.get('research_origin',{}).get('status')=='ACQUISITION_SELECTED':
+        s['research_origin']['status']='STALE_CATALOG'
+
+
 def action(store,s,data):
     verify(store,s);kind=data['type']
+    if kind=='inverse_remap':return remap(store,s,data)
     if kind=='inverse_revise':return revise(store,s)
     if kind=='inverse_recipe':
         if s['inverse_settings']['model']!=models.SLIT or s.get('inverse_approved_sha256') or s.get('inverse_result'):raise WorkflowError('数值建议仅补充未批准双缝草稿；已有版本需另存')
@@ -267,7 +380,7 @@ def action(store,s,data):
         # Explicit form edits are recorded, never silently loosen existing fixed facts.
         changes={k:{'old':v,'new':cfg.get('fixed',{}).get(k)} for k,v in s['inverse_settings'].get('fixed',{}).items() if cfg.get('fixed',{}).get(k)!=v}
         if changes and data.get('approve_corrections') is not True:raise WorkflowError('已有固定事实发生变化，请明确确认更正后保存')
-        s.update(groups=groups,inverse_settings=copy.deepcopy(cfg),inverse_plan=models.plan(groups,cfg),status='PLANNED',questions=[],
+        s.update(groups=groups,inverse_settings=copy.deepcopy(cfg),inverse_plan=build_fit_plan(store,s,groups,cfg),status='PLANNED',questions=[],
                  parameter_sources={'origin':'EXPLICIT_USER_FORM','fixed':list(cfg['fixed']),'estimated':list(cfg['bounds']),'corrections':changes})
         store.save(s);store.event(s,'INVERSE_PLAN_REVIEWED',{'plan_sha256':s['inverse_plan']['sha256'],'corrections':changes});return s
     if kind=='inverse_profile_plan':
@@ -285,23 +398,29 @@ def action(store,s,data):
         if not store.owner.allow_workers or getattr(store.owner,'simulation_context',None):raise WorkflowError('当前环境禁止新计算',403)
         if importlib.util.find_spec('scipy') is None:raise WorkflowError('可选 SciPy 未安装；原三类正向入口仍保留',409)
         if s['inverse_settings']['model']==models.FILM and importlib.util.find_spec('tmm') is None:raise WorkflowError('薄膜分析需要可选 tmm；未扣除计算额度',409)
-        if store.running:raise WorkflowError('已有计算任务，请等待',409)
-        if p.get('profile',{} ) and p['profile'].get('refinement'):
-            root=root_record(store,s)
-            if root['inverse_ledger'].get('refinements_reserved',0):raise WorkflowError('同一任务的一次加密额度已使用',409)
-            # Check ordinary profile and aggregate limits before consuming the extra one-time flag.
-            ledger=root['inverse_ledger']
-            if ledger['profile_runs_reserved']>=ledger['max_profile_runs'] or ledger['residual_calls_reserved']+30000>ledger['max_residual_calls']:raise WorkflowError('累计资源额度已用完',409)
-            ledger['refinements_reserved']=1;store.save(root)
-        reserve(store,s,p['operation']);s.update(status='RUNNING',inverse_approved_sha256=p['sha256']);store.save(s);store.running.add(s['id'])
-        store.event(s,'INVERSE_APPROVED',{'actor':'EXPLICIT_API_APPROVAL_NOT_PROOF_OF_HUMAN','plan_sha256':p['sha256'],'budget':p['budget']})
-        threading.Thread(target=run_job,args=(store,s['id']),daemon=True).start();return s
+        if store.running:raise WorkflowError('另一项计算正在运行。本轮尚未启动，请稍后重新核对并批准计划。',409)
+        from .executor import admit_solver
+        with admit_solver() as launch:
+            if p.get('profile',{} ) and p['profile'].get('refinement'):
+                root=root_record(store,s)
+                if root['inverse_ledger'].get('refinements_reserved',0):raise WorkflowError('同一任务的一次加密额度已使用',409)
+                # Check ordinary profile and aggregate limits before consuming the extra one-time flag.
+                ledger=root['inverse_ledger']
+                if ledger['profile_runs_reserved']>=ledger['max_profile_runs'] or ledger['residual_calls_reserved']+30000>ledger['max_residual_calls']:raise WorkflowError('累计资源额度已用完',409)
+                ledger['refinements_reserved']=1;store.save(root)
+            reserve(store,s,p['operation']);s.update(status='RUNNING',inverse_approved_sha256=p['sha256']);store.save(s);store.running.add(s['id'])
+            store.event(s,'INVERSE_APPROVED',{'actor':'EXPLICIT_API_APPROVAL_NOT_PROOF_OF_HUMAN','plan_sha256':p['sha256'],'budget':p['budget']})
+            launch(run_job, (store,s['id']))
+        return s
     if kind=='inverse_measurement_plan':
+        revised_catalog=False
         if s['inverse_settings']['model']==models.FILM:
             from .film_inverse import propose
             constraints=data.get('constraints',s.get('acquisition_constraints'))
             allowed=s.get('acquisition_constraints',{}).get('wavelengths_nm')
-            if allowed and constraints and constraints.get('wavelengths_nm')!=allowed:raise WorkflowError('补测波长需遵守已声明目录；改变目录请先明确更正')
+            revised_catalog=bool(allowed and isinstance(constraints,dict) and constraints.get('wavelengths_nm')!=allowed)
+            if revised_catalog and data.get('confirm_catalog_change') is not True:
+                raise WorkflowError('补测波长需遵守已声明目录；改变目录请先明确更正')
             proposal=propose(s['groups'],s['inverse_settings'],s.get('inverse_result') or {},constraints)
         else:
             from .baseline_design import propose
@@ -314,15 +433,23 @@ def action(store,s,data):
         if s.get('measurement_plan'):s.setdefault('measurement_history',[]).append(s['measurement_plan'])
         s['measurement_plan']=proposal
         s['acquisition_constraints']=copy.deepcopy(proposal['constraints'])
+        if revised_catalog:invalidate_catalog_plan(s)
         if proposal.get('research_goal'):s['research_goal']=copy.deepcopy(proposal['research_goal'])
         if proposal.get('decision_preferences'):s['decision_preferences']=copy.deepcopy(proposal['decision_preferences'])
-        store.save(s);return s
+        store.save(s)
+        if revised_catalog:
+            store.event(s,'FILM_CATALOG_CHANGED',{'old_wavelengths_nm':allowed,'new_wavelengths_nm':proposal['constraints']['wavelengths_nm'],
+                                                 'new_plan_sha256':proposal['sha256'],'source':'EXPLICIT_USER_CONFIRMATION'})
+        return s
     if kind=='inverse_append':
         if len(s['groups'])>=3:raise WorkflowError('同一研究任务最多三份采集')
         if data.get('approve') is not True:raise WorkflowError('请明确批准加入新数据；它将作为拟合资料')
         cfg=s['inverse_settings'];teaching=data.get('teaching') is True
+        proposal=s.get('measurement_plan');choice=data.get('proposal_id');proposal_hash=data.get('proposal_sha256')
+        if (choice or proposal_hash) and (not proposal or proposal_hash!=proposal['sha256']
+                                          or not any(row['id']==choice for row in proposal['plans'])):
+            raise WorkflowError('补测方案已经变化，请核对当前目录后重新选择。',409)
         if teaching:
-            proposal=s.get('measurement_plan');choice=data.get('proposal_id')
             if not s.get('teaching_object') or not proposal or data.get('proposal_sha256')!=proposal['sha256']:raise WorkflowError('教学补采需当前已核对方案及独立教学对象')
             item=next((r for r in proposal['plans'] if r['id']==choice),None)
             if item is None:raise WorkflowError('请选择当前有限补采方案')
@@ -335,19 +462,21 @@ def action(store,s,data):
             else:
                 text=acquire(store.owner.root/'private-teaching',s['inverse_root'],s['teaching_object']['commitment_sha256'],model=cfg['model'],acquisition_index=index,lower=item['range_mm'][0],upper=item['range_mm'][1],points=item['points'],positions=item.get('prediction_x_mm'))
             ds=parse(text,cfg['model'],{'source_kind':'SYNTHETIC_TEACHING','source_name':f'独立教学补采 {index} · {choice}','license':'CC0-1.0'})
+            canonical,audit=text,None
         else:
-            text=data.get('csv_text');ds=parse(text,cfg['model'],data)
-            if any(ds['raw_sha256']==g['dataset']['raw_sha256'] for g in s['groups']):raise WorkflowError('同一份原始 CSV 已在本组；不能重复加入并当作独立补采')
+            text,canonical,ds,audit=imported_data(data,cfg['model'])
+            signatures={ds['raw_sha256'],audit['original_sha256']} if audit else {ds['raw_sha256']}
+            if any(signatures & {g['dataset']['raw_sha256'],g.get('intake',{}).get('original_sha256')} for g in s['groups']):raise WorkflowError('同一份原始 CSV 或分析数据已在本组；不能重复加入并当作独立补采')
             reserve(store,s,'acquisition')
-        child=revise(store,s);name=f'scan-{len(child["groups"])}.csv';(store.folder(child['id'])/name).write_bytes(text.encode())
+        child=revise(store,s);name=f'scan-{len(child["groups"])}.csv'
         entry=group_entry(ds,cfg,name)
+        save_data(store.folder(child['id']),name,text,canonical,entry,audit)
         if teaching:entry['observation']={'kind':'POINT_SAMPLE'}
         # Each new dataset starts unapproved, even when generated by the teaching device.
         child['groups'].append(entry);child['comparison_origin']={'record_id':s['id'],'fit_result_id':s.get('inverse_result',{}).get('id'),'profiles':{k:{'components':v['components'],'grid_spacing':v['grid_spacing']} for k,v in s['inverse_profiles'].items()}}
         if child.get('research_origin',{}).get('status')=='ACQUISITION_SELECTED':
             child['research_origin'].update(status='ACQUISITION_RECEIVED',received_dataset_sha256=ds['sha256'])
         if cfg['model']==models.FILM:child['comparison_origin']['previous_mode_count']=len((s.get('inverse_result') or {}).get('modes',[]))
-        proposal=s.get('measurement_plan');choice=data.get('proposal_id')
         if proposal and choice and data.get('proposal_sha256')==proposal['sha256']:
             item=next((p for p in proposal['plans'] if p['id']==choice),None)
             if item:

@@ -1,0 +1,1487 @@
+{
+  "id": "nonlinear-foundations",
+  "version": "1.0.2",
+  "sources": {
+    "nlo-intro": {
+      "title": "Nonlinear Frequency Conversion in III-V Semiconductor Photonic Crystals",
+      "author": "Kelley Rivoire",
+      "edition": "Stanford doctoral thesis, 2012",
+      "license": "CC BY-NC 3.0 US（论文版权页）",
+      "fingerprint": "sha256:595957b36772445c2312f4b858afaa70e27aac07ad42cd05aab7b3846f78a436",
+      "url": "https://web.stanford.edu/group/nqp/jv_files/thesis/rivoire_thesis_final.pdf#page=35",
+      "section": "第 2 章，光频率转换与非线性介质，阅读器第 35 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "nlo-mixing": {
+      "title": "Nonlinear Frequency Conversion in III-V Semiconductor Photonic Crystals",
+      "author": "Kelley Rivoire",
+      "edition": "Stanford doctoral thesis, 2012",
+      "license": "CC BY-NC 3.0 US（论文版权页）",
+      "fingerprint": "sha256:595957b36772445c2312f4b858afaa70e27aac07ad42cd05aab7b3846f78a436",
+      "url": "https://web.stanford.edu/group/nqp/jv_files/thesis/rivoire_thesis_final.pdf#page=38",
+      "section": "§2.2，非线性极化与和差频，阅读器第 38 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "nlo-oscillator": {
+      "title": "Nonlinear Frequency Conversion in III-V Semiconductor Photonic Crystals",
+      "author": "Kelley Rivoire",
+      "edition": "Stanford doctoral thesis, 2012",
+      "license": "CC BY-NC 3.0 US（论文版权页）",
+      "fingerprint": "sha256:595957b36772445c2312f4b858afaa70e27aac07ad42cd05aab7b3846f78a436",
+      "url": "https://web.stanford.edu/group/nqp/jv_files/thesis/rivoire_thesis_final.pdf#page=36",
+      "section": "§2.1，非谐振子与外场驱动，阅读器第 36 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "nlo-symmetry": {
+      "title": "Nonlinear Frequency Conversion in III-V Semiconductor Photonic Crystals",
+      "author": "Kelley Rivoire",
+      "edition": "Stanford doctoral thesis, 2012",
+      "license": "CC BY-NC 3.0 US（论文版权页）",
+      "fingerprint": "sha256:595957b36772445c2312f4b858afaa70e27aac07ad42cd05aab7b3846f78a436",
+      "url": "https://web.stanford.edu/group/nqp/jv_files/thesis/rivoire_thesis_final.pdf#page=37",
+      "section": "§2.1，反演对称与偶阶响应，阅读器第 37 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "nlo-interface": {
+      "title": "Local and nonlocal surface nonlinearities for surface optical second-harmonic generation",
+      "author": "P. Guyot-Sionnest、Y. R. Shen",
+      "edition": "Phys. Rev. B 35, 4420 (1987)",
+      "license": "APS 版权，原文链接",
+      "fingerprint": "sha256:174d11314559b67cfcaee877e92ac54a9d1c457fba1ed51e2cb1e772bd05a544",
+      "url": "https://journals.aps.org/prb/abstract/10.1103/PhysRevB.35.4420",
+      "section": "摘要，界面局部电偶极非线性及体贡献",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "nlo-tensor": {
+      "title": "Nonlinear Frequency Conversion in III-V Semiconductor Photonic Crystals",
+      "author": "Kelley Rivoire",
+      "edition": "Stanford doctoral thesis, 2012",
+      "license": "CC BY-NC 3.0 US（论文版权页）",
+      "fingerprint": "sha256:595957b36772445c2312f4b858afaa70e27aac07ad42cd05aab7b3846f78a436",
+      "url": "https://web.stanford.edu/group/nqp/jv_files/thesis/rivoire_thesis_final.pdf#page=39",
+      "section": "§2.2，二阶张量与 d 系数，阅读器第 39 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "nlo-mismatch": {
+      "title": "Nonlinear Frequency Conversion in III-V Semiconductor Photonic Crystals",
+      "author": "Kelley Rivoire",
+      "edition": "Stanford doctoral thesis, 2012",
+      "license": "CC BY-NC 3.0 US（论文版权页）",
+      "fingerprint": "sha256:595957b36772445c2312f4b858afaa70e27aac07ad42cd05aab7b3846f78a436",
+      "url": "https://web.stanford.edu/group/nqp/jv_files/thesis/rivoire_thesis_final.pdf#page=40",
+      "section": "§2.3，失配、sinc² 转换曲线，阅读器第 40 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "phasors": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=10",
+      "section": "§2.3，复相量表示、振幅及相位，阅读器第 10 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "nlo-matching": {
+      "title": "Nonlinear Frequency Conversion in III-V Semiconductor Photonic Crystals",
+      "author": "Kelley Rivoire",
+      "edition": "Stanford doctoral thesis, 2012",
+      "license": "CC BY-NC 3.0 US（论文版权页）",
+      "fingerprint": "sha256:595957b36772445c2312f4b858afaa70e27aac07ad42cd05aab7b3846f78a436",
+      "url": "https://web.stanford.edu/group/nqp/jv_files/thesis/rivoire_thesis_final.pdf#page=41",
+      "section": "§2.3，材料、双折射和准相位匹配，阅读器第 41 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "qpm": {
+      "title": "PyNLO · Nonlinear Optics",
+      "author": "University of Colorado Boulder PyNLO contributors",
+      "edition": "在线开发文档",
+      "license": "原站署名与许可",
+      "fingerprint": "sha256:cc5b9a0fa6b3c30e556e656919dee9e5231adcfe3a169af95e89e43bd4c44be0",
+      "url": "https://ucboulder.github.io/PyNLO/notes/nonlinear_optics.html",
+      "section": "Phase matching and quasi-phase matching，符号反转和整周期",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "nlo-qpm-fourier": {
+      "title": "Photonics · Lecture Notes",
+      "author": "Stefan Linden / Universität Bonn",
+      "edition": "波恩大学光子学讲义",
+      "license": "作者／机构版权，原文链接",
+      "fingerprint": "sha256:130e7555cb46f9a0203caae3f037798a570c884ab07669ef853dbe2fdaf60676",
+      "url": "https://www.pi.uni-bonn.de/linden/en/media/photonics.pdf/@@download/file/LectureNotes.pdf#page=162",
+      "section": "§7.2.2，方波光栅 Fourier 系数与式 7.2.23–27，阅读器第 162 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "anisotropic-wave": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=158",
+      "section": "§2.8，D 与 E、波矢和本征偏振，阅读器第 158 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "nlo-types": {
+      "title": "Photonics · Lecture Notes",
+      "author": "Stefan Linden / Universität Bonn",
+      "edition": "波恩大学光子学讲义",
+      "license": "作者／机构版权，原文链接",
+      "fingerprint": "sha256:130e7555cb46f9a0203caae3f037798a570c884ab07669ef853dbe2fdaf60676",
+      "url": "https://www.pi.uni-bonn.de/linden/en/media/photonics.pdf/@@download/file/LectureNotes.pdf#page=161",
+      "section": "§7.2.2，Ⅰ型与Ⅱ型双折射匹配，阅读器第 161 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "nlo-material": {
+      "title": "Nonlinear Frequency Conversion in III-V Semiconductor Photonic Crystals",
+      "author": "Kelley Rivoire",
+      "edition": "Stanford doctoral thesis, 2012",
+      "license": "CC BY-NC 3.0 US（论文版权页）",
+      "fingerprint": "sha256:595957b36772445c2312f4b858afaa70e27aac07ad42cd05aab7b3846f78a436",
+      "url": "https://web.stanford.edu/group/nqp/jv_files/thesis/rivoire_thesis_final.pdf#page=42",
+      "section": "§2.3，材料比较表与透明波段，阅读器第 42 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "group-expansion": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=33",
+      "section": "§2.1，传播常数关于载频的 Taylor 展开，阅读器第 33 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "nlo-overlap": {
+      "title": "Nonlinear Frequency Conversion in III-V Semiconductor Photonic Crystals",
+      "author": "Kelley Rivoire",
+      "edition": "Stanford doctoral thesis, 2012",
+      "license": "CC BY-NC 3.0 US（论文版权页）",
+      "fingerprint": "sha256:595957b36772445c2312f4b858afaa70e27aac07ad42cd05aab7b3846f78a436",
+      "url": "https://web.stanford.edu/group/nqp/jv_files/thesis/rivoire_thesis_final.pdf#page=43",
+      "section": "§2.3，非线性模场重叠与式 2.16，阅读器第 43 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "nlo-seeded": {
+      "title": "Stimulated Emission Tomography",
+      "author": "M. Liscidini、J. E. Sipe",
+      "edition": "Phys. Rev. Lett. 111, 193602 (2013)",
+      "license": "APS 版权，原文链接",
+      "fingerprint": "sha256:e71b7b3658017490092b0a0eded7237469e3f6ca3229a2fd04dfd43685fea726",
+      "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.111.193602",
+      "section": "摘要，SPDC 与受激差频的对应关系",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "cars-resonant-electronic": {
+      "title": "Removing non-resonant background from broadband CARS using a physics-informed neural network",
+      "author": "Ryan Muddiman, Kevin O’Dwyer, Charles H. Camp Jr., Bryan Hennelly",
+      "edition": "Analytical Methods 15 (2023), 4032–4043; DOI 10.1039/D3AY01131C",
+      "license": "CC BY 3.0（论文版权说明）",
+      "fingerprint": "sha256:4e85366865a3009ea64d0d0ded047de4d1da3e3a1563ff6671218b1f5dffd6ca",
+      "url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=936436#page=1",
+      "section": "摘要、§1 Introduction 和 §2.1；PDF 第 1—2 页；振动共振与电子非共振相干响应",
+      "accessed": "2026-11-14",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接作者机构公开原文；中文机制小节由项目撰写。"
+    }
+  },
+  "entries": [
+    {
+      "id": "nonlinear-polarization-expansion",
+      "title": "非线性极化的场阶数展开",
+      "topic": "nonlinear",
+      "level": "intro",
+      "terms": [
+        "非线性极化",
+        "susceptibility expansion",
+        "CARS",
+        "相干反斯托克斯拉曼",
+        "非共振背景",
+        "CARS的非共振背景",
+        "CARS非共振背景"
+      ],
+      "definition": "弱到中等场强下，可用电场的幂级数组织材料极化响应。",
+      "body": "线性项在单频驱动下仍振荡于原频率；二阶乘积可以产生直流、和频及差频。每一项的大小同时依赖材料系数和场幅，在泵场增加后要重新检查高阶项和损伤边界。\n\nCARS 的三阶响应：振动共振分量 χR⁽³⁾ 与电子非共振分量 χNR⁽³⁾ 共同参与。固定激发条件下，信号强度正比于 |χR⁽³⁾+χNR⁽³⁾|²，展开后包含 2Re[χR⁽³⁾χNR⁽³⁾*] 干涉项。先叠加复振幅再取模平方；相对相位会改变谱形。非共振背景在这里指电子响应，不能仅解释成未共振的分子振动，也不能把两项强度直接相加。",
+      "example": "若只比较同一材料、同一泵频下的二阶极化源，泵场幅乘二时，该源幅乘四。",
+      "caution": "极化源的场阶数与实验记录的功率阶数需要分开推导。",
+      "conditions": [
+        "局域微扰电偶极，写成标量仅为单一偏振示意。"
+      ],
+      "formula": "P=ε₀(χ⁽¹⁾E+χ⁽²⁾E²+χ⁽³⁾E³+⋯)",
+      "variables": "P 单位 C/m²，E 单位 V/m。",
+      "prerequisites": [
+        "linear-local-material-response"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-intro",
+        "nlo-mixing",
+        "cars-resonant-electronic"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P=ε₀(χ⁽¹⁾E+χ⁽²⁾E²+χ⁽³⁾E³+⋯)",
+          "sources": [
+            "nlo-intro",
+            "nlo-mixing"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若只比较同一材料、同一泵频下的二阶极化源，泵场幅乘二时，该源幅乘四。",
+          "sources": []
+        },
+        {
+          "kind": "DERIVED",
+          "statement": "固定激发条件下，CARS 强度含振动共振与电子非共振振幅的干涉项。",
+          "sources": [
+            "cars-resonant-electronic"
+          ]
+        }
+      ],
+      "review": "2026-11-14 · 核对原论文摘要、机制及相干强度关系"
+    },
+    {
+      "id": "nonlinear-oscillator-asymmetry",
+      "title": "非谐振子为何产生偶次响应",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "anharmonic oscillator",
+        "势能非谐"
+      ],
+      "definition": "介质束缚电荷的恢复力若随位移非线性变化，振荡频率成分可以超出外驱动频率。",
+      "body": "把恢复力写成位移的一次项和二次项。第一近似位移为正弦，二次项含常量和二倍频，就在下一阶方程中形成两个驱动分量。若势能具有反演对称性，恢复力为奇函数，二次恢复力项消失。",
+      "example": "在不对称势阱里令 x≈a cos ωt，二次力包含与 a²/2 成比例的静态与倍频分量。",
+      "caution": "经典振子提供物理图像，具体晶体张量与共振还需材料数据。",
+      "conditions": [
+        "弱驱动、单振子微扰，明确初始平衡位置。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "lorentz-resonant-susceptibility"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-oscillator",
+        "nlo-symmetry"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "介质束缚电荷的恢复力若随位移非线性变化，振荡频率成分可以超出外驱动频率。",
+          "sources": [
+            "nlo-oscillator",
+            "nlo-symmetry"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在不对称势阱里令 x≈a cos ωt，二次力包含与 a²/2 成比例的静态与倍频分量。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "bulk-electric-dipole-inversion-rule",
+      "title": "反演对称介质的体二阶电偶极选择规则",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "中心对称χ2",
+        "electric dipole inversion"
+      ],
+      "definition": "在反演对称的均匀体材料中，电偶极近似要求极化对电场为奇函数。",
+      "body": "反演使 E 和 P 都翻号，反演后的同种材料仍使用同一响应函数。于是比较 P(−E) 与 −P(E) 的逐阶系数，偶次系数必须为零。奇次项可以存在，所以同一材料仍可能出现 Kerr 效应。",
+      "example": "理想均匀中心对称体材料可同时满足 χ⁽²⁾=0 与 χ⁽³⁾≠0。",
+      "caution": "界面或其他响应机制要根据其自身对称性判断。",
+      "conditions": [
+        "均匀体、反演对称、无打破对称性的外场、电偶极近似。"
+      ],
+      "formula": "P(−E)=−P(E)",
+      "variables": "E 与 P 都为极矢量。",
+      "prerequisites": [
+        "nonlinear-polarization-expansion"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-symmetry"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P(−E)=−P(E)",
+          "sources": [
+            "nlo-symmetry"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "理想均匀中心对称体材料可同时满足 χ⁽²⁾=0 与 χ⁽³⁾≠0。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "surface-shg-symmetry",
+      "title": "界面反演破缺与倍频源",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "surface second harmonic",
+        "表面倍频"
+      ],
+      "definition": "即使均匀体禁止二阶电偶极响应，界面的局部环境也可能容许二阶项。",
+      "body": "在界面上取法向，反演会交换两侧。当两侧环境不同，局部响应不再需要满足均匀体的反演条件。此时允许的张量分量仍受界面内对称性限制，信号还取决于入射与探测偏振。",
+      "example": "比较均匀材料内部和材料与空气的界面，后者存在一个两侧不等价的法向。",
+      "caution": "观察到倍频不能仅凭这一现象确定全部信号来源。",
+      "conditions": [
+        "用界面对称性与电偶极近似分析；观察到的总信号可含其他贡献。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "bulk-electric-dipole-inversion-rule"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-interface",
+        "nlo-symmetry"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "即使均匀体禁止二阶电偶极响应，界面的局部环境也可能容许二阶项。",
+          "sources": [
+            "nlo-interface",
+            "nlo-symmetry"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较均匀材料内部和材料与空气的界面，后者存在一个两侧不等价的法向。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "susceptibility-si-units",
+      "title": "各阶电极化率的 SI 单位",
+      "topic": "nonlinear",
+      "level": "intro",
+      "terms": [
+        "χ2单位",
+        "χ3单位",
+        "nonlinear susceptibility units"
+      ],
+      "definition": "各阶电极化率的单位补偿对应电场幂次，使每一项最终同为极化强度。",
+      "body": "用 ε₀E 的单位 C/m² 作基准，多出的每一份 E 都需要一份 m/V 抵消。二阶量常以 pm/V 表示，三阶量常以 m²/V² 表示。比较文献前还要确认作者用的是 χ、d，还是等效材料参数。",
+      "example": "5 pm/V=5×10⁻¹² m/V；代入 E=10⁶ V/m 得 χ⁽²⁾E=5×10⁻⁶。",
+      "caution": "这个无量纲乘积只表示相对于 ε₀E 的阶数，不是转换效率。",
+      "conditions": [
+        "标准 SI 电场和体极化归一。"
+      ],
+      "formula": "[χ⁽ⁿ⁾]=(m/V)ⁿ⁻¹",
+      "variables": "n 为响应阶数。",
+      "prerequisites": [
+        "nonlinear-polarization-expansion"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-tensor",
+        "nlo-mixing"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "[χ⁽ⁿ⁾]=(m/V)ⁿ⁻¹",
+          "sources": [
+            "nlo-tensor",
+            "nlo-mixing"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "5 pm/V=5×10⁻¹² m/V；代入 E=10⁶ V/m 得 χ⁽²⁾E=5×10⁻⁶。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "quadratic-two-tone-products",
+      "title": "两频驱动下二阶极化包含哪些频率",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "two-tone mixing",
+        "双频二次项"
+      ],
+      "definition": "平方一个由两个实余弦组成的电场，会生成静态、各自倍频、和频和差频。",
+      "body": "两个自乘项用余弦平方公式拆为静态与倍频。交叉项用积化和差公式拆成和频及差频，其余弦振幅因子均为两泵场幅之积。后续传播能否高效累积由材料和匹配条件决定。",
+      "example": "令两泵频率为 100 THz、110 THz，列出的正频率为 10、200、210、220 THz，外加 0。",
+      "caution": "频率列表列出极化源；探测器未必看得到其中每个分量。",
+      "conditions": [
+        "两独立单频、同位置的实标量 E，二阶微扰。"
+      ],
+      "formula": "2 cos A cos B=cos(A+B)+cos(A−B)",
+      "variables": "A、B 是瞬时相位。",
+      "prerequisites": [
+        "nonlinear-polarization-expansion"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-mixing"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "2 cos A cos B=cos(A+B)+cos(A−B)",
+          "sources": [
+            "nlo-mixing"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "令两泵频率为 100 THz、110 THz，列出的正频率为 10、200、210、220 THz，外加 0。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "optical-rectification-envelope",
+      "title": "光整流与光脉冲包络",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "optical rectification",
+        "光整流",
+        "光学整流",
+        "差频零频极限"
+      ],
+      "definition": "二阶极化中可出现由载波平均得到的低频项，其时间变化可追踪光脉冲包络。",
+      "body": "将单载频电场写成 A(t)cosωt，平方后分成二倍载频项和 A(t)²/2。连续恒振幅时，低频项是静态极化。脉冲的包络随时间变化，低频极化源可以有宽于直流的频谱。",
+      "example": "把泵从连续光改成短脉冲，计算平方包络，再比较两个低频源的频谱支持。",
+      "caution": "有低频极化源不代表高效辐射，频率匹配、材料吸收和出耦仍影响结果。",
+      "conditions": [
+        "慢变实包络，允许二阶响应；不把材料系数视为跨全部频段不变。"
+      ],
+      "formula": "E²=A²(t)[1+cos(2ωt)]/2",
+      "variables": "A 为峰值包络，E 单位 V/m。",
+      "prerequisites": [
+        "quadratic-two-tone-products"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-mixing",
+        "nlo-symmetry"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "E²=A²(t)[1+cos(2ωt)]/2",
+          "sources": [
+            "nlo-mixing",
+            "nlo-symmetry"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "把泵从连续光改成短脉冲，计算平方包络，再比较两个低频源的频谱支持。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "sum-frequency-conversion",
+      "title": "和频的频率与真空波长换算",
+      "topic": "nonlinear",
+      "level": "intro",
+      "terms": [
+        "SFG",
+        "sum frequency"
+      ],
+      "definition": "两个正频率泵浦的二阶和频分量，其频率等于二者之和。",
+      "body": "对真空波长使用 ν=c/λ，因此相加的是波长倒数。计算输出频率只是确定哪个光谱分量被驱动，还需核对偏振允许性、匹配、透明波段和泵空间重叠。",
+      "example": "1064 nm 与 1550 nm 和频的真空波长约为 631 nm。",
+      "caution": "相加泵波长会得到错误的输出色段。",
+      "conditions": [
+        "真空波长、正频率、时不变的二阶混频。"
+      ],
+      "formula": "1/λ₃=1/λ₁+1/λ₂",
+      "variables": "三个 λ 均用相同长度单位。",
+      "prerequisites": [
+        "quadratic-two-tone-products"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-mixing",
+        "nlo-mismatch"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "1/λ₃=1/λ₁+1/λ₂",
+          "sources": [
+            "nlo-mixing",
+            "nlo-mismatch"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "1064 nm 与 1550 nm 和频的真空波长约为 631 nm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "difference-frequency-conversion",
+      "title": "差频的正频率与闲频波段",
+      "topic": "nonlinear",
+      "level": "intro",
+      "terms": [
+        "DFG",
+        "difference frequency",
+        "闲频"
+      ],
+      "definition": "两泵形成的差频极化，其正频率为两泵频率差的绝对值。",
+      "body": "取较高频率减去较低频率，或取两个真空波长倒数之差的绝对值。在复振幅推导中，一项写成高频包络乘低频包络的共轭，因而其相位也是差相位。",
+      "example": "1064 nm 与 1550 nm 的差频波长约为 3.39 μm。",
+      "caution": "两个泵频率相等时输出项为零频，不能用有限真空波长标记。",
+      "conditions": [
+        "真空波长，二阶微扰，分别核对材料在两泵与差频的响应。"
+      ],
+      "formula": "ν₃=abs(ν₁−ν₂)",
+      "variables": "ν 用 Hz。",
+      "prerequisites": [
+        "quadratic-two-tone-products"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-mixing",
+        "nlo-mismatch"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ν₃=abs(ν₁−ν₂)",
+          "sources": [
+            "nlo-mixing",
+            "nlo-mismatch"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "1064 nm 与 1550 nm 的差频波长约为 3.39 μm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "mixing-complex-conjugate-sign",
+      "title": "复包络混频的相位加减",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "差频共轭",
+        "phase of three wave mixing"
+      ],
+      "definition": "在统一的复载波记号下，和频源相位相加，差频源相位相减。",
+      "body": "实电场由正频部分及其复共轭组成。选同号的两个指数相乘得到和频，选异号指数得到差频。写包络振幅比例时可省略固定实因子，但完整功率计算仍要恢复归一与材料系数。",
+      "example": "输入相位 φ₁=40°、φ₂=10°，和频源相位项为 50°，正差频源相位项为 30°。",
+      "caution": "生成光实测的绝对相位还含传播和耦合所引入的相位。",
+      "conditions": [
+        "选择 E_j∝A_j exp[i(k_j z−ω_j t)] 的正频代表，ω₁>ω₂。"
+      ],
+      "formula": "P_SFG∝A₁A₂，P_DFG∝A₁A₂*",
+      "variables": "A_j 是以同一参考面定义的复场包络。",
+      "prerequisites": [
+        "difference-frequency-conversion",
+        "complex-conjugation-optics"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-mixing",
+        "phasors"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P_SFG∝A₁A₂，P_DFG∝A₁A₂*",
+          "sources": [
+            "nlo-mixing",
+            "phasors"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "输入相位 φ₁=40°、φ₂=10°，和频源相位项为 50°，正差频源相位项为 30°。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "degenerate-frequency-mixing",
+      "title": "简并和频与倍频的关系",
+      "topic": "nonlinear",
+      "level": "intro",
+      "terms": [
+        "degenerate SFG",
+        "简并二阶过程"
+      ],
+      "definition": "两输入频率相同的和频在频率上成为二次谐波产生。",
+      "body": "两泵各自驱动的和频条件在简并时合并至同一输出频率。若两泵处于不同偏振或空间模式，仍要按相应张量项和重叠相干求和。单一同模泵的倍频则可直接使用平方项。",
+      "example": "两束 1064 nm 光的和频为 532 nm；同样两波长可用来表示单束 1064 nm 的二次谐波。",
+      "caution": "频率简并不自动等于偏振、路径或空间模相同。",
+      "conditions": [
+        "二阶转换，频率相同；需声明每个泵的偏振和模。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "sum-frequency-conversion"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-mixing"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "两输入频率相同的和频在频率上成为二次谐波产生。",
+          "sources": [
+            "nlo-mixing"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两束 1064 nm 光的和频为 532 nm；同样两波长可用来表示单束 1064 nm 的二次谐波。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "nonlinear-tensor-projection",
+      "title": "非线性张量怎样变成有效系数",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "d_eff",
+        "张量投影",
+        "effective nonlinearity"
+      ],
+      "definition": "有效二阶系数是材料张量对输入与输出偏振的投影。",
+      "body": "对输出分量 i，先计算两输入偏振分量乘积经 χᵢⱼₖ 求和的源向量，再向选定的输出偏振投影。转动晶体或改变输入偏振，会改变采样的张量组合，也可能改变相位匹配。",
+      "example": "假设只允许 xxx 分量，输出与两输入均沿 x 时得到该分量；一输入沿 y 则此项为零。",
+      "caution": "表格中的最大材料系数不能无条件直接当成某配置的 d_eff。",
+      "conditions": [
+        "各偏振用晶体主轴表示，固定频率、偏振归一与简并系数。"
+      ],
+      "formula": "χ_eff=Σᵢⱼₖ e₃ᵢ*χᵢⱼₖe₁ⱼe₂ₖ",
+      "variables": "e_j 为归一偏振向量。",
+      "prerequisites": [
+        "anisotropic-dielectric-tensor",
+        "nonlinear-polarization-expansion"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-tensor",
+        "nlo-matching"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "χ_eff=Σᵢⱼₖ e₃ᵢ*χᵢⱼₖe₁ⱼe₂ₖ",
+          "sources": [
+            "nlo-tensor",
+            "nlo-matching"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "假设只允许 xxx 分量，输出与两输入均沿 x 时得到该分量；一输入沿 y 则此项为零。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "nonlinear-d-factor",
+      "title": "二阶系数 d 与 χ⁽²⁾的换算",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "d equals chi over two",
+        "二阶系数d"
+      ],
+      "definition": "常见的非线性光学张量约定定义 d=χ⁽²⁾/2。",
+      "body": "对单一允许的标量二阶分量，既可写成 ε₀χ⁽²⁾E²，也可写成 2ε₀dE²。压缩张量记法中交叉分量的重复项要按原文定义计数，不能在换算 d 以后再随意添一个倍数。",
+      "example": "若同一口径给 χ⁽²⁾=8 pm/V，按这个定义对应 d=4 pm/V。",
+      "caution": "检查作者公式对实场、峰值复包络或复频分量的定义。",
+      "conditions": [
+        "此处 d 与 χ 的指标及频率顺序相同。"
+      ],
+      "formula": "dᵢⱼₖ=χ⁽²⁾ᵢⱼₖ/2",
+      "variables": "两者均用 m/V。",
+      "prerequisites": [
+        "nonlinear-tensor-projection",
+        "susceptibility-si-units"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-tensor"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "dᵢⱼₖ=χ⁽²⁾ᵢⱼₖ/2",
+          "sources": [
+            "nlo-tensor"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若同一口径给 χ⁽²⁾=8 pm/V，按这个定义对应 d=4 pm/V。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "nonlinear-phase-mismatch-sign",
+      "title": "三波混频的失配符号约定",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "SFG mismatch sign",
+        "和频失配正负"
+      ],
+      "definition": "应先定义传播常数的组合，再用同一符号描述失配与补偿。",
+      "body": "选 Δk=k₃−k₁−k₂，正向泵产生的局部源与输出传播相位相对差在 z 上积累。均匀晶体强度的 sinc² 曲线是偶函数，所以光强不区分 ±Δk；设计带符号的光栅补偿和讨论场相位时需要一致的约定。",
+      "example": "若三者按 μm⁻¹ 得 k₃=20.1、k₁=9.0、k₂=11.0，则 Δk=+0.1 μm⁻¹。",
+      "caution": "别把另一个作者写的 k₁+k₂−k₃ 直接带入同符号的补偿式。",
+      "conditions": [
+        "共线且指定三个正向波；其他传播方向需用有符号分量。"
+      ],
+      "formula": "Δk=k₃−k₁−k₂",
+      "variables": "k_j=2π n_j/λ₀ⱼ。",
+      "prerequisites": [
+        "phase-mismatch",
+        "sum-frequency-conversion"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-mismatch",
+        "qpm"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δk=k₃−k₁−k₂",
+          "sources": [
+            "nlo-mismatch",
+            "qpm"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若三者按 μm⁻¹ 得 k₃=20.1、k₁=9.0、k₂=11.0，则 Δk=+0.1 μm⁻¹。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "nonlinear-mismatch-first-zero",
+      "title": "转换曲线的第一零点",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "sinc first zero",
+        "相位匹配主瓣"
+      ],
+      "definition": "平面波小信号转换中，有限长度晶体的归一效率在失配相位跨越一个完整周期时首次降为零。",
+      "body": "将沿晶体的源相位因子从零积到 L，得到一个相位因子和 sinc(ΔkL/2) 的场幅因子。其模平方给转换曲线。第一正负零点满足 ΔkL/2=±π，零到零宽度则为 4π/L。",
+      "example": "L=10 mm 时第一失配零点在约 ±628.3 m⁻¹。",
+      "caution": "第一零点宽度与半高全宽是不同定义。",
+      "conditions": [
+        "常系数、共线平面波、泵未耗尽、无吸收。"
+      ],
+      "formula": "sinc(u)=sin(u)/u，Δk_first=±2π/L",
+      "variables": "u 无量纲，Δk 用 m⁻¹。",
+      "prerequisites": [
+        "phase-mismatch",
+        "coherence-length-shg"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-mismatch"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "sinc(u)=sin(u)/u，Δk_first=±2π/L",
+          "sources": [
+            "nlo-mismatch"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "L=10 mm 时第一失配零点在约 ±628.3 m⁻¹。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "nonlinear-length-square-limit",
+      "title": "何时倍频功率随长度平方增长",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "SHG length squared",
+        "未耗尽长度标度"
+      ],
+      "definition": "在匹配、无损且泵未耗尽时，生成场的均匀累积使输出功率随长度平方变化。",
+      "body": "每一段微元对同一个输出模贡献近似相同相位和大小，积分得到场幅与 L 成正比。平方后得到功率标度。若改变长度同时改变聚焦、重叠或失配，需重新积分，不能只乘长度比例。",
+      "example": "保持其他参数、两晶体都近似完全匹配，将 1 mm 改成 2 mm，低转换率下倍频功率约变四倍。",
+      "caution": "该标度不能外推到泵已明显耗尽的长度。",
+      "conditions": [
+        "共线平面波，常泵、小信号、Δk≈0、忽略吸收。"
+      ],
+      "formula": "P₂∝L²",
+      "variables": "P₂ 是输出倍频功率。",
+      "prerequisites": [
+        "second-harmonic",
+        "nonlinear-mismatch-first-zero"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-mismatch"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P₂∝L²",
+          "sources": [
+            "nlo-mismatch"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "保持其他参数、两晶体都近似完全匹配，将 1 mm 改成 2 mm，低转换率下倍频功率约变四倍。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "nonlinear-pump-square-limit",
+      "title": "何时倍频功率随泵功率平方增长",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "SHG power scaling",
+        "未耗尽泵功率平方"
+      ],
+      "definition": "泵未耗尽且空间分布固定时，倍频场源与基频功率成正比。",
+      "body": "基频场幅按功率平方根增长，二阶极化随场幅平方增长，因而生成场约与泵功率成正比。再将倍频场平方得到输出功率与泵功率平方成正比。锁定重复率与脉冲形状后，类似比较才有意义。",
+      "example": "同一连续波系统内泵功率由 2 mW 增至 4 mW，输出倍频功率在小信号范围内约增至四倍。",
+      "caution": "以平均功率比较不同脉宽的光源时，峰值场与占空比可能不同。",
+      "conditions": [
+        "单泵 SHG，固定面积、耦合、长度、匹配和时间波形。"
+      ],
+      "formula": "P₂∝P₁²",
+      "variables": "P₁ 为晶体内基频泵功率。",
+      "prerequisites": [
+        "second-harmonic",
+        "nonlinear-length-square-limit"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-mixing",
+        "nlo-mismatch"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P₂∝P₁²",
+          "sources": [
+            "nlo-mixing",
+            "nlo-mismatch"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "同一连续波系统内泵功率由 2 mW 增至 4 mW，输出倍频功率在小信号范围内约增至四倍。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "qpm-domain-half-period",
+      "title": "极化翻转的畴长与光栅周期",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "poling domain length",
+        "QPM half period"
+      ],
+      "definition": "一阶理想准相位匹配中，正负等长畴每半周期交替，整个光栅周期包含两个畴。",
+      "body": "失配累积到 π 时，均匀晶体后续产生的场趋向相消。将非线性系数翻转符号等效补一个 π；理想均匀一阶匹配中，每个畴长取相干长度。设计参数应注明报的是单畴还是一对畴。",
+      "example": "若相干长度为 7 μm，等占空比的一阶周期为 14 μm，单畴长为 7 μm。",
+      "caution": "芯片写的周期数值不能再当单畴长重复乘二。",
+      "conditions": [
+        "均匀 Δk，等占空比，理想正负畴，一阶 QPM。"
+      ],
+      "formula": "L_c=π/abs(Δk)，Λ=2L_c",
+      "variables": "L_c 与 Λ 都为长度。",
+      "prerequisites": [
+        "periodic-poling",
+        "coherence-length-shg"
+      ],
+      "related": [],
+      "sources": [
+        "qpm",
+        "nlo-matching"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "L_c=π/abs(Δk)，Λ=2L_c",
+          "sources": [
+            "qpm",
+            "nlo-matching"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若相干长度为 7 μm，等占空比的一阶周期为 14 μm，单畴长为 7 μm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "qpm-order-reciprocal-vector",
+      "title": "准相位匹配的倒格矢与阶数",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "grating momentum",
+        "QPM order"
+      ],
+      "definition": "周期翻转为非线性系数引入离散空间谐波，每一阶谐波可补偿不同的失配。",
+      "body": "周期 Λ 的基准空间角频率是 2π/Λ，整数倍 m 给出不同空间谐波。满足有效失配接近零的阶才会累积。阶数条件之外，还应检查该阶傅里叶系数是否非零；理想一半占空比方波没有偶次谐波。",
+      "example": "Λ=10 μm 时基准倒格矢约 0.628 μm⁻¹，三阶约 1.885 μm⁻¹。",
+      "caution": "阶数改变同时改变可用有效耦合，不能只比较剩余失配。",
+      "conditions": [
+        "一维周期光栅、共线同向，Δk 采用输出减输入。"
+      ],
+      "formula": "Δk_eff=Δk−m(2π/Λ)",
+      "variables": "m 为有符号整数。",
+      "prerequisites": [
+        "qpm-domain-half-period",
+        "nonlinear-phase-mismatch-sign"
+      ],
+      "related": [],
+      "sources": [
+        "qpm",
+        "nlo-matching"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δk_eff=Δk−m(2π/Λ)",
+          "sources": [
+            "qpm",
+            "nlo-matching"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "Λ=10 μm 时基准倒格矢约 0.628 μm⁻¹，三阶约 1.885 μm⁻¹。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "qpm-duty-cycle-coefficient",
+      "title": "周期翻转占空比如何改变耦合",
+      "topic": "nonlinear",
+      "level": "advanced",
+      "terms": [
+        "poling duty cycle",
+        "QPM Fourier coefficient"
+      ],
+      "definition": "正负畴的长度比例会改变非线性光栅的空间傅里叶系数。",
+      "body": "在一个周期内先对常值 +d 积分到 DΛ，再对 −d 积分到 Λ。非零阶的两个积分合并后，模长含有 sin(πmD)。一半占空比给出一阶的最大模长，并让偶阶系数为零。",
+      "example": "理想方波 D=1/2 时，一阶幅系数为 2d/π，若其他条件相同，平方得到相对功率系数约 0.405。",
+      "caution": "功率比较要说明参考是 d 的理想均匀完全匹配，不能理解为实际器件外部效率。",
+      "conditions": [
+        "周期内两畴大小为同模反号，D 为正畴比例，m≠0。"
+      ],
+      "formula": "abs(d_m)=2 abs(d sin(πmD))/(π abs(m))",
+      "variables": "d、d_m 用 m/V，D 无量纲。",
+      "prerequisites": [
+        "qpm-order-reciprocal-vector"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-qpm-fourier",
+        "qpm"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "abs(d_m)=2 abs(d sin(πmD))/(π abs(m))",
+          "sources": [
+            "nlo-qpm-fourier",
+            "qpm"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "理想方波 D=1/2 时，一阶幅系数为 2d/π，若其他条件相同，平方得到相对功率系数约 0.405。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "phase-matching-birefringence-axes",
+      "title": "双折射如何补偿材料色散",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "birefringent phase matching",
+        "双折射补偿"
+      ],
+      "definition": "各频率用不同本征偏振时，可利用它们的相折射率差使传播常数相配。",
+      "body": "普通光与非普通光的有效相折射率通常不同，后者可随传播方向变化。把每一波实际看到的相折射率代入波矢，再比较三波组合。倍频时若共线，2kω=k₂ω 要求两波的相折射率一致。",
+      "example": "若某晶体在一个方向下基频 o 波 n=1.60、倍频 e 波 n=1.60，该方向满足相位指数条件。",
+      "caution": "还要核对允许的张量分量、透明范围及空间走离。",
+      "conditions": [
+        "共线倍频、指定晶轴、普通与非普通本征偏振。"
+      ],
+      "formula": "Δk=(4π/λ₀,ω)(n₂ω−nω)",
+      "variables": "λ₀,ω 为基频真空波长。",
+      "prerequisites": [
+        "uniaxial-ordinary-extraordinary",
+        "nonlinear-phase-mismatch-sign"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-matching",
+        "anisotropic-wave"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δk=(4π/λ₀,ω)(n₂ω−nω)",
+          "sources": [
+            "nlo-matching",
+            "anisotropic-wave"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若某晶体在一个方向下基频 o 波 n=1.60、倍频 e 波 n=1.60，该方向满足相位指数条件。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "mixing-type-one-two-polarization",
+      "title": "Ⅰ型与Ⅱ型双折射混频的偏振",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "type I SHG",
+        "type II SHG",
+        "Ⅰ型相位匹配"
+      ],
+      "definition": "在常见双折射三波混频标记中，Ⅰ型表示两基频输入同一类本征偏振，Ⅱ型表示输入属于不同类。",
+      "body": "用 o 和 e 标明晶体本征偏振，按低频两波分类。例如 oo→e 属Ⅰ型，oe→e 属Ⅱ型。输出偏振可能依晶体和配置而不同，写完整的三波记号比只报类型更便于复算。",
+      "example": "若两泵频率相同而分别为 o 与 e，仍可得到标为Ⅱ型的倍频过程。",
+      "caution": "不同文献还可能给出同偏振的 Type 0 记法，先声明命名口径。",
+      "conditions": [
+        "讨论双折射相位匹配，沿给定方向定义晶体本征偏振。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "phase-matching-birefringence-axes"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-types",
+        "nlo-tensor"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "在常见双折射三波混频标记中，Ⅰ型表示两基频输入同一类本征偏振，Ⅱ型表示输入属于不同类。",
+          "sources": [
+            "nlo-types",
+            "nlo-tensor"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若两泵频率相同而分别为 o 与 e，仍可得到标为Ⅱ型的倍频过程。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "nonlinear-material-three-band-window",
+      "title": "频率转换材料的三波透明窗口",
+      "topic": "nonlinear",
+      "level": "intro",
+      "terms": [
+        "nonlinear transparency range",
+        "转换材料透明区"
+      ],
+      "definition": "选取混频材料时，需要在两路输入及生成波长处都检查透过与吸收。",
+      "body": "先用频率关系得到生成波长，再查询同一材料和偏振的传播数据。接近透明窗口边缘时，标称边界只能作初筛，给定长度下的实际损耗还要结合吸收系数与样品品质。",
+      "example": "两泵都能进入晶体时，若其生成的差频位于材料吸收带，晶体末端仍可能几乎无输出。",
+      "caution": "透明窗口能初筛材料，仍需独立检查匹配、耦合与损伤条件。",
+      "conditions": [
+        "在目标温度、偏振与波段查材料，说明外部还是晶体内功率。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "sum-frequency-conversion",
+        "difference-frequency-conversion"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-material",
+        "nlo-matching"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "选取混频材料时，需要在两路输入及生成波长处都检查透过与吸收。",
+          "sources": [
+            "nlo-material",
+            "nlo-matching"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两泵都能进入晶体时，若其生成的差频位于材料吸收带，晶体末端仍可能几乎无输出。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "nonlinear-pulse-group-walkoff",
+      "title": "脉冲混频中的群时延走离",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "group velocity walkoff",
+        "群速度走离"
+      ],
+      "definition": "相位匹配的两波仍可有不同群速度，使脉冲包络随长度逐渐错开。",
+      "body": "同起点的窄带脉冲到达晶体某处的时间等于位置除以群速度。两者的差随着距离积累，接近脉宽时有效时间重叠下降。计算时先明确要比较的是两泵还是泵与生成脉冲。",
+      "example": "群时延差为 0.20 ps/mm 时，经过 5 mm 后两包络中心相差 1 ps。",
+      "caution": "相速度决定载波匹配，群时延差影响时间重叠。",
+      "conditions": [
+        "共线窄带脉冲，群速度近似常量，忽略脉宽变化。"
+      ],
+      "formula": "Δτ=L(1/v_g,1−1/v_g,2)",
+      "variables": "Δτ 可带符号，用 s 或 ps。",
+      "prerequisites": [
+        "group-velocity",
+        "phase-matching-birefringence-axes"
+      ],
+      "related": [],
+      "sources": [
+        "group-expansion",
+        "nlo-matching"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δτ=L(1/v_g,1−1/v_g,2)",
+          "sources": [
+            "group-expansion",
+            "nlo-matching"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "群时延差为 0.20 ps/mm 时，经过 5 mm 后两包络中心相差 1 ps。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "nonlinear-spatial-walkoff",
+      "title": "晶体内横向走离缩短空间重叠",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "spatial walkoff",
+        "Poynting walkoff"
+      ],
+      "definition": "各向异性材料中能流可以偏离波矢方向，使不同偏振束的中心在横向逐渐分离。",
+      "body": "相位匹配用各波的波矢；空间重叠则跟随能流方向。若两能流夹角小，给定长度内横向位移约等于长度乘角差。位移达到光斑尺度时，应重新估算有效相互作用长度。",
+      "example": "相对走离角 5 mrad，10 mm 长晶体给约 50 μm 横向偏移。",
+      "caution": "用波矢共线不能推出能量传播方向也共线。",
+      "conditions": [
+        "小角度、相对走离方向近似恒定，两束入射中心重合。"
+      ],
+      "formula": "Δx≈L Δρ",
+      "variables": "Δρ 用弧度，Δx 与 L 用同一长度单位。",
+      "prerequisites": [
+        "anisotropy-energy-walkoff",
+        "phase-matching-birefringence-axes"
+      ],
+      "related": [],
+      "sources": [
+        "anisotropic-wave",
+        "nlo-matching"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δx≈L Δρ",
+          "sources": [
+            "anisotropic-wave",
+            "nlo-matching"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "相对走离角 5 mrad，10 mm 长晶体给约 50 μm 横向偏移。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "nonlinear-efficient-overlap",
+      "title": "模场重叠决定波导混频耦合",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "nonlinear overlap",
+        "波导三模重叠"
+      ],
+      "definition": "同一纵向匹配条件下，非线性源的横向分布仍需能投影到输出模。",
+      "body": "在标量图像中，以两输入模场的乘积作为横向源，再对输出模取共轭内积。若器件及系数在横向镜像对称，而总被积函数是奇函数，积分为零。实际矢量模要改用张量收缩与功率归一。",
+      "example": "两输入和材料系数都为偶函数时，横向奇输出模的耦合积分在对称截面上为零。",
+      "caution": "这一条判断的是耦合积分，纵向相位匹配条件还应另外核对。",
+      "conditions": [
+        "固定横截面、可定义模的归一，标量式仅作对称性示意。"
+      ],
+      "formula": "κ∝∬u₃*u₁u₂χ⁽²⁾ dA",
+      "variables": "u_j 为横向模场，比例因子依功率归一。",
+      "prerequisites": [
+        "nonlinear-tensor-projection",
+        "orthogonal-complex-projection"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-overlap",
+        "nlo-tensor"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "κ∝∬u₃*u₁u₂χ⁽²⁾ dA",
+          "sources": [
+            "nlo-overlap",
+            "nlo-tensor"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两输入和材料系数都为偶函数时，横向奇输出模的耦合积分在对称截面上为零。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "nonlinear-frequency-seed",
+      "title": "差频种子与自发过程的起点",
+      "topic": "nonlinear",
+      "level": "undergraduate",
+      "terms": [
+        "seeded conversion",
+        "自发和受激频率转换"
+      ],
+      "definition": "经典差频由两路场同时提供驱动，自发产生的光子对需要量子涨落的描述。",
+      "body": "经典差频源含高频泵和另一路场的共轭。若另一路经典场严格为零，这个指定源项也为零。研究仅有泵时的光子对产生，需要引入量子场和相应的态描述，不能把经典乘积当成自发事件概率。",
+      "example": "给 775 nm 泵并注入一束 1550 nm 种子，经典差频关系可得到另一路 1550 nm 分量。",
+      "caution": "频率数值相同不代表已判定量子态或纠缠。",
+      "conditions": [
+        "经典例子只用频率关系，空间、偏振、出射口需另设定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "difference-frequency-conversion"
+      ],
+      "related": [],
+      "sources": [
+        "nlo-seeded",
+        "nlo-mixing"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "经典差频由两路场同时提供驱动，自发产生的光子对需要量子涨落的描述。",
+          "sources": [
+            "nlo-seeded",
+            "nlo-mixing"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "给 775 nm 泵并注入一束 1550 nm 种子，经典差频关系可得到另一路 1550 nm 分量。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    }
+  ]
+}

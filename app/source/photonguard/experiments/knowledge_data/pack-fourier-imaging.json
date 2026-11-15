@@ -1,0 +1,3058 @@
+{
+  "id": "fourier-imaging",
+  "version": "1.0.1",
+  "sources": {
+    "angular-meaning": {
+      "title": "Interactive Optics · Scalar Diffraction Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap6_Diffraction/DiffractiveOptics_2022_01Clean.html#intuition-for-the-spatial-fourier-transform-in-optics",
+      "section": "Intuition for the Spatial Fourier Transform in Optics",
+      "fingerprint": "sha256:466fef41bf046a840bcc077abfadc520021677ed5129f50286bd33ce08a732da",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "mit-spatial-1": {
+      "title": "MIT 2.71 Lecture Notes on Wave Optics",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2014/4b53a5747f9b58b9b73b2bbcc39945f0_MIT2_71S14_lec16_notes.pdf#page=1",
+      "section": "A. 两焦平面间的傅里叶变换，式 (1)–(2)，阅读器第 1 页",
+      "fingerprint": "sha256:2e9e375ef95b1e17bd40f6248a5d047eef1db4e52ac4a2443e2461e011a88345",
+      "author": "Nick Fang",
+      "edition": "MIT 2.71，2014-04-07",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "angular": {
+      "title": "Interactive Optics · Scalar Diffraction Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap6_Diffraction/DiffractiveOptics_2022_01Clean.html#angular-spectrum-method",
+      "section": "Angular Spectrum Method",
+      "fingerprint": "sha256:466fef41bf046a840bcc077abfadc520021677ed5129f50286bd33ce08a732da",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "fresnel": {
+      "title": "Interactive Optics · Scalar Diffraction Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap6_Diffraction/DiffractiveOptics_2022_01Clean.html#fresnel-approximation",
+      "section": "Fresnel Approximation",
+      "fingerprint": "sha256:466fef41bf046a840bcc077abfadc520021677ed5129f50286bd33ce08a732da",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "fraunhofer": {
+      "title": "Interactive Optics · Scalar Diffraction Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap6_Diffraction/DiffractiveOptics_2022_01Clean.html#fraunhofer-approximation",
+      "section": "Fraunhofer Approximation",
+      "fingerprint": "sha256:466fef41bf046a840bcc077abfadc520021677ed5129f50286bd33ce08a732da",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "fraunhofer-cases": {
+      "title": "Interactive Optics · Scalar Diffraction Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap6_Diffraction/DiffractiveOptics_2022_01Clean.html#fraunhofer-diffraction-revisited",
+      "section": "Fraunhofer Diffraction Revisited",
+      "fingerprint": "sha256:466fef41bf046a840bcc077abfadc520021677ed5129f50286bd33ce08a732da",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "mit-spatial-3": {
+      "title": "MIT 2.71 Lecture Notes on Wave Optics",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2014/4b53a5747f9b58b9b73b2bbcc39945f0_MIT2_71S14_lec16_notes.pdf#page=3",
+      "section": "A. 有限光阑下的振幅传递与点扩散，阅读器第 3 页",
+      "fingerprint": "sha256:2e9e375ef95b1e17bd40f6248a5d047eef1db4e52ac4a2443e2461e011a88345",
+      "author": "Nick Fang",
+      "edition": "MIT 2.71，2014-04-07",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "mit-spatial-4": {
+      "title": "MIT 2.71 Lecture Notes on Wave Optics",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2014/4b53a5747f9b58b9b73b2bbcc39945f0_MIT2_71S14_lec16_notes.pdf#page=4",
+      "section": "B. 空间滤波与圆孔频谱，阅读器第 4 页",
+      "fingerprint": "sha256:2e9e375ef95b1e17bd40f6248a5d047eef1db4e52ac4a2443e2461e011a88345",
+      "author": "Nick Fang",
+      "edition": "MIT 2.71，2014-04-07",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "mit-spatial-2": {
+      "title": "MIT 2.71 Lecture Notes on Wave Optics",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2014/4b53a5747f9b58b9b73b2bbcc39945f0_MIT2_71S14_lec16_notes.pdf#page=2",
+      "section": "A. 两次变换与像反转，阅读器第 2 页",
+      "fingerprint": "sha256:2e9e375ef95b1e17bd40f6248a5d047eef1db4e52ac4a2443e2461e011a88345",
+      "author": "Nick Fang",
+      "edition": "MIT 2.71，2014-04-07",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "mit-filter-2": {
+      "title": "MIT 2.71/2.710 Optics, wk11-a",
+      "url": "https://web.mit.edu/2.710/Fall06/2.710-wk11-a-sl.pdf#page=2",
+      "section": "Spatial filtering with the 4F system，阅读器第 2 页",
+      "fingerprint": "sha256:9a11704cc9069751e883ce011219bc4f8d74f08097f4cf3018932fdb738155f7",
+      "author": "MIT 2.71/2.710 课程团队",
+      "edition": "课程讲义，2005-11-14",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "mit-spatial-5": {
+      "title": "MIT 2.71 Lecture Notes on Wave Optics",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2014/4b53a5747f9b58b9b73b2bbcc39945f0_MIT2_71S14_lec16_notes.pdf#page=5",
+      "section": "B. 高通、低通和掩膜，阅读器第 5 页",
+      "fingerprint": "sha256:2e9e375ef95b1e17bd40f6248a5d047eef1db4e52ac4a2443e2461e011a88345",
+      "author": "Nick Fang",
+      "edition": "MIT 2.71，2014-04-07",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "spatial-filter": {
+      "title": "Interactive Optics · Scalar Diffraction Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap6_Diffraction/DiffractiveOptics_2022_01Clean.html#spatial-light-modulators-and-optical-fourier-filtering",
+      "section": "Spatial Light Modulators and Optical Fourier Filtering",
+      "fingerprint": "sha256:466fef41bf046a840bcc077abfadc520021677ed5129f50286bd33ce08a732da",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "mit-spatial-7": {
+      "title": "MIT 2.71 Lecture Notes on Wave Optics",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2014/4b53a5747f9b58b9b73b2bbcc39945f0_MIT2_71S14_lec16_notes.pdf#page=7",
+      "section": "C. 相干及非相干成像的线性变量，阅读器第 7 页",
+      "fingerprint": "sha256:2e9e375ef95b1e17bd40f6248a5d047eef1db4e52ac4a2443e2461e011a88345",
+      "author": "Nick Fang",
+      "edition": "MIT 2.71，2014-04-07",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "mit-imaging-14": {
+      "title": "MIT 2.71 Coherent and incoherent imaging",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2009/bebe78c6a2ae2603a0d1a3ea85e0b4ca_MIT2_71S09_lec22.pdf#page=14",
+      "section": "相干与非相干系统的 PSF、ATF、OTF 关系，阅读器第 14 页",
+      "fingerprint": "sha256:84e201cf604a7c6bcfe20d73f8f53c39b1c2bd14265e5007d1482c58edead82b",
+      "author": "MIT 2.71 课程团队",
+      "edition": "Spring 2009，Lecture 22",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "mit-imaging-16": {
+      "title": "MIT 2.71 Coherent and incoherent imaging",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2009/bebe78c6a2ae2603a0d1a3ea85e0b4ca_MIT2_71S09_lec22.pdf#page=16",
+      "section": "非相干成像线性系统与对比度，阅读器第 16 页",
+      "fingerprint": "sha256:84e201cf604a7c6bcfe20d73f8f53c39b1c2bd14265e5007d1482c58edead82b",
+      "author": "MIT 2.71 课程团队",
+      "edition": "Spring 2009，Lecture 22",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "mit-imaging-17": {
+      "title": "MIT 2.71 Coherent and incoherent imaging",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2009/bebe78c6a2ae2603a0d1a3ea85e0b4ca_MIT2_71S09_lec22.pdf#page=17",
+      "section": "OTF 的厄米对称与 MTF，阅读器第 17 页",
+      "fingerprint": "sha256:84e201cf604a7c6bcfe20d73f8f53c39b1c2bd14265e5007d1482c58edead82b",
+      "author": "MIT 2.71 课程团队",
+      "edition": "Spring 2009，Lecture 22",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "mit-imaging-18": {
+      "title": "MIT 2.71 Coherent and incoherent imaging",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2009/bebe78c6a2ae2603a0d1a3ea85e0b4ca_MIT2_71S09_lec22.pdf#page=18",
+      "section": "MTF 与正弦强度条纹的调制度，阅读器第 18 页",
+      "fingerprint": "sha256:84e201cf604a7c6bcfe20d73f8f53c39b1c2bd14265e5007d1482c58edead82b",
+      "author": "MIT 2.71 课程团队",
+      "edition": "Spring 2009，Lecture 22",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "mit-imaging-20": {
+      "title": "MIT 2.71 Coherent and incoherent imaging",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2009/bebe78c6a2ae2603a0d1a3ea85e0b4ca_MIT2_71S09_lec22.pdf#page=20",
+      "section": "圆孔及矩形孔的截止与频率响应，阅读器第 20 页",
+      "fingerprint": "sha256:84e201cf604a7c6bcfe20d73f8f53c39b1c2bd14265e5007d1482c58edead82b",
+      "author": "MIT 2.71 课程团队",
+      "edition": "Spring 2009，Lecture 22",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "mit-imaging-19": {
+      "title": "MIT 2.71 Coherent and incoherent imaging",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2009/bebe78c6a2ae2603a0d1a3ea85e0b4ca_MIT2_71S09_lec22.pdf#page=19",
+      "section": "由光瞳重叠得到传递函数，阅读器第 19 页",
+      "fingerprint": "sha256:84e201cf604a7c6bcfe20d73f8f53c39b1c2bd14265e5007d1482c58edead82b",
+      "author": "MIT 2.71 课程团队",
+      "edition": "Spring 2009，Lecture 22",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "mit-imaging-21": {
+      "title": "MIT 2.71 Coherent and incoherent imaging",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2009/bebe78c6a2ae2603a0d1a3ea85e0b4ca_MIT2_71S09_lec22.pdf#page=21",
+      "section": "非相干成像的频域计算次序，阅读器第 21 页",
+      "fingerprint": "sha256:84e201cf604a7c6bcfe20d73f8f53c39b1c2bd14265e5007d1482c58edead82b",
+      "author": "MIT 2.71 课程团队",
+      "edition": "Spring 2009，Lecture 22",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "mit-spatial-9": {
+      "title": "MIT 2.71 Lecture Notes on Wave Optics",
+      "url": "https://ocw.mit.edu/courses/2-71-optics-spring-2014/4b53a5747f9b58b9b73b2bbcc39945f0_MIT2_71S14_lec16_notes.pdf#page=9",
+      "section": "D. 相衬方法，阅读器第 9 页",
+      "fingerprint": "sha256:2e9e375ef95b1e17bd40f6248a5d047eef1db4e52ac4a2443e2461e011a88345",
+      "author": "Nick Fang",
+      "edition": "MIT 2.71，2014-04-07",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "mit-sampling-1": {
+      "title": "MIT Signals and Systems, Lecture 16: Sampling",
+      "url": "https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/8708ec068ebdea2c4ee2f38fad39fb83_MITRES_6_007S11_lec16.pdf#page=1",
+      "section": "采样定理与高频混叠，阅读器第 1 页",
+      "fingerprint": "sha256:ab021b8d5cd4a031af158d8ad5f48c97ad4616e6f22c97d2a370bf5f61c2e654",
+      "author": "Alan V. Oppenheim",
+      "edition": "MIT RES.6-007，Lecture 16",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "berry-klein-talbot": {
+      "title": "Integer, fractional and fractal Talbot effects",
+      "author": "Michael V. Berry、Shmuel Klein",
+      "edition": "Journal of Modern Optics 43, 2139–2164 (1996)",
+      "section": "§2 近轴 Talbot 像与分数平面",
+      "url": "https://michaelberryphysics.wordpress.com/wp-content/uploads/2013/07/berry274.pdf",
+      "fingerprint": "sha256:f302849db7cf7f5d3efecd34dd3773ac47f7d92a59940cfc3c76bb65a9fb8b03",
+      "license": "参见期刊和作者存档权利说明；仅作引用",
+      "rights": "REFERENCE_ONLY",
+      "accessed": "2026-11-14",
+      "excluded_material": "仅链接原文，中文讲解由项目原创。"
+    }
+  },
+  "entries": [
+    {
+      "id": "cycles-and-angular-frequency",
+      "title": "周期空间频率与空间角频率",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "cycles per millimeter",
+        "kx和fx"
+      ],
+      "definition": "空间角频率等于以周期数表示的空间频率乘 2π。",
+      "body": "写平面波的横向因子时，使用 exp(i2πfₓx) 或 exp(ikₓx) 会得到相同的波形。前者以 cycles/mm 计，后者可标 rad/mm。进入傅里叶透镜的尺度公式前应先统一频率约定。",
+      "example": "20 cycles/mm 对应约 125.66 rad/mm。",
+      "caution": "混用两套约定会引入 2π 的倍率误差。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "kₓ=2π fₓ",
+      "variables": "kₓ 用 rad/m，fₓ 用 cycles/m。",
+      "sources": [
+        "angular-meaning",
+        "mit-spatial-1"
+      ],
+      "prerequisites": [
+        "spatial-frequency"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "kₓ=2π fₓ",
+          "sources": [
+            "angular-meaning",
+            "mit-spatial-1"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "20 cycles/mm 对应约 125.66 rad/mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "spatial-sinusoid-period",
+      "title": "条纹周期与空间频率",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "grating pitch frequency",
+        "条纹周期换频率"
+      ],
+      "definition": "正弦图样的空间频率是沿相位变化方向的一段距离内的周期数。",
+      "body": "相邻同相位条纹之间的距离是一个周期。在二维图样里，条纹沿等相位线延伸，空间频率方向垂直于这些条纹。用物面还是像面长度计算，需要按观测或模型的参考面决定。",
+      "example": "沿垂直条纹方向量到 50 μm 周期，对应 20 cycles/mm。",
+      "caution": "沿斜切方向量出的周期与垂直方向周期不同。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "f=1/Λ",
+      "variables": "Λ 与 f 的长度单位互为倒数。",
+      "sources": [
+        "angular-meaning"
+      ],
+      "prerequisites": [
+        "spatial-frequency"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "f=1/Λ",
+          "sources": [
+            "angular-meaning"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "沿垂直条纹方向量到 50 μm 周期，对应 20 cycles/mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "plane-wave-frequency-direction",
+      "title": "平面波角度与空间频率",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "plane wave spatial frequency",
+        "方向余弦"
+      ],
+      "definition": "单色平面波的横向空间频率由横向波矢分量决定。",
+      "body": "在均匀介质中波矢大小为 2π/λ。沿 x 方向倾斜角 θ 时，横向分量为这个大小乘 sinθ；因此较大角度对应较大的横向频率。固定横向频率时，改变波长会改变可传播角度。",
+      "example": "波长 0.5 μm、sinθ=0.1 对应 200 cycles/mm。",
+      "caution": "使用介质内波长并注明 θ 相对光轴。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "fₓ=sinθ/λ",
+      "variables": "fₓ 单位 cycles/m，λ 用 m。",
+      "sources": [
+        "angular"
+      ],
+      "prerequisites": [
+        "cycles-and-angular-frequency"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "fₓ=sinθ/λ",
+          "sources": [
+            "angular"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "波长 0.5 μm、sinθ=0.1 对应 200 cycles/mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "angular-spectrum-longitudinal",
+      "title": "角谱的纵向波矢",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "longitudinal wavevector",
+        "kz分支"
+      ],
+      "definition": "均匀介质中的每一横向频率对应一个由色散关系决定的纵向波矢。",
+      "body": "将任意横向场写成平面波叠加后，每个分量沿 z 独立积累相位。横向波矢小于总波矢时，纵向波矢为实数；超过时为虚数，向正 z 传播的解要选择衰减分支。",
+      "example": "只传播一项正弦空间频率，比较它在不同 z 的相位。",
+      "caution": "相位和衰减符号应与时间谐波记号一致。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "k_z=√(k²−kₓ²−kᵧ²)，取向前传播或衰减支",
+      "variables": "k、kₓ、kᵧ、k_z 用 rad/m。",
+      "sources": [
+        "angular"
+      ],
+      "prerequisites": [
+        "plane-wave-frequency-direction"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "k_z=√(k²−kₓ²−kᵧ²)，取向前传播或衰减支",
+          "sources": [
+            "angular"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "只传播一项正弦空间频率，比较它在不同 z 的相位。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "angular-spectrum-transfer",
+      "title": "角谱传播因子",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "angular spectrum propagator",
+        "空间频谱传播"
+      ],
+      "definition": "自由空间角谱传播将每个横向频率乘以各自的轴向相位因子。",
+      "body": "由入射场变换得到角谱，在每个分量上乘 exp(ik_z z) 后做逆变换。传播分量的模保持，倏逝分量随距离衰减。这样同一频域表示可以涵盖近场中的高空间频率行为。",
+      "example": "用两个横向频率构成场，分别施加相位再叠加。",
+      "caution": "数值逆传播会放大衰减分量和噪声，需另行处理。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "H(fₓ,fᵧ;z)=exp(ik_z z)",
+      "variables": "k_z 用 rad/m，z 用 m，H 无量纲。",
+      "sources": [
+        "angular"
+      ],
+      "prerequisites": [
+        "angular-spectrum-longitudinal"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "H(fₓ,fᵧ;z)=exp(ik_z z)",
+          "sources": [
+            "angular"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用两个横向频率构成场，分别施加相位再叠加。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "angular-spectrum-cutoff",
+      "title": "可传播角谱的横向截止",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "propagating disk",
+        "角谱传播圆盘"
+      ],
+      "definition": "在均匀介质中，横向波矢大小超过总波矢的分量不能作为传播平面波前进。",
+      "body": "在二维空间频率平面上，可传播分量组成半径 1/λ 的圆盘。圆盘之外的分量在正向 z 上指数衰减，近场探测可能接触这些细节，远场仅保留传播部分。",
+      "example": "波长 500 nm 时圆盘边界为 2000 cycles/mm。",
+      "caution": "这是介质传播边界，有限 NA 仪器的收集带宽通常更小。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "√(fₓ²+fᵧ²)≤1/λ",
+      "variables": "频率单位 cycles/m，λ 为介质内波长。",
+      "sources": [
+        "angular"
+      ],
+      "prerequisites": [
+        "angular-spectrum-longitudinal"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "√(fₓ²+fᵧ²)≤1/λ",
+          "sources": [
+            "angular"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "波长 500 nm 时圆盘边界为 2000 cycles/mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "evanescent-decay-distance",
+      "title": "倏逝角谱的衰减长度",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "evanescent decay",
+        "倏逝场穿透"
+      ],
+      "definition": "越过角谱传播边界的横向频率分量具有指数衰减的场幅。",
+      "body": "若纵向波矢写成 iκ，正 z 的传播因子成为 exp(−κz)。场幅下降到 1/e 的距离为 1/κ，强度下降到同一比例的距离只有其一半。高横向频率一般衰减更快。",
+      "example": "比较离传播边界很近与远离边界的两种空间频率。",
+      "caution": "场幅与强度衰减长度需分开标明。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "κ=√(kₓ²+kᵧ²−k²)，L_amp=1/κ",
+      "variables": "κ 用 m⁻¹，L_amp 用 m。",
+      "sources": [
+        "angular"
+      ],
+      "prerequisites": [
+        "angular-spectrum-cutoff"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "κ=√(kₓ²+kᵧ²−k²)，L_amp=1/κ",
+          "sources": [
+            "angular"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较离传播边界很近与远离边界的两种空间频率。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "paraxial-wave-expansion",
+      "title": "近轴角谱的二次展开",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "paraxial kz",
+        "菲涅耳传播展开"
+      ],
+      "definition": "小横向波矢时，纵向波矢可保留到横向分量的二次项。",
+      "body": "对 √(k²−k_⊥²) 展开得到 k−k_⊥²/(2k)。第一个项是公共载波相位，第二项使不同空间频率产生相对相位。误差是否可接受还取决于被忽略高阶相位乘上传播距离后的大小。",
+      "example": "较小角度的宽束可用二次相位传播来估计近场。",
+      "caution": "小角度本身不能保证长距离累积误差足够小。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "k_z≈k−(kₓ²+kᵧ²)/(2k)",
+      "variables": "所有波矢量用 rad/m。",
+      "sources": [
+        "fresnel",
+        "angular"
+      ],
+      "prerequisites": [
+        "angular-spectrum-longitudinal"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "k_z≈k−(kₓ²+kᵧ²)/(2k)",
+          "sources": [
+            "fresnel",
+            "angular"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "较小角度的宽束可用二次相位传播来估计近场。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "fresnel-quadratic-kernel",
+      "title": "菲涅耳卷积核",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "Fresnel kernel",
+        "抛物相位核"
+      ],
+      "definition": "菲涅耳传播在标量近轴近似下可写成与二次相位核的卷积。",
+      "body": "从源点到观察点的几何路程可展开为轴向距离加横向差的平方除以两倍距离。这使点响应取决于坐标差。将每个输入点的复振幅乘这个核后求和，可重建近轴输出场。",
+      "example": "同一输入移动少量距离时，输出的卷积图样也相应平移。",
+      "caution": "忽略的高阶项、有限观察窗口和采样都会影响误差。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "fresnel"
+      ],
+      "prerequisites": [
+        "paraxial-wave-expansion"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "菲涅耳传播在标量近轴近似下可写成与二次相位核的卷积。",
+          "sources": [
+            "fresnel"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "同一输入移动少量距离时，输出的卷积图样也相应平移。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "fresnel-transfer-function",
+      "title": "菲涅耳传递函数的相位",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "Fresnel transfer function",
+        "二次频域相位"
+      ],
+      "definition": "去除公共相位后，近轴自由传播在空间频率域表现为二次相位因子。",
+      "body": "将横向波矢换成 2πf，近轴展开给出与频率平方和传播距离成正比的相位。由于理想传播因子幅值为一，有限孔径或采样带来的能量裁剪应在其他环节建模。",
+      "example": "让 fₓ 加倍，去除公共相位后的该项相位变化量变为四倍。",
+      "caution": "傅里叶与时间相位采用相反符号约定时因子可共轭。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "H_rel=exp[−iπλz(fₓ²+fᵧ²)]",
+      "variables": "λ、z 用 m，f 用 cycles/m。",
+      "sources": [
+        "fresnel",
+        "angular"
+      ],
+      "prerequisites": [
+        "paraxial-wave-expansion"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "H_rel=exp[−iπλz(fₓ²+fᵧ²)]",
+          "sources": [
+            "fresnel",
+            "angular"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "让 fₓ 加倍，去除公共相位后的该项相位变化量变为四倍。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "fresnel-number-scaling",
+      "title": "菲涅耳数的尺度判断",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "Fresnel number",
+        "近远场尺度"
+      ],
+      "definition": "菲涅耳数把典型孔径尺度、波长和传播距离合为一个无量纲量。",
+      "body": "设 a 为圆孔半径或明确说明的横向半尺度，a²/(λz) 衡量孔径内二次相位相对波长的量级。它很小时常可使用远场表达，较大时需要保留源面二次相位。",
+      "example": "a=0.1 mm、λ=500 nm、z=1 m 时，菲涅耳数约 0.02。",
+      "caution": "用半径或全宽会得到不同数值，必须注明尺度定义。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "N_F=a²/(λz)",
+      "variables": "a、λ、z 使用同一长度单位。",
+      "sources": [
+        "fresnel",
+        "fraunhofer"
+      ],
+      "prerequisites": [
+        "diffraction-regimes"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "N_F=a²/(λz)",
+          "sources": [
+            "fresnel",
+            "fraunhofer"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "a=0.1 mm、λ=500 nm、z=1 m 时，菲涅耳数约 0.02。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "fraunhofer-plane-scaling",
+      "title": "远场坐标到空间频率的比例",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "Fraunhofer scaling",
+        "远场频率坐标"
+      ],
+      "definition": "远场屏坐标可按波长与距离换算为输入平面的空间频率。",
+      "body": "在近轴和远场条件下，屏上相对中心的位移 X 对应角度约 X/z，再把角度用 λ 换算成空间频率。改变屏距会成比例地缩放图样的空间坐标，频率表示可消除此尺度变化。",
+      "example": "屏距加倍时，同一谱分量对应的屏位移近似加倍。",
+      "caution": "若由透镜后焦面观测，应使用焦距和对应变换约定。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "fₓ≈X/(λz)",
+      "variables": "X、λ、z 用 m，fₓ 用 cycles/m。",
+      "sources": [
+        "fraunhofer",
+        "mit-spatial-1"
+      ],
+      "prerequisites": [
+        "spatial-frequency"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "fₓ≈X/(λz)",
+          "sources": [
+            "fraunhofer",
+            "mit-spatial-1"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "屏距加倍时，同一谱分量对应的屏位移近似加倍。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "fraunhofer-intensity-square",
+      "title": "远场振幅与探测强度",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "far-field amplitude intensity",
+        "孔径傅里叶模平方"
+      ],
+      "definition": "相干照明下远场复振幅与孔径场的傅里叶变换成比例。",
+      "body": "相机记录强度时还要取振幅模平方。孔径场包含振幅与相位，两个透过强度相同但相位不同的孔径可以产生不同远场。比较归一化图样与绝对光功率时还要分清所用标尺。",
+      "example": "给孔径一半额外 π 相位，对轴上强度产生显著影响。",
+      "caution": "只有测强度时通常无法直接读出复振幅相位。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "fraunhofer-cases"
+      ],
+      "prerequisites": [
+        "diffraction-regimes"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "相干照明下远场复振幅与孔径场的傅里叶变换成比例。",
+          "sources": [
+            "fraunhofer-cases"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "给孔径一半额外 π 相位，对轴上强度产生显著影响。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "transform-shift-phase-ramp",
+      "title": "空间平移与频域线性相位",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "shift theorem",
+        "傅里叶平移定理"
+      ],
+      "definition": "输入图样的整体平移给其空间频谱增加线性相位。",
+      "body": "在积分中把坐标原点移到平移前位置，得到与频率成正比的相位因子。该因子的模为一，因此理想完整远场强度图样可对整体平移不敏感。复场相干叠加时相位差仍可被观察。",
+      "example": "把矩形孔整体横移，比较远场强度与频域相位。",
+      "caution": "边界裁切与非均匀照明会破坏整体平移假设。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "ℱ{u(x−x₀)}=U(f) exp(−i2πfx₀)",
+      "variables": "f 用 cycles/m，x₀ 用 m。",
+      "sources": [
+        "angular-meaning",
+        "fraunhofer"
+      ],
+      "prerequisites": [
+        "spatial-frequency"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ℱ{u(x−x₀)}=U(f) exp(−i2πfx₀)",
+          "sources": [
+            "angular-meaning",
+            "fraunhofer"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "把矩形孔整体横移，比较远场强度与频域相位。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "transform-tilt-spectrum-shift",
+      "title": "线性相位与频谱平移",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "phase ramp",
+        "倾斜照明搬移频谱"
+      ],
+      "definition": "输入场乘一个线性相位因子会把其空间频谱移到另一中心。",
+      "body": "在线性相位代表倾斜入射的模型中，原有各衍射分量一起沿频率轴偏移。有限光瞳因此可能放过一侧较高频率、遮挡另一侧，输出图样变化同时受频谱搬移和孔径限制。",
+      "example": "让平面照明稍微倾斜，观察透镜后焦面中零级位置移动。",
+      "caution": "光栅各级相对间隔可保持，整个频谱中心会改变。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "ℱ{u(x)exp(i2πf₀x)}=U(f−f₀)",
+      "variables": "f、f₀ 用相同空间频率单位。",
+      "sources": [
+        "angular-meaning",
+        "mit-spatial-1"
+      ],
+      "prerequisites": [
+        "spatial-frequency"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ℱ{u(x)exp(i2πf₀x)}=U(f−f₀)",
+          "sources": [
+            "angular-meaning",
+            "mit-spatial-1"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "让平面照明稍微倾斜，观察透镜后焦面中零级位置移动。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "fourier-scaling-width",
+      "title": "孔径宽度与频谱宽度互反",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "Fourier scaling",
+        "缩孔扩谱"
+      ],
+      "definition": "把同形状输入在空间中压窄会扩展其归一化频谱。",
+      "body": "傅里叶积分换变量可知输入横向尺度和频谱尺度互为反比。缩小单缝后其远场主瓣变宽，是这一性质的直观实例。绝对振幅也因积分尺度而变化，不能从宽度关系直接断定峰值。",
+      "example": "把缝宽减半，第一暗纹对应的空间频率绝对值加倍。",
+      "caution": "若保持的总功率不同，峰值和能量比较需另算。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "fraunhofer-cases",
+        "angular-meaning"
+      ],
+      "prerequisites": [
+        "spatial-frequency"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "把同形状输入在空间中压窄会扩展其归一化频谱。",
+          "sources": [
+            "fraunhofer-cases",
+            "angular-meaning"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "把缝宽减半，第一暗纹对应的空间频率绝对值加倍。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "amplitude-aperture-edge",
+      "title": "硬边光阑的旁瓣",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "hard aperture sidelobe",
+        "硬边傅里叶旁瓣"
+      ],
+      "definition": "孔径的突变边缘可在频域产生跨较大范围的振荡旁瓣。",
+      "body": "有限矩形孔的频谱具有主瓣与交替衰减的旁瓣。把边缘改成平滑渐变可以压低部分旁瓣，但通常会展宽主瓣或减少透过功率。要在定位、分辨和动态范围之间选择。",
+      "example": "比较同外径的硬边孔和渐变透射孔的远场。",
+      "caution": "旁瓣高度应说明是场幅还是强度归一化。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "fraunhofer-cases",
+        "mit-spatial-3"
+      ],
+      "prerequisites": [
+        "fraunhofer-intensity-square"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "孔径的突变边缘可在频域产生跨较大范围的振荡旁瓣。",
+          "sources": [
+            "fraunhofer-cases",
+            "mit-spatial-3"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较同外径的硬边孔和渐变透射孔的远场。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "rectangular-aperture-separation",
+      "title": "矩形孔的二维分离衍射",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "rectangular aperture",
+        "二维sinc"
+      ],
+      "definition": "可分离的矩形孔径使二维傅里叶场写成两个一维变换的乘积。",
+      "body": "若孔径场在 x 和 y 上分别是常值矩形窗，两个方向产生各自的 sinc 包络。孔径越窄的方向频谱越宽，故长缝的强度图样常主要在垂直于长边的方向展开。",
+      "example": "横向缝宽减半，横向第一暗纹频率加倍，纵向条件可不变。",
+      "caution": "圆孔与不可分离的相位分布不能套用乘积形式。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "fraunhofer-cases"
+      ],
+      "prerequisites": [
+        "fraunhofer-intensity-square"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "可分离的矩形孔径使二维傅里叶场写成两个一维变换的乘积。",
+          "sources": [
+            "fraunhofer-cases"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "横向缝宽减半，横向第一暗纹频率加倍，纵向条件可不变。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "circular-aperture-jinc",
+      "title": "圆瞳与 jinc 场分布",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "jinc pattern",
+        "圆孔振幅变换"
+      ],
+      "definition": "均匀圆瞳的标量远场振幅可写成 jinc 型径向函数。",
+      "body": "圆对称使二维变换只依赖径向频率；角向积分给贝塞尔函数，再对孔径半径积分得到 J₁ 项。记录点像亮度时将归一化场幅取模平方，零点位置与场幅的零点一致。",
+      "example": "沿任一穿过圆心的直径截取理想圆孔图样，主瓣形状相同。",
+      "caution": "jinc 的归一化写法因教材不同，检查中心极限是否为一。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "U/U₀=2J₁(u)/u",
+      "variables": "u=πD√(fₓ²+fᵧ²) 无量纲。",
+      "sources": [
+        "fraunhofer-cases",
+        "mit-spatial-4"
+      ],
+      "prerequisites": [
+        "diffraction-airy"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "U/U₀=2J₁(u)/u",
+          "sources": [
+            "fraunhofer-cases",
+            "mit-spatial-4"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "沿任一穿过圆心的直径截取理想圆孔图样，主瓣形状相同。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "focal-spectrum-pixel-calibration",
+      "title": "傅里叶面像素的频率标定",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "frequency plane calibration",
+        "像素到周期每毫米"
+      ],
+      "definition": "傅里叶面图样的像素间距可由相机像元、波长和焦距换成空间频率间隔。",
+      "body": "把像素编号相对零级中心的差乘像元间距，得到后焦面位移；再除以 λf 得到物面所对应的频率坐标。相机前若有转接倍率，还要换算到实际傅里叶面。",
+      "example": "p=5 μm、λ=500 nm、f=100 mm 时每像素约 0.1 cycles/mm。",
+      "caution": "光轴中心偏移与像素尺度均应标定。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "Δf=p/(λf_lens)",
+      "variables": "p、λ、f_lens 用 m，Δf 用 cycles/m。",
+      "sources": [
+        "mit-spatial-1"
+      ],
+      "prerequisites": [
+        "fraunhofer-plane-scaling"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δf=p/(λf_lens)",
+          "sources": [
+            "mit-spatial-1"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "p=5 μm、λ=500 nm、f=100 mm 时每像素约 0.1 cycles/mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "four-f-image-inversion",
+      "title": "两次傅里叶变换与倒像",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "double Fourier transform",
+        "4f倒像"
+      ],
+      "definition": "理想 4f 系统的两次同号变换使空间坐标反转。",
+      "body": "第一透镜把物场分解为频率分量，第二透镜再做带自身尺度的变换。没有掩膜、孔径无限且等焦距时，输出图样近似为输入的二维坐标反号版本；不等焦距还会缩放。",
+      "example": "用带箭头的透明图案观察像的方向，避免用圆形靶误判。",
+      "caution": "后续反射镜或相机读出可再改变画面方向。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-spatial-2",
+        "mit-filter-2"
+      ],
+      "prerequisites": [
+        "four-f-system"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "理想 4f 系统的两次同号变换使空间坐标反转。",
+          "sources": [
+            "mit-spatial-2",
+            "mit-filter-2"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用带箭头的透明图案观察像的方向，避免用圆形靶误判。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "four-f-magnification",
+      "title": "非等焦距 4f 的像倍率",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "unequal focal 4f",
+        "4f放大率"
+      ],
+      "definition": "共焦组合的理想横向放大率由第二透镜和第一透镜焦距比给出。",
+      "body": "同一横向频率在第一后焦面上的位移由 f₁ 决定，第二次变换再以 f₂ 决定像面尺度。带反号的倍率描述二维坐标翻转；掩膜在公共傅里叶面按第一透镜尺度设计。",
+      "example": "f₁=75 mm、f₂=150 mm 时理想像倍率 −2。",
+      "caution": "物面和像面应分别位于两外侧焦平面。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "m=−f₂/f₁",
+      "variables": "f₁、f₂ 同单位，m 无量纲。",
+      "sources": [
+        "mit-filter-2",
+        "mit-spatial-2"
+      ],
+      "prerequisites": [
+        "four-f-image-inversion"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "m=−f₂/f₁",
+          "sources": [
+            "mit-filter-2",
+            "mit-spatial-2"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "f₁=75 mm、f₂=150 mm 时理想像倍率 −2。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "fourier-low-pass-mask",
+      "title": "傅里叶面的低通掩膜",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "optical low pass",
+        "保留中心频谱"
+      ],
+      "definition": "低通掩膜保留光轴附近的低空间频率并遮掉较高频率。",
+      "body": "低频成分主要决定整体亮度和缓慢变化，强截止会削弱锐利边缘及细密条纹。有限频域窗口在像域对应卷积响应，若使用硬边掩膜，还可能引入振铃。",
+      "example": "用中心小圆孔只保留零级和最靠近零级的条纹分量。",
+      "caution": "低通阈值应以物方频率给出，而不仅是掩膜物理直径。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-spatial-5",
+        "mit-filter-2"
+      ],
+      "prerequisites": [
+        "spatial-filtering"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "低通掩膜保留光轴附近的低空间频率并遮掉较高频率。",
+          "sources": [
+            "mit-spatial-5",
+            "mit-filter-2"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用中心小圆孔只保留零级和最靠近零级的条纹分量。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "fourier-high-pass-mask",
+      "title": "傅里叶面的高通掩膜",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "optical high pass",
+        "挡中心看边缘"
+      ],
+      "definition": "遮挡频谱中心可压低直流与低频，突出快速变化的结构。",
+      "body": "遮挡区域越大，缓慢背景越弱，也可能丢失宽边缘和整体形状。剩余复振幅在像面干涉，观察到的高通强度图一般不能直接用输入亮度的线性高通结果替代。",
+      "example": "把小遮挡放在光轴中心，对比滤波前后的大块均匀区。",
+      "caution": "给出照明相干条件，边缘亮暗可能随相位改变。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-spatial-5"
+      ],
+      "prerequisites": [
+        "spatial-filtering"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "遮挡频谱中心可压低直流与低频，突出快速变化的结构。",
+          "sources": [
+            "mit-spatial-5"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "把小遮挡放在光轴中心，对比滤波前后的大块均匀区。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "fourier-directional-mask",
+      "title": "方向选择空间滤波",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "directional filter",
+        "傅里叶面条纹方向"
+      ],
+      "definition": "通过只放行频域中一条方向带，可以选出图像沿某方向变化的成分。",
+      "body": "空间条纹的波矢垂直于条纹。掩膜保留水平频率轴附近分量时，偏向保留随 x 改变的纹理，输出条纹方向常接近竖直。布置掩膜前先确认图样和坐标的方向。",
+      "example": "旋转狭缝掩膜 90°，比较棋盘靶中可见的两组边缘。",
+      "caution": "条纹方向与频率方向相差 90°。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-spatial-5",
+        "spatial-filter"
+      ],
+      "prerequisites": [
+        "spatial-sinusoid-period"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "通过只放行频域中一条方向带，可以选出图像沿某方向变化的成分。",
+          "sources": [
+            "mit-spatial-5",
+            "spatial-filter"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "旋转狭缝掩膜 90°，比较棋盘靶中可见的两组边缘。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "fourier-zero-order",
+      "title": "零级空间频率和平均场",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "DC Fourier optics",
+        "频谱中心零级"
+      ],
+      "definition": "傅里叶面原点对应物场空间频率为零的分量。",
+      "body": "在理想模型中，零频复振幅等于复场对空间积分。若物场不同区域相位互相抵消，平均场可以很小，即使平均强度并不小。中心挡片因此直接作用于场频谱的零级。",
+      "example": "均匀相位透明板通常有强零级；对称 π 相位区域可能抵消。",
+      "caution": "相干条件下避免把零级场直接解释为平均强度。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-spatial-1",
+        "mit-spatial-5"
+      ],
+      "prerequisites": [
+        "fourier-plane"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "傅里叶面原点对应物场空间频率为零的分量。",
+          "sources": [
+            "mit-spatial-1",
+            "mit-spatial-5"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "均匀相位透明板通常有强零级；对称 π 相位区域可能抵消。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "grating-order-filtering",
+      "title": "衍射级次的频域选择",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "diffraction order filtering",
+        "挡光栅级次"
+      ],
+      "definition": "周期性物场在傅里叶面形成以基频间隔排列的衍射级次。",
+      "body": "通过掩膜选择某些级次，最终像只由保留的频率组成。仅留零级会使理想周期调制消失；保留一对一阶和零级可恢复基本起伏，但细节取决于更高阶成分。",
+      "example": "只让零级和 ±1 级通过，再与完整方波栅像比较。",
+      "caution": "强度像中各场分量平方后会交叉，不能简单逐级相加。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "spatial-filter",
+        "mit-spatial-2"
+      ],
+      "prerequisites": [
+        "diffraction-grating"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "周期性物场在傅里叶面形成以基频间隔排列的衍射级次。",
+          "sources": [
+            "spatial-filter",
+            "mit-spatial-2"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "只让零级和 ±1 级通过，再与完整方波栅像比较。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "coherent-field-superposition",
+      "title": "相干像场的复振幅相加",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "coherent field addition",
+        "相干叠加交叉项"
+      ],
+      "definition": "相干成像的线性变量是复振幅，像强度由合场取模平方得到。",
+      "body": "对于两个物点，分别传播得到两复场，再相加求强度。只加各自强度会漏掉相对相位决定的交叉项。改变一个物点相位，可让同一点上的叠加强度由亮变暗。",
+      "example": "两个等幅贡献同相时合强度是单项的四倍，反相时理想抵消。",
+      "caution": "相干叠加以相位在测量时间内稳定为条件。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-spatial-7",
+        "mit-imaging-14"
+      ],
+      "prerequisites": [
+        "coherent-imaging"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "相干成像的线性变量是复振幅，像强度由合场取模平方得到。",
+          "sources": [
+            "mit-spatial-7",
+            "mit-imaging-14"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两个等幅贡献同相时合强度是单项的四倍，反相时理想抵消。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "incoherent-intensity-superposition",
+      "title": "非相干像强度的线性叠加",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "incoherent intensity addition",
+        "交叉项平均"
+      ],
+      "definition": "互不相干物点的时间平均像强度等于各自强度像之和。",
+      "body": "独立相位随时间变化时，交叉项在足够长的平均中趋零。这样就可以用强度点扩散函数和物强度做卷积，前提是系统在讨论视场内近似平移不变。",
+      "example": "两个等强不相干物点在某像素各贡献 1 单位，总平均约 2。",
+      "caution": "单帧时间过短或只有部分相干时，交叉项可能有残留。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-imaging-14",
+        "mit-imaging-16"
+      ],
+      "prerequisites": [
+        "coherent-imaging"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "互不相干物点的时间平均像强度等于各自强度像之和。",
+          "sources": [
+            "mit-imaging-14",
+            "mit-imaging-16"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两个等强不相干物点在某像素各贡献 1 单位，总平均约 2。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "coherent-amplitude-transfer",
+      "title": "相干振幅传递函数",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "ATF",
+        "CTF",
+        "振幅传递"
+      ],
+      "definition": "相干振幅传递函数给出物场每个空间频率分量的复数增益。",
+      "body": "在线性平移不变条件下，输出场的频谱等于输入场频谱乘传递函数。理想相干 4f 光路的传递函数与缩放后的复光瞳有关，因此振幅遮挡和相位像差都可改变输出。",
+      "example": "在瞳中加入带二次相位的片，即使透过幅值未变也会改变像。",
+      "caution": "输出强度需要从输出复场计算。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "U_out(f)=H_A(f)U_in(f)",
+      "variables": "频率用 cycles/m，归一化 H_A 可为复数。",
+      "sources": [
+        "mit-imaging-14",
+        "mit-spatial-3"
+      ],
+      "prerequisites": [
+        "coherent-imaging"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "U_out(f)=H_A(f)U_in(f)",
+          "sources": [
+            "mit-imaging-14",
+            "mit-spatial-3"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在瞳中加入带二次相位的片，即使透过幅值未变也会改变像。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "coherent-amplitude-psf",
+      "title": "相干振幅点扩散函数",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "coherent PSF",
+        "复振幅脉冲响应"
+      ],
+      "definition": "相干系统的点响应首先是复场分布。",
+      "body": "单点亮度像是该场的模平方，但多点相干叠加还需要相位。振幅点扩散和振幅传递互为傅里叶变换，可在空间卷积或频域乘法两种形式下描述成像。",
+      "example": "一对邻近相干点源即使单点亮度分布相同，组合图样也随相位变化。",
+      "caution": "必须标明 PSF 指复振幅响应或强度响应。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-imaging-14",
+        "mit-spatial-3"
+      ],
+      "prerequisites": [
+        "psf"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "相干系统的点响应首先是复场分布。",
+          "sources": [
+            "mit-imaging-14",
+            "mit-spatial-3"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "一对邻近相干点源即使单点亮度分布相同，组合图样也随相位变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "incoherent-intensity-psf",
+      "title": "非相干强度点扩散函数",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "iPSF",
+        "incoherent PSF"
+      ],
+      "definition": "非相干系统的点响应给出单位点源在像面的强度分布。",
+      "body": "理想线性模型中，单点的强度响应等于相干振幅响应模平方，可按积分归一化。多点互不相干时，各自的强度响应按物点亮度加权叠加，得到扩展物体的图像。",
+      "example": "用比系统分辨尺度小很多的亮点测量近似强度 PSF。",
+      "caution": "有限点源尺寸和相机采样会一同展宽测得的曲线。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-imaging-14",
+        "mit-imaging-16"
+      ],
+      "prerequisites": [
+        "psf"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "非相干系统的点响应给出单位点源在像面的强度分布。",
+          "sources": [
+            "mit-imaging-14",
+            "mit-imaging-16"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用比系统分辨尺度小很多的亮点测量近似强度 PSF。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "otf-dc-normalization",
+      "title": "OTF 的零频归一化",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "OTF at DC",
+        "光学传递零频"
+      ],
+      "definition": "归一化 OTF 通过除以零频值，使均匀物强度对应的相对响应为一。",
+      "body": "强度 PSF 的傅里叶零频值等于它的积分，也就是模型中的总通光系数。除以该值便可把绝对通光和频率依赖的对比度保留能力分开表述。不同系统通光不同，仍可比较其归一化曲线。",
+      "example": "同一 PSF 所有值乘常数，归一化 OTF 保持不变。",
+      "caution": "若需要绝对照度或灵敏度，应另记录通过率。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-imaging-16",
+        "mit-imaging-17"
+      ],
+      "prerequisites": [
+        "optical-transfer-function"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "归一化 OTF 通过除以零频值，使均匀物强度对应的相对响应为一。",
+          "sources": [
+            "mit-imaging-16",
+            "mit-imaging-17"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "同一 PSF 所有值乘常数，归一化 OTF 保持不变。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "otf-hermitian-symmetry",
+      "title": "OTF 的厄米对称",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "Hermitian OTF",
+        "频率正负对称"
+      ],
+      "definition": "实值强度 PSF 的傅里叶变换在相反频率处互为复共轭。",
+      "body": "将傅里叶变换定义中的频率反号，相当于把指数共轭。由于积分核之外的强度 PSF 是实数，得到 OTF 的共轭对称。其幅值对正负频率对称，相位则可以反号。",
+      "example": "把偏移的点扩散函数变换后，检查正负频率幅值相同。",
+      "caution": "厄米对称允许复值 OTF，只有额外空间对称时才通常为实。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "H(−f)=H(f)*",
+      "variables": "f 用统一空间频率单位，星号为复共轭。",
+      "sources": [
+        "mit-imaging-17"
+      ],
+      "prerequisites": [
+        "optical-transfer-function"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "H(−f)=H(f)*",
+          "sources": [
+            "mit-imaging-17"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "把偏移的点扩散函数变换后，检查正负频率幅值相同。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "otf-phase-shift",
+      "title": "传递函数相位与图样位移",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "phase transfer function",
+        "PTF"
+      ],
+      "definition": "OTF 的相位描述正弦强度分量通过系统后的相位偏移。",
+      "body": "输入单频条纹时，幅值由 MTF 缩放，相位由复 OTF 的辐角改变。纯平移的 PSF 在频域引入线性相位，表明整幅像移动而不一定降低各频率对比度。",
+      "example": "将测得的 PSF 人为平移，观察 MTF 保持而 PTF 斜率变化。",
+      "caution": "相位在 OTF 接近零时很难稳定解释。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-imaging-17",
+        "mit-imaging-18"
+      ],
+      "prerequisites": [
+        "optical-transfer-function"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "OTF 的相位描述正弦强度分量通过系统后的相位偏移。",
+          "sources": [
+            "mit-imaging-17",
+            "mit-imaging-18"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将测得的 PSF 人为平移，观察 MTF 保持而 PTF 斜率变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "mtf-sinusoid-measurement",
+      "title": "用正弦条纹测量 MTF",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "MTF sinusoidal target",
+        "正弦调制度"
+      ],
+      "definition": "同一空间频率的输出调制度与输入调制度之比给出 MTF。",
+      "body": "在给定方向和视场下，先测物侧条纹的最大最小强度，再对成像的同频分量求输出调制。规范化到平均强度后取比，可分离整体光量变化与条纹对比度下降。",
+      "example": "输入调制度 0.6，输出 0.24，对应 MTF 0.4。",
+      "caution": "方波靶含高次谐波，测得的可见度不能直接当正弦 MTF。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "MTF(f)=m_out(f)/m_in(f)",
+      "variables": "m 为无量纲强度调制度，输入需大于零。",
+      "sources": [
+        "mit-imaging-18"
+      ],
+      "prerequisites": [
+        "mtf"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "MTF(f)=m_out(f)/m_in(f)",
+          "sources": [
+            "mit-imaging-18"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "输入调制度 0.6，输出 0.24，对应 MTF 0.4。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "mtf-vs-cutoff",
+      "title": "MTF 下降与截止频率",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "MTF cutoff",
+        "能传和传得清楚"
+      ],
+      "definition": "截止频率描述理想传递支持域边界，域内的 MTF 可以低于一。",
+      "body": "对具有有限光瞳的系统，频率在边界内仍可能只有很小的输出对比度。实际判定细节可见性时，还需结合信噪比和具体任务阈值。两个系统截止相同，低中频的 MTF 曲线也可能不同。",
+      "example": "比较截止相同但在目标频率处分别为 0.2 与 0.5 的两条曲线。",
+      "caution": "MTF50、零点截止与分辨判据需分别注明。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-imaging-18",
+        "mit-imaging-20"
+      ],
+      "prerequisites": [
+        "mtf"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "截止频率描述理想传递支持域边界，域内的 MTF 可以低于一。",
+          "sources": [
+            "mit-imaging-18",
+            "mit-imaging-20"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较截止相同但在目标频率处分别为 0.2 与 0.5 的两条曲线。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "otf-pupil-autocorrelation",
+      "title": "由光瞳自相关得到 OTF",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "pupil autocorrelation",
+        "光瞳重叠"
+      ],
+      "definition": "理想非相干成像的 OTF 可由相干振幅传递的归一化自相关得到。",
+      "body": "强度点响应是振幅点响应乘其共轭。按傅里叶乘积关系，频域表达成为光瞳与移动后光瞳的重叠积分。清晰无像差的均匀瞳可用几何重叠面积理解；有相位时需保留复权重。",
+      "example": "把两个等圆瞳相对平移，比较重叠面积从中心到边缘的变化。",
+      "caution": "有像差或振幅渐变时，重叠面积本身不等于完整 OTF。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-imaging-14",
+        "mit-imaging-19"
+      ],
+      "prerequisites": [
+        "coherent-amplitude-transfer"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "理想非相干成像的 OTF 可由相干振幅传递的归一化自相关得到。",
+          "sources": [
+            "mit-imaging-14",
+            "mit-imaging-19"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "把两个等圆瞳相对平移，比较重叠面积从中心到边缘的变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "rectangular-pupil-otf",
+      "title": "矩形瞳的三角形传递",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "triangular OTF",
+        "矩形孔非相干OTF"
+      ],
+      "definition": "一维均匀矩形光瞳的归一化自相关随平移量线性下降。",
+      "body": "两个同宽矩形重叠时，重叠长度等于原宽减去平移量绝对值，直到降为零。二维矩形瞳可在独立方向得到两个三角因子，故不同方向的带宽与响应由对应宽度决定。",
+      "example": "平移量为一维瞳宽的一半时，归一化重叠是 0.5。",
+      "caution": "均匀幅度和无相位像差是此简单曲线的条件。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-imaging-20"
+      ],
+      "prerequisites": [
+        "otf-pupil-autocorrelation"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "一维均匀矩形光瞳的归一化自相关随平移量线性下降。",
+          "sources": [
+            "mit-imaging-20"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "平移量为一维瞳宽的一半时，归一化重叠是 0.5。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "circular-pupil-otf",
+      "title": "圆瞳的归一化 OTF",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "circular pupil OTF",
+        "圆瞳重叠面积"
+      ],
+      "definition": "无像差圆瞳的非相干 OTF 由两同半径圆的重叠比例决定。",
+      "body": "空间频率越大，计算自相关时两个瞳的相对偏移越大，重叠面积逐渐减少。与矩形瞳的一维线性曲线相比，圆瞳响应由弓形面积决定，并且具有方位角旋转对称性。",
+      "example": "两个圆心距离等于半径时，重叠约为全圆面积的 39%。",
+      "caution": "归一化频率需注明相对于非相干截止。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-imaging-19",
+        "mit-imaging-20"
+      ],
+      "prerequisites": [
+        "otf-pupil-autocorrelation"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "无像差圆瞳的非相干 OTF 由两同半径圆的重叠比例决定。",
+          "sources": [
+            "mit-imaging-19",
+            "mit-imaging-20"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两个圆心距离等于半径时，重叠约为全圆面积的 39%。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "coherent-cutoff-na",
+      "title": "相干成像的截止空间频率",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "coherent cutoff",
+        "NA除波长"
+      ],
+      "definition": "轴上相干平面波照明下，理想圆瞳的相干场频谱截止由 NA 与波长给出。",
+      "body": "入射物场的横向频率映射成角度，超出物镜接受锥的方向被瞳挡住。使用物方数值孔径和真空波长时，最大接受空间频率为 NA/λ₀。斜照明可以把频谱相对瞳中心移动。",
+      "example": "NA=0.25、λ₀=500 nm 时截止约 500 cycles/mm。",
+      "caution": "用物面频率比较，像面需再考虑倍率。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "f_c=NA/λ₀",
+      "variables": "NA 无量纲，λ₀ 用 m，f_c 用 cycles/m。",
+      "sources": [
+        "mit-imaging-14",
+        "mit-spatial-4"
+      ],
+      "prerequisites": [
+        "coherent-amplitude-transfer"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "f_c=NA/λ₀",
+          "sources": [
+            "mit-imaging-14",
+            "mit-spatial-4"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "NA=0.25、λ₀=500 nm 时截止约 500 cycles/mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "incoherent-cutoff-na",
+      "title": "非相干成像的截止空间频率",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "incoherent cutoff",
+        "两倍NA带宽"
+      ],
+      "definition": "理想非相干圆瞳的强度频谱截止是对应相干场截止的两倍。",
+      "body": "光瞳在频域的半径为 NA/λ₀；两个相同圆瞳做自相关时，圆心偏移到直径才失去全部重叠。因此强度 OTF 的支持域边界为 2NA/λ₀。域内响应由重叠比例给出。",
+      "example": "NA=0.25、λ₀=500 nm，非相干截止约 1000 cycles/mm。",
+      "caution": "两倍关系针对指定照明与带宽定义，不能把对比度曲线整体乘二。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "f_i=2NA/λ₀",
+      "variables": "NA 无量纲，波长用 m，f_i 用 cycles/m。",
+      "sources": [
+        "mit-imaging-19",
+        "mit-imaging-20"
+      ],
+      "prerequisites": [
+        "coherent-cutoff-na",
+        "otf-pupil-autocorrelation"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "f_i=2NA/λ₀",
+          "sources": [
+            "mit-imaging-19",
+            "mit-imaging-20"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "NA=0.25、λ₀=500 nm，非相干截止约 1000 cycles/mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "imaging-bandwidth-plane",
+      "title": "物方与像方空间频率换算",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "object image frequency scaling",
+        "倍率频率变换"
+      ],
+      "definition": "理想放大让像方周期按倍率大小增长，像方频率按其倒数下降。",
+      "body": "将 x′=mx 代入物面正弦图样，空间相位的斜率变为原斜率除以 m。倍率负号还会翻转方向；只比较频率大小时使用倍率绝对值。像元采样和物方光学截止必须先换成同一参考面。",
+      "example": "物面 40 cycles/mm，经 2 倍放大后像面为 20 cycles/mm。",
+      "caution": "没有写明参考面时，不应直接对比两条频率刻度。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "f_img=f_obj/abs(m)",
+      "variables": "两频率用相同单位，m 无量纲。",
+      "sources": [
+        "mit-imaging-21",
+        "mit-filter-2"
+      ],
+      "prerequisites": [
+        "four-f-magnification"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "f_img=f_obj/abs(m)",
+          "sources": [
+            "mit-imaging-21",
+            "mit-filter-2"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "物面 40 cycles/mm，经 2 倍放大后像面为 20 cycles/mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "coherent-phase-object",
+      "title": "相位物体的可见条件",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "phase object",
+        "纯相位对比"
+      ],
+      "definition": "纯相位物体改变透射场的相位，直通强度可保持均匀。",
+      "body": "若场经过完整理想相干成像，像场仍可只带相位调制。通过离焦、相衬掩膜或空间滤波把相位调制转成振幅起伏，探测器才能看到明显强度差异。",
+      "example": "透明薄片厚度略变，放入相衬光路后边缘对比增强。",
+      "caution": "缺乏亮度变化不表示物体没有光学结构。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-spatial-9",
+        "mit-spatial-7"
+      ],
+      "prerequisites": [
+        "coherent-field-superposition"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "纯相位物体改变透射场的相位，直通强度可保持均匀。",
+          "sources": [
+            "mit-spatial-9",
+            "mit-spatial-7"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "透明薄片厚度略变，放入相衬光路后边缘对比增强。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "phase-contrast-reference",
+      "title": "相衬中的参考波相位",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "Zernike phase contrast",
+        "参考场相移"
+      ],
+      "definition": "相衬方法利用未散射参考场和散射场之间的相对相位将相位信息转为强度。",
+      "body": "弱相位物场的一阶调制与背景可近似相差四分之一周期。若通过傅里叶面相位片改变背景相位，交叉项就能对弱结构的相位变化产生更明显的线性响应。",
+      "example": "将零级参考场相移约 π/2，观察原本低对比的透明样本。",
+      "caution": "强相位物体、宽频照明和相环失配会偏离弱相位近似。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-spatial-9"
+      ],
+      "prerequisites": [
+        "coherent-phase-object"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "相衬方法利用未散射参考场和散射场之间的相对相位将相位信息转为强度。",
+          "sources": [
+            "mit-spatial-9"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将零级参考场相移约 π/2，观察原本低对比的透明样本。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "schlieren-gradient-contrast",
+      "title": "刀口纹影的梯度选择",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "Schlieren",
+        "knife edge",
+        "纹影梯度"
+      ],
+      "definition": "焦面刀口可以把小角度偏折转成通过光量的差异。",
+      "body": "介质中的折射率变化使光线方向偏离原来的焦点位置。刀口遮住一部分中心光斑时，向两侧偏移会增减透过量，从而显示主要沿刀口法向的变化。",
+      "example": "旋转刀口方向，比较热羽流不同方向结构的可见程度。",
+      "caution": "亮度还依赖截止位置与照明源尺寸，需标定后才能定量。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-spatial-9"
+      ],
+      "prerequisites": [
+        "fourier-directional-mask"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "焦面刀口可以把小角度偏折转成通过光量的差异。",
+          "sources": [
+            "mit-spatial-9"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "旋转刀口方向，比较热羽流不同方向结构的可见程度。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "sampling-nyquist-limit",
+      "title": "像素采样的奈奎斯特频率",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "Nyquist spatial frequency",
+        "像素截止"
+      ],
+      "definition": "均匀像素采样能无混叠表示的基带上限为采样间距倒数的一半。",
+      "body": "连续像强度若含超过该频率的成分，采样后的离散序列可能把它们折叠为低频纹理。光学模糊或专用低通元件可在采样前减小高频能量；重新放大图像无法分辨已经混叠的成分。",
+      "example": "像元 5 μm 时，像面奈奎斯特频率为 100 cycles/mm。",
+      "caution": "这个上限属于采样，不等于光学截止。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "f_N=1/(2p)",
+      "variables": "p 用 mm 时 f_N 用 cycles/mm。",
+      "sources": [
+        "mit-imaging-18",
+        "mit-spatial-7",
+        "mit-sampling-1"
+      ],
+      "prerequisites": [
+        "spatial-frequency"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "f_N=1/(2p)",
+          "sources": [
+            "mit-imaging-18",
+            "mit-spatial-7",
+            "mit-sampling-1"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "像元 5 μm 时，像面奈奎斯特频率为 100 cycles/mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "spatial-aliasing-moire",
+      "title": "混叠与莫尔条纹",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "spatial aliasing",
+        "采样莫尔"
+      ],
+      "definition": "超过采样带宽的周期纹理可能呈现为较低频的假条纹。",
+      "body": "当栅格周期接近像元周期时，每一相邻采样点只看到缓慢变化的相位差。得到的图样会像大周期条纹，即使原物只有细密重复纹理。检查时可改变倍率或角度，观察假纹是否移动。",
+      "example": "若采样频率 100 cycles/mm，90 cycles/mm 正弦可折叠为 10 cycles/mm。",
+      "caution": "实际彩色传感器不同色通道的采样排列也会影响莫尔形态。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-imaging-18",
+        "mit-spatial-7",
+        "mit-sampling-1"
+      ],
+      "prerequisites": [
+        "sampling-nyquist-limit"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "超过采样带宽的周期纹理可能呈现为较低频的假条纹。",
+          "sources": [
+            "mit-imaging-18",
+            "mit-spatial-7",
+            "mit-sampling-1"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若采样频率 100 cycles/mm，90 cycles/mm 正弦可折叠为 10 cycles/mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "pixel-aperture-average",
+      "title": "像素面积积分对对比度的影响",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "pixel aperture MTF",
+        "像素面积平均"
+      ],
+      "definition": "有限像素面积在采样前对局部强度进行平均。",
+      "body": "一维矩形有效像素的积分相当于以矩形窗对强度卷积，频域响应为 sinc。即使某频率低于奈奎斯特界，像元面积平均也可降低其调制度，因此像素响应与采样间隔要分别考虑。",
+      "example": "有效宽度等于像元间距时，奈奎斯特处理想面积因子为 2/π。",
+      "caution": "像素微透镜和填充因子会改变简单均匀矩形模型。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "H_pixel(f)=sin(πaf)/(πaf)",
+      "variables": "a 是有效像素宽度，f 用相应倒长度单位。",
+      "sources": [
+        "mit-imaging-18",
+        "mit-imaging-21"
+      ],
+      "prerequisites": [
+        "sampling-nyquist-limit"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "H_pixel(f)=sin(πaf)/(πaf)",
+          "sources": [
+            "mit-imaging-18",
+            "mit-imaging-21"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "有效宽度等于像元间距时，奈奎斯特处理想面积因子为 2/π。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "shift-invariant-field-region",
+      "title": "像差条件下的平移不变范围",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "shift invariant patch",
+        "等晕区"
+      ],
+      "definition": "仅在点响应对物点位置主要表现为平移的范围内，可用单个卷积核描述成像。",
+      "body": "视场角改变时，渐晕、像散或彗差可以改变点扩散形状。此时可将画面分成较小区域，在每个区域估计局部响应；用全幅单一核会把边缘的误差误判为均匀模糊。",
+      "example": "分别记录中心与角落的点像，检查平移对齐后形状是否一致。",
+      "caution": "局部线性与全视场平移不变属于不同条件。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-spatial-7"
+      ],
+      "prerequisites": [
+        "psf"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "仅在点响应对物点位置主要表现为平移的范围内，可用单个卷积核描述成像。",
+          "sources": [
+            "mit-spatial-7"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "分别记录中心与角落的点像，检查平移对齐后形状是否一致。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "wavefront-defocus-pupil-phase",
+      "title": "离焦的光瞳二次相位",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "defocus pupil phase",
+        "离焦波像差"
+      ],
+      "definition": "在近轴光瞳模型中，像面轴向偏移可等效为一项二次相位。",
+      "body": "把瞳边缘与中心到新像面的传播差展开，首个横向项与瞳半径平方有关。对同一个均匀圆瞳，加入此相位会改变衍射点像，几何上也对应会聚锥未在所选平面交汇。",
+      "example": "从最佳焦面向两侧移动相同小距离，比较点像变化。",
+      "caution": "轴向位移到相位系数的符号随坐标与传播约定而变。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "fresnel",
+        "mit-spatial-3"
+      ],
+      "prerequisites": [
+        "pupil-function"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "在近轴光瞳模型中，像面轴向偏移可等效为一项二次相位。",
+          "sources": [
+            "fresnel",
+            "mit-spatial-3"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "从最佳焦面向两侧移动相同小距离，比较点像变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "phase-aberration-complex-pupil",
+      "title": "将波前像差写入复光瞳",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "complex pupil aberration",
+        "波前误差相位"
+      ],
+      "definition": "波前光程差可写成复光瞳上的相位因子。",
+      "body": "光瞳的幅值描述开口与透过，加上波前误差导致的相位后可以共同计算点扩散。相同孔径尺寸的两个系统如果波前不同，衍射点像与 OTF 也可不同。",
+      "example": "给瞳一半额外四分之一波光程，估算该区域相位变化 π/2。",
+      "caution": "波前误差应给单位，波数使用所定义的波长。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": "P=A exp(i2πW/λ)",
+      "variables": "W 与 λ 用同一长度单位，A 为振幅透过。",
+      "sources": [
+        "mit-spatial-3",
+        "mit-imaging-19"
+      ],
+      "prerequisites": [
+        "pupil-function"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P=A exp(i2πW/λ)",
+          "sources": [
+            "mit-spatial-3",
+            "mit-imaging-19"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "给瞳一半额外四分之一波光程，估算该区域相位变化 π/2。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "line-spread-from-psf",
+      "title": "由点扩散积分得到线扩散",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "line spread function",
+        "LSF与PSF"
+      ],
+      "definition": "均匀长线的横向响应等于二维强度点扩散沿线方向的积分。",
+      "body": "用线性平移不变模型，将无数沿直线排布的不相干点的强度响应相加。线像只保留垂直于线的坐标变化，适合做一维频率响应核对。有限线长时需要避开线端区域。",
+      "example": "对二维点像沿 y 求和，得到沿 x 的 LSF 估计。",
+      "caution": "需使用强度 PSF 并明确线方向。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-imaging-14",
+        "mit-imaging-16"
+      ],
+      "prerequisites": [
+        "incoherent-intensity-psf"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "均匀长线的横向响应等于二维强度点扩散沿线方向的积分。",
+          "sources": [
+            "mit-imaging-14",
+            "mit-imaging-16"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "对二维点像沿 y 求和，得到沿 x 的 LSF 估计。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "edge-spread-derivative",
+      "title": "边缘扩散与线扩散的导数关系",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "edge spread function",
+        "ESF导数LSF"
+      ],
+      "definition": "理想阶跃边缘的响应对边缘法向坐标求导后得到线扩散函数。",
+      "body": "强度线性系统将阶跃与线扩散卷积，阶跃的导数是狄拉克脉冲。对实测边缘剖面求导可估计系统响应，但数值差分会放大噪声，应保留合理采样和拟合条件。",
+      "example": "拍摄黑白边缘并按法向平均，比较不同平滑强度的导数曲线。",
+      "caution": "锐化、去马赛克等后处理会影响测得的响应。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-imaging-16",
+        "mit-imaging-18"
+      ],
+      "prerequisites": [
+        "line-spread-from-psf"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "理想阶跃边缘的响应对边缘法向坐标求导后得到线扩散函数。",
+          "sources": [
+            "mit-imaging-16",
+            "mit-imaging-18"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "拍摄黑白边缘并按法向平均，比较不同平滑强度的导数曲线。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "interference-envelope-frequency",
+      "title": "双缝间隔与频域调制",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "double slit Fourier envelope",
+        "双孔相移项"
+      ],
+      "definition": "两条等宽缝可表示为两个平移的单缝孔径，频谱是单缝谱乘双缝相位和。",
+      "body": "把每缝相对中心的位移写成频谱上的相反线性相位，合场给余弦因子。取模平方得到条纹和包络相乘形式。几何的缝中心间距决定余弦周期，单缝宽度决定单缝谱零点。",
+      "example": "令中心间距等于缝宽三倍，检查若干干涉级次与包络零点的重合。",
+      "caution": "有限相干度和两缝强度差会降低条纹对比度。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "fraunhofer-cases"
+      ],
+      "prerequisites": [
+        "transform-shift-phase-ramp",
+        "double-period"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "两条等宽缝可表示为两个平移的单缝孔径，频谱是单缝谱乘双缝相位和。",
+          "sources": [
+            "fraunhofer-cases"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "令中心间距等于缝宽三倍，检查若干干涉级次与包络零点的重合。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "finite-coherence-imaging",
+      "title": "部分相干成像的中间情况",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "partially coherent imaging",
+        "相干程度与传递"
+      ],
+      "definition": "部分相干时，某些物点间的交叉项在时间平均后仍保留一部分。",
+      "body": "实际照明既可能有有限发光面积也有有限谱宽，照明角度分布会影响物点间相关。可以将它视为多种角度照明所产生的图像按强度平均，但单次照明内部仍用场叠加。",
+      "example": "改变显微照明孔径，在相同物镜下观察条纹对比和分辨变化。",
+      "caution": "不能用一个固定倍数在相干与非相干的截止之间直接插值。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-spatial-7",
+        "mit-imaging-14"
+      ],
+      "prerequisites": [
+        "coherent-field-superposition",
+        "incoherent-intensity-superposition"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "部分相干时，某些物点间的交叉项在时间平均后仍保留一部分。",
+          "sources": [
+            "mit-spatial-7",
+            "mit-imaging-14"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "改变显微照明孔径，在相同物镜下观察条纹对比和分辨变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "object-intensity-from-field",
+      "title": "物场与物强度的换算",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "object field intensity",
+        "透射率平方"
+      ],
+      "definition": "复振幅透射率决定场的倍数，强度透射率等于其模平方。",
+      "body": "相干模型应将输入照明场乘物体的复振幅透射率。若已知的是强度透过比例，需要先取平方根作为幅值，并补上相位模型。非相干强度模型可以直接将物强度乘强度透过比例。",
+      "example": "强度透过率 25% 对应场振幅大小因子 0.5。",
+      "caution": "振幅因子的相位不能从一个强度值确定。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-imaging-21",
+        "mit-spatial-7"
+      ],
+      "prerequisites": [
+        "coherent-field-superposition"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "复振幅透射率决定场的倍数，强度透射率等于其模平方。",
+          "sources": [
+            "mit-imaging-21",
+            "mit-spatial-7"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "强度透过率 25% 对应场振幅大小因子 0.5。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "fresnel-vs-fraunhofer-phase",
+      "title": "近远场近似中舍弃哪项相位",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "Fresnel Fraunhofer phase",
+        "源面二次相位"
+      ],
+      "definition": "夫琅禾费近似在菲涅耳积分基础上进一步忽略源面上的二次相位。",
+      "body": "展开距离平方项后有观察点的二次项、源点的二次项和两者的交叉项。远场把源面二次相位近似为常量，留下的交叉项便构成傅里叶核；观察面公共相位在只读强度时可忽略。",
+      "example": "保持孔径和波长，逐步加长传播距离，观察何时远场图样尺度归一后稳定。",
+      "caution": "只需要强度和需要复场时，可以舍弃的相位项不同。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "fresnel",
+        "fraunhofer"
+      ],
+      "prerequisites": [
+        "fresnel-quadratic-kernel"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "夫琅禾费近似在菲涅耳积分基础上进一步忽略源面上的二次相位。",
+          "sources": [
+            "fresnel",
+            "fraunhofer"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "保持孔径和波长，逐步加长传播距离，观察何时远场图样尺度归一后稳定。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "spectral-filter-complex-mask",
+      "title": "复数傅里叶掩膜",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "complex Fourier mask",
+        "幅相滤波"
+      ],
+      "definition": "傅里叶面掩膜可分别改变每个频率分量的振幅与相位。",
+      "body": "振幅掩膜选择或削弱频率，纯相位掩膜即使保留频率幅值，也可改变这些分量在像面的叠加方式。要预测输出亮度，先对复频谱进行处理并逆变换，再取模平方。",
+      "example": "给一条谱带额外 π 相位，比较输出的边缘与零级。",
+      "caution": "用单独一张频谱强度图通常无法描述复数掩膜的作用。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-filter-2",
+        "spatial-filter"
+      ],
+      "prerequisites": [
+        "spatial-filtering"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "傅里叶面掩膜可分别改变每个频率分量的振幅与相位。",
+          "sources": [
+            "mit-filter-2",
+            "spatial-filter"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "给一条谱带额外 π 相位，比较输出的边缘与零级。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "transfer-function-cascade",
+      "title": "线性成像级联的传递相乘",
+      "topic": "fourier",
+      "level": "undergraduate",
+      "terms": [
+        "cascade MTF",
+        "成像链频率乘积"
+      ],
+      "definition": "对同一线性变量、同一坐标尺度的平移不变级联，各级传递函数可相乘。",
+      "body": "每一级把输入频谱乘自身响应，下一阶段以其输出为输入。用于光学与像元模型组合时，先把频率换到同一参考面，再判断变量是复场还是强度。裁切和非线性处理需另行考虑。",
+      "example": "光学和像元在同一频率的 MTF 分别为 0.6 和 0.8，线性近似下乘积 0.48。",
+      "caution": "不能将一个场幅响应和另一个强度响应直接相乘。",
+      "conditions": [
+        "标量、单色近似；频率单位和相干条件按正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "mit-imaging-21",
+        "mit-filter-2"
+      ],
+      "prerequisites": [
+        "optical-transfer-function"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "对同一线性变量、同一坐标尺度的平移不变级联，各级传递函数可相乘。",
+          "sources": [
+            "mit-imaging-21",
+            "mit-filter-2"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "光学和像元在同一频率的 MTF 分别为 0.6 和 0.8，线性近似下乘积 0.48。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "talbot-self-imaging",
+      "title": "塔尔博特自成像",
+      "topic": "fourier",
+      "terms": [
+        "Talbot 自成像",
+        "Talbot 效应",
+        "塔尔博特效应",
+        "塔尔博特像",
+        "分数塔尔博特效应",
+        "talbot effect"
+      ],
+      "definition": "周期光栅经相干照明后，多个衍射级在特定传播距离重新叠加，形成原图案、平移的图案或其他分数自像。",
+      "body": "定义未平移的场复现距离为 L_T=2d²/λ，其中 d 是光栅周期。在 L_T/2 处，近轴传播使第 m 级分量获得相位因子 (−1)^m，等效于沿横向平移 d/2，周期仍为 d。有些分数平面可以出现更细的强度周期，具体取决于分数位置与光栅。文献也常把 d²/λ 叫 Talbot 长度，比较分数以前先统一约定。",
+      "example": "在 L_T/2 处重现半周期平移的图样。观察到更细周期需要选择其他合适分数平面及光栅条件。",
+      "caution": "两种 Talbot 长度约定相差一倍。半周期平移描述位置变化，图案的周期仍为 d。",
+      "conditions": [
+        "周期结构、相干单色正入射、近轴标量传播。有限光栅和非近轴成分会改变图样。"
+      ],
+      "formula": "L_T=2d²/λ",
+      "variables": "d、λ、L_T 可用相同长度单位；λ 为传播介质内波长。",
+      "level": "undergraduate",
+      "sources": [
+        "berry-klein-talbot"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "prerequisites": [],
+      "related": [],
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "周期光栅经相干照明后，多个衍射级在特定传播距离重新叠加，形成原图案、平移的图案或其他分数自像。",
+          "sources": [
+            "berry-klein-talbot"
+          ]
+        }
+      ],
+      "review": "2026-11-14 · 原创讲解，核对所列研究原文"
+    }
+  ]
+}

@@ -1,0 +1,1374 @@
+[
+  {
+    "id": "phase-group-dispersion",
+    "title": "从相速度到群速度与色散",
+    "intro": "区分波峰、脉冲包络和包络变形，理解群折射率里的导数。",
+    "prerequisites": [
+      "phase-velocity",
+      "group-velocity"
+    ],
+    "sections": [
+      {
+        "id": "carrier",
+        "title": "波峰与包络",
+        "text": "给相近频率的两束波叠加，快速振荡对应载波，缓慢拍频形成包络。相位不变的点随 ω/β 移动，包络小范围内由相邻频率的相位差决定，速度由传播常数在中心频率处的斜率给出。",
+        "formula": "vₚ=ω/β，v_g=(dβ/dω)⁻¹",
+        "conditions": "窄带、单传播模、损耗和变形较弱。",
+        "references": [
+          "phase-velocity",
+          "group-velocity"
+        ]
+      },
+      {
+        "id": "linear-cancellation",
+        "title": "把线性有效折射率代进去",
+        "text": "写 β=2πn_eff/λ₀、ω=2πc/λ₀，链式法则给出群折射率。设 n_eff=A+Bλ₀，导数为 B，于是 n_g=A+Bλ₀−λ₀B=A。这一段波长内群速度恒定，传播常数对角频率的二阶导为零。",
+        "formula": "n_g=n_eff−λ₀ dn_eff/dλ₀",
+        "conditions": "要求同一模式且整个考察区间严格线性。",
+        "references": [
+          "group-index",
+          "group-velocity-dispersion"
+        ]
+      },
+      {
+        "id": "measurement",
+        "title": "理解检查：直线拟合说明什么",
+        "text": "如果只在三个波长得到接近直线的读数，曲率仍可能低于测量分辨率。可用更宽而仍适用同一模式的波段、多测点和读数不确定度约束曲率。讨论时请写出「模型下为零」或「在测量分辨率内未检出」。",
+        "formula": "β₂=d²β/dω²",
+        "conditions": "扫频全程跟踪同一模式并核对频率坐标。",
+        "references": [
+          "group-velocity-dispersion",
+          "waveguide-dispersion"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "double-slit-pattern",
+    "title": "双缝的包络与条纹",
+    "intro": "把亮纹的位置、条纹间距和外层包络放回同一张图理解。",
+    "prerequisites": [
+      "diffraction-basics",
+      "double-period"
+    ],
+    "sections": [
+      {
+        "id": "two-scales",
+        "title": "两种尺度来自两个尺寸",
+        "text": "单条缝的有限宽度使每个方向的出射振幅不同，形成较宽的单缝包络。两缝中心之间的距离则决定两束光的相位差随角度变化的快慢。两个效应相乘，所以某些干涉级次可能恰好落在包络暗处。",
+        "formula": "Δx≈λL/d，x₁≈λL/a",
+        "conditions": "同宽狭缝、远场、小角度、相干且近法向入射。",
+        "references": [
+          "double-period",
+          "slit-width-definitions"
+        ]
+      },
+      {
+        "id": "numbers",
+        "title": "例题：先求条纹，再求暗纹",
+        "text": "若 λ=600 nm，L=1 m，中心间距 d=300 μm，缝宽 a=100 μm，则相邻条纹约隔 2 mm，包络第一暗纹距中心约 6 mm。第三级干涉极大正好与包络暗纹重合，是一处缺级。",
+        "formula": "d/a=3，3Δx=6 mm",
+        "conditions": "等振幅、对称的理想双缝。",
+        "references": [
+          "double-period",
+          "slit-width-definitions"
+        ]
+      },
+      {
+        "id": "phase",
+        "title": "理解检查：加入相位差会怎样",
+        "text": "一缝获得额外相位后，干涉亮纹在包络里移动。先把观察点的几何相位差与额外相位相加，再判断相长位置。若同时改变了其中一缝的透过振幅，条纹对比度也可能改变，需要另查该项。",
+        "formula": "Δφ_total=Δφ_geom+Δφ_added",
+        "conditions": "额外相位在单缝开口内近似均匀。",
+        "references": [
+          "double-phase",
+          "double-period"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "coherence-and-imaging",
+    "title": "从相干成像到非相干成像",
+    "intro": "先识别线性变量，再用点扩散和频率响应判断细节传递。",
+    "prerequisites": [
+      "psf",
+      "spatial-frequency"
+    ],
+    "sections": [
+      {
+        "id": "addition",
+        "title": "是电场相加还是强度相加",
+        "text": "固定相位的两物点先在像面叠加复振幅，探测器再取模平方，此时交叉项会保留。相互不相干的两物点经过时间平均后交叉项消失，可用各点强度响应相加。这一步决定对哪个量做卷积。",
+        "formula": "I_coh=|E₁+E₂|²，I_incoh=I₁+I₂",
+        "conditions": "单色标量、局部平移不变；非相干情形按曝光时间平均。",
+        "references": [
+          "coherent-imaging",
+          "psf"
+        ]
+      },
+      {
+        "id": "frequency",
+        "title": "从点响应得到 MTF",
+        "text": "先找非相干系统的强度点扩散函数，再对其作傅里叶变换并按零频归一。复数结果是 OTF，取模是 MTF。若某个频率的 MTF 为 0.4，输入该频率的正弦强度调制度 0.50，输出为 0.20。",
+        "formula": "OTF=ℱ{PSF}/ℱ{PSF}(0)，MTF=|OTF|",
+        "conditions": "输入用正弦强度图样，响应满足线性。",
+        "references": [
+          "optical-transfer-function",
+          "mtf"
+        ]
+      },
+      {
+        "id": "caution",
+        "title": "理解检查：两张点像够不够",
+        "text": "给两个相干点源同样的单点强度像，仍需知道相对相位才能叠加总像。若改变照明方式，系统的线性变量与传递函数可能改变。比较分辨率时，应说明按哪种照明和哪一个分辨判据。",
+        "formula": "交叉项=2 Re(E₁E₂*)",
+        "conditions": "以同一像面坐标与波长比较。",
+        "references": [
+          "coherent-imaging",
+          "optical-transfer-function"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ray-to-gaussian",
+    "title": "从光线矩阵到高斯光束",
+    "intro": "用同一近轴系统描述光线高度和高斯波前，理解两者的不同读数。",
+    "prerequisites": [
+      "thin-lens",
+      "gaussian-waist"
+    ],
+    "sections": [
+      {
+        "id": "ray",
+        "title": "先追踪一条近轴光线",
+        "text": "采用 (y,θ) 列向量，在同一介质自由传播 L 后高度变为 y+Lθ；穿过理想薄透镜后高度瞬时不变，斜率变为 θ−y/f。沿传播顺序右乘先遇到的元件，矩阵顺序改变时成像关系也会变。",
+        "formula": "P=[[1,L],[0,1]]，F=[[1,0],[−1/f,1]]",
+        "conditions": "角度用弧度、均匀介质、傍轴。",
+        "references": [
+          "thin-lens",
+          "gaussian-lens"
+        ]
+      },
+      {
+        "id": "beam",
+        "title": "用 q 同时记录曲率和半径",
+        "text": "理想基模束腰处波前平坦，但光束有有限宽度。采用 q=z+i z_R 的记号时，传播把 q 加上长度，薄透镜把 1/q 减去 1/f。合并一般光路得到分式变换。给定波长后可从 q 的倒数读出曲率和半径。",
+        "formula": "q′=(Aq+B)/(Cq+D)，1/q=1/R−iλ/(πw²)",
+        "conditions": "同一折射率区域中用介质波长，w 为 1/e² 强度半径。",
+        "references": [
+          "gaussian-waist",
+          "gaussian-lens"
+        ]
+      },
+      {
+        "id": "example",
+        "title": "例题：束腰后走一个瑞利长度",
+        "text": "若从束腰自由传播一个瑞利长度，q 从 i z_R 变为 z_R+i z_R，半径从 w₀ 变为 √2w₀，波前半径为 2z_R。这个位置处光束面积约为束腰的两倍，不能把半径读成两倍。",
+        "formula": "w(z_R)=√2 w₀，R(z_R)=2z_R",
+        "conditions": "理想 TEM₀₀，z 自束腰向前计。",
+        "references": [
+          "gaussian-waist",
+          "gaussian-lens"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "polarization-elements",
+    "title": "偏振表示与波片",
+    "intro": "在同一坐标里理解 Jones 向量、快慢轴和半波片转角。",
+    "prerequisites": [
+      "polarization",
+      "waveplate"
+    ],
+    "sections": [
+      {
+        "id": "representation",
+        "title": "先约定分量与相位",
+        "text": "在垂直传播方向的平面上选两个正交坐标，用两个复振幅描述完全偏振的单色光。两分量的相对幅值和相位决定偏振椭圆。整体相位不会改变这个椭圆；同一组分量在转动坐标后有不同数值。",
+        "formula": "E=(Eₓ,Eᵧ)ᵀ",
+        "conditions": "完全偏振；比较旋向前说明视向和时间相位记号。",
+        "references": [
+          "polarization",
+          "waveplate"
+        ]
+      },
+      {
+        "id": "hwp",
+        "title": "转入波片轴坐标再转回",
+        "text": "设入射角 α，快轴 θ。在波片坐标里是 δ=α−θ，线偏振向量可写成 (cosδ,sinδ)。半波片给慢轴分量相对反号，变成角 −δ，转回后方向为 θ−δ。入射 10°、快轴 35° 时得到 60°。",
+        "formula": "α_out=2θ−α_in (mod 180°)",
+        "conditions": "理想半波延迟；统一角度参考。",
+        "references": [
+          "half-waveplate"
+        ]
+      },
+      {
+        "id": "qwp",
+        "title": "理解检查：四分之一波片总能造圆偏振吗",
+        "text": "圆偏振还要求两个正交分量幅度相等。若线偏振沿快轴入射，慢轴分量为零，相位延迟也无法补出该分量。只有合适的方向和振幅比才会得到圆偏振，其他输入通常得到椭圆。",
+        "formula": "|Eₓ|=|Eᵧ|，Δφ=±π/2",
+        "conditions": "理想四分之一波片的设计波长附近。",
+        "references": [
+          "quarter-waveplate",
+          "polarization"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "laser-mode-linewidth",
+    "title": "激光纵模、增益带宽与线宽",
+    "intro": "把谐振腔允许的频率、增益谱包络和单根线宽分开。",
+    "prerequisites": [
+      "stimulated-emission",
+      "optical-resonator",
+      "fabry-perot"
+    ],
+    "sections": [
+      {
+        "id": "gain",
+        "title": "先找到有机会起振的频率",
+        "text": "腔往返相位满足整数个 2π 时出现共振。介质只在部分频率提供足够的增益，某一腔模能否起振还要比较往返增益与损耗。增益包络里可以同时容纳多个腔模，实际模数还受增益饱和与模竞争影响。",
+        "formula": "阈值时往返功率增益×往返功率透过=1",
+        "conditions": "用同一往返口径，区分振幅与功率。",
+        "references": [
+          "laser-threshold",
+          "laser-longitudinal-modes"
+        ]
+      },
+      {
+        "id": "spacing",
+        "title": "例题：用腔长估纵模间隔",
+        "text": "空气中线性腔的镜间距 0.30 m 时，往返路径 0.60 m，相邻模间隔约 500 MHz。若谱仪看到宽的增益包络，不宜将其宽度当成相邻峰间距，更不能当成某一窄峰自身的线宽。",
+        "formula": "Δν=c/(2n_g L)",
+        "conditions": "简单线性腔，局部群折射率近似常量。",
+        "references": [
+          "free-spectral-range",
+          "laser-longitudinal-modes"
+        ]
+      },
+      {
+        "id": "width",
+        "title": "理解检查：三种宽度分别怎么看",
+        "text": "用扫描被动腔可测其透射共振宽度，激光输出的单线宽还受相位噪声和测量时间尺度影响。增益带宽来自介质的放大频率范围。分辨两根窄峰时，还要核对谱仪自身的频率分辨率。",
+        "formula": "精细度≈相邻峰间距/被动腔峰宽",
+        "conditions": "采用相同频率单位与峰宽定义。",
+        "references": [
+          "cavity-linewidth",
+          "cavity-finesse",
+          "laser-longitudinal-modes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ring-fsr-coupling",
+    "title": "微环共振、FSR 与临界耦合",
+    "intro": "读懂谱谷位置、峰间隔和谷深分别由什么决定。",
+    "prerequisites": [
+      "effective-index",
+      "microring-resonator"
+    ],
+    "sections": [
+      {
+        "id": "resonance",
+        "title": "位置看相位，间隔看群时延",
+        "text": "微环内一圈的相位等于传播常数乘周长。整数个 2π 给共振位置，随频率的相位斜率给往返群时延。两个相邻共振近似隔开往返群时延的倒数，实际两点频差也可直接从波长换算。",
+        "formula": "βL=2πm，Δν≈c/(n_g L)",
+        "conditions": "同一模族，局部群折射率变化较小。",
+        "references": [
+          "microring-resonator",
+          "microring-fsr",
+          "group-index"
+        ]
+      },
+      {
+        "id": "example",
+        "title": "例题：两条谱线的差值",
+        "text": "1550 nm 和 1551 nm 差 1 nm。用 ν=c/λ，直接取两个频率之差约 124.70 GHz。已知相邻同模族时，该差是频率口径的 FSR。仅给两个谷位置时，仍可算差值，另需判断谱线归属。",
+        "formula": "Δν=c|1/λ₁−1/λ₂|",
+        "conditions": "使用真空波长。",
+        "references": [
+          "microring-fsr"
+        ]
+      },
+      {
+        "id": "coupling",
+        "title": "理解检查：加大外耦合会一直加深谷吗",
+        "text": "单总线微环的直通端是总线直通场和从环耦回场的相干叠加。外耦合与内损耗匹配时抵消最充分。耦合增强到越过临界点后会离开匹配，谷可能变浅，因此单一谷深不能直接判定欠耦合还是过耦合。",
+        "formula": "理想单总线临界匹配 r=a",
+        "conditions": "r 与 a 均为场幅系数。",
+        "references": [
+          "microring-critical-coupling",
+          "microring-under-overcoupling"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nep-bandwidth-detectivity",
+    "title": "NEP、带宽与比探测率",
+    "intro": "从数据手册的谱密度走到实际噪声，再用光敏面积比较 D*。",
+    "prerequisites": [
+      "photodiode-responsivity",
+      "detector-nep"
+    ],
+    "sections": [
+      {
+        "id": "reference",
+        "title": "先统一参考面与单位",
+        "text": "探测链的输出噪声用响应度换算成等效输入噪声。W/√Hz 给出按带宽归一的幅度谱密度；波长、参考面和频段可比时，可以比较规格。给定滤波条件下的均方根噪声则需要带宽或积分噪声谱。",
+        "formula": "NEP_s=i_n/R",
+        "conditions": "i_n 用 A/√Hz，响应度用 A/W。",
+        "references": [
+          "detector-nep",
+          "detector-noise-bandwidth"
+        ]
+      },
+      {
+        "id": "compare",
+        "title": "例题：密度较小，实际噪声可能较大",
+        "text": "第一台 3 pW/√Hz、16 Hz，第二台 5 pW/√Hz、4 Hz。若两者均在白噪声区域且带宽为等效带宽，实际输入等效噪声为 12 pW 与 10 pW。将第二台带宽改为 9 Hz 后，第二台变为 15 pW。",
+        "formula": "P_rms=NEP_s√B",
+        "conditions": "有色噪声时按谱和滤波响应积分。",
+        "references": [
+          "detector-nep",
+          "detector-noise-bandwidth"
+        ]
+      },
+      {
+        "id": "area",
+        "title": "理解检查：D* 为何有面积",
+        "text": "把 4 mm² 换为 0.04 cm²，面积平方根为 0.2 cm。若归一化 NEP 为 2 pW/√Hz，D* 为 10¹¹ Jones。这里的带宽约定已经在 NEP_s 中。若输入的是某带宽下的功率 NEP_B，应采用含 B 的公式。",
+        "formula": "D*=√A/NEP_s=√(AB)/NEP_B",
+        "conditions": "面积用光敏面积；比较温度、波长和调制频段。",
+        "references": [
+          "detector-specific-detectivity",
+          "detector-nep"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "camera-two-frame-noise",
+    "title": "两帧噪声与相机统计",
+    "intro": "从相机的时域波动和空间不均匀，推到差分公式与实操检查。",
+    "prerequisites": [
+      "camera-temporal-noise-pair",
+      "camera-dsnu"
+    ],
+    "sections": [
+      {
+        "id": "cancellation",
+        "title": "为什么同条件相减",
+        "text": "暗图中每个像素的固定偏置在两帧相减后抵消，随机波动仍分别进入差图。用差图的去均值方差估时域随机分量。空间差异则用多帧平均图观察，这样能降低时域波动在空间估计中的影响。",
+        "formula": "Var(A−B)=Var(A)+Var(B)−2Cov(A,B)",
+        "conditions": "同曝光同增益，维持暗场和温度。",
+        "references": [
+          "camera-temporal-spatial-noise",
+          "camera-temporal-noise-pair"
+        ]
+      },
+      {
+        "id": "divide",
+        "title": "例题：差图方差 18 DN²",
+        "text": "独立同方差时协方差项为零，差图方差是单帧方差的两倍。因此先除以二得 9 DN²，再开方得 3 DN。若先算差图标准差，等价做法是除以 √2。",
+        "formula": "σ_single²=Var(A−B)/2",
+        "conditions": "方差与标准差的单位分别为 DN² 和 DN。",
+        "references": [
+          "camera-temporal-noise-pair",
+          "camera-temporal-spatial-noise"
+        ]
+      },
+      {
+        "id": "conditions",
+        "title": "理解检查：什么时候不能直接除二",
+        "text": "帧间有相关噪声或自动曝光时，两帧方差可能不同，协方差也可能不为零。先核查采集条件并检查两帧均值变化。若需要按模型修正量化噪声，应在单帧方差口径下扣相应方差项。",
+        "formula": "σ_total²=σ_signal²+σ_quant²（独立量化模型）",
+        "conditions": "量化误差统计模型成立时才可相加或相减。",
+        "references": [
+          "camera-temporal-spatial-noise",
+          "camera-dsnu"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "quantum-state-measurement",
+    "title": "量子态、纯度与测量",
+    "intro": "从密度矩阵、结果概率和条件态分三步理解一次测量。",
+    "prerequisites": [
+      "quantum-density-operator",
+      "quantum-state-purity"
+    ],
+    "sections": [
+      {
+        "id": "purity",
+        "title": "先看矩阵与它的平方",
+        "text": "密度矩阵迹为一。对于二能级对角态 diag(3/4,1/4)，平方后取迹得 9/16+1/16=5/8，说明这是混合态。若只看某一基底的对角元，还要判断非对角项；相同的基底概率可以对应不同纯度。",
+        "formula": "P=Tr(ρ²)",
+        "conditions": "迹一、正半定；纯度不依赖所选基底。",
+        "references": [
+          "quantum-density-operator",
+          "quantum-state-purity"
+        ]
+      },
+      {
+        "id": "update",
+        "title": "记录结果与忽略结果",
+        "text": "已知结果 a 时，要用该分支的输出归一化。忽略结果时，对所有输出分支按概率求和。计算基测量对 |0⟩ 的非选择输出仍为 |0⟩⟨0|，对 |+⟩ 则给两个基态各一半的混合。",
+        "formula": "ρₐ=MₐρMₐ†/pₐ，ρ′=Σₐ MₐρMₐ†",
+        "conditions": "条件态要求 pₐ>0，此处每结果一个算符。",
+        "references": [
+          "quantum-measurement-post-state",
+          "quantum-state-purity"
+        ]
+      },
+      {
+        "id": "povm",
+        "title": "理解检查：知道 POVM 就知道测后态吗",
+        "text": "给同一测量效应对应的算符再乘一个依赖结果的幺正变换，效应和结果概率保持，测后条件态可改变。由此可见实验只给效应算符时能计算概率，要求测后态还需要知道测量操作。",
+        "formula": "Eₐ=Mₐ†Mₐ，pₐ=Tr(ρEₐ)",
+        "conditions": "相同输入态与结果标签。",
+        "references": [
+          "quantum-povm",
+          "quantum-measurement-post-state"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hbt-and-hom",
+    "title": "区分 HBT 与 HOM 的凹陷",
+    "intro": "通过装置、横轴和相消路径区分两种常见的量子光学图。",
+    "prerequisites": [
+      "quantum-second-order-coherence",
+      "quantum-hom-interference"
+    ],
+    "sections": [
+      {
+        "id": "setup",
+        "title": "先从装置辨认横轴",
+        "text": "HBT 通常用一束待测光分到两个探测通道，相关函数的横轴是探测事件时间差。HOM 则将两输入各一光子送到分束器，横轴可由延迟台控制两输入的到达差。两者都可有凹陷，但回答的是不同物理问题。",
+        "formula": "HBT：探测事件差 τ；HOM：输入相对延迟 Δt",
+        "conditions": "核对探测窗、背景和时间标定。",
+        "references": [
+          "quantum-photon-antibunching",
+          "quantum-hom-interference"
+        ]
+      },
+      {
+        "id": "paths",
+        "title": "真正相消的是哪两条路径",
+        "text": "理想 50∶50 分束器上，输出各一个的两种替代过程是两透和两反，二者相对相位 π，振幅相消。一透一反把两个光子送到同一输出。若输入波包的模式可区分，就不能把所有替代振幅同样相加。",
+        "formula": "A_coin ∝ t²+r²=0（取 t=1/√2，r=i/√2）",
+        "conditions": "两输入各一个不可区分光子，平衡且无损。",
+        "references": [
+          "quantum-hom-interference",
+          "quantum-beam-splitter"
+        ]
+      },
+      {
+        "id": "interpret",
+        "title": "例题：一条凹陷能说明什么",
+        "text": "若只知道零点符合从基线 100 下降到 40，可算相对下降 60%。要解释为 HOM 可见度，先确认扫的是两输入延迟。若测的是单束光的两探测器时间关联，需要使用相应归一化的 g²(τ)，并核查背景与时间窗。",
+        "formula": "V=(100−40)/100=0.60",
+        "conditions": "基线和谷底采用相同计数和归一化口径。",
+        "references": [
+          "quantum-hom-visibility",
+          "quantum-second-order-coherence",
+          "quantum-photon-antibunching"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "experiment-estimate-measure",
+    "title": "区分计算结果、拟合估计和仪器测量",
+    "intro": "用单缝和膜厚两个例子，理解一份结论应记录怎样的依据。",
+    "prerequisites": [
+      "diffraction-basics",
+      "fit-residuals"
+    ],
+    "sections": [
+      {
+        "id": "forward",
+        "title": "从已知输入出发得到预测",
+        "text": "给出波长、缝宽和屏距，可以按模型算出第一暗纹位置。这是对指定参数的条件性预测。实际摄像图片中的亮度还受像素尺度、曝光和背景影响，比较前应先标定相应物理量。",
+        "formula": "x₁≈λL/a",
+        "conditions": "远场小角度模型；宽度口径需说明。",
+        "references": [
+          "slit-width-definitions",
+          "csv-width-convention"
+        ]
+      },
+      {
+        "id": "inverse",
+        "title": "从数据回推参数为何可能有多解",
+        "text": "多个膜厚可在有限波长产生近似相同的反射率，因此很小的拟合残差也可对应多个候选。把候选在一个未用波长的预测画在一起，可挑分歧大的波长继续观测，再按相同搜索范围和阈值重做筛选。",
+        "formula": "残差=观测值−模型预测",
+        "conditions": "使用已校准反射率及模型所需的折射率。",
+        "references": [
+          "film-ambiguity",
+          "observation-design",
+          "fit-residuals"
+        ]
+      },
+      {
+        "id": "report",
+        "title": "理解检查：结果要如何复现",
+        "text": "报告预测时保存输入和模型；报告参数估计时再保留观测、残差、搜索范围和阈值；实际测量要给出仪器或采集条件与必要的不确定度。用于拟合的数据与留作验证的数据应各有标识。",
+        "formula": "验证量与拟合目标要注明单位和来源",
+        "conditions": "合成教学数据和真实采集数据各按其来源记录。",
+        "references": [
+          "holdout",
+          "measurement-type-b",
+          "fit-residuals"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "complex-field-interference",
+    "title": "从复相量到干涉强度",
+    "intro": "把幅值、相位、叠加和读出的强度连成一条推导。",
+    "prerequisites": [
+      "complex-cartesian-polar",
+      "phasor-vector-sum"
+    ],
+    "sections": [
+      {
+        "id": "phase",
+        "title": "在同一参考下表示两束光",
+        "text": "对同频场选时间因子 exp(−iωt)，把与位置有关的传播相位放在复振幅中。移动共同的相位参考会使两个复振幅同时旋转，因此绝对相位变动，二者相对角度保持。比较两束光应先把幅值换成相同的归一。",
+        "formula": "E_j=A_j exp(iφ_j)",
+        "conditions": "同频、同一参考面和偏振；A_j 为非负的峰值振幅。",
+        "references": [
+          "phasor-reference-change",
+          "euler-optical-phase"
+        ]
+      },
+      {
+        "id": "expand",
+        "title": "展开模平方，找出交叉项",
+        "text": "总场先相加，再乘总场的共轭。展开后，两项为各自模平方，另两项互为共轭，其和等于两倍的实部。以 A₁=2、A₂=1 为例，正交相位差时交叉项为零；若改成反相，总强度比例为 1。",
+        "formula": "abs(E₁+E₂)²=A₁²+A₂²+2A₁A₂ cos(φ₁−φ₂)",
+        "conditions": "相对相位在平均时间内稳定，强度与模平方使用同一比例。",
+        "references": [
+          "phasor-vector-sum",
+          "complex-conjugation-optics"
+        ]
+      },
+      {
+        "id": "boundary",
+        "title": "检验：独立光源也能按固定相位相加吗",
+        "text": "若测量期间相位在完整周期内均匀漂移，余弦平均趋近零，测得的是两个强度之和。这个结果与固定相位差为 90° 的单次计算可能相同，分别对应时间平均与已知相位，改变测量时间或相位时应重新判断。",
+        "formula": "⟨I⟩∝A₁²+A₂²+2A₁A₂⟨cos Δφ⟩",
+        "conditions": "幅值近似稳定；比较相同探测带宽。",
+        "references": [
+          "coherent-imaging",
+          "phasor-vector-sum"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fourier-sample-readout",
+    "title": "连续频谱怎样变成离散频点",
+    "intro": "分开判断采样率、观测时长和频谱泄漏。",
+    "prerequisites": [
+      "fourier-transform-pair",
+      "discrete-fourier-basis"
+    ],
+    "sections": [
+      {
+        "id": "sampling",
+        "title": "采样率决定哪里会混叠",
+        "text": "等间隔采样把频谱沿频率轴以采样率为周期复制。基带信号的最高频率与这些副本间的间隔决定是否重叠。若输入含接近或超过奈奎斯特边界的量，工程中要给模拟抗混叠滤波器预留过渡带。",
+        "formula": "f_s=1/Δt，基带 f_max<f_s/2",
+        "conditions": "理想均匀采样，基带信号；不含带通欠采样的特殊配置。",
+        "references": [
+          "time-sampling-alias",
+          "fourier-transform-pair"
+        ]
+      },
+      {
+        "id": "grid",
+        "title": "例题：步长与时长承担不同角色",
+        "text": "采样率 1 kHz，取 200 个等间隔点，DFT 频点间隔为 5 Hz。延长记录到 400 点，间隔变成 2.5 Hz，奈奎斯特频率仍为 500 Hz。保留同一记录只增加补零，频点更密，但等效观测时长没有改变。",
+        "formula": "Δf=f_s/N，T=N/f_s",
+        "conditions": "时间窗用 NΔt 的 DFT 口径；频点间隔与两条谱线的可分辨性分别讨论。",
+        "references": [
+          "sampling-period-vs-window",
+          "discrete-fourier-basis"
+        ]
+      },
+      {
+        "id": "leakage",
+        "title": "检验：7 Hz 为什么散到多个频点",
+        "text": "若频点间隔 5 Hz，7 Hz 正弦在记录窗内一般不是整数周期。将窗限制纳入计算，相当于让原始窄谱与窗谱卷积，因此能量会分布到多个频点。更换窗时同时考虑主瓣、旁瓣和幅值归一。",
+        "formula": "ℱ{x(t)w(t)}=X(f)*W(f)",
+        "conditions": "采样率高于信号奈奎斯特要求，先排除混叠。",
+        "references": [
+          "fourier-product-convolution",
+          "window-coherent-gain"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "covariance-noise-channels",
+    "title": "双通道测量中的相关噪声",
+    "intro": "从协方差判断相加、相减与共享误差的不同效果。",
+    "prerequisites": [
+      "expectation-vs-observation",
+      "covariance-common-noise"
+    ],
+    "sections": [
+      {
+        "id": "derive",
+        "title": "从中心化量展开方差",
+        "text": "先从各信号减掉自己的期望，再把差的平方展开。交叉项取期望后得到协方差，符号与所用运算一致。协方差为正时，同号波动会被相减部分抵消，而相加可能把它们叠起来。",
+        "formula": "Var(A±B)=Var(A)+Var(B)±2Cov(A,B)",
+        "conditions": "两量以相容单位表示，二阶矩存在。",
+        "references": [
+          "covariance-common-noise",
+          "variance-sum-difference"
+        ]
+      },
+      {
+        "id": "numbers",
+        "title": "例题：相加与相减读数",
+        "text": "设 A、B 的方差分别为 4 和 9 mV²，协方差为 3 mV²。相减的方差为 7 mV²，相加为 19 mV²。同样两个通道，只改变运算符就得到不同噪声，评估差分放大时应保留同步采集信息。",
+        "formula": "4+9−2×3=7，4+9+2×3=19",
+        "conditions": "协方差为同一采集条件下的同步估计。",
+        "references": [
+          "variance-sum-difference",
+          "uncertainty-linear-covariance"
+        ]
+      },
+      {
+        "id": "independence",
+        "title": "检验：相关系数为零意味着什么",
+        "text": "相关系数零可消去此线性方差公式的交叉项。一般情形仍可能存在非线性依赖，例如对称随机变量与其平方。独立是更强的统计条件，需要结合采集流程或分布假设核对。",
+        "formula": "ρ=Cov(A,B)/(σ_A σ_B)",
+        "conditions": "两个标准差均非零；相关系数这里指 Pearson 相关。",
+        "references": [
+          "correlation-coefficient-scale",
+          "probability-independence-test"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "maxwell-to-plane-wave",
+    "title": "从 Maxwell 方程得到平面波",
+    "intro": "用无源均匀介质推导波动方程，再核对波数、波阻抗和能流。",
+    "prerequisites": [
+      "electric-field-vs-displacement",
+      "magnetic-b-vs-h"
+    ],
+    "sections": [
+      {
+        "id": "curl",
+        "title": "旋度方程怎样连在一起",
+        "text": "先取 Faraday 方程两边的旋度，再用 Ampère–Maxwell 方程代替磁场旋度。常数 ε 与 μ 可移出导数；无源均匀介质给 ∇·E=0，双旋度恒等式由此把左侧改成负的空间拉普拉斯。",
+        "formula": "∇²E=με ∂²E/∂t²",
+        "conditions": "均匀、各向同性、无源、无耗散，ε 与 μ 在所讨论频段取常数。",
+        "references": [
+          "faraday-loop-induction",
+          "ampere-displacement-current",
+          "maxwell-wave-curl-curl"
+        ]
+      },
+      {
+        "id": "plane",
+        "title": "例题：折射率改变了哪几个量",
+        "text": "若非磁介质 n=1.50，真空波长为 600 nm，则介质内波长为 400 nm。静止边界的两侧频率仍为约 500 THz。这个例子中相速度与波阻抗都比真空小，平面波 E 与 H 的峰值比也相应变小。",
+        "formula": "λ=λ₀/n，v=c/n，η=η₀/n",
+        "conditions": "单频均匀平面波，非磁无损介质。",
+        "references": [
+          "medium-wavelength-continuity",
+          "em-wave-impedance"
+        ]
+      },
+      {
+        "id": "energy",
+        "title": "检验：场幅相等时，功率是否相等",
+        "text": "平均能流由电场与磁场的共轭叉积确定。在相同电场峰值下，较低的波阻抗对应较大的磁场峰值和平均强度。把场传播系数用于功率预算时，需要两侧各自的能流归一。",
+        "formula": "I=abs(E_peak)²/(2η)",
+        "conditions": "无损介质里的单向平面波；复幅口径为峰值。",
+        "references": [
+          "em-average-poynting",
+          "field-amplitude-vs-intensity-material"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "material-dispersion-loss",
+    "title": "材料极化、吸收与色散",
+    "intro": "从阻尼响应读出相位传播和幅度衰减，核对复折射率的符号。",
+    "prerequisites": [
+      "linear-local-material-response",
+      "frequency-dependent-polarization"
+    ],
+    "sections": [
+      {
+        "id": "response",
+        "title": "把振子响应写成复数",
+        "text": "用受迫阻尼振子描述束缚电荷。取 exp(−iωt) 后，一阶时间导数对应 −iω，得到一个包含实失谐和虚阻尼的分母。响应在共振附近可同时带来吸收与折射变化；要明确使用的时间记号。",
+        "formula": "χ(ω)∝1/(ω₀²−ω²−iγω)",
+        "conditions": "单振子线性响应，γ>0；有限谱段内其他响应可由背景项表示。",
+        "references": [
+          "lorentz-resonant-susceptibility",
+          "complex-permittivity-passive-sign"
+        ]
+      },
+      {
+        "id": "loss",
+        "title": "例题：场和强度衰减相差一倍指数",
+        "text": "写 ñ=n+iκ，采用 exp[i(k₀ñz−ωt)]。场模出现 exp(−k₀κz)，强度平方后变为 exp(−2k₀κz)。以 λ₀=1 μm、κ=10⁻⁴ 为例，强度的 1/e 长度约为 0.796 mm。",
+        "formula": "α_I=2k₀κ=4πκ/λ₀，L_I=1/α_I",
+        "conditions": "均匀材料，局部比较只计体衰减；界面反射另算。",
+        "references": [
+          "extinction-coefficient-intensity",
+          "complex-index-phase-attenuation"
+        ]
+      },
+      {
+        "id": "pulse",
+        "title": "检验：一个折射率能确定群延迟吗",
+        "text": "对传播相位按频率求导，除了相折射率，还要知道折射率随频率变化的斜率。因果关系把整个频谱中的吸收和色散联系起来，但单个波长的一个吸收值不足以反算局部群折射率。",
+        "formula": "n_g=n+ω dn/dω",
+        "conditions": "窄带、弱变形、弱吸收时使用群延迟近似。",
+        "references": [
+          "material-group-vs-phase-index",
+          "kk-causality-interpretation"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fresnel-and-total-reflection",
+    "title": "从 Fresnel 系数到全反射",
+    "intro": "用波矢与能流分别判断界面传播、功率比例和倏逝深度。",
+    "prerequisites": [
+      "interface-plane-phase-matching",
+      "interface-te-tm-basis"
+    ],
+    "sections": [
+      {
+        "id": "power",
+        "title": "例题：振幅为 0.8 时透射率是多少",
+        "text": "空气入射到 n=1.5 的无损非磁材料，正入射电场系数为 t=0.8、r=−0.2。透射场的平方是 0.64，透射功率还要乘以 1.5，得到 0.96。反射功率为 0.04，两项在此例恰好相加为一。",
+        "formula": "T=(n₂/n₁)abs(t)²，R=abs(r)²",
+        "conditions": "正入射，无损非磁；场系数按入射电场归一。",
+        "references": [
+          "fresnel-normal-amplitude",
+          "fresnel-transmitted-power-factor"
+        ]
+      },
+      {
+        "id": "evanescent",
+        "title": "越过临界角后，低折射率侧发生什么",
+        "text": "高折射率到低折射率的光，切向波矢跨界保持。若切向分量已经大于低侧波数，低侧法向分量就是虚数，边界选取随距离衰减的一支。场仍存在，孤立无损半空间的平均法向净流为零。",
+        "formula": "κ_z=√(k_parallel²−k₂²)，E(z)∝exp(−κ_z z)",
+        "conditions": "高侧入射，超过临界角；低侧为孤立无损半空间。",
+        "references": [
+          "critical-angle-derivation",
+          "interface-tir-penetration-amplitude",
+          "em-interface-evanescent-normal-flux"
+        ]
+      },
+      {
+        "id": "boundary",
+        "title": "检验：把第二块玻璃移到很近会怎样",
+        "text": "如果低侧间隙薄到和倏逝深度同量级，第二块材料可被倏逝场耦合并提供传播通道。原来的单界面功率结论只适用于孤立半空间。需要给出间隙厚度、波长和三侧折射率再计算。",
+        "formula": "L_field=1/κ_z，L_intensity=1/(2κ_z)",
+        "conditions": "比较相同入射角和偏振；多界面另建边界问题。",
+        "references": [
+          "frustrated-total-internal-reflection",
+          "interface-tir-penetration-amplitude"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nonlinear-polarization-mixing",
+    "title": "二阶极化怎样产生和频与差频",
+    "intro": "用两频实场展开二次项，先判断频率，再判断能否有效生成。",
+    "prerequisites": [
+      "nonlinear-polarization-expansion",
+      "quadratic-two-tone-products"
+    ],
+    "sections": [
+      {
+        "id": "expand",
+        "title": "列出二阶源的频率成分",
+        "text": "先分开两个自乘项和一项交叉乘积。自乘项各给静态和二倍频；交叉项把两个瞬时相位相加及相减。写成复包络后，差频源对较低频泵取复共轭，因此相位也按差值组织。",
+        "formula": "2 cos A cos B=cos(A+B)+cos(A−B)",
+        "conditions": "二阶标量示意，双频同点相加；材料的允许张量分量另核对。",
+        "references": [
+          "quadratic-two-tone-products",
+          "mixing-complex-conjugate-sign"
+        ]
+      },
+      {
+        "id": "numbers",
+        "title": "例题：1064 nm 与 1550 nm",
+        "text": "把两路真空波长取倒数。相加再取倒数得到约 631 nm 的和频，相减取绝对值后再求倒数得到约 3393.4 nm，即 3.39 μm 的差频。计算时两路波长先统一单位。",
+        "formula": "1/λ_SFG=1/λ₁+1/λ₂，1/λ_DFG=abs(1/λ₁−1/λ₂)",
+        "conditions": "真空波长，输出指被驱动的频率分量。",
+        "references": [
+          "sum-frequency-conversion",
+          "difference-frequency-conversion"
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "检验：有极化源就会有强输出吗",
+        "text": "先找所选偏振允许的张量分量，再检查相位沿晶体积累和三个波段的透过。即使频率关系满足，可能因相消、吸收或模场重叠差而只有弱信号。频率换算给的是位置，效率需要更多条件。",
+        "formula": "Δk=k₃−k₁−k₂（和频）",
+        "conditions": "共线同向相位记号；频率换算本身与器件效率分开。",
+        "references": [
+          "nonlinear-tensor-projection",
+          "nonlinear-phase-mismatch-sign",
+          "nonlinear-material-three-band-window"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nonlinear-qpm-from-shg",
+    "title": "倍频的相干累积与准相位匹配",
+    "intro": "从振幅积分推到第一零点，再解释周期翻转与倒格矢。",
+    "prerequisites": [
+      "second-harmonic",
+      "phase-mismatch"
+    ],
+    "sections": [
+      {
+        "id": "integral",
+        "title": "为什么先增长又抵消",
+        "text": "假设泵恒定，每一小段产生的输出贡献只差一个由 Δk 决定的相位。把这些贡献从零到 L 相加，得到长度乘 sinc 因子，再平方为归一强度。累积相位达到 2π 时第一零点出现，增长再抵消。",
+        "formula": "∫₀ᴸ exp(−iΔkz)dz=L exp(−iΔkL/2)sinc(ΔkL/2)",
+        "conditions": "sinc(u)=sin(u)/u；共线、小信号平面波，忽略吸收。",
+        "references": [
+          "nonlinear-mismatch-first-zero",
+          "nonlinear-length-square-limit"
+        ]
+      },
+      {
+        "id": "numbers",
+        "title": "例题：由失配求极化周期",
+        "text": "若失配大小 0.25 μm⁻¹，相干长度约 12.57 μm。让相邻畴的非线性系数变号，在一阶等占空比结构中每个畴取相干长度，完整周期约 25.13 μm。反号等效加入 π 相位，使生成振幅能继续累积。",
+        "formula": "L_c=π/abs(Δk)，Λ=2L_c",
+        "conditions": "一阶、正负等长、均匀失配；周期包含两个相邻畴。",
+        "references": [
+          "qpm-domain-half-period",
+          "qpm-order-reciprocal-vector"
+        ]
+      },
+      {
+        "id": "limit",
+        "title": "检验：补偿失配是否等于同样的耦合",
+        "text": "方波翻转只有部分傅里叶权重落在所选阶，等长畴的一阶场系数为均匀材料系数的 2/π。匹配后还要核对这个权重、材料吸收、光束重叠与泵耗尽。平方比例只可与同一归一条件下的理想均匀相位匹配比较。",
+        "formula": "abs(d₁)/abs(d)=2/π",
+        "conditions": "理想等长畴、只保留有效一阶，比较固定模式和小信号。",
+        "references": [
+          "qpm-duty-cycle-coefficient",
+          "nonlinear-pump-square-limit"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fiber-acceptance-to-mode",
+    "title": "从光纤接受角到归一频率",
+    "intro": "用几何近似理解端面入射，再用 V 数讨论模式条件。",
+    "prerequisites": [
+      "optics-total-internal-reflection",
+      "fiber-acceptance-angle"
+    ],
+    "sections": [
+      {
+        "id": "geometry",
+        "title": "端面入射角和芯包界面角不是一个角",
+        "text": "光从外部经过端面折射，纤芯内的子午光线和轴成 θ。它在直的芯包界面上相对法线的角约为 90°−θ。将该角与临界角比较，并把 θ 通过端面的 Snell 关系换回外部角，得到接受范围。",
+        "formula": "NA=n_ext sin θ_max=√(n_core²−n_clad²)",
+        "conditions": "直的阶跃型光纤、子午线光线、理想端面。",
+        "references": [
+          "fiber-acceptance-angle",
+          "fiber-numerical-aperture"
+        ]
+      },
+      {
+        "id": "example",
+        "title": "例题：已知 NA 和芯半径，算 V",
+        "text": "给芯半径 4 μm、NA=0.12、真空波长 1.55 μm，V=2π×4×0.12/1.55≈1.95。若改到 1.00 μm，则 V≈3.02。几何接受锥不决定可传播的模式数量，V 数同时考虑尺寸和波长。",
+        "formula": "V=2πa NA/λ₀",
+        "conditions": "近似使用同一 NA；严格比较时考虑材料波长依赖。",
+        "references": [
+          "fiber-v-number",
+          "fiber-numerical-aperture"
+        ]
+      },
+      {
+        "id": "mode",
+        "title": "检验：2.405 对哪些器件适用",
+        "text": "在弱导的圆对称阶跃型光纤里，V<2.405 是常用的单模工作条件。这里比较的是高阶模截止；基模仍可存在。非圆、强折射率反差或其他截面的波导需用自身模式和边界模型。",
+        "formula": "V_cut≈2.405（弱导圆形阶跃光纤首个高阶模族）",
+        "conditions": "先确认光纤结构；此专题只作解析理解。",
+        "references": [
+          "fiber-v-number",
+          "guided-mode-cutoff"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "otdr-distance-and-loss",
+    "title": "OTDR 上的距离与双向损耗",
+    "intro": "先从往返时间换算位置，再理解为何同一接头从两端测得不同。",
+    "prerequisites": [
+      "group-index",
+      "fiber-attenuation-coefficient"
+    ],
+    "sections": [
+      {
+        "id": "distance",
+        "title": "例题：往返 10 μs 对应多远",
+        "text": "发射光从端面到事件，再沿光纤返回探测器，时钟测到的是往返时间。群折射率取 1.50 时，10 μs 对应单程约 999 m。若仪器设置的折射率偏高，报告的距离会相应偏短。",
+        "formula": "z=c Δt/(2n_g)",
+        "conditions": "单一传播路径、均匀群折射率、延迟零点已校准。",
+        "references": [
+          "otdr-group-index-distance",
+          "group-index"
+        ]
+      },
+      {
+        "id": "loss",
+        "title": "两边的台阶为什么不同",
+        "text": "OTDR 台阶同时受到传输损耗和接头两侧背向散射系数差异影响。换向后，实际接头损耗的符号保持，散射不匹配项会反向。只有正确匹配到同一事件并保持测量条件时，才适合平均两个方向的读数。",
+        "formula": "L≈(L_AB+L_BA)/2",
+        "conditions": "同一接头、同波长、双向仪器设置可比，区分反射峰与台阶。",
+        "references": [
+          "otdr",
+          "otdr-bidirectional"
+        ]
+      },
+      {
+        "id": "caution",
+        "title": "检验：−0.2 dB 与 +0.6 dB 怎样解释",
+        "text": "两侧读数按同一 dB 定义平均，得到约 0.2 dB。负的一侧可由背散射差造成，不能据此认为接头存在光学增益。若未确认同一位置、脉冲响应重叠或某一方向处于盲区，应重新测量。",
+        "formula": "(−0.2+0.6)/2=0.2 dB",
+        "conditions": "使用已识别的同一事件，保留两向读数和测量条件。",
+        "references": [
+          "otdr-bidirectional",
+          "otdr"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "uncertainty-evaluation",
+    "title": "给光学测量结果附上不确定度",
+    "intro": "从测量模型和输入量出发，区分来源、传播与报告。",
+    "prerequisites": [
+      "measurement-type-a",
+      "measurement-type-b"
+    ],
+    "sections": [
+      {
+        "id": "inputs",
+        "title": "A 类与 B 类首先指评定方法",
+        "text": "把输出量写成输入量的函数。重复观测可用于统计评定；校准证书、分辨率和可追溯先验可用于非重复测量的评定。最终都转成标准不确定度，再按测量模型的灵敏度与协方差传播。",
+        "formula": "u²(y)≈ΣᵢΣⱼ cᵢcⱼ Cov(xᵢ,xⱼ)",
+        "conditions": "一阶线性化，说明输入相关性和标准不确定度的量纲。",
+        "references": [
+          "measurement-type-a",
+          "measurement-type-b",
+          "uncertainty-linear-covariance"
+        ]
+      },
+      {
+        "id": "numbers",
+        "title": "例题：两个来源合并成多少",
+        "text": "同一长度的两项独立标准不确定度分别是 0.3 μm 和 0.4 μm，灵敏度大小均为一，则合成标准不确定度为 0.5 μm。选择覆盖因子 k=2 时，扩展不确定度为 1.0 μm，报告要保留 k 与其采用依据。",
+        "formula": "u_c=√(0.3²+0.4²) μm，U=k u_c",
+        "conditions": "两项独立，系数已归一；覆盖概率另依分布与自由度。",
+        "references": [
+          "measurement-combined-uncertainty",
+          "measurement-expanded-uncertainty"
+        ]
+      },
+      {
+        "id": "correlated",
+        "title": "检验：两个量来自同一把标尺",
+        "text": "同一标尺的零点偏差可能同时进入两个输入。比较差值时，两项的灵敏度符号相反，零点偏差可能抵消；比较和时则可能叠加。先写测量模型和误差来源，再决定采用哪些协方差。",
+        "formula": "Var(A−B)=Var(A)+Var(B)−2Cov(A,B)",
+        "conditions": "两通道参考共同、坐标方向一致；区分零点项和比例项。",
+        "references": [
+          "uncertainty-linear-covariance",
+          "variance-sum-difference"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pulse-shape-bandwidth",
+    "title": "用脉冲形状读懂时间带宽积",
+    "intro": "先统一强度宽度，再比较 Gaussian 与 sech² 脉冲。",
+    "prerequisites": [
+      "ultrafast-carrier-envelope",
+      "ultrafast-field-intensity-fwhm"
+    ],
+    "sections": [
+      {
+        "id": "shape",
+        "title": "为什么光谱强度和场幅要分开",
+        "text": "先把光场的复包络写出来，再取傅里叶变换，最后用两边各自的强度找半高点。对 Gaussian，场幅平方会改变指数系数，所以用场的半高宽来代替强度宽度会多出平方根因子。",
+        "formula": "T_field=√2 T_intensity",
+        "conditions": "Gaussian 单脉冲，宽度按各自峰值的一半。",
+        "references": [
+          "ultrafast-field-intensity-fwhm",
+          "ultrafast-gaussian-tbp-example"
+        ]
+      },
+      {
+        "id": "example",
+        "title": "例题：同一 2 THz 谱宽的两种脉宽",
+        "text": "变换极限 Gaussian 用 0.441/2 THz，得到约 221 fs。sech² 脉冲用 0.315/2 THz，得到约 158 fs。若谱线明显不符合任何一种形状，应保留实际谱形并以合适的模型分析。",
+        "formula": "T=TBP/Δν",
+        "conditions": "谱宽为强度 FWHM，普通频率，输入无非线性谱相位。",
+        "references": [
+          "ultrafast-gaussian-tbp-example",
+          "ultrafast-sech-tbp-example"
+        ]
+      },
+      {
+        "id": "limit",
+        "title": "读谱检查：同一光谱能有不同时间波形吗",
+        "text": "把两个脉冲的谱幅设成一样，仅给一个脉冲增加二次谱相位。光谱仪读数可以相同，而各频率成分重叠的时间发生变化，脉冲变宽。要知道实际宽度，应结合相位或时域测量。",
+        "formula": "I(ω)=abs(A(ω))²",
+        "conditions": "谱强度读取与时域宽度测量采用各自明确的定义。",
+        "references": [
+          "ultrafast-spectral-phase-bandwidth-limit",
+          "ultrafast-gaussian-gdd-broadening"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pulse-gdd-and-retarded-frame",
+    "title": "从群时延到 Gaussian 脉冲展宽",
+    "intro": "用一阶和二阶谱相位区分整体迟到与波形改变。",
+    "prerequisites": [
+      "group-delay",
+      "ultrafast-quadratic-spectral-phase"
+    ],
+    "sections": [
+      {
+        "id": "derive",
+        "title": "为什么一阶相位只让脉冲平移",
+        "text": "将 exp(iφ₁Ω) 乘进频谱，和逆变换的 exp(−iΩt) 合并，得到 exp[−iΩ(t−φ₁)]。因此光脉冲整体延后 φ₁，宽度保持。移动时间坐标把这段平移消去，便于观察展宽。",
+        "formula": "T=t−β₁L",
+        "conditions": "同一相位符号，忽略其他幅度及高阶相位。",
+        "references": [
+          "ultrafast-retarded-time-coordinate",
+          "ultrafast-spectral-phase-constant-linear"
+        ]
+      },
+      {
+        "id": "example",
+        "title": "例题：100 fs 通过二阶色散元件",
+        "text": "若输入 Gaussian 变换极限宽度 100 fs，元件 GDD 约 3607 fs²，则 4ln2·GDD/T² 约为一，输出宽度约 141 fs。换成同量负 GDD 得到相同宽度，但时频倾斜的方向反转。",
+        "formula": "T_out=T√[1+(4ln2·GDD/T²)²]",
+        "conditions": "强度 FWHM，纯二阶谱相位，输入无啁啾。",
+        "references": [
+          "ultrafast-gaussian-gdd-broadening",
+          "ultrafast-quadratic-spectral-phase"
+        ]
+      },
+      {
+        "id": "boundary",
+        "title": "检查：两块材料的二阶相位抵消以后",
+        "text": "把两段频域传递函数相乘，二阶相位可以按符号相加。若总 GDD 为零，先检查带宽内的三阶项及振幅滤波再讨论脉冲是否恢复。宽谱下仅知道中心 GDD 往往不足以判断整个波形。",
+        "formula": "φ_total(Ω)=φ_a(Ω)+φ_b(Ω)",
+        "conditions": "忽略界面之间的反馈，多段相位使用同一参考。",
+        "references": [
+          "ultrafast-linear-group-delay-cascade",
+          "ultrafast-dispersion-local-expansion"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "parametric-conversion-flux",
+    "title": "参量过程里的功率与光子通量",
+    "intro": "从生成频率推到三束波的能量预算，再解释腔反馈。",
+    "prerequisites": [
+      "nonlinear-gain-signal-idler",
+      "nonlinear-photon-flux-power"
+    ],
+    "sections": [
+      {
+        "id": "derive",
+        "title": "为什么两个输出的功率增量可以不同",
+        "text": "每消耗一个高频泵光子，会同时增加两个低频输出的光子计数。两路通量增量相同，却要分别乘以各自的 hν 才得到功率。能量守恒等价于泵频是两路低频之和。",
+        "formula": "dΦ_s=dΦ_i=−dΦ_p，P=hνΦ",
+        "conditions": "无损、仅三个波交换、统计同一参考面。",
+        "references": [
+          "nonlinear-manley-rowe-parametric",
+          "nonlinear-photon-flux-power"
+        ]
+      },
+      {
+        "id": "example",
+        "title": "例题：180 THz 和 120 THz 如何分账",
+        "text": "若 300 THz 泵浦在理想过程消耗 1 mW，信号 180 THz 与闲频 120 THz 的功率增量分别是 0.6 mW 和 0.4 mW。只要通量对应的计数相等，两路功率就按各自频率比例分配。",
+        "formula": "ΔP_s/abs(ΔP_p)=ν_s/ν_p",
+        "conditions": "无损，不含外部耦合效率。",
+        "references": [
+          "nonlinear-gain-signal-idler",
+          "nonlinear-manley-rowe-parametric"
+        ]
+      },
+      {
+        "id": "boundary",
+        "title": "检查：能直接用单程增益预测起振吗",
+        "text": "振荡需要反馈及共振，还要比较泵给定时的往返增益与总损耗。单程测得放大说明有受激过程，但不能单凭这个倍率判断某个腔模式达到阈值。简并同模时相对泵相位也改变增益。",
+        "formula": "阈值时 G_roundtrip×T_roundtrip=1",
+        "conditions": "功率增益和损耗用同一往返定义；仅为小信号阈值。",
+        "references": [
+          "nonlinear-parametric-amplifier-oscillator",
+          "nonlinear-degenerate-phase-sensitive"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "coupler-field-to-power",
+    "title": "从场振幅到片上分束器的功率",
+    "intro": "用二模耦合推导等分、全转移和失配上限。",
+    "prerequisites": [
+      "chip-directional-coupler",
+      "guided-coupler-two-mode-amplitudes"
+    ],
+    "sections": [
+      {
+        "id": "derive",
+        "title": "功率守恒不等于两条曲线一样",
+        "text": "对两模场向量求平方范数。耦合矩阵满足 Hermitian 时，导数中的两项抵消，总功率不变。每个分量的功率仍随传播振荡，原因是两侧场的幅度和相位受相干耦合影响。",
+        "formula": "d(a†a)/dz=i a†(H†−H)a",
+        "conditions": "均匀无损、功率归一、只有两个耦合导模。",
+        "references": [
+          "guided-coupler-two-mode-amplitudes",
+          "guided-coupler-power-phase"
+        ]
+      },
+      {
+        "id": "example",
+        "title": "例题：500 m⁻¹ 如何选等分长度",
+        "text": "理想匹配时，从单端口送入，在 κL=π/4 首次等分。κ=500 m⁻¹ 代入得到约 1.57 mm；3.14 mm 时第一次全转移。若需要把两输出再合起来，同时保留二者的相位差。",
+        "formula": "L_3dB=π/(4κ)，L_full=π/(2κ)",
+        "conditions": "匹配双波导，正实常耦合，忽略入出弯。",
+        "references": [
+          "guided-coupler-quarter-beat",
+          "guided-coupler-power-phase"
+        ]
+      },
+      {
+        "id": "limit",
+        "title": "检查：换长度能把失配完全补掉吗",
+        "text": "常量失配时，正弦振荡仍然存在，但其前面的耦合比例小于一。若 δ=κ，任何长度都无法让交叉端超过一半。设计时可先调整失配或耦合强度，再选择合适作用长度。",
+        "formula": "T_max=κ²/(κ²+δ²)，δ=(β₁−β₂)/2",
+        "conditions": "本专题的 δ 是传播常数半差。",
+        "references": [
+          "chip-coupler-phase-mismatch",
+          "guided-coupler-mismatch-ceiling"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "coupled-wave-pump-budget",
+    "title": "从倍频源到泵耗尽的功率预算",
+    "intro": "看清小信号近似如何建立，以及何时需恢复两波交换。",
+    "prerequisites": [
+      "nonlinear-coupled-wave-source",
+      "nonlinear-undepleted-pump-check"
+    ],
+    "sections": [
+      {
+        "id": "initial",
+        "title": "为什么要对泵加上慢变包络",
+        "text": "把场拆成随 z 快速变化的载波与包络 A(z)。求二次导数后，A″、2ikA′和 −k²A 同时出现。无源色散关系消掉最后一项，若 A 在许多波长内才变化，可用一阶方程把非线性源接进来。",
+        "formula": "abs(A″)≪2 abs(k A′)",
+        "conditions": "均匀同向传播段，忽略显著反射。",
+        "references": [
+          "nonlinear-coupled-wave-source",
+          "nonlinear-svea-spatial-condition"
+        ]
+      },
+      {
+        "id": "example",
+        "title": "例题：基频减少 2 mW 时如何闭合",
+        "text": "若晶体无损且只有基频和倍频端口，基频从 10 mW 变为 8 mW，倍频的净增加量为 2 mW。每个倍频光子的能量为基频光子的两倍，因此光子通量的增量只是基频通量减少量的一半。",
+        "formula": "ΔP₂=−ΔP₁，ΔΦ₂=−ΔΦ₁/2",
+        "conditions": "两频的功率采用同一晶体内参考面，若已有种子先扣入射。",
+        "references": [
+          "nonlinear-manley-rowe-shg",
+          "nonlinear-power-contrast-depletion-budget"
+        ]
+      },
+      {
+        "id": "limit",
+        "title": "检查：低转换假设何时需要退出",
+        "text": "泵可近似恒定时生成场先随长度累积，完全匹配下输出呈平方标度。若算出的转换已占输入相当份额，应恢复基频的耦合演化。更长的晶体也可能失配或走离，不能仅凭长度保证更高输出。",
+        "formula": "小信号匹配时 P₂∝L²",
+        "conditions": "稳态、单泵、无其他耗散通道；具体误差依所需精度。",
+        "references": [
+          "nonlinear-undepleted-pump-check",
+          "nonlinear-length-square-limit"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "spm-chirp-compression",
+    "title": "自相位调制与脉冲压缩",
+    "intro": "由时间相位的斜率读频移，再判断谱变宽能否压缩。",
+    "prerequisites": [
+      "ultrafast-instantaneous-frequency-definition",
+      "nonlinear-kerr-phase-in-bulk"
+    ],
+    "sections": [
+      {
+        "id": "derive",
+        "title": "先写时间相位，再求瞬时频率",
+        "text": "用 exp(−iω₀t+iφ_NL) 描述有 Kerr 相位的包络。瞬时频率的增量是 −dφ_NL/dt。正 Kerr 下前沿强度上升，频移为负；后沿下降，频移为正；稳态恒幅段的频移为零。",
+        "formula": "φ_NL=γLP，Δω=−dφ_NL/dt",
+        "conditions": "即时正 Kerr、无耗、固定横向模式，忽略色散。",
+        "references": [
+          "ultrafast-spm-timing-sign",
+          "ultrafast-bessel-spm-cw-limit"
+        ]
+      },
+      {
+        "id": "example",
+        "title": "例题：Gaussian 的频移峰在哪里",
+        "text": "将功率写成 P₀exp(−t²/T₀²)。频移大小的时间依赖是 abs(t) exp(−t²/T₀²)，对正时间求导得峰在 T₀/√2。若 T₀=80 fs，两个极值约位于 ±56.6 fs。",
+        "formula": "t_ext=±T₀/√2",
+        "conditions": "T₀ 是功率降至 1/e 的单侧时间。",
+        "references": [
+          "nonlinear-spm-maximum-frequency-gaussian",
+          "ultrafast-spm-timing-sign"
+        ]
+      },
+      {
+        "id": "limit",
+        "title": "检查：频谱变宽后时间会立即变短吗",
+        "text": "纯 SPM 只改时间相位，所以即时强度包络保持；新增带宽还未被组织为短脉冲。加入合适符号的色散进行相位补偿，并测量输出能量和主峰时间宽度，才能判断压缩效果。",
+        "formula": "P_peak,out/P_peak,in≈(E_out/E_in)(T_in/T_out)",
+        "conditions": "近同脉形才用峰值比例，真实 SPM 的相位可含高阶项。",
+        "references": [
+          "nonlinear-spm-compression-two-step",
+          "ultrafast-time-bandwidth-narrowing"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nonlinear-matching-tolerance",
+    "title": "倍频接受带宽和准相位匹配公差",
+    "intro": "用有限长度的转换曲线连接波长、周期和温度。",
+    "prerequisites": [
+      "nonlinear-mismatch-first-zero",
+      "qpm-order-reciprocal-vector"
+    ],
+    "sections": [
+      {
+        "id": "derive",
+        "title": "怎样从失配宽度得到波长宽度",
+        "text": "理想有限长度均匀相互作用的强度按 sinc² 变化。半高全宽约为 5.566/L。选定所扫波长及能量关系后，再除以有效失配对该波长的局部斜率，得到估计的波长宽度。",
+        "formula": "Δλ_FWHM≈5.566/[L abs(dΔk_eff/dλ)]",
+        "conditions": "共线、小信号、局部斜率不接近零。",
+        "references": [
+          "nonlinear-mismatch-fwhm-conversion",
+          "nonlinear-wavelength-bandwidth-local"
+        ]
+      },
+      {
+        "id": "example",
+        "title": "例题：中心残差可由多少温度补偿",
+        "text": "在固定周期阶次及真空频率时，若失配为 +0.002 μm⁻¹ 而局部温度斜率为 −0.001 μm⁻¹/K，线性估算升温 2 K。这个斜率应包含各频率的折射率及周期热变化。",
+        "formula": "ΔT≈−Δk_eff/(∂Δk_eff/∂T)",
+        "conditions": "材料温度接近均匀，温调在局部线性区间。",
+        "references": [
+          "nonlinear-temp-tuning-local-derivative",
+          "nonlinear-qpm-k-period-sensitivity"
+        ]
+      },
+      {
+        "id": "limit",
+        "title": "检查：同一周期的畴宽误差是否一样",
+        "text": "周期不变时，正负畴比例主要影响各空间谐波权重。周期变化则移动补偿波矢，可能改变中心匹配点。沿晶体周期不一致时，应按实际耦合分布累积，不能直接替换一个平均周期。",
+        "formula": "K=2π/Λ；D 表示正畴长度比例",
+        "conditions": "分别改变一个几何量时可单独解释；非均匀结构另算。",
+        "references": [
+          "nonlinear-qpm-duty-period-distinction",
+          "nonlinear-coherence-integral-apodization"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ring-mzi-spectral-readout",
+    "title": "用相位与能量预算读懂片上光谱",
+    "intro": "把微环、干涉器的频率间隔和功率端口联系起来。",
+    "prerequisites": [
+      "guided-mzi-common-phase",
+      "microring-roundtrip-phase"
+    ],
+    "sections": [
+      {
+        "id": "derive",
+        "title": "同一个频谱周期，来自哪一段时延",
+        "text": "微环同模族的相邻峰由一圈群延迟决定。Mach–Zehnder 则由两臂群延迟差决定。两者都是相位变化一整圈，但一个是反馈绕行，另一个是两路相减，实验读数应先确认拓扑。",
+        "formula": "Δν_ring≈1/τ_round，Δν_MZI≈1/abs(Δτ)",
+        "conditions": "窄频段、跟踪同模族、局部相位线性。",
+        "references": [
+          "microring-fsr",
+          "guided-mzi-frequency-fringes"
+        ]
+      },
+      {
+        "id": "example",
+        "title": "例题：1550 nm 附近 10 pm 是多少",
+        "text": "对真空关系 ν=c/λ 使用局部斜率，10 pm 对应约 1.25 GHz 的频率宽度。若这 10 pm 是半深全宽，可用 λ₀/Δλ 估加载 Q 约 155000；若是相邻谱线间距，计算对象应改成 FSR。",
+        "formula": "Δν≈cΔλ/λ₀²",
+        "conditions": "小相对带宽，谱线定义与采样分辨率已核对。",
+        "references": [
+          "guided-ring-frequency-linewidth-to-wavelength",
+          "guided-ring-fsr-frequency-wavelength-local"
+        ]
+      },
+      {
+        "id": "limit",
+        "title": "检查：直通谷深是否都变成了损耗",
+        "text": "在无损加下载环中，直通端谷可对应功率转移到下载端。若只有直通读数，就不能分辨转移与内损。用同一输入归一记录所有输出端，并区分功率读数和全通结构的相位变化。",
+        "formula": "无损完整端口有 ΣT_j=1",
+        "conditions": "同一参考面，计入全部传播端口。",
+        "references": [
+          "guided-ring-drop-energy-check",
+          "guided-ring-ideal-all-pass-phase"
+        ]
+      }
+    ]
+  }
+]

@@ -7,7 +7,6 @@ import os
 from pathlib import Path
 import subprocess
 import sys
-import threading
 from ..core import digest
 from ..workflow import WorkflowError, atomic_json
 from . import inference, observations
@@ -171,13 +170,16 @@ def action(store,s,data):
         if data.get('approve') is not True or not s.get('fit_plan') or data.get('plan_sha256')!=s['fit_plan']['sha256'] or s['status']!='PLANNED':raise WorkflowError('请批准当前数据与拟合计划，旧确认不能复用',409)
         if not store.owner.allow_workers or getattr(store.owner,'simulation_context',None):raise WorkflowError('当前环境禁止新计算',403)
         if importlib.util.find_spec('scipy') is None:raise WorkflowError('可选数据分析依赖 SciPy 未安装；原有 RC2 功能仍可使用',409)
-        if store.running:raise WorkflowError('已有计算任务，请稍候',409)
+        if store.running:raise WorkflowError('另一项计算正在运行。本轮尚未启动，请稍后重新核对并批准计划。',409)
         root=store.get(s['observation_root']) if s['observation_root']!=s['id'] else s
         ledger=root['analysis_ledger']
         if ledger['fit_runs_reserved']>=ledger['max_fit_runs']:raise WorkflowError('同一数据任务已用完 3 次拟合额度；保留失败与旧结果',409)
-        ledger['fit_runs_reserved']+=1
-        if root is not s:store.save(root)
-        s.update(status='RUNNING',fit_approved_sha256=s['fit_plan']['sha256']);store.running.add(s['id']);store.save(s)
-        store.event(s,'FIT_APPROVED',{'actor':'EXPLICIT_API_APPROVAL','note':'API 请求不证明操作者是真人；自动验收另记操作者来源。','plan_sha256':s['fit_plan']['sha256'],'resource_budget':s['fit_plan']['settings']['budget']})
-        threading.Thread(target=run_fit,args=(store,s['id']),daemon=True).start();return s
+        from .executor import admit_solver
+        with admit_solver() as launch:
+            ledger['fit_runs_reserved']+=1
+            if root is not s:store.save(root)
+            s.update(status='RUNNING',fit_approved_sha256=s['fit_plan']['sha256']);store.running.add(s['id']);store.save(s)
+            store.event(s,'FIT_APPROVED',{'actor':'EXPLICIT_API_APPROVAL','note':'API 请求不证明操作者是真人；自动验收另记操作者来源。','plan_sha256':s['fit_plan']['sha256'],'resource_budget':s['fit_plan']['settings']['budget']})
+            launch(run_fit, (store,s['id']))
+        return s
     raise WorkflowError('数据任务不支持此操作；原正向实验入口仍可使用')

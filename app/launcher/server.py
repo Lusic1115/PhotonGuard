@@ -1,4 +1,4 @@
-"""Trial-package launcher only. Source is pinned to the maintenance commit."""
+"""Trial-package launcher with a verified source manifest."""
 from pathlib import Path
 import hashlib,json,os,signal,sys
 
@@ -12,7 +12,8 @@ def verify(root):
         assert file.resolve().is_relative_to((root/'source').resolve())
         if hashlib.sha256(file.read_bytes()).hexdigest()!=wanted:raise RuntimeError('源码文件已改变，请重新解压原始试用包：'+name)
     from photonguard.workflow import make_server
-    return {'status':'READY','python':sys.version.split()[0],'numpy':numpy.__version__,'scipy':scipy.__version__,'source_files':len(manifest['files']),'source_commit':manifest['source_commit'],'model_requests':0}
+    return {'status':'READY','python':sys.version.split()[0],'numpy':numpy.__version__,'scipy':scipy.__version__,'source_files':len(manifest['files']),'source_commit':manifest['source_commit'],
+            'release_id':manifest.get('release_id','photonguard-rc9-local-example-20261025'),'model_requests':0}
 
 def main():
     operation=sys.argv[1];root=Path(sys.argv[2]).resolve();statefile=root/'data/service.json'
@@ -32,7 +33,7 @@ def main():
     info=verify(root);port=int(sys.argv[3])
     from photonguard.workflow import make_server
     with make_server(root/'data/workspace',port=port,allow_workers=True) as server:
-        server.store.service_identity={'release_id':'photonguard-rc9-local-example-20261025','source_root':str(root/'source'),'data_root':str(root/'data/workspace'),'source_commit':info['source_commit'],'package_root':str(root)}
+        server.store.service_identity={'release_id':info['release_id'],'source_root':str(root/'source'),'data_root':str(root/'data/workspace'),'source_commit':info['source_commit'],'package_root':str(root)}
         state={'pid':os.getpid(),'port':port,'package_root':str(root),'url':f'http://127.0.0.1:{port}/experiments'}
         statefile.write_text(json.dumps(state),encoding='utf-8')
         print('READY '+state['url'],flush=True)

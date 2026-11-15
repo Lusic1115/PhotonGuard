@@ -1,0 +1,190 @@
+{
+  "id": "extension-modal-delay-practice",
+  "version": "1.0.0",
+  "sources": {
+    "mit-dispersion-table": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=45",
+      "section": "Chapter 2，Table 2.4：群速度、群时延、色散导数，阅读器第 45 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅引用原站，讲解、计算例和图解为项目原创。"
+    }
+  },
+  "entries": [
+    {
+      "topic": "guided",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "sources": [
+        "mit-dispersion-table"
+      ],
+      "conditions": [
+        "同一弱损导模及固定波导结构，采用窄带群速度。"
+      ],
+      "review": "2026-11-13 按 MIT 课件与链式法则复算。",
+      "id": "extension-modal-delay-units",
+      "title": "群折射率中的混用长度单位",
+      "terms": [
+        "群折射率混用单位",
+        "波长微米导数每纳米",
+        "群延迟换算练习"
+      ],
+      "definition": "群折射率的修正项是波长乘以折射率随波长的局部斜率，两者长度单位须相消。",
+      "body": "已知同一导模在 1.55 μm 的 n_eff=2.30，局部斜率为 −0.001 /nm。先将 λ 换为 1550 nm，再算 n_g=2.30−1550×(−0.001)=3.85。若保留 μm，则斜率应写成 −1 /μm，结果仍为 3.85。",
+      "formula": "n_g=n_eff−λ₀ dn_eff/dλ₀",
+      "variables": "λ₀ 用 nm 时，局部斜率用 nm⁻¹。",
+      "example": "同一数据两种长度单位均得到 3.85。",
+      "caution": "折射率是无量纲的。导数按长度的倒数转换。",
+      "prerequisites": [
+        "group-index"
+      ],
+      "related": [
+        "extension-modal-delay-length"
+      ]
+    },
+    {
+      "topic": "guided",
+      "level": "undergraduate",
+      "license": "GPL-2.0-or-later",
+      "origin": "ORIGINAL",
+      "status": "PUBLISHED",
+      "sources": [
+        "mit-dispersion-table"
+      ],
+      "conditions": [
+        "同一弱损导模及固定波导结构，采用窄带群速度。"
+      ],
+      "review": "2026-11-13 按 MIT 课件与链式法则复算。",
+      "id": "extension-modal-delay-length",
+      "title": "群折射率到波导段传播时间",
+      "terms": [
+        "波导段传播时间",
+        "群延迟长度例子",
+        "群延迟换算练习"
+      ],
+      "definition": "均匀波导中包络的传播时间等于长度除以该模式的群速度。",
+      "body": "同一个群折射率 n_g=3.85 的均匀导模，长度 8 mm 对应 τ=n_g L/c≈102.74 ps。长度改为 16 mm，在同样结构、波长与导模下，传播时间翻倍。测量端的耦合器、电缆等额外时延应独立校准。",
+      "formula": "τ = n_g L/c",
+      "variables": "L 用 m，c 用 m/s，τ 用 s。",
+      "example": "8 mm 对应约 102.74 ps。",
+      "caution": "本例从波导入口计时，设备整体读数可能包含其它路径。",
+      "prerequisites": [
+        "extension-modal-delay-units"
+      ],
+      "related": [
+        "group-delay"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "id": "extension-modal-delay-worked-topic",
+      "title": "从色散斜率到波导群延迟的单位练习",
+      "intro": "用一个固定导模从折射率斜率算到传播时延，再检查单位和仪器偏置。",
+      "prerequisites": [
+        "group-index"
+      ],
+      "sections": [
+        {
+          "id": "unit-mapping",
+          "title": "先统一斜率与真空波长的单位",
+          "text": "已知同一导模在 1.55 μm 的 n_eff=2.30，局部斜率为 −0.001 /nm。先将 λ 换为 1550 nm，再算 n_g=2.30−1550×(−0.001)=3.85。若保留 μm，则斜率应写成 −1 /μm，结果仍为 3.85。",
+          "formula": "n_g=n_eff−λ₀ dn_eff/dλ₀",
+          "conditions": "同一弱损导模及固定波导结构，采用窄带群速度。",
+          "references": [
+            "extension-modal-delay-units",
+            "group-index"
+          ]
+        },
+        {
+          "id": "length-scale",
+          "title": "用群速度换算传播时间",
+          "text": "同一个群折射率 n_g=3.85 的均匀导模，长度 8 mm 对应 τ=n_g L/c≈102.74 ps。长度改为 16 mm，在同样结构、波长与导模下，传播时间翻倍。测量端的耦合器、电缆等额外时延应独立校准。",
+          "formula": "τ = n_g L/c",
+          "conditions": "同一弱损导模及固定波导结构，采用窄带群速度。",
+          "references": [
+            "extension-modal-delay-length",
+            "group-delay"
+          ]
+        },
+        {
+          "id": "compare",
+          "title": "区分包络传播与实验触发偏置",
+          "text": "如果仪器记录 τ_obs=τ₀+n_gL/c，在其它条件相同的两段波导上做差，可以消去公共触发偏置 τ₀。斜率反映同一导模的群延迟随长度变化，波长改变时需要重新检查局部色散。",
+          "formula": "Δτ_obs = n_g ΔL/c",
+          "conditions": "公共触发偏置保持且波导条件相同。",
+          "references": [
+            "extension-modal-delay-length",
+            "group-velocity"
+          ]
+        }
+      ],
+      "figure": {
+        "title": "长度与传播时延的关系",
+        "x": "波导长度（mm）",
+        "y": "传播时延（ps）",
+        "note": "原创计算示意。两条直线采用相同的群折射率，上方曲线增加固定 35 ps 触发偏置。",
+        "section": "compare",
+        "curves": [
+          {
+            "label": "波导段时延",
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                51.369
+              ],
+              [
+                8,
+                102.738
+              ],
+              [
+                12,
+                154.107
+              ],
+              [
+                16,
+                205.475
+              ]
+            ]
+          },
+          {
+            "label": "含固定触发偏置",
+            "points": [
+              [
+                0,
+                35
+              ],
+              [
+                4,
+                86.369
+              ],
+              [
+                8,
+                137.738
+              ],
+              [
+                12,
+                189.107
+              ],
+              [
+                16,
+                240.475
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

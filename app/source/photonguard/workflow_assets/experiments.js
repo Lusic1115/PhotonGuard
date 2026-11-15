@@ -12,7 +12,28 @@
   Object.assign(NAMES,{metric:'比较指标',operator:'比较方式',target:'目标值',tolerance:'允许误差',fraction:'比例',minimize:'在候选中取最小值',maximize:'在候选中取最大值',near:'接近目标值',reflectance:'反射率',transmittance:'透射率',reflectance_min:'采样点最低反射率',reflectance_mean:'采样点平均反射率',transmittance_min:'采样点最低透射率',transmittance_mean:'采样点平均透射率',central_intensity_ratio:'中心强度比',fringe_period_mm:'条纹周期（mm）',first_zero_mm:'第一暗纹位置（mm）',screen_radius_um:'屏幕上光斑半径（μm）',new_waist_radius_um:'新束腰半径（μm）',new_waist_z_mm:'新束腰位置（mm）',waist_z_mm:'输入束腰位置（mm）',z_max_mm:'显示范围（mm）',layers:'膜层列表',n:'折射率',wavelengths_um:'实际采样波长（μm）',scan_min_um:'扫描下界（μm）',scan_max_um:'扫描上界（μm）',scan_points:'采样点数',material_n_high:'高折射率材料',material_n_low:'低折射率材料',layer_count:'膜层数',design_wavelength_um:'膜系设计波长（μm）',aperture:'孔径形式',single_slit:'单缝',double_slit:'双缝',grid_size:'网格边长',window_mm:'计算窗口（mm）',slit_height_um:'缝高（μm）',max_fast_evaluations:'最多快速计算次数',max_meep_validations:'最多独立 Meep 核对方案数',max_fdtd:'最多 FDTD 次数',worker_seconds:'最长计算秒数',worker_memory_mib:'工作内存上限（MiB）',output_mib:'结果大小上限（MiB）',RUN_COMPLETED:'计算完成',NUMERIC_CHECK_FAILED:'数值检查未通过',RUN_FAILED:'计算未完成',PASS:'通过',FAIL:'未通过'});
   Object.assign(NAMES,{'Wavelength (um)':'波长（μm）','Power fraction':'反射 / 透射比例','Distance after lens (mm)':'透镜后距离（mm）','1/e^2 intensity radius (um)':'1/e² 强度半径（μm）','Beam radius':'光斑半径','Focal-plane x (mm)':'焦平面横坐标（mm）','Focal-plane y (mm)':'焦平面纵坐标（mm）','Intensity / incident irradiance':'光强 / 入射光强','FFT center line':'数值计算中心截线','Analytic center line':'解析表达中心截线',dimensionless:'无量纲'});
   Object.assign(NAMES,{worker_seconds:'快速工具最长秒数',worker_memory_mib:'快速工具内存上限（MiB）；Meep另按既有策略'});
+  NAMES.central_zero_to_zero_width_mm = '中央亮区全宽（mm）';
   let boot = null, current = null, busy = false, navigation = 0, pollTimer = null;
+  let tutorScope = null, tutorResult = null, tutorParentRead = null, updateTutorFigure = null;
+  const learningSelection = new Map();
+  const learningView = new Map();
+  const learningFigures = new Map();
+  const csvIntake = window.photonGuardCsvIntake?.({api,node,append,button,consent});
+  const learning = window.photonGuardLearning({api,submitPlan:submitLearningPlan,node,append,card,button,consent,detail,list,plot,openCase:openLearningCase,openBounded:openBoundedPlanning,
+    aiConnected:()=>Boolean(boot?.ai?.live_enabled),selection:record=>learningSelection.get(record.id),
+    viewMode:record=>learningView.get(record.id),isCredential:text=>credentialLike(text)});
+
+  function figureFor(record) {
+    const focus = learningFigures.get(record.id);
+    return focus && focus.sha === record.experiment_record?.result_sha256 &&
+      focus.candidate === learningSelection.get(record.id) ? focus : null;
+  }
+  function setTutorFigure(record, id, label) {
+    if (id && record.experiment_record?.result_sha256) {
+      learningFigures.set(record.id, {id,label,sha:record.experiment_record.result_sha256,candidate:learningSelection.get(record.id)});
+    } else learningFigures.delete(record.id);
+    updateTutorFigure?.();
+  }
   const storePrefix = 'photonguard-experiments-v1:' + location.origin + ':';
   const volatile = new Map();
   function load(key) { try { const v = sessionStorage.getItem(storePrefix + key); return v ? JSON.parse(v) : volatile.get(key); } catch (_) { return volatile.get(key); } }
@@ -62,15 +83,47 @@
     });
     $('content').setAttribute('aria-busy', value ? 'true' : 'false');
   }
-  async function api(path, body) {
+  async function api(path, body, operationId) {
     let response;
-    try { response = await fetch('/api/experiments' + path, {method:body ? 'POST' : 'GET', credentials:'same-origin', cache:'no-store', headers:body ? {'Content-Type':'application/json','X-CSRF-Token':boot.csrf} : {}, ...(body ? {body:JSON.stringify(body)} : {})}); }
-    catch (_) { const e = new Error('连接中断，操作是否完成尚未确认。请先读取最新记录，不要重复发送 AI 或计算请求。'); e.uncertain = !!body; throw e; }
+    const headers = body ? {'Content-Type':'application/json','X-CSRF-Token':boot.csrf} : {};
+    if (operationId) headers['X-PhotonGuard-Operation'] = operationId;
+    try { response = await fetch('/api/experiments' + path, {method:body ? 'POST' : 'GET', credentials:'same-origin', cache:'no-store', headers, ...(body ? {body:JSON.stringify(body)} : {})}); }
+    catch (_) { const e = new Error(body ? '连接中断，请先核对上次提交。' : '连接中断，暂时无法读取记录。'); e.uncertain = !!body; throw e; }
     let data; try { data = await response.json(); } catch (_) { const e = new Error('服务未返回可读取的记录。请先刷新状态，已有实验仍保留。'); e.uncertain = !!body; throw e; }
-    if (!response.ok) { const e = new Error(typeof data.error === 'string' ? data.error : data.error?.message || data.message || '操作未完成，请检查资料后重试。'); e.httpStatus = response.status; throw e; }
+    if (!response.ok) {
+      const e = new Error(typeof data.error === 'string' ? data.error : data.error?.message || data.message || '操作未完成，请检查资料后重试。');
+      e.httpStatus = response.status;
+      e.uncertain = Boolean(operationId && (response.status === 422 || response.status >= 500 || e.message.includes('这次提交已登记')));
+      throw e;
+    }
     return data;
   }
-  function cacheCase(s) { const i = boot.cases.findIndex(c => c.id === s.id); const brief = {id:s.id,title:s.title,domain:s.domain,status:s.status,updated_at:s.updated_at,family_id:s.family_id}; if (i < 0) boot.cases.unshift(brief); else boot.cases[i] = brief; }
+  const operationKey = source => source ? 'submission:' + source : 'submission:new';
+  async function submit(path, body, label, source = null) {
+    const key = operationKey(source);
+    if (load(key)) throw new Error('请先核对上一次提交的回执。');
+    const id = crypto.randomUUID().replaceAll('-','');
+    save(key,{id,label});
+    try {
+      const value = await api(path,body,id);
+      if (!value?.id && !value?.case?.id && !(path === '/task-start' && ['SLIT_GOAL','NEEDS_INTENT','NEEDS_DATA'].includes(value?.status))) {
+        throw Object.assign(new Error('提交回执未完整返回，请核对上次提交。'),{uncertain:true});
+      }
+      clear(key);
+      return value;
+    } catch (error) {
+      if (!error.uncertain) clear(key);
+      throw error;
+    }
+  }
+  async function submitLearningPlan(path, body) {
+    try { return await submit(path, body, '保存目标实验计划', current?.id); }
+    catch (error) {
+      if (error.uncertain) { message('error',error.message); render(); }
+      throw error;
+    }
+  }
+  function cacheCase(s) { const i = boot.cases.findIndex(c => c.id === s.id); const brief = {id:s.id,title:s.title,domain:s.domain,kind:s.kind,status:s.status,updated_at:s.updated_at,family_id:s.family_id}; if (i < 0) boot.cases.unshift(brief); else boot.cases[i] = brief; }
   function sidebar() {
     const nav = $('case-list'); nav.replaceChildren();
     if (!boot.cases.length) nav.append(node('p', '还没有实验。完成资料整理后会保存在这里。', 'muted'));
@@ -82,24 +135,115 @@
     });if(groups.size>5)nav.append(older);
   }
   function updateLocation(id) { history.replaceState(null, '', location.pathname + (id ? '#case=' + encodeURIComponent(id) : '')); }
+  function revealSection(target) {
+    if (!target) return;
+    for (let details = target.closest('details'); details; details = details.parentElement.closest('details')) details.open = true;
+    const overlay = $('task-overview');
+    if (overlay && !overlay.contains(target)) {
+      window.scrollTo({top: window.scrollY + target.getBoundingClientRect().top - overlay.offsetHeight - 18});
+    } else target.scrollIntoView({block:'start'});
+  }
+  function openBoundedPlanning(recordId, candidateId, question) {
+    if (current?.id !== recordId) return;
+    const choice = $('content').querySelector('[aria-label="选择要查看的候选曲线"]');
+    if (!choice || ![...choice.options].some(option=>option.value === candidateId)) return;
+    if (choice.value !== candidateId) { choice.value = candidateId; choice.dispatchEvent(new Event('change')); }
+    const field = $('slit-compensation')?.querySelector('textarea');
+    if (!field) return;
+    if (matchMedia('(max-width: 1160px)').matches) showTutor(false);
+    revealSection(field);
+    if (!field.value.trim()) { field.value = question; field.dispatchEvent(new Event('input')); }
+    field.focus({preventScroll:true});
+  }
+  function openLearningCase(record, notice, focusId) {
+    navigation++; clearTimeout(pollTimer); current = record; cacheCase(record); updateLocation(record.id);
+    message('error',''); message('notice',notice); render();
+    const section = focusId ? document.getElementById(focusId) : record.status === 'PLANNED' && document.getElementById('plan-review');
+    if (section) section.scrollIntoView({block:'start'}); else window.scrollTo(0,0);
+  }
   async function select(id) {
     if (busy) return; const turn = ++navigation; clearTimeout(pollTimer); message('error', ''); message('notice','');
     try { const s = await api('/cases/' + encodeURIComponent(id)); if (turn !== navigation) return; current = s; cacheCase(s); updateLocation(s.id); render(); window.scrollTo(0,0); } catch (e) { if (turn === navigation) message('error', e.message); }
   }
   function home() { if (busy) return; navigation++; clearTimeout(pollTimer); current = null; updateLocation(null); message('error',''); message('notice',''); render(); }
+  function showLinkedExample() {
+    const route=new URLSearchParams(location.hash.slice(1));
+    const key=route.get('library');
+    if(key && boot.case_library?.some(item=>item.id===key)){
+      const search=$('case-library')?.querySelector('input[type=search]');
+      if(search){
+        search.value=key;search.dispatchEvent(new Event('input'));
+        revealSection($('case-library').querySelector('[data-case-id]'));
+      }
+    }else if(route.has('inverse-import')){
+      revealSection($('inverse-import'));
+    }else if(route.has('slit-goal')){
+      const study=studyBinding();
+      if(!study)return;
+      api('/knowledge/sessions/'+study.session_id).then(reply=>{
+        if(current || !location.hash.startsWith('#slit-goal'))return;
+        const question=reply.session.turns.find(item=>item.id===study.turn_id)?.question;
+        if(!question){message('error','找不到这轮学习问题。');return;}
+        const host=card('从学习问题继续');
+        $('content').prepend(host);
+        learning.slitDesigner(host,study)(question,false);
+        revealSection(host);
+      }).catch(error=>message('error',error.message));
+    }
+  }
+  function studyBinding() {
+    const route=new URLSearchParams(location.hash.slice(1));
+    const session=route.get('study'),turn=route.get('turn');
+    return /^[a-f0-9]{32}$/.test(session) && /^[a-f0-9]{32}$/.test(turn)
+      ? {session_id:session,turn_id:turn} : null;
+  }
+  function studyReturn(host,record) {
+    if(!record.study_origin || record.status!=='COMPLETED')return;
+    const link=node('a','带结果回到原学习问题','button small');
+    link.href='/knowledge#assistant&'+new URLSearchParams({study:record.study_origin.session_id,experiment:record.id});
+    host.append(link);
+  }
+  function knowledgeLink(host,record) {
+    const source=record.kind==='inverse' && record.inverse_settings?.model==='single_film_known_index_v1' ?
+      ['film-ambiguity','膜厚候选与观测'] : record.domain==='film' ? ['quarter-wave','薄膜的光学厚度'] :
+      record.domain==='gaussian' ? ['gaussian-lens','高斯光束与透镜'] :
+      record.domain==='diffraction' ?
+        (record.spec?.known_parameters?.aperture==='double_slit' || record.inverse_settings?.model===INV_SLIT ?
+          ['double-period','双缝条纹间距'] : ['slit-width-definitions','单缝宽度的定义']) : null;
+    const saved=record.knowledge_basis;
+    if(!source&&!saved)return;
+    const article=saved?.article;
+    const link=node('a','阅读相关原理 · '+(source?.[1]||article.title),'button small');
+    link.href='/knowledge#article='+encodeURIComponent(article?.id||source[0]);host.append(link);
+    if(article){
+      const basis=append(node('details'),node('summary','查看本次保存的知识依据'),
+        node('p',article.title),node('p',article.definition),node('p',article.body,'field-note'),
+        article.formula?node('pre',article.formula):null,
+        article.variables?node('p',article.variables,'field-note'):null,
+        list(article.conditions),node('p','知识库版本 '+saved.catalog_version,'field-note'));
+      for(const source of article.sources){
+        const ref=node('a',source.title);ref.href=source.url;ref.rel='noreferrer';
+        basis.append(append(node('p',null,'field-note'),ref,node('span',' · '+source.section)));
+      }
+      host.append(basis);
+    }
+  }
   async function create(body) {
     if (busy) return; setBusy(true); message('error','');
-    try { const s = await api('/cases', body); current = s; cacheCase(s); if (body.kind === 'specified') clear('new-draft'); updateLocation(s.id); message('notice', body.kind === 'teaching' ? '已采用明确标注的教学资料。请核对计划后再运行。' : '资料已保存，尚未运行计算。'); }
+    try { const s = await submit('/cases', body, '开始实验'); current = s; cacheCase(s); if (body.kind === 'specified') clear('new-draft'); updateLocation(s.id); message('notice', body.kind === 'teaching' ? '已采用明确标注的教学资料。请核对计划后再运行。' : '资料已保存，尚未运行计算。'); }
     catch (e) { message('error', e.message); } finally { setBusy(false); render(); window.scrollTo(0,0); }
   }
   async function mutate(type, payload = {}) {
     if (busy || !current) return; const id = current.id, revision = current.revision;
     let planReady = false;
     setBusy(true); message('error',''); message('notice',payload.mode === 'live' || ['explain','fit_wizard','fit_ai','inverse_ai'].includes(type) ? 'AI 正在处理，请稍候。请勿重复提交。' : '正在保存操作，请稍候。');
-    save('pending:' + id, {type,revision});
+    const label = ({run:'批准正向计算',inverse_run:'批准数据分析',inverse_task_run:'批准连续任务',fit_run:'批准拟合',
+      inverse_append:'保存新增观测',inverse_remap:'另存数据解释',revise:'另存实验条件',revise_goal:'修改实验目标',
+      session_ai:'请求 AI 处理下一步',explain:'请求 AI 解释结果',fit_ai:'请求 AI 核对',fit_wizard:'请求 AI 整理数据',inverse_ai:'请求 AI 分析'})[type] || '保存实验修改';
     try {
       const sessionRoute=!current.estimate_origin&&(type==='explore_case'||!current.parent_context&&(['library_plan','fact_update','undo_fact'].includes(type)||type==='plan'&&current.kind!=='teaching'||type==='supplement'&&current.library_context));
-      const returned = await api('/cases/' + encodeURIComponent(id) + '/action', {type,expected_revision:revision,...(sessionRoute?{session_version:2}:{}),...(['supplement','fact_update','undo_fact'].includes(type)?{event_id:crypto.randomUUID()}:{}),...payload});
+      const returned = await submit('/cases/' + encodeURIComponent(id) + '/action',
+        {type,expected_revision:revision,...(sessionRoute?{session_version:2}:{}),...(['supplement','fact_update','undo_fact'].includes(type)?{event_id:crypto.randomUUID()}:{}),...payload}, label, id);
       const s = returned.case || returned;
       if (!s.id) throw Object.assign(new Error('已发送操作，但未收到完整记录。请读取最新状态确认。'), {uncertain:true});
       clear('pending:' + id); if (type === 'save') clear('draft:' + id); if (type === 'revise') clear('revision:' + id); if (type === 'supplement') { clear('supplement:' + id); clear('draft:' + id); }
@@ -110,7 +254,7 @@
       if(type.startsWith('inverse_')&&type!=='inverse_run'){message('notice',type==='inverse_task_run'?'连续任务已按批准计划接续，实际进度和结果见下方。':type==='inverse_append'?'新采集已保存，请核对新的联合计划；尚未拟合。':type==='inverse_ai'?'AI 建议已保存，请核对后确认下一步。':'操作已保存。新的计算需另行确认。');return;}
       if(observationNotices[type]){message('notice',observationNotices[type]);return;}
       message('notice', ['fact_update','undo_fact'].includes(type) ? (s.fact_state?.notice || (type==='undo_fact'?'已撤销上次资料修改。尚未运行计算。':'资料已保存，请核对当前条件。尚未运行计算。')) : type === 'restore_result' ? '已恢复已有计算结果，本次没有重新计算。其他版本仍保留。' : ['library_plan','explore_case'].includes(type) ? (s.status === 'PLANNED' ? '已生成案例探索计划，尚未计算。请核对参数与候选。' : '资料已保留，请补充下面列出的信息。尚未计算。') : ['revise','revise_goal'].includes(type) ? '修改已另存为新版本，原始结果保留。相同计算条件会复用旧数值；需要计算时请核对新计划。' : type === 'supplement' ? '补充已与原资料一并保存。' + (s.status === 'PLANNED' ? '请核对新计划后再开始计算。' : '尚未运行计算。') : type === 'save' ? '资料已保存，请重新整理并核对计划。' : type === 'plan' ? '整理结果已保存。只有你批准计划后才开始计算。' : type === 'explain' ? '解释已保存，可对照下面的实际计算记录。' : '已提交已批准的计划。页面会自动更新运行状态。');
-    } catch (e) { if (!e.uncertain) clear('pending:' + id); message('notice',''); message('error', e.message); }
+    } catch (e) { message('notice',''); message('error', e.message); }
     finally { try { await refreshAI(); } catch (_) {} setBusy(false); aiBadge(); render(); if (planReady) document.getElementById('plan-review')?.scrollIntoView({block:'start'}); if (['revise','revise_goal'].includes(type)) window.scrollTo(0,0); if(type==='inverse_research_prepare'){const target=current?.research_origin?.kind==='request_calibration'?'contrast-calibration':current?.research_origin?.status==='PROPOSALS_READY'||current?.research_origin?.status==='ACQUISITION_SELECTED'?'research-plans':null;if(target)document.getElementById(target)?.scrollIntoView({block:'start'});} }
   }
   function consent(label) { const wrap = node('label', null, 'consent'), input = node('input'); input.type = 'checkbox'; wrap.append(input, node('span', label)); return {wrap,input}; }
@@ -121,8 +265,68 @@
     $('ai-settings').textContent = boot.ai?.live_enabled ? 'AI 连接设置' : '连接 AI';
     $('ai-settings').disabled = busy;
   }
+
+  function showActiveComputation(host, s, label) {
+    const running = card('正在执行已批准的计划'); running.id = 'active-computation';
+    append(host,append(running,node('p',label),button('读取最新进度',()=>select(s.id),'small')));
+    schedulePoll(s.id);
+  }
+
+  function syncTutor() {
+    const sidebar = $('tutor-sidebar');
+    const host = $('tutor-content');
+    const completed = current?.status === 'COMPLETED' && (current.result || current.inverse_result);
+    const source = current?.parent_id && current.parent_id === tutorResult?.id && current.family_id === tutorResult.family_id;
+    if (!completed && current?.parent_id && !source && !sidebar.hidden) {
+      const draft = current;
+      if (tutorParentRead?.draft !== draft.id) {
+        const loading = {draft:draft.id, status:'loading'};
+        tutorParentRead = loading;
+        api('/cases/' + encodeURIComponent(draft.parent_id)).then(parent => {
+          if (current?.id !== draft.id || tutorParentRead !== loading) return;
+          if (parent.family_id === draft.family_id && parent.status === 'COMPLETED' && (parent.result || parent.inverse_result)) {
+            tutorResult = parent;
+          }
+          loading.status = 'finished'; syncTutor();
+        }).catch(() => {
+          if (current?.id === draft.id && tutorParentRead === loading) { loading.status = 'finished'; syncTutor(); }
+        });
+      }
+      if (tutorParentRead.status === 'loading') {
+        host.replaceChildren(); tutorScope = null; updateTutorFigure = null;
+        $('tutor-context').textContent = '正在读取草稿的来源结果…';
+        return;
+      }
+    } else if (tutorParentRead?.draft !== current?.id) tutorParentRead = null;
+    const result = completed ? current : source ? tutorResult : null;
+    tutorResult = result;
+    const scope = (result ? [result.id, result.experiment_record?.result_sha256] : ['theory']).join(':') + ':' + Boolean(boot.ai?.live_enabled);
+    $('tutor-context').textContent = result ? (completed ? '当前结果 · ' : '草稿 · 讨论来源结果 · ') + result.title + ' · ' + result.id.slice(0, 8) : '理论问答';
+    if (tutorScope !== scope) {
+      host.replaceChildren();
+      tutorScope = scope;
+      updateTutorFigure = null;
+    }
+    if (!sidebar.hidden && !host.firstElementChild) {
+      updateTutorFigure = learning.tutor(host, result, $('content'), {versions:boot.cases, openVersion:select,
+        figure:result ? () => figureFor(result) : null, clearFigure:result ? () => setTutorFigure(result) : null});
+    }
+  }
+
+  function showTutor(open) {
+    const toggle = $('toggle-tutor');
+    const sidebar = $('tutor-sidebar');
+    sidebar.hidden = !open;
+    $('workspace-layout').classList.toggle('tutor-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    if (open) {
+      syncTutor();
+      $('tutor-content').querySelector('textarea')?.focus({preventScroll:true});
+    } else toggle.focus({preventScroll:true});
+  }
   async function refreshAI() {
     const latest = await api('/bootstrap'); boot.ai = latest.ai; boot.capabilities = latest.capabilities; aiBadge();
+    if (!busy) syncTutor();
   }
   async function openAI() {
     if (busy || !boot) return;
@@ -160,8 +364,11 @@
       key.value = ''; setBusy(true); status.textContent = path.endsWith('/connect') ? '正在验证账户与模型；不会生成内容。' : '正在断开连接…';
       try {
         const result = await api(path,body); body.api_key = undefined;
-        await refreshAI(); status.textContent = path.endsWith('/disconnect') ? '已断开，实验仍可本地查看和计算。' : '连接成功。返回工作台，勾选发送资料后即可使用 AI。';
-        binding = result; recover.wrap.hidden = !binding.needs_recovery;
+        binding = result; boot.ai = result; recover.wrap.hidden = !binding.needs_recovery;
+        if (path.endsWith('/connect') && result.live_enabled) {
+          dialog.close();
+          message('notice','DeepSeek 已连接。现在可以向光学助教提问。');
+        } else status.textContent = path.endsWith('/disconnect') ? '已断开，实验仍可本地查看和计算。' : binding.reason;
       } catch (e) {
         body.api_key = undefined; status.textContent = e.message;
         try { await refreshAI(); binding = await api('/ai/status'); } catch (_) {}
@@ -172,12 +379,12 @@
     form.addEventListener('submit',event=>{event.preventDefault();if(!submit.disabled)change('/ai/connect',{api_key:key.value.trim(),request_limit:Number(limit.value),approve:approve.input.checked,resume:recover.input.checked});});
     dialog.oncancel = event=>{if(busy)event.preventDefault();};
     dialog.addEventListener('close',()=>{key.value='';dialog.replaceChildren();},{once:true});
-    append(form,node('p','填入 API Key，验证连接后返回实验。发送资料前会请你确认。','field-note'),
+    append(form,node('p','填入 API Key，验证通过后自动返回工作台。','field-note'),
       node('p','key 只交给本机服务，并用于连接 DeepSeek 官方接口；不写入项目文件或浏览器存储。重启服务后需重新填写。同一本机工作区的页面共用此连接。','field-note'),
       official,keyLabel,key,limitLabel,limit,
       node('p','本工作区已发送 '+binding.requests_used+' 次，剩余 '+binding.requests_remaining+' 次。断开、换 key 或重启不会清零；需要更多时可明确提高上限。请求次数上限不代表费用上限，实际费用以 DeepSeek 账户记录为准。','field-note'),
       approve.wrap,recover.wrap,append(node('div',null,'actions'),submit,disconnect));
-    dialog.replaceChildren(title,status,form,node('p','验证只查询模型与账户状态，不发起生成。实验内容在你同意后才发送；计算计划仍需另行批准。','field-note'),close);
+    dialog.replaceChildren(title,status,form,node('p','验证只查询模型与账户状态。点击「向 AI 提问」会发送问题与必要资料，运行计算仍需批准计划。','field-note'),close);
     key.focus();
   }
 
@@ -185,7 +392,7 @@
   async function createLibrary(body) {
     if(busy)return; setBusy(true);message('error','');
     let planReady=false;
-    try { current=await api('/library/create',{...body,session_version:2});cacheCase(current);updateLocation(current.id);planReady=current.status==='PLANNED'&&!!current.plan;message('notice',planReady?'案例已改编为新计划，尚未计算。请核对参数和候选后运行。':'资料已保存，请补充下面列出的信息。尚未计算。'); }
+    try { current=await submit('/library/create',{...body,session_version:2},'打开案例');cacheCase(current);updateLocation(current.id);planReady=current.status==='PLANNED'&&!!current.plan;message('notice',planReady?'案例已改编为新计划，尚未计算。请核对参数和候选后运行。':'资料已保存，请补充下面列出的信息。尚未计算。'); }
     catch(e){message('error',e.message);} finally {setBusy(false);render();if(planReady)document.getElementById('plan-review')?.scrollIntoView({block:'start'});}
   }
   function renderLibrary(host) {
@@ -281,7 +488,7 @@
   }
   async function createObservation(body) {
     if(busy)return;setBusy(true);message('error','');
-    try {const s=await api('/observations',body);current=s;cacheCase(s);updateLocation(s.id);message('notice','原始数据已保留。请核对单位、固定条件与拟合范围；尚未计算。');}
+    try {const s=await submit('/observations',body,'导入数据');current=s;cacheCase(s);updateLocation(s.id);message('notice','原始数据已保留。请核对单位、固定条件与拟合范围；尚未计算。');}
     catch(e){message('error',e.message);}finally{setBusy(false);render();window.scrollTo(0,0);}
   }
   function renderObservationImport(host) {
@@ -310,13 +517,14 @@
     const origin=card('这份数据来自哪里');append(origin,node('p',v.dataset.source_kind==='SYNTHETIC_TEACHING'?'合成教学数据，不是真实仪器测量。':'用户声明的数据来源：'+v.dataset.source_name,'inline-notice'),facts({rows:v.dataset.rows,position_unit:v.dataset.position_unit||'缺少刻度',source:v.dataset.source_name}),detail('数据预览与来源记录',v.dataset));host.append(origin);
     if(s.questions?.length)host.append(append(card('这些条件需要先核对'),list(s.questions.map(humanizeQuestion))));
     if(s.parent_id)host.append(button('查看上一版设置与结果',()=>select(s.parent_id),'small'));
-    if(s.status==='RUNNING'){host.append(node('p','正在执行已批准的有限拟合；不自动重试。','inline-notice'));schedulePoll(s.id);return;}
+    if(s.status==='RUNNING'){showActiveComputation(host,s,'完成后将显示本次拟合结果。');return;}
     const ai=card(r?'问问这次数据与结果':'用一句话补充已知条件'),question=node('textarea');question.rows=2;question.maxLength=6000;question.placeholder=r?'例如：为什么这些残差点仍然保留？这次估计有什么限制？':'例如：双缝透镜焦平面，波长633nm，焦距200mm，两缝等宽20μm且同相，位置是毫米，缝距90到270微米。其余拟合设置请给建议。';question.setAttribute('aria-label','数据分析问题');
     const permit=consent('同意把问题、数据摘要、已填条件和拟合摘要发送给已连接的 AI（不发送完整 CSV）。');const send=button(r?'解释本次结果 / 整理修改':'整理条件并建议数值配置',()=>mutate('fit_wizard',{text:question.value,approve_data:true}),'',true);
     const update=()=>send.disabled=busy||pending||!boot.ai?.live_enabled||!permit.input.checked||!question.value.trim()||credentialLike(question.value);question.addEventListener('input',update);permit.input.addEventListener('change',update);append(ai,question,permit.wrap,send);if(s.fit_ai_guidance)append(ai,node('p',s.fit_ai_guidance.text,'inline-notice'),detail('解释依据',s.fit_ai_guidance));if(!r)host.append(ai);
     if(s.fit_settings?.fixed)host.append(append(card('当前实验条件与数值建议'),facts(s.fit_settings.fixed),node('p',s.numerical_recipe?'中心、幅度、背景和残差尺度中的建议项来自预先规定的训练点配方，不是测量事实；已有用户范围不会扩大。':'来源以已选教学资料、上传元数据或已确认输入为准。','field-note'),detail('逐项来源与可估范围',{sources:v.field_sources,bounds:s.fit_settings.bounds,loss:s.fit_settings.loss,f_scale:s.fit_settings.f_scale,recipe:s.numerical_recipe})));
     if(!s.fit_approved_sha256&&!r) {
       const panel=card('审核拟合草稿'),form=append(node('details'),node('summary','高级编辑：物理条件和数值设置')),cfg=s.fit_settings||{},fixed=cfg.fixed||{},fields={},bounds={};
+      panel.id='fit-plan';
       const addNumber=(key,label,value,parent=form)=>{const wrap=node('label',label),input=node('input');input.type='number';input.step='any';input.value=value??'';input.setAttribute('aria-label',label);input.disabled=pending;wrap.append(input);parent.append(wrap);return input;};
       [['wavelength_nm','波长（nm）'],['focal_length_mm','透镜焦距（mm）'],['slit_width_um','已知缝宽（μm）'],['relative_phase_rad','已知相对相位（rad；仅支持 0）']].forEach(([key,label])=>fields[key]=addNumber(key,label,fixed[key]));
       const plane=node('select');plane.setAttribute('aria-label','测量平面');[['','请选择测量平面'],['FOURIER_FOCAL_PLANE','理想透镜傅里叶焦平面'],['NEAR_FIELD','自由传播近场（当前模型不适用）']].forEach(([value,text])=>{const option=node('option',text);option.value=value;plane.append(option);});plane.value=fixed.measurement_plane||'';plane.disabled=pending;form.append(plane);
@@ -357,28 +565,19 @@
   function invNumber(host,label,value){const wrap=node('label',label),input=node('input');input.type='number';input.step='any';input.value=value??'';input.setAttribute('aria-label',label);wrap.append(input);host.append(wrap);return input;}
   function invSelect(host,label,options,value){const wrap=node('label',label),input=node('select');input.setAttribute('aria-label',label);options.forEach(([v,t])=>{const o=node('option',t);o.value=v;input.append(o);});input.value=value??options[0][0];wrap.append(input);host.append(wrap);return input;}
   const invValue=input=>input.value.trim()===''?null:Number(input.value);
-  async function createInverse(body){if(busy)return;setBusy(true);message('error','');try{current=await api('/inverse',body);cacheCase(current);updateLocation(current.id);message('notice','数据已保留，尚未拟合。教学对象与实际数据分别标注。');}catch(e){message('error',e.message);}finally{setBusy(false);render();}}
-  function inverseUpload(host,submit){
-    const file=node('input');file.type='file';file.accept='.csv';file.setAttribute('aria-label','反向分析 CSV');const preview=node('pre','请选择 CSV。','input-preview');let text='';
-    const source=node('input');source.placeholder='来源说明';source.setAttribute('aria-label','反向数据来源');
-    const kind=invSelect(host,'数据来源',[['USER_PROVIDED','自己的数据'],['LICENSED_PUBLIC','有许可的公开数据'],['SYNTHETIC_TEACHING','合成教学数据']],'USER_PROVIDED');
-    const license=node('input');license.placeholder='公开资料需填写许可';license.setAttribute('aria-label','反向数据许可');
-    const diameter=consent('若列名为 diameter_1e2_um，我确认这是 1/e² 强度直径，批准半径和标准差同时除以 2。');
-    const approve=consent('明确导入这份原始数据；若为补采，它将成为新联合拟合的资料。');
-    const go=button('导入原始 CSV',()=>submit({csv_text:text,source_kind:kind.value,source_name:source.value,license:license.value,diameter_conversion:diameter.input.checked,approve:true}),'primary',true);
-    const update=()=>go.disabled=busy||!text||!source.value.trim()||!approve.input.checked||kind.value==='LICENSED_PUBLIC'&&!license.value.trim();
-    file.addEventListener('change',async()=>{text='';update();const f=file.files?.[0];if(!f)return;if(f.size>2*1024*1024){preview.textContent='文件超过 2 MiB';return;}try{text=new TextDecoder('utf-8',{fatal:true}).decode(await f.arrayBuffer());preview.textContent=text.split(/\r?\n/).slice(0,7).join('\n');}catch(_){preview.textContent='请使用 UTF-8 CSV';}update();});
-    [source,kind,license,approve.input].forEach(el=>el.addEventListener('input',update));append(host,file,preview,source,license,diameter.wrap,approve.wrap,go);
+  async function createInverse(body){if(busy)return;const study=body.model==='single_film_known_index_v1'?studyBinding():null;setBusy(true);message('error','');try{current=await submit('/inverse',study?{...body,study}:body,'开始数据分析');cacheCase(current);updateLocation(current.id);message('notice','数据已保留，尚未拟合。教学对象与实际数据分别标注。');}catch(e){message('error',e.message);}finally{setBusy(false);render();}}
+  function inverseUpload(host, model, submit, modelControl) {
+    csvIntake?.render(host,{getModel:typeof model==='function' ? model : () => model,modelControl,submit});
   }
   function renderInverseImport(host){
     const box=card('从数据反推，再决定补测哪里');box.id='inverse-import';append(box,node('p','双缝：同时估计缝宽与间距，查看候选，再比较补采。高斯：由纵向扫描估计束腰，接回透镜目录。都仅限明确声明的理想模型。'));
     if(!boot.capabilities?.analysis)box.append(node('p','可选 SciPy 未安装：可保存和核对数据，拟合暂停；旧正向入口保留。','inline-notice'));
     append(box,button('教学模拟 · 未知缝宽与缝距',()=>createInverse({model:INV_SLIT,teaching:true}),'primary'),button('教学模拟 · 高斯束腰',()=>createInverse({model:INV_GAUSS,teaching:true})),node('p','教学按钮创建预先冻结的独立对象。补采不会从当前最佳拟合值生成；不控制真实仪器。','field-note'));
     box.append(button('教学模拟 · 单层膜厚度与补测波长',()=>createInverse({model:'single_film_known_index_v1',teaching:true}),'primary'));
-    box.append(node('p','单层膜仅接受 wavelength_nm,reflectance_calibrated：已知折射率、法向入射、无损、已校准反射率。'));
+    box.append(node('p','单层膜使用已校准反射率。核对列解释后，再确认实折射率、法向入射与无损假设。'));
     const own=append(node('details'),node('summary','导入自己的反向分析数据'));const model=invSelect(own,'反向分析模型',[[INV_SLIT,'未知缝宽与缝距'],[INV_GAUSS,'高斯束腰（M²=1）'],['single_film_known_index_v1','已知折射率单层膜厚度']],INV_SLIT);
-    own.append(node('p','双缝：position_mm,intensity_relative（也接受明确的 um/m 坐标）。高斯：z_mm,radius_1e2_um，可选 radius_sd_um。未知宽度定义、FWHM 和像素刻度须先核对。'));
-    inverseUpload(own,data=>{const {approve,...rest}=data;createInverse({model:model.value,...rest});});box.append(own);host.append(box);
+    own.append(node('p','双缝核对位置和相对光强。高斯核对位置、1/e² 光斑口径及可选标准差。'));
+    inverseUpload(own,()=>model.value,({approve,...rest})=>createInverse({model:model.value,...rest}),model);box.append(own);host.append(box);
   }
   function renderCalibration(host,s,pending){
     if(s.inverse_settings.model!==INV_SLIT)return;
@@ -410,10 +609,17 @@
       if(advice.feasible_alternatives?.length)options.append(button('查看方案位置与核对入口',()=>{const plans=document.getElementById('available-observations')||document.getElementById('inverse-advanced');if(plans){plans.open=true;plans.scrollIntoView({block:'start'});}},'small'));
       box.append(options);}
     if(advice.alternatives.length){const alt=append(node('details'),node('summary','其他可选步骤（不作最优排名）'));advice.alternatives.forEach(a=>alt.append(show(a)));box.append(alt);}
-    const askBox=append(node('details'),node('summary','告诉 AI 新要求 / 解释本次变化'));askBox.open=!advice.primary;
-    const q=node('textarea');q.rows=2;q.maxLength=6000;q.placeholder='例如：只把目标改为兼顾两项；保持物理条件。或解释这次补采前后有什么变化。';q.setAttribute('aria-label','反向分析问题');if(!s.inverse_ai)q.value=s.task_goal_text||'';
-    const permit=consent('同意将问题、已知条件与结果摘要发送给 AI，不发送完整 CSV 文件。'),ask=button('整理 / 建议下一步',()=>mutate('inverse_ai',{text:q.value,approve_data:true}),'',true);
-    const check=()=>ask.disabled=busy||pending||!permit.input.checked||!q.value.trim()||!boot.ai?.live_enabled||credentialLike(q.value);q.addEventListener('input',check);permit.input.addEventListener('input',check);append(askBox,q,permit.wrap,ask,button('查看本地操作指引',()=>mutate('inverse_research_suggest',{text:q.value}),'small',pending));
+    const askBox=append(node('details'),node('summary','解释结果或规划下一步'));askBox.open=!advice.primary;
+    const q=node('textarea');q.rows=2;q.maxLength=6000;q.setAttribute('aria-label','反向分析问题');if(!s.inverse_ai)q.value=s.task_goal_text||'';
+    const scope=node('select');scope.id='research-request-scope';
+    for (const [value,label] of [['EXPLAIN','仅解释和回顾'],['PLAN','修改条件或规划下一步']]) {
+      const option=node('option',label);option.value=value;scope.append(option);
+    }
+    const scopeLabel=node('label','本轮操作范围');scopeLabel.htmlFor=scope.id;
+    const describeScope=()=>{q.placeholder=scope.value==='EXPLAIN'?'例如：为什么上次选择这个补测波长？':'例如：把可用波长目录改为751、863 nm，建议下一步。';};
+    scope.addEventListener('change',describeScope);describeScope();
+    const permit=consent('同意将问题、已知条件与结果摘要发送给 AI，不发送完整 CSV 文件。'),ask=button('发送给 AI',()=>mutate('inverse_ai',{text:q.value,request_scope:scope.value,approve_data:true}),'',true);
+    const check=()=>ask.disabled=busy||pending||!permit.input.checked||!q.value.trim()||!boot.ai?.live_enabled||credentialLike(q.value);q.addEventListener('input',check);permit.input.addEventListener('input',check);append(askBox,scopeLabel,scope,q,permit.wrap,ask,button('查看本地操作指引',()=>mutate('inverse_research_suggest',{text:q.value,request_scope:scope.value}),'small',pending));
     if(!boot.ai?.live_enabled)askBox.append(node('p','实时 AI 未连接，仍可使用本地计划与计算。','field-note'));box.append(askBox);
     if(s.inverse_ai){const r=s.inverse_ai,labels={ALL_VALID:'本次条件和建议均通过核对',PARTIAL_VALID:'本次回复部分可用',FACT_PATCH_REJECTED:'条件更新未通过，需重新核对',PROTOCOL_INVALID:'回复格式未通过，未执行'};box.append(node('p',labels[r.validation_status]||'本次回复已保存','inline-notice'));if(r.patch_error)box.append(node('p',r.patch_error));}
     box.append(detail('建议详情与处理记录',{advice:s.research_actions,receipt:s.inverse_ai,prepared:s.research_origin}));host.append(box);
@@ -427,17 +633,124 @@
       const permit=consent('我已核对上述具体方案、采集条件、全部步骤及累计资源，批准这份连续任务计划。'),go=button('执行补采并继续联合分析',()=>mutate('inverse_task_run',{approve:true,plan_sha256:p.sha256}),'primary',true);permit.input.addEventListener('input',()=>go.disabled=busy||pending||!permit.input.checked||!boot.capabilities?.analysis);append(box,permit.wrap,go);host.append(box);
     }else if(s.measurement_plan&&s.inverse_result&&!s.task_execution?.started){const p=s.measurement_plan,box=append(node('details',null,'card'),node('summary','已有观测方案：核对或手动选择'));box.id='available-observations';box.append(node('p','以下方案由程序计算并列出。你也可以手动选择；选择来源会保存在记录中。'));p.plans.forEach(item=>{const row=append(node('article',null,'card'),node('h3',item.wavelengths_nm?item.wavelengths_nm.join('、')+' nm':item.id==='baseline'?'基础扫描方案':item.label||item.id),node('p',item.selection_reason||item.cost_note||p.score_definition));row.append(detail('具体位置与预测依据',item));if(s.teaching_object)row.append(button('为此方案准备连续计划',()=>mutate('inverse_task_prepare',{proposal_id:item.id}),'small',pending||item.execution_allowed===false));box.append(row);});host.append(box);}
     if(!s.inverse_result&&!s.inverse_approved_sha256){
-      if(s.inverse_plan){const p=s.inverse_plan,box=card('开始已有数据分析');append(box,node('p','按已核对条件运行一次有限拟合，完成后显示结果。不会自动调用 AI。'),detail('本次计划与固定上限',t.numerical_plan));const permit=consent('批准这一份已核对的有限分析计划。'),go=button('运行已有数据分析',()=>mutate('inverse_run',{approve:true,plan_sha256:p.sha256}),'primary',true);permit.input.addEventListener('input',()=>go.disabled=busy||pending||!permit.input.checked||!boot.capabilities?.analysis);append(box,permit.wrap,go);host.append(box);}
-      else if(s.teaching_object){const box=card('一次核对已有教学条件');append(box,node('p','以下条件来自你选择的教学任务。这里直接沿用已列明的值；需修改时打开下方条件表单。'),facts(s.inverse_settings.fixed),detail('允许估计的范围与每组尺度',{ranges:s.inverse_settings.bounds,groups:s.groups.map(g=>({conditions:g.conditions,scale:g.scale,scale_source:g.scale_source,observation:g.observation}))}));const permit=consent('确认这些教学条件、估计范围与数据尺度，准备已有数据的分析计划。'),go=button('沿用这些条件准备分析',()=>mutate('inverse_task_initial_plan',{confirm_conditions:true}),'primary',true);permit.input.addEventListener('input',()=>go.disabled=busy||pending||!permit.input.checked);append(box,permit.wrap,go);host.append(box);}
+      if(s.inverse_plan){const p=s.inverse_plan,box=card('开始已有数据分析');box.id='inverse-initial-plan';append(box,node('p','按已核对条件运行一次有限拟合，完成后显示结果。不会自动调用 AI。'),detail('本次计划与固定上限',t.numerical_plan));const permit=consent('批准这一份已核对的有限分析计划。'),go=button('运行已有数据分析',()=>mutate('inverse_run',{approve:true,plan_sha256:p.sha256}),'primary',true);permit.input.addEventListener('input',()=>go.disabled=busy||pending||!permit.input.checked||!boot.capabilities?.analysis);append(box,permit.wrap,go);host.append(box);}
+      else if(s.teaching_object){const box=card('一次核对已有教学条件');box.id='inverse-initial-plan';append(box,node('p','以下条件来自你选择的教学任务。这里直接沿用已列明的值；需修改时打开下方条件表单。'),facts(s.inverse_settings.fixed),detail('允许估计的范围与每组尺度',{ranges:s.inverse_settings.bounds,groups:s.groups.map(g=>({conditions:g.conditions,scale:g.scale,scale_source:g.scale_source,observation:g.observation}))}));const permit=consent('确认这些教学条件、估计范围与数据尺度，准备已有数据的分析计划。'),go=button('沿用这些条件准备分析',()=>mutate('inverse_task_initial_plan',{confirm_conditions:true}),'primary',true);permit.input.addEventListener('input',()=>go.disabled=busy||pending||!permit.input.checked);append(box,permit.wrap,go);host.append(box);}
     }
     if(t.receipt?.started)host.append(append(card('连续任务进度'),list((t.receipt.steps||[]).map(v=>({acquire:'补采',review:'纳入新资料',fit:'联合拟合',receipt:'保存结果'}[v.id]||v.id)+'：'+(v.status==='COMPLETED'?'已完成':v.status))),detail('步骤执行记录',t.receipt)));
   }
+  function filmProposalBinding(record) {
+    const plan = record.measurement_plan;
+    if (!plan) return {};
+    const selected = record.research_origin;
+    const id = selected?.status === 'ACQUISITION_SELECTED' && selected.plan_sha256 === plan.sha256
+      ? selected.proposal_id : plan.recommended_id;
+    return {proposal_id:id,proposal_sha256:plan.sha256};
+  }
+
+  function renderFilmCatalog(host, record, pending) {
+    if (!record.inverse_result?.modes?.length) return;
+    const panel = card('核对可用补测波长');
+    panel.id = 'film-acquisition-plans';
+    const catalog = node('input');
+    const saved = record.acquisition_constraints?.wavelengths_nm || [];
+    const teachingButtons = [];
+    const teachingApproval = consent('批准从独立教学对象补测选定波长');
+    catalog.value = saved.join(', ');
+    catalog.placeholder = '例如 690, 755';
+    catalog.setAttribute('aria-label','可用补测波长（nm，逗号分隔）');
+    const permission = consent('确认本次可用波长目录已变更');
+    const compare = button('比较补测波长',()=>{
+      const values = parse();
+      mutate('inverse_measurement_plan',{constraints:{wavelengths_nm:values},
+        ...(changed(values) ? {confirm_catalog_change:permission.input.checked} : {})});
+    },'small',true);
+    const parse = () => catalog.value.trim() ? catalog.value.trim().split(/[,，、\s]+/).map(Number) : [];
+    const changed = values => saved.length > 0 && JSON.stringify(values) !== JSON.stringify(saved);
+    const update = () => {
+      const values = parse();
+      permission.wrap.hidden = !changed(values);
+      compare.disabled = busy || pending || values.length < 2 || values.length > 9 || new Set(values).size !== values.length
+        || values.some(value=>!Number.isFinite(value)||value<500||value>2000) || changed(values) && !permission.input.checked;
+      for (const control of teachingButtons) control.disabled = busy || pending || changed(values)
+        || !teachingApproval.input.checked || record.groups.length >= 3;
+    };
+    catalog.addEventListener('input',()=>{permission.input.checked=false;teachingApproval.input.checked=false;update();});
+    permission.input.addEventListener('change',update);
+    append(panel,node('p','填写本次可用的 2–9 个波长，比较旧候选在这些波长处的预测差异。'),catalog,permission.wrap,compare);
+    if (record.measurement_plan) {
+      const plan = record.measurement_plan;
+      panel.append(node('p','已保存目录 · ' + saved.join('、') + ' nm。修改并确认后会更新补测方案。','field-note'));
+      if (record.teaching_object) {
+        const teaching = append(node('details'),node('summary','单独执行一次教学补测'),teachingApproval.wrap);
+        teachingApproval.input.addEventListener('change',update);
+        for (const proposal of plan.plans) {
+          const action = button('教学补测 ' + proposal.wavelengths_nm.join('、') + ' nm',
+            ()=>mutate('inverse_append',{teaching:true,approve:true,proposal_id:proposal.id,proposal_sha256:plan.sha256}),'small',true);
+          teachingButtons.push(action);
+          teaching.append(action);
+        }
+        panel.append(teaching);
+      }
+    }
+    if (record.teaching_object && record.groups.length < 3) {
+      const upload = append(node('details'),node('summary','导入下一份已校准反射率 CSV'));
+      inverseUpload(upload,record.inverse_settings.model,data=>mutate('inverse_append',{...data,...filmProposalBinding(record)}));
+      panel.append(upload);
+    }
+    host.append(panel);
+    update();
+  }
+
+  function renderFilmObservationImpact(host, record) {
+    const fit = record.inverse_result;
+    const impact = fit?.observation_impact;
+    if (!impact) return;
+    const box = card('新增观测怎样改变结论');
+    box.id = 'film-observation-impact';
+    const shift = impact.prior_mode_count === impact.joint_mode_count ? '保持 ' + impact.joint_mode_count + ' 组'
+      : '由 ' + impact.prior_mode_count + ' 组变为 ' + impact.joint_mode_count + ' 组';
+    const reflectance = value => (100 * value).toFixed(4) + '%';
+    const labels = {SYNTHETIC_TEACHING:'教学合成数据',USER_PROVIDED:'导入观测'};
+    append(box,node('p','当前搜索范围内，候选' + shift + '。'),
+      impact.joint_mode_count === 1 ? node('p','模型内厚度估计约 ' + fit.estimated_parameters.thickness_nm.toFixed(1) + ' nm。') : null,
+      impact.same_wavelength_only ? node('p','新增点沿用已有波长。重复观测有助于核对波动，周期性相近的候选仍可能保留。','field-note') : null,
+      impact.possible_mismatch ? node('p','联合拟合残差偏大。先核对各份原数据、校准条件和单膜模型。','inline-notice') : null,
+      impact.incomplete_search ? node('p','本轮存在未完成区间，候选对应关系需要核对。','inline-notice') : null,
+      list(impact.points.map(point=>`${point.wavelength_nm} nm · ${labels[point.source_kind] || '导入观测'} ${reflectance(point.reflectance)} · 旧候选预测 ${point.prior_prediction_range.map(reflectance).join('–')}`)));
+    const mapping = {MATCHED_JOINT_INTERVAL:'本区间仍有联合候选',NO_JOINT_MODE_IN_INTERVAL:'本区间未保留联合候选',INCOMPLETE:'本区间待核对'};
+    append(box,append(node('details'),node('summary','核对旧候选和联合结果'),
+      node('p',`按旧版候选的局部搜索区间核对。显示新增 ${impact.new_point_count} 个点中的 ${impact.points.length} 个。`,'field-note'),
+      list(impact.prior_modes.map(row=>`约 ${row.thickness_nm.toFixed(1)} nm · ${mapping[row.status]} · 预测 ${row.predicted_reflectance.map(reflectance).join('、')}`)),
+      node('p','联合候选（nm） · ' + impact.joint_modes_nm.map(thickness=>thickness.toFixed(1)).join('、'),'field-note')));
+    host.append(box);
+  }
+
   function renderInverse(host,s,pending){
     const t=s.experiment_record.task_summary;append(host,node('p',t.source_label+' · '+t.state_label,'eyebrow'),node('h1',s.title));
+    renderLesson(host,s);
+    if (s.domain === 'film') {
+      const fit = s.inverse_result, modeCount = fit?.modes?.length || 0;
+      const parameters = {...s.inverse_settings.fixed, thickness_nm:modeCount === 1 ? fit.estimated_parameters?.thickness_nm : null};
+      const diagram = window.photonGuardApparatus?.({domain:'film',parameters,modeCount,
+        source:fit ? '已保存的折射率和拟合候选' : '当前反向分析条件',
+        onSelect:(key,label)=>{ if (s.status === 'COMPLETED' && fit) setTutorFigure(s,key,label); },
+        links:[{label:fit ? '查看本版分析' : '核对拟合条件',run:() => revealSection(host.querySelector(fit ? '#inverse-task-result' : '#inverse-initial-plan, #inverse-advanced'))}]});
+      if (diagram) host.append(diagram.panel);
+    }
     const result=card();result.id='inverse-task-result';append(result,node('p','目标：'+t.goal,'section-note'),node('h2',t.headline));
+    if(s.inverse_result){knowledgeLink(result,s);studyReturn(result,s);}
     if(t.chart)result.append(plot(t.chart));append(result,node('p',t.change,'inline-notice'),list(t.warnings),node('p',t.scope,'field-note'));host.append(result);
-    if(s.error)host.append(node('p',s.error,'message error'));
-    if(s.status==='RUNNING'){host.append(append(card('正在执行已批准的步骤'),node('p','完成后会自动显示新版本；不自动重试，也不请求 AI。')));schedulePoll(s.id);return;}
+    if (s.domain === 'film') renderFilmObservationImpact(host,s);
+    if (s.status === 'COMPLETED' && s.inverse_result?.data?.some(row=>Number.isFinite(row.training_rmse))) {
+      result.append(button('在助教中核对拟合残差',()=>{ setTutorFigure(s,'fit_residual','拟合残差'); showTutor(true); },'small'));
+    }
+    csvIntake?.saved(host,s,pending,data=>mutate('inverse_remap',data),data=>mutate('inverse_append',{
+      ...data,...filmProposalBinding(s)}));
+    if(t.pause_reason || s.error){
+      const stop = node('p',t.pause_reason || s.error,'message error'); stop.id = 'task-stop-reason'; host.append(stop);
+    }
+    if(s.status==='RUNNING'){showActiveComputation(host,s,'完成后将显示实际分析和本次执行步骤。');return;}
+    if (s.domain === 'film') renderFilmCatalog(host,s,pending);
     renderResearchAssistant(host,s,pending);renderTaskPlan(host,s,pending);
     const saveBox=card('带走结果，或继续修改');saveBox.append(node('p','可以调整研究目标、允许的补采条件，或另存版本更正物理条件。已确认条件会沿用。','field-note'));[['导出结果摘要','summary'],['导出完整任务','family-export']].forEach(([label,suffix])=>{const a=node('a',label,'button small');a.href='/api/experiments/cases/'+s.id+'/'+suffix;a.download='';saveBox.append(a);});if(s.parent_id)saveBox.append(button('查看上一版',()=>select(s.parent_id),'small'));saveBox.append(detail('当前已确认条件',t.confirmed_conditions));host.append(saveBox);
     const more=append(node('details',null,'card'),node('summary','原始资料、条件表单、完整比较与高级工具'));more.id='inverse-advanced';more.open=!s.teaching_object&&!s.inverse_result&&!s.inverse_plan;renderInverseDetails(more,s,pending);renderCalibration(more,s,pending);host.append(more);
@@ -462,13 +775,16 @@
       const approvals=s.groups.map((g,j)=>{const scale=invNumber(form,'采集 '+(j+1)+' 反射率残差尺度',g.scale),source=invSelect(form,'采集 '+(j+1)+' 尺度来源',[['DECLARED_NUMERICAL_SCALE','数值尺度（非仪器精度）'],['KNOWN_MEASUREMENT_SD','已知测量标准差']],g.scale_source),approve=consent('核对采集 '+(j+1)+'：已校准反射率、法向入射、无损单层、以上折射率及层序 入射介质/膜/基底');approve.input.checked=g.approved;form.append(approve.wrap);return {scale,source,approve};});
       const corrections=consent('如修改已有固定事实，明确作为更正保存');form.append(corrections.wrap);
       const gather=()=>{const fixed={...Object.fromEntries(Object.entries(fields).map(([k,v])=>[k,invValue(v)])),incidence_deg:0,lossless:true,layer_order:'incident/film/substrate',calibrated_reflectance:true};return {settings:{...cfg,fixed,bounds:{thickness_nm:[invValue(lo),invValue(hi)]}},entries:approvals.map(a=>({conditions:fixed,scale:invValue(a.scale),scale_source:a.source.value,approved:a.approve.input.checked})),approve_corrections:corrections.input.checked};};
-      form.append(button('保存并核对厚度计划',()=>mutate('inverse_plan',gather()),'primary',pending));host.append(form);
+      const planNote=node('p',null,'field-note'),savePlan=button('保存并核对厚度计划',()=>mutate('inverse_plan',gather()),'primary',true);
+      const checkFields=()=>{
+        const missing=[...Object.values(fields),lo,hi].filter(input=>input.value==='').map(input=>input.getAttribute('aria-label'));
+        planNote.textContent=missing.length?'待补充 '+missing.join('、'):approvals.some(item=>!item.approve.input.checked)?'请核对待纳入的采集。':'';
+        savePlan.disabled=busy||pending||Boolean(planNote.textContent);
+      };
+      form.addEventListener('input',checkFields);checkFields();append(form,planNote,savePlan);host.append(form);
       if(s.inverse_plan){const saved=JSON.stringify(gather()),consentRun=consent('批准有限厚度搜索；保留多个模式与失败点，不证明唯一');const go=button('运行厚度分析',()=>mutate('inverse_run',{approve:true,plan_sha256:s.inverse_plan.sha256}),'primary',true);const update=()=>go.disabled=busy||pending||!consentRun.input.checked||saved!==JSON.stringify(gather())||!boot.capabilities?.analysis||!boot.capabilities?.tmm;form.querySelectorAll('input,select').forEach(el=>el.addEventListener('input',update));consentRun.input.addEventListener('input',update);host.append(append(card('执行确认'),detail('固定资源计划',s.inverse_plan),consentRun.wrap,go));}
     }
-    if(r){const result=card('保留的厚度模式');append(result,node('p','单波长存在周期和对称分支；最佳点不能替代全部候选。'),facts(r.diagnostics),list(r.warnings),list((r.modes||[]).map(mode=>'候选厚度 '+mode.parameters.thickness_nm.toFixed(4)+' nm；拟合代价 '+mode.cost.toPrecision(4))),detail('候选厚度与代价',r.modes),detail('全部有限区间与失败',r.starts));r.data.forEach((d,i)=>{result.append(node('h3','采集 '+(i+1)));if(d.x.length===1)result.append(facts({wavelengths_nm:d.x[0],observed:d.observed[0],predicted:d.predicted[0],residual:d.residual[0]}));else result.append(plot({x:d.x,x_label:'波长（nm）',y_label:'已校准反射率',series:[{label:'实际观测',y:d.observed,points:true},{label:'代表候选预测',y:d.predicted,points:true}]}));});host.append(result);
-      const panel=card('安排一次补测波长'),wl=node('input');wl.value=(s.acquisition_constraints?.wavelengths_nm||[500,550,600,650,700,750,800,850,900]).join(',');wl.disabled=!!s.acquisition_constraints?.wavelengths_nm;wl.setAttribute('aria-label','可用补测波长（nm，逗号分隔）');append(panel,node('p','填写仪器实际可用的 2–9 个波长，比较保留厚度候选的预测差异。'),wl,button('比较补测波长',()=>mutate('inverse_measurement_plan',{constraints:{wavelengths_nm:wl.value.split(',').map(x=>Number(x.trim()))}}),'',pending));
-      if(s.measurement_plan){const mp=s.measurement_plan;let filmDirty=false;const filmButtons=[];wl.addEventListener('input',()=>{filmDirty=true;approve.input.checked=false;filmButtons.forEach(b=>b.disabled=true);});append(panel,node('p',mp.score_definition),list(mp.limitations));const approve=consent('批准独立冻结教学对象在选定波长补测；不是仪器实测');if(s.teaching_object)panel.append(approve.wrap);mp.plans.forEach(p=>{const c=append(node('article',null,'card'),node('h3',(p.id===mp.recommended_id?'建议 · ':'')+p.wavelengths_nm[0]+' nm'),facts({score:p.score,predicted_reflectance:p.prediction_envelope}));if(s.teaching_object){const go=button('教学补测这个波长',()=>mutate('inverse_append',{teaching:true,approve:true,proposal_id:p.id,proposal_sha256:mp.sha256}),'',true);filmButtons.push(go);approve.input.addEventListener('input',()=>go.disabled=busy||pending||filmDirty||!approve.input.checked||s.groups.length>=3);c.append(go);}panel.append(c);});}
-      if(s.groups.length<3){const upload=append(node('details'),node('summary','上传实际补测的已校准反射率'));inverseUpload(upload,data=>mutate('inverse_append',{...data,proposal_id:s.measurement_plan?.recommended_id,proposal_sha256:s.measurement_plan?.sha256}));panel.append(upload);}host.append(panel);
+    if(r){const result=card('保留的厚度模式');append(result,node('p','单波长存在周期和对称分支。此处列出本轮有限候选。'),facts(r.diagnostics),list(r.warnings),list((r.modes||[]).map(mode=>'模型内候选约 '+mode.parameters.thickness_nm.toFixed(1)+' nm；拟合代价 '+mode.cost.toPrecision(4))),detail('完整厚度数值与代价',r.modes),detail('全部有限区间与失败',r.starts));r.data.forEach((d,i)=>{result.append(node('h3','采集 '+(i+1)));if(d.x.length===1)result.append(facts({wavelengths_nm:d.x[0],observed:d.observed[0],predicted:d.predicted[0],residual:d.residual[0]}));else result.append(plot({x:d.x,x_label:'波长（nm）',y_label:'已校准反射率',series:[{label:'实际观测',y:d.observed,points:true},{label:'代表候选预测',y:d.predicted,points:true}]}));});host.append(result);
       if(s.acquisition_expectation)host.append(append(card('补测前预期与实际结果'),detail('分开呈现',v.acquisition_comparison)));
     }
     const actions=card('保存和继续');actions.append(button('另存设置版本',()=>mutate('inverse_revise'),'small',pending));[['导出此版本','export'],['导出完整研究任务链','family-export'],['只读摘要','summary']].forEach(([label,suffix])=>{const a=node('a',label,'button small');a.href='/api/experiments/cases/'+s.id+'/'+suffix;actions.append(a);});host.append(actions);
@@ -500,6 +816,19 @@
       const weightingNote=node('p','','field-note');advanced.append(weightingNote);const explainWeighting=()=>{weightingNote.textContent=weighting.value==='declared_independent_noise'?'仅在明确声明噪声标准差与独立性后，残差逐点除以标准差；不再除以点数平方根。soft_l1 尺度使用标准化噪声单位，局部预测仍不是置信区间。':'各组残差除以各自声明尺度和训练点数平方根，采用等数据组权重。数值尺度不是测量精度。高斯 CSV 如含已知标准差，逐点使用该标准差。';};weighting.addEventListener('change',explainWeighting);explainWeighting();
       s.groups.forEach((g,j)=>{const entry=append(node('fieldset'),node('legend','采集 '+(j+1)+'：独立核对'));const f={};physical.forEach(k=>f[k]=physicalInput(entry,k,g.conditions[k]??cfg.fixed[k],`采集 ${j+1} `+INV_LABELS[k]));const scale=invNumber(entry,`采集 ${j+1} 残差尺度`,g.scale);const source=invSelect(entry,`采集 ${j+1} 尺度来源`,[['DECLARED_NUMERICAL_SCALE','声明的数值尺度'],['KNOWN_MEASUREMENT_SD','已知测量标准差']],g.scale_source);const observation=observationControls(entry,g,j,slit),independent=consent('我明确声明这些点具有所给标准差，噪声相互独立；这不是复制同一份数据');independent.input.checked=g.noise?.independent===true;const reference=node('input'),acquisition=node('input');reference.placeholder='噪声标准差与独立性的依据';reference.value=g.noise?.reference||'';reference.setAttribute('aria-label',`采集 ${j+1} 噪声依据`);acquisition.value=g.noise?.acquisition_id||s.inverse_root+':'+g.raw_file;acquisition.setAttribute('aria-label',`采集 ${j+1} 稳定观测编号`);append(entry,independent.wrap,reference,acquisition);const approved=consent('我核对这份采集的物理条件、权重及坐标关系，同意纳入拟合');approved.input.checked=g.approved===true;entry.append(approved.wrap);entryInputs.push({f,scale,source,approved,observation,independent,reference,acquisition,g});advanced.append(entry);});panel.append(advanced);advanced.open=true;
       const corrections=consent('如修改已有固定事实，我明确确认这是更正；历史版本仍保留。');panel.append(corrections.wrap);
+      for (const [key, common] of Object.entries(fields)) {
+        let former = common.value;
+        common.addEventListener('input',()=>{
+          if (former === common.value) return;
+          for (const entry of entryInputs) {
+            const local = entry.f[key];
+            if (!local.value || local.value === former) local.value = common.value;
+            entry.approved.input.checked = false;
+          }
+          former = common.value;
+        });
+      }
+      panel.append(node('p','填写一次固定条件，未单独更改的采集会沿用。请逐份核对残差尺度、观测方式和条件。','field-note'));
       const readFixed=inputs=>Object.fromEntries(Object.entries(inputs).map(([k,el])=>[k,['measurement_plane','propagation'].includes(k)?el.value:invValue(el)]));
       const gather=()=>{const fixed=readFixed(fields),b={};params.forEach(k=>{if(roles[k].value==='fixed')fixed[k]=invValue(values[k]);else b[k]=bounds[k].map(invValue);});const settings={...cfg,fixed,bounds:b,loss:loss.value,f_scale:invValue(fscale),registration:registration.value,weighting:weighting.value};if(weighting.value!=='EQUAL_DATASET_TRAINING_COUNT')settings.f_scale_units=weighting.value==='declared_independent_noise'?'STANDARDIZED_NOISE_SD':'SCALE_NORMALIZED_GROUP_RMS';else delete settings.f_scale_units;if(weighting.value==='declared_independent_noise'&&futureRef.value.trim())settings.future_noise={sigma:invValue(futureSigma),independent:futureIndependent.input.checked,source:'USER_DECLARED',reference:futureRef.value};else delete settings.future_noise;return {settings,entries:entryInputs.map(e=>{const entry={conditions:readFixed(e.f),scale:invValue(e.scale),scale_source:e.source.value,approved:e.approved.input.checked,observation:e.observation()};if(weighting.value==='declared_independent_noise')entry.noise={sigma:e.g.dataset.sd_um||invValue(e.scale),independent:e.independent.input.checked,source:'USER_DECLARED',reference:e.reference.value,acquisition_id:e.acquisition.value};return entry;}),approve_corrections:corrections.input.checked};};
       const planNote=node('p','','field-note'),savePlan=button('保存并核对反演计划',()=>mutate('inverse_plan',gather()),'primary',pending);append(panel,planNote,savePlan);
@@ -536,77 +865,341 @@
             if(mp.tradeoff_decision)c.append(detail('保护项、净收益与各假设尺度',{comparison:mp.tradeoff_decision.audit?.find(a=>a.id===p.id),scales:p.tradeoff_scales?.scales_by_scenario}));if(s.research_origin?.proposal_id===p.id&&s.research_origin?.plan_sha256===mp.sha256)c.append(node('p','这是本次 AI 建议并已核对的具体方案。','inline-notice'));
             if(s.teaching_object){const go=button('教学补采此方案',()=>mutate('inverse_append',{teaching:true,approve:true,proposal_id:p.id,proposal_sha256:mp.sha256}),'',true);acquisitionButtons.push(go);consentSample.input.addEventListener('input',()=>go.disabled=busy||pending||acquisitionDirty||!consentSample.input.checked||s.groups.length>=3||p.execution_allowed===false);c.append(go);}plans.append(c);});
         }
-        if(s.groups.length<3){const upload=append(node('details'),node('summary','加入新采集的 CSV（每次条件另行核对）'));inverseUpload(upload,data=>mutate('inverse_append',{...data,proposal_id:acquisitionDirty?null:s.measurement_plan?.recommended_id,proposal_sha256:acquisitionDirty?null:s.measurement_plan?.sha256}));plans.append(upload);}host.append(plans);
+        if(s.teaching_object&&s.groups.length<3){const upload=append(node('details'),node('summary','加入新采集的 CSV（每次条件另行核对）'));inverseUpload(upload,s.inverse_settings.model,data=>mutate('inverse_append',{...data,proposal_id:acquisitionDirty?null:s.measurement_plan?.recommended_id,proposal_sha256:acquisitionDirty?null:s.measurement_plan?.sha256}));plans.append(upload);}host.append(plans);
         if(s.acquisition_expectation)host.append(append(card('补采前的预期与补采后的结果'),node('p','分别保留原建议与新估计。实测没有真值时，参数变化不能当作误差降低。'),detail('预期与实际',v.acquisition_comparison)));
       }
-      if(v.can_adopt){const forward=card('采用模型估计，接回正向比较');if(s.forward_children?.length)forward.append(button('打开已有正向计划',()=>select(s.forward_children[0]),'primary'));else{const fields={};(slit?[['slit_height_um','缝高（μm，需另行确认）',100],['grid_size','FFT 网格',256],['window_mm','孔径窗口（mm）',.6]]:[['lens_z_mm','透镜全局位置（mm）',180],['screen_distance_mm','屏幕相对透镜距离（mm）',100],['z_max_mm','绘图传播范围（mm）',200],['target_radius_um','目标半径上限（μm）',300],['f1','候选焦距一（mm）',75],['f2','候选焦距二（mm）',100],['f3','候选焦距三（mm）',150]]).forEach(([k,label,value])=>fields[k]=invNumber(forward,label,value));const accept=consent('确认采用模型估计，并核对以上补充条件和目标；显示值是待确认建议。');const go=button('创建正向比较计划',()=>{const geometry=Object.fromEntries(Object.entries(fields).map(([k,v])=>[k,invValue(v)]));if(!slit){geometry.focal_lengths_mm=[geometry.f1,geometry.f2,geometry.f3];delete geometry.f1;delete geometry.f2;delete geometry.f3;}mutate('inverse_forward',{approve_estimate:true,geometry});},'primary',true);accept.input.addEventListener('input',()=>go.disabled=busy||pending||!accept.input.checked);append(forward,accept.wrap,go);}host.append(forward);}
+      if(v.can_adopt){const forward=card('采用模型估计，接回正向比较');forward.id='inverse-to-forward';if(s.forward_children?.length)forward.append(button('打开已有正向计划',()=>select(s.forward_children[0]),'primary'));else{const fields={};(slit?[['slit_height_um','缝高（μm，需另行确认）',100],['grid_size','FFT 网格',256],['window_mm','孔径窗口（mm）',.6]]:[['lens_z_mm','透镜全局位置（mm）',180],['screen_distance_mm','屏幕相对透镜距离（mm）',100],['z_max_mm','绘图传播范围（mm）',200],['target_radius_um','目标半径上限（μm）',300],['f1','候选焦距一（mm）',75],['f2','候选焦距二（mm）',100],['f3','候选焦距三（mm）',150]]).forEach(([k,label,value])=>fields[k]=invNumber(forward,label,value));const accept=consent('确认采用模型估计，并核对以上补充条件和目标；显示值是待确认建议。');const go=button('创建正向比较计划',()=>{const geometry=Object.fromEntries(Object.entries(fields).map(([k,v])=>[k,invValue(v)]));if(!slit){geometry.focal_lengths_mm=[geometry.f1,geometry.f2,geometry.f3];delete geometry.f1;delete geometry.f2;delete geometry.f3;}mutate('inverse_forward',{approve_estimate:true,geometry});},'primary',true);accept.input.addEventListener('input',()=>go.disabled=busy||pending||!accept.input.checked);append(forward,accept.wrap,go);}host.append(forward);}
     }
     if(v.comparison_origin||s.comparison_origin)host.append(append(card('补采前的候选证据'),node('p','两版数据量不同；候选显示范围可比较，但局部代价不是独立验证分数。'),detail('旧版记录与离散候选',v.comparison_origin||s.comparison_origin)));
     const actions=card('保存和继续');actions.append(button('另存设置版本',()=>mutate('inverse_revise'),'small',pending));[['导出此版本','export'],['导出完整研究任务链','family-export'],['只读摘要','summary']].forEach(([label,suffix])=>{const a=node('a',label,'button small');a.href='/api/experiments/cases/'+s.id+'/'+suffix;actions.append(a);});if(s.inverse_progress)actions.append(detail('中断前进度',s.inverse_progress));host.append(actions);
   }
   async function startTask(body,feedback){
     if(busy)return;setBusy(true);message('error','');
-    try{const out=await api('/task-start',body);setBusy(false);if(out.status==='CREATED'){current=out.case;cacheCase(current);updateLocation(current.id);render();}else feedback(out);}
-    catch(e){message('error',e.message);}finally{setBusy(false);}
+    try{const out=await submit('/task-start',body,body.mode==='inverse'?'导入数据':'开始任务',body.from_result?.record_id);setBusy(false);if(out.status==='CREATED'){current=out.case;cacheCase(current);updateLocation(current.id);render();window.scrollTo(0,0);}else feedback(out);}
+    catch(e){message('error',e.message);if(e.uncertain){setBusy(false);render();}}finally{setBusy(false);}
   }
   function taskDataForm(host,text,model){
     const box=card('导入已有观测'),choice=invSelect(box,'数据对应的任务',[[INV_GAUSS,'高斯：估计束腰'],['single_film_known_index_v1','薄膜：区分厚度候选'],[INV_SLIT,'双缝：估计缝宽与缝距']],model||INV_GAUSS);
-    append(box,node('p','高斯：z_mm,radius_1e2_um；薄膜：wavelength_nm,reflectance_calibrated；双缝：position_mm,intensity_relative。导入后核对已知物理条件，未知值不会自动填成教学参数。','field-note'));
-    inverseUpload(box,({approve,...data})=>startTask({text,mode:'inverse',model:choice.value,...data},()=>{}));host.replaceChildren(box);
+    append(box,node('p','先查看原文件的列、范围和缺项，再为分析选择物理量与单位。高斯需确认光斑口径，薄膜需已校准反射率。','field-note'));
+    inverseUpload(box,()=>choice.value,({approve,...data})=>startTask({text,mode:'inverse',model:choice.value,...data},()=>{}),choice);host.replaceChildren(box);
   }
   const SINGLE_SLIT_EXAMPLE = "我想做单缝衍射演示，看看缝宽怎样改变中央亮区。采用均匀相干照明、标量近轴模型，在理想薄透镜的后焦面观察。波长633 nm，透镜焦距200 mm，缝高100 μm，初始缝宽20 μm。只比较缝宽16、20、24 μm，其余物理条件保持不变。希望中心到第一暗纹的距离为6.33 mm，允许偏差0.05 mm。数值输入平面窗口0.4 mm，网格256。只做快速计算，不做Meep。请先整理条件和计划，等我确认后再计算，并显示曲线与二维光强分布。";
-  function renderHome() {
-    const host=$('content');append(host,node('p','PHOTONGUARD · AI 光学实验工作台','eyebrow'),node('h1','你想完成什么实验任务？'),node('p','从一个目标、一份观测，或一个教学实验开始。AI 帮你整理条件、选择下一步；你核对计划后，工具实际执行并保留结果。','lead'));
-    const box=card(),label=node('label','你想研究什么？','input-label'),q=node('textarea');label.htmlFor='new-material';q.id='new-material';q.maxLength=6000;q.rows=3;q.placeholder='例如：比较三个单缝宽度，看看中央亮区怎样变化，并找到符合目标的候选。';q.value=load('new-draft')?.text||'';
-    const branch=node('div'),hint=node('p','先整理任务，不会自动调用 AI 或启动计算。','field-note');
-    const feedback=out=>{branch.replaceChildren();if(out.status==='NEEDS_INTENT')append(branch,node('p',out.question,'inline-notice'),button('比较已知参数的方案',()=>startTask({text:q.value,mode:'forward'},feedback),'small'),button('从已有观测反推参数',()=>startTask({text:q.value,mode:'inverse'},feedback),'small'));else if(out.status==='NEEDS_DATA')taskDataForm(branch,q.value,out.model);};
-    const begin=button('开始这个任务',()=>startTask({text:q.value,...(q.value===SINGLE_SLIT_EXAMPLE?{mode:'forward'}:{})},feedback),'primary',!q.value.trim());
-    q.addEventListener('input',()=>{const bad=credentialLike(q.value);begin.disabled=busy||!q.value.trim()||bad;if(bad){clear('new-draft');hint.textContent='检测到疑似密钥，请移除后再保存。';}else{save('new-draft',{text:q.value});hint.textContent='先整理任务，不会自动调用 AI 或启动计算。';}});
-    const example=card('从单缝衍射开始 · 看见光的分布');
-    append(example,node('p','自然语言输入 → AI整理条件 → 三候选比较 → 曲线与二维光强。','lead'),node('p','比较16、20、24 μm缝宽，目标是中心到第一暗纹6.33 mm。保存案例中，20 μm候选达到目标；新任务按实际计算结果判断。','field-note'),button('填入这组示例条件',()=>{q.value=SINGLE_SLIT_EXAMPLE;q.dispatchEvent(new Event('input'));q.focus();},'small'));
+  async function startLesson(id) {
+    if (busy) return;
+    setBusy(true); message('error',''); message('notice','');
+    try {
+      const {case: record} = await submit('/learning/lesson/start', {lesson_id:id},'打开教学任务');
+      setBusy(false);
+      openLearningCase(record, '已打开教学任务。可以先预测，也可以直接核对计划。', 'learning-lesson');
+    } catch (error) { message('error', error.message); if(error.uncertain){setBusy(false);render();} }
+    finally { setBusy(false); }
+  }
 
-    append(box,label,q,hint,append(node('div',null,'actions'),begin,button('导入数据',()=>taskDataForm(branch,q.value),''),button('没有数据，体验教学任务',()=>{const teaching=card('选择一个教学任务');append(teaching,node('p','采用公开教学条件和独立冻结的模拟对象；不是仪器观测。条件在分析前集中核对。'),button('高斯 · 安排5次补测',()=>startTask({text:q.value.trim()||'高斯教学：已有数据，只有5次测量机会，束腰位置优先',model:INV_GAUSS,teaching:true},feedback),'small'),button('薄膜 · 选择补测波长',()=>startTask({text:q.value.trim()||'薄膜教学：只有633、660、780 nm三个可用波长，区分厚度候选',model:'single_film_known_index_v1',teaching:true},feedback),'small'),button('双缝 · 修改观测约束',()=>startTask({text:q.value.trim()||'双缝教学：缝宽优先，保护缝距，补采71个点，最大行程4 mm',model:INV_SLIT,teaching:true},feedback),'small'));branch.replaceChildren(teaching);},'')),branch);host.append(box,example);
-    append(host,node('p',boot.ai?.live_enabled?'AI 已连接。发送资料前，请核对本次内容。':'可以先导入数据并完成本地分析；需要 AI 建议时，连接自己的 API Key 即可。','inline-notice'));
+  function saveLearningNote(record, input, kind, label, feedback, after) {
+    const save = button(label, async () => {
+      const value = input.value.trim();
+      if (!value || busy) return;
+      input.disabled = true; save.disabled = true;
+      try {
+        const out = await api('/learning/lesson/respond',{record_id:record.id,kind,text:value});
+        if (out.lesson) record.learning_lesson = out.lesson;
+        if (out.goal_reflection) record.goal_reflection = out.goal_reflection;
+        if (out.study_hypothesis) record.study_hypothesis = out.study_hypothesis;
+        feedback.textContent = after;
+      } catch (error) { feedback.textContent = error.message; }
+      finally { input.disabled = false; update(); }
+    },'small',true);
+    const update = () => { save.disabled = !input.value.trim() || credentialLike(input.value); };
+    input.addEventListener('input',update); input.addEventListener('change',update); update();
+    return save;
+  }
+
+  function renderGoalReflection(host, record) {
+    if (!record.goal_reflection) return;
+    const reflection = node('textarea'); reflection.rows = 2; reflection.maxLength = 600;
+    reflection.setAttribute('aria-label','记录本版观察'); reflection.value = record.goal_reflection.text;
+    const feedback = node('p',null,'field-note'); feedback.setAttribute('role','status');
+    const save = saveLearningNote(record,reflection,'reflection','保存本版观察',feedback,'已保存本版观察，可随学习记录下载。');
+    append(host,append(node('details',null,'card'),node('summary','记录本版观察（可跳过）'),reflection,save,feedback));
+  }
+
+  function renderStudy(host, record) {
+    if (!record.study_hypothesis) return;
+    const hypothesis = node('textarea');
+    hypothesis.rows = 2;
+    hypothesis.maxLength = 600;
+    hypothesis.value = record.study_hypothesis.text;
+    hypothesis.setAttribute('aria-label','我对下一次对照的预测');
+    hypothesis.placeholder = '写下你预计会发生什么，以及哪些条件保持不变。';
+    const feedback = node('p',null,'field-note');
+    feedback.setAttribute('role','status');
+    const summary = append(node('details'),node('summary','总结这几次实验'));
+    const summaryText = node('div');
+    const read = button('读取学习记录',async()=>{
+      read.disabled = true;
+      try {
+        const response = await fetch('/api/experiments/cases/' + encodeURIComponent(record.id) + '/learning-record',{cache:'no-store'});
+        if (!response.ok) throw new Error('当前学习记录无法读取。');
+        summaryText.replaceChildren(node('pre',await response.text(),'learning-record-text'));
+      } catch (error) { summaryText.replaceChildren(node('p',error.message,'field-note')); }
+      finally { read.disabled = false; }
+    },'small');
+    append(summary,read,learning.summaryLink(record),summaryText);
+    const verify = button('帮我验证这个想法',()=>{
+      if (!hypothesis.value.trim() || credentialLike(hypothesis.value)) {
+        feedback.textContent = '先写一句想验证的猜想和保持条件。';
+        hypothesis.focus();
+        return;
+      }
+      showTutor(true);
+      const question = $('tutor-content').querySelector('textarea');
+      if (question) {
+        question.value = '帮我验证这个想法：' + hypothesis.value.trim();
+        question.dispatchEvent(new Event('input'));
+        question.focus();
+      }
+    },'small');
+    append(host,append(card('从猜想到验证'),append(node('details'),node('summary','我先猜一下（可跳过）'),hypothesis,
+      append(node('div',null,'actions'),saveLearningNote(record,hypothesis,'hypothesis','保存我的猜想',feedback,'已保存。'),
+        verify),feedback),summary));
+  }
+
+  function renderLesson(host, record) {
+    const lesson = record.learning_lesson;
+    if (!lesson) return;
+    const panel = card('这次想弄清什么'); panel.id = 'learning-lesson';
+    const done = record.status === 'COMPLETED' && (record.result || record.inverse_result);
+    const canPredict = ['DRAFT','PLANNED','NEEDS_INFORMATION'].includes(record.status);
+    const ask = (question) => {
+      showTutor(true);
+      const field = $('tutor-content').querySelector('textarea');
+      if (field && !field.value.trim()) {
+        field.value = question;
+        field.dispatchEvent(new Event('input'));
+      }
+    };
+    const jump = (selector) => {
+      const target = host.querySelector(selector);
+      if (!target) return;
+      revealSection(target);
+      target.querySelector('summary,select,input,button')?.focus({preventScroll:true});
+    };
+    const feedback = node('p',null,'field-note'); feedback.setAttribute('role','status');
+    append(panel,node('p',lesson.model,'eyebrow'),node('p',lesson.held),node('p',lesson.experiment),
+      append(node('details'),node('summary','开始前用到的概念'),node('p',lesson.concepts)));
+    const main = node('div',null,'actions');
+    if (canPredict) {
+      const choices = node('select'); choices.setAttribute('aria-label','选择我的预测');
+      const empty = node('option','选一个预测'); empty.value = ''; choices.append(empty);
+      for (const value of lesson.options) choices.append(node('option',value));
+      if (lesson.saved_prediction?.record_id === record.id) choices.value = lesson.saved_prediction.text;
+      append(panel,append(node('details'),node('summary','先做个预测（可跳过）'),node('p',lesson.prediction),choices,
+        saveLearningNote(record,choices,'prediction','保存预测',feedback,'已保存预测。现在可以核对计划。')));
+      append(main,button('核对计划',() => jump('#plan-review, #inverse-initial-plan, #continuous-task-plan'),'primary'),
+        button('直接问助教',() => ask(lesson.prediction),'small'));
+    }
+    if (done) {
+      append(panel,node('h3','看结果并解释差异'),node('p',lesson.observe));
+      if (lesson.saved_prediction) panel.append(node('p','我的预测 · ' + lesson.saved_prediction.text,'field-note'));
+      const target = record.bounded_goal && record.domain === 'gaussian' ? ['查看可用条件','#bounded-planning'] :
+        {'slit-compensation':['试一试保宽','#slit-compensation'], 'slit-intensity':['比较光强标尺','#lesson-result-chart'],
+        'slit-width':['查看不同缝宽的图','#lesson-result-chart'], 'double-slit':['改变一个双缝参数','#double-slit-comparison'],
+        'gaussian-waist':['换一个屏幕位置','#screen-comparison'], 'film-ambiguity':['安排后续观测','#research-plans, #film-acquisition-plans']}[lesson.id];
+      if (target && (lesson.id !== 'film-ambiguity' || !record.parent_id)) main.append(button(target[0],() => jump(target[1]),'small'));
+      const question = lesson.saved_prediction ? '我原来预测「' + lesson.saved_prediction.text + '」。' + lesson.ask : lesson.ask;
+      main.append(button('带着这版结果问助教',() => ask(question),'small'));
+      const reflection = node('textarea'); reflection.rows = 2; reflection.maxLength = 600;
+      reflection.setAttribute('aria-label','记录本版观察'); reflection.value = lesson.reflection || '';
+      append(panel,append(node('details'),node('summary','记录观察与迁移问题（可跳过）'),node('p',lesson.transfer),
+        reflection,saveLearningNote(record,reflection,'reflection','保存本版观察',feedback,'已保存本版观察，可随学习记录下载。'),
+        button('把迁移问题交给助教',() => ask(lesson.transfer),'small')));
+    }
+    append(panel,main,feedback); host.append(panel);
+  }
+
+  function renderHome() {
+    const host=$('content');append(host,node('h1','你想解决什么问题？'),node('p','描述实验目标或手头的数据，也可以从下方的教学案例开始。','lead'));
+    append(host,pendingPanel(null));
+    const box=card(),composer=node('div'),q=node('textarea');q.id='new-material';q.setAttribute('aria-label','你想解决什么问题？');q.maxLength=6000;q.rows=3;q.placeholder='例如：我想让单缝的中央亮区全宽达到 10 mm。手里有三块不同的缝片，该选哪块？';q.value=load('new-draft')?.text||'';
+    const branch=node('div',null,'task-branch'),hint=node('p','核对计划后再计算。','field-note');
+    const back=()=>{branch.replaceChildren();composer.hidden=false;q.focus();};
+    const showSlitGoal=value=>{
+      composer.hidden=true;
+      branch.replaceChildren(button('返回问题',back,'small'));
+      learning.slitDesigner(branch)(value);
+      branch.scrollIntoView({block:'nearest'});
+    };
+    const feedback=out=>{branch.replaceChildren();if(out.status==='SLIT_GOAL')showSlitGoal(out.text);else if(out.status==='NEEDS_INTENT')append(branch,node('p',out.question,'inline-notice'),button('比较已知参数的方案',()=>startTask({text:q.value,mode:'forward'},feedback),'small'),button('从已有观测反推参数',()=>startTask({text:q.value,mode:'inverse'},feedback),'small'));else if(out.status==='NEEDS_DATA')taskDataForm(branch,q.value,out.model);};
+    const begin=button('开始这个任务',()=>startTask({text:q.value,...(q.value===SINGLE_SLIT_EXAMPLE?{mode:'forward'}:{})},feedback),'primary',!q.value.trim());
+    q.addEventListener('input',()=>{const bad=credentialLike(q.value);begin.disabled=busy||!q.value.trim()||bad;if(bad){clear('new-draft');hint.textContent='检测到疑似密钥，请移除后再保存。';}else{save('new-draft',{text:q.value});hint.textContent='核对计划后再计算。';}});
+    const lessons = card('教学案例'); lessons.id = 'teaching-cases';
+    append(composer,q,hint,append(node('div',null,'actions'),begin,button('导入数据',()=>taskDataForm(branch,q.value),''),
+      button('学一个光学概念',()=>showTutor(true),'subtle'),button('浏览教学案例',()=>lessons.scrollIntoView({block:'start'}),'subtle')));
+    append(box,composer,branch); host.append(box);
+    const lessonTiles = node('div',null,'learning-task-grid');
+    for (const lesson of boot.learning_lessons || []) {
+      const fill = () => { back(); q.value=SINGLE_SLIT_EXAMPLE; q.dispatchEvent(new Event('input')); window.scrollTo(0,0); };
+      lessonTiles.append(append(node('div',null,'learning-task'),node('h3',lesson.title),node('p',lesson.model,'field-note'),
+        button('打开任务',() => startLesson(lesson.id),'small'),lesson.id === 'slit-width' ? button('填入这组示例条件',fill,'small subtle') : null));
+    }
+    const observations = append(node('details'),node('summary','更多观测教学案例'));
+    for (const [title,text,model] of [
+      ['高斯 · 安排5次补测','高斯教学：已有数据，只有5次测量机会，束腰位置优先',INV_GAUSS],
+      ['薄膜 · 选择补测波长','薄膜教学：只有633、660、780 nm三个可用波长，区分厚度候选','single_film_known_index_v1'],
+      ['双缝 · 修改观测约束','双缝教学：缝宽优先，保护缝距，补采71个点，最大行程4 mm',INV_SLIT],
+    ]) observations.append(button(title,()=>startTask({text,model,teaching:true},feedback),'small'));
+    lessons.append(lessonTiles,observations); host.append(lessons);
     const library=append(node('details',null,'card'),node('summary','浏览案例库与更多分析工具'));renderLibrary(library);renderMissions(library);renderInverseImport(library);renderObservationImport(library);
     const legacy=card('正向仿真示例');boot.templates.forEach(t=>legacy.append(button(t.title,()=>create({kind:'teaching',template_id:t.id}),'small')));library.append(legacy);host.append(library);
     const capabilities=append(node('details',null,'card'),node('summary','运行环境与使用说明'));capabilities.append(list(['基础计算：'+(boot.capabilities?.local_workers?'已启用':'未启用'),'反向分析：'+(boot.capabilities?.analysis?'SciPy 已就绪':'需安装 SciPy；仍可查看记录'),'安装与使用说明见 README；批量复用示例见 examples。']));host.append(capabilities);
   }
   function steps(status) { const active = ['DRAFT','NEEDS_INFORMATION'].includes(status) ? 0 : status === 'PLANNED' ? 1 : 2; const ol = node('ol',null,'steps'); ['整理资料','核对计划','计算与比较'].forEach((text,i) => append(ol,append(node('li',null,i === active ? 'current' : i < active ? 'done' : ''),node('span',String(i+1),'step-number'),node('span',text)))); return ol; }
   function pendingPanel(s) {
-    const pending = load('pending:' + s.id); if (!pending) return null;
-    if (s.revision > pending.revision) { clear('pending:' + s.id); return null; }
-    const panel = node('div',null,'inline-notice warning');
-    append(panel,node('p','上一次操作的完成状态尚未确认。为避免重复收费或计算，本页暂不重发。请先读取最新记录。'),button('刷新记录',() => select(s.id),'small'));
+    const key = operationKey(s?.id), pending = load(key);
+    const legacy = !pending && s && load('pending:' + s.id);
+    if (!pending && !legacy) return null;
+    if (legacy && s.revision > legacy.revision) { clear('pending:' + s.id); return null; }
+    const panel = node('section',null,'inline-notice warning'); panel.id = 'workbench-recovery';
+    const status = node('p', pending ? pending.label + '的提交状态待核对。已有实验和结果仍可查看。' : '旧页面的提交状态待核对。');
+    status.setAttribute('aria-live','polite');
+    if (legacy) {
+      append(panel,status,button('读取最新记录',()=>select(s.id),'small'),
+        button('已核对历史记录，继续操作',()=>{ clear('pending:' + s.id); render(); },'small subtle'));
+      return panel;
+    }
+    const check = button('核对上次提交',async()=>{
+      check.disabled = true;
+      try {
+        const receipt = await api('/operation/recover',{id:pending.id});
+        if (receipt.status === 'PROCESSING') { status.textContent = '服务已收到提交，仍在处理。可以查看其他记录，稍后再核对。'; return; }
+        if (receipt.status === 'REVIEW') {
+          status.textContent = '服务中断前已经登记。请先检查最近的实验记录及 AI 连接状态，再决定是否重新操作。';
+          if (!panel.querySelector('[data-close-review]')) {
+            const close = button('已核对历史记录，结束等待',()=>{ clear(key); render(); },'small subtle');
+            close.dataset.closeReview = 'true'; panel.append(close);
+          }
+          return;
+        }
+        const target = receipt.record_id || s?.id;
+        const record = target ? await api('/cases/' + encodeURIComponent(target)) : null;
+        clear(key);
+        const messageText = receipt.status === 'SAVED' ? '已找回本次保存的记录。' :
+          receipt.status === 'NOT_STARTED' ? '服务未收到这次提交，原提交已关闭。可重新核对后操作。' :
+          receipt.error || '本次没有生成新记录。请核对后继续。';
+        message('error','');
+        if (record) openLearningCase(record,messageText);
+        else { message('notice',messageText); render(); }
+      } catch (error) { status.textContent = error.message; }
+      finally { check.disabled = false; }
+    },'small');
+    append(panel,status,check);
     return panel;
+  }
+  function renderTaskOverview(host, s, pending) {
+    const view = s.experiment_record || {};
+    const inverse = view.task_summary;
+    const result = s.result || s.inverse_result || s.fit_result;
+    const dataOrigin = s.task_entry?.from_result;
+    const inheritedResult = (!result && (view.result_context?.record_id || dataOrigin?.record_id)) ||
+      (s.inverse_result && s.inverse_plan?.sha256 !== s.inverse_result.plan_sha256 ? s.inverse_reference_parent : null);
+    const intent = s.learning_lesson || s.task_entry?.teaching_explicit || s.kind === 'teaching' && !s.slit_goal ? '教学任务'
+      : s.kind === 'inverse' || s.kind === 'observation' ? '数据分析' : '目标实验';
+    const goal = inverse?.goal || (s.result && view.brief?.goal_text) ||
+      (view.goal || s.spec?.goal ? display(view.goal || s.spec.goal) : s.task_goal_text || s.learning_lesson?.experiment || s.title);
+    const source = s.inverse_reference_parent || inheritedResult || s.parent_id || s.spec?.parent_task_id;
+    const fixed = inverse?.confirmed_conditions?.fixed || s.fit_settings?.fixed || s.spec?.known_parameters || {};
+    const entered = Object.entries(view.facts || {}).filter(([key,value]) => key.startsWith('parameters.') && value != null)
+      .map(([key,value]) => [key.slice('parameters.'.length),value]);
+    const conditions = Object.entries({...fixed,...Object.fromEntries(entered)})
+      .filter(([,value]) => value != null).map(([key,value]) => name(key) + ' ' + display(value));
+    const [stage, next, target] = pending ? ['待核对上次操作','先读取提交回执','#workbench-recovery'] :
+      s.status === 'RUNNING' ? ['正在计算','读取运行进度','#active-computation'] :
+      s.status === 'FAILED' || inverse?.state === 'PAUSED' ? ['本轮暂停','查看停止原因','#task-stop-reason'] :
+      inverse?.state === 'STOPPED' ? ['当前分支已停止','回看分析结果','#inverse-task-result'] :
+      inverse?.state === 'WAITING_DATA' ? ['等待新观测','导入下一份观测','#csv-add-group, #research-plans, #inverse-advanced'] :
+      s.status === 'PLANNED' || inverse?.state === 'READY' ? ['等待批准','核对本次计划','#continuous-task-plan, #plan-review, #inverse-initial-plan, #inverse-advanced, #fit-plan'] :
+      result ? ['已有保存结果','查看当前结果','#result-brief, #inverse-task-result, #fit-result'] :
+      ['待整理或核对','查看需要核对的资料','#learning-lesson, #session-facts, #inverse-initial-plan, #inverse-advanced, #case-material'];
+    const region = node('section',null,'task-overview'); region.id = 'task-overview';
+    region.setAttribute('aria-label','当前实验');
+    const compact = append(node('div',null,'task-overview-line'),
+      append(node('div',null,'task-overview-goal'),node('strong',intent),node('span',humanizeQuestion(goal))),
+      badge(stage, result && !pending && s.status === 'COMPLETED' ? 'ok' : ''));
+    const details = node('details');
+    const status = inheritedResult ? '来源结果 ' + inheritedResult.slice(0,8) :
+      result ? '结果 ' + s.id.slice(0,8) : '当前版尚未生成结果';
+    const jump = (selector) => {
+      const element = host.querySelector(selector);
+      if (element) {
+        details.open = false;
+        revealSection(element);
+      }
+    };
+    const resultHash = view.result_sha256 || (!result ? dataOrigin?.result_sha256 : null);
+    const version = '当前记录 ' + s.id.slice(0,8) + ' · 修订 ' + s.revision + ' · ' + status +
+      (resultHash ? ' · 指纹 ' + resultHash.slice(0,10) : '');
+    append(details,node('summary',version),node('p','目标 · ' + humanizeQuestion(goal),'field-note'),
+      node('p',result || s.approved_plan_sha256 || s.inverse_approved_sha256 || s.fit_approved_sha256 ? '已确认条件' :
+        s.plan || s.inverse_plan || s.fit_plan ? '待批准计划中的条件' : '当前资料中的条件，继续核对后用于计划','field-note'),
+      conditions.length ? list(conditions) : node('p','等待整理物理条件。','field-note'),
+      append(node('div',null,'task-overview-actions'),
+        source ? button(result ? '打开来源版本' : '打开来源记录',()=>select(source),'small subtle') : null,
+        result && s.kind === 'inverse' && view.can_adopt ? button('用这版估计准备正向比较',()=>jump('#inverse-to-forward'),'small subtle') : null,
+        result && s.kind === 'inverse' && s.groups?.length < 3 ? button('查看补测与追加数据',()=>jump('#csv-add-group, #research-plans, #inverse-advanced'),'small subtle') : null,
+        result && !['inverse','observation'].includes(s.kind) ? button('继续修改当前实验',()=>jump('#continue-experiment'),'small subtle') : null));
+    append(region,compact,append(node('div',null,'task-overview-actions'),
+      button(next,()=>jump(target),'small subtle'),button(s.result || s.inverse_result ? '带着结果问助教' : '问光学助教',()=>showTutor(true),'small subtle')),details);
+    host.append(region);
   }
   function renderCase() {
     const s = current, host = $('content'), pending = pendingPanel(s);
-    if(s.kind==='inverse'){renderInverse(host,s,!!pending);if(pending)host.prepend(pending);return;}
+    renderTaskOverview(host,s,!!pending);
+    if(s.study_origin && s.status!=='COMPLETED'){
+      append(host,append(card('来自这次学习'),node('p',s.study_origin.question),
+        node('p',s.study_origin.references.map(item=>item.title).join(' · '),'field-note')));
+    }
+    if(s.kind==='inverse'){
+      renderInverse(host,s,!!pending);
+      renderStudy(host,s);
+      if(s.inverse_result&&s.status!=='RUNNING')host.append(learning.summaryLink(s));
+      if(pending)host.prepend(pending);return;
+    }
     if(s.kind==='observation'){renderObservation(host,s,!!pending);if(pending)host.prepend(pending);return;}
     if(s.estimate_origin)append(host,append(card('来自数据的模型估计'),node('p','此任务继承数据分析的模型条件，缝距估计不等于实测值。原始数据、残差和估计仍保留在来源版本。'),button('查看数据与拟合来源',()=>select(s.estimate_origin.record_id),'small'),detail('来源与坐标说明',s.estimate_origin)));
     if(s.budget_preview){const b=s.budget_preview,box=card('计算前的共享预算');append(box,node('p','本计划 '+b.requested_candidates+' 个候选，需 '+b.required_fft_calls+' 次 FFT；共享预算最多容纳 '+b.allowed_candidates+' 个候选，剩余 '+b.remaining_fft_calls+' 次 FFT。预计输出 '+(b.estimated_output_bytes/1048576).toFixed(1)+' MiB，剩余 '+(b.remaining_output_bytes/1048576).toFixed(1)+' MiB。'),node('p',b.note,'field-note'));
       if(s.candidate_choice){const c=s.candidate_choice;box.append(node('p','原计划尚未执行。请明确选择一个原候选，生成缩减计划后还需单独批准计算。'));c.values.forEach(value=>box.append(button('选择 '+value+' μm 并重新核对',()=>mutate('choose_observation_candidate',{slit_separation_um:value,choice_sha256:c.sha256,approve_selection:true}),'small',!!pending)));}host.append(box);}
     if(s.status==='COMPLETED'&&s.result&&s.experiment_record?.brief){
       append(host,node('p','已保存的实际运行 · '+DOMAINS[s.domain],'eyebrow'),append(node('div',null,'card-header'),node('h1',s.title),badge('结果已保存','ok')),pending);
-      renderResultBrief(host,s,!!pending);renderResult(host,s,!!pending,true);renderContinue(host,s,!!pending);
+      renderLesson(host,s);
+      learning.boundedSummary?.(host,s);
+      if(s.slit_followup)learning.comparison(host,s);
+      renderResultBrief(host,s,!!pending);renderResult(host,s,!!pending,true);
+      if(!s.slit_followup)learning.comparison(host,s);
+      renderContinue(host,s,!!pending);
+      renderGoalReflection(host,s);
+      renderStudy(host,s);
       const history=append(node('details',null,'card'),node('summary','参数来源、版本经过与运行依据'));renderExperimentRecord(history,s,!!pending);history.append(sourceReview(s));if(s.plan)renderPlan(history,s,!!pending);host.append(history);
       const advanced=append(node('details',null,'card'),node('summary','高级修改与已有表单'));advanced.id='advanced-actions';renderRevision(advanced,s,!!pending);renderCaseExploration(advanced,s,!!pending);host.append(advanced);return;
     }
     append(host,node('p',DOMAINS[s.domain] || '待整理的光学实验','eyebrow'),append(node('div',null,'card-header'),node('h1',s.title || '整理实验资料'),badge(STATES[s.status] || s.status,s.status === 'COMPLETED' ? 'ok' : s.status === 'FAILED' ? 'fail' : '')),
       node('p',(s.spec?.context_kind === 'teaching' || s.kind === 'teaching' ? '教学练习 · 参数来自所选示例。' : '已有资料 · 未知值保留为未知。') + ' 记录 ' + s.id + ' · 版本 ' + s.revision,'section-note'),steps(s.status),pending);
+    renderLesson(host,s);
     if (s.status !== 'RUNNING' && !pending) host.append(button('读取最新记录',() => select(s.id),'small subtle'));
     if (s.parent_id || s.spec?.parent_task_id) append(host,append(node('div',null,'inline-notice'),node('span','这份计划来自之前的实验，旧记录仍保留。'),button('查看来源实验',() => select(s.parent_id || s.spec.parent_task_id),'small subtle')));
-    if (s.status === 'RUNNING') {const running=card('正在执行已批准的计划');append(running,node('p','尚无本轮完成结果。页面会按实际状态更新，不会自动重发任务。'),button('读取最新进度',()=>select(s.id),'small'));host.append(running);schedulePoll(s.id);}
-    if(s.status==='FAILED')append(host,card('本轮未完成；此前有效结果仍保留'));
+    if (s.status === 'RUNNING') showActiveComputation(host,s,'尚无本轮完成结果。页面会按实际状态更新。');
+    if(s.status==='FAILED'){
+      const stopped=card('本轮未完成'); stopped.id='task-stop-reason';
+      append(host,append(stopped,node('p',s.error || '查看本轮计算记录。','field-note')));
+    }
     if(s.fact_state?.questions?.length)append(host,append(card('先确认这些条件'),list(s.fact_state.questions.map(q=>humanizeQuestion(q.text)))));
     renderSessionFacts(host,s,!!pending);
     renderExperimentRecord(host,s,!!pending);
     if (s.error) host.append(node('div',typeof s.error === 'string' ? s.error : display(s.error),'message error'));
-    if (['DRAFT','NEEDS_INFORMATION','NEEDS_REVIEW','PLANNED'].includes(s.status)) renderEditor(host,s,!!pending);
+    if (['DRAFT','NEEDS_INFORMATION','NEEDS_REVIEW','PLANNED'].includes(s.status) && !s.slit_goal && !s.slit_followup && !s.learning_comparison && !s.bounded_goal) renderEditor(host,s,!!pending);
     else host.append(sourceReview(s));
     if (s.questions?.length) renderQuestions(host,s,!!pending);
+    learning.comparison(host,s);
     if (s.plan) renderPlan(host,s,!!pending);
-    if (s.status === 'RUNNING') { const run = card(); append(run,append(node('h2'),node('span',null,'running-dot'),node('span','已按批准的计划开始计算')),node('p','页面会自动更新。每个结果都保留实际候选、使用的引擎和核对记录；未达到目标也会如实保存。','section-note'),button('读取最新进度',() => select(s.id),'small')); host.append(run); schedulePoll(s.id); }
     if(s.library_origin){const provenance=card('案例来源与候选依据');append(provenance,node('p',s.library_origin.case_id+' · 版本 '+s.library_origin.case_version+'；'+(s.result?'本版本已有实际计算记录。':'当前仅生成候选，尚未计算。'),'section-note'),detail('查看解析提议与来源（不是场计算结果）',s.library_origin.proposal));host.append(provenance);}
     if (s.result) {renderResult(host,s,!!pending);renderCaseExploration(host,s,!!pending);}
     if (['COMPLETED','FAILED'].includes(s.status)) renderRevision(host,s,!!pending);
@@ -659,9 +1252,10 @@
   }
   function renderResultBrief(host,s,pending){
     const b=s.experiment_record.brief,box=card();box.id='result-brief';
-    append(box,node('p','目标 · '+b.goal_text,'section-note'),node('h2',b.headline),node('p',b.scope,'field-note'));
+    append(box,node('p','目标 · '+humanizeQuestion(b.goal_text),'section-note'),node('h2',humanizeQuestion(b.headline)),node('p',b.scope,'field-note'));
     const go=button('继续这个实验',()=>{document.querySelector('#continue-experiment')?.scrollIntoView({block:'start'});document.querySelector('#continue-input')?.focus();},'primary',pending);
-    const summary=node('a','带走只读摘要','button');summary.href='/api/experiments/cases/'+s.id+'/summary';summary.download='PhotonGuard-'+s.id+'.html';append(box,append(node('div',null,'actions'),go,summary));host.append(box);
+    const summary=node('a','带走只读摘要','button');summary.href='/api/experiments/cases/'+s.id+'/summary';summary.download='PhotonGuard-'+s.id+'.html';
+    const actions=append(node('div',null,'actions'),go,summary);knowledgeLink(actions,s);studyReturn(actions,s);append(box,actions);host.append(box);
   }
   function renderContinue(host,s,pending){
     const b=s.experiment_record.brief,box=card('继续这个实验');box.id='continue-experiment';
@@ -670,9 +1264,29 @@
     append(box,focus,answer,node('p',b.basis+'；下列操作均调用现有工作流程。','field-note'));
     const reveal=selector=>{const panel=$('advanced-actions');panel.open=true;const target=document.querySelector(selector)||panel;target.scrollIntoView({block:'start'});};
     const actions=append(node('div',null,'actions'),button('保持条件，重评目标',()=>reveal('#goal-metric'),'small',pending),button('明确另建探索',()=>reveal('#case-exploration'),'small',pending));
+    let intake = null;
+    if (s.data_followups) {
+      intake = node('div');
+      const openData = button('导入观测，接续本实验',()=>{
+        const candidate = learningSelection.get(s.id) || s.result.winner_id;
+        const model = s.data_followups[candidate];
+        if (!model) {
+          intake.replaceChildren(node('p','当前候选的结构超出已有数据分析的适用范围。可以选择同版的其他候选。','field-note'));
+          return;
+        }
+        const origin = {record_id:s.id,result_sha256:s.experiment_record.result_sha256,candidate_id:candidate};
+        const panel = card('加入一份观测数据');
+        panel.append(node('p','来源候选 ' + candidate + '。请按这份文件的采集条件核对列和单位。','field-note'));
+        inverseUpload(panel,model,({approve,...data})=>startTask({
+          text:'分析新增观测，接续这组实验',mode:'inverse',model,from_result:origin,...data},()=>{}));
+        intake.replaceChildren(panel);
+      },'small',pending);
+      actions.append(openData);
+    }
     const versions=s.experiment_record.available_versions||[];
     if(versions.length>1){const select=node('select');select.setAttribute('aria-label','选择要恢复的版本');versions.forEach(v=>{const o=node('option',v.id.slice(0,8)+' · '+display(v.goal));o.value=v.id;select.append(o);});select.value=s.id;append(actions,select,button('恢复所选已有版本',()=>mutate('restore_result',{target_id:select.value}),'small',pending));}
-    const exp=node('a','导出完整证据','button small');exp.href='/api/experiments/cases/'+s.id+'/export';exp.download='';append(actions,exp);box.append(actions);
+    const exp=node('a','导出完整证据','button small');exp.href='/api/experiments/cases/'+s.id+'/export';exp.download='';append(actions,exp);append(box,actions,intake);
+    if(versions.length>1){const family=node('a','导出这组实验版本','button small');family.href='/api/experiments/cases/'+s.id+'/family-export';family.download='';actions.append(family);}
     if(s.fact_state){
       const input=node('textarea');input.id='continue-input';input.rows=2;input.setAttribute('aria-label','与AI继续这个实验');input.placeholder='例如：只把容差更正为0.01 mm；或解释当前结果。';
       const approval=consent('允许把本轮公开资料发给真实 AI；新计算仍须核对和批准。');
@@ -750,6 +1364,12 @@
     const p = s.plan, section = card(s.status === 'PLANNED' ? '开始前，核对这份计划' : '这次采用的实验计划');
     section.id = 'plan-review'; section.style.scrollMarginTop = '90px';
     if (p.summary) section.append(node('p',p.summary,'section-note'));
+    if (s.slit_goal) learning.designSummary(section,s.slit_goal,Boolean(s.result));
+    if (!s.result) learning.boundedSummary?.(section,s);
+    if (s.status === 'PLANNED' && ['diffraction','gaussian'].includes(s.domain)) {
+      const diagram = window.photonGuardApparatus?.({domain:s.domain,parameters:s.spec?.known_parameters || {},plan:p,source:'来自待批准的计划'});
+      if (diagram) section.append(diagram.panel);
+    }
     const locks = p.locked_parameters || s.spec?.locked_parameters;
     const lockValues = Array.isArray(locks) ? Object.fromEntries(locks.map(key => [key,s.spec?.known_parameters?.[key] ?? '见规范参数'])) : locks;
     append(section, facts({goal:p.goal || s.spec?.goal,locked_parameters:lockValues,allowed_variables:p.allowed_variables || s.spec?.allowed_variables,resource_budget:p.resource_budget || s.spec?.resource_budget}));
@@ -758,10 +1378,11 @@
     if (candidates.length) { append(section,node('h3','本次有限候选 · ' + candidates.length + ' 个')); const table = node('table'), head = append(node('tr'),node('th','候选'),node('th','实际计算参数')); table.append(append(node('thead'),head)); const tbody = node('tbody'); candidates.forEach(c => tbody.append(append(node('tr'),node('td',c.id),node('td',display(c.parameters || c))))); append(table,tbody); section.append(append(node('div',null,'table-scroll'),table)); }
     append(section,node('p','优选仅限上述实际计算的候选。离散采样点的指标不等同于连续范围认证。','field-note'),detail('查看工具、停止条件与完整计划',p));
     if (s.status === 'PLANNED') {
-      const approval = consent('我已核对资料来源、模型假设、固定条件、候选与计算额度，同意执行这份计划。'); approval.input.dataset.runConsent = 'true';
+      const approval = consent('我已核对资料来源、模型假设、固定条件和计算额度，同意按本计划比较 ' + candidates.length + ' 个候选。'); approval.input.dataset.runConsent = 'true';
       const start = button('确认计划，开始计算',() => mutate('run',{approve:true,plan_sha256:p.sha256}),'primary',true); start.dataset.runButton = 'true';
-      approval.input.disabled = pending || $('case-material')?.value !== s.text;
-      approval.input.addEventListener('change',() => { start.disabled = busy || pending || !approval.input.checked || !p.sha256 || $('case-material')?.value !== s.text; });
+      const savedInput = () => Boolean(s.slit_goal || s.slit_followup || s.learning_comparison || s.bounded_goal) || $('case-material')?.value === s.text;
+      approval.input.disabled = pending || !savedInput();
+      approval.input.addEventListener('change',() => { start.disabled = busy || pending || !approval.input.checked || !p.sha256 || !savedInput(); });
       append(section,approval.wrap,append(node('div',null,'actions'),start));
     }
     if (['COMPLETED','FAILED'].includes(s.status)) host.append(append(node('details'),node('summary','查看已批准的计划、固定条件与全部候选'),section));
@@ -782,6 +1403,8 @@
     if (!compact&&assumptions?.length) append(section,node('h3','这次计算采用什么模型'),list(assumptions));
     if (!compact&&r.summary) section.append(node('p',r.summary));
     if (!compact&&s.plan?.goal) section.append(node('p','本次目标：' + display(s.plan.goal),'section-note'));
+    if (!compact) knowledgeLink(section,s);
+    if (!compact) studyReturn(section,s);
     const winner = candidates.find(c => c.id === r.winner_id);
     if (!compact&&winner) append(section,node('p','有限候选中的优选：' + winner.id,'result-big'),node('p',goalText(winner) + '。结果仅对应这次计划中的模型与已计算候选。','section-note'));
     const table = node('table'); append(table,append(node('thead'),append(node('tr'),node('th','候选 / 引擎'),node('th','目标指标'),node('th','检查与完成状态'),node('th','目标是否达成'))));
@@ -789,6 +1412,7 @@
     const tbody = node('tbody');
     candidates.forEach(c => {
       const row = node('tr',null,c.id === r.winner_id ? 'chosen' : '');
+      row.dataset.candidateId = c.id;
       const metric = c.goal?.value != null ? display(c.goal.value) + (c.goal.unit ? ' ' + display(c.goal.unit) : '') : display(c.metrics);
       const engine = typeof c.engine === 'object' ? (c.engine.name || '记录中的引擎') + (c.engine.version ? ' ' + c.engine.version : '') : c.engine;
       const legacyOrigin = s.domain === 'film' ? 'TMM实际采样' : s.domain === 'gaussian' ? '高斯q参数与ABCD计算' : ['fringe_period_mm','first_zero_mm'].includes(c.goal?.metric) ? '理想几何公式；另有二维场数值校准' : '二维场中心光强与同几何零相位基准之比';
@@ -819,17 +1443,92 @@
     if (!candidates.length) section.append(node('p','当前没有可展示的候选结果，请查看保存的状态与停止原因。','section-note'));
     const visible = candidates.filter(c => c.data?.x?.length || c.data?.image?.values?.length);
     if (visible.length) {
-      const visualHeader = node('div',null,'result-heading'), select = node('select'); select.className = 'chart-select'; select.setAttribute('aria-label','选择要查看的候选曲线'); visible.forEach(c => { const o = node('option',c.id + (c.id === r.winner_id ? ' · 本次优选' : '')); o.value = c.id; select.append(o); }); if (visible.some(c => c.id === r.winner_id)) select.value = r.winner_id;
+      const visualHeader = node('div',null,'result-heading'), select = node('select'); visualHeader.id = 'lesson-result-chart'; select.className = 'chart-select'; select.setAttribute('aria-label','选择要查看的候选曲线'); visible.forEach(c => { const o = node('option',c.id + (c.id === r.winner_id ? ' · 本次优选' : '')); o.value = c.id; select.append(o); }); if (visible.some(c => c.id === r.winner_id)) select.value = r.winner_id;
       const bounds = {x:[Infinity,-Infinity],y:[Infinity,-Infinity]};
       visible.forEach(c => { (c.data.x || []).filter(Number.isFinite).forEach(v => { bounds.x[0] = Math.min(bounds.x[0],v); bounds.x[1] = Math.max(bounds.x[1],v); }); (c.data.series || []).forEach(series => (series.y || []).filter(Number.isFinite).forEach(v => { bounds.y[0] = Math.min(bounds.y[0],v); bounds.y[1] = Math.max(bounds.y[1],v); })); });
-      const plots = node('div',null,'visual'); const show = () => { plots.replaceChildren(); const c = visible.find(item => item.id === select.value); if (c) append(plots,plot(c.data,bounds),heatmap(c.data.image)); }; select.addEventListener('change',show); append(visualHeader,node('h3','查看实际采样'),select); append(section,visualHeader,plots); show();
+      if (visible.some(c => c.id === learningSelection.get(s.id))) select.value = learningSelection.get(s.id);
+      const diffraction = s.domain === 'diffraction';
+      const mode = node('select');
+      mode.setAttribute('aria-label','光强显示方式'); mode.className = 'chart-select';
+      for (const [value, title] of [['physical','共同光强标尺'], ['peak','各自峰值归一化'], ['log','分贝显示']]) {
+        const option = node('option',title); option.value = value; mode.append(option);
+      }
+      mode.value = learningView.get(s.id) || 'physical';
+      const plots = node('div',null,'visual' + (diffraction ? ' learning-canvas' : ''));
+      if (diffraction) plots.id = 'learning-canvas';
+      const apparatusHost = node('div');
+      const lineHost = node('div'), imageHost = node('div');
+      append(plots,lineHost,imageHost);
+      const dimensions = node('p',null,'field-note');
+      const markInfo = node('p',null,'field-note'); markInfo.setAttribute('aria-live','polite');
+      const explorer = node('div');
+      let selected, viewData, previewX = null;
+      let apparatus = null, apparatusMarker = null;
+      function linkMarker(key, text, figureId, label) {
+        apparatusMarker = key; markInfo.textContent = text;
+        setTutorFigure(s,figureId,label);
+        apparatus?.highlight(key,text);
+        for (const marker of lineHost.querySelectorAll('[data-marker-id]')) {
+          const markerKey = marker.dataset.markerId;
+          marker.classList.toggle('apparatus-linked',markerKey === key || key === 'slit_width_um' && markerKey.startsWith('slit_dark_fringe_'));
+        }
+      }
+      function drawLine() {
+        const x1 = selected?.parameters?.aperture === 'single_slit' ? selected.metrics?.first_zero_mm : null;
+        const markers = Number.isFinite(x1) ? [-x1,x1].map((x,i) => ({x,id:i ? 'slit_dark_fringe_right' : 'slit_dark_fringe_left',label:'已保存条件的第一暗纹 ' + display(x) + ' mm',
+          parameter:'slit_width_um',select:()=>linkMarker('slit_width_um','第一暗纹 ' + display(x) + ' mm。距离取绝对值，横向全宽等于两倍该距离。',
+            i ? 'slit_dark_fringe_right' : 'slit_dark_fringe_left',i ? '右侧第一暗纹' : '左侧第一暗纹')})) : [];
+        if (s.domain === 'gaussian') for (const [x,label,key] of [[selected.parameters.screen_distance_mm,'屏幕位置','screen_distance_mm'],[selected.metrics.new_waist_z_mm,'新束腰位置','new_waist_z_mm']]) {
+          if (Number.isFinite(x)) markers.push({x,id:key,label:label + ' ' + display(x) + ' mm',kind:'position',parameter:key,
+            select:()=>linkMarker(key,label + ' ' + display(x) + ' mm，以透镜为坐标原点。',key,label)});
+        }
+        if (previewX !== null) for (const x of [-previewX,previewX]) markers.push({x,preview:true,
+          label:'解析预览第一暗纹 ' + display(x) + ' mm',
+          select:()=>{ setTutorFigure(s); markInfo.textContent = '解析预览暗纹 ' + display(x) + ' mm。批准后可以生成对应的实际 FFT。'; }});
+        const viewBounds = mode.value === 'peak' ? {...bounds,y:[0,1]} : mode.value === 'log'
+          ? {...bounds,y:[-100,Math.max(-99,10 * Math.log10(Math.max(1e-10,bounds.y[1])))]} : bounds;
+        const figure = plot(viewData,viewBounds,markers.map(marker=>({...marker,linked:Boolean(apparatusMarker && marker.parameter === apparatusMarker)})));
+        lineHost.replaceChildren(...[figure,markInfo].filter(Boolean));
+      }
+      function showView() {
+        if (!selected) return;
+        learningView.set(s.id,mode.value);
+        viewData = diffraction ? intensityDisplay(selected.data,mode.value) : selected.data;
+        drawLine();
+        const image = heatmap(viewData.image);
+        imageHost.replaceChildren(...[image].filter(Boolean));
+      }
+      const show = () => {
+        const c = visible.find(item => item.id === select.value);
+        if (!c) return;
+        selected = c; previewX = null; apparatusMarker = null; markInfo.textContent = '';
+        if (c.id !== learningSelection.get(s.id)) setTutorFigure(s);
+        learningSelection.set(s.id,c.id);
+        updateTutorFigure?.();
+        [...tbody.rows].forEach(row => row.classList.toggle('selected-candidate',row.dataset.candidateId===c.id));
+        dimensions.textContent = diffraction ? ['wavelength_nm','focal_length_mm','slit_width_um','slit_height_um']
+          .filter(key=>Number.isFinite(c.parameters?.[key])).map(key=>name(key) + ' ' + display(c.parameters[key])).join(' · ') : '';
+        apparatus = (diffraction || s.domain === 'gaussian') ? window.photonGuardApparatus?.({domain:s.domain,parameters:c.parameters,metrics:c.metrics,
+          plan:{locked_parameters:s.plan?.locked_parameters},source:'已保存候选 ' + c.id,
+          links:[{label:'查看实际曲线',run:()=>revealSection(plots)},{label:'查看执行计划',run:()=>revealSection($('plan-review'))}],
+          onSelect:(key,label)=>{ apparatusMarker = key; setTutorFigure(s,key,label); drawLine(); }}) : null;
+        apparatusHost.replaceChildren(...(apparatus ? [apparatus.panel] : []));
+        showView();
+        explorer.replaceChildren();
+        learning.exploration(explorer,s,c,value=>{ if (previewX !== value) { previewX = value; drawLine(); } });
+      };
+      select.addEventListener('change',show);
+      mode.addEventListener('change',() => { showView(); if (diffraction) setTutorFigure(s,'intensity_scale','光强显示标尺'); });
+      append(visualHeader,node('h3','查看实际采样'),append(node('div',null,'chart-choices'),select,diffraction?mode:null));
+      plots.setAttribute('data-actual-result-plot','');
+      append(section,visualHeader,dimensions,apparatusHost,plots,explorer); show();
     }
     if(compact){const evidence=append(node('details'),node('summary','全部候选、检查与模型限制'),candidateTable);if(visible.length>1)renderOverlay(evidence,visible,r.winner_id);append(evidence,list([...(assumptions||[]),...(r.limitations||[])]));section.append(evidence);}
     else {if (visible.length > 1) renderOverlay(section,visible,r.winner_id);if (r.limitations?.length) append(section,node('h3','这些结果的适用范围'),list(r.limitations));}
     if (r.resources) append(section,detail('查看实际计算资源与候选记录',{resources:r.resources,ranking:r.ranking,candidates:candidates.map(({data,...c}) => c)}));
     const exportLink = node('a','导出本次记录与可重跑配置','button'); exportLink.href = '/api/experiments/cases/' + encodeURIComponent(s.id) + '/export'; exportLink.setAttribute('download','');
     const tableLink = node('a','下载候选数据表','button');tableLink.href = '/api/experiments/cases/' + encodeURIComponent(s.id) + '/table';tableLink.download = 'PhotonGuard-'+s.id+'-candidates.csv';
-    section.append(append(node('div',null,'actions'),exportLink,tableLink));section.append(node('p','完整记录包含候选表、实际采样曲线表和重跑配置；可直接用表格软件读取 CSV。','field-note'));host.append(section);
+    section.append(append(node('div',null,'actions'),exportLink,tableLink,s.status==='COMPLETED'?learning.summaryLink(s):null));section.append(node('p','完整记录包含候选表、实际采样曲线表和重跑配置，可用表格软件读取 CSV。','field-note'));host.append(section);
     if(compact)return;
     const explanation = card('读懂结果');
     if (s.explanation) append(explanation,node('p',s.explanation.text || display(s.explanation)),node('p','AI 解释请与上面的候选、目标指标和检查结果对照。','field-note'),detail('解释与实际记录的关联',s.explanation));
@@ -858,7 +1557,7 @@
     append(section,node('p','保留物理参数、候选目录和计算额度，只调整评价指标与目标。设置后另存新计划，核对再运行。','section-note'));
     const metric = node('select'),operator = node('select');
     metric.id = 'goal-metric';operator.id = 'goal-operator';
-    (boot.metrics?.[s.domain] || [old.metric]).filter(m=>!(s.spec.known_parameters.aperture === 'single_slit' && m === 'fringe_period_mm')).forEach(m=>{const o=node('option',name(m));o.value=m;metric.append(o);});metric.value=old.metric;
+    (boot.metrics?.[s.domain] || [old.metric]).filter(m=>!(s.spec.known_parameters.aperture === 'single_slit' && m === 'fringe_period_mm')&&(s.spec.known_parameters.aperture === 'single_slit'||m!=='central_zero_to_zero_width_mm')).forEach(m=>{const o=node('option',name(m));o.value=m;metric.append(o);});metric.value=old.metric;
     [['<=','不超过'],['>=','至少'],['near','接近指定值'],['minimize','在候选中取最小值'],['maximize','在候选中取最大值']].forEach(([value,label])=>{const o=node('option',label);o.value=value;operator.append(o);});operator.value=old.operator;
     const target=node('input'),tolerance=node('input'),wavelength=node('input');
     target.id='goal-target';tolerance.id='goal-tolerance';wavelength.id='goal-wavelength';
@@ -899,17 +1598,59 @@
     seriesChoice.addEventListener('change',show);append(section,node('p','最多同时显示6个候选，使用各自实际采样坐标和共同坐标轴。','field-note'),seriesChoice,controls,charts);host.append(section);show();
   }
   function svgNode(tag, attrs = {}, text) { const e = document.createElementNS('http://www.w3.org/2000/svg',tag); Object.entries(attrs).forEach(([k,v]) => e.setAttribute(k,String(v))); if (text != null) e.textContent = String(text); return e; }
-  function plot(data,bounds) {
+  function intensityDisplay(data, mode) {
+    if (mode === 'physical') return data;
+    const peak = values => values.reduce((top,value) => Number.isFinite(value) ? Math.max(top,value) : top,0);
+    const scaled = (value,maximum) => mode === 'peak' ? (maximum ? value/maximum : 0)
+      : 10*Math.log10(Math.max(1e-10,value));
+    const series = (data.series || []).map(item => {
+      const maximum = peak(item.y);
+      return {...item,y:item.y.map(value=>scaled(value,maximum))};
+    });
+    const label = mode === 'peak' ? '光强 / 各自峰值' : '相对入射光强（dB）';
+    let image = data.image;
+    if (image?.values?.length) {
+      const maximum = image.values.reduce((top,row)=>Math.max(top,peak(row)),0);
+      image = {...image,values:image.values.map(row=>row.map(value=>scaled(value,maximum))),
+        vmin:mode === 'peak' ? 0 : -100,
+        vmax:mode === 'peak' ? 1 : Math.max(-99,scaled(image.vmax ?? maximum,maximum)),
+        normalization_label:mode === 'peak' ? '各图按自身峰值归一化。' : '共同入射光强基准 · −100 dB 显示下限。'};
+    }
+    return {...data,series,y_label:label,image};
+  }
+  function plot(data,bounds,markers=[]) {
     if (!Array.isArray(data?.x) || !Array.isArray(data.series)) return null;
     const x = data.x, series = data.series.filter(s => Array.isArray(s.y) && s.y.length === (s.x || x).length), finiteX = x.filter(Number.isFinite), finiteY = series.flatMap(s => s.y.filter(Number.isFinite)); if (finiteX.length < 1 || !finiteY.length) return node('p','这份记录没有可绘制的有效曲线。','field-note');
     let loX = bounds?.x.every(Number.isFinite) ? bounds.x[0] : Math.min(...finiteX), hiX = bounds?.x.every(Number.isFinite) ? bounds.x[1] : Math.max(...finiteX), loY = bounds?.y.every(Number.isFinite) ? bounds.y[0] : Math.min(...finiteY), hiY = bounds?.y.every(Number.isFinite) ? bounds.y[1] : Math.max(...finiteY); if (loX === hiX) hiX = loX+1; if (loY === hiY) { loY -= Math.max(1,Math.abs(loY))*.05; hiY += Math.max(1,Math.abs(hiY))*.05; }
-    const width = 740,height = 330,left = 71,right = 22,top = 19,bottom = 66,pw = width-left-right,ph = height-top-bottom,tx = v => left+(v-loX)/(hiX-loX)*pw,ty = v => top+(hiY-v)/(hiY-loY)*ph;
-    const wrap = node('div'), svg = svgNode('svg',{viewBox:`0 0 ${width} ${height}`,class:'plot',role:'img','aria-label':(data.x_label || '采样坐标') + '与' + (data.y_label || '计算值') + '的实际采样曲线'}); svg.append(svgNode('title',{},'实际候选采样曲线；连线仅用于阅读，不新增计算点'));
-    for (let i=0;i<=4;i++) { const xv = loX+(hiX-loX)*i/4,yv = loY+(hiY-loY)*i/4; svg.append(svgNode('line',{x1:left,x2:width-right,y1:ty(yv),y2:ty(yv),class:'grid'}),svgNode('text',{x:left-9,y:ty(yv)+4,'text-anchor':'end'},Number(yv.toPrecision(4))),svgNode('text',{x:tx(xv),y:height-bottom+23,'text-anchor':'middle'},Number(xv.toPrecision(4)))); }
-    svg.append(svgNode('line',{x1:left,x2:width-right,y1:height-bottom,y2:height-bottom,class:'axis'}),svgNode('line',{x1:left,x2:left,y1:top,y2:height-bottom,class:'axis'}),svgNode('text',{x:left+pw/2,y:height-12,'text-anchor':'middle'},display(data.x_label || '采样坐标（单位见记录）')),svgNode('text',{x:17,y:top+ph/2,transform:`rotate(-90 17 ${top+ph/2})`,'text-anchor':'middle'},display(data.y_label || '计算值（单位见记录）')));
+    const yTicks = Array.from({length:5},(_,i)=>loY+(hiY-loY)*i/4);
+    const yLabels = yTicks.map(value=>String(Number(value.toPrecision(4))));
+    const width = data.comparison_view ? 1120 : 740,height = data.comparison_view ? 250 : 330,left = Math.max(71,36+7*Math.max(...yLabels.map(label=>label.length))),right = 22,top = 19,bottom = 66;
+    const pw = width-left-right,ph = height-top-bottom,tx = v => left+(v-loX)/(hiX-loX)*pw,ty = v => top+(hiY-v)/(hiY-loY)*ph;
+    const origin = data.analytic_reference ? '解析示意曲线' : '实际采样曲线';
+    const wrap = node('div'), svg = svgNode('svg',{viewBox:`0 0 ${width} ${height}`,class:'plot',role:markers.some(item=>item.select)?'group':'img','aria-label':(data.x_label || '采样坐标') + '与' + (data.y_label || '计算值') + '的' + origin}); svg.append(svgNode('title',{},origin));
+    yTicks.forEach((yv,i)=>{const xv = loX+(hiX-loX)*i/4; svg.append(svgNode('line',{x1:left,x2:width-right,y1:ty(yv),y2:ty(yv),class:'grid'}),svgNode('text',{x:left-9,y:ty(yv)+4,'text-anchor':'end',class:'plot-y-tick'},yLabels[i]),svgNode('text',{x:tx(xv),y:height-bottom+23,'text-anchor':'middle'},Number(xv.toPrecision(4))));});
+    svg.append(svgNode('line',{x1:left,x2:width-right,y1:height-bottom,y2:height-bottom,class:'axis'}),svgNode('line',{x1:left,x2:left,y1:top,y2:height-bottom,class:'axis'}),svgNode('text',{x:left+pw/2,y:height-12,'text-anchor':'middle'},display(data.x_label || '采样坐标（单位见记录）')),svgNode('text',{x:17,y:top+ph/2,transform:`rotate(-90 17 ${top+ph/2})`,'text-anchor':'middle',class:'plot-y-label'},display(data.y_label || '计算值（单位见记录）')));
     const legend = node('div',null,'plot-legend'), colors = ['#116b61','#d27832','#7162b5','#297eb0','#a84258'];
     series.forEach((s,i) => { const sx=s.x || x;let d = '',active = false; for (let j=0;j<sx.length;j++) { if (!Number.isFinite(sx[j]) || !Number.isFinite(s.y[j])) {active = false;continue;} d += (active?'L':'M')+tx(sx[j]).toFixed(3)+','+ty(s.y[j]).toFixed(3);active = true; } const color = colors[i%colors.length]; if(s.points){sx.forEach((value,j)=>{if(Number.isFinite(value)&&Number.isFinite(s.y[j]))svg.append(svgNode('circle',{cx:tx(value),cy:ty(s.y[j]),r:2,fill:color}));});}else svg.append(svgNode('path',{d,fill:'none',stroke:color,'stroke-width':2})); const item = node('span'), swatch = node('span',null,'legend-swatch'); swatch.style.background = color; item.append(swatch,node('span',display(s.label || '曲线 '+(i+1)))); legend.append(item); });
-    append(wrap,svg,legend,node('p','本批候选共用曲线坐标范围。连线仅连接实际采样点，不代表额外的求解或连续范围证明。','field-note')); return wrap;
+    for (const item of markers) {
+      const mark = typeof item === 'number' ? {x:item,label:'解析第一暗纹 ' + display(item) + ' mm'} : item;
+      if (mark.x < loX || mark.x > hiX) continue;
+      const attrs = {x1:tx(mark.x),x2:tx(mark.x),y1:top,y2:height-bottom};
+      const group = svgNode('g',mark.select ? {tabindex:0,role:'button','aria-label':mark.label,class:'chart-marker'} : {});
+      if (mark.id) group.dataset.markerId = mark.id;
+      if (mark.linked) group.classList.add('apparatus-linked');
+      group.append(svgNode('title',{},mark.label),svgNode('line',{...attrs,class:'analytic-dark-fringe' + (mark.preview ? ' preview-fringe' : '')}));
+      if (mark.select) {
+        group.append(svgNode('rect',{x:attrs.x1-8,y:top,width:16,height:ph,class:'chart-marker-hit'}));
+        group.addEventListener('click',mark.select);
+        group.addEventListener('keydown',event=>{ if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); mark.select(); } });
+      }
+      svg.append(group);
+    }
+    const markerNote = markers.length && !data.analytic_reference && !markers.every(item=>item.kind==='position') ? node('p',markers.some(item=>item.preview)
+      ? '紫色虚线对应已保存条件，橙色虚线对应解析预览。'
+      : '虚线标记解析第一暗纹，中央全宽为两条虚线间距。','field-note') : null;
+    append(wrap,svg,legend,markerNote,node('p',data.analytic_reference?'理想模型的归一化解析示意。':'连线连接保存的采样点。','field-note')); return wrap;
   }
   function heatmap(data) {
     if (!Array.isArray(data?.values) || !data.values.length || !Array.isArray(data.values[0])) return null;
@@ -924,16 +1665,43 @@
     if (data.x?.length || data.y?.length) append(wrap,node('p',display(data.x_label || '横坐标') + '：' + display(data.x?.[0]) + ' ～ ' + display(data.x?.[data.x.length-1]) + '；' + display(data.y_label || '纵坐标') + '：' + display(data.y?.[0]) + ' ～ ' + display(data.y?.[data.y.length-1]),'field-note'));
     return wrap;
   }
-  function schedulePoll(id) { clearTimeout(pollTimer); pollTimer = setTimeout(async () => { if (busy || current?.id !== id || current.status !== 'RUNNING') return; const turn = navigation; try { const s = await api('/cases/' + encodeURIComponent(id)); if (current?.id !== id || navigation !== turn) return; current = s; cacheCase(s); render(); } catch (e) { if (current?.id === id) { message('error',e.message); schedulePoll(id); } } },2500); }
-  function render() { clearTimeout(pollTimer); $('content').replaceChildren(); sidebar(); if (current) renderCase(); else renderHome(); }
+  function schedulePoll(id) {
+    clearTimeout(pollTimer);
+    pollTimer = setTimeout(async () => {
+      if (current?.id !== id || current.status !== 'RUNNING') return;
+      if (busy) { schedulePoll(id); return; }
+      const turn = navigation;
+      try {
+        const s = await api('/cases/' + encodeURIComponent(id));
+        if (current?.id !== id || navigation !== turn) return;
+        message('error',''); current = s; cacheCase(s); render();
+      } catch (e) {
+        if (current?.id === id && navigation === turn) {
+          message('error','暂时无法读取运行进度。恢复连接后会继续读取。');
+          schedulePoll(id);
+        }
+      }
+    },2500);
+  }
+  function render() { clearTimeout(pollTimer); $('content').replaceChildren(); sidebar(); if (current) renderCase(); else renderHome(); syncTutor(); }
   async function init() {
     $('new-case').addEventListener('click',home);
     $('ai-settings').onclick = openAI;
-    try { boot = await api('/bootstrap'); boot.cases = boot.cases || []; boot.templates = boot.templates || []; boot.tools = boot.tools || []; $('ai-status').textContent = boot.ai?.live_enabled ? 'AI 已连接' : boot.capabilities?.local_workers ? 'AI 未连接 · 可本地计算' : '可查看记录 · 计算未启用'; $('ai-status').className = 'badge' + (boot.ai?.live_enabled ? ' ok' : ''); const id = new URLSearchParams(location.hash.slice(1)).get('case'); if (id) await select(id); else render(); }
+    $('toggle-tutor').onclick = () => showTutor($('tutor-sidebar').hidden);
+    $('close-tutor').onclick = () => showTutor(false);
+    $('tutor-sidebar').onkeydown = event => { if (event.key === 'Escape') showTutor(false); };
+    try { boot = await api('/bootstrap'); boot.cases = boot.cases || []; boot.templates = boot.templates || []; boot.tools = boot.tools || []; $('ai-status').textContent = boot.ai?.live_enabled ? 'AI 已连接' : boot.capabilities?.local_workers ? 'AI 未连接 · 可本地计算' : '可查看记录 · 计算未启用'; $('ai-status').className = 'badge' + (boot.ai?.live_enabled ? ' ok' : ''); const id = new URLSearchParams(location.hash.slice(1)).get('case'); if (id) await select(id); else {render();showLinkedExample();} }
     catch (e) { message('error',e.message); $('ai-status').textContent = '服务暂不可用'; $('content').replaceChildren(node('p','连接恢复后可重新读取。已有记录不会因为本页连接失败而丢失。','section-note'),button('重新连接',init)); }
-    if (boot) aiBadge();
+    if (boot) { aiBadge(); $('toggle-tutor').disabled = false; }
   }
   window.addEventListener('beforeunload',event => { const field = $('case-material'), revise = $('revision-material'); if (busy || field && field.value !== current?.text || revise?.value.trim()) { event.preventDefault(); event.returnValue = ''; } });
-  window.addEventListener('hashchange',() => { if (!boot || busy) return; const id = new URLSearchParams(location.hash.slice(1)).get('case'); if (id && id !== current?.id) select(id); else if (!id) home(); });
+  window.addEventListener('hashchange',() => {
+    if (!boot || busy) return;
+    const id = new URLSearchParams(location.hash.slice(1)).get('case');
+    if(id){if(id!==current?.id)select(id);return;}
+    if(location.hash.startsWith('#library=') || location.hash.startsWith('#inverse-import') || location.hash.startsWith('#slit-goal&')){
+      navigation++;current=null;render();showLinkedExample();
+    }else home();
+  });
   init();
 })();

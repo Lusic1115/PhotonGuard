@@ -2,6 +2,7 @@ import copy
 import numpy as np
 import pytest
 from test_inverse_journeys import store,act,planned,wait
+from photonguard.workflow import WorkflowError
 from photonguard.experiments import film_inverse as f,inverse_models as m,inverse_profiles as engine,observation_group as ow
 
 def group(thickness=263.,wavelengths=(633.,)):
@@ -35,9 +36,52 @@ def test_frozen_teaching_full_store_journey(store,monkeypatch):
     monkeypatch.setattr('secrets.randbits',lambda bits:0)
     s=ow.create(store,{'model':m.FILM,'teaching':True});s=planned(store,s);s=wait(store,act(store,s,'inverse_run',approve=True,plan_sha256=s['inverse_plan']['sha256']))
     assert s['status']=='COMPLETED' and len(s['inverse_result']['modes'])>1
-    s=act(store,s,'inverse_measurement_plan',constraints={'wavelengths_nm':[500.,550.,650.,750.,850.]});p=s['measurement_plan'];s=act(store,s,'inverse_append',approve=True,teaching=True,proposal_id=p['recommended_id'],proposal_sha256=p['sha256']);s=planned(store,s);s=wait(store,act(store,s,'inverse_run',approve=True,plan_sha256=s['inverse_plan']['sha256']))
+    prior=s['inverse_result']
+    s=act(store,s,'inverse_measurement_plan',constraints={'wavelengths_nm':[500.,550.,650.,750.,850.]})
+    old=s['measurement_plan']
+    s=act(store,s,'inverse_task_prepare',proposal_id=old['recommended_id'])
+    old_task=s['task_plan']
+    with pytest.raises(WorkflowError,match='明确更正'):
+        act(store,s,'inverse_measurement_plan',constraints={'wavelengths_nm':[550.,750.]})
+    s=act(store,s,'inverse_measurement_plan',constraints={'wavelengths_nm':[550.,750.]},confirm_catalog_change=True)
+    assert s['measurement_history'][-1]==old and s['task_plan_history'][-1]==old_task
+    with pytest.raises(WorkflowError,match='旧批准'):
+        act(store,s,'inverse_task_run',approve=True,plan_sha256=old_task['sha256'])
+    with pytest.raises(WorkflowError,match='方案已经变化'):
+        act(store,s,'inverse_append',approve=True,teaching=True,proposal_id=old['recommended_id'],proposal_sha256=old['sha256'])
+    p=s['measurement_plan']
+    assert {q['wavelengths_nm'][0] for q in p['plans']}=={550.,750.}
+    s=act(store,s,'inverse_append',approve=True,teaching=True,proposal_id=p['recommended_id'],proposal_sha256=p['sha256'])
+    s=planned(store,s);s=wait(store,act(store,s,'inverse_run',approve=True,plan_sha256=s['inverse_plan']['sha256']))
     assert s['status']=='COMPLETED' and len(s['groups'])==2 and s['inverse_result']['resources']['tmm_evaluations']>0
+    impact=s['inverse_result']['observation_impact']
+    assert impact['source']['fit_result_id']==prior['id']
+    assert impact['prior_mode_count']==len(prior['modes']) and impact['joint_mode_count']==len(s['inverse_result']['modes'])
+    assert impact['points'][0]['reflectance']==s['groups'][1]['dataset']['reflectance'][0]
+    assert impact['points'][0]['source_kind']=='SYNTHETIC_TEACHING'
+    assert impact['tmm_evaluations']==len(prior['modes'])
+    assert len({q['predicted_reflectance'][0] for q in impact['prior_modes']})>1
+    assert any(q['status']=='MATCHED_JOINT_INTERVAL' for q in impact['prior_modes'])
     ow.verify(store,s);assert store.get(s['inverse_root'])['inverse_ledger']['fit_runs_reserved']==2
+
+
+@pytest.mark.parametrize('offset, mismatch',[(.000001,False),(.5,True)])
+def test_repeated_wavelength_preserves_ambiguity_or_surfaces_mismatch(offset,mismatch):
+    groups,cfg=group()
+    prior=f.run(f.plan(groups,cfg))
+    first=groups[0]['dataset']['reflectance'][0]
+    raw=f'wavelength_nm,reflectance_calibrated\n633,{first+offset}\n'
+    dataset=f.parse_csv(raw,source_kind='SYNTHETIC_TEACHING',source_name='independent repeat')
+    second=ow.group_entry(dataset,cfg,'scan-1.csv');second['approved']=True
+    comparison={'record_id':'a'*32,'fit_result_id':prior['id'],'group_count':1,
+                'modes':[{'thickness_nm':r['parameters']['thickness_nm'],
+                          'interval_nm':r.get('interval',[r['parameters']['thickness_nm']]*2)} for r in prior['modes']]}
+    joint=f.run(f.plan(groups+[second],cfg,comparison))
+    evidence=joint['observation_impact']
+    assert evidence['same_wavelength_only'] and evidence['possible_mismatch'] is mismatch
+    if not mismatch:
+        assert evidence['prior_mode_count']==evidence['joint_mode_count']>1
+    assert evidence['points'][0]['reflectance']==pytest.approx(first+offset)
 
 def test_teaching_reflectance_out_of_range_is_rejected_without_clipping(tmp_path,monkeypatch):
     import json

@@ -1,0 +1,43 @@
+{
+  "search": [
+    ["束腰", ["gaussian-waist"]],
+    ["什么是 Beam waist", ["gaussian-waist"]],
+    ["偏振", ["polarization"]],
+    ["像差", ["optical-aberrations"]],
+    ["组速度", ["group-velocity"]],
+    ["什么是腔内一个共振峰的半高全宽", ["cavity-linewidth"]],
+    ["光纤的数值孔径", ["fiber-numerical-aperture"]],
+    ["照进光纤的角度太大为什么传不进去", ["fiber-acceptance-angle"]],
+    ["法布里–珀罗腔精细度", ["fabry-perot","cavity-finesse"]],
+    ["阿贝成像与空间滤波", ["abbe-imaging","spatial-filtering"]],
+    ["二次谐波和准相位匹配", ["second-harmonic","quasi-phase-matching"]],
+    ["偏振片与半波片有啥区别", ["linear-polarizer","half-waveplate"]],
+    ["为什么光在镜头内不同颜色聚焦在不同地方", ["chromatic-aberration"]],
+    ["OTF 和 MTF 有什么区别", ["optical-transfer-function","mtf"]],
+    ["4f", ["four-f-system"]],
+    ["SPDC", ["spdc"]],
+    ["F数", ["numerical-f-number"]],
+    ["暗电流和响应度", ["detector-dark-current","photodiode-responsivity"]],
+    ["V-number", ["fiber-v-number"]],
+    ["光栅能区分多接近的两条谱线", ["grating-resolving-power"]],
+    ["为什么屏幕的半径不是束腰", ["gaussian-waist","gaussian-waist-screen"]],
+    ["球差和彗差", ["spherical-aberration","coma"]],
+    ["群折射率和有效折射率", ["group-index","effective-index"]],
+    ["周期极化铌酸锂", ["periodic-poling"]]
+  ],
+  "lessons": [
+    ["阿贝成像和空间滤波怎么联系？想先看傅里叶面。", ["abbe-imaging","spatial-filtering","fourier-plane"]],
+    ["偏振片、半波片和四分之一波片有什么区别？", ["linear-polarizer","half-waveplate","quarter-waveplate"]],
+    ["谐振腔纵模、增益带宽和腔共振线宽分别决定什么？", ["laser-longitudinal-modes","gain-bandwidth","cavity-linewidth"]],
+    ["有效折射率和群折射率为何不同？", ["effective-index","group-index"]],
+    ["二次谐波怎样衔接相位失配和准相位匹配？", ["second-harmonic","phase-mismatch","quasi-phase-matching"]],
+    ["光纤接受角、光纤数值孔径和 V 数各管什么？", ["fiber-acceptance-angle","fiber-numerical-aperture","fiber-v-number"]],
+    ["用点扩散函数怎样理解 OTF 与 MTF 的关系？", ["psf","optical-transfer-function","mtf"]],
+    ["群速度色散怎样引起啁啾？", ["group-velocity-dispersion","pulse-chirp"]],
+    ["球差、色差和彗差是怎么区分的？", ["spherical-aberration","chromatic-aberration","coma"]],
+    ["迈克耳孙干涉仪如何通过可见度观察时间相干性？", ["michelson-interferometer","fringe-visibility","temporal-coherence"]],
+    ["偏振可用琼斯矢量和斯托克斯参量怎样区分？", ["polarization","jones-vector","stokes-parameters"]],
+    ["光纤 LP 模式和归一化频率有何关系？", ["fiber-lp-modes","fiber-v-number"]]
+  ],
+  "unsupported": ["番茄炒蛋怎么做", "天气预报今天会下雨吗", "自适应光学中的 Shack–Hartmann 波前重构", "请计算拓扑边缘态的 Chern 数"]
+}

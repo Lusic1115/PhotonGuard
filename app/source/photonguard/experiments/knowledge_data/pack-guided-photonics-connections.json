@@ -1,0 +1,1875 @@
+{
+  "id": "guided-photonics-connections",
+  "version": "1.0.1",
+  "sources": {
+    "slab-field": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=134",
+      "section": "§2.7.1，平面波导芯与包层的横向方程，阅读器第 134 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "slab-confinement": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=141",
+      "section": "§2.7.1，模场在芯中的约束因子，阅读器第 141 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "slab-matching": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=136",
+      "section": "§2.7.1，界面匹配与偶奇模式，阅读器第 136 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "wave-k": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=22",
+      "section": "§2.1.2，横向电磁波与色散关系，阅读器第 22 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "guide-coupled-modes": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=146",
+      "section": "§2.7.4，耦合模方程与功率守恒，阅读器第 146 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "guide-power-exchange": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=147",
+      "section": "§2.7.4，双波导振幅和功率交换，阅读器第 147 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "guide-coupler-app": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=149",
+      "section": "§2.7.4–5，等分耦合与失配控制，阅读器第 149 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "guide-mismatch-response": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=150",
+      "section": "§2.7.5，功率转移随失配变化，阅读器第 150 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "guided-input": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=143",
+      "section": "§2.7.3，端面耦合和入射场匹配，阅读器第 143 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "guided-grating": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=144",
+      "section": "§2.7.3，光栅耦合的相位条件，阅读器第 144 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "complex-matrix": {
+      "title": "Complex Matrices and Fast Fourier Transform",
+      "author": "Gilbert Strang / MIT",
+      "edition": "MIT 18.06SC Fall 2011",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:950e648a762b0acfc5a23a478dd0de1334b2ed5e3eaabc0763b4859f464b29f0",
+      "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/53f17d47bf99d26fdc472b3177c256a8_MIT18_06SCF11_Ses3.2sum.pdf#page=2",
+      "section": "厄米矩阵、酉矩阵和本征向量，阅读器第 2 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "mzi-complex": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=80",
+      "section": "§2.3，Mach–Zehnder 的场相位与合束，阅读器第 80 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "group-expansion": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=33",
+      "section": "§2.1，传播常数关于载频的 Taylor 展开，阅读器第 33 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "guide-ring-ports": {
+      "title": "Silicon microring resonators",
+      "author": "Wim Bogaerts 等",
+      "edition": "Laser & Photonics Reviews 6(1), 2012 · DOI 10.1002/lpor.201100017",
+      "license": "Wiley-VCH 版权",
+      "fingerprint": "sha256:d43880ff9efe2a17308865b1dae668afa13a682c4544937af8fc43df637eac27",
+      "url": "https://www.photonics.intec.ugent.be/download/pub_3105.pdf#page=2",
+      "section": "§2.1，单总线微环的传递函数，阅读器第 2 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "guide-ring-phase": {
+      "title": "Silicon microring resonators",
+      "author": "Wim Bogaerts 等",
+      "edition": "Laser & Photonics Reviews 6(1), 2012 · DOI 10.1002/lpor.201100017",
+      "license": "Wiley-VCH 版权",
+      "fingerprint": "sha256:d43880ff9efe2a17308865b1dae668afa13a682c4544937af8fc43df637eac27",
+      "url": "https://www.photonics.intec.ugent.be/download/pub_3105.pdf#page=3",
+      "section": "§2.1，单总线微环的相位与功率响应，阅读器第 3 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "guide-ring-drop": {
+      "title": "Silicon microring resonators",
+      "author": "Wim Bogaerts 等",
+      "edition": "Laser & Photonics Reviews 6(1), 2012 · DOI 10.1002/lpor.201100017",
+      "license": "Wiley-VCH 版权",
+      "fingerprint": "sha256:d43880ff9efe2a17308865b1dae668afa13a682c4544937af8fc43df637eac27",
+      "url": "https://www.photonics.intec.ugent.be/download/pub_3105.pdf#page=5",
+      "section": "§2.2，加下载微环与输出端口，阅读器第 5 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "port-losslessness": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=77",
+      "section": "§2.3，散射矩阵的无损约束，阅读器第 77 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "em-average-poynting": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=37",
+      "section": "§2.7.2，周期平均 Poynting 矢量，阅读器第 37 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "guide-fiber-modes": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=155",
+      "section": "§2.7.6，圆形光纤的横向模式，阅读器第 155 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "ring-backscatter": {
+      "title": "Silicon microring resonators",
+      "author": "Wim Bogaerts 等",
+      "edition": "Laser & Photonics Reviews 6(1), 2012 · DOI 10.1002/lpor.201100017",
+      "license": "Wiley-VCH 版权",
+      "fingerprint": "sha256:d43880ff9efe2a17308865b1dae668afa13a682c4544937af8fc43df637eac27",
+      "url": "https://www.photonics.intec.ugent.be/download/pub_3105.pdf#page=7",
+      "section": "§2.4，反向散射与简并行波耦合，阅读器第 7 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "guided-port-scattering": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=76",
+      "section": "§2.3，入射、出射场及散射矩阵，阅读器第 76 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    }
+  },
+  "entries": [
+    {
+      "id": "guided-slab-index-bound-derive",
+      "title": "从横向波数推导导模的折射率范围",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "slab index bound",
+        "导模有效折射率上下界"
+      ],
+      "definition": "普通高折射率芯层的束缚模同时要求芯内横向振荡、包层内衰减。",
+      "body": "把总波数分成纵向 β 与横向分量。芯内需要 n_core²k₀²−β²>0，而包层外侧若要指数衰减，需要 β²−n_clad²k₀²>0。共同得到有效折射率的开区间，具体值还需边界匹配。",
+      "example": "芯折射率 1.60、包层 1.45，若算得有效折射率 1.42，应检查是否进入辐射态。",
+      "caution": "这一范围针对普通无损均匀介质阶跃导引，其他导引机制另论。",
+      "conditions": [
+        "对称平板、非磁、正向 β、无损。"
+      ],
+      "formula": "n_clad<β/k₀<n_core",
+      "variables": "k₀=2π/λ₀。",
+      "prerequisites": [
+        "waveguide-propagation-constant"
+      ],
+      "related": [],
+      "sources": [
+        "slab-field"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "n_clad<β/k₀<n_core",
+          "sources": [
+            "slab-field"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "芯折射率 1.60、包层 1.45，若算得有效折射率 1.42，应检查是否进入辐射态。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-slab-cladding-tail",
+      "title": "由有效折射率估算包层场尾",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "guided mode decay length",
+        "包层穿透深度"
+      ],
+      "definition": "包层中指数衰减的横向场可用有效折射率与包层折射率之差估算。",
+      "body": "给定 β 后，包层横向波数为虚数。选择向外衰减的支，场的 1/e 长度是衰减常数的倒数。模式接近包层光线时，差值变小、场尾变长，因此芯内功率占比可能下降。",
+      "example": "比较同波长的两个模，较低 n_eff 若更靠近 n_clad，则包层衰减较慢。",
+      "caution": "功率密度衰减指数约为场幅的两倍；芯内占比仍需积分。",
+      "conditions": [
+        "均匀半无限包层，束缚模，横向无吸收。"
+      ],
+      "formula": "κ=k₀√(n_eff²−n_clad²)",
+      "variables": "κ 单位 m⁻¹。",
+      "prerequisites": [
+        "guided-slab-index-bound-derive"
+      ],
+      "related": [],
+      "sources": [
+        "slab-field",
+        "slab-confinement"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "κ=k₀√(n_eff²−n_clad²)",
+          "sources": [
+            "slab-field",
+            "slab-confinement"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较同波长的两个模，较低 n_eff 若更靠近 n_clad，则包层衰减较慢。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-slab-te-even-boundary",
+      "title": "对称平板的 TE 偶模匹配条件",
+      "topic": "guided",
+      "level": "advanced",
+      "terms": [
+        "even TE slab dispersion",
+        "平板偶模本征方程"
+      ],
+      "definition": "平板 TE 偶模的芯内余弦形与包层指数形必须同时满足界面场及导数连续。",
+      "body": "取半厚度 a，芯内场为 C cos(hx)，外侧为匹配界面幅值的衰减指数。在 x=a 把导数除以场，芯侧是 −h tan(ha)，包层侧是 −κ，两者相等给模方程。再用 h²+κ²=k₀²(n_core²−n_clad²) 消去一个变量。",
+      "example": "给定材料和厚度后，可在不跨越正切极点的区间寻找各偶模根。",
+      "caution": "TM 模的边界权重不同，不能直接使用这一 TE 式。",
+      "conditions": [
+        "对称、非磁、无损、TE，芯中心 x=0。"
+      ],
+      "formula": "h tan(ha)=κ",
+      "variables": "h 和 κ 为横向波数，a 为芯半厚。",
+      "prerequisites": [
+        "guided-slab-cladding-tail"
+      ],
+      "related": [],
+      "sources": [
+        "slab-field",
+        "slab-matching"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "h tan(ha)=κ",
+          "sources": [
+            "slab-field",
+            "slab-matching"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "给定材料和厚度后，可在不跨越正切极点的区间寻找各偶模根。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-slab-te-odd-boundary",
+      "title": "对称平板的 TE 奇模匹配条件",
+      "topic": "guided",
+      "level": "advanced",
+      "terms": [
+        "odd TE slab dispersion",
+        "平板奇模本征方程"
+      ],
+      "definition": "平板 TE 奇模在芯中心场为零，芯内采用正弦形与包层指数匹配。",
+      "body": "界面上芯侧的对数导数为 h cot(ha)，包层侧为 −κ。相等后得到奇模条件。相同材料和厚度下，偶模和奇模的方程分支不同，给出各自的允许传播常数。",
+      "example": "理想中心对称入射场若为偶函数，和奇模的标量重叠会相消。",
+      "caution": "奇偶分类来自截面反射对称，非对称包层中不能直接沿用。",
+      "conditions": [
+        "对称、非磁、无损、TE，芯中心 x=0。"
+      ],
+      "formula": "−h cot(ha)=κ",
+      "variables": "h 和 κ 单位 m⁻¹。",
+      "prerequisites": [
+        "guided-slab-te-even-boundary"
+      ],
+      "related": [],
+      "sources": [
+        "slab-field",
+        "slab-matching"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "−h cot(ha)=κ",
+          "sources": [
+            "slab-field",
+            "slab-matching"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "理想中心对称入射场若为偶函数，和奇模的标量重叠会相消。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-index-phase-length",
+      "title": "有效折射率误差转成相位差",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "effective index phase tolerance",
+        "相位误差长度"
+      ],
+      "definition": "相同真空波长下，模有效折射率的变化会让传播相位按长度积累。",
+      "body": "将 β=k₀n_eff 代入相位 βL，两段等长波导的相差为 k₀LΔn_eff。设计干涉器时相位按弧度比较；评估脉冲的时延时另求 β 的频率导数。",
+      "example": "λ₀=1550 nm、L=1 mm、Δn_eff=10⁻⁴ 时，额外相差约 0.405 rad。",
+      "caution": "若两路长度也变，应该直接比较各自 βL。",
+      "conditions": [
+        "单色、单模、同一真空波长，均匀等长段。"
+      ],
+      "formula": "Δφ=(2π/λ₀)LΔn_eff",
+      "variables": "Δn_eff 无量纲，长度用同一单位。",
+      "prerequisites": [
+        "waveguide-propagation-constant"
+      ],
+      "related": [],
+      "sources": [
+        "slab-field",
+        "wave-k"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δφ=(2π/λ₀)LΔn_eff",
+          "sources": [
+            "slab-field",
+            "wave-k"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "λ₀=1550 nm、L=1 mm、Δn_eff=10⁻⁴ 时，额外相差约 0.405 rad。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-coupler-two-mode-amplitudes",
+      "title": "双波导耦合方程为什么守恒",
+      "topic": "guided",
+      "level": "advanced",
+      "terms": [
+        "coupled mode Hermitian",
+        "波导耦合守恒"
+      ],
+      "definition": "按功率归一的无损双模耦合可用 Hermitian 矩阵生成保持总功率的演化。",
+      "body": "把两个复振幅写成列向量 a，取 da/dz=−iHa。对 a†a 求导得到 i a†H†a−i a†Ha。若 H†=H，两项完全抵消，所以两个端口的功率可以交换，总和保持。",
+      "example": "若 H 的非对角元一项为 κ，另一项用 κ*，这个条件可以满足。",
+      "caution": "存在传播损耗或端口增益时，需在方程中显式加入相应项。",
+      "conditions": [
+        "常系数或逐点 Hermitian，正向两模、同一功率归一。"
+      ],
+      "formula": "d(a†a)/dz=i a†(H†−H)a",
+      "variables": "H 的单位 m⁻¹。",
+      "prerequisites": [
+        "chip-directional-coupler",
+        "hermitian-complex-adjoint"
+      ],
+      "related": [],
+      "sources": [
+        "guide-coupled-modes"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "d(a†a)/dz=i a†(H†−H)a",
+          "sources": [
+            "guide-coupled-modes"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若 H 的非对角元一项为 κ，另一项用 κ*，这个条件可以满足。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-coupler-quarter-beat",
+      "title": "耦合器的 3 dB 长度与全转移长度",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "3dB coupler length",
+        "耦合半功率长度"
+      ],
+      "definition": "理想匹配双波导中，第一次平分功率所需的长度是第一次全转移长度的一半。",
+      "body": "单端输入时，另一波导的功率随 sin²(κz) 变化。第一次等分要求 κz=π/4，第一次全转移要求 κz=π/2。之后功率继续来回交换，因此相同输出比例可能出现在多个长度。",
+      "example": "κ=500 m⁻¹ 时，第一次平分约在 1.57 mm，全转移约在 3.14 mm。",
+      "caution": "有失配、非均匀间隙或损耗时需用实际模型复核。",
+      "conditions": [
+        "无损、均匀、匹配、两模功率归一。"
+      ],
+      "formula": "L_3dB=π/(4κ)，L_full=π/(2κ)",
+      "variables": "κ 为正实数，单位 m⁻¹。",
+      "prerequisites": [
+        "chip-coupling-length"
+      ],
+      "related": [],
+      "sources": [
+        "guide-power-exchange",
+        "guide-coupler-app"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "L_3dB=π/(4κ)，L_full=π/(2κ)",
+          "sources": [
+            "guide-power-exchange",
+            "guide-coupler-app"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "κ=500 m⁻¹ 时，第一次平分约在 1.57 mm，全转移约在 3.14 mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-coupler-mismatch-ceiling",
+      "title": "传播常数失配限制可转移功率",
+      "topic": "guided",
+      "level": "advanced",
+      "terms": [
+        "coupler maximum cross power",
+        "失配最大耦合率"
+      ],
+      "definition": "均匀双波导失配使周期变化加快，并使另一导波端口的最大功率低于一。",
+      "body": "以半差 δ=(β₁−β₂)/2 和实耦合 κ 写相对矩阵。平方后是 (κ²+δ²)I，因此无损时的输入归一交叉功率上限为 κ²/(κ²+δ²)。在同一矩阵上给两导加入相同、均匀的功率衰减 α 时，公共振幅因子 exp(−αL/2) 可提出，P_cross/P_in 随 exp(−αL) 降低；在同一 L，P_cross/(P_cross+P_through) 中公共因子相消。不同损耗或未知损耗机制时，须给出衰减、耦合区和读数分母，才能估计实际值。",
+      "example": "δ=κ 时，理想交叉端的最大功率为一半。",
+      "caution": "Δβ 若指全差，代入本式前除二。报告分束时注明是对输入归一，还是对两路幸存输出再归一。",
+      "conditions": [
+        "无损常系数双导、单端输入、功率归一。"
+      ],
+      "formula": "P_cross,max=κ²/(κ²+δ²)",
+      "variables": "κ 与 δ 均用 m⁻¹。",
+      "prerequisites": [
+        "guided-coupler-two-mode-amplitudes",
+        "chip-coupler-phase-mismatch"
+      ],
+      "related": [],
+      "sources": [
+        "guide-power-exchange",
+        "guide-mismatch-response"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P_cross,max=κ²/(κ²+δ²)",
+          "sources": [
+            "guide-power-exchange",
+            "guide-mismatch-response"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "δ=κ 时，理想交叉端的最大功率为一半。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-coupler-beat-length",
+      "title": "从超模的传播常数差得到拍长",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "supermode beat length",
+        "偶奇拍长"
+      ],
+      "definition": "偶模和奇模之间的相位差随长度累积，其 2π 周期给超模拍长。",
+      "body": "对于对称耦合器，在一根导波器中激发的场可表示为等幅偶模与奇模的叠加。当相位差到 π，两个叠加分量在原波导相消、另一波导相长；到 2π 后恢复原波导。",
+      "example": "若 β_even−β_odd=2000 m⁻¹，拍长约 3.14 mm，第一次全转移约 1.57 mm。",
+      "caution": "非对称波导的输入分解通常并非等幅，半拍长不保证全转移。",
+      "conditions": [
+        "对称、无损、均匀双波导；保留两个相干超模。"
+      ],
+      "formula": "L_beat=2π/abs(β_even−β_odd)",
+      "variables": "传播常数用 m⁻¹。",
+      "prerequisites": [
+        "chip-even-odd-supermodes"
+      ],
+      "related": [],
+      "sources": [
+        "guide-power-exchange",
+        "guide-coupled-modes"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "L_beat=2π/abs(β_even−β_odd)",
+          "sources": [
+            "guide-power-exchange",
+            "guide-coupled-modes"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若 β_even−β_odd=2000 m⁻¹，拍长约 3.14 mm，第一次全转移约 1.57 mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-coupler-power-phase",
+      "title": "分束器同功率输出仍保有相位差",
+      "topic": "guided",
+      "level": "advanced",
+      "terms": [
+        "coupler quadrature phase",
+        "方向耦合器端口相位"
+      ],
+      "definition": "由均匀耦合产生的两个输出振幅即使大小相等，也带有确定的相对相位。",
+      "body": "用对角项已去除、非对角元为 κ 的传播矩阵。第一端口输入后，同端为 cosκL，交叉端为 −i sinκL。功率测量只给模平方，串接第二个分束器时需要恢复相位参考。",
+      "example": "在 κL=π/4，功率各一半，但交叉场在这个记号下相对同端多 −π/2。",
+      "caution": "更换端口相位定义会改变矩阵元素的写法，应把整段网络统一后再比较输出。",
+      "conditions": [
+        "无损、对称、共振匹配，采用 da/dz=−iHa。"
+      ],
+      "formula": "a_through=cos(κL)，a_cross=−i sin(κL)",
+      "variables": "a 是按单位输入归一的场振幅。",
+      "prerequisites": [
+        "guided-coupler-two-mode-amplitudes",
+        "guided-coupler-quarter-beat"
+      ],
+      "related": [],
+      "sources": [
+        "guide-coupled-modes",
+        "guide-power-exchange"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "a_through=cos(κL)，a_cross=−i sin(κL)",
+          "sources": [
+            "guide-coupled-modes",
+            "guide-power-exchange"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在 κL=π/4，功率各一半，但交叉场在这个记号下相对同端多 −π/2。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-overlap-coupling-normalization",
+      "title": "端面模式重叠为何要归一两边",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "overlap efficiency normalization",
+        "耦合积分归一"
+      ],
+      "definition": "标量端面匹配的重叠效率由归一场内积的模平方给出。",
+      "body": "若输入场只有整体幅度改变，未归一内积会跟着缩放；归一后耦合的比例保持。保持总输入功率不变而横向错位，内积仍可降低。该结果只描述投影，其他反射、散射与模态通道需另算。",
+      "example": "输入正比于目标场时，理想重叠比例为一，即使两者使用不同幅值标尺。",
+      "caution": "强导引矢量模应采用兼容的功率内积。",
+      "conditions": [
+        "标量近似，两场在同一端面和坐标网格，分母非零。"
+      ],
+      "formula": "η=abs(∫u*v dA)²/(∫abs(u)²dA·∫abs(v)²dA)",
+      "variables": "η 无量纲。",
+      "prerequisites": [
+        "chip-mode-overlap",
+        "normalized-overlap-square"
+      ],
+      "related": [],
+      "sources": [
+        "guided-input"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "η=abs(∫u*v dA)²/(∫abs(u)²dA·∫abs(v)²dA)",
+          "sources": [
+            "guided-input"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "输入正比于目标场时，理想重叠比例为一，即使两者使用不同幅值标尺。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-grating-order-projection",
+      "title": "光栅耦合要先统一切向波矢符号",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "grating momentum projection",
+        "光栅耦合级次"
+      ],
+      "definition": "沿耦合器平面的入射波矢分量可以由周期结构补上整数个倒格矢。",
+      "body": "令 z 沿导波方向，从外部折射率与相对法线角得到 k_parallel。光栅周期 Λ 提供 K=2π/Λ，选定符号阶 m 后与模式 β 对照。入射角如果改以相对表面定义，正弦和余弦也要交换。",
+      "example": "垂直入射的切向分量为零，简化的一阶匹配要求 β≈2π/Λ。",
+      "caution": "这一式只定位匹配，不直接给效率和方向性。",
+      "conditions": [
+        "一维周期、外部均匀、指定切向正方向与衍射阶。"
+      ],
+      "formula": "β=k₀n_ext sinθ+mK",
+      "variables": "θ 取自法线。",
+      "prerequisites": [
+        "interface-plane-phase-matching"
+      ],
+      "related": [],
+      "sources": [
+        "guided-grating"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "β=k₀n_ext sinθ+mK",
+          "sources": [
+            "guided-grating"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "垂直入射的切向分量为零，简化的一阶匹配要求 β≈2π/Λ。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-port-determinant-and-power",
+      "title": "耦合网络的功率守恒检查",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "unitary coupler check",
+        "耦合网络功率校验"
+      ],
+      "definition": "完整包含传播端口且无损的散射或传播矩阵，应保持功率归一场向量的平方范数。",
+      "body": "先核对每一列的模平方和是否为一，再核对不同列的内积是否为零。第一步只检验单端输入，第二步保证多个端口同时带着任意相对相位输入时也守恒。",
+      "example": "两列都等于 (1,1)/√2 时，各列范数为一但不正交，组合输入可以违反功率守恒。",
+      "caution": "检查时应计入所有传播端口；只取子矩阵常不能守恒。",
+      "conditions": [
+        "线性无损、同一频率、功率正交归一端口。"
+      ],
+      "formula": "S†S=I",
+      "variables": "S 为完整线性端口矩阵。",
+      "prerequisites": [
+        "guided-coupler-two-mode-amplitudes",
+        "unitary-matrix-norm"
+      ],
+      "related": [],
+      "sources": [
+        "guide-coupled-modes",
+        "complex-matrix"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "S†S=I",
+          "sources": [
+            "guide-coupled-modes",
+            "complex-matrix"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两列都等于 (1,1)/√2 时，各列范数为一但不正交，组合输入可以违反功率守恒。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-mzi-common-phase",
+      "title": "干涉器共同相位与差分相位",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "MZI common mode phase",
+        "共同相位"
+      ],
+      "definition": "理想两臂干涉器的归一输出功率取决于两臂相位差，共同相位只整体旋转输出场。",
+      "body": "先将两臂相位写成平均相位加减半差，再把共同因子从合束场提出来。强度平方时共同相位消失；如果再把输出接到另一干涉网络，整体相位相对于其他路径仍可测。",
+      "example": "两臂都增加 0.4 rad，相同相对相位下两个端口的功率不变。",
+      "caution": "不能把共同相位对独立功率测量的消失推广到任意相位测量。",
+      "conditions": [
+        "两臂幅度固定，静态单频，无其他参考路径。"
+      ],
+      "formula": "abs(exp(iφ₁)+exp(iφ₂))²=4cos²[(φ₁−φ₂)/2]",
+      "variables": "φ_j 用 rad。",
+      "prerequisites": [
+        "guided-coupler-power-phase",
+        "guided-index-phase-length"
+      ],
+      "related": [],
+      "sources": [
+        "mzi-complex"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "abs(exp(iφ₁)+exp(iφ₂))²=4cos²[(φ₁−φ₂)/2]",
+          "sources": [
+            "mzi-complex"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两臂都增加 0.4 rad，相同相对相位下两个端口的功率不变。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-mzi-unequal-arm-contrast",
+      "title": "干涉器两臂损耗不等时的最低透射",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "MZI imbalance extinction",
+        "臂损耗与条纹对比"
+      ],
+      "definition": "两臂场幅不等时，即使调整为反相，也会留有振幅差产生的残余功率。",
+      "body": "理想合束时某输出的强度在 (a+b)² 与 (a−b)² 之间改变。将最小值与最大值相除可估消光能力，差值大小和两臂平均衰减需要分开。",
+      "example": "若到达合束器的场幅比例为 0.8:1，最小对最大功率比约 0.0123。",
+      "caution": "报告消光比时说明是最大除最小，还是最小透射的分贝值。",
+      "conditions": [
+        "两路相干，其他偏振和模式完全匹配，a 与 b 非负。"
+      ],
+      "formula": "P_min/P_max=[(a−b)/(a+b)]²",
+      "variables": "场幅为合束前的同归一幅度。",
+      "prerequisites": [
+        "guided-mzi-common-phase",
+        "phasor-vector-sum"
+      ],
+      "related": [],
+      "sources": [
+        "mzi-complex"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P_min/P_max=[(a−b)/(a+b)]²",
+          "sources": [
+            "mzi-complex"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若到达合束器的场幅比例为 0.8:1，最小对最大功率比约 0.0123。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-mzi-frequency-fringes",
+      "title": "不等臂干涉器由群时延差决定条纹间隔",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "MZI free spectral range",
+        "干涉仪群时延差"
+      ],
+      "definition": "干涉器相邻谱峰间隔约等于两臂群时延差绝对值的倒数。",
+      "body": "两臂相位差随频率改变。以中心频率附近的相位斜率近似，两个相邻同类极值要求差分相位增加 2π，斜率用两臂群时延差给出。同一材料且长度不等时，群折射率乘长度差决定时延差。",
+      "example": "若两臂时延差为 20 ps，频率条纹间隔约 50 GHz。",
+      "caution": "有效折射率用于相位，而条纹周期的局部导数使用群折射率。",
+      "conditions": [
+        "单传播模、局部相位近似线性、耦合器色散可忽略。"
+      ],
+      "formula": "Δν≈1/abs(Δτ_g)",
+      "variables": "Δτ_g 用 s。",
+      "prerequisites": [
+        "guided-mzi-common-phase",
+        "group-delay"
+      ],
+      "related": [],
+      "sources": [
+        "mzi-complex",
+        "group-expansion"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δν≈1/abs(Δτ_g)",
+          "sources": [
+            "mzi-complex",
+            "group-expansion"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若两臂时延差为 20 ps，频率条纹间隔约 50 GHz。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-mzi-differential-dispersion",
+      "title": "不等臂干涉谱如何显出差分色散",
+      "topic": "guided",
+      "level": "advanced",
+      "terms": [
+        "MZI fringe chirp",
+        "干涉谱频率间隔变化"
+      ],
+      "definition": "若两臂群时延差本身随频率变化，相邻峰在普通频率轴上也可能不再等间隔。",
+      "body": "差分相位的二阶导数等于两臂累计二阶色散之差。以若干相邻峰拟合局部频率间隔，可反映相位斜率变化。最好先把采样波长换为频率，以区分坐标换算带来的非均匀性。",
+      "example": "两臂在中心有相同群时延时，局部条纹间隔公式的分母接近零，不能按固定间隔外推。",
+      "caution": "耦合器自身的谱相位和峰读数误差也可能引入变化。",
+      "conditions": [
+        "两臂相干、扫频路径保持在同一模，局部展开有效。"
+      ],
+      "formula": "d²Δφ/dω²=GDD₁−GDD₂",
+      "variables": "GDD 用 s²。",
+      "prerequisites": [
+        "guided-mzi-frequency-fringes",
+        "ultrafast-beta-order-units"
+      ],
+      "related": [],
+      "sources": [
+        "mzi-complex",
+        "group-expansion"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "d²Δφ/dω²=GDD₁−GDD₂",
+          "sources": [
+            "mzi-complex",
+            "group-expansion"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两臂在中心有相同群时延时，局部条纹间隔公式的分母接近零，不能按固定间隔外推。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-ring-field-round-trip-decay",
+      "title": "微环每周的场衰减与功率衰减",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "ring round trip amplitude loss",
+        "微环单圈功率与振幅"
+      ],
+      "definition": "微环模型常用每圈的场衰减因子，功率留存则是其模平方。",
+      "body": "给出每长度指数功率损耗 α 与周长 L 时，功率留存为 exp(−αL)，场幅留存为 exp(−αL/2)。在临界耦合关系中若耦合系数按场写，单圈内损也必须按场写。",
+      "example": "每圈保留 81% 功率时，内损场因子为 0.9。",
+      "caution": "功率衰减与耦合引起的转移分别核对。",
+      "conditions": [
+        "均匀等效单圈损耗，α 采用自然指数功率口径。"
+      ],
+      "formula": "a=exp(−αL/2)",
+      "variables": "a 无量纲。",
+      "prerequisites": [
+        "microring-roundtrip-phase",
+        "ultrafast-loss-field-envelope"
+      ],
+      "related": [],
+      "sources": [
+        "guide-ring-ports"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "a=exp(−αL/2)",
+          "sources": [
+            "guide-ring-ports"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "每圈保留 81% 功率时，内损场因子为 0.9。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-ring-ideal-all-pass-phase",
+      "title": "无损全通微环为何透射平坦仍改相位",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "lossless ring flat power phase",
+        "全通微环恒功率"
+      ],
+      "definition": "理想无内损单总线微环可保持直通功率为一，同时使频率相关的传递相位发生变化。",
+      "body": "用实自耦场系数 r 与单圈相位 θ 写全通复传递。无内损时，分子和分母的模平方相等，因此强度恒一；但复数相位相减随 θ 改变，群延迟依然可呈现共振特征。",
+      "example": "取 θ=0 且 0<r<1，传递值为 −1，功率仍为一。",
+      "caution": "实际测到的谷深需要结合内损、额外端口和仪器动态范围。",
+      "conditions": [
+        "理想无损单总线、定向无反射耦合、同一端口归一。"
+      ],
+      "formula": "H=(r−exp(−iθ))/(1−r exp(−iθ))",
+      "variables": "r 为场系数。",
+      "prerequisites": [
+        "microring-all-pass"
+      ],
+      "related": [],
+      "sources": [
+        "guide-ring-ports",
+        "guide-ring-phase"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "H=(r−exp(−iθ))/(1−r exp(−iθ))",
+          "sources": [
+            "guide-ring-ports",
+            "guide-ring-phase"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "取 θ=0 且 0<r<1，传递值为 −1，功率仍为一。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-ring-fsr-frequency-wavelength-local",
+      "title": "把微环频率 FSR 换成局部波长间隔",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "ring FSR wavelength local",
+        "FSR换轴"
+      ],
+      "definition": "同一微环的局部 FSR 可以分别用 Hz 和 nm 报告，数值之间的倍率依中心波长而变。",
+      "body": "用 ν=c/λ 求局部导数，得到小间隔的波长差约为 λ₀²Δν/c。若已有相邻两个绝对波长，频差应优先直接换算两者再相减。比较跨很宽波段的 FSR 时，还要跟踪群折射率变化。",
+      "example": "1550 nm 附近 100 GHz 对应约 0.80 nm。",
+      "caution": "公式对间隔的绝对值有效，频率轴与波长轴的方向相反。",
+      "conditions": [
+        "相邻同模族，使用真空波长，小相对带宽。"
+      ],
+      "formula": "Δλ≈λ₀² Δν/c",
+      "variables": "λ₀ 用 m，Δν 用 Hz。",
+      "prerequisites": [
+        "microring-fsr",
+        "frequency-axis-spacing-nonlinearity"
+      ],
+      "related": [],
+      "sources": [
+        "guide-ring-ports",
+        "wave-k"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δλ≈λ₀² Δν/c",
+          "sources": [
+            "guide-ring-ports",
+            "wave-k"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "1550 nm 附近 100 GHz 对应约 0.80 nm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-ring-decay-rate-budget",
+      "title": "环腔内损与外耦如何决定加载寿命",
+      "topic": "guided",
+      "level": "advanced",
+      "terms": [
+        "ring loss rate addition",
+        "环腔能量衰减率"
+      ],
+      "definition": "若腔内损耗和外耦端口独立移除能量，总的能量衰减率是各通道衰减率之和。",
+      "body": "写 dU/dt=−(κ_i+κ_e)U，得能量寿命是总率的倒数。在高 Q 单模近似下，采用能量衰减率定义的 Q 为 ω₀/κ，因此各通道的逆 Q 相加。若采用场幅衰减率，应先换成能量口径。",
+      "example": "内损与外耦率相同，则加载能量寿命是内损单独作用时的一半。",
+      "caution": "加下载双总线时，两外耦率都要计入。",
+      "conditions": [
+        "单模线性、指数衰减、互相独立的损耗通道。"
+      ],
+      "formula": "1/Q_loaded=1/Q_int+Σ_j 1/Q_ext,j",
+      "variables": "Q 无量纲。",
+      "prerequisites": [
+        "microring-loaded-q",
+        "guided-ring-field-round-trip-decay"
+      ],
+      "related": [],
+      "sources": [
+        "guide-ring-ports",
+        "guide-ring-drop"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "1/Q_loaded=1/Q_int+Σ_j 1/Q_ext,j",
+          "sources": [
+            "guide-ring-ports",
+            "guide-ring-drop"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "内损与外耦率相同，则加载能量寿命是内损单独作用时的一半。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-ring-drop-energy-check",
+      "title": "加下载环的直通和下载功率预算",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "add drop ring energy balance",
+        "双总线功率守恒"
+      ],
+      "definition": "无内损加下载环的各可传播输出功率相加应等于输入，直通降低可对应下载增加。",
+      "body": "用同一输入端的功率归一，分别读直通和下载端；若端口模型还包含反射或串扰，也纳入和。两端相加不足一可能来自内损或未计端口，只看直通谷无法区分。",
+      "example": "若无损模型只含两个输出，直通为 0.1，则下载必须为 0.9。",
+      "caution": "内损环中 T+D 一般不等于一。",
+      "conditions": [
+        "稳态单频，无损且完整计入所有传播输出。"
+      ],
+      "formula": "Σ_j P_out,j/P_in=1",
+      "variables": "功率参考面一致。",
+      "prerequisites": [
+        "microring-add-drop",
+        "guided-port-determinant-and-power"
+      ],
+      "related": [],
+      "sources": [
+        "guide-ring-drop",
+        "port-losslessness"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Σ_j P_out,j/P_in=1",
+          "sources": [
+            "guide-ring-drop",
+            "port-losslessness"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若无损模型只含两个输出，直通为 0.1，则下载必须为 0.9。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-slab-mode-power-normalize",
+      "title": "把波导本征场归一到给定功率",
+      "topic": "guided",
+      "level": "advanced",
+      "terms": [
+        "mode power normalization",
+        "导模归一到1瓦"
+      ],
+      "definition": "线性本征模的整体幅值可任意缩放，可用横截面积分的 Poynting 能流固定它。",
+      "body": "先用求得的 E、H 算正向平均功率 P；同乘场因子 b 后，功率乘 abs(b)²。要将模式归一到 1 W，可在正向功率非零时乘 1/√P。矢量耦合比较时应使用同一种参考。",
+      "example": "计算场原来对应 4 W，电场和磁场均乘 1/2 后归一到 1 W。",
+      "caution": "倏逝场和反向模的净功率口径不能直接套正向归一。",
+      "conditions": [
+        "峰值复幅、正向传播模、截面积分收敛。"
+      ],
+      "formula": "P=(1/2) Re∫(E×H*)·ẑ dA",
+      "variables": "P 用 W。",
+      "prerequisites": [
+        "em-average-poynting",
+        "waveguide-propagation-constant"
+      ],
+      "related": [],
+      "sources": [
+        "em-average-poynting",
+        "slab-confinement"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P=(1/2) Re∫(E×H*)·ẑ dA",
+          "sources": [
+            "em-average-poynting",
+            "slab-confinement"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "计算场原来对应 4 W，电场和磁场均乘 1/2 后归一到 1 W。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-fiber-mode-field-diameter",
+      "title": "光纤模场直径与几何芯径如何区分",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "MFD versus core diameter",
+        "模场尺寸和芯径"
+      ],
+      "definition": "模场直径描述实际场分布的有效横向尺寸，几何芯径由材料边界定义。",
+      "body": "即使芯径固定，随波长变化的导引强度仍会让模场更集中或向包层延伸。用理想 Gaussian 拟合时可把 1/e² 强度直径当作一个模型量；测量标准可能采用其他定义，应引用实际方法。",
+      "example": "同一芯径的光纤分别在两个波长测 MFD 时，应分别记录波长与方法。",
+      "caution": "光纤标准的 MFD 定义不等于任意横截面的 FWHM。",
+      "conditions": [
+        "以基模、近 Gaussian 的示意解释两种尺度，测量按采用标准。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "fiber-mfd-far-field",
+        "guided-slab-cladding-tail"
+      ],
+      "related": [],
+      "sources": [
+        "guide-fiber-modes",
+        "slab-confinement"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "模场直径描述实际场分布的有效横向尺寸，几何芯径由材料边界定义。",
+          "sources": [
+            "guide-fiber-modes",
+            "slab-confinement"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "同一芯径的光纤分别在两个波长测 MFD 时，应分别记录波长与方法。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-waveguide-material-dispersion-separate",
+      "title": "模群折射率里材料和几何如何一起变化",
+      "topic": "guided",
+      "level": "advanced",
+      "terms": [
+        "material waveguide dispersion split",
+        "模色散分解"
+      ],
+      "definition": "模有效折射率既取决于材料折射率谱，也取决于归一几何尺度随波长的变化。",
+      "body": "可把 n_eff 写作波长与多个材料折射率的函数，再按链式法则求总导数。冻结材料折射率时得到一种几何贡献定义，允许材料变化得到总变化；拆分结果依冻结方案，实际群延迟仍以总导数计算。",
+      "example": "同一模式两种计算分别使用实测材料色散与冻结材料，可比较所得群时延斜率。",
+      "caution": "不能把体材料色散和任意波导色散曲线不加约定地相加。",
+      "conditions": [
+        "跟踪同一个导模，截面形状固定，材料参数在波段内可微。"
+      ],
+      "formula": "dn_eff/dλ=∂n_eff/∂λ+Σ_j(∂n_eff/∂n_j)(dn_j/dλ)",
+      "variables": "各 n 无量纲。",
+      "prerequisites": [
+        "material-group-vs-phase-index",
+        "waveguide-dispersion"
+      ],
+      "related": [],
+      "sources": [
+        "slab-field",
+        "group-expansion"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "dn_eff/dλ=∂n_eff/∂λ+Σ_j(∂n_eff/∂n_j)(dn_j/dλ)",
+          "sources": [
+            "slab-field",
+            "group-expansion"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "同一模式两种计算分别使用实测材料色散与冻结材料，可比较所得群时延斜率。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-ring-backscatter-two-mode",
+      "title": "微环的反向散射为何可能产生双峰",
+      "topic": "guided",
+      "level": "advanced",
+      "terms": [
+        "ring backscatter doublet",
+        "环腔行波耦合"
+      ],
+      "definition": "粗糙散射等扰动可耦合原来同频的顺时针和逆时针行波，使本征频率分裂。",
+      "body": "在理想两态矩阵中把两个未扰动频率设为 ω₀，加入互为共轭的交叉系数 g 和 g*。本征频率变为 ω₀±abs(g)，本征态可看作两行波叠加。若分裂小于线宽，测得的谱可能仍像一个峰。",
+      "example": "若耦合频率 abs(g)/(2π)=1 GHz，理想双峰间隔为 2 GHz。",
+      "caution": "实际谱还受损耗不对称和探测端口的干涉影响。",
+      "conditions": [
+        "小扰动、近简并两行波、简化等损耗近似。"
+      ],
+      "formula": "Δω_split=2abs(g)",
+      "variables": "g 用 rad/s。",
+      "prerequisites": [
+        "microring-resonance-splitting",
+        "guided-coupler-two-mode-amplitudes"
+      ],
+      "related": [],
+      "sources": [
+        "ring-backscatter"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δω_split=2abs(g)",
+          "sources": [
+            "ring-backscatter"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若耦合频率 abs(g)/(2π)=1 GHz，理想双峰间隔为 2 GHz。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-mzi-balanced-ports-check",
+      "title": "理想干涉器的两个端口如何互补",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "MZI complementary outputs",
+        "双端口功率互补"
+      ],
+      "definition": "无损的平衡两臂干涉器将输入功率在两个输出间重新分配。",
+      "body": "利用两个无损分束器与臂的相位矩阵级联，归一输出呈互补的正弦平方和余弦平方。端口命名依分束器相位约定；无论命名，两个端口同一参考面的功率之和为一。",
+      "example": "若一端测到归一功率 0.7，理想的另一端应为 0.3。",
+      "caution": "实测和小于一时检查损耗、额外端口和入射归一。",
+      "conditions": [
+        "50:50 无损耦合器、臂幅度相等、单端相干输入。"
+      ],
+      "formula": "T₁+T₂=1",
+      "variables": "T_j 为归一功率。",
+      "prerequisites": [
+        "guided-mzi-common-phase",
+        "guided-coupler-power-phase"
+      ],
+      "related": [],
+      "sources": [
+        "mzi-complex",
+        "port-losslessness"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "T₁+T₂=1",
+          "sources": [
+            "mzi-complex",
+            "port-losslessness"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若一端测到归一功率 0.7，理想的另一端应为 0.3。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-grating-pitch-error-angle",
+      "title": "光栅周期偏差会把匹配角往哪里移",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "grating pitch sensitivity",
+        "周期误差匹配角"
+      ],
+      "definition": "同频率和同导模时，改变光栅周期会让满足相位关系的外部角发生变化。",
+      "body": "在约定 β=k₀n_ext sinθ+m(2π/Λ) 下，保持 β、波长和外部折射率固定。对 Λ 求微分可得 d(sinθ)/dΛ 为 mλ₀/(n_extΛ²)。符号依传播方向与阶次定义。",
+      "example": "正阶、近法向条件下，周期略增使有符号 sinθ 增加。",
+      "caution": "若几何改变也使实际模式 β 变化，必须将该变化加入总导数。",
+      "conditions": [
+        "一维光栅、固定波长、同一导模和衍射阶。"
+      ],
+      "formula": "d(sinθ)/dΛ=mλ₀/(n_extΛ²)",
+      "variables": "θ 相对法线。",
+      "prerequisites": [
+        "guided-grating-order-projection"
+      ],
+      "related": [],
+      "sources": [
+        "guided-grating"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "d(sinθ)/dΛ=mλ₀/(n_extΛ²)",
+          "sources": [
+            "guided-grating"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "正阶、近法向条件下，周期略增使有符号 sinθ 增加。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-coupler-segmented-phase",
+      "title": "两段耦合之间的相位会改分光结果",
+      "topic": "guided",
+      "level": "advanced",
+      "terms": [
+        "segmented coupler phase",
+        "两段耦合区中间相移"
+      ],
+      "definition": "两段相同耦合器的功率变化不能逐段按百分比相乘，必须沿路传递复场。",
+      "body": "各耦合段对应一个二乘二矩阵，中间单臂相移对应一个对角矩阵。两个 3 dB 段若中间两臂相同，相当于加倍耦合作用；中间放入相对 π 相位后，两个到交叉端的贡献可相消。",
+      "example": "两个理想匹配 3 dB 段，零差相位时全转移；中间差相位为 π 时可返回原端口。",
+      "caution": "不同耦合器方向、额外相位或有损时需按实际矩阵重新级联。",
+      "conditions": [
+        "两相同理想无损耦合器，按同端口参考连续连接。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "guided-coupler-power-phase",
+        "guided-mzi-common-phase"
+      ],
+      "related": [],
+      "sources": [
+        "guide-coupled-modes",
+        "mzi-complex"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "两段相同耦合器的功率变化不能逐段按百分比相乘，必须沿路传递复场。",
+          "sources": [
+            "guide-coupled-modes",
+            "mzi-complex"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两个理想匹配 3 dB 段，零差相位时全转移；中间差相位为 π 时可返回原端口。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-coupler-reciprocity-vs-unitarity",
+      "title": "无损与互易约束的是矩阵的不同性质",
+      "topic": "guided",
+      "level": "advanced",
+      "terms": [
+        "reciprocity vs unitarity",
+        "互易和幺正"
+      ],
+      "definition": "无损约束总出入功率，互易约束在匹配参考下交换源端口与接收端口的响应。",
+      "body": "在完整功率归一端口中，无损给 S†S=I。合适的互易端口模式和参考约定下，互易给 S=Sᵀ。可以有互易但带损耗的装置，因此对称矩阵本身不能证明功率守恒。",
+      "example": "带对称衰减的二端口可在两方向传输相同，但输出功率均小于输入。",
+      "caution": "有磁偏置等破坏互易的装置仍可能无损。",
+      "conditions": [
+        "线性、指定频率、端口模式和参考面可比。"
+      ],
+      "formula": "无损：S†S=I；互易：S=Sᵀ",
+      "variables": "S 为散射矩阵。",
+      "prerequisites": [
+        "guided-port-determinant-and-power"
+      ],
+      "related": [],
+      "sources": [
+        "guided-port-scattering",
+        "port-losslessness"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "无损：S†S=I；互易：S=Sᵀ",
+          "sources": [
+            "guided-port-scattering",
+            "port-losslessness"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "带对称衰减的二端口可在两方向传输相同，但输出功率均小于输入。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-fiber-na-angle-medium",
+      "title": "同一光纤在不同外部介质的接受角",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "fiber NA immersion",
+        "浸没接受角"
+      ],
+      "definition": "在理想端面几何下，外部折射率改变外部接受半角，光纤芯包参数给出的 NA 可保持。",
+      "body": "把固定 NA 放进 n_ext sinθ_max。外部折射率增加时，达到同一横向波矢所需的角变小。对于可传播模的效率，还要检查端面透射及入射场和模场的重叠。",
+      "example": "NA=0.22 时，空气半角约 12.7°，n_ext=1.33 时约 9.5°。",
+      "caution": "若计算得到 NA/n_ext>1，不能直接用反正弦，要回到适用条件。",
+      "conditions": [
+        "直阶跃光纤、理想端面、子午几何近似。"
+      ],
+      "formula": "θ_max=arcsin(NA/n_ext)",
+      "variables": "θ 从光轴量起。",
+      "prerequisites": [
+        "fiber-numerical-aperture",
+        "fiber-acceptance-angle"
+      ],
+      "related": [],
+      "sources": [
+        "guided-input",
+        "slab-field"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "θ_max=arcsin(NA/n_ext)",
+          "sources": [
+            "guided-input",
+            "slab-field"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "NA=0.22 时，空气半角约 12.7°，n_ext=1.33 时约 9.5°。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-mode-cutoff-vs-launch",
+      "title": "支持高阶模不等于一定激发它",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "mode support versus excitation",
+        "截止和激发区别"
+      ],
+      "definition": "波导边界决定哪些模式可传播，输入场的重叠决定这些模式实际获得多少幅度。",
+      "body": "先用波导截面和波长求可支持的本征模。再对给定入射场求投影；一个受支持的奇模在完美对称的偶入射下也可能没有耦合。横向位移或角偏差会打破投影抵消。",
+      "example": "芯内存在高阶模式时，居中且对称的输入仍可让某个反对称模的振幅为零。",
+      "caution": "实际传播扰动可在后续引入模间耦合。",
+      "conditions": [
+        "截面对称、线性标量示意，输入与模式归一已知。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "guided-mode-cutoff",
+        "guided-overlap-coupling-normalization"
+      ],
+      "related": [],
+      "sources": [
+        "guide-fiber-modes",
+        "guided-input"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "波导边界决定哪些模式可传播，输入场的重叠决定这些模式实际获得多少幅度。",
+          "sources": [
+            "guide-fiber-modes",
+            "guided-input"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "芯内存在高阶模式时，居中且对称的输入仍可让某个反对称模的振幅为零。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-port-insertion-loss-reference",
+      "title": "插入损耗与分束比例用不同参考面",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "insertion loss split ratio",
+        "分束器总损耗与比例"
+      ],
+      "definition": "插入损耗通常比较输出和输入功率，分束比例在选定的输出之间归一。",
+      "body": "若两输出各是入射的 0.4，它们彼此平分，但总透过只有 0.8。分别报告总损耗和每一输出相对入射的值，才能判断实际路由性能。若还有其他输出需加入预算。",
+      "example": "两个端口各 40% 时，理想比例为 50:50，两端总插入损耗约 0.97 dB。",
+      "caution": "说明是单端插损还是所有输出相加的插损。",
+      "conditions": [
+        "同一波长，指定输入参考面和两个输出参考面。"
+      ],
+      "formula": "IL_sum=−10log₁₀[(P₁+P₂)/P_in]",
+      "variables": "IL 用 dB。",
+      "prerequisites": [
+        "guided-port-determinant-and-power"
+      ],
+      "related": [],
+      "sources": [
+        "guided-port-scattering",
+        "guide-coupler-app"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "IL_sum=−10log₁₀[(P₁+P₂)/P_in]",
+          "sources": [
+            "guided-port-scattering",
+            "guide-coupler-app"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两个端口各 40% 时，理想比例为 50:50，两端总插入损耗约 0.97 dB。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-waveguide-taper-coupling-symmetry",
+      "title": "波导过渡中的对称性如何保护模式",
+      "topic": "guided",
+      "level": "advanced",
+      "terms": [
+        "taper symmetry mode coupling",
+        "对称性禁止模耦合"
+      ],
+      "definition": "在保持横向镜像对称的变化段内，偶与奇模式间的标量耦合矩阵元可因对称性为零。",
+      "body": "把结构变化视为相对于截面的对称扰动。模场乘积在偶奇模式之间为奇函数，与偶扰动相乘后积分为零。若不对称边缘或偏移破坏镜像，零耦合规则可能失效。",
+      "example": "对称地减小波导两侧宽度与只移动一侧边界，允许的耦合条件不同。",
+      "caution": "同奇偶性的模式仍可相互耦合，绝热条件需独立核对。",
+      "conditions": [
+        "近似标量、横向镜像平面保持，比较偶与奇导模。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "waveguide-adiabatic-transition",
+        "waveguide-mode-orthogonality"
+      ],
+      "related": [],
+      "sources": [
+        "guide-coupled-modes",
+        "slab-matching"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "在保持横向镜像对称的变化段内，偶与奇模式间的标量耦合矩阵元可因对称性为零。",
+          "sources": [
+            "guide-coupled-modes",
+            "slab-matching"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "对称地减小波导两侧宽度与只移动一侧边界，允许的耦合条件不同。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "guided-ring-frequency-linewidth-to-wavelength",
+      "title": "微环线宽的 GHz 与 pm 怎么换算",
+      "topic": "guided",
+      "level": "undergraduate",
+      "terms": [
+        "ring linewidth GHz pm conversion",
+        "微环线宽单位"
+      ],
+      "definition": "窄线宽微环可以用频率宽度或波长宽度表述，两者的局部换算与中心波长有关。",
+      "body": "对 ν=c/λ 求绝对斜率，把测到的波长 FWHM 换成频率 FWHM。再以中心频率除以频宽估加载 Q。若谱线不对称，应明确半高口径以及是否从复传递拟合。",
+      "example": "1550 nm 处 10 pm 约 1.25 GHz，对应加载 Q 约 1.55×10⁵。",
+      "caution": "在微环谱谷中，半深宽度应按基线与谷底之间的半点定义。",
+      "conditions": [
+        "窄峰、真空波长、半宽取同一线形定义。"
+      ],
+      "formula": "Δν≈cΔλ/λ₀²，Q≈λ₀/Δλ",
+      "variables": "Δλ 是全宽。",
+      "prerequisites": [
+        "microring-loaded-q",
+        "guided-ring-fsr-frequency-wavelength-local"
+      ],
+      "related": [],
+      "sources": [
+        "guide-ring-ports",
+        "wave-k"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δν≈cΔλ/λ₀²，Q≈λ₀/Δλ",
+          "sources": [
+            "guide-ring-ports",
+            "wave-k"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "1550 nm 处 10 pm 约 1.25 GHz，对应加载 Q 约 1.55×10⁵。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    }
+  ]
+}

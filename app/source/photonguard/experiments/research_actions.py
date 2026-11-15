@@ -88,19 +88,20 @@ def baseline_ids(s):
     return ids
 
 
-def _reason_limits(s,reason,text):
+def _reason_limits(s,reason,text,*,constraints=None,legacy=True):
     """Reject explicit unsupported conclusions/resources, retain honest caveats."""
     certainty=r'确诊|确定是|已证明|保证.{0,8}(?:精度|正确|唯一)|95\s*%|真实(?:缝宽|厚度|参数)\s*(?:为|是|=)|已排除模糊'
     for clause in re.split(r'[，,。；;\n]',reason):
         for match in re.finditer(certainty,clause):
             if not re.search(r'不能|无法|不|未|没有|不足以|并非|避免|谨防|防止',clause[max(0,match.start()-16):match.start()]):
                 raise ValueError('研究理由不能宣告未核验的物理结论')
-    catalog=(s.get('acquisition_constraints') or {}).get('wavelengths_nm')
+    catalog=(s.get('acquisition_constraints') if constraints is None else constraints) or {}
+    catalog=catalog.get('wavelengths_nm')
     from .inverse_models import FILM
     if s['inverse_settings']['model']==FILM:
         from .inverse_report import grounded
         # A fresh explicit list may replace the earlier list in the same reply.
-        explicit=re.search(r'(?:只有|仅有|可用|拥有|光源目录)[^。；;\n]*',text)
+        explicit=re.search(r'(?:只有|仅有|可用|拥有|光源目录)[^。；;\n]*',text) if legacy else None
         if explicit:
             quote=explicit[0];values=[]
             for match in re.finditer(r'(\d+(?:\.\d+)?(?:\s*[、,，/]\s*\d+(?:\.\d+)?)*)\s*(nm|纳米)',quote):
@@ -113,7 +114,18 @@ def _reason_limits(s,reason,text):
             if any(float(w) not in catalog for w in requested):raise ValueError('研究步骤不得要求可用目录外波长')
 
 
-def validate(s,payload,text,input_binding=None,*,source='LIVE_AI',ledger=None):
+def read_only_request(text):
+    explicitly_prepares = re.search(r'(?:可以|允许|请|先)(?:先|帮我)?(?:准备|生成)(?:一份|个)?计划', text)
+    holds_execution = re.search(r'(?:暂不|先不|先别|不要|无需|不必|请勿)(?:替我|帮我)?执行', text)
+    return bool(holds_execution and not explicitly_prepares or re.search(
+        r'(?:只|仅)(?:想|需|要)?(?:解释|讲解|说明|回顾)|'
+        r'(?:不做|不作|不进行)任何操作|(?:暂时|目前|先)(?:不做|不作|别做)操作|'
+        r'(?:资料|记录|条件|目录)(?:都)?保持原样|'
+        r'(?:暂不|先不|先别|不要|无需|不必|请勿)(?:替我|帮我)?(?:准备|安排|生成计划|修改资料|更改资料|操作|补测|补采|拟合|重算)',
+        text))
+
+
+def validate(s,payload,text,input_binding=None,*,source='LIVE_AI',ledger=None,request_scope=None,constraints=None):
     """Validate choices against the *input*; callers rebind after accepted drafts.
 
     Model output: {input_binding: <copied input>, actions: [{type, reason,
@@ -125,15 +137,18 @@ def validate(s,payload,text,input_binding=None,*,source='LIVE_AI',ledger=None):
         raise ValueError('研究建议未绑定本次版本、事实与真实结果')
     actions=payload['actions']
     if not isinstance(actions,list) or not 1<=len(actions)<=4:raise ValueError('研究建议必须为 1–4 个有限步骤')
+    read_only = request_scope == 'EXPLAIN' or request_scope is None and read_only_request(text)
     proposal=s.get('measurement_plan') or {};available={p['id'] for p in proposal.get('plans',[])}
     seen=set();validated=[]
     for item in actions:
         if not isinstance(item,dict) or set(item)!={'type','reason','proposal_id','fact_fields','quote'}:raise ValueError('研究步骤字段无效')
         kind=item['type'];reason=item['reason'];fields=item['fact_fields'];quote=item['quote'];pid=item['proposal_id']
         if kind not in TYPES or kind in seen:raise ValueError('研究步骤未知或重复')
+        if read_only and kind not in ('explain','clarify_fact','inspect_observation','request_calibration'):
+            raise ValueError('本轮只核对已有资料，不能准备或修改计划')
         if not isinstance(reason,str) or not 1<=len(reason)<=500:raise ValueError('研究步骤需要简短理由')
         # Reasons organize work, not a second unverified scientific-result channel.
-        _reason_limits(s,reason,text)
+        _reason_limits(s,reason,text,constraints=constraints,legacy=request_scope is None)
         if not isinstance(quote,str) or len(quote)>1000 or quote and quote not in text:raise ValueError('研究步骤引用不是本轮原话')
         if not isinstance(fields,list) or len(fields)>8 or any(f not in fact_fields(s) for f in fields) or len(set(fields))!=len(fields):raise ValueError('研究步骤引用了不支持的事实')
         if pid is not None and (not isinstance(pid,str) or pid not in available):raise ValueError('研究步骤引用了不存在的方案')
@@ -183,10 +198,12 @@ def current(s,bundle=None):
     return bool(bundle and bundle.get('sha256')==digest({k:v for k,v in bundle.items() if k!='sha256'}) and bundle.get('state_binding')==state(s))
 
 
-def fallback(s,text='',*,ledger=None):
+def fallback(s,text='',*,ledger=None,request_scope=None):
     """Transparent local navigation aid; never presented as a live-model decision."""
     kind='explain';fields=[];reason='离线展示当前资料与可继续的研究步骤。';pid=None
-    if re.search('暗纹|不够暗|模糊|平均|像素',text):
+    if request_scope == 'EXPLAIN' or read_only_request(text):
+        reason='按本轮要求解释已保存的资料与结果。'
+    elif re.search('暗纹|不够暗|模糊|平均|像素',text):
         kind='inspect_observation';fields=['observation.sampling','observation.calibration'];reason='先核对观测方式与独立校准；不能由暗纹或低残差确定真实几何。'
     elif re.search('简单|固定扫描|基础方案|基线',text):
         kind='choose_baseline';reason='用户倾向简单方案，先核对基础方案是否满足当前资源与目标。'
@@ -197,7 +214,7 @@ def fallback(s,text='',*,ledger=None):
     elif s.get('inverse_result'):
         kind='compare_acquisition';reason='已有分析结果，可核对允许资源后比较基础与有限补采方案。'
     payload={'input_binding':binding(s),'actions':[{'type':kind,'reason':reason,'proposal_id':pid,'fact_fields':fields,'quote':text[:1000]}]}
-    return validate(s,payload,text,source='DETERMINISTIC_FALLBACK',ledger=ledger)
+    return validate(s,payload,text,source='DETERMINISTIC_FALLBACK',ledger=ledger,request_scope=request_scope)
 
 
 def offline(store,s,data):
@@ -207,6 +224,8 @@ def offline(store,s,data):
     if not isinstance(text,str) or len(text)>6000:raise WorkflowError('离线研究问题过长')
     from ..workflow_model import wire
     if wire.credential_risk(text):raise WorkflowError('请勿发送密钥')
-    s['research_actions']=fallback(s,text,ledger=root_record(store,s)['inverse_ledger'])
+    scope=data.get('request_scope')
+    if scope not in (None,'EXPLAIN','PLAN'):raise WorkflowError('请选择解释或规划')
+    s['research_actions']=fallback(s,text,ledger=root_record(store,s)['inverse_ledger'],request_scope=scope)
     store.event(s,'INVERSE_OFFLINE_RESEARCH_SUGGESTION',{'sha256':s['research_actions']['sha256'],'model_calls':0})
     store.save(s);return s

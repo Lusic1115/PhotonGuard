@@ -22,8 +22,9 @@ def inherit(store,parent,child):
     if parent.get('estimate_origin'):child['estimate_origin']=copy.deepcopy(parent['estimate_origin'])
     if parent.get('exploration_root'):
         child['exploration_root']=parent['exploration_root']
-        child['library_origin']=copy.deepcopy(parent.get('library_origin'))
-        child['library_origin']['continued_from']=parent['id']
+        if parent.get('library_origin'):
+            child['library_origin']=copy.deepcopy(parent['library_origin'])
+            child['library_origin']['continued_from']=parent['id']
         root=store.get(child['exploration_root']);remaining=ledger_for(store,root)
         if remaining['stages']>=2:raise WorkflowError('本次探索已用完两阶段，请保留结果；新的任务须明确另建探索')
         if child.get('spec'):
@@ -36,6 +37,71 @@ def inherit(store,parent,child):
                 if str(exc).startswith('二维原始场与展示证据预计超出输出预算'):
                     raise WorkflowError('共享输出预算不足以比较这组二维候选；请缩小候选目录，例如明确一个待核对缝距。旧结果保留，未计算。',409) from None
                 raise
+
+def start_exploration(record):
+    budget = record['spec']['resource_budget']
+    record['exploration_root'] = record['id']
+    record['exploration_ledger'] = {
+        'max_fast_evaluations': budget['max_fast_evaluations'], 'max_fdtd': budget['max_fdtd'],
+        'stages': 0, 'reserved_fast': 0, 'reserved_fdtd': 0, 'output_limit_bytes': budget['output_mib'] * 1024 * 1024,
+        'used_output_bytes': 0,
+        'reservation_policy': 'Reserve entire planned attempt before dispatch; failed attempts not refunded; maximum two stages per exploration.',
+    }
+
+
+def bind_comparison_budget(store, parent):
+    """Attach the existing family allowance when an older task had no ledger."""
+    if parent.get('exploration_root'):
+        return
+    anchor = parent
+    seen = {parent['id']}
+    while anchor.get('parent_id'):
+        earlier = store.get(anchor['parent_id'])
+        if not earlier.get('spec') or earlier['domain'] != parent['domain']:
+            break
+        if earlier['id'] in seen:
+            raise WorkflowError('来源版本链有重复记录，请重新选择已核对的实验。',409)
+        seen.add(earlier['id'])
+        anchor = earlier
+    if not anchor.get('exploration_root'):
+        start_exploration(anchor)
+        ledger = anchor['exploration_ledger']
+        for path in store.root.glob('*/case.json'):
+            member = store.get(path.parent.name)
+            if member['family_id'] != parent['family_id'] or member.get('domain') != parent['domain']:
+                continue
+            ledger['used_output_bytes'] += sum(file.stat().st_size for file in (path.parent/'execution').rglob('*')
+                                              if file.is_file())
+            if member.get('approved_plan_sha256') and member.get('plan'):
+                plan = member['plan']
+                ledger['stages'] += 1
+                ledger['reserved_fast'] += len(plan['candidates']) * (2 if parent['domain'] == 'diffraction' else 1)
+                ledger['reserved_fdtd'] += 8 * plan['resource_budget']['max_meep_validations']
+        store.save(anchor)
+    if anchor is not parent:
+        parent['exploration_root'] = anchor['exploration_root']
+        store.save(parent)
+
+
+def comparison_needs_new_round(store, parent):
+    root = parent.get('exploration_root')
+    return bool(root and store.get(root)['exploration_ledger']['stages'] >= 2)
+
+
+def prepare_comparison_budget(store, parent, prepared, *, new_round=False):
+    bind_comparison_budget(store, parent)
+    if not new_round:
+        inherit(store, parent, prepared)
+        return
+    if not comparison_needs_new_round(store, parent):
+        raise WorkflowError('来源探索仍有剩余阶段，请按原额度准备对照。', 409)
+    if parent.get('estimate_origin'):
+        prepared['estimate_origin'] = copy.deepcopy(parent['estimate_origin'])
+    prepared['exploration_round_origin'] = {
+        'previous_root_id': parent['exploration_root'], 'source_record_id': parent['id'],
+        'source_result_sha256': digest(parent['result']), 'reason': 'USER_CONFIRMED_NEW_VERIFICATION_ROUND',
+    }
+
 
 def apply_plan(store,s,response,parent=None,context=None):
     prov=response.get('provenance',{})
@@ -52,8 +118,7 @@ def apply_plan(store,s,response,parent=None,context=None):
     if same:
         origin=copy.deepcopy(s['library_origin']);inherit(store,parent,s);s['library_origin']=origin
     else:
-        s['exploration_root']=s['id'];b=s['spec']['resource_budget']
-        s['exploration_ledger']={'max_fast_evaluations':b['max_fast_evaluations'],'max_fdtd':b['max_fdtd'],'stages':0,'reserved_fast':0,'reserved_fdtd':0,'output_limit_bytes':b['output_mib']*1024*1024,'used_output_bytes':0,'reservation_policy':'Reserve entire planned attempt before dispatch; failed attempts not refunded; maximum two stages per exploration.'}
+        start_exploration(s)
     store.save(s);store.event(s,'CASE_ADAPTED',{'provenance':prov,'plan_sha256':s['plan']['sha256'],'new_computation':False});return s
 
 def create(store,data):

@@ -14,9 +14,11 @@ FOCI=('overview','parameters','residuals','limitations','measurement','forward')
 
 def explain(s,focus='overview'):
     r=s.get('inverse_result');n=len(s['groups'])
+    mapped=[g['intake'] for g in s['groups'] if g.get('intake')]
+    csv_review=(f' 已核对 {len(mapped)} 份 CSV 的列解释；分析副本保留 {sum(g["mapped_rows"] for g in mapped)} 条，明确排除 {sum(len(g["excluded_rows"]) for g in mapped)} 条。原文件完整保留。' if mapped else '')
     if s['inverse_settings']['model']==models.FILM:
-        return f'本版本含 {n} 组已校准反射率。已知实折射率、法向入射、无损单层，只估计厚度。'+(f'保留 {len(r.get("modes",[]))} 个有限厚度候选；单波长周期歧义及失败区间保留。'+','.join(r['warnings']) if r else '尚未批准计算。')+' 所有观测用于拟合，尚无独立验证。T=1-R 不作为第二份证据；不证明唯一性或置信区间。'
-    prefix=f'本版本含 {n} 次采集。各次原 CSV 保留；每五个点留出一个，留出不参与起点选择，仍属于同一扫描。'
+        return f'本版本含 {n} 组已校准反射率。已知实折射率、法向入射、无损单层，只估计厚度。'+(f'保留 {len(r.get("modes",[]))} 个有限厚度候选；单波长周期歧义及失败区间保留。'+','.join(r['warnings']) if r else '尚未批准计算。')+csv_review+' 所有观测用于拟合，尚无独立验证。T=1-R 不作为第二份证据；不证明唯一性或置信区间。'
+    prefix=f'本版本含 {n} 次采集。各次原 CSV 保留；每五个点留出一个，留出不参与起点选择，仍属于同一扫描。'+csv_review
     if s['inverse_settings']['model']==models.SLIT:prefix+=' 暗纹不够暗不能单独确定真实缝宽或模糊原因；观测方式及独立校准需另行核对。'
     if not r:return prefix+' 尚无拟合结果。先核对已知条件、待估范围、每组权重及坐标配准，再单独批准计算。'
     result=prefix+f' 本次实际残差调用 {r["resources"]["actual_residual_calls"]} 次，完成 {r["resources"]["local_optimizations"]} 个局部起点尝试。'
@@ -27,7 +29,7 @@ def explain(s,focus='overview'):
     if focus=='measurement':result+=' 补采按研究目标比较有限模板的局部预测尺度、候选分歧及成本；允许声明的亮度/背景与配准变化。推荐不读取隐藏教学真值，预测尺度不是置信区间。加入后的补采是训练资料，不再是独立验证。'
     if focus=='measurement' and s.get('measurement_plan',{}).get('selection_reason'):result+=' 方案取舍：'+str(s['measurement_plan']['selection_reason'])+'。基础方案也是合法选择。'
     if focus=='residuals':
-        result+=' '+('; '.join(f'采集 {i+1}：训练 RMSE {d["training_rmse"]:.6g}，留出 RMSE {d["holdout_rmse"]:.6g}' for i,d in enumerate(r.get('data',[]))))+'；未清洗或删除异常点。'
+        result+=' '+('; '.join(f'采集 {i+1}：训练 RMSE {d["training_rmse"]:.6g}，留出 RMSE {d["holdout_rmse"]:.6g}' for i,d in enumerate(r.get('data',[]))))+'。拟合与留出统计均对应本版分析数据。'
     if s['inverse_settings']['model']==models.GAUSSIAN:result+=' 假设 M²=1、1/e² 强度半径、自由传播；透镜输入坐标必须为拟合 z0 减去透镜全局位置。'
     if s['inverse_settings']['model']==models.SLIT:result+=' 本模型的低残差不能排除未核验的像素或窗口强度平均、配准及曝光影响；暗纹不够暗不能单独确定真实缝宽或模糊原因。'
     return result
@@ -42,6 +44,8 @@ def view(s):
         ds=g['dataset'];datasets.append({k:ds.get(k) for k in ('rows','source_kind','source_name','sha256','raw_sha256','columns','conversion','questions')}|
              {'range_mm':[ds['x_mm'][0],ds['x_mm'][-1]] if ds.get('x_mm') else None,'wavelength_range_nm':[ds['x_nm'][0],ds['x_nm'][-1]] if ds.get('x_nm') else None,'conditions':g['conditions'],'approved':g['approved'],'scale':g['scale'],'scale_source':g['scale_source'],
               'observation':g.get('observation',{'kind':'UNKNOWN'}),'noise':g.get('noise')})
+        if g.get('intake'):
+            datasets[-1]['column_interpretation']=g['intake']
     r=s.get('inverse_result')
     return {'kind':'inverse','task_summary':task_summary(s),'datasets':datasets,'settings':s['inverse_settings'],'parameter_sources':s.get('parameter_sources'),
             'research_input_binding':research_actions.binding(s),'acquisition_constraints':s.get('acquisition_constraints',{}),
@@ -129,6 +133,19 @@ def grounded(field,value,quote,text):
 
 
 def m_finite_positive(value):return models.finite(value) and 0<value<=500
+
+
+def authorize_catalog_replacement(quote, text):
+    """Require a replacement directive attached to the quoted list."""
+    before_value = re.split(r'\d', quote, maxsplit=1)[0]
+    for occurrence in re.finditer(re.escape(quote), text):
+        prefix = re.split(r'[。！？；;\n]', text[:occurrence.start()] + before_value)[-1]
+        directive = re.search(r'(?:目录|波长|光源)[^。！？；;\n]{0,60}'
+                              r'(?:改为|改成|更正为|更新为|替换为|调整为|设为|换成)\s*[：:]?\s*$', prefix)
+        if directive and not re.search(r'如果|假设|例如|比如|是否|不确定|不要|不必|无需|先别|暂不|暂时不|以前|上次|曾经|早已|已经|已改|已更正|已更新',
+                                       re.split(r'[，,]', prefix[:directive.start()])[-1] + directive[0]):
+            return
+    raise ValueError('请明确说出本轮要采用的新波长目录，例如「把可用波长目录改为…」。')
 
 
 def guidance(store,s,data):

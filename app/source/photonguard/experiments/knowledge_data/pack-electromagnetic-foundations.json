@@ -1,0 +1,2798 @@
+{
+  "id": "electromagnetic-foundations",
+  "version": "1.0.3",
+  "sources": {
+    "nist-photon-drag": {
+      "title": "Photon Drag in Metal Films",
+      "author": "National Institute of Standards and Technology",
+      "edition": "NIST 研究项目网页",
+      "license": "参见 NIST 网站版权说明；仅引用研究内容",
+      "fingerprint": "sha256:9441bec501d0316106f068fe199fe55f1dce75ae72c33938046042424ba2648f",
+      "url": "https://www.nist.gov/programs-projects/photon-drag-metal-films",
+      "section": "Summary 与 Description · 入射光产生面内光电流及金薄膜实验",
+      "accessed": "2026-11-14",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "constitutive": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=20",
+      "section": "§2.5，材料本构关系，阅读器第 20 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "maxwell": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=1",
+      "section": "§2.1，时域 Maxwell 方程，阅读器第 1 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "bound-normal": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=29",
+      "section": "§2.6，法向边界条件与薄柱体积分，阅读器第 29 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "maxwell-integral": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=18",
+      "section": "§2.4，积分形式与 Faraday 定律，阅读器第 18 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "wave-eq": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=5",
+      "section": "§2.2，均匀介质波动方程，阅读器第 5 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "wave-plane": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=12",
+      "section": "§2.3.3，正弦均匀平面波，阅读器第 12 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "wave-k": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=22",
+      "section": "§2.1.2，横向电磁波与色散关系，阅读器第 22 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "phasor-power": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=36",
+      "section": "§2.7.2，周期平均功率与复表示，阅读器第 36 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "fresnel": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=53",
+      "section": "§2.2.3，Fresnel 场幅系数，阅读器第 53 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "power-energy": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=35",
+      "section": "§2.7.1，电磁能量与能流守恒，阅读器第 35 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "complex-power": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=37",
+      "section": "§2.7.2，复 Poynting 矢量，阅读器第 37 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "bound-tangential": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=30",
+      "section": "§2.6，切向边界条件与小回路积分，阅读器第 30 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "bound-current": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=31",
+      "section": "§2.6，面电流与理想导体边界，阅读器第 31 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "brewster": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=58",
+      "section": "§2.2.4，TM Brewster 角，阅读器第 58 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "fresnel-power": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=55",
+      "section": "§2.2.3，反射、透射与功率，阅读器第 55 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "tir": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=59",
+      "section": "§2.2.5，全反射，阅读器第 59 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "tir-phase": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=62",
+      "section": "§2.2.5，倏逝场与全反射相位，阅读器第 62 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "frustrated": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=67",
+      "section": "§2.2.6，受抑全反射，阅读器第 67 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "loss-dielectric": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=21",
+      "section": "§2.1.1，频域本构与复介电函数，阅读器第 21 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "lorentz": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=26",
+      "section": "§2.1.4，Lorentz 振子、阻尼和极化响应，阅读器第 26 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "lorentz-real-imag": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=27",
+      "section": "§2.1.4，振子响应实部与虚部，阅读器第 27 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "kk": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=43",
+      "section": "§2.1，Kramers–Kronig 关系，阅读器第 43 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "anisotropy": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=157",
+      "section": "§2.8，介电张量和主轴，阅读器第 157 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "anisotropic-wave": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=158",
+      "section": "§2.8，D 与 E、波矢和本征偏振，阅读器第 158 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "group-expansion": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=33",
+      "section": "§2.1，传播常数关于载频的 Taylor 展开，阅读器第 33 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "complex-matrix": {
+      "title": "Complex Matrices and Fast Fourier Transform",
+      "author": "Gilbert Strang / MIT",
+      "edition": "MIT 18.06SC Fall 2011",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:950e648a762b0acfc5a23a478dd0de1334b2ed5e3eaabc0763b4859f464b29f0",
+      "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/53f17d47bf99d26fdc472b3177c256a8_MIT18_06SCF11_Ses3.2sum.pdf#page=2",
+      "section": "厄米矩阵、酉矩阵和本征向量，阅读器第 2 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "phasors": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=10",
+      "section": "§2.3，复相量表示、振幅及相位，阅读器第 10 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    }
+  },
+  "entries": [
+    {
+      "id": "photon-drag-current",
+      "title": "光子拖曳效应与光电流",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "光子拖曳",
+        "光子拖曳效应",
+        "光子拖拽效应",
+        "光子拖曳电流",
+        "photon drag",
+        "photon drag effect"
+      ],
+      "definition": "光子拖曳效应描述光向材料载流子转移动量，从而在特定条件下产生光电流或光电压。",
+      "body": "以斜入射照射金属薄膜为例，入射光具有沿薄膜平面的动量分量。光和载流子的相互作用可以产生面内电流。电流的符号和强度还取决于材料、表面状态与测量条件。菲涅耳拖曳讨论运动介质对光传播速度的影响，属于另一个物理问题。",
+      "example": "比较光束从相反方向斜入射同一薄膜时记录到的光电压，并同时记录偏振和样品条件。",
+      "caution": "给定入射方向并不足以判断任意材料的电压符号或大小。",
+      "conditions": [
+        "入门解释采用斜入射照射导电薄膜，实际大小和符号由具体器件和实验条件决定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [],
+      "related": [
+        "quantum-photon-energy"
+      ],
+      "sources": [
+        "nist-photon-drag"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "光子拖曳效应描述光向材料载流子转移动量，从而在特定条件下产生光电流或光电压。",
+          "sources": ["nist-photon-drag"]
+        }
+      ],
+      "review": "2026-11-14 · 原创讲解，对照 NIST 研究项目页核对"
+    },
+    {
+      "id": "electric-field-vs-displacement",
+      "title": "电场 E 与电位移 D",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "electric displacement",
+        "E和D"
+      ],
+      "definition": "D 将极化贡献和真空电场项合在一起，用来与自由电荷联系。",
+      "body": "在介质中 E 仍描述电场，极化 P 描述单位体积的电偶极矩；D=ε₀E+P。高斯方程对 D 使用自由电荷。若介质各向异性或有记忆，D 不能总写成一个常量乘 E。",
+      "example": "同样的自由面电荷可以在不同介质建立不同 E。",
+      "caution": "把极化电荷算进自由电荷会重复计数。",
+      "conditions": [
+        "采用 SI 宏观电磁场。"
+      ],
+      "formula": "D=ε₀E+P",
+      "variables": "D、P 用 C/m²，E 用 V/m。",
+      "prerequisites": [],
+      "related": [],
+      "sources": [
+        "constitutive",
+        "maxwell"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "D=ε₀E+P",
+          "sources": [
+            "constitutive",
+            "maxwell"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "同样的自由面电荷可以在不同介质建立不同 E。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "magnetic-b-vs-h",
+      "title": "磁感应 B 与磁场 H",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "magnetic flux density",
+        "B和H"
+      ],
+      "definition": "B 表示磁感应强度，H 是从 B 中分开磁化贡献后的宏观场。",
+      "body": "在 SI 中 B=μ₀(H+M)，其中 M 为单位体积磁偶极矩。在许多普通光学材料里可近似 μ≈μ₀，仍应保留 B 与 H 各自的单位和边界条件。",
+      "example": "真空中 B 与 H 平行，大小关系 B=μ₀H。",
+      "caution": "有磁响应时不能把 H 当成简单更名的 B。",
+      "conditions": [
+        "采用 SI 宏观表述。"
+      ],
+      "formula": "B=μ₀(H+M)",
+      "variables": "B 用 T，H、M 用 A/m。",
+      "prerequisites": [],
+      "related": [],
+      "sources": [
+        "constitutive",
+        "maxwell"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "B=μ₀(H+M)",
+          "sources": [
+            "constitutive",
+            "maxwell"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "真空中 B 与 H 平行，大小关系 B=μ₀H。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "gauss-electric-flux",
+      "title": "自由电荷与电位移通量",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "Gauss law D",
+        "电位移通量"
+      ],
+      "definition": "闭合面上的 D 通量等于所包围的自由电荷。",
+      "body": "在跨界面的一片薄柱体上，侧面积趋小，通量主要来自两盖。若界面有自由面电荷，两侧 D 的法向分量会相差该面电荷密度；没有自由面电荷时连续。",
+      "example": "把面积 1 cm² 的小盖跨在均匀带电界面上，通量跳变量等于自由电荷密度乘面积。",
+      "caution": "通量必须使用闭合面的一致外法向。",
+      "conditions": [
+        "使用宏观 D 和自由电荷。"
+      ],
+      "formula": "∮D·dA=Q_free",
+      "variables": "D 用 C/m²，通量用 C。",
+      "prerequisites": [
+        "electric-field-vs-displacement"
+      ],
+      "related": [],
+      "sources": [
+        "bound-normal",
+        "maxwell"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "∮D·dA=Q_free",
+          "sources": [
+            "bound-normal",
+            "maxwell"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "把面积 1 cm² 的小盖跨在均匀带电界面上，通量跳变量等于自由电荷密度乘面积。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "gauss-magnetic-no-source",
+      "title": "磁感应法向连续的原因",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "Gauss magnetic",
+        "B法向连续"
+      ],
+      "definition": "在通常 Maxwell 理论中，任意闭合面的磁通量为零。",
+      "body": "用薄柱体跨过两介质的界面，令侧壁高度趋零。上下盖的磁通必须相互抵消，所以 B 法向相等，即使两边磁导率不同，H 法向仍可以变化。",
+      "example": "以倾斜方向穿过磁导率变化的理想界面，检查 B 的法向分量。",
+      "caution": "零总磁通不表示每个盖的磁通分别为零。",
+      "conditions": [
+        "普通宏观材料，没有磁单极子源。"
+      ],
+      "formula": "∇·B=0，n·(B₂−B₁)=0",
+      "variables": "B 用 T，n 为界面单位法向。",
+      "prerequisites": [
+        "magnetic-b-vs-h"
+      ],
+      "related": [],
+      "sources": [
+        "bound-normal",
+        "maxwell"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "∇·B=0，n·(B₂−B₁)=0",
+          "sources": [
+            "bound-normal",
+            "maxwell"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "以倾斜方向穿过磁导率变化的理想界面，检查 B 的法向分量。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "faraday-loop-induction",
+      "title": "磁通变化与感生电场",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "Faraday induction",
+        "感生电动势"
+      ],
+      "definition": "穿过固定回路的磁通变化率给出沿回路的电场环量。",
+      "body": "先选择闭合路径方向，并用右手关系确定通量法向。磁通增加时，感生环量符号相反。光波中随时间变化的磁场和电场相互关联，这与静电场的闭路积分为零不同。",
+      "example": "固定面积 1 cm²，均匀垂直磁感应以 1 T/s 增长，感生环量大小为 0.1 mV。",
+      "caution": "移动回路时还需要考虑运动引起的项。",
+      "conditions": [
+        "固定回路，连续场或有限跳变。"
+      ],
+      "formula": "∮E·dl=−dΦ_B/dt",
+      "variables": "E 用 V/m，Φ_B 用 Wb。",
+      "prerequisites": [
+        "magnetic-b-vs-h"
+      ],
+      "related": [],
+      "sources": [
+        "maxwell-integral"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "∮E·dl=−dΦ_B/dt",
+          "sources": [
+            "maxwell-integral"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "固定面积 1 cm²，均匀垂直磁感应以 1 T/s 增长，感生环量大小为 0.1 mV。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ampere-displacement-current",
+      "title": "安培方程中的位移电流",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "displacement current",
+        "安培麦克斯韦"
+      ],
+      "definition": "时变电位移的通量变化和自由电流共同贡献磁场环量。",
+      "body": "对同一闭合回路选两个不同跨面时，某一面可能穿过导体，另一面穿过介质间隙。引入 ∂D/∂t 后，两种面积分都可给出同样的磁场环量。它在无导线的光波传播中仍存在。",
+      "example": "充电电容中，间隙的电位移通量随时间改变。",
+      "caution": "位移电流项不等于带电粒子跨过介质。",
+      "conditions": [
+        "使用宏观 H 与 D，回路方向一致。"
+      ],
+      "formula": "∇×H=J_free+∂D/∂t",
+      "variables": "两项电流密度均为 A/m²。",
+      "prerequisites": [
+        "electric-field-vs-displacement"
+      ],
+      "related": [],
+      "sources": [
+        "maxwell",
+        "maxwell-integral"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "∇×H=J_free+∂D/∂t",
+          "sources": [
+            "maxwell",
+            "maxwell-integral"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "充电电容中，间隙的电位移通量随时间改变。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "charge-continuity-optics",
+      "title": "连续性方程约束自由电流",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "charge continuity",
+        "自由电荷守恒"
+      ],
+      "definition": "电流的散度与当地自由电荷密度的时间变化相反。",
+      "body": "对安培–Maxwell 方程取散度，左侧旋度的散度为零，再用 D 的高斯方程即可得到局部电荷守恒。若模型给的源不满足该关系，所给方程组可能彼此不相容。",
+      "example": "某小体积有净电流流出，内部自由电荷总量应减少。",
+      "caution": "不要把单位面积电流与穿过面积后的总电流混写。",
+      "conditions": [
+        "宏观自由电流和电荷采用同一记账约定。"
+      ],
+      "formula": "∂ρ_free/∂t+∇·J_free=0",
+      "variables": "ρ 用 C/m³，J 用 A/m²。",
+      "prerequisites": [
+        "ampere-displacement-current"
+      ],
+      "related": [],
+      "sources": [
+        "maxwell"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "∂ρ_free/∂t+∇·J_free=0",
+          "sources": [
+            "maxwell"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "某小体积有净电流流出，内部自由电荷总量应减少。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "maxwell-wave-curl-curl",
+      "title": "从 Maxwell 旋度得到波动方程",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "curl curl wave equation",
+        "旋度推导波动"
+      ],
+      "definition": "均匀、无源、无损的线性介质中，电场满足二阶波动方程。",
+      "body": "对 Faraday 方程再取旋度，并代入安培方程。均匀介质的无自由电荷条件使 ∇·E 为零，双旋度可化为负拉普拉斯，从而得到传播速度与介电、磁响应的关系。",
+      "example": "取 ε=4ε₀ 且 μ=μ₀，波速为 c/2。",
+      "caution": "空间变化的 ε 会改变散度处理，不能直接照搬均匀推导。",
+      "conditions": [
+        "ε、μ 常量，无自由电荷和电流。"
+      ],
+      "formula": "∇²E=με∂²E/∂t²",
+      "variables": "v=1/√(με)，单位 m/s。",
+      "prerequisites": [
+        "ampere-displacement-current",
+        "faraday-loop-induction"
+      ],
+      "related": [],
+      "sources": [
+        "wave-eq",
+        "maxwell"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "∇²E=με∂²E/∂t²",
+          "sources": [
+            "wave-eq",
+            "maxwell"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "取 ε=4ε₀ 且 μ=μ₀，波速为 c/2。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "harmonic-helmholtz-reduction",
+      "title": "单频波动方程与 Helmholtz 方程",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "Helmholtz equation",
+        "谐波场空间方程"
+      ],
+      "definition": "用固定角频率的时谐因子，可把时间二阶导数换成 −ω²。",
+      "body": "将实场写成空间复幅乘 exp(−iωt) 后取实部，统一移去时间因子。对均匀介质分量得到 Helmholtz 形式，波数决定空间振荡速度。宽带脉冲要逐频处理或返回时域。",
+      "example": "令空间场为 exp(ikz)，代入可核对二阶导数。",
+      "caution": "波数平方和介质损耗符号要遵守同一时谐约定。",
+      "conditions": [
+        "单频、均匀介质内的无源区域。"
+      ],
+      "formula": "∇²E+k²E=0，k²=μεω²",
+      "variables": "k 用 rad/m，ω 用 rad/s。",
+      "prerequisites": [
+        "euler-optical-phase",
+        "maxwell-wave-curl-curl"
+      ],
+      "related": [],
+      "sources": [
+        "wave-eq",
+        "wave-plane"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "∇²E+k²E=0，k²=μεω²",
+          "sources": [
+            "wave-eq",
+            "wave-plane"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "令空间场为 exp(ikz)，代入可核对二阶导数。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "em-transverse-plane-wave",
+      "title": "平面波的横向场条件",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "transverse electromagnetic wave",
+        "横波条件"
+      ],
+      "definition": "均匀各向同性无源介质的传播平面波中，E 和 H 都与波矢正交。",
+      "body": "把空间求导换为波矢因子，散度条件要求波矢与相应场点积为零。E、H 与传播方向形成相互垂直的关系。聚焦光束和各向异性介质可能出现相对观察轴的纵向场分量。",
+      "example": "波沿 +z、E 沿 +x 时，无损介质中 H 沿 +y。",
+      "caution": "波矢方向与能流方向在各向异性介质中可以不同。",
+      "conditions": [
+        "均匀、无损、各向同性平面波。"
+      ],
+      "formula": "k·E=0，k·H=0",
+      "variables": "k 用 rad/m。",
+      "prerequisites": [
+        "harmonic-helmholtz-reduction"
+      ],
+      "related": [],
+      "sources": [
+        "wave-plane",
+        "wave-k"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "k·E=0，k·H=0",
+          "sources": [
+            "wave-plane",
+            "wave-k"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "波沿 +z、E 沿 +x 时，无损介质中 H 沿 +y。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "em-wave-impedance",
+      "title": "平面波的波阻抗",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "wave impedance",
+        "E除以H"
+      ],
+      "definition": "均匀无损介质传播平面波的电场与磁场幅值之比是介质波阻抗。",
+      "body": "把平面波代入旋度方程，磁场大小与电场大小的比例由 μ 和 ε 决定。同一 E 场幅在不同阻抗下对应不同能流，所以比较跨界面的光功率不能只比较电场幅。",
+      "example": "真空波阻抗约 377 Ω。",
+      "caution": "近场、驻波、各向异性和斜入射切向分量的比值可能不同。",
+      "conditions": [
+        "均匀无损介质中的单个传播平面波。"
+      ],
+      "formula": "η=√(μ/ε)，abs(E)/abs(H)=η",
+      "variables": "η 用 Ω，E 用 V/m，H 用 A/m。",
+      "prerequisites": [
+        "em-transverse-plane-wave"
+      ],
+      "related": [],
+      "sources": [
+        "wave-plane",
+        "phasor-power"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "η=√(μ/ε)，abs(E)/abs(H)=η",
+          "sources": [
+            "wave-plane",
+            "phasor-power"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "真空波阻抗约 377 Ω。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "medium-wavelength-continuity",
+      "title": "界面频率连续而波长改变",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "frequency at interface",
+        "介质波长"
+      ],
+      "definition": "静止线性界面上的反射和透射维持入射光的频率。",
+      "body": "界面边界条件须在每一时刻成立，稳态输入的时间因子在各侧相同。介质改变相速度，所以空间波数和介质内波长可以改变。真空波长作为频率标识保持不变。",
+      "example": "600 nm 真空光进入 n=1.5 的介质，介质内波长约 400 nm。",
+      "caution": "频率转换需要时间变化或非线性等额外机制。",
+      "conditions": [
+        "静止、线性且均匀界面，使用单色稳态。"
+      ],
+      "formula": "λ_medium=λ₀/n",
+      "variables": "λ_medium 与 λ₀ 同单位。",
+      "prerequisites": [
+        "harmonic-helmholtz-reduction"
+      ],
+      "related": [],
+      "sources": [
+        "wave-k",
+        "fresnel"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "λ_medium=λ₀/n",
+          "sources": [
+            "wave-k",
+            "fresnel"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "600 nm 真空光进入 n=1.5 的介质，介质内波长约 400 nm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "em-instantaneous-poynting",
+      "title": "瞬时 Poynting 能流",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "Poynting vector",
+        "E叉乘H"
+      ],
+      "definition": "E×H 给出宏观电磁能流密度矢量。",
+      "body": "矢量的方向指出通过小面积的能量流向，取与面积法向的点积后可积分求功率。对时间变化的波形，可先求瞬时值，再按探测所需时间平均。",
+      "example": "E 沿 x、H 沿 y 时，瞬时能流沿 z，方向由叉乘符号确定。",
+      "caution": "局部能流方向不必等于任意指定观察轴。",
+      "conditions": [
+        "使用 SI 宏观 E 和 H。"
+      ],
+      "formula": "S=E×H",
+      "variables": "S 用 W/m²。",
+      "prerequisites": [
+        "em-transverse-plane-wave"
+      ],
+      "related": [],
+      "sources": [
+        "power-energy"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "S=E×H",
+          "sources": [
+            "power-energy"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "E 沿 x、H 沿 y 时，瞬时能流沿 z，方向由叉乘符号确定。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "em-average-poynting",
+      "title": "峰值相量的平均光强",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "complex Poynting average",
+        "二分之一共轭"
+      ],
+      "definition": "单频峰值相量可通过半个实部的叉积计算周期平均能流。",
+      "body": "将真实电磁场分别写为复相量乘时间因子的实部。相乘时有两个快速双频项，它们在周期平均中消失，留下彼此共轭的恒定项。使用 RMS 相量时要相应调整系数。",
+      "example": "在无损平面波中用峰值 E=10 V/m 和 η=377 Ω，平均光强约 0.133 W/m²。",
+      "caution": "取的是 H 的共轭，且峰值相量式的二分之一不能漏。",
+      "conditions": [
+        "同频稳态、峰值相量，周期平均。"
+      ],
+      "formula": "⟨S⟩=(1/2)Re(E×H*)",
+      "variables": "E、H 为峰值复相量，结果 W/m²。",
+      "prerequisites": [
+        "em-instantaneous-poynting",
+        "peak-rms-amplitude"
+      ],
+      "related": [],
+      "sources": [
+        "complex-power",
+        "phasor-power"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "⟨S⟩=(1/2)Re(E×H*)",
+          "sources": [
+            "complex-power",
+            "phasor-power"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在无损平面波中用峰值 E=10 V/m 和 η=377 Ω，平均光强约 0.133 W/m²。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "em-energy-balance-volume",
+      "title": "能流守恒与局部耗散",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "Poynting theorem",
+        "能量守恒体积"
+      ],
+      "definition": "流入体积的净电磁功率等于储能增长率加上对材料或电流所作的功。",
+      "body": "对体积内的守恒方程积分，再用散度定理把能流散度变成穿过边界的通量。稳态周期平均时储能的平均变化可为零；此时外部输入与输出的差可归为耗散或输出端遗漏。",
+      "example": "比较无源吸收片前后的净功率和材料发热。",
+      "caution": "能量平衡须包括所有出入面和定义好的源项。",
+      "conditions": [
+        "简单线性无色散储能公式适用时使用。"
+      ],
+      "formula": "∂u/∂t+∇·S=−J·E",
+      "variables": "u 用 J/m³，右侧用 W/m³。",
+      "prerequisites": [
+        "em-instantaneous-poynting"
+      ],
+      "related": [],
+      "sources": [
+        "power-energy"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "∂u/∂t+∇·S=−J·E",
+          "sources": [
+            "power-energy"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较无源吸收片前后的净功率和材料发热。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "tangential-electric-boundary",
+      "title": "切向电场连续的回路推导",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "tangential E boundary",
+        "E切向条件"
+      ],
+      "definition": "普通介质界面上，在有限场和无等效磁面电流时切向 E 连续。",
+      "body": "取跨界面的细矩形回路，两长边沿界面，短边长度趋零。固定有限频率下的磁通项随面积变小，两个长边环量要相互抵消，因此得到切向分量的连续性。",
+      "example": "在介质平面界面用入射加反射的切向 E 与透射场匹配。",
+      "caution": "理想导体内部 E 为零，表面外侧切向 E 因此为零。",
+      "conditions": [
+        "普通 Maxwell 边界，场无奇异磁通。"
+      ],
+      "formula": "n×(E₂−E₁)=0",
+      "variables": "n 从介质 1 指向介质 2。",
+      "prerequisites": [
+        "faraday-loop-induction"
+      ],
+      "related": [],
+      "sources": [
+        "bound-tangential"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "n×(E₂−E₁)=0",
+          "sources": [
+            "bound-tangential"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在介质平面界面用入射加反射的切向 E 与透射场匹配。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "tangential-magnetic-boundary",
+      "title": "面电流导致切向 H 跳变",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "surface current H jump",
+        "磁场切向跳变"
+      ],
+      "definition": "若界面存在自由面电流，切向 H 的跃变量由其大小和方向决定。",
+      "body": "在安培积分式里令跨界面矩形回路的高度趋零，有限位移项消失，穿过回路的面电流仍可有限。这时 H 切向不能直接设相等。无面电流时两侧切向分量连续。",
+      "example": "在理想导体表面，外侧磁场可由面电流产生而内部为零。",
+      "caution": "法向选反会使方程的跃变符号对应改变。",
+      "conditions": [
+        "以 n 从区域 1 指向区域 2。"
+      ],
+      "formula": "n×(H₂−H₁)=K_free",
+      "variables": "H、面电流 K 用 A/m。",
+      "prerequisites": [
+        "ampere-displacement-current"
+      ],
+      "related": [],
+      "sources": [
+        "bound-current"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "n×(H₂−H₁)=K_free",
+          "sources": [
+            "bound-current"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在理想导体表面，外侧磁场可由面电流产生而内部为零。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "normal-d-jump",
+      "title": "面电荷导致法向 D 跳变",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "normal displacement jump",
+        "自由面电荷"
+      ],
+      "definition": "自由面电荷密度等于 D 两侧法向分量之差。",
+      "body": "若界面不带自由电荷，D 法向连续。各向同性介质的 D=εE，因此介电常数不同仍可使 E 法向跳变。极化面电荷的影响已经在 D 的定义中反映。",
+      "example": "无自由面电荷且 ε₂=2ε₁ 时，E₂ 的法向分量是 E₁ 的一半。",
+      "caution": "电场切向与电位移法向是不同边界条件。",
+      "conditions": [
+        "宏观 D，法向从 1 指向 2。"
+      ],
+      "formula": "n·(D₂−D₁)=σ_free",
+      "variables": "σ_free 用 C/m²。",
+      "prerequisites": [
+        "gauss-electric-flux"
+      ],
+      "related": [],
+      "sources": [
+        "bound-normal"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "n·(D₂−D₁)=σ_free",
+          "sources": [
+            "bound-normal"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "无自由面电荷且 ε₂=2ε₁ 时，E₂ 的法向分量是 E₁ 的一半。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "perfect-conductor-tangential-field",
+      "title": "理想导体表面的切向电场",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "PEC boundary",
+        "理想电导体边界"
+      ],
+      "definition": "理想电导体表面可把外侧切向电场设为零。",
+      "body": "在理想模型中导体内部没有可维持的时变电场，切向 E 连续便给出表面外侧条件。外侧入射波和反射波叠加以抵消切向电场，同时表面可承载电流和电荷。",
+      "example": "金属理想镜正入射，反射场在表面与入射场的切向分量相消。",
+      "caution": "真实金属有有限损耗和穿透深度。",
+      "conditions": [
+        "使用理想导体近似，不用于高损耗细节。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "tangential-electric-boundary"
+      ],
+      "related": [],
+      "sources": [
+        "bound-current"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "理想电导体表面可把外侧切向电场设为零。",
+          "sources": [
+            "bound-current"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "金属理想镜正入射，反射场在表面与入射场的切向分量相消。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "interface-plane-phase-matching",
+      "title": "平面界面上的平行波矢守恒",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "tangential wavevector",
+        "界面相位匹配"
+      ],
+      "definition": "平直均匀界面上，各波沿界面的相位变化率要一致。",
+      "body": "边界条件在界面上所有位置同时成立，只有平行波矢分量相同才能保持同一空间相位因子。用波数乘入射或透射角的正弦，可恢复几何光学的斯涅尔关系。",
+      "example": "由高折射率介质斜入射到低折射率介质，透射角通常更大。",
+      "caution": "光栅可向平行方向提供离散附加波矢。",
+      "conditions": [
+        "平直、均匀、静止界面。"
+      ],
+      "formula": "k₁ sinθ₁=k₂ sinθ₂",
+      "variables": "θ 相对界面法线，k 为对应介质波数。",
+      "prerequisites": [
+        "medium-wavelength-continuity"
+      ],
+      "related": [],
+      "sources": [
+        "fresnel",
+        "wave-plane"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "k₁ sinθ₁=k₂ sinθ₂",
+          "sources": [
+            "fresnel",
+            "wave-plane"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "由高折射率介质斜入射到低折射率介质，透射角通常更大。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "interface-te-tm-basis",
+      "title": "界面处 TE 与 TM 的基底",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "TE TM",
+        "s和p偏振"
+      ],
+      "definition": "斜入射界面可按 E 垂直或平行入射面分解。",
+      "body": "入射面由入射波矢和界面法线张成。s 或 TE 的电场垂直该面，p 或 TM 的电场在该面内。许多 Fresnel 系数分别作用于这两个分量，任意偏振可先作分解。",
+      "example": "保持同一入射角，比较 s 光和 p 光的反射强度。",
+      "caution": "正入射时入射面没有唯一方位，选定基底即可。",
+      "conditions": [
+        "单个平直各向同性界面。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "polarization"
+      ],
+      "related": [],
+      "sources": [
+        "fresnel",
+        "brewster"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "斜入射界面可按 E 垂直或平行入射面分解。",
+          "sources": [
+            "fresnel",
+            "brewster"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "保持同一入射角，比较 s 光和 p 光的反射强度。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "fresnel-normal-amplitude",
+      "title": "正入射的反射场幅",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "normal Fresnel amplitude",
+        "正入射r"
+      ],
+      "definition": "非磁介质正入射时，反射电场系数由两侧折射率差和和决定。",
+      "body": "将界面切向 E 和 H 写成入射、反射与透射的合量。反射波反向传播使其 H 与 E 的方向关系改变，因此联立两条条件可求出场幅与符号。",
+      "example": "从空气入射到 n=1.5 的玻璃，r=−0.2。",
+      "caution": "r 的负号是相位差，反射功率应取模平方。",
+      "conditions": [
+        "无损非磁介质，E 用同一实验室方向。"
+      ],
+      "formula": "r=(n₁−n₂)/(n₁+n₂)",
+      "variables": "n₁、n₂ 和 r 均无量纲。",
+      "prerequisites": [
+        "em-wave-impedance"
+      ],
+      "related": [],
+      "sources": [
+        "fresnel"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "r=(n₁−n₂)/(n₁+n₂)",
+          "sources": [
+            "fresnel"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "从空气入射到 n=1.5 的玻璃，r=−0.2。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "fresnel-transmitted-power-factor",
+      "title": "透射场幅到功率的修正",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "Fresnel power transmission",
+        "折射率功率因子"
+      ],
+      "definition": "透射功率比需要由两侧法向能流比确定。",
+      "body": "斜入射时，平面波强度不仅依赖场幅和阻抗，还要乘能流对界面法线的投影。对于普通无损非磁介质，使用全电场幅系数时，可用 n₂cosθ₂ 与 n₁cosθ₁ 的比作修正。",
+      "example": "空气到 1.5 玻璃正入射时，t=0.8，T=1.5×0.8²=0.96。",
+      "caution": "场幅透射系数的定义若改用切向分量，需要重新检查因子。",
+      "conditions": [
+        "无损非磁、存在传播透射波。"
+      ],
+      "formula": "T=(n₂cosθ₂)/(n₁cosθ₁) abs(t)²",
+      "variables": "T 为无量纲法向功率比例。",
+      "prerequisites": [
+        "fresnel-normal-amplitude",
+        "em-average-poynting"
+      ],
+      "related": [],
+      "sources": [
+        "fresnel-power"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "T=(n₂cosθ₂)/(n₁cosθ₁) abs(t)²",
+          "sources": [
+            "fresnel-power"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "空气到 1.5 玻璃正入射时，t=0.8，T=1.5×0.8²=0.96。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "brewster-zero-reflection",
+      "title": "Brewster 角的 p 偏振零反射",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "Brewster angle",
+        "布儒斯特角",
+        "布鲁斯特角",
+        "只剩一个偏振方向",
+        "反射光只剩s偏振"
+      ],
+      "definition": "两个常规无损非磁介质之间，p 偏振在特定角度的理想反射场可为零。",
+      "body": "用 p 偏振的 Fresnel 系数令分子为零，再联用折射定律，可以得到两折射率之比的正切关系。此时反射方向和折射方向互相垂直。",
+      "example": "空气到 n=1.5 的玻璃，Brewster 角约为 56.31°。",
+      "caution": "s 偏振通常不在该角度一同消失；吸收也会改变零反射。",
+      "conditions": [
+        "两均匀无损非磁介质，角从法线量。"
+      ],
+      "formula": "tanθ_B=n₂/n₁",
+      "variables": "折射率比无量纲。",
+      "prerequisites": [
+        "interface-te-tm-basis"
+      ],
+      "related": [],
+      "sources": [
+        "brewster"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "tanθ_B=n₂/n₁",
+          "sources": [
+            "brewster"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "空气到 n=1.5 的玻璃，Brewster 角约为 56.31°。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "critical-angle-derivation",
+      "title": "临界角从透射方向得到",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "critical angle derivation",
+        "折射临界角"
+      ],
+      "definition": "从高折射率侧入射时，临界角对应折射角达到 90°。",
+      "body": "平行波矢连续要求 n₁sinθ₁=n₂sinθ₂。当 θ₁ 增大使右侧达到其上限，低折射率侧不再有沿正法线传播的解；更大角度时出现指数衰减的倏逝场。",
+      "example": "由 n₁=1.5 到空气，临界角约 41.81°。",
+      "caution": "低到高折射率的入射不存在这种临界角。",
+      "conditions": [
+        "无损均匀介质，n₁>n₂。"
+      ],
+      "formula": "sinθ_c=n₂/n₁",
+      "variables": "θ_c 从法线量。",
+      "prerequisites": [
+        "interface-plane-phase-matching"
+      ],
+      "related": [],
+      "sources": [
+        "tir"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "sinθ_c=n₂/n₁",
+          "sources": [
+            "tir"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "由 n₁=1.5 到空气，临界角约 41.81°。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "tir-reflection-phase-retardance",
+      "title": "全反射中的偏振相位差",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "TIR phase",
+        "全反射相位延迟"
+      ],
+      "definition": "无损全反射时反射幅值模为一，s 和 p 分量仍可获得不同相移。",
+      "body": "低折射率侧的倏逝边界条件使反射系数成为复数。若入射光含两个偏振分量，二者的相对相位随角度改变，因此反射可能改变椭圆偏振。多次全反射可积累延迟。",
+      "example": "保持入射线偏振不沿 s 或 p 轴，比较全反射前后状态。",
+      "caution": "同一反射率不说明相位或偏振保持。",
+      "conditions": [
+        "理想无损高到低折射率界面。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "critical-angle-derivation",
+        "interface-te-tm-basis"
+      ],
+      "related": [],
+      "sources": [
+        "tir-phase"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "无损全反射时反射幅值模为一，s 和 p 分量仍可获得不同相移。",
+          "sources": [
+            "tir-phase"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "保持入射线偏振不沿 s 或 p 轴，比较全反射前后状态。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "frustrated-total-internal-reflection",
+      "title": "薄间隙中的受抑全反射",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "frustrated TIR",
+        "受抑全反射",
+        "受抑全内反射",
+        "倏逝耦合间隙"
+      ],
+      "definition": "全反射侧的倏逝场可跨越足够薄的间隙，与另一介质耦合。",
+      "body": "单个高低折射率界面在全反射时低折射率侧存在衰减场。若另一高折射率介质靠近，衰减场可在新界面激发传播分量，使原本理想的单位反射下降。间隔和角度会影响透过。",
+      "example": "两块棱镜间加入可调空气隙，比较改变间隔后的透射。",
+      "caution": "若间隙厚度远大于衰减尺度，耦合可非常弱。",
+      "conditions": [
+        "平面层模型，间隙宽度与介质条件给定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "critical-angle-derivation"
+      ],
+      "related": [],
+      "sources": [
+        "frustrated"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "全反射侧的倏逝场可跨越足够薄的间隙，与另一介质耦合。",
+          "sources": [
+            "frustrated"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两块棱镜间加入可调空气隙，比较改变间隔后的透射。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "linear-local-material-response",
+      "title": "局域线性本构的适用条件",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "local linear susceptibility",
+        "线性局域响应"
+      ],
+      "definition": "小信号下极化可与局部电场线性关联。",
+      "body": "局域表示空间上某点的响应只依赖该处场；线性表示多个输入的响应可相加。即便这两点成立，时间响应也可以有记忆，从而在不同频率表现出不同复介电系数。",
+      "example": "低功率窄带输入可用工作频率处的一个介电系数近似。",
+      "caution": "线性、瞬时、各向同性是三个需分别检查的属性。",
+      "conditions": [
+        "宏观小信号近似，空间尺度大于微结构。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "electric-field-vs-displacement"
+      ],
+      "related": [],
+      "sources": [
+        "constitutive",
+        "loss-dielectric"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "小信号下极化可与局部电场线性关联。",
+          "sources": [
+            "constitutive",
+            "loss-dielectric"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "低功率窄带输入可用工作频率处的一个介电系数近似。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "frequency-dependent-polarization",
+      "title": "材料极化的时间记忆与频域响应",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "dielectric memory",
+        "介质卷积极化"
+      ],
+      "definition": "具有记忆的线性介质在时域用响应核卷积，频域则乘以相应磁化率或电极化率。",
+      "body": "电荷或偶极响应不必与驱动同时达到峰值。记录过去输入的加权作用，可用响应核描述。变换到频域后，不同频率的幅值与相移分别由复极化率决定，便于计算色散。",
+      "example": "比较远离与接近共振时同幅正弦驱动的极化相位。",
+      "caution": "不能用一个无频率标识的实系数代替整个频带。",
+      "conditions": [
+        "线性、时不变、因果、空间局域。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "linear-local-material-response"
+      ],
+      "related": [],
+      "sources": [
+        "loss-dielectric",
+        "lorentz"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "具有记忆的线性介质在时域用响应核卷积，频域则乘以相应磁化率或电极化率。",
+          "sources": [
+            "loss-dielectric",
+            "lorentz"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较远离与接近共振时同幅正弦驱动的极化相位。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "lorentz-resonant-susceptibility",
+      "title": "Lorentz 振子的极化共振",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "Lorentz oscillator",
+        "束缚电子响应"
+      ],
+      "definition": "束缚电荷可近似为受到驱动和阻尼的谐振子。",
+      "body": "电场驱动电荷偏离平衡，回复力和惯性决定其自然频率，阻尼描述能量损失。驱动接近共振时极化振幅和相位快速变化，引起吸收与折射率变化。",
+      "example": "固定阻尼，扫描驱动频率观察振子响应在共振附近的相位转变。",
+      "caution": "单振子模型只在相关谱段近似有效。",
+      "conditions": [
+        "小位移、线性阻尼、单振子。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "frequency-dependent-polarization"
+      ],
+      "related": [],
+      "sources": [
+        "lorentz",
+        "lorentz-real-imag"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "束缚电荷可近似为受到驱动和阻尼的谐振子。",
+          "sources": [
+            "lorentz",
+            "lorentz-real-imag"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "固定阻尼，扫描驱动频率观察振子响应在共振附近的相位转变。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "complex-permittivity-passive-sign",
+      "title": "复介电常数的损耗符号",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "complex permittivity sign",
+        "介电损耗虚部"
+      ],
+      "definition": "复介电常数的虚部符号与时间因子约定绑定。",
+      "body": "采用 exp(−iωt) 和正向 exp(ikz) 时，被动介质的折射率常写成 n+iκ，其中 κ 非负，传播振幅衰减。改用相反的时谐和空间记号时，物理衰减不变，但虚部表达可共轭。",
+      "example": "见到材料表用 n−iκ，先核对作者的时间约定。",
+      "caution": "不要单独从一个虚部符号判断材料有增益。",
+      "conditions": [
+        "正角频率，普通被动材料，约定如正文。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "frequency-dependent-polarization"
+      ],
+      "related": [],
+      "sources": [
+        "loss-dielectric",
+        "lorentz-real-imag"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "复介电常数的虚部符号与时间因子约定绑定。",
+          "sources": [
+            "loss-dielectric",
+            "lorentz-real-imag"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "见到材料表用 n−iκ，先核对作者的时间约定。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "extinction-coefficient-intensity",
+      "title": "消光系数与强度衰减系数",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "extinction coefficient",
+        "κ和吸收系数"
+      ],
+      "definition": "在均匀材料中，复折射率虚部给出场幅随距离的指数衰减。",
+      "body": "按 exp(ik₀(n+iκ)z) 传播，场幅乘 exp(−k₀κz)。强度取平方模，因此强度吸收系数是场幅指数系数的两倍。由透过率估材料吸收时需另计反射和散射。",
+      "example": "若场幅一段距离后降到 1/2，单程纯吸收的强度比例为 1/4。",
+      "caution": "分清 κ 无量纲，α 有倒长度单位。",
+      "conditions": [
+        "均匀材料、单色、正向传播。"
+      ],
+      "formula": "I(z)=I₀ exp(−αz)，α=4πκ/λ₀",
+      "variables": "α 用 m⁻¹，λ₀ 用 m。",
+      "prerequisites": [
+        "complex-permittivity-passive-sign"
+      ],
+      "related": [],
+      "sources": [
+        "loss-dielectric",
+        "wave-k"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "I(z)=I₀ exp(−αz)，α=4πκ/λ₀",
+          "sources": [
+            "loss-dielectric",
+            "wave-k"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若场幅一段距离后降到 1/2，单程纯吸收的强度比例为 1/4。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "kk-causality-interpretation",
+      "title": "因果性约束吸收与折射色散",
+      "topic": "foundations",
+      "level": "advanced",
+      "terms": [
+        "Kramers Kronig",
+        "吸收与折射关系"
+      ],
+      "definition": "因果线性响应的频域实部和虚部受 Kramers–Kronig 关系约束。",
+      "body": "材料不能在驱动之前响应，这个时域约束使复频域响应的两个分量并非随意独立。吸收峰附近常伴随强色散；从窄频段测量推完整曲线仍依赖外部频段数据或模型。",
+      "example": "用 Lorentz 振子同时观察实部变号和虚部峰形。",
+      "caution": "有限谱段外推需报告所假设的远端响应。",
+      "conditions": [
+        "因果、线性、采用相容的频域符号。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "frequency-dependent-polarization"
+      ],
+      "related": [],
+      "sources": [
+        "kk",
+        "lorentz-real-imag"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "因果线性响应的频域实部和虚部受 Kramers–Kronig 关系约束。",
+          "sources": [
+            "kk",
+            "lorentz-real-imag"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用 Lorentz 振子同时观察实部变号和虚部峰形。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "anisotropic-dielectric-tensor",
+      "title": "介电张量描述方向相关响应",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "dielectric tensor",
+        "各向异性电位移"
+      ],
+      "definition": "介电张量将三个电场分量映射为三个电位移分量。",
+      "body": "在主轴坐标中，很多无损晶体的介电张量可以对角化，不同方向的主值对应不同线性响应。转到一般坐标后可出现非对角项，E 和 D 不必同向。",
+      "example": "令 E 同时沿两个具有不同介电主值的轴投影，D 的方向通常转动。",
+      "caution": "各向异性并不等同于有磁性或非线性。",
+      "conditions": [
+        "采用无损对称介电张量的简单示例。"
+      ],
+      "formula": "D_i=Σ_j ε_ij E_j",
+      "variables": "ε_ij 用 F/m。",
+      "prerequisites": [
+        "electric-field-vs-displacement"
+      ],
+      "related": [],
+      "sources": [
+        "anisotropy"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "D_i=Σ_j ε_ij E_j",
+          "sources": [
+            "anisotropy"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "令 E 同时沿两个具有不同介电主值的轴投影，D 的方向通常转动。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "uniaxial-ordinary-extraordinary",
+      "title": "单轴晶体的寻常与非寻常波",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "ordinary extraordinary wave",
+        "o光e光"
+      ],
+      "definition": "单轴晶体中，两种本征偏振可具有不同的传播相位关系。",
+      "body": "寻常支的相位折射率在理想单轴模型中不随传播方向变化。非寻常支的有效相位折射率随波矢与光轴夹角变化。沿光轴传播时，两支的相位折射率可相同。",
+      "example": "改变切割或入射方向，比较非寻常支与寻常支的相位积累。",
+      "caution": "晶体主折射率和方向相关的有效折射率需要分别标注。",
+      "conditions": [
+        "单轴、透明、线性均匀晶体。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "anisotropic-dielectric-tensor"
+      ],
+      "related": [],
+      "sources": [
+        "anisotropy",
+        "anisotropic-wave"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "单轴晶体中，两种本征偏振可具有不同的传播相位关系。",
+          "sources": [
+            "anisotropy",
+            "anisotropic-wave"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "改变切割或入射方向，比较非寻常支与寻常支的相位积累。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "anisotropy-energy-walkoff",
+      "title": "各向异性中的能流走离",
+      "topic": "foundations",
+      "level": "advanced",
+      "terms": [
+        "spatial walkoff",
+        "能流与波矢分离"
+      ],
+      "definition": "某些各向异性波中，Poynting 矢量与波矢不平行。",
+      "body": "波矢定义等相位面的法向，能流则由 E×H 决定。介电张量可让 E 和 D 的方向分离，造成能量传播方向偏离相位法线。有限光斑沿晶体传播时可出现横向位移。",
+      "example": "在厚双折射片后比较两个本征偏振的光斑中心。",
+      "caution": "不要将空间走离与不同频率脉冲的群速度走离混称。",
+      "conditions": [
+        "透明各向异性介质中的指定本征波。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "uniaxial-ordinary-extraordinary",
+        "em-instantaneous-poynting"
+      ],
+      "related": [],
+      "sources": [
+        "anisotropic-wave"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "某些各向异性波中，Poynting 矢量与波矢不平行。",
+          "sources": [
+            "anisotropic-wave"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在厚双折射片后比较两个本征偏振的光斑中心。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "dispersive-energy-density-caution",
+      "title": "色散介质储能的公式边界",
+      "topic": "foundations",
+      "level": "advanced",
+      "terms": [
+        "dispersive energy density",
+        "色散储能"
+      ],
+      "definition": "简单的无色散储能表达依赖瞬时本构，强色散时应改用相应模型。",
+      "body": "当材料本身可储存能量并与场交换时，场幅和介电常数在一个频点的乘积不总能反映总储能。可在明确的弱吸收窄带条件下使用包含频率导数的表达，或直接计算材料自由度。",
+      "example": "在共振附近，比较光能流变化与材料振子能量。",
+      "caution": "不要把有损体系的复介电常数直接代入静态储能式。",
+      "conditions": [
+        "讨论有限带宽、材料可有内禀响应。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "em-energy-balance-volume"
+      ],
+      "related": [],
+      "sources": [
+        "power-energy",
+        "loss-dielectric"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "简单的无色散储能表达依赖瞬时本构，强色散时应改用相应模型。",
+          "sources": [
+            "power-energy",
+            "loss-dielectric"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在共振附近，比较光能流变化与材料振子能量。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "standing-wave-poynting",
+      "title": "理想驻波的平均净能流",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "standing wave energy flow",
+        "驻波平均通量"
+      ],
+      "definition": "等强反向传播的理想平面波相加可形成平均净通量为零的驻波。",
+      "body": "两个反向波的平均输运方向相反，功率大小相等。局部电场仍出现节点和腹点，能量可在电场和磁场之间周期交换，故平均净能流为零不代表没有电磁能量。",
+      "example": "在理想镜前移动探头，观察电场节点的位置。",
+      "caution": "有吸收或反向波幅度不等时可出现净通量。",
+      "conditions": [
+        "同频、等强、同偏振、无损的反向平面波。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "em-average-poynting"
+      ],
+      "related": [],
+      "sources": [
+        "complex-power",
+        "wave-plane"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "等强反向传播的理想平面波相加可形成平均净通量为零的驻波。",
+          "sources": [
+            "complex-power",
+            "wave-plane"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在理想镜前移动探头，观察电场节点的位置。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "em-normal-incidence-transmission-check",
+      "title": "界面功率预算的守恒核对",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "R plus T",
+        "反射透射守恒"
+      ],
+      "definition": "无耗散的单界面在只有两个传播端口时，反射与透射法向功率之和为一。",
+      "body": "先按各侧实际能流把场系数换成功率比，再将两个端口相加。若计算未守恒，常见原因是漏掉透射阻抗因子、把功率与场幅混用，或遗漏额外输出通道。",
+      "example": "空气到普通玻璃的正入射例子中，0.04+0.96=1。",
+      "caution": "吸收、多衍射级和侧向散射应纳入实际预算。",
+      "conditions": [
+        "无耗散、无其他传播端口，使用同一入射功率归一。"
+      ],
+      "formula": "R+T=1",
+      "variables": "R、T 为无量纲法向功率比例。",
+      "prerequisites": [
+        "fresnel-transmitted-power-factor"
+      ],
+      "related": [],
+      "sources": [
+        "fresnel-power",
+        "power-energy"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "R+T=1",
+          "sources": [
+            "fresnel-power",
+            "power-energy"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "空气到普通玻璃的正入射例子中，0.04+0.96=1。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ray-wavefront-eikonal",
+      "title": "波前法线与几何光线的关联",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "eikonal wavefront",
+        "相位梯度和光线"
+      ],
+      "definition": "在均匀各向同性高频近似中，光线沿局部相位增加方向传播。",
+      "body": "等相位面把相同相位的点连起来，其法向给出局部波矢方向。若波前缓慢改变，能流可近似沿该方向；在衍射边缘、干涉节点或各向异性晶体中应检查这一直观是否成立。",
+      "example": "球面波的相位面近似同心球，局部射线径向发散。",
+      "caution": "波前法向不是对所有介质都等价于能流方向。",
+      "conditions": [
+        "波长比局部变化尺度小的各向同性近似。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "em-transverse-plane-wave"
+      ],
+      "related": [],
+      "sources": [
+        "wave-k",
+        "wave-plane"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "在均匀各向同性高频近似中，光线沿局部相位增加方向传播。",
+          "sources": [
+            "wave-k",
+            "wave-plane"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "球面波的相位面近似同心球，局部射线径向发散。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "field-amplitude-vs-intensity-material",
+      "title": "相同电场幅不一定具有同光强",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "field intensity impedance",
+        "场幅光强"
+      ],
+      "definition": "平面波光强的换算因子依赖传播介质的波阻抗。",
+      "body": "平均能流由 E 和 H 一起决定。在两个阻抗不同的介质中，即使峰值 E 一样，H 与平均强度也可以不同。比较数据时应确认场数值和能流的参考位置。",
+      "example": "同阻抗下 E 加倍使平均强度乘四，跨介质时还需算阻抗比。",
+      "caution": "场的归一单位和物理单位不能混作一个量。",
+      "conditions": [
+        "均匀无损单传播平面波。"
+      ],
+      "formula": "I=abs(E_peak)²/(2η)",
+      "variables": "I 用 W/m²，η 用 Ω。",
+      "prerequisites": [
+        "em-wave-impedance"
+      ],
+      "related": [],
+      "sources": [
+        "wave-plane",
+        "phasor-power"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "I=abs(E_peak)²/(2η)",
+          "sources": [
+            "wave-plane",
+            "phasor-power"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "同阻抗下 E 加倍使平均强度乘四，跨介质时还需算阻抗比。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "em-interface-evanescent-normal-flux",
+      "title": "无损倏逝场与平均法向能流",
+      "topic": "foundations",
+      "level": "advanced",
+      "terms": [
+        "evanescent flux",
+        "全反射法向平均能流"
+      ],
+      "definition": "理想单界面全反射的倏逝场可沿界面携带平均能流，法向没有传走净平均功率。",
+      "body": "在低折射率半空间中，法向波矢成为纯虚数。场随法向衰减，切向传播因子仍含实波矢。加入损耗或第二界面后可以改变能量通道，不能继续沿用单界面零法向功率结果。",
+      "example": "比较单个透明界面与紧靠吸收片时反射率变化。",
+      "caution": "场不为零与平均法向功率为零可以同时成立。",
+      "conditions": [
+        "理想无损、单平面界面，无第二接收通道。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "critical-angle-derivation",
+        "em-average-poynting"
+      ],
+      "related": [],
+      "sources": [
+        "tir-phase",
+        "complex-power"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "理想单界面全反射的倏逝场可沿界面携带平均能流，法向没有传走净平均功率。",
+          "sources": [
+            "tir-phase",
+            "complex-power"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较单个透明界面与紧靠吸收片时反射率变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "interface-tir-penetration-amplitude",
+      "title": "全反射倏逝场的法向衰减尺度",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "TIR penetration depth",
+        "倏逝深度"
+      ],
+      "definition": "全反射条件下，低折射率侧的法向倏逝尺度由平行波矢和低侧波数之差确定。",
+      "body": "先用界面相位匹配得到平行波矢，再由低折射率材料的色散关系求虚法向分量。该虚部倒数是场幅降至 1/e 的深度。靠近临界角时，衰减常数可以较小。",
+      "example": "固定材料和波长，比较刚超过临界角与更大入射角的衰减。",
+      "caution": "按同一指数定义，强度的 1/e 深度是场幅 1/e 深度的一半。",
+      "conditions": [
+        "均匀无损低折射率半空间。"
+      ],
+      "formula": "κ_z=√(k_parallel²−k₂²)，L_E=1/κ_z",
+      "variables": "波数用 m⁻¹，L_E 用 m。",
+      "prerequisites": [
+        "critical-angle-derivation"
+      ],
+      "related": [],
+      "sources": [
+        "tir-phase"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "κ_z=√(k_parallel²−k₂²)，L_E=1/κ_z",
+          "sources": [
+            "tir-phase"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "固定材料和波长，比较刚超过临界角与更大入射角的衰减。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "complex-index-phase-attenuation",
+      "title": "复折射率把相位和吸收拆开",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "complex index propagation",
+        "相位和消光分解"
+      ],
+      "definition": "复传播常数的实部控制相位，虚部控制场幅的指数因子。",
+      "body": "将复波数代入正向指数后，分别整理振荡与衰减。可在同一模型中同时预测传播相位和吸收；光程变化与吸收变化可能来自同一材料响应，但两者的读数及单位不同。",
+      "example": "固定长度，比较 n 增加和 κ 增加时对输出场的影响。",
+      "caution": "时间与传播符号必须成套使用。",
+      "conditions": [
+        "采用 exp[i(kz−ωt)] 的被动材料约定。"
+      ],
+      "formula": "E(z)=E₀ exp(ik₀nz) exp(−k₀κz)",
+      "variables": "n、κ 无量纲，k₀ 用 rad/m。",
+      "prerequisites": [
+        "extinction-coefficient-intensity"
+      ],
+      "related": [],
+      "sources": [
+        "loss-dielectric",
+        "wave-k"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "E(z)=E₀ exp(ik₀nz) exp(−k₀κz)",
+          "sources": [
+            "loss-dielectric",
+            "wave-k"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "固定长度，比较 n 增加和 κ 增加时对输出场的影响。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "temporal-conductivity-equivalent-epsilon",
+      "title": "电导损耗并入等效介电响应",
+      "topic": "foundations",
+      "level": "advanced",
+      "terms": [
+        "conductivity complex permittivity",
+        "σ和ε虚部"
+      ],
+      "definition": "时谐安培方程中的欧姆电流可合并进复介电响应。",
+      "body": "按 exp(−iωt) 记号，σE−iωεE 等于 −iω(ε+iσ/ω)E。合并有助于统一求波数，但计算损耗时不得再将这同一 σ 项重复相加。低频极限要另查时域模型。",
+      "example": "若已经用测得的复介电函数，检查其中是否含导电贡献。",
+      "caution": "单位相同不表示不同来源的损耗可重复计入。",
+      "conditions": [
+        "单频线性欧姆响应，ω>0。"
+      ],
+      "formula": "ε_eff=ε+iσ/ω",
+      "variables": "ε_eff 用 F/m，σ 用 S/m。",
+      "prerequisites": [
+        "complex-permittivity-passive-sign"
+      ],
+      "related": [],
+      "sources": [
+        "constitutive",
+        "complex-power"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ε_eff=ε+iσ/ω",
+          "sources": [
+            "constitutive",
+            "complex-power"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若已经用测得的复介电函数，检查其中是否含导电贡献。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "dielectric-interface-local-power-density",
+      "title": "能流密度与截面功率的区分",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "power density vs power",
+        "积分光强"
+      ],
+      "definition": "光功率是穿过整个收集面的能流通量，局部光强是每面积的流量。",
+      "body": "对均匀平行束可用垂直截面面积乘强度。对高斯束或斜截面，先对空间分布和法向投影积分。束半径定义不同会改变从峰值估总量的系数。",
+      "example": "均匀 100 W/m² 照到 1 mm² 的垂直面积，功率为 0.1 mW。",
+      "caution": "不能用峰值光强乘任意标称面积替代实际积分。",
+      "conditions": [
+        "探测面和收集范围明确。"
+      ],
+      "formula": "P=∫S·n dA",
+      "variables": "P 用 W，S 用 W/m²。",
+      "prerequisites": [
+        "em-instantaneous-poynting"
+      ],
+      "related": [],
+      "sources": [
+        "power-energy",
+        "phasor-power"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P=∫S·n dA",
+          "sources": [
+            "power-energy",
+            "phasor-power"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "均匀 100 W/m² 照到 1 mm² 的垂直面积，功率为 0.1 mW。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "em-angular-momentum-k-components",
+      "title": "自由平面波的波矢几何",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "wavevector components",
+        "横纵波数"
+      ],
+      "definition": "平面波各方向的波矢分量给出相位沿该方向变化的速率。",
+      "body": "单频均匀介质中总波数大小由波长决定，倾斜传播使横向与轴向分量按正弦余弦分配。频域计算若给的是周期频率，要先乘 2π 才得到波矢。",
+      "example": "固定 500 nm 介质波长，增加传播角会增大横向波数而降低轴向波数。",
+      "caution": "横向波矢不是整个波矢的大小。",
+      "conditions": [
+        "普通传播波，角从 +z 量。"
+      ],
+      "formula": "k_x=k sinθ，k_z=k cosθ",
+      "variables": "各 k 用 rad/m。",
+      "prerequisites": [
+        "harmonic-helmholtz-reduction"
+      ],
+      "related": [],
+      "sources": [
+        "wave-k",
+        "wave-plane"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "k_x=k sinθ，k_z=k cosθ",
+          "sources": [
+            "wave-k",
+            "wave-plane"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "固定 500 nm 介质波长，增加传播角会增大横向波数而降低轴向波数。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "material-group-vs-phase-index",
+      "title": "材料相折射率与群折射率比较",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "phase group index material",
+        "材料群折射率"
+      ],
+      "definition": "在色散介质中，群折射率还包含相折射率对频率的导数。",
+      "body": "单色相位推进由 n(ω)ω/c 决定，对角频率求导才得到包络延迟。若相折射率在频带内近似常量，两种折射率接近；在有可见曲率或强吸收时要检查群速度的解释范围。",
+      "example": "用脉冲到达时间推传播延迟时，使用群折射率。",
+      "caution": "相折射率的一个单值不足以给群折射率。",
+      "conditions": [
+        "窄带、弱损耗且跟踪同一传播支。"
+      ],
+      "formula": "n_g=n+ω dn/dω",
+      "variables": "两种折射率均无量纲。",
+      "prerequisites": [
+        "group-index",
+        "material-dispersion"
+      ],
+      "related": [],
+      "sources": [
+        "group-expansion",
+        "wave-k"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "n_g=n+ω dn/dω",
+          "sources": [
+            "group-expansion",
+            "wave-k"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用脉冲到达时间推传播延迟时，使用群折射率。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "power-in-minus-out-normal",
+      "title": "反向传播时功率方向的符号",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "signed flux",
+        "反向功率符号"
+      ],
+      "definition": "功率通量的正负由所选截面法向决定。",
+      "body": "若固定法向为 +z，前向能流给正通量，反向反射给负通量。报告反射比例时通常用反向功率的正大小，做能量守恒时则需按边界外法向或端口方向统一。",
+      "example": "同一截面测得前向 1 W 和反向 0.1 W，净正向功率为 0.9 W。",
+      "caution": "不要把有符号净通量直接写作负反射率。",
+      "conditions": [
+        "截面法向和端口方向已声明。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "em-instantaneous-poynting"
+      ],
+      "related": [],
+      "sources": [
+        "power-energy",
+        "phasor-power"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "功率通量的正负由所选截面法向决定。",
+          "sources": [
+            "power-energy",
+            "phasor-power"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "同一截面测得前向 1 W 和反向 0.1 W，净正向功率为 0.9 W。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "em-zero-frequency-field-limit",
+      "title": "零频场与光学时谐模型的关系",
+      "topic": "foundations",
+      "level": "undergraduate",
+      "terms": [
+        "static limit Maxwell",
+        "直流极限"
+      ],
+      "definition": "时谐传播模型中的频率趋零，需要与静态 Maxwell 关系相容。",
+      "body": "在有限空间尺寸和适当边界下，时间导数项会逐渐变弱，场可转入电静力或磁静力近似。含电导或频散的材料模型不一定允许把有 1/ω 的表达直接代入零频。",
+      "example": "用静电模型估算慢变化电极场，用光学时谐模型处理载频传播。",
+      "caution": "静态与长波近似的适用尺度仍需核对。",
+      "conditions": [
+        "讨论频率趋近零而边界、源及尺度保持指定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "harmonic-helmholtz-reduction"
+      ],
+      "related": [],
+      "sources": [
+        "maxwell",
+        "constitutive"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "时谐传播模型中的频率趋零，需要与静态 Maxwell 关系相容。",
+          "sources": [
+            "maxwell",
+            "constitutive"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用静电模型估算慢变化电极场，用光学时谐模型处理载频传播。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "em-isotropic-vs-homogeneous",
+      "title": "各向同性与空间均匀的区别",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "isotropic homogeneous",
+        "介质均匀各向同性"
+      ],
+      "definition": "均匀描述材料参数不随位置变，各向同性描述同一位置没有方向偏好。",
+      "body": "均匀晶体可以在全样品处使用同一个介电张量，却因张量主值不同而各向异性。分层各向同性材料的每一层可用标量，但跨层整体不均匀。选方程时应分别检查。",
+      "example": "均匀单轴晶体和空气玻璃叠层体现两种不同组合。",
+      "caution": "把各向同性假设等同于常系数会遗漏层间边界。",
+      "conditions": [
+        "宏观线性本构。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "linear-local-material-response"
+      ],
+      "related": [],
+      "sources": [
+        "constitutive",
+        "anisotropy"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "均匀描述材料参数不随位置变，各向同性描述同一位置没有方向偏好。",
+          "sources": [
+            "constitutive",
+            "anisotropy"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "均匀单轴晶体和空气玻璃叠层体现两种不同组合。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "em-tensor-rotation",
+      "title": "介电张量从晶体轴转到实验轴",
+      "topic": "foundations",
+      "level": "advanced",
+      "terms": [
+        "dielectric rotation",
+        "旋转介电张量"
+      ],
+      "definition": "对同一晶体改变坐标描述时，介电张量的输入和输出分量需要一起变换。",
+      "body": "先说明旋转矩阵将晶体坐标转到实验坐标。实验电场转回晶体轴后乘主轴张量，再把电位移转回实验轴。换坐标可以引入非对角元，而本征材料主值保持。",
+      "example": "将单轴晶体主轴相对实验 x 轴旋转 45°，检查 x、y 交叉项。",
+      "caution": "主动转动材料和被动换坐标使用的方向约定要分别说明。",
+      "conditions": [
+        "R 为从晶体坐标到实验坐标的实正交旋转。"
+      ],
+      "formula": "ε_lab=R ε_crystal Rᵀ",
+      "variables": "张量元素用 F/m。",
+      "prerequisites": [
+        "anisotropic-dielectric-tensor"
+      ],
+      "related": [],
+      "sources": [
+        "anisotropy",
+        "complex-matrix"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ε_lab=R ε_crystal Rᵀ",
+          "sources": [
+            "anisotropy",
+            "complex-matrix"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将单轴晶体主轴相对实验 x 轴旋转 45°，检查 x、y 交叉项。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "em-complex-field-real-measurement",
+      "title": "时谐复场与瞬时实场",
+      "topic": "foundations",
+      "level": "intro",
+      "terms": [
+        "real physical field",
+        "复相量取实部"
+      ],
+      "definition": "光学时谐复场保留振幅与相位，瞬时电场由它乘时间因子后取实部。",
+      "body": "只有在处理相干传播的线性运算时，可一直用复场记号。求瞬时能流、强度或光电读数时，应按探测平均规则处理两个场的乘积。先取实部再随意平方可能遗漏周期平均因子。",
+      "example": "纯虚相量在 t=0 的瞬时实场可为零，但振幅并不为零。",
+      "caution": "实部为零不表示该场没有能量。",
+      "conditions": [
+        "同一频率与相量记号。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "euler-optical-phase"
+      ],
+      "related": [],
+      "sources": [
+        "phasors",
+        "wave-plane"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "光学时谐复场保留振幅与相位，瞬时电场由它乘时间因子后取实部。",
+          "sources": [
+            "phasors",
+            "wave-plane"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "纯虚相量在 t=0 的瞬时实场可为零，但振幅并不为零。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    }
+  ]
+}

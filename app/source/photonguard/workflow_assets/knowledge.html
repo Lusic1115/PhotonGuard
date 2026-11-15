@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>光学知识库 · PhotonGuard</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22512%22%20height%3D%22512%22%20viewBox%3D%220%200%20512%20512%22%3E%3Crect%20x%3D%2216%22%20y%3D%2216%22%20width%3D%22480%22%20height%3D%22480%22%20rx%3D%22106%22%20fill%3D%22%23143c37%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M74%20142%20L249%20245%20L438%20186%20M74%20256%20L438%20256%20M74%20370%20L249%20267%20L438%20326%22%20stroke%3D%22%2379dddb%22%20stroke-width%3D%2218%22%2F%3E%3Cellipse%20cx%3D%22258%22%20cy%3D%22256%22%20rx%3D%2259%22%20ry%3D%22159%22%20fill%3D%22%23143c37%22%20fill-opacity%3D%22.75%22%20stroke%3D%22white%22%20stroke-width%3D%2218%22%2F%3E%3Cpath%20d%3D%22M258%20256%20L438%20256%22%20stroke%3D%22%23e6ee82%22%20stroke-width%3D%2220%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%22258%22%20cy%3D%22256%22%20r%3D%2217%22%20fill%3D%22%23e6ee82%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="stylesheet" href="/assets/knowledge.css">
+  <script src="/assets/knowledge_figures.js" defer></script>
+  <script src="/assets/katex.min.js" defer></script>
+  <script src="/assets/study_text.js" defer></script>
+  <script src="/assets/knowledge.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/knowledge"><span aria-hidden="true">φ</span> PhotonGuard</a>
+    <nav aria-label="工作台导航">
+      <a href="/knowledge" aria-current="page" id="library-nav">光学知识库</a>
+      <a href="/knowledge#assistant" id="assistant-nav">AI 学习助教</a>
+      <a href="/experiments" id="workbench-nav">实验工作台</a>
+    </nav>
+  </header>
+  <main>
+    <section id="library" aria-labelledby="library-title">
+      <div class="hero">
+        <div><h1 id="library-title">光学知识库</h1><p id="catalog-summary" aria-live="polite"></p></div>
+        <form id="search-form" role="search">
+          <label for="query">搜索概念、公式或描述你的疑问</label>
+          <div class="actions"><input type="search" id="query" maxlength="1000" placeholder="例如：数值孔径、半波片、光纤接受角"><button class="primary">搜索</button></div>
+        </form>
+      </div>
+      <div class="library-grid">
+        <aside class="sidebar" aria-label="知识导航">
+          <label for="pack">知识包</label>
+          <select id="pack"><option value="">全部知识包</option></select>
+          <h2>主题</h2><div id="topics"></div>
+          <h2>专题讲解</h2><div id="study-topics"></div>
+          <h2>学习路径</h2><div id="paths"></div>
+        </aside>
+        <section class="panel results" aria-labelledby="results-heading">
+          <h2 id="results-heading">知识条目</h2>
+          <div class="filters">
+            <label>层级<select id="level"><option value="">全部</option></select></label>
+            <label>内容<select id="capability"><option value="">全部</option><option value="THEORY_ONLY">理论</option><option value="FORMULA_EXAMPLE">公式与示例</option><option value="EXPERIMENT_READY">可在工作台验证</option></select></label>
+            <label>许可<select id="license"><option value="">全部</option></select></label>
+          </div>
+          <p class="muted" id="search-status" role="status"></p>
+          <div id="topic-results" class="topic-results" hidden></div>
+          <div id="results"></div>
+          <div class="pagination" id="pagination" hidden><button id="previous" type="button">上一页</button><span id="page-count"></span><button id="next" type="button">下一页</button></div>
+        </section>
+        <article class="panel article" id="article" tabindex="-1"><h2>选择一个条目阅读</h2><p>可从搜索结果或学习路径打开正文、公式和参考出处。</p></article>
+      </div>
+    </section>
+    <section id="assistant" hidden aria-labelledby="assistant-title">
+      <div class="hero"><div><h1 id="assistant-title">AI 学习助教</h1><p>从本地知识找到依据，沿相关概念继续学。</p></div></div>
+      <div class="assistant-grid">
+        <form class="panel" id="ask-form">
+          <label for="question">你的光学问题</label>
+          <textarea id="question" rows="4" maxlength="1000" placeholder="例如：阿贝成像和空间滤波怎样连接？" required></textarea>
+          <label for="reading">讲解方式</label>
+          <select id="reading">
+            <option value="auto">随问题调整</option>
+            <option value="substitution">直接讲本步或代入</option>
+            <option value="step_by_step">展开推导步骤</option>
+          </select>
+          <p id="study-context" class="muted" hidden></p>
+          <div class="actions"><button type="submit" value="local">查本地依据</button><button type="submit" class="primary" id="ask-live" value="live" disabled>请 AI 串讲</button></div>
+          <p id="ai-note" class="muted"></p>
+          <details id="standalone-ai" hidden>
+            <summary>连接自己的 DeepSeek 账户</summary>
+            <label for="study-key">DeepSeek API Key</label>
+            <input type="password" id="study-key" autocomplete="off">
+            <label for="study-quota">累计请求上限</label>
+            <input type="number" id="study-quota" min="1" max="9007199254740991" step="1" value="20">
+            <label class="consent"><input type="checkbox" id="study-key-consent">使用自己的账户，并按服务用量计费</label>
+            <label class="consent" id="study-resume-line" hidden><input type="checkbox" id="study-resume">已核对上次请求，继续使用</label>
+            <div class="actions">
+              <button type="button" id="study-connect">验证并连接</button>
+              <button type="button" id="study-disconnect">断开</button>
+            </div>
+            <p id="study-binding-status" class="muted" role="status"></p>
+          </details>
+          <button type="button" id="reset-study" class="text-button">开始新问题</button>
+        </form>
+        <section class="panel" id="answer" aria-live="polite"><h2>从一个问题开始</h2><p>也可以先打开条目，再选择「围绕这篇提问」。</p></section>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

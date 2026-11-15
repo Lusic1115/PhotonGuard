@@ -127,6 +127,64 @@ def test_reason_wording_does_not_authorize_changes(store,wording):
     assert out['inverse_settings']==before and out['inverse_ai']['validation_status']=='ALL_VALID'
 
 
+def test_explicit_read_only_request_rejects_a_model_plan_and_fact_change(store):
+    s=record(store)
+    obj=c.fixture('explain')
+    obj['updates']=[update()]
+    proposed=c.fixture('compare_acquisition')['suggestions'][0]
+    proposed['id']='S2'
+    obj['suggestions'].append(proposed)
+    obj['primary_suggestion_id']='S2'
+    text='只解释上次为何补采71个点，不要准备新计划。'
+    out=receive(store,s,obj,text)
+    assert out['acquisition_constraints']==s['acquisition_constraints']=={'points':81}
+    assert [item['type'] for item in out['research_actions']['actions']]==['explain']
+    assert out['research_actions']['primary_action_id'] is None
+    assert not out.get('task_plan') and out['inverse_ledger']['fit_runs_reserved']==0
+    local=ra.fallback(out,text,ledger=out['inverse_ledger'])
+    assert [item['type'] for item in local['actions']]==['explain']
+
+
+@pytest.mark.parametrize('scope,text,accepted', [
+    (None, '以前的可用波长目录是704、831 nm，现在是751、863 nm。帮我回顾这个选择的原因，所有资料保持原样，暂时不做操作。', False),
+    ('PLAN', '以前的可用波长目录是704、831 nm，现在是751、863 nm。回顾这次选择的原因。', False),
+    ('PLAN', '上次把可用波长目录改为704、831 nm。帮我回顾这个选择。', False),
+    ('EXPLAIN', '现在把可用波长目录改为704、831 nm。', False),
+    ('PLAN', '现在把可用波长目录从751、863 nm改为704、831 nm。', True),
+])
+def test_replacing_the_active_catalog_requires_scope_and_current_authorization(store, scope, text, accepted, monkeypatch):
+    monkeypatch.setattr('secrets.randbits',lambda bits:0)
+    s=ow.create(store,{'model':m.FILM,'teaching':True})
+    current={'wavelengths_nm':[751,863]}
+    measurement={'plans':[{'id':'wavelength-751'}]};measurement['sha256']=digest(measurement)
+    task={'sha256':'current-task'}
+    s.update(acquisition_constraints=current,measurement_plan=measurement,task_plan=task)
+    store.save(s)
+    ledger=copy.deepcopy(s['inverse_ledger'])
+    obj=c.fixture();obj['updates']=[update([704,831],'704、831 nm',field='design.wavelengths_nm')]
+    ctx=a.capture(store,s,text,scope)
+    out=a.receive(store,s,'现在把可用波长目录改为704、831 nm。',{'assistant':{'content':json.dumps(obj)}},ctx)
+    assert out['inverse_ledger']==ledger
+    if accepted:
+        assert out['acquisition_constraints']['wavelengths_nm']==[704,831]
+        assert 'measurement_plan' not in out and 'task_plan' not in out
+        assert out['measurement_history'][-1]==measurement and out['task_plan_history'][-1]==task
+    else:
+        assert out['acquisition_constraints']==current
+        assert out['measurement_plan']==measurement and out['task_plan']==task
+        assert out['inverse_ai']['validation_status']=='FACT_PATCH_REJECTED'
+
+
+def test_planning_without_execution_accepts_a_plan_suggestion(store):
+    s=record(store)
+    text='不要执行，但可以先准备计划给我看。'
+    out=receive(store,s,c.fixture('compare_acquisition'),text)
+    assert out['inverse_ai']['request_scope']=='PLAN'
+    assert out['research_actions']['actions'][0]['type']=='compare_acquisition'
+    assert not out['research_actions']['executed'] and not out.get('measurement_plan')
+    assert out['inverse_ledger']==s['inverse_ledger']
+
+
 def test_model_step_prepare_read_only_is_auditable_and_does_not_fit(store):
     s=receive(store,record(store),c.fixture())
     b=s['research_actions'];out=act(store,s,'inverse_research_prepare',suggestion_sha256=b['sha256'],action_id=b['actions'][0]['id'])

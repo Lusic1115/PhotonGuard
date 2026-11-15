@@ -32,13 +32,15 @@ def catalog(s,text):
     return entries
 
 
-def capture(store,s,text):
+def capture(store,s,text,request_scope=None):
     from .observation_group import root_record
+    if request_scope not in (None,'EXPLAIN','PLAN'):raise WorkflowError('请选择解释或规划')
+    scope='EXPLAIN' if request_scope=='EXPLAIN' or actions.read_only_request(text) else 'PLAN'
     evidence=catalog(s,text)
     ctx={'request_id':uuid.uuid4().hex,'record_id':s['id'],'revision':s['revision'],
          'facts_sha256':digest(snapshot(s,root_record(store,s)['inverse_ledger'])),
          'evidence_catalog':evidence,'evidence_sha256':digest(evidence),
-         'input_binding':actions.binding(s),'contract_sha256':digest(contract.SCHEMA)}
+         'input_binding':actions.binding(s),'contract_sha256':digest(contract.SCHEMA),'request_scope':scope}
     folder=store.folder(s['id'])/'ai-requests'/ctx['request_id'];folder.mkdir(parents=True,exist_ok=False)
     write_once(folder/'context.json',ctx)
     return ctx
@@ -74,7 +76,7 @@ def preference_patch(cfg,prefs,field,value,quote,text):
 
 def patch_facts(s,updates,text):
     """Validate the complete patch before writing anything."""
-    from .inverse_report import grounded
+    from .inverse_report import grounded, authorize_catalog_replacement
     from .goal_design import goal
     from .inverse_models import SLIT
     cfg=copy.deepcopy(s['inverse_settings']);g=copy.deepcopy(s.get('research_goal'));design=copy.deepcopy(s.get('acquisition_constraints',{}));prefs=copy.deepcopy(s.get('decision_preferences'))
@@ -91,6 +93,8 @@ def patch_facts(s,updates,text):
             if role=='goal':g=goal(cfg['model'],{**(g or {}),'target':value,'source':'USER_TEXT'})
             elif role=='design':
                 if key=='points' and cfg['model']==SLIT and value<20:raise ValueError('双缝补采至少20点；不扩大用户机会')
+                if key=='wavelengths_nm' and design.get(key) and design[key]!=value:
+                    authorize_catalog_replacement(quote,text)
                 design[key]=value
             else:
                 other='bounds' if role=='fixed' else 'fixed'
@@ -106,7 +110,7 @@ def patch_facts(s,updates,text):
 
 def receive(store,s,text,answer,ctx):
     """Receiver used by the product and offline protocol fixtures alike."""
-    from .observation_group import root_record,revise
+    from .observation_group import root_record,revise,invalidate_catalog_plan
     from .inverse_report import explain
     folder=store.folder(ctx['record_id'])/'ai-requests'/ctx['request_id']
     write_once(folder/'response.json',answer)
@@ -116,15 +120,20 @@ def receive(store,s,text,answer,ctx):
         write_once(folder/'receipt.json',receipt);store.event(latest,'INVERSE_AI_STALE',receipt)
         return latest
     s=latest
+    text=ctx['evidence_catalog'][0]['text']
+    scope=ctx['request_scope']
     if s.get('research_actions'):s.setdefault('research_actions_history',[]).append(s.pop('research_actions'))
     try:
         obj=json.loads(answer['assistant']['content']);contract.check(contract.SCHEMA,obj,envelope=True)
     except (ValueError,TypeError,KeyError):
         s['inverse_ai']={'status':'NEEDS_REVIEW','validation_status':'PROTOCOL_INVALID','request_id':ctx['request_id'],
-                         'focus':'limitations','text':'AI 回复格式未通过核对，未提取自由文本或执行任何步骤。'}
+                         'focus':'limitations','request_scope':scope,'text':'AI 回复格式未通过核对，未提取自由文本或执行任何步骤。'}
         write_once(folder/'receipt.json',s['inverse_ai']);store.save(s);return s
-    errors=[];patch_error=None;before=copy.deepcopy(s)
-    try:cfg,g,design,prefs,evidence=patch_facts(s,obj['updates'],text)
+    errors=[];patch_error=None
+    try:
+        if obj['updates'] and scope=='EXPLAIN':
+            raise ValueError('本轮只解释已保存资料，未采纳条件修改。')
+        cfg,g,design,prefs,evidence=patch_facts(s,obj['updates'],text)
     except (ValueError,TypeError,KeyError) as exc:patch_error=str(exc);evidence=[]
     valid=[];seen=set();suggestion_ids=set();ids={op.get('id') for op in obj['updates'] if isinstance(op,dict) and isinstance(op.get('id'),str)}
     refs={e['id'] for e in ctx['evidence_catalog']}
@@ -137,14 +146,19 @@ def receive(store,s,text,answer,ctx):
             if not item['evidence_refs'] or any(r not in refs for r in item['evidence_refs']):raise ValueError('引用不在本轮证据目录')
             if any(d not in ids for d in item['depends_on']):raise ValueError('依赖不存在的条件更新')
             legacy={'type':kind,'reason':item['reason'],'proposal_id':item['proposal_id'],'fact_fields':item['fields'],'quote':''}
-            entry=actions.validate(s,{'input_binding':ctx['input_binding'],'actions':[legacy]},text,ctx['input_binding'],ledger=root_record(store,s)['inverse_ledger'])['actions'][0]
+            entry=actions.validate(s,{'input_binding':ctx['input_binding'],'actions':[legacy]},text,ctx['input_binding'],
+                                   ledger=root_record(store,s)['inverse_ledger'],request_scope=scope,
+                                   constraints=None if patch_error else design)['actions'][0]
             entry.update(evidence_refs=item['evidence_refs'],depends_on=item['depends_on'],reason_verification='AI_REASON_NOT_PROGRAM_FACT',model_suggestion_id=item.get('id'))
             if item.get('id'):suggestion_ids.add(item['id'])
             valid.append(entry);seen.add(kind)
         except (ValueError,TypeError,KeyError) as exc:errors.append({'index':i,'status':'REJECTED','reason':str(exc)})
-    facts_changed=False
+    facts_changed=False;catalog_changed=False
     if patch_error is None:
         facts_changed=cfg!=s['inverse_settings']
+        old_catalog=s.get('acquisition_constraints',{}).get('wavelengths_nm')
+        catalog_changed=bool(old_catalog and old_catalog!=design.get('wavelengths_nm'))
+        if catalog_changed:invalidate_catalog_plan(s)
         planning_changed=facts_changed or g!=s.get('research_goal') or design!=s.get('acquisition_constraints',{}) or prefs!=s.get('decision_preferences')
         if planning_changed and s.get('measurement_plan'):s.setdefault('measurement_history',[]).append(s.pop('measurement_plan'))
         history=copy.deepcopy(s.get('measurement_history',[]))
@@ -180,12 +194,13 @@ def receive(store,s,text,answer,ctx):
         errors.append({'index':'primary_suggestion_id','status':'REJECTED','reason':'主建议未引用通过核对的建议短编号'})
     status='FACT_PATCH_REJECTED' if patch_error else 'PARTIAL_VALID' if errors else 'ALL_VALID'
     s['inverse_ai']={'status':'ACCEPTED' if status=='ALL_VALID' else status,'validation_status':status,'request_id':ctx['request_id'],
-                     'focus':obj['focus'],'updates':evidence,'patch_error':patch_error,'rejected_suggestions':errors,
+                     'focus':obj['focus'],'request_scope':scope,'updates':evidence,'patch_error':patch_error,'rejected_suggestions':errors,
                      'valid_suggestion_count':len(valid),'raw_contract_valid':False,'text':explain(s,obj['focus']),
                      'text_source':'PROGRAM_SAVED_FACTS','reason_source':'AI_UNVERIFIED_EXPLANATION','approved':False}
     try:contract.check(contract.SCHEMA,obj);s['inverse_ai']['raw_contract_valid']=True
     except ValueError:pass
-    receipt=copy.deepcopy(s['inverse_ai'])|{'output_record_id':s['id'],'facts_changed':facts_changed,'executed':False}
+    receipt=copy.deepcopy(s['inverse_ai'])|{'output_record_id':s['id'],'facts_changed':facts_changed,
+                                         'catalog_changed':catalog_changed,'executed':False}
     write_once(folder/'receipt.json',receipt);store.save(s);store.event(s,'INVERSE_AI_CHECKED',receipt)
     return s
 
@@ -197,10 +212,11 @@ def guide(store,s,data):
     text=data.get('text','')
     if not isinstance(text,str) or not 1<=len(text)<=6000:raise WorkflowError('请填写问题或本次条件')
     if wire.credential_risk(text):raise WorkflowError('请勿发送密钥')
-    client=store._model(s,data);ctx=capture(store,s,text)
+    client=store._model(s,data);ctx=capture(store,s,text,data.get('request_scope'))
     prompt='''你是 PhotonGuard AI 研究助手。只返回契约定义的 JSON 根对象，不包 response、不复制哈希、不批准或执行。
 每条建议给唯一短 id（如S1）。primary_suggestion_id 指向你认为当前主要的一条；没有充分选择依据时填null，明确并列。最多两条用途不同的备选即可。主建议选择不是执行批准。已有计划可直接选具体方案，不要要求重填已有条件。用户要求停止时优先提出stop；解释变化从已保存的task_summary/结果回执出发。
 E3的currently_feasible_proposal_ids和blocked_proposals来自本次已保存计划。用户要求“在当前约束内选下一步”时，主建议只能从可行ID中选择，或澄清、解释、停止；不得将blocked_proposals中的方案作为当前可准备的主计划。没有可行方案时说明限制，不自动放宽条件。可行方案若只是重复扫描、不能解决覆盖不足，可以说明价值有限并停止，不强迫补采。
+用户明确请你从已有可行方案中选择下一次观测（例如问“哪一档更能区分候选”），且有可选方案时，把你所选的那一项作为主建议，kind 使用 propose_followup，proposal_id 填同一方案，reason 在这一条说明代价和理由。用户计划稍后自行上传数据时仍可准备后续观测；准备只登记选择，等待上传，不采集、不执行、不拟合。若用户只要求解释或明确不准备，则使用只读动作。
 用户仅讨论“如果改变条件会怎样”时，用explain等只读步骤引用超限方案，指出保存的阻断原因、数值与单位；讨论不改变约束或批准，也不冒充当前可执行方案。不要用自由reason覆盖程序可行性，亦不宣称理由里的全部数字已核验。
 从本轮 question 的逐字原话提取 updates；未给出的量不能补。fixed 是已知，bounds 是待估范围；替换已有物理事实需用户明确更正和 correction=true。每项更新有唯一 id。研究目标 goal.target 为 width/separation/balanced/prediction/waist_radius/waist_position；design.points 是新增位置数，不是拟合次数。design.max_abs_x_mm 是最大绝对坐标；design.wavelengths_nm 是完整明确可用目录。
 允许解释、澄清和多条合理路线。建议引用 evidence_catalog 的短 id，理由可使用历史证据，但不能把历史文本当本轮更新授权。fields 只用 action_fact_fields，proposal_id 只用已有方案 id；缺少计划时 null 并建议 compare_acquisition。depends_on 只引用本轮更新 id。explain 或 inspect_observation 是有价值的动作；用户要下一步时根据真实结果选择明确步骤。
@@ -210,7 +226,9 @@ preference.mode：基础优先 BASELINE_FIRST、明确允许条件探索 CONDITI
 枚举值按程序合同填写：用户明确说理想透镜傅里叶焦平面时 fixed.measurement_plane="FOURIER_FOCAL_PLANE"；明确自由传播时 fixed.propagation="FREE_SPACE"。quote 保留用户中文原话，value 不用中文标签代替枚举；未声明这些条件时询问，不默认填写。
 quote 使用能支持该字段的最短完整逐字片段。例如原句“我希望缝宽优先，不要牺牲缝距”分别用“缝宽优先”引用 goal.target=width、“不要牺牲缝距”引用 preference.protected_parameter=slit_separation_um；不能把包含相邻否定的整句作为物理/目标引用。每种 kind 最多一条；解释中的多个要点合并到一条 explain，不把同用途的多个波长拆成重复 propose_followup。
 reason 只解释证据、取舍和待核对事项。不宣布确诊、真实精度或唯一性，不索取目录外波长，不假定独立校准已完成。所有动作只是建议，资料批准与计算批准由界面另行处理。'''
-    payload={'question':text,'record':view(s),'decision_preferences':s.get('decision_preferences'),
+    if ctx['request_scope']=='EXPLAIN':
+        prompt+='\n本轮由工作台设为仅解释。updates 必须为空，只能解释、澄清或核对已有证据。'
+    payload={'question':text,'request_scope':ctx['request_scope'],'record':view(s),'decision_preferences':s.get('decision_preferences'),
              'allowed_fields':[f for f in actions.fact_fields(s) if not f.startswith('observation.')],
              'action_fact_fields':actions.fact_fields(s),'evidence_catalog':ctx['evidence_catalog'],**contract.public_contract()}
     # Hashes are host-owned; the model only needs short evidence/plan identifiers.

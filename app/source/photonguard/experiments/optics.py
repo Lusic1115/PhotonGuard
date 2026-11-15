@@ -243,7 +243,7 @@ def _film(parameters, *, validate_only=False):
             'resources': {'tmm_wavelength_calculations': len(wave), 'field_calculations': 0, 'final_fdtd_runs': 0}}
 
 
-def _gaussian(parameters, *, validate_only=False):
+def _gaussian_state(parameters):
     keys = ('wavelength_nm', 'waist_radius_um', 'waist_z_mm', 'focal_length_mm',
             'screen_distance_mm', 'z_max_mm')
     _required(parameters, keys)
@@ -266,13 +266,28 @@ def _gaussian(parameters, *, validate_only=False):
     divergence = wavelength/(math.pi*new_waist_radius)
     if max(wavelength/(math.pi*w0), divergence) > 0.1:
         raise ValueError('input or transformed divergence exceeds the supported 0.1 rad paraxial range')
+    return p, wavelength, w0, waist_z, focal, rayleigh, q_in, q_after, new_waist_radius, divergence
+
+
+def _gaussian_screen_radius(wavelength, q_after, screen_distance_mm):
+    screen_q = q_after + screen_distance_mm * 1e-3
+    return math.sqrt(wavelength / (-math.pi * (1 / screen_q).imag))
+
+
+def gaussian_estimate(parameters):
+    p, wavelength, _, _, _, _, _, q_after, _, _ = _gaussian_state(parameters)
+    return {'screen_radius_um': _gaussian_screen_radius(wavelength, q_after, p['screen_distance_mm']) * 1e6,
+            'new_waist_z_mm': -q_after.real * 1000}
+
+
+def _gaussian(parameters, *, validate_only=False):
+    p, wavelength, w0, waist_z, focal, rayleigh, q_in, q_after, new_waist_radius, divergence = _gaussian_state(parameters)
     if validate_only:return p
     # Include the exact requested screen, no interpolation for goal evaluation.
     z = np.unique(np.r_[np.linspace(0, p['z_max_mm']*1e-3, 201), p['screen_distance_mm']*1e-3])
     q = q_after+z
     radius = np.sqrt(wavelength/(-math.pi*np.imag(1/q)))
-    screen_q = q_after+p['screen_distance_mm']*1e-3
-    screen_radius = math.sqrt(wavelength/(-math.pi*(1/screen_q).imag))
+    screen_radius = _gaussian_screen_radius(wavelength, q_after, p['screen_distance_mm'])
     # Independent algebraic implementation of the same Gaussian/ABCD theory.
     a = 1-z/focal
     b = z-a*waist_z

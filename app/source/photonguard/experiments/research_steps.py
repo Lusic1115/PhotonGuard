@@ -22,7 +22,7 @@ def prepare(store,s,data):
     elif a['type']=='refit':
         if not all(g['approved'] for g in s['groups']):raise WorkflowError('每次采集条件尚未核对，请先保存下方条件表单',409)
         if s.get('inverse_result') or s.get('inverse_approved_sha256'):s=ow.revise(store,s)
-        s.update(inverse_plan=m.plan(s['groups'],s['inverse_settings']),status='PLANNED',questions=[])
+        s.update(inverse_plan=ow.build_fit_plan(store,s,s['groups'],s['inverse_settings']),status='PLANNED',questions=[])
         origin.update(status='FIT_PLAN_READY',plan_sha256=s['inverse_plan']['sha256'])
     elif a['type'] in ('choose_baseline','propose_followup'):
         p=s.get('measurement_plan') or {};item=next((v for v in p.get('plans',[]) if v['id']==a['proposal_id']),None)

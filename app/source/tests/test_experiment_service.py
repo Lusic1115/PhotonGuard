@@ -1,17 +1,19 @@
 """Workbench service authorization, lineage and evidence tests. No paid calls."""
 import copy
+from concurrent.futures import ThreadPoolExecutor
 import io
 import json
 from pathlib import Path
 import threading
 from types import SimpleNamespace
+import uuid
 import zipfile
 
 import pytest
 
-from photonguard.experiments import service
+from photonguard.experiments import executor, learning_lessons, service, workbench_operations
 from photonguard.experiments.planner import templates
-from photonguard.workflow import WorkflowError
+from photonguard.workflow import WorkflowError, WorkflowStore
 
 
 class ImmediateThread:
@@ -85,6 +87,52 @@ def test_local_plan_has_no_invented_real_ai_evidence(store):
     assert drafts[-1].get('raw_response') is None
 
 
+def test_workbench_receipts_close_delayed_submissions_and_recover_saved_records(tmp_path):
+    owner = WorkflowStore(tmp_path)
+    route = '/api/experiments/cases'
+    body = {'kind':'specified', 'text':'比较焦距候选'}
+    abandoned, active, interrupted = (uuid.uuid4().hex for _ in range(3))
+    started, release = threading.Event(), threading.Event()
+    try:
+        store = service.store_for(owner)
+        assert workbench_operations.recover(store, abandoned) == {'status':'NOT_STARTED'}
+        with pytest.raises(WorkflowError, match='提交已关闭'):
+            workbench_operations.submit(store, abandoned, route, body, lambda: pytest.fail('late dispatch'))
+
+        def create():
+            started.set()
+            assert release.wait(5)
+            return store.create(body), 201
+
+        with ThreadPoolExecutor(1) as pool:
+            future = pool.submit(workbench_operations.submit, store, active, route, body, create)
+            try:
+                assert started.wait(5)
+                assert workbench_operations.recover(store, active)['status'] == 'PROCESSING'
+                with pytest.raises(WorkflowError, match='提交已登记'):
+                    workbench_operations.submit(store, active, route, body, lambda: pytest.fail('repeat dispatch'))
+            finally:
+                release.set()
+            record, status = future.result(timeout=5)
+        assert status == 201
+
+        def interrupted_write():
+            raise OSError('simulated interruption after registration')
+
+        with pytest.raises(OSError):
+            workbench_operations.submit(store, interrupted, route, body, interrupted_write)
+    finally:
+        owner.close()
+    reopened = WorkflowStore(tmp_path)
+    try:
+        store = service.store_for(reopened)
+        assert workbench_operations.recover(store, active)['record_id'] == record['id']
+        assert workbench_operations.recover(store, interrupted)['status'] == 'REVIEW'
+        assert len(store.bootstrap()['cases']) == 1
+    finally:
+        reopened.close()
+
+
 @pytest.mark.parametrize('change',[{'approve':False},{'approve':1},{'plan_sha256':'0'*64},{'expected_revision':0}])
 def test_run_requires_current_explicit_plan_approval(store,monkeypatch,change):
     state=make_plan(store)
@@ -93,6 +141,25 @@ def test_run_requires_current_explicit_plan_approval(store,monkeypatch,change):
     request.update(change)
     with pytest.raises(WorkflowError):store.action(state['id'],request)
     assert store.get(state['id'])['status']=='PLANNED'
+
+
+def test_host_lock_conflict_keeps_forward_plan_and_resource_budget(tmp_path, monkeypatch):
+    owner = WorkflowStore(tmp_path)
+    try:
+        store = service.store_for(owner)
+        state = learning_lessons.start(store, {'lesson_id':'slit-width'})['case']
+        source = store.get(state['id'])
+        before = (store.folder(state['id']) / 'case.json').read_bytes()
+        monkeypatch.setattr(service,'execute_plan',lambda *a:pytest.fail('Worker must not launch'))
+        with executor.solver_mutex():
+            with pytest.raises(WorkflowError, match='本轮尚未启动') as error:
+                store.action(state['id'],{'type':'run','expected_revision':source['revision'],
+                                          'approve':True,'plan_sha256':source['plan']['sha256']})
+        assert error.value.status == 409
+        assert (store.folder(state['id']) / 'case.json').read_bytes() == before
+        assert not (store.folder(state['id']) / 'execution').exists()
+    finally:
+        owner.close()
 
 
 @pytest.mark.parametrize('blocked_mode',['offline','simulation'])

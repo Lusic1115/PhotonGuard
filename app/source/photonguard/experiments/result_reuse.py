@@ -45,6 +45,7 @@ def rescore(store,parent,spec,plan):
                  parent_context={'id':parent['id'],'spec':parent['spec'],'plan_sha256':parent['plan']['sha256']})
     if parent.get('exploration_root'):child['exploration_root']=parent['exploration_root']
     if parent.get('library_origin'):child['library_origin']=copy.deepcopy(parent['library_origin'])
+    if parent.get('knowledge_basis'):child['knowledge_basis']=copy.deepcopy(parent['knowledge_basis'])
     if parent.get('fact_state'):
         from .dialogue_update import update
         child['fact_state']=update(copy.deepcopy(parent['fact_state']),'用户明确修改目标条件','rescore-'+child['id'],request={'goal':spec['goal']})

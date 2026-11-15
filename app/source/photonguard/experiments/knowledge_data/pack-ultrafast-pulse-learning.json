@@ -1,0 +1,2305 @@
+{
+  "id": "ultrafast-pulse-learning",
+  "version": "1.0.1",
+  "sources": {
+    "pulse-envelope": {
+      "title": "Ultrafast Optics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.977, 2005",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:d91d518607e60913bc6d532f006553cffdbcb9119c0268b8906ac1017c855f69",
+      "url": "https://ocw.mit.edu/courses/6-977-ultrafast-optics-spring-2005/f806ff596f9bffb74003360e2c05c086_MIT6_977S05_textbook.pdf#page=55",
+      "section": "§2.6，电场载波及脉冲包络，阅读器第 55 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "pulse-dispersion-spectrum": {
+      "title": "Ultrafast Optics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.977, 2005",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:d91d518607e60913bc6d532f006553cffdbcb9119c0268b8906ac1017c855f69",
+      "url": "https://ocw.mit.edu/courses/6-977-ultrafast-optics-spring-2005/f806ff596f9bffb74003360e2c05c086_MIT6_977S05_textbook.pdf#page=56",
+      "section": "§2.6.1，中心频率、波数和色散展开，阅读器第 56 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "pulse-shape-table": {
+      "title": "Ultrafast Optics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.977, 2005",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:d91d518607e60913bc6d532f006553cffdbcb9119c0268b8906ac1017c855f69",
+      "url": "https://ocw.mit.edu/courses/6-977-ultrafast-optics-spring-2005/f806ff596f9bffb74003360e2c05c086_MIT6_977S05_textbook.pdf#page=66",
+      "section": "§2.8，脉冲形状与时间带宽积，阅读器第 66 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "pulse-fwhm-table": {
+      "title": "Ultrafast Optics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.977, 2005",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:d91d518607e60913bc6d532f006553cffdbcb9119c0268b8906ac1017c855f69",
+      "url": "https://ocw.mit.edu/courses/6-977-ultrafast-optics-spring-2005/f806ff596f9bffb74003360e2c05c086_MIT6_977S05_textbook.pdf#page=67",
+      "section": "§2.8，矩形及 sech 脉冲形状和谱形，阅读器第 67 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "ft-properties": {
+      "title": "Signals and Systems · Fourier Transform Properties",
+      "author": "Alan V. Oppenheim",
+      "edition": "MIT RES.6-007 Lecture 9",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:e1387671beffe1440d644142a1abc2277799e1db723189c23361cf167a352da8",
+      "url": "https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/resources/lecture-9-fourier-transform-properties/",
+      "section": "Lecture 9 · Topics covered 与讲义，变换性质",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "pulse-spectral-delay": {
+      "title": "Ultrafast Optics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.977, 2005",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:d91d518607e60913bc6d532f006553cffdbcb9119c0268b8906ac1017c855f69",
+      "url": "https://ocw.mit.edu/courses/6-977-ultrafast-optics-spring-2005/f806ff596f9bffb74003360e2c05c086_MIT6_977S05_textbook.pdf#page=59",
+      "section": "§2.6.1，二阶色散与时频分布，阅读器第 59 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "pulse-retarded-frame": {
+      "title": "Ultrafast Optics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.977, 2005",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:d91d518607e60913bc6d532f006553cffdbcb9119c0268b8906ac1017c855f69",
+      "url": "https://ocw.mit.edu/courses/6-977-ultrafast-optics-spring-2005/f806ff596f9bffb74003360e2c05c086_MIT6_977S05_textbook.pdf#page=58",
+      "section": "§2.6.1，群速度坐标和包络传播，阅读器第 58 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "gdd": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=40",
+      "section": "§2.1，频谱相位、群延迟与色散，阅读器第 40 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "group-expansion": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=33",
+      "section": "§2.1，传播常数关于载频的 Taylor 展开，阅读器第 33 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "pulse-soliton": {
+      "title": "Ultrafast Optics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.977, 2005",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:d91d518607e60913bc6d532f006553cffdbcb9119c0268b8906ac1017c855f69",
+      "url": "https://ocw.mit.edu/courses/6-977-ultrafast-optics-spring-2005/f806ff596f9bffb74003360e2c05c086_MIT6_977S05_textbook.pdf#page=76",
+      "section": "§3.3，色散长度、非线性长度和归一化方程，阅读器第 76 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "third-order-pulse": {
+      "title": "Photonics · Lecture Notes",
+      "author": "Stefan Linden / Universität Bonn",
+      "edition": "波恩大学光子学讲义",
+      "license": "作者／机构版权，原文链接",
+      "fingerprint": "sha256:130e7555cb46f9a0203caae3f037798a570c884ab07669ef853dbe2fdaf60676",
+      "url": "https://www.pi.uni-bonn.de/linden/en/media/photonics.pdf/@@download/file/LectureNotes.pdf#page=166",
+      "section": "§7.3.3，非线性相位与瞬时频率，阅读器第 166 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "spm-chirp": {
+      "title": "Ultrafast Optics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.977, 2005",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:d91d518607e60913bc6d532f006553cffdbcb9119c0268b8906ac1017c855f69",
+      "url": "https://ocw.mit.edu/courses/6-977-ultrafast-optics-spring-2005/f806ff596f9bffb74003360e2c05c086_MIT6_977S05_textbook.pdf#page=74",
+      "section": "§3.2，非线性相位与瞬时频率，阅读器第 74 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "pulse-soliton-check": {
+      "title": "Ultrafast Optics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.977, 2005",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:d91d518607e60913bc6d532f006553cffdbcb9119c0268b8906ac1017c855f69",
+      "url": "https://ocw.mit.edu/courses/6-977-ultrafast-optics-spring-2005/f806ff596f9bffb74003360e2c05c086_MIT6_977S05_textbook.pdf#page=77",
+      "section": "§3.3，基阶孤子及其相位演化，阅读器第 77 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "pulse-loss-gain": {
+      "title": "Ultrafast Optics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.977, 2005",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:d91d518607e60913bc6d532f006553cffdbcb9119c0268b8906ac1017c855f69",
+      "url": "https://ocw.mit.edu/courses/6-977-ultrafast-optics-spring-2005/f806ff596f9bffb74003360e2c05c086_MIT6_977S05_textbook.pdf#page=60",
+      "section": "§2.6.2，传播损耗和增益，阅读器第 60 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "spm": {
+      "title": "Ultrafast Optics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.977, 2005",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:d91d518607e60913bc6d532f006553cffdbcb9119c0268b8906ac1017c855f69",
+      "url": "https://ocw.mit.edu/courses/6-977-ultrafast-optics-spring-2005/f806ff596f9bffb74003360e2c05c086_MIT6_977S05_textbook.pdf#page=73",
+      "section": "§3.2，自相位调制与频谱，阅读器第 73 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "third-order-phase": {
+      "title": "Photonics · Lecture Notes",
+      "author": "Stefan Linden / Universität Bonn",
+      "edition": "波恩大学光子学讲义",
+      "license": "作者／机构版权，原文链接",
+      "fingerprint": "sha256:130e7555cb46f9a0203caae3f037798a570c884ab07669ef853dbe2fdaf60676",
+      "url": "https://www.pi.uni-bonn.de/linden/en/media/photonics.pdf/@@download/file/LectureNotes.pdf#page=165",
+      "section": "§7.3.2–7.3.3，Kerr 系数及自相位调制，阅读器第 165 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "ultrafast-compression": {
+      "title": "Ultrafast Optics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.977, 2005",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:d91d518607e60913bc6d532f006553cffdbcb9119c0268b8906ac1017c855f69",
+      "url": "https://ocw.mit.edu/courses/6-977-ultrafast-optics-spring-2005/f806ff596f9bffb74003360e2c05c086_MIT6_977S05_textbook.pdf#page=100",
+      "section": "§3.7，光纤与光栅对的脉冲压缩，阅读器第 100 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "phasors": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=10",
+      "section": "§2.3，复相量表示、振幅及相位，阅读器第 10 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "expectation": {
+      "title": "Introduction to Probability · Selected Textbook Summary Material",
+      "author": "Dimitri P. Bertsekas、John N. Tsitsiklis",
+      "edition": "MIT RES.6-012 Spring 2018",
+      "license": "MIT OCW 原站条款与书籍署名",
+      "fingerprint": "sha256:e877569eb34dad4245993cfe63253e0a632fe9d7503477db1e2f9a693083f7b1",
+      "url": "https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/d973b10c2587781f86ca4f2aff49098f_MITRES_6_012S18_Textbook.pdf#page=10",
+      "section": "§2.4，期望与方差，阅读器第 10 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    }
+  },
+  "entries": [
+    {
+      "id": "ultrafast-carrier-envelope",
+      "title": "光脉冲的载波与复包络",
+      "topic": "ultrafast",
+      "level": "intro",
+      "terms": [
+        "光脉冲包络",
+        "carrier envelope"
+      ],
+      "definition": "光脉冲的电场可用快速振荡的载波与随时间变化的复包络表示。",
+      "body": "将中心频率的快速相位因子单独提出以后，包络的模反映相对场幅，包络辐角反映相对于载波的额外相位。测得强度包络时，平方关系保留模的信息，同时丢失单凭这一读数无法确定的相位。",
+      "example": "对于固定形状的包络，把载波中心移到另一个频率可改变实际光谱位置而保持示意的包络宽度。",
+      "caution": "少周期场与宽带强耦合时，应检查慢变包络模型的有效性。",
+      "conditions": [
+        "定义 A 的频率相对于中心频率，场采用 exp(−iωt)。"
+      ],
+      "formula": "E(t)=Re[A(t)exp(−iω₀t)]",
+      "variables": "ω₀ 用 rad/s，A 单位与场相同。",
+      "prerequisites": [
+        "positive-frequency-analytic-signal"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-envelope"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "E(t)=Re[A(t)exp(−iω₀t)]",
+          "sources": [
+            "pulse-envelope"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "对于固定形状的包络，把载波中心移到另一个频率可改变实际光谱位置而保持示意的包络宽度。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-envelope-relative-frequency",
+      "title": "包络频谱的零点是载频",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "baseband optical spectrum",
+        "包络失谐"
+      ],
+      "definition": "复包络频谱通常按相对中心载波的频率显示。",
+      "body": "如果中心频率为 ν₀，实际光频 ν 与包络坐标 Ω/2π 相差 ν₀。包络图的负横坐标可以表示实际光频较中心低，绝对频率仍为正。保持同一频率符号对照色散展开和传播相位。",
+      "example": "中心频率 200 THz 时，包络上的 −2 THz 代表实际 198 THz。",
+      "caution": "不要把包络频率零点解释为光信号中的静电分量。",
+      "conditions": [
+        "本条把频谱横轴明确规定为 ν−ν₀。"
+      ],
+      "formula": "Ω=ω−ω₀",
+      "variables": "Ω 与 ω 用 rad/s。",
+      "prerequisites": [
+        "ultrafast-carrier-envelope",
+        "complex-exponential-modulation"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-dispersion-spectrum"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Ω=ω−ω₀",
+          "sources": [
+            "pulse-dispersion-spectrum"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "中心频率 200 THz 时，包络上的 −2 THz 代表实际 198 THz。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-field-intensity-fwhm",
+      "title": "时间轴上场幅宽度与强度宽度",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "pulse intensity width",
+        "Gaussian field FWHM"
+      ],
+      "definition": "同一个高斯脉冲的场幅半高宽大于其强度半高宽。",
+      "body": "若场幅是高斯，平方会把指数中的系数乘二，达到各自峰值一半的时间位置因此不同。设备和论文常用强度的半高全宽；若用场包络宽度计算带宽，应先把这一参数换到一致定义。",
+      "example": "高斯脉冲若强度 FWHM=100 fs，场幅的 FWHM 约为 141 fs。",
+      "caution": "平方根关系依赖高斯形状，不能用在任意波形。",
+      "conditions": [
+        "以同一个对称高斯脉冲的时间中心为零。"
+      ],
+      "formula": "τ_FWHM,field=√2 τ_FWHM,intensity",
+      "variables": "τ 表示时间宽度。",
+      "prerequisites": [
+        "ultrafast-carrier-envelope"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-shape-table"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "τ_FWHM,field=√2 τ_FWHM,intensity",
+          "sources": [
+            "pulse-shape-table"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "高斯脉冲若强度 FWHM=100 fs，场幅的 FWHM 约为 141 fs。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-gaussian-rms-width",
+      "title": "高斯强度的 RMS 与半高全宽",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "Gaussian rms duration",
+        "脉宽标准差"
+      ],
+      "definition": "高斯强度可用二阶矩宽度表示，也可用两个半高点之间的距离表示。",
+      "body": "以强度归一作为时间分布，中心二阶矩的平方根为 σ。将 exp(−t²/2σ²) 设为 1/2，得到半高点距离中心为 σ√(2ln2)。两侧间隔即 2.355σ。",
+      "example": "强度时间标准差为 50 fs，强度半高全宽约 118 fs。",
+      "caution": "带长尾或多峰的脉冲可出现同 FWHM、不同 RMS。",
+      "conditions": [
+        "对称单峰 Gaussian 强度；时间轴及基线已明确。"
+      ],
+      "formula": "τ_FWHM=2√(2ln2)σ",
+      "variables": "两者用相同时间单位。",
+      "prerequisites": [
+        "ultrafast-field-intensity-fwhm",
+        "gaussian-density-width"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-shape-table"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "τ_FWHM=2√(2ln2)σ",
+          "sources": [
+            "pulse-shape-table"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "强度时间标准差为 50 fs，强度半高全宽约 118 fs。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-gaussian-tbp-example",
+      "title": "高斯变换极限的带宽换算",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "Gaussian TBP",
+        "0.441"
+      ],
+      "definition": "无额外谱相位的 Gaussian 脉冲，其强度半高全宽的时间带宽积约为 0.441。",
+      "body": "对时间域 Gaussian 场作傅里叶变换，频域场仍是 Gaussian，方差尺度互为倒数。将两边模平方后分别求半高全宽，可得 2ln2/π。横轴若换成角频率，积还要乘 2π。",
+      "example": "强度宽 100 fs 的变换极限 Gaussian 脉冲，其频率 FWHM 约 4.41 THz。",
+      "caution": "该常数与脉冲形状和宽度定义绑定。",
+      "conditions": [
+        "Gaussian 时间和频率强度，普通频率 Hz，只有常数或线性谱相位。"
+      ],
+      "formula": "Δt Δν=2ln2/π≈0.441",
+      "variables": "Δt 用 s，Δν 用 Hz。",
+      "prerequisites": [
+        "transform-limited-pulse",
+        "ultrafast-field-intensity-fwhm"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-shape-table"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δt Δν=2ln2/π≈0.441",
+          "sources": [
+            "pulse-shape-table"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "强度宽 100 fs 的变换极限 Gaussian 脉冲，其频率 FWHM 约 4.41 THz。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-sech-pulse-width",
+      "title": "sech² 强度脉冲的半高宽",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "sech2 FWHM",
+        "双曲正割脉宽"
+      ],
+      "definition": "双曲正割平方的强度曲线以脉冲参数 T₀ 描述，半高全宽约为 1.763T₀。",
+      "body": "用 sech(x)=1/cosh(x)，在强度为峰值一半处令 cosh(t/T₀)=√2。求两侧对称时间之差得到 2T₀ arcosh√2。计算色散长度等公式前，应确认使用 T₀ 或测得 FWHM。",
+      "example": "若强度 FWHM=176 fs，则 T₀ 约为 100 fs。",
+      "caution": "在这个脉形里 Gaussian 的宽度系数不适用。",
+      "conditions": [
+        "I(t)∝sech²(t/T₀)，对称单脉冲。"
+      ],
+      "formula": "Δt=2 arcosh(√2)T₀",
+      "variables": "T₀ 为时间参数。",
+      "prerequisites": [
+        "ultrafast-field-intensity-fwhm"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-fwhm-table"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δt=2 arcosh(√2)T₀",
+          "sources": [
+            "pulse-fwhm-table"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若强度 FWHM=176 fs，则 T₀ 约为 100 fs。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-sech-tbp-example",
+      "title": "sech² 脉冲的变换极限带宽",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "sech2 TBP",
+        "0.315"
+      ],
+      "definition": "变换极限 sech² 强度脉冲的时间带宽积约为 0.315。",
+      "body": "时间域场为 sech，傅里叶场也为 sech 并按倒数时间尺度缩放。用普通频率并在两边取强度半高全宽，得到该形状特有的数值。选择适合实际脉形的模型才能由带宽估算最短脉冲。",
+      "example": "变换极限 sech² 脉冲的频率 FWHM 为 2.0 THz 时，时间宽度约 158 fs。",
+      "caution": "实验测得的谱宽还受仪器分辨率影响。",
+      "conditions": [
+        "单一 sech 场，固定谱相位，强度 FWHM。"
+      ],
+      "formula": "Δt Δν≈0.315",
+      "variables": "Δt 用 s，Δν 用 Hz。",
+      "prerequisites": [
+        "ultrafast-sech-pulse-width",
+        "transform-limited-pulse"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-fwhm-table"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δt Δν≈0.315",
+          "sources": [
+            "pulse-fwhm-table"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "变换极限 sech² 脉冲的频率 FWHM 为 2.0 THz 时，时间宽度约 158 fs。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-rectangular-pulse-spectrum",
+      "title": "矩形脉冲的首零点与半高宽",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "矩形脉冲频谱",
+        "sinc zero bandwidth"
+      ],
+      "definition": "时间上截断的矩形场会产生 sinc 谱场以及 sinc² 谱强度。",
+      "body": "将 exp(−i2πft) 从 −T/2 积到 T/2，得到 T sinc(πfT)。第一零点的频移大小为 1/T，强度半高全宽则约为 0.886/T。报告带宽时应写明使用单侧首零点、全零点宽度或 FWHM。",
+      "example": "T=1 ns 时，单侧首零点为 1 GHz，强度 FWHM 约 0.886 GHz。",
+      "caution": "有有限上升时间的真实脉冲会改变远端谱。",
+      "conditions": [
+        "矩形复场，常相位，sinc(u)=sin(u)/u。"
+      ],
+      "formula": "I(f)/I(0)=sinc²(πfT)",
+      "variables": "f 用 Hz，T 用 s。",
+      "prerequisites": [
+        "fourier-transform-pair"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-fwhm-table",
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "I(f)/I(0)=sinc²(πfT)",
+          "sources": [
+            "pulse-fwhm-table",
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "T=1 ns 时，单侧首零点为 1 GHz，强度 FWHM 约 0.886 GHz。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-quadratic-spectral-phase",
+      "title": "二次谱相位与群时延斜率",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "quadratic spectral phase",
+        "频率相关时延"
+      ],
+      "definition": "当传播的谱相位含二次项时，不同频率相对参考脉冲获得不同群时延。",
+      "body": "按 exp[−iωt+iφ(ω)] 写频率分量，驻相位置给 t=dφ/dω。常数相位不改变群时延，线性相位使所有频率一起平移，二次项则令时延随频率线性变化。对实测曲线可先扣除常数和线性相位。",
+      "example": "二次相位系数 φ₂=200 fs² 时，角频率失谐 0.05 rad/fs 对应额外群时延 10 fs。",
+      "caution": "采用反号频谱因子时，须同时转换传播相位与时延定义。",
+      "conditions": [
+        "光谱主要处于展开中心附近，使用 exp(−iωt)。"
+      ],
+      "formula": "φ=φ₀+φ₁Ω+φ₂Ω²/2，τ=φ₁+φ₂Ω",
+      "variables": "φ₂ 用 s²，Ω 用 rad/s。",
+      "prerequisites": [
+        "group-delay"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-spectral-delay",
+        "pulse-dispersion-spectrum"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "φ=φ₀+φ₁Ω+φ₂Ω²/2，τ=φ₁+φ₂Ω",
+          "sources": [
+            "pulse-spectral-delay",
+            "pulse-dispersion-spectrum"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "二次相位系数 φ₂=200 fs² 时，角频率失谐 0.05 rad/fs 对应额外群时延 10 fs。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-beta-order-units",
+      "title": "β₁、β₂、β₃的量纲与用途",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "beta2 beta3 units",
+        "色散阶数单位"
+      ],
+      "definition": "传播常数每增加一阶角频率导数，单位就多一个时间因子。",
+      "body": "从 β 单位 m⁻¹ 与角频率单位 s⁻¹ 出发，β₁ 用 s/m，β₂ 用 s²/m，β₃ 用 s³/m。乘长度以后分别对应群时延、二阶与三阶累积谱相位系数。比较数据表时应逐阶完成量纲检查。",
+      "example": "β₂=20 ps²/km 的 100 m 光纤积累 2 ps² 二阶谱相位。",
+      "caution": "不要把每长度的 β₂ 和整段元件的 GDD 混用。",
+      "conditions": [
+        "β 对真空角频率求导，并在指定中心及同一模上比较。"
+      ],
+      "formula": "β_m=dᵐβ/dωᵐ",
+      "variables": "第 m 阶单位 sᵐ/m。",
+      "prerequisites": [
+        "angular-frequency-derivative"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-dispersion-spectrum"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "β_m=dᵐβ/dωᵐ",
+          "sources": [
+            "pulse-dispersion-spectrum"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "β₂=20 ps²/km 的 100 m 光纤积累 2 ps² 二阶谱相位。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-retarded-time-coordinate",
+      "title": "随群速度移动的时间坐标",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "retarded time",
+        "移动时间坐标"
+      ],
+      "definition": "将实验时间减去载频附近的群时延，可在脉冲坐标中移除一阶平移。",
+      "body": "在距离 z 处定义 T=t−β₁z，若只保留常数和一阶色散，包络保持原形且在 T 轴上静止。加入二阶项后，脉冲宽度变化仍可见。这一变换把飞行时间和实际波形变化分开。",
+      "example": "在 1 m 段落 β₁=5 ns/m 时，实验室 t=5 ns 对应 T=0。",
+      "caution": "移动坐标不会移除高阶色散或损耗。",
+      "conditions": [
+        "中心群速度近似固定，正向传播。"
+      ],
+      "formula": "T=t−β₁ z",
+      "variables": "T 和 t 用同一时间单位。",
+      "prerequisites": [
+        "group-velocity",
+        "ultrafast-beta-order-units"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-retarded-frame"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "T=t−β₁ z",
+          "sources": [
+            "pulse-retarded-frame"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在 1 m 段落 β₁=5 ns/m 时，实验室 t=5 ns 对应 T=0。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-linear-group-delay-cascade",
+      "title": "多段链路的群延迟色散相加",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "cascaded GDD",
+        "色散链路预算"
+      ],
+      "definition": "对于线性标量串联元件，频域复传递相乘使谱相位及其导数按段相加。",
+      "body": "把每段相位按同一中心频率展开，二阶系数相加即总 GDD。若一路有 +500 fs²、另一路 −500 fs²，中心处二阶项可抵消，同时三阶项与幅度响应仍可能留下变化。",
+      "example": "+250 fs² 与 −150 fs² 的元件串联，净 GDD 为 +100 fs²。",
+      "caution": "各段需在同一模、同一频率范围和一致相位约定下使用。",
+      "conditions": [
+        "串联线性相干传递，忽略多反射反馈。"
+      ],
+      "formula": "GDD_total=Σ_j d²φ_j/dω²",
+      "variables": "GDD 常用 fs²。",
+      "prerequisites": [
+        "ultrafast-quadratic-spectral-phase"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-spectral-delay",
+        "gdd"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "GDD_total=Σ_j d²φ_j/dω²",
+          "sources": [
+            "pulse-spectral-delay",
+            "gdd"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "+250 fs² 与 −150 fs² 的元件串联，净 GDD 为 +100 fs²。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-spectral-phase-constant-linear",
+      "title": "常数与线性谱相位怎样改变脉冲",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "linear spectral phase",
+        "整体时移"
+      ],
+      "definition": "在线性模型中，常数谱相位统一旋转复场，线性谱相位对应平移脉冲。",
+      "body": "用 exp(−iΩt) 合成，并以 exp(+iφ) 作为传递函数时，线性谱相位 φ₀+Ωτ₀ 与合成核合并成 exp[−iΩ(t−τ₀)]。因此原来在 t=0 的峰到 t=τ₀ 出现，τ₀>0 表示到达时间延后，函数自变量是 t−τ₀。若改用 exp(+iΩt) 合成而保持 exp(+iφ) 的传递记号，同一延迟的谱相位斜率为 −τ₀。这里只移动实验室时间轴上的波形，随群速移动的坐标原点另有定义。",
+      "example": "在频谱上增加 100 fs 的线性相位斜率，会使本约定下的时域包络整体延后 100 fs。",
+      "caution": "在固定实验室时间轴上，用峰值到达时刻描述平移方向。改合成核符号时重算谱相位斜率。常数与线性相位保持包络形状。",
+      "conditions": [
+        "E 用 exp(−iωt)，传递用 exp(+iφ)。"
+      ],
+      "formula": "A_out(t)=exp(iφ₀)A_in(t−τ₀)",
+      "variables": "τ₀ 是时间，不是频率。",
+      "prerequisites": [
+        "ultrafast-retarded-time-coordinate"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-dispersion-spectrum",
+        "pulse-retarded-frame"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "A_out(t)=exp(iφ₀)A_in(t−τ₀)",
+          "sources": [
+            "pulse-dispersion-spectrum",
+            "pulse-retarded-frame"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在频谱上增加 100 fs 的线性相位斜率，会使本约定下的时域包络整体延后 100 fs。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-spectral-phase-bandwidth-limit",
+      "title": "谱强度相同仍可有不同脉宽",
+      "topic": "ultrafast",
+      "level": "intro",
+      "terms": [
+        "same spectrum different pulse",
+        "谱相位测量"
+      ],
+      "definition": "光谱仪测得的谱强度给出场的谱模平方，但脉冲时间形状也依赖谱相位。",
+      "body": "在同一频谱幅度上加入二次相位，频率成分在不同时间相干叠加，包络可展宽。测得谱强度可以在给定形状假设下推算变换极限；要知实际时域形状，需要对相位或时间行为增加测量。",
+      "example": "相同 Gaussian 谱可对应无额外相位的短脉冲，也可对应带二次相位的长脉冲。",
+      "caution": "光谱宽度本身通常不足以判定啁啾符号或真实脉宽。",
+      "conditions": [
+        "同一单模频谱和固定光谱幅度。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "transform-limited-pulse"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-shape-table",
+        "pulse-spectral-delay"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "光谱仪测得的谱强度给出场的谱模平方，但脉冲时间形状也依赖谱相位。",
+          "sources": [
+            "pulse-shape-table",
+            "pulse-spectral-delay"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "相同 Gaussian 谱可对应无额外相位的短脉冲，也可对应带二次相位的长脉冲。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-gaussian-gdd-broadening",
+      "title": "Gaussian 脉冲的二阶色散展宽",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "Gaussian GDD broadening",
+        "脉冲展宽公式"
+      ],
+      "definition": "变换极限 Gaussian 脉冲经过纯二阶谱相位后，时间强度宽度按平方和放大。",
+      "body": "以强度初始 FWHM 为 T，写出其谱场的 Gaussian 指数，再加入 iφ₂Ω²/2。逆变换仍为 Gaussian，取模平方得到展宽因子。正负同量 GDD 的宽度相同，时频斜率方向可不同。",
+      "example": "T=100 fs、GDD=3607 fs² 时，展宽因子约 √2，输出约 141 fs。",
+      "caution": "输入已有啁啾时，补偿性 GDD 也可能压缩脉冲。",
+      "conditions": [
+        "输入变换极限 Gaussian，线性传播、纯二阶相位。"
+      ],
+      "formula": "T_out=T√[1+(4ln2 φ₂/T²)²]",
+      "variables": "φ₂ 单位需与 T² 一致。",
+      "prerequisites": [
+        "ultrafast-gaussian-tbp-example",
+        "ultrafast-quadratic-spectral-phase"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-spectral-delay",
+        "pulse-shape-table"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "T_out=T√[1+(4ln2 φ₂/T²)²]",
+          "sources": [
+            "pulse-spectral-delay",
+            "pulse-shape-table"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "T=100 fs、GDD=3607 fs² 时，展宽因子约 √2，输出约 141 fs。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-dispersion-units-conversion",
+      "title": "从色散参数 D 换到 β₂",
+      "topic": "ultrafast",
+      "level": "advanced",
+      "terms": [
+        "dispersion D beta2",
+        "ps每nm每km"
+      ],
+      "definition": "波长口径的群延迟斜率 D 与角频率口径的二阶色散 β₂ 符号相反。",
+      "body": "写 D=dβ₁/dλ₀，并代入 ω=2πc/λ₀。因为 dω/dλ₀<0，链式法则把同一点的斜率符号反过来。完成单位换算后再代入，避免把 ps/nm/km 原数直接与 SI 系数相乘。",
+      "example": "1550 nm 处 D≈17 ps/(nm·km) 时，β₂≈−21.7 ps²/km。",
+      "caution": "此换算针对同一模式和同一中心波长。",
+      "conditions": [
+        "真空波长、局部导数、c 用真空光速。"
+      ],
+      "formula": "D=−(2πc/λ₀²)β₂",
+      "variables": "D 的 SI 单位 s/m²。",
+      "prerequisites": [
+        "group-velocity-dispersion",
+        "ultrafast-beta-order-units"
+      ],
+      "related": [],
+      "sources": [
+        "group-expansion",
+        "gdd"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "D=−(2πc/λ₀²)β₂",
+          "sources": [
+            "group-expansion",
+            "gdd"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "1550 nm 处 D≈17 ps/(nm·km) 时，β₂≈−21.7 ps²/km。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-dispersion-local-expansion",
+      "title": "脉冲传播何时需要保留三阶色散",
+      "topic": "ultrafast",
+      "level": "advanced",
+      "terms": [
+        "third order dispersion range",
+        "二阶近似条件"
+      ],
+      "definition": "按谱宽和传播长度估计高阶相位，能判断单用 β₂ 是否充分。",
+      "body": "选择包含主要谱能量的最大角频率失谐 Ω_m，分别算二阶与三阶谱相位。若三阶项在该范围内已不可忽略，尤其在 β₂ 接近零时，应保留它或使用原始色散曲线。近似选择应与容许波形误差相适配。",
+      "example": "若二阶相位很小但最外侧三阶相位约 1 rad，仍可能看到明显的非对称波形。",
+      "caution": "不能按固定比例替所有脉冲定义同一个截断阈值。",
+      "conditions": [
+        "单模线性传播；β 在讨论频段内可展开。"
+      ],
+      "formula": "φ₃(Ω)=Lβ₃Ω³/6",
+      "variables": "φ₃ 为三阶相位项，单位 rad。",
+      "prerequisites": [
+        "ultrafast-beta-order-units"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-dispersion-spectrum",
+        "pulse-spectral-delay"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "φ₃(Ω)=Lβ₃Ω³/6",
+          "sources": [
+            "pulse-dispersion-spectrum",
+            "pulse-spectral-delay"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若二阶相位很小但最外侧三阶相位约 1 rad，仍可能看到明显的非对称波形。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-peak-power-gaussian",
+      "title": "由 Gaussian 脉冲能量求峰值功率",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "Gaussian peak power from energy",
+        "脉冲能量峰值功率"
+      ],
+      "definition": "脉冲能量是功率对时间的积分，峰值由脉形与时间宽度一起决定。",
+      "body": "把功率写成 P₀ exp(−4ln2·t²/T²)，积分给 E=P₀T√π/(2√ln2)。因此 E/T 只是数量级估计，Gaussian 的峰值还含 0.939 的形状因子。若能量是每脉冲值，可直接使用。",
+      "example": "能量 1 nJ、强度 FWHM 100 fs 的 Gaussian 脉冲，峰值约 9.39 kW。",
+      "caution": "空间峰值光强还需光斑和空间分布。",
+      "conditions": [
+        "单脉冲 Gaussian 功率曲线，T 为时间 FWHM。"
+      ],
+      "formula": "P₀=2√(ln2/π) E/T",
+      "variables": "E 用 J，T 用 s。",
+      "prerequisites": [
+        "ultrafast-field-intensity-fwhm"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-shape-table"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P₀=2√(ln2/π) E/T",
+          "sources": [
+            "pulse-shape-table"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "能量 1 nJ、强度 FWHM 100 fs 的 Gaussian 脉冲，峰值约 9.39 kW。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-repetition-rate-energy",
+      "title": "重复率如何连接平均功率与脉冲能量",
+      "topic": "ultrafast",
+      "level": "intro",
+      "terms": [
+        "pulse train energy",
+        "重复频率与能量"
+      ],
+      "definition": "周期脉冲列的平均功率等于单脉冲能量乘以重复率。",
+      "body": "将足够长的计时窗内每个脉冲的能量相加，再除以总时间。若各脉冲相同且背景可忽略，单位时间的脉冲数就是重复率。峰值功率需要再用脉形和脉宽换算。",
+      "example": "10 mW 平均功率、100 MHz 重复率对应每脉冲 100 pJ。",
+      "caution": "脉冲列含直流背景或多种脉冲时，应单独计入各贡献。",
+      "conditions": [
+        "稳态周期列，平均功率的测量窗覆盖许多周期。"
+      ],
+      "formula": "P_avg=f_rep E_pulse",
+      "variables": "f_rep 用 Hz，E_pulse 用 J。",
+      "prerequisites": [
+        "ultrafast-peak-power-gaussian"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-envelope",
+        "pulse-shape-table"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P_avg=f_rep E_pulse",
+          "sources": [
+            "pulse-envelope",
+            "pulse-shape-table"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "10 mW 平均功率、100 MHz 重复率对应每脉冲 100 pJ。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-envelope-dispersion-length-check",
+      "title": "脉冲色散长度和真实传输段比较",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "linear broadening threshold",
+        "T0 dispersion length"
+      ],
+      "definition": "色散长度是由脉冲的时间尺度和 β₂ 定义的比较尺，用于判断给定长度的二阶色散影响。",
+      "body": "将时间变量按 T₀ 归一，二阶时间导数带来 1/T₀²。比较传播尺度与该系数，得到 L_D=T₀²/abs(β₂)。固定光纤时，时间尺度减半会使 L_D 变为四分之一。",
+      "example": "T₀=100 fs、abs(β₂)=20 ps²/km 时，L_D 约 0.5 m。",
+      "caution": "T₀ 必须和推导采用同一脉形归一；不能直接拿任意 FWHM 替代。",
+      "conditions": [
+        "二阶色散主导、固定中心频率与导模。"
+      ],
+      "formula": "L_D=T₀²/abs(β₂)",
+      "variables": "时间单位在分子与 β₂ 中保持一致。",
+      "prerequisites": [
+        "ultrafast-beta-order-units"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-retarded-frame",
+        "pulse-soliton"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "L_D=T₀²/abs(β₂)",
+          "sources": [
+            "pulse-retarded-frame",
+            "pulse-soliton"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "T₀=100 fs、abs(β₂)=20 ps²/km 时，L_D 约 0.5 m。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-spm-timing-sign",
+      "title": "自相位调制的前沿与后沿频移",
+      "topic": "ultrafast",
+      "level": "advanced",
+      "terms": [
+        "SPM red blue shift",
+        "瞬时频率正负"
+      ],
+      "definition": "在正 Kerr 系数和 exp(−iω₀t+iφ) 的约定下，脉冲前沿产生负频移，后沿产生正频移。",
+      "body": "相位增量与瞬时功率成正比。脉冲前沿功率斜率为正，瞬时频率等于总相位负导数，因此频移为负；后沿斜率相反。中心峰处导数为零，频移极值通常在两侧。",
+      "example": "若 φ_NL(t)=γLP(t)，前沿 γL dP/dt=0.02 rad/fs，则 Δω=−0.02 rad/fs。",
+      "caution": "采用另一时间载波符号时，必须同时转换相位定义。",
+      "conditions": [
+        "正 Kerr、忽略色散、即时响应和损耗。"
+      ],
+      "formula": "Δω=−dφ_NL/dt",
+      "variables": "Δω 用 rad/s 或 rad/fs。",
+      "prerequisites": [
+        "fiber-self-phase-modulation",
+        "ultrafast-carrier-envelope"
+      ],
+      "related": [],
+      "sources": [
+        "third-order-pulse",
+        "spm-chirp"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δω=−dφ_NL/dt",
+          "sources": [
+            "third-order-pulse",
+            "spm-chirp"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若 φ_NL(t)=γLP(t)，前沿 γL dP/dt=0.02 rad/fs，则 Δω=−0.02 rad/fs。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-soliton-order-balance",
+      "title": "孤子阶数怎样比较色散与非线性",
+      "topic": "ultrafast",
+      "level": "advanced",
+      "terms": [
+        "soliton order N",
+        "LD LNL"
+      ],
+      "definition": "在典型反常色散 Kerr 光纤模型中，孤子阶数用色散长度与非线性长度的比值描述。",
+      "body": "二阶色散和自相位调制分别引入不同的传播尺度。对输入为 sech 场时，两尺度相等给基阶孤子。若输入峰值功率增为原来的四倍，而其他参数不变，非线性长度变为原来的四分之一，N 变为两倍。",
+      "example": "当 L_D=2 m、L_NL=0.5 m 时，N=2。",
+      "caution": "只有适当的输入形状、色散符号和模型条件才对应理想孤子。",
+      "conditions": [
+        "单模，反常二阶色散、正 Kerr，忽略损耗和高阶项。"
+      ],
+      "formula": "N²=L_D/L_NL，L_NL=1/(γP₀)",
+      "variables": "N 无量纲，γ 单位 W⁻¹m⁻¹。",
+      "prerequisites": [
+        "fiber-optical-soliton",
+        "ultrafast-sech-pulse-width"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-soliton",
+        "pulse-soliton-check"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "N²=L_D/L_NL，L_NL=1/(γP₀)",
+          "sources": [
+            "pulse-soliton",
+            "pulse-soliton-check"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "当 L_D=2 m、L_NL=0.5 m 时，N=2。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-spectral-loss-shaping",
+      "title": "频率选择性损耗会改变脉冲形状",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "spectral filtering pulse shaping",
+        "频率依赖损耗"
+      ],
+      "definition": "如果损耗随频率改变，即便不引入新的谱相位，脉冲时域包络也可能改变。",
+      "body": "频域传播同时有幅度和相位两部分。平坦衰减会整体降低谱幅，归一后的时域形状保持；窄带损耗或滤波改变频率的相对权重，时域卷积可带来展宽或振铃。若需测脉冲压缩，应同时看谱幅变化。",
+      "example": "先后用等效平坦衰减片与窄带滤光片，比较归一化的出射光谱及脉宽。",
+      "caution": "实际滤波器也可能同时引入频率相关相位。",
+      "conditions": [
+        "线性、同一通道的复频域传递。"
+      ],
+      "formula": "A_out(ω)=H(ω)A_in(ω)",
+      "variables": "H 为无量纲复传递。",
+      "prerequisites": [
+        "ultrafast-spectral-phase-bandwidth-limit"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-loss-gain",
+        "pulse-shape-table"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "A_out(ω)=H(ω)A_in(ω)",
+          "sources": [
+            "pulse-loss-gain",
+            "pulse-shape-table"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "先后用等效平坦衰减片与窄带滤光片，比较归一化的出射光谱及脉宽。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-sech-energy-peak",
+      "title": "sech² 脉冲的能量与峰值换算",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "sech energy peak",
+        "sech2峰值功率"
+      ],
+      "definition": "sech² 脉冲能量等于峰值功率乘以两倍的时间参数 T₀。",
+      "body": "将积分变量由 t 换成 u=t/T₀。因为 sech²u 是 tanh u 的导数，整条曲线积分为 2，脉冲能量随 P₀T₀ 成正比。给的是强度半高全宽时，先除以 1.763 得到 T₀。",
+      "example": "若 T₀=100 fs、能量 1 nJ，峰值功率约 5.0 kW。",
+      "caution": "空间峰值强度还需要截面和空间脉形。",
+      "conditions": [
+        "P(t)=P₀ sech²(t/T₀)，整个脉冲完全积分。"
+      ],
+      "formula": "E=2P₀T₀",
+      "variables": "E 用 J，P₀ 用 W。",
+      "prerequisites": [
+        "ultrafast-sech-pulse-width",
+        "ultrafast-peak-power-gaussian"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-fwhm-table"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "E=2P₀T₀",
+          "sources": [
+            "pulse-fwhm-table"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若 T₀=100 fs、能量 1 nJ，峰值功率约 5.0 kW。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-gaussian-chirped-tbp",
+      "title": "Gaussian 脉冲的线性啁啾怎样改变带宽积",
+      "topic": "ultrafast",
+      "level": "advanced",
+      "terms": [
+        "chirped Gaussian TBP",
+        "啁啾高斯脉冲频宽"
+      ],
+      "definition": "带二次时间相位的 Gaussian 场，其时间强度保持，但谱强度宽度按啁啾参数的绝对值增大。",
+      "body": "将复指数写成 exp[−(1+iC)t²/(2T₀²)]。时间模平方消掉虚相位；傅里叶变换的高斯系数取倒数，其实部含 1/(1+C²)。因此频宽是无啁啾时的 √(1+C²) 倍，时间带宽积也相同比例增长。",
+      "example": "C=1 时，强度 FWHM 口径的时间带宽积约为 0.624。",
+      "caution": "只由带宽积可估该模型的啁啾大小，无法判定符号。",
+      "conditions": [
+        "Gaussian 场，纯二次时间相位，同一普通频率口径。"
+      ],
+      "formula": "Δt Δν=(2 ln2/π)√(1+C²)",
+      "variables": "C 为无量纲时间啁啾参数。",
+      "prerequisites": [
+        "ultrafast-gaussian-tbp-example"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-spectral-delay",
+        "pulse-shape-table"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δt Δν=(2 ln2/π)√(1+C²)",
+          "sources": [
+            "pulse-spectral-delay",
+            "pulse-shape-table"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "C=1 时，强度 FWHM 口径的时间带宽积约为 0.624。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-instantaneous-frequency-definition",
+      "title": "从总时间相位读取瞬时频率",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "instantaneous optical frequency",
+        "瞬时角频率"
+      ],
+      "definition": "在 exp(−iω₀t+iφ(t)) 约定下，瞬时角频率是总时间相位负导数。",
+      "body": "不同时刻的相位斜率对应局部振荡快慢。对于线性时间相位，整个频谱整体平移；对于二次时间相位，瞬时频率沿时间作线性扫描。场幅非常小的点相位难以稳定定义，不能把该处数值当作可靠的物理读数。",
+      "example": "φ(t)=a t²/2 时，瞬时角频率为 ω₀−at。",
+      "caution": "另一时间载波符号下相位导数的写法会相反。",
+      "conditions": [
+        "单分量复包络、场幅明显非零，统一相位约定。"
+      ],
+      "formula": "ω_inst=ω₀−dφ/dt",
+      "variables": "ω_inst 用 rad/s。",
+      "prerequisites": [
+        "ultrafast-carrier-envelope"
+      ],
+      "related": [],
+      "sources": [
+        "third-order-pulse",
+        "pulse-envelope"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ω_inst=ω₀−dφ/dt",
+          "sources": [
+            "third-order-pulse",
+            "pulse-envelope"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "φ(t)=a t²/2 时，瞬时角频率为 ω₀−at。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-pulse-chirp-time-frequency",
+      "title": "时间相位斜率与频谱群时延的区别",
+      "topic": "ultrafast",
+      "level": "advanced",
+      "terms": [
+        "time chirp versus spectral group delay",
+        "时频映射"
+      ],
+      "definition": "瞬时频率是时间相位的导数，群时延是谱相位的导数，它们的自变量不同。",
+      "body": "写时域相位 φ(t) 可从每个时刻估局部频率；写频域相位 Φ(ω) 则可从频率看近似到达时间。在强单调啁啾和驻相近似下，这两个描述可以近似对应，但一般脉冲并非一一映射。",
+      "example": "多峰或拍频波形的瞬时频率可能不单调，这时无法由一个简单反函数还原谱相位。",
+      "caution": "先说明在求时间导数还是频率导数，再核对两边的指数符号。",
+      "conditions": [
+        "窄带复场，计算所用相位参考与可用谱段已定义。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "ultrafast-instantaneous-frequency-definition",
+        "ultrafast-quadratic-spectral-phase"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-spectral-delay",
+        "third-order-pulse"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "瞬时频率是时间相位的导数，群时延是谱相位的导数，它们的自变量不同。",
+          "sources": [
+            "pulse-spectral-delay",
+            "third-order-pulse"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "多峰或拍频波形的瞬时频率可能不单调，这时无法由一个简单反函数还原谱相位。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-pulse-dispersion-slope-window",
+      "title": "色散斜率怎样影响宽谱传输",
+      "topic": "ultrafast",
+      "level": "advanced",
+      "terms": [
+        "dispersion slope bandwidth",
+        "宽带色散斜率"
+      ],
+      "definition": "给定中心波长的色散参数 D 描述局部斜率，宽带下 D 的变化也会影响到达时间。",
+      "body": "以波长为自变量将群延迟每长度展开。第一项为 D₀Δλ，下一项为 SΔλ²/2，其中 S=dD/dλ。在长距离或大相对带宽下，第二项可使延迟曲线明显弯曲。若直接用 β₃，须用链式法则转换。",
+      "example": "D₀=0、S=0.08 ps/(nm²·km)、Δλ=10 nm、传播 1 km 时，局部二阶波长项约 4 ps。",
+      "caution": "S 与 β₃ 的量纲和参考坐标不同。",
+      "conditions": [
+        "在同一模式和中心波长处作局部 Taylor 展开。"
+      ],
+      "formula": "Δτ/L≈D₀Δλ+SΔλ²/2",
+      "variables": "S 可用 ps/(nm²·km)。",
+      "prerequisites": [
+        "ultrafast-dispersion-units-conversion",
+        "ultrafast-dispersion-local-expansion"
+      ],
+      "related": [],
+      "sources": [
+        "group-expansion",
+        "pulse-dispersion-spectrum"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δτ/L≈D₀Δλ+SΔλ²/2",
+          "sources": [
+            "group-expansion",
+            "pulse-dispersion-spectrum"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "D₀=0、S=0.08 ps/(nm²·km)、Δλ=10 nm、传播 1 km 时，局部二阶波长项约 4 ps。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-spectral-phase-cubic-symmetry",
+      "title": "三阶谱相位为何会改变脉冲对称性",
+      "topic": "ultrafast",
+      "level": "advanced",
+      "terms": [
+        "cubic spectral phase",
+        "三阶色散非对称"
+      ],
+      "definition": "三次谱相位使正负频率失谐获得相反相位，所得时域强度可产生单侧结构。",
+      "body": "二次谱相位给奇的群时延增量，正负失谐向相反时间方向移动。纯三次项的时延增量与 Ω² 成正比，同号推动两侧频谱。即使中心群时延已经扣除，也可能看到尾部或振荡不对称。",
+      "example": "谱两端为 ±0.08 rad/fs 时，正的纯三次相位让两端具有同号群时延增量。",
+      "caution": "可见形状依谱幅和完整相位而变，单凭尾巴方向不能唯一反演三阶量。",
+      "conditions": [
+        "线性传播、局部纯三次项或由其主导。"
+      ],
+      "formula": "Δτ=φ₃Ω²/2",
+      "variables": "φ₃ 以 s³ 表示。",
+      "prerequisites": [
+        "ultrafast-dispersion-local-expansion"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-dispersion-spectrum",
+        "pulse-spectral-delay"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δτ=φ₃Ω²/2",
+          "sources": [
+            "pulse-dispersion-spectrum",
+            "pulse-spectral-delay"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "谱两端为 ±0.08 rad/fs 时，正的纯三次相位让两端具有同号群时延增量。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-rms-spectrum-axis",
+      "title": "宽带脉冲的光谱统计要带上横轴权重",
+      "topic": "ultrafast",
+      "level": "advanced",
+      "terms": [
+        "spectral rms sampling",
+        "谱宽换轴权重"
+      ],
+      "definition": "光谱的平均频率和 RMS 宽度需要按谱功率分布加权，并与坐标定义一致。",
+      "body": "以按 Hz 计的谱功率密度积分得到归一权重。若仪器按等波长网格给数据，可直接用每个波长小区间的积分功率作为权重，并把频率坐标换成 c/λ；不要对重标横轴后的密度做未加权平均。",
+      "example": "不同频率宽度的两个频道若每个频道积分功率相同，计算功率质心时各占一半权重。",
+      "caution": "谱峰、质心和 RMS 是不同量；基线和长尾都会影响统计。",
+      "conditions": [
+        "同一物理谱，采样间隔或带宽已知。"
+      ],
+      "formula": "σ_ν²=Σ P_i(ν_i−⟨ν⟩)²/ΣP_i",
+      "variables": "P_i 是通道积分功率。",
+      "prerequisites": [
+        "spectral-density-change-variable",
+        "ultrafast-dispersion-units-conversion"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-shape-table",
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "σ_ν²=Σ P_i(ν_i−⟨ν⟩)²/ΣP_i",
+          "sources": [
+            "pulse-shape-table",
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "不同频率宽度的两个频道若每个频道积分功率相同，计算功率质心时各占一半权重。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-soliton-eigenphase",
+      "title": "基阶孤子保持包络仍积累相位",
+      "topic": "ultrafast",
+      "level": "advanced",
+      "terms": [
+        "fundamental soliton phase",
+        "孤子传播相位"
+      ],
+      "definition": "理想基阶孤子传播时强度包络保持，同时复场整体积累非线性相位。",
+      "body": "在标准归一的聚焦 NLSE 中代入 A=sech(T)exp(iξ/2)，时间二阶导中的 sech³ 项被非线性项抵消，只留下与 A 成比例的整体相位。强度探测不显示这一相位，干涉测量可以对它敏感。",
+      "example": "传播一个色散长度，对应该标准化记号的 ξ=1，整体相位增加 0.5 rad。",
+      "caution": "损耗、高阶色散、自陡峭等会改变理想解。",
+      "conditions": [
+        "标准化 i∂ξA+(1/2)∂²_T A+abs(A)²A=0，输入基阶 sech。"
+      ],
+      "formula": "A=sech(T)exp(iξ/2)",
+      "variables": "ξ=z/L_D。",
+      "prerequisites": [
+        "ultrafast-soliton-order-balance"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-soliton-check",
+        "pulse-soliton"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "A=sech(T)exp(iξ/2)",
+          "sources": [
+            "pulse-soliton-check",
+            "pulse-soliton"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "传播一个色散长度，对应该标准化记号的 ξ=1，整体相位增加 0.5 rad。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-spectral-offset-to-time",
+      "title": "用群时延差估光谱边缘分离",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "edge delay spread",
+        "两谱边缘时延差"
+      ],
+      "definition": "线性群时延斜率可把选定两个频率之间的间隔换算成延迟差。",
+      "body": "先确定两个频率相对于同一载频的偏移，再在相同的谱相位模型下分别求群时延。若只保留 GDD，时延差等于 GDD 乘两点角频率差。对任意脉冲，这个两点时延差不能直接当作时域 FWHM。",
+      "example": "两谱点间隔 5 THz，GDD 2000 fs²，给出约 62.8 fs 的群时延差。",
+      "caution": "频率若以 THz 给出，需要转为每 fs 的普通频率后乘 2π。",
+      "conditions": [
+        "群时延在两点间近似线性。"
+      ],
+      "formula": "Δτ=φ₂ ΔΩ",
+      "variables": "φ₂ 用 fs²，ΔΩ 用 rad/fs。",
+      "prerequisites": [
+        "ultrafast-quadratic-spectral-phase"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-spectral-delay"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δτ=φ₂ ΔΩ",
+          "sources": [
+            "pulse-spectral-delay"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两谱点间隔 5 THz，GDD 2000 fs²，给出约 62.8 fs 的群时延差。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-pulse-train-duty-ratio",
+      "title": "平均与峰值功率的脉形修正占空比",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "effective duty ratio",
+        "脉冲占空比"
+      ],
+      "definition": "平均功率与峰值功率之比可用等面积的等效脉宽和周期来写。",
+      "body": "定义 T_eff=E/P_peak，则周期脉冲列有 P_avg/P_peak=f_rep T_eff。矩形脉冲的等效宽度等于它的持续时间，Gaussian 等效宽度约为 1.064 倍强度半高全宽。比较不同脉形时应使用真实面积。",
+      "example": "100 MHz 重复率、100 fs FWHM 的 Gaussian 脉冲列，平均功率约为峰值的 1.06×10⁻⁵。",
+      "caution": "有连续背景或脉冲相互重叠时，需要重新定义峰值及积分区间。",
+      "conditions": [
+        "周期稳定、基线可扣除、各脉冲互不重叠。"
+      ],
+      "formula": "P_avg/P_peak=f_rep T_eff",
+      "variables": "T_eff 用 s，f_rep 用 Hz。",
+      "prerequisites": [
+        "ultrafast-repetition-rate-energy",
+        "ultrafast-peak-power-gaussian"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-shape-table",
+        "pulse-fwhm-table"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P_avg/P_peak=f_rep T_eff",
+          "sources": [
+            "pulse-shape-table",
+            "pulse-fwhm-table"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "100 MHz 重复率、100 fs FWHM 的 Gaussian 脉冲列，平均功率约为峰值的 1.06×10⁻⁵。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-loss-field-envelope",
+      "title": "脉冲传播中的场衰减与功率衰减",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "pulse attenuation half exponent",
+        "功率损耗除二"
+      ],
+      "definition": "以功率指数系数 α 描述传播时，场包络随传播的衰减指数为 α 的一半。",
+      "body": "功率与包络模平方对应。将功率写成 P₀ exp(−αz)，便得到包络因子 exp(−αz/2)。若 α 随频率变化，这个换算逐频做，并将幅度因子与谱相位共同保留。",
+      "example": "功率经过一段后保留 25%，包络的振幅模保留一半。",
+      "caution": "把每米 dB 数值当指数系数会错，应先换成自然指数。",
+      "conditions": [
+        "线性、无源、功率与场归一稳定。"
+      ],
+      "formula": "A(z)=A(0)exp(−αz/2)",
+      "variables": "α 为功率指数损耗，单位 m⁻¹。",
+      "prerequisites": [
+        "extinction-coefficient-intensity",
+        "ultrafast-carrier-envelope"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-loss-gain"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "A(z)=A(0)exp(−αz/2)",
+          "sources": [
+            "pulse-loss-gain"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "功率经过一段后保留 25%，包络的振幅模保留一半。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-bessel-spm-cw-limit",
+      "title": "连续等强度的 Kerr 相位是否展宽光谱",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "CW SPM no broadening",
+        "恒强度 Kerr 相移"
+      ],
+      "definition": "连续单频光在时间恒定的 Kerr 折射率改变下得到固定传播相位。",
+      "body": "在忽略空间效应的纯 SPM 方程中，非线性相位等于强度乘传播系数。时间不变的相位不改变瞬时频率，也不产生新谱宽。若光有强度调制，不同时间的相移不同，才出现此机制的边带。",
+      "example": "把同一功率参考下的连续光与强度调制光分别通过介质，比较二者相位随时间的斜率。",
+      "caution": "有限开关过程的前后沿仍可产生瞬态频移。",
+      "conditions": [
+        "即时 Kerr、单模、固定稳态功率、忽略其他调制。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "nonlinear-kerr-phase-in-bulk",
+        "ultrafast-instantaneous-frequency-definition"
+      ],
+      "related": [],
+      "sources": [
+        "spm",
+        "third-order-phase"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "连续单频光在时间恒定的 Kerr 折射率改变下得到固定传播相位。",
+          "sources": [
+            "spm",
+            "third-order-phase"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "把同一功率参考下的连续光与强度调制光分别通过介质，比较二者相位随时间的斜率。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-time-bandwidth-narrowing",
+      "title": "压缩前后为什么应同时记录能量与脉宽",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "pulse compression energy budget",
+        "压缩脉冲能量"
+      ],
+      "definition": "同样的能量若在更短时间内释放，通常对应更高峰值；实际压缩过程也可能引入能量损失。",
+      "body": "在已知脉形近似保持时，峰值与 E/T 成正比。输入输出的脉宽比要乘能量保留率，才给峰值提升的近似。如果输出有宽底座或多个峰，还要积分它们的贡献。",
+      "example": "压缩从 200 fs 到 100 fs，能量仅保留 60%，同一脉形的峰值约提升为 1.2 倍。",
+      "caution": "只报告短脉宽不足以判断有多少能量进入主脉冲。",
+      "conditions": [
+        "比较同一形状、同一定义的强度 FWHM。"
+      ],
+      "formula": "P_peak,out/P_peak,in≈(E_out/E_in)(T_in/T_out)",
+      "variables": "两个比值均无量纲。",
+      "prerequisites": [
+        "ultrafast-peak-power-gaussian"
+      ],
+      "related": [],
+      "sources": [
+        "ultrafast-compression",
+        "pulse-shape-table"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P_peak,out/P_peak,in≈(E_out/E_in)(T_in/T_out)",
+          "sources": [
+            "ultrafast-compression",
+            "pulse-shape-table"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "压缩从 200 fs 到 100 fs，能量仅保留 60%，同一脉形的峰值约提升为 1.2 倍。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-dispersion-compensation-sign",
+      "title": "如何判断色散元件会压缩还是展宽",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "GDD compensation sign",
+        "压缩色散选符号"
+      ],
+      "definition": "若已有二次谱相位，补偿元件是否压缩脉冲取决于它使二次系数的绝对值变大还是变小。",
+      "body": "先确定输入 GDD 的符号，按相同相位口径与元件 GDD 相加。绝对值下降时，理想 Gaussian 模型的宽度接近其变换极限；过补偿后，二次系数反号并可再次产生展宽。",
+      "example": "输入 +600 fs²，加入 −400 fs² 后残留 +200 fs²；加入 −1400 fs² 则残留 −800 fs²。",
+      "caution": "高阶相位或频谱幅度同时改变时应重新计算。",
+      "conditions": [
+        "纯二次谱相位，固定 Gaussian 谱幅。"
+      ],
+      "formula": "φ₂,total=φ₂,in+φ₂,device",
+      "variables": "各系数使用 fs² 或 s²。",
+      "prerequisites": [
+        "ultrafast-linear-group-delay-cascade",
+        "ultrafast-gaussian-gdd-broadening"
+      ],
+      "related": [],
+      "sources": [
+        "ultrafast-compression",
+        "pulse-spectral-delay"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "φ₂,total=φ₂,in+φ₂,device",
+          "sources": [
+            "ultrafast-compression",
+            "pulse-spectral-delay"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "输入 +600 fs²，加入 −400 fs² 后残留 +200 fs²；加入 −1400 fs² 则残留 −800 fs²。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-angular-gaussian-tbp",
+      "title": "普通频率和角频率下的 Gaussian 带宽积",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "angular bandwidth product",
+        "弧度时间带宽积"
+      ],
+      "definition": "同一脉冲用角频率报频宽时，时间带宽积是普通频率口径的 2π 倍。",
+      "body": "两个半高点之间的角频率差等于 2π 乘频率差。由 Gaussian 普通频率半高全宽关系 ΔtΔν=2ln2/π，可得到角频率口径 ΔtΔω=4ln2。公式中的脉宽和形状保持原定义。",
+      "example": "100 fs Gaussian 的 4.41 THz 对应约 0.0277 rad/fs 的角频率 FWHM。",
+      "caution": "要同时统一宽度是 FWHM 还是 RMS。",
+      "conditions": [
+        "变换极限 Gaussian、时间和频率均按强度半高全宽。"
+      ],
+      "formula": "Δt Δω=4ln2",
+      "variables": "Δω=2πΔν。",
+      "prerequisites": [
+        "ultrafast-gaussian-tbp-example",
+        "angular-frequency-derivative"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-shape-table",
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δt Δω=4ln2",
+          "sources": [
+            "pulse-shape-table",
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "100 fs Gaussian 的 4.41 THz 对应约 0.0277 rad/fs 的角频率 FWHM。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-delay-from-phase-unwrapping",
+      "title": "从离散谱相位估群延迟前先解缠",
+      "topic": "ultrafast",
+      "level": "advanced",
+      "terms": [
+        "spectral phase unwrap group delay",
+        "谱相位解缠"
+      ],
+      "definition": "相邻频点的相位差用于估群时延前，应检查相位是否跨过记录的主值边界。",
+      "body": "由复谱记录的相位通常限制在一个 2π 区间，差分时跨界会产生假的大跳变。信噪比充足且相邻实际相位变化小于 π 时，可按最短相位差解缠。频谱接近零的区域应剔除或单独处理。",
+      "example": "相邻主值相位 170° 和 −170°，按连续小变化假设应读成 +20°。",
+      "caution": "采样过稀或跨谱零点时，不应无条件使用最短差。",
+      "conditions": [
+        "连续相位、等或明确非等角频采样、相邻真实相位变化可辨。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "phase-unwrapping-limit",
+        "ultrafast-quadratic-spectral-phase"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-dispersion-spectrum",
+        "phasors"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "相邻频点的相位差用于估群时延前，应检查相位是否跨过记录的主值边界。",
+          "sources": [
+            "pulse-dispersion-spectrum",
+            "phasors"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "相邻主值相位 170° 和 −170°，按连续小变化假设应读成 +20°。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-gaussian-pulse-linear-dispersion-phase",
+      "title": "脉冲通过均匀介质的相位参考拆解",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "pulse propagation phase factor",
+        "脉冲相位分解"
+      ],
+      "definition": "均匀介质的传播相位可拆为载波常数项、群时延项与改变波形的高阶项。",
+      "body": "对同一传播模的 β(ω) 在载频展开，乘长度得到累积相位。若只关心强度随群移动的形状，可把常数项和线性项分出。以相位敏感实验为目标时，两项仍可能是测量对象。",
+      "example": "将两条相同色散的路径之一多加一段近无色散传播，会改变到达时刻及干涉相位。",
+      "caution": "移动时间坐标只是换参考，并不会让实验室中的延迟消失。",
+      "conditions": [
+        "固定中心频率、单模、线性传递。"
+      ],
+      "formula": "φ(Ω)=L[β₀+β₁Ω+β₂Ω²/2+⋯]",
+      "variables": "Ω 为相对载频的角频率。",
+      "prerequisites": [
+        "ultrafast-beta-order-units",
+        "ultrafast-retarded-time-coordinate"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-dispersion-spectrum",
+        "pulse-retarded-frame"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "φ(Ω)=L[β₀+β₁Ω+β₂Ω²/2+⋯]",
+          "sources": [
+            "pulse-dispersion-spectrum",
+            "pulse-retarded-frame"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将两条相同色散的路径之一多加一段近无色散传播，会改变到达时刻及干涉相位。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-time-domain-convolution-filter",
+      "title": "线性光学滤波器怎样改变时间包络",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "pulse convolution impulse response",
+        "脉冲和滤波器卷积"
+      ],
+      "definition": "线性滤波的频域传递乘法对应脉冲与系统响应在时域的卷积。",
+      "body": "写输出谱为输入谱乘 H(ω)。反变换后可把输出理解为许多不同延迟的输入副本按脉冲响应叠加。窄带平滑滤波通常使对应的响应延展，但实际峰宽也受谱相位和输入形状影响。",
+      "example": "若 H=exp(iΩτ)，时域冲激响应位于 t=τ，输出是延迟副本。",
+      "caution": "对于带反馈、非线性或时变系统，应先检查是否能使用同一个 H。",
+      "conditions": [
+        "线性时不变、固定模和参考平面。"
+      ],
+      "formula": "A_out=A_in*h",
+      "variables": "h 为按相同 Fourier 约定的包络脉冲响应。",
+      "prerequisites": [
+        "convolution-frequency-product",
+        "ultrafast-spectral-loss-shaping"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-loss-gain",
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "A_out=A_in*h",
+          "sources": [
+            "pulse-loss-gain",
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若 H=exp(iΩτ)，时域冲激响应位于 t=τ，输出是延迟副本。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-gvd-sign-comparison",
+      "title": "正常与反常色散的单位和符号对照",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "normal anomalous GVD",
+        "正常反常色散符号"
+      ],
+      "definition": "在 β₂=d²β/dω² 记号下，正常色散为 β₂>0，反常为 β₂<0。",
+      "body": "正 β₂ 表示单位长度群时延随角频率增加；若改以真空波长为横轴，波长随角频率增加而减少，因此 D 符号与 β₂ 相反。写出单位可以迅速区分每长度的 β₂ 与总 GDD。",
+      "example": "β₂=+20 ps²/km 对应这一约定的正常色散；波长斜率 D 在同点为负。",
+      "caution": "不同领域可能直接把 D 当色散指标，需检查报告使用哪一量。",
+      "conditions": [
+        "同一传播模、中心频率的局部导数。"
+      ],
+      "formula": "sign(D)=−sign(β₂)",
+      "variables": "频率和波长均用真空关系。",
+      "prerequisites": [
+        "ultrafast-dispersion-units-conversion",
+        "ultrafast-quadratic-spectral-phase"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-spectral-delay",
+        "group-expansion"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "sign(D)=−sign(β₂)",
+          "sources": [
+            "pulse-spectral-delay",
+            "group-expansion"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "β₂=+20 ps²/km 对应这一约定的正常色散；波长斜率 D 在同点为负。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-photonic-phase-index-transit",
+      "title": "从相延迟到包络飞行时间",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "phase delay group transit",
+        "相延迟与群飞行时间"
+      ],
+      "definition": "单色载波相位给相位延迟，窄带包络的飞行时间由群延迟给出。",
+      "body": "把累积相位 φ=βL 分别除以 ω 或对 ω 求导。若 n 随频率变化，两种结果出现差异；若只有一个相位的模 2π 值，还不能独立决定实际传播整数周期。",
+      "example": "材料 n=1.50、n_g=1.52，1 m 段的相延迟约 5.00 ns，群延迟约 5.07 ns。",
+      "caution": "飞行时间近似需要包络可追踪，强吸收或显著畸变时另定测量量。",
+      "conditions": [
+        "窄带、弱衰减、单模、同一长度参考。"
+      ],
+      "formula": "τ_phase=nL/c，τ_group=n_gL/c",
+      "variables": "τ 用 s。",
+      "prerequisites": [
+        "phase-velocity",
+        "group-velocity"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-dispersion-spectrum",
+        "group-expansion"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "τ_phase=nL/c，τ_group=n_gL/c",
+          "sources": [
+            "pulse-dispersion-spectrum",
+            "group-expansion"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "材料 n=1.50、n_g=1.52，1 m 段的相延迟约 5.00 ns，群延迟约 5.07 ns。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-pulse-spectrum-delay-estimator",
+      "title": "用两点相位差估平均群延迟",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "finite difference group delay",
+        "谱相位差换时间"
+      ],
+      "definition": "两个频点的解缠相位差除以角频率差，给出该区间的平均群时延。",
+      "body": "有限差是连续导数在该区间的积分平均。若相位接近二次函数，中心对称两点的差商给中心斜率。实际测量用更宽窗口能抑制噪声，但也会平均掉局部细节。",
+      "example": "两点相隔 2 THz、解缠相位差 0.40 rad，估计群时延约 31.8 fs。",
+      "caution": "相位差取 rad；用 Hz 时须乘 2π 换成角频率差。",
+      "conditions": [
+        "同一模、相位已解缠、谱幅可用。"
+      ],
+      "formula": "τ_avg≈(φ₂−φ₁)/(2π Δν)",
+      "variables": "这里 φ₁、φ₂ 是两个测点的相位。",
+      "prerequisites": [
+        "ultrafast-delay-from-phase-unwrapping",
+        "finite-difference-central"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-dispersion-spectrum",
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "τ_avg≈(φ₂−φ₁)/(2π Δν)",
+          "sources": [
+            "pulse-dispersion-spectrum",
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两点相隔 2 THz、解缠相位差 0.40 rad，估计群时延约 31.8 fs。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "ultrafast-pulse-propagation-noise-width",
+      "title": "背景噪声怎样改变 RMS 脉宽",
+      "topic": "ultrafast",
+      "level": "undergraduate",
+      "terms": [
+        "RMS pulse baseline",
+        "脉宽矩测量基线"
+      ],
+      "definition": "二阶矩给远离脉冲中心的采样点更大权重，因此对背景和时间窗比半高宽更敏感。",
+      "body": "先从强度曲线估计并扣除背景，再用剩余强度算质心和二阶矩。若加入同样弱的尾部能量，距离中心更远的一份会贡献更多矩量。比较样品应使用一致的积分窗并说明不确定度。",
+      "example": "把少量额外能量放在主峰两倍远处，其二阶矩分子贡献增加为四倍。",
+      "caution": "背景扣除后出现负值时需依据测量模型处理，不能未经说明地截零。",
+      "conditions": [
+        "强度作为归一非负权重，时间窗和基线有定义。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "ultrafast-gaussian-rms-width",
+        "ultrafast-rms-spectrum-axis"
+      ],
+      "related": [],
+      "sources": [
+        "pulse-shape-table",
+        "expectation"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "二阶矩给远离脉冲中心的采样点更大权重，因此对背景和时间窗比半高宽更敏感。",
+          "sources": [
+            "pulse-shape-table",
+            "expectation"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "把少量额外能量放在主峰两倍远处，其二阶矩分子贡献增加为四倍。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    }
+  ]
+}

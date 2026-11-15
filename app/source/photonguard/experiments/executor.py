@@ -19,21 +19,72 @@ _MUTEX_STATE=threading.local()
 class SolverBusyError(ValueError):
     """The atomic shared solver lock was not acquired; no worker started."""
 
+def _claim_solver():
+    import fcntl
+    path = Path(tempfile.gettempdir()) / f'photonguard-{os.getuid()}-solver.lock'
+    handle = path.open('a')
+    try:
+        fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        handle.close()
+        raise SolverBusyError('本机已有光学求解任务，请等待完成后运行') from None
+    except BaseException:
+        handle.close()
+        raise
+    return handle
+
+
 @contextmanager
 def solver_mutex():
-    if getattr(_MUTEX_STATE,'held',False):
+    if getattr(_MUTEX_STATE, 'held', False):
         yield
         return
-    import fcntl
-    path=Path(tempfile.gettempdir())/f'photonguard-{os.getuid()}-solver.lock'
-    with path.open('a') as f:
-        try:fcntl.flock(f,fcntl.LOCK_EX|fcntl.LOCK_NB)
-        except BlockingIOError:raise SolverBusyError('本机已有光学求解任务，请等待完成后运行') from None
-        _MUTEX_STATE.held=True
-        try:yield
+    with _claim_solver():
+        _MUTEX_STATE.held = True
+        try:
+            yield
         finally:
-            _MUTEX_STATE.held=False
-            fcntl.flock(f,fcntl.LOCK_UN)
+            _MUTEX_STATE.held = False
+
+
+@contextmanager
+def admit_solver():
+    """Hold the host lock before reservations, then hand it to the worker."""
+    existing = getattr(_MUTEX_STATE, 'handoff', None)
+    if existing:
+        yield existing
+        return
+    try:
+        handle = _claim_solver()
+    except SolverBusyError as exc:
+        from ..workflow import WorkflowError
+        raise WorkflowError('本机另一项光学计算正在运行。本轮尚未启动，请稍后重新核对并批准计划。', 409) from exc
+    transferred = False
+
+    def launch(target, args):
+        nonlocal transferred
+        if transferred:
+            raise RuntimeError('Solver admission already used')
+
+        def run():
+            previous = getattr(_MUTEX_STATE, 'held', False)
+            _MUTEX_STATE.held = True
+            try:
+                target(*args)
+            finally:
+                _MUTEX_STATE.held = previous
+                handle.close()
+
+        threading.Thread(target=run, daemon=True).start()
+        transferred = True
+
+    _MUTEX_STATE.handoff = launch
+    try:
+        yield launch
+    finally:
+        del _MUTEX_STATE.handoff
+        if not transferred:
+            handle.close()
 
 def execute_plan(plan,out_dir):
     expected=build_plan(plan['spec'])

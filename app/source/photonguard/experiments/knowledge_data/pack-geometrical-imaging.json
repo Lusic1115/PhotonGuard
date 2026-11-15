@@ -1,0 +1,2949 @@
+{
+  "id": "geometrical-imaging",
+  "version": "1.0.1",
+  "sources": {
+    "fermat": {
+      "title": "Interactive Optics · Geometrical Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap2_Geometrical_optics/GeometricalOptics_2022_01Clean.html#principle-of-fermat",
+      "section": "Principle of Fermat",
+      "fingerprint": "sha256:795080eb223b0ed76e1e37dd71036a7d926ac4b83a895d83e3d8ca0aad464fd6",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "focus": {
+      "title": "Interactive Optics · Geometrical Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap2_Geometrical_optics/GeometricalOptics_2022_01Clean.html#focusing-with-a-thin-lens",
+      "section": "Focusing with a Thin Lens",
+      "fingerprint": "sha256:795080eb223b0ed76e1e37dd71036a7d926ac4b83a895d83e3d8ca0aad464fd6",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "spherical": {
+      "title": "Interactive Optics · Geometrical Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap2_Geometrical_optics/GeometricalOptics_2022_01Clean.html#gaussian-imaging-by-a-single-spherical-surface",
+      "section": "Gaussian Imaging by a Single Spherical Surface",
+      "fingerprint": "sha256:795080eb223b0ed76e1e37dd71036a7d926ac4b83a895d83e3d8ca0aad464fd6",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "ray": {
+      "title": "Interactive Optics · Geometrical Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap2_Geometrical_optics/GeometricalOptics_2022_01Clean.html#ray-vectors-and-ray-matrices",
+      "section": "Ray Vectors and Ray Matrices",
+      "fingerprint": "sha256:795080eb223b0ed76e1e37dd71036a7d926ac4b83a895d83e3d8ca0aad464fd6",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "virtual": {
+      "title": "Interactive Optics · Geometrical Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap2_Geometrical_optics/GeometricalOptics_2022_01Clean.html#virtual-images-and-virtual-objects-of-a-single-spherical-surface",
+      "section": "Virtual Images and Virtual Objects of a Single Spherical Surface",
+      "fingerprint": "sha256:795080eb223b0ed76e1e37dd71036a7d926ac4b83a895d83e3d8ca0aad464fd6",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "conjugates": {
+      "title": "Interactive Optics · Geometrical Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap2_Geometrical_optics/GeometricalOptics_2022_01Clean.html#imaging-with-a-thin-lens",
+      "section": "Imaging with a Thin Lens",
+      "fingerprint": "sha256:795080eb223b0ed76e1e37dd71036a7d926ac4b83a895d83e3d8ca0aad464fd6",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "lens-matrix": {
+      "title": "Interactive Optics · Geometrical Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap2_Geometrical_optics/GeometricalOptics_2022_01Clean.html#the-lens-matrix",
+      "section": "The Lens Matrix",
+      "fingerprint": "sha256:795080eb223b0ed76e1e37dd71036a7d926ac4b83a895d83e3d8ca0aad464fd6",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "two-lenses": {
+      "title": "Interactive Optics · Geometrical Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap2_Geometrical_optics/GeometricalOptics_2022_01Clean.html#two-thin-lenses",
+      "section": "Two Thin Lenses",
+      "fingerprint": "sha256:795080eb223b0ed76e1e37dd71036a7d926ac4b83a895d83e3d8ca0aad464fd6",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "thick": {
+      "title": "Interactive Optics · Geometrical Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap2_Geometrical_optics/GeometricalOptics_2022_01Clean.html#the-thick-lens",
+      "section": "The Thick Lens",
+      "fingerprint": "sha256:795080eb223b0ed76e1e37dd71036a7d926ac4b83a895d83e3d8ca0aad464fd6",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "stops": {
+      "title": "Interactive Optics · Geometrical Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap2_Geometrical_optics/GeometricalOptics_2022_01Clean.html#stops",
+      "section": "Stops",
+      "fingerprint": "sha256:795080eb223b0ed76e1e37dd71036a7d926ac4b83a895d83e3d8ca0aad464fd6",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "telescope": {
+      "title": "Interactive Optics · Optical Instruments",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap3_Optical_Instrument/Optical_Instruments_2022_01Clean.html#the-telescope",
+      "section": "The Telescope",
+      "fingerprint": "sha256:dd8a68689a9d48c09cec4343ea906d6f5eb2086b78d0ba4641ca4b5bc6c5340e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "camera": {
+      "title": "Interactive Optics · Optical Instruments",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap3_Optical_Instrument/Optical_Instruments_2022_01Clean.html#the-camera",
+      "section": "The Camera",
+      "fingerprint": "sha256:dd8a68689a9d48c09cec4343ea906d6f5eb2086b78d0ba4641ca4b5bc6c5340e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "pinhole": {
+      "title": "Interactive Optics · Optical Instruments",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap3_Optical_Instrument/Optical_Instruments_2022_01Clean.html#the-camera-obscura",
+      "section": "The Camera Obscura",
+      "fingerprint": "sha256:dd8a68689a9d48c09cec4343ea906d6f5eb2086b78d0ba4641ca4b5bc6c5340e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "diffraction": {
+      "title": "Interactive Optics · Geometrical Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap2_Geometrical_optics/GeometricalOptics_2022_01Clean.html#diffraction",
+      "section": "Diffraction",
+      "fingerprint": "sha256:795080eb223b0ed76e1e37dd71036a7d926ac4b83a895d83e3d8ca0aad464fd6",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "eye": {
+      "title": "Interactive Optics · Optical Instruments",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap3_Optical_Instrument/Optical_Instruments_2022_01Clean.html#working-of-the-eye",
+      "section": "Working of the eye",
+      "fingerprint": "sha256:dd8a68689a9d48c09cec4343ea906d6f5eb2086b78d0ba4641ca4b5bc6c5340e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "glasses": {
+      "title": "Interactive Optics · Optical Instruments",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap3_Optical_Instrument/Optical_Instruments_2022_01Clean.html#eyeglasses",
+      "section": "Eyeglasses",
+      "fingerprint": "sha256:dd8a68689a9d48c09cec4343ea906d6f5eb2086b78d0ba4641ca4b5bc6c5340e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "magnifier": {
+      "title": "Interactive Optics · Optical Instruments",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap3_Optical_Instrument/Optical_Instruments_2022_01Clean.html#magnifying-power",
+      "section": "Magnifying Power",
+      "fingerprint": "sha256:dd8a68689a9d48c09cec4343ea906d6f5eb2086b78d0ba4641ca4b5bc6c5340e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "microscope": {
+      "title": "Interactive Optics · Optical Instruments",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap3_Optical_Instrument/Optical_Instruments_2022_01Clean.html#the-compound-microscope",
+      "section": "The Compound Microscope",
+      "fingerprint": "sha256:dd8a68689a9d48c09cec4343ea906d6f5eb2086b78d0ba4641ca4b5bc6c5340e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "eyepiece": {
+      "title": "Interactive Optics · Optical Instruments",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap3_Optical_Instrument/Optical_Instruments_2022_01Clean.html#eyepieces",
+      "section": "Eyepieces",
+      "fingerprint": "sha256:dd8a68689a9d48c09cec4343ea906d6f5eb2086b78d0ba4641ca4b5bc6c5340e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "aberrations": {
+      "title": "Interactive Optics · Geometrical Optics",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap2_Geometrical_optics/GeometricalOptics_2022_01Clean.html#aberrations",
+      "section": "Aberrations",
+      "fingerprint": "sha256:795080eb223b0ed76e1e37dd71036a7d926ac4b83a895d83e3d8ca0aad464fd6",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    }
+  },
+  "entries": [
+    {
+      "id": "fermat-stationary",
+      "title": "费马原理的驻值条件",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "费马原理",
+        "stationary optical path"
+      ],
+      "definition": "实际光路对端点固定的微小路径扰动，光程的一阶变化为零。",
+      "body": "把候选路径轻微偏移时，比较的是沿整条路径积累的折射率加权长度。驻值是局部的一阶条件，可有多条满足同一端点约束的光路，也允许鞍点。",
+      "example": "移动折射界面的入射点，按两段光程求导可得到斯涅尔定律。",
+      "caution": "“最短时间”直观图像不宜推广为所有系统的唯一全局最小值。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "fermat"
+      ],
+      "prerequisites": [
+        "optical-path-length"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "实际光路对端点固定的微小路径扰动，光程的一阶变化为零。",
+          "sources": [
+            "fermat"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "移动折射界面的入射点，按两段光程求导可得到斯涅尔定律。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "equal-optical-path",
+      "title": "理想聚焦的等光程",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "equal optical path",
+        "同相聚焦"
+      ],
+      "definition": "理想单色聚焦要求从同一等相位波前到设计焦点的有效光程相等。",
+      "body": "轴外光线行进的几何路程可能更长，透镜厚度随位置改变来补偿额外相位。焦点处各部分相位一致并不意味着所有几何长度相同，也不表示能把衍射光斑压成零。",
+      "example": "比较焦点处来自透镜中心和边缘的相位。",
+      "caution": "必须说明选的是哪一个等相位输入面和设计波长。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "fermat",
+        "focus"
+      ],
+      "prerequisites": [
+        "optical-path-length"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "理想单色聚焦要求从同一等相位波前到设计焦点的有效光程相等。",
+          "sources": [
+            "fermat",
+            "focus"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较焦点处来自透镜中心和边缘的相位。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "spherical-surface-power",
+      "title": "球面折射的面光焦度",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "surface power",
+        "折射界面光焦度"
+      ],
+      "definition": "近轴球面界面对光线约化倾角的改变由两侧折射率差与曲率确定。",
+      "body": "取光从左向右，曲率中心在右侧的半径为正。用列向量 (y,nθ) 表示光线时，经过界面高度连续，约化倾角减少面光焦度乘高度。折射率不变时界面无该项作用。",
+      "example": "空气到 n=1.5、R=0.1 m 的球面具有 5 m⁻¹ 面光焦度。",
+      "caution": "曲率符号和光线向量定义必须成套使用。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "Φ=(n₂−n₁)/R，u₂=u₁−Φy",
+      "variables": "R 与 y 用 m，u=nθ，θ 用 rad，Φ 用 m⁻¹。",
+      "sources": [
+        "spherical",
+        "ray"
+      ],
+      "prerequisites": [
+        "paraxial-approximation"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Φ=(n₂−n₁)/R，u₂=u₁−Φy",
+          "sources": [
+            "spherical",
+            "ray"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "空气到 n=1.5、R=0.1 m 的球面具有 5 m⁻¹ 面光焦度。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "surface-object-image",
+      "title": "单球面近轴共轭",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "spherical refraction conjugates",
+        "单折射面成像"
+      ],
+      "definition": "一个球面界面可在两种介质中建立物点与像点的近轴共轭。",
+      "body": "以实际物体左侧为正物距 s、实际像右侧为正像距 s′，对不同入射高度的光线应用约化倾角关系。所有出射线在像点会合这一要求给出折射面共轭式。",
+      "example": "空气侧物点在无穷远，R=0.1 m，玻璃 n₂=1.5，像位于界面右侧 0.3 m。",
+      "caution": "物距、像距和曲率半径的正方向不可与其他教材混用。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "n₁/s+n₂/s′=(n₂−n₁)/R",
+      "variables": "s、s′、R 均用 m，n₁、n₂ 无量纲。",
+      "sources": [
+        "spherical"
+      ],
+      "prerequisites": [
+        "spherical-surface-power"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "n₁/s+n₂/s′=(n₂−n₁)/R",
+          "sources": [
+            "spherical"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "空气侧物点在无穷远，R=0.1 m，玻璃 n₂=1.5，像位于界面右侧 0.3 m。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "plane-surface-imaging",
+      "title": "平面折射与表观深度",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "apparent depth",
+        "平面折射成像"
+      ],
+      "definition": "平面折射界面会改变从另一介质近轴观察到的表观深度。",
+      "body": "曲率半径趋于无穷大时面光焦度为零，但物侧和观察侧折射率一般不同。出射光线反向延长可在原来物体一侧相交，故观察者看到一个表观深度发生改变的虚像。",
+      "example": "由空气近法向观察水底，水深 1.33 m、折射率 1.33 时表观约 1.0 m。",
+      "caution": "斜视和大孔径时不同光线的外推位置不必一致。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "d_app≈d n_obs/n_obj",
+      "variables": "d、d_app 同一长度单位，折射率无量纲。",
+      "sources": [
+        "spherical",
+        "virtual"
+      ],
+      "prerequisites": [
+        "surface-object-image"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "d_app≈d n_obs/n_obj",
+          "sources": [
+            "spherical",
+            "virtual"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "由空气近法向观察水底，水深 1.33 m、折射率 1.33 时表观约 1.0 m。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "virtual-object-rays",
+      "title": "虚物的光线识别",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "virtual object",
+        "虚物点"
+      ],
+      "definition": "会聚入射光若在没有当前元件时于元件后方相交，该交点是当前元件的虚物。",
+      "body": "虚物可由前级透镜生成的会聚束形成，不必在那里放置真实发光物体。用光线在元件前的实际传播方向外推，先判断交点在哪侧，再按共轭公式的物距符号代入。",
+      "example": "把负透镜插到正透镜预计焦点之前，负透镜接收到的就是会聚入射束。",
+      "caution": "虚物和虚像需分别从入射束和出射束判断。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "virtual"
+      ],
+      "prerequisites": [
+        "surface-object-image"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "会聚入射光若在没有当前元件时于元件后方相交，该交点是当前元件的虚物。",
+          "sources": [
+            "virtual"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "把负透镜插到正透镜预计焦点之前，负透镜接收到的就是会聚入射束。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "virtual-image-rays",
+      "title": "虚像的光线识别",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "virtual image",
+        "虚像与屏幕"
+      ],
+      "definition": "虚像点由实际出射光线的反向延长线相交得到。",
+      "body": "出射束从某点发散的几何外观可以使观察者看见像，但在虚像位置放屏幕不会在那里直接接收到会聚光。后续正透镜仍可接收这束光并将其转为可记录的实像。",
+      "example": "放大镜内侧的物体产生正立虚像，眼睛可对其重新聚焦。",
+      "caution": "“肉眼可见”与“该像面可用屏接收”是两个条件。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "virtual",
+        "conjugates"
+      ],
+      "prerequisites": [
+        "thin-lens"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "虚像点由实际出射光线的反向延长线相交得到。",
+          "sources": [
+            "virtual",
+            "conjugates"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "放大镜内侧的物体产生正立虚像，眼睛可对其重新聚焦。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "reduced-ray-angle",
+      "title": "约化倾角光线向量",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "reduced ray angle",
+        "n theta",
+        "约化斜率"
+      ],
+      "definition": "把近轴斜率 θ 与局部折射率 n 相乘可得到约化倾角 u。",
+      "body": "在平面折射界面处，近轴斯涅尔定律使 u 保持连续。改变均匀介质时，传播的高度变化是距离乘 θ，即距离乘 u/n。使用这种向量便于将不同介质中的矩阵统一组合。",
+      "example": "u=0.03 的射线在 n=1.5 的介质内角度约 0.02 rad。",
+      "caution": "有的教材交换高度和倾角的位置，矩阵元素对应也随之交换。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "u=nθ",
+      "variables": "u 无量纲，θ 用 rad。",
+      "sources": [
+        "ray"
+      ],
+      "prerequisites": [
+        "paraxial-approximation"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "u=nθ",
+          "sources": [
+            "ray"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "u=0.03 的射线在 n=1.5 的介质内角度约 0.02 rad。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "ray-translation-matrix",
+      "title": "均匀介质的平移矩阵",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "translation matrix",
+        "自由传播矩阵"
+      ],
+      "definition": "在均匀介质内无界面时，近轴角度保持，光线高度沿轴向距离线性改变。",
+      "body": "取输入向量为 (y,u)，前进 L 使高度变为 y+Lu/n，而 u 保持不变。由此可构造一个上三角矩阵。若使用 (y,θ) 而非 (y,u)，矩阵右上角应为 L。",
+      "example": "n=1.5、L=30 mm、u=0.03 时高度增加 0.6 mm。",
+      "caution": "传播距离需由相邻参考平面定义。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "P=[[1,L/n],[0,1]]",
+      "variables": "L 与 y 使用同一长度单位，u=nθ。",
+      "sources": [
+        "ray"
+      ],
+      "prerequisites": [
+        "reduced-ray-angle"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P=[[1,L/n],[0,1]]",
+          "sources": [
+            "ray"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "n=1.5、L=30 mm、u=0.03 时高度增加 0.6 mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "ray-interface-matrix",
+      "title": "球面界面的折射矩阵",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "refraction matrix",
+        "折射面 ABCD"
+      ],
+      "definition": "球面折射可写成把约化倾角减去光焦度乘高度的下三角矩阵。",
+      "body": "在近轴近似中，折射前后射线穿过同一高度，变化集中在斜率分量。先按约定算球面光焦度，再将矩阵与间隔传播相乘，即可处理多个曲率与材料各异的面。",
+      "example": "薄透镜可看作两球面矩阵在间隔趋零时的乘积。",
+      "caution": "空气侧斜率与玻璃侧斜率不同，即使约化倾角关系已写成矩阵。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "S=[[1,0],[−Φ,1]]",
+      "variables": "Φ 用逆长度，y 用对应长度，u 无量纲。",
+      "sources": [
+        "ray"
+      ],
+      "prerequisites": [
+        "spherical-surface-power"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "S=[[1,0],[−Φ,1]]",
+          "sources": [
+            "ray"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "薄透镜可看作两球面矩阵在间隔趋零时的乘积。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "ray-matrix-order",
+      "title": "多元件矩阵相乘次序",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "ABCD order",
+        "光路矩阵级联"
+      ],
+      "definition": "用列向量时，先遇到的光学元件位于系统矩阵乘积的最右侧。",
+      "body": "每个元件作用在前一步结果上。若先经过 M₁ 再经过 M₂，输出是 M₂(M₁v)，因此乘积为 M₂M₁。传播和薄透镜通常不可交换，移动透镜会改变像平面位置。",
+      "example": "先透镜后传播应写 P·F；反顺序则写 F·P。",
+      "caution": "逆向追迹应反转顺序并使用对应逆变换，不能只将序列字符反排。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "v_out=Mₖ⋯M₂M₁v_in",
+      "variables": "v 表示光线列向量，Mᵢ 为按一致约定的局部矩阵。",
+      "sources": [
+        "ray",
+        "lens-matrix"
+      ],
+      "prerequisites": [
+        "ray-translation-matrix"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "v_out=Mₖ⋯M₂M₁v_in",
+          "sources": [
+            "ray",
+            "lens-matrix"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "先透镜后传播应写 P·F；反顺序则写 F·P。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "ray-image-condition",
+      "title": "光线矩阵的成像条件",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "B=0 imaging",
+        "共轭平面判据"
+      ],
+      "definition": "用 (y,u) 坐标时，物像两平面共轭的近轴条件是矩阵右上角 B 为零。",
+      "body": "像平面高度为 Ay_in+Bu_in。同一物点发出的射线有相同的 y_in、不同的 u_in。只有 B 为零时它们才在同一输出高度相交；该高度与物高之比就是 A。",
+      "example": "改变观察屏距离并更新矩阵，寻找 B 穿过零的位置。",
+      "caution": "若教材采用 (u,y) 次序，所检查的元素不再叫右上角。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "y_out=A y_in+B u_in，成像时 B=0",
+      "variables": "A 无量纲；B 与 y 用同一长度单位。",
+      "sources": [
+        "ray",
+        "conjugates"
+      ],
+      "prerequisites": [
+        "ray-matrix-order"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "y_out=A y_in+B u_in，成像时 B=0",
+          "sources": [
+            "ray",
+            "conjugates"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "改变观察屏距离并更新矩阵，寻找 B 穿过零的位置。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "ray-afocal-condition",
+      "title": "矩阵中的无焦条件",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "C=0",
+        "afocal system",
+        "平行进平行出"
+      ],
+      "definition": "近轴系统的下左元素为零时，平行入射束经过系统后仍为平行束。",
+      "body": "输出约化倾角为 C y_in+D u_in。平行束的不同光线可有不同高度但相同的 u_in，因此要求 C 为零。此时视场角和束径仍可能被系统按不同倍率改变。",
+      "example": "两个正薄透镜相隔 f₁+f₂ 时，准直输入可得到准直输出。",
+      "caution": "无焦判据不同于物像平面共轭的 B=0。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "u_out=C y_in+D u_in，无焦时 C=0",
+      "variables": "C 用逆长度，D 无量纲。",
+      "sources": [
+        "ray",
+        "two-lenses"
+      ],
+      "prerequisites": [
+        "ray-matrix-order"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "u_out=C y_in+D u_in，无焦时 C=0",
+          "sources": [
+            "ray",
+            "two-lenses"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两个正薄透镜相隔 f₁+f₂ 时，准直输入可得到准直输出。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "ray-determinant",
+      "title": "约化倾角矩阵的行列式",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "ray determinant",
+        "unit determinant ABCD"
+      ],
+      "definition": "在约化倾角约定中，理想传播和球面折射的矩阵行列式为一。",
+      "body": "传播与折射的局部三角矩阵对角元素均为一，组合后行列式仍为一。这可检查参数录入和变换是否可逆。采用未约化斜率且两端折射率不同的约定会得到不同结果。",
+      "example": "将平移和折射相乘后核对 AD−BC 是否等于一。",
+      "caution": "这一检查不能单独判断矩阵次序是否正确。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "AD−BC=1",
+      "variables": "用于 (y,u) 矩阵，行列式无量纲。",
+      "sources": [
+        "ray"
+      ],
+      "prerequisites": [
+        "ray-interface-matrix"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "AD−BC=1",
+          "sources": [
+            "ray"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将平移和折射相乘后核对 AD−BC 是否等于一。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "thin-lens-focal-plane",
+      "title": "薄透镜焦平面的射线交点",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "focal ray height",
+        "后焦面主线高度"
+      ],
+      "definition": "在薄透镜后焦面，同方向入射的近轴平行光线汇聚到同一横向位置。",
+      "body": "透镜将入射斜率改为 θ−y/f，再传播 f 后得到 y+f(θ−y/f)=fθ。此处焦点横坐标只依赖来光方向，因而也可用来把不同角度的光分开。",
+      "example": "焦距 100 mm，输入角 0.02 rad 时，焦点离轴 2 mm。",
+      "caution": "近轴小角度公式不可直接用作高 NA 物镜的精确映射。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "x_f≈fθ",
+      "variables": "x_f 与 f 用同一长度单位，θ 用 rad。",
+      "sources": [
+        "focus"
+      ],
+      "prerequisites": [
+        "thin-lens"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "x_f≈fθ",
+          "sources": [
+            "focus"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "焦距 100 mm，输入角 0.02 rad 时，焦点离轴 2 mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "thin-lens-image-magnification",
+      "title": "共轭平面的横向放大率",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "transverse magnification",
+        "倒立像倍率"
+      ],
+      "definition": "横向放大率是像高与物高的有符号比值。",
+      "body": "薄透镜同侧介质相同时，过中心的近轴光线不偏折，用物像侧相似三角形即可得到放大率。实物成实像通常符号为负，表示上下方向翻转而不是像尺寸为负。",
+      "example": "物距 150 mm、像距 300 mm 时放大率为 −2。",
+      "caution": "只报倍率大小会丢失像的方向信息。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "m=−s′/s",
+      "variables": "s、s′用同一长度单位，取实物实像距离为正。",
+      "sources": [
+        "conjugates"
+      ],
+      "prerequisites": [
+        "thin-lens"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "m=−s′/s",
+          "sources": [
+            "conjugates"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "物距 150 mm、像距 300 mm 时放大率为 −2。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "thin-lens-focus-shift",
+      "title": "近无穷远目标的像距变化",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "finite distance focus",
+        "调焦位移"
+      ],
+      "definition": "从无穷远目标切换到有限物距时，正薄透镜的实像通常远离后焦平面。",
+      "body": "实物在焦距之外时像距等于 fs/(s−f)。当物距远大于焦距，像距只比焦距多很小一段；随着物距接近焦距，这个差逐渐放大，反映在相机的调焦行程。",
+      "example": "f=50 mm、s=1 m 时 s′≈52.63 mm，偏离无穷远位置约 2.63 mm。",
+      "caution": "所有距离应从同一套薄透镜参考面定义。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "s′−f=f²/(s−f)",
+      "variables": "s、s′、f 用相同长度单位，且 s>f。",
+      "sources": [
+        "conjugates"
+      ],
+      "prerequisites": [
+        "thin-lens"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "s′−f=f²/(s−f)",
+          "sources": [
+            "conjugates"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "f=50 mm、s=1 m 时 s′≈52.63 mm，偏离无穷远位置约 2.63 mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "longitudinal-magnification",
+      "title": "近轴纵向放大率",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "longitudinal magnification",
+        "轴向成像倍率"
+      ],
+      "definition": "纵向放大率描述物点沿轴向微移时，对应共轭像位置的微移比例。",
+      "body": "在两侧同介质的近轴薄透镜模型中，对物像共轭式求导得到变化量大小比为横向倍率平方。若物距采用从透镜向左增大的定义，物距增大时像距减小。",
+      "example": "横向倍率大小 2 时，小范围内纵向位移大小约放大四倍。",
+      "caution": "这是局部导数，大范围移动应重新求共轭。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "ds′/ds=−(s′/s)²",
+      "variables": "s、s′采用实物实像距离正号，两种距离同单位。",
+      "sources": [
+        "conjugates"
+      ],
+      "prerequisites": [
+        "thin-lens-image-magnification"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ds′/ds=−(s′/s)²",
+          "sources": [
+            "conjugates"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "横向倍率大小 2 时，小范围内纵向位移大小约放大四倍。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "two-lens-effective-power",
+      "title": "分离薄透镜组合光焦度",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "separated thin lenses",
+        "组合等效焦距"
+      ],
+      "definition": "同介质中的两薄透镜，其等效光焦度包含两片光焦度和间距交叉项。",
+      "body": "将第二片、间隔传播、第一片依次组成矩阵，乘积下左角给出系统光焦度的负值。由于中间射线高度随传播改变，分离组合通常不能只把两个焦距的倒数相加。",
+      "example": "两片各 100 mm，间隔 50 mm 时，等效焦距约 66.7 mm。",
+      "caution": "等效焦距从主平面计，和最后镜片到后焦点的距离可能不同。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "Φ=Φ₁+Φ₂−(d/n)Φ₁Φ₂",
+      "variables": "用约化倾角约定；d 为间隔，n 为共同介质折射率，Φ 用 m⁻¹。",
+      "sources": [
+        "two-lenses"
+      ],
+      "prerequisites": [
+        "ray-matrix-order"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Φ=Φ₁+Φ₂−(d/n)Φ₁Φ₂",
+          "sources": [
+            "two-lenses"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两片各 100 mm，间隔 50 mm 时，等效焦距约 66.7 mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "lens-contact-limit",
+      "title": "接触薄透镜极限",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "lenses in contact",
+        "薄透镜光焦度相加"
+      ],
+      "definition": "两理想薄透镜在同一平面时，合成光焦度等于各自光焦度之和。",
+      "body": "因为元件之间没有传播，第二片接收到的光线高度和第一片相同，两次倾角变化可直接累加。若两片的光焦度大小相等方向相反，在理想接触模型中组合光焦度为零。",
+      "example": "+10 D 与 −4 D 的接触组合为 +6 D。",
+      "caution": "镜片厚度和安装间隔不可忽略时应使用分离模型。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "Φ=Φ₁+Φ₂",
+      "variables": "Φ 的 SI 单位 m⁻¹，也称屈光度。",
+      "sources": [
+        "two-lenses"
+      ],
+      "prerequisites": [
+        "two-lens-effective-power"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Φ=Φ₁+Φ₂",
+          "sources": [
+            "two-lenses"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "+10 D 与 −4 D 的接触组合为 +6 D。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "thick-lens-separation",
+      "title": "厚透镜的内部传播",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "thick-lens translation",
+        "厚透镜中心厚度"
+      ],
+      "definition": "厚透镜模型分别保留前后折射面和它们之间的玻璃内传播。",
+      "body": "前表面改变约化倾角，介质内走过中心厚度后光线高度发生改变，随后后表面作用在更新过的高度上。若直接压成薄透镜，则会遗漏厚度对焦度和参考平面的影响。",
+      "example": "用 S₂·P_glass·S₁ 表示一枚两面球面镜片。",
+      "caution": "中心厚度是沿轴顶点间距，不能拿边缘厚度代入。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "M=S₂[[1,d/n_l],[0,1]]S₁",
+      "variables": "d 为中心厚度，n_l 为玻璃折射率。",
+      "sources": [
+        "thick",
+        "lens-matrix"
+      ],
+      "prerequisites": [
+        "ray-matrix-order"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "M=S₂[[1,d/n_l],[0,1]]S₁",
+          "sources": [
+            "thick",
+            "lens-matrix"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用 S₂·P_glass·S₁ 表示一枚两面球面镜片。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "principal-planes",
+      "title": "厚透镜主平面",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "principal planes",
+        "前后主面"
+      ],
+      "definition": "一阶成像可把物像距离分别从前、后主平面计量。",
+      "body": "系统内有间隔时，焦点的位置通常不能只从某个表面顶点量出有效焦距。可用输入输出光线的等效转折平面描述系统；两个主面可以落在镜片外，也不要求重合。",
+      "example": "已知后焦点和有效焦距时，可从后焦点向前定位后主面。",
+      "caution": "请区分主平面、物理表面和焦平面。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "thick"
+      ],
+      "prerequisites": [
+        "thick-lens-separation"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "一阶成像可把物像距离分别从前、后主平面计量。",
+          "sources": [
+            "thick"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "已知后焦点和有效焦距时，可从后焦点向前定位后主面。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "back-focal-distance",
+      "title": "后焦距与有效焦距",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "back focal distance",
+        "BFL",
+        "EFL"
+      ],
+      "definition": "后焦距量自最后光学表面，有效焦距量自后主面，两者参考点不同。",
+      "body": "对轴向平行输入，求经过系统后哪一段自由传播使各光线在轴上会合，即得到最后表面到焦点的距离。主面与表面偏离时，即使焦度相同，镜组留给传感器的空间也可不同。",
+      "example": "同为 50 mm EFL 的两镜组可以具有不同后焦距。",
+      "caution": "光学设计数据中 BFL 与机械接口法兰距也不是同一个量。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "thick",
+        "focus"
+      ],
+      "prerequisites": [
+        "principal-planes"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "后焦距量自最后光学表面，有效焦距量自后主面，两者参考点不同。",
+          "sources": [
+            "thick",
+            "focus"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "同为 50 mm EFL 的两镜组可以具有不同后焦距。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "front-focal-point",
+      "title": "前焦点的准直作用",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "front focal point",
+        "前焦点出射准直"
+      ],
+      "definition": "从前焦点发出的近轴光束离开系统后准直。",
+      "body": "对于正透镜，把物点放在前焦点等同于将薄透镜共轭关系的像距推到无穷远。厚透镜的前焦距从前主面量，光源的实际安装距离仍需换算到物理表面。",
+      "example": "将光纤端面移到前焦平面，检查远近屏幕上光束尺寸变化。",
+      "caution": "实际有限孔径引起衍射，准直不意味着远场发散严格为零。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "focus",
+        "thick"
+      ],
+      "prerequisites": [
+        "principal-planes"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "从前焦点发出的近轴光束离开系统后准直。",
+          "sources": [
+            "focus",
+            "thick"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将光纤端面移到前焦平面，检查远近屏幕上光束尺寸变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "nodal-ray-points",
+      "title": "节点与角度传递",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "nodal points",
+        "前后节点"
+      ],
+      "definition": "与第一节点相联系的入射光线，经系统后按相同倾角通过第二节点的外推位置。",
+      "body": "节点是描述入出射方向的一对参考点，主面则用于等效共轭关系。外侧两介质折射率相同时，两组参考点的位置重合；介质不同则需要分开处理。",
+      "example": "相机转动构图时讨论视角传递，应分清节点与用于无视差拍摄的入瞳。",
+      "caution": "不要用节点一词笼统代替机械转轴。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "thick",
+        "ray"
+      ],
+      "prerequisites": [
+        "principal-planes"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "与第一节点相联系的入射光线，经系统后按相同倾角通过第二节点的外推位置。",
+          "sources": [
+            "thick",
+            "ray"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "相机转动构图时讨论视角传递，应分清节点与用于无视差拍摄的入瞳。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "lensmaker-in-air",
+      "title": "空气中薄透镜的制镜公式",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "lensmaker formula",
+        "曲率与焦度"
+      ],
+      "definition": "薄透镜的光焦度可由材料折射率与前后球面半径求出。",
+      "body": "在空气中将前表面和后表面的折射贡献相加，得到折射率差乘曲率差。对双凸镜，按曲率中心右侧为正的约定，前半径常为正、后半径常为负。",
+      "example": "n=1.5，R₁=+0.1 m、R₂=−0.1 m，焦距约 0.1 m。",
+      "caution": "厚透镜要加中心厚度项；浸没透镜要改用相对介质约定。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "1/f=(n−1)(1/R₁−1/R₂)",
+      "variables": "f、R₁、R₂ 用 m，n 为相对空气折射率近似值。",
+      "sources": [
+        "lens-matrix"
+      ],
+      "prerequisites": [
+        "spherical-surface-power"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "1/f=(n−1)(1/R₁−1/R₂)",
+          "sources": [
+            "lens-matrix"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "n=1.5，R₁=+0.1 m、R₂=−0.1 m，焦距约 0.1 m。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "aperture-marginal-ray",
+      "title": "边缘光线和孔径",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "marginal ray",
+        "轴上边缘光线"
+      ],
+      "definition": "边缘光线从轴上物点出发并恰好通过限制孔径的边缘。",
+      "body": "它与光轴围出的接受锥描述从轴上可收集的角度范围，用于推导物方或像方的数值孔径。确定哪一个开口真正限制光束，要在相应物点和光路上比较。",
+      "example": "追踪从物方轴心指向入瞳边缘的一条射线。",
+      "caution": "边缘光线的定义依赖轴上物点；离轴遮挡另有渐晕问题。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "stops"
+      ],
+      "prerequisites": [
+        "aperture-stop"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "边缘光线从轴上物点出发并恰好通过限制孔径的边缘。",
+          "sources": [
+            "stops"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "追踪从物方轴心指向入瞳边缘的一条射线。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "chief-ray-stop-center",
+      "title": "主光线通过孔径中心",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "chief ray",
+        "主光线与视场"
+      ],
+      "definition": "给定离轴物点，主光线通过孔径光阑中心或对应入瞳中心。",
+      "body": "主光线可作为离轴成像束的参考方向。它在不同截面的位置可帮助判断哪一个开口挡住边场，也常用来描述像面入射角。完整光束仍含有主光线之外的角度分布。",
+      "example": "从视场边缘物点追踪穿过入瞳中心的一条线。",
+      "caution": "主光线与边缘光线的出发物点和瞳面位置不同。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "stops"
+      ],
+      "prerequisites": [
+        "aperture-stop"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "给定离轴物点，主光线通过孔径光阑中心或对应入瞳中心。",
+          "sources": [
+            "stops"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "从视场边缘物点追踪穿过入瞳中心的一条线。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "exit-pupil-image",
+      "title": "出瞳与观察位置",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "exit pupil",
+        "出瞳位置"
+      ],
+      "definition": "出瞳是从像方通过后续光学元件观察到的孔径光阑的像。",
+      "body": "出瞳描述离开系统后光束的有效孔径位置与大小。目视系统中眼瞳靠近该位置时较容易收到整个视场的出射光。出瞳可以在镜片外，也可为从像方看到的虚像。",
+      "example": "移动眼睛观察望远镜目镜后明亮的小圆斑，可帮助找到出瞳。",
+      "caution": "不要把出瞳直径直接当作最后一片镜片的物理直径。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "stops",
+        "telescope"
+      ],
+      "prerequisites": [
+        "aperture-stop"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "出瞳是从像方通过后续光学元件观察到的孔径光阑的像。",
+          "sources": [
+            "stops",
+            "telescope"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "移动眼睛观察望远镜目镜后明亮的小圆斑，可帮助找到出瞳。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "field-stop-window",
+      "title": "视场光阑",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "field stop",
+        "限制视场的光阑"
+      ],
+      "definition": "视场光阑主要限定可被系统看见的物方范围。",
+      "body": "一个开口若接近物像共轭面，可把某些离轴物点的光束整体挡掉，从而形成清楚的视野边界。位于光束会聚锥中的孔径光阑主要限制每个物点可通过的角度。",
+      "example": "在像平面放框，只保留框内范围，主要改变视场。",
+      "caution": "同一个实际开口在不同系统或视场中可能同时产生渐晕。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "stops"
+      ],
+      "prerequisites": [
+        "chief-ray-stop-center"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "视场光阑主要限定可被系统看见的物方范围。",
+          "sources": [
+            "stops"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在像平面放框，只保留框内范围，主要改变视场。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "geometric-vignetting",
+      "title": "几何渐晕",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "vignetting",
+        "视场边缘遮光"
+      ],
+      "definition": "离轴物点的光束被镜筒或开口部分遮挡时，边缘通光量会下降。",
+      "body": "随着视场角增大，来自某点的整束光可能横向偏移，部分穿不过原本对轴上束足够大的开口。可把多个开口投影到同一参考瞳面，比较可通光的重叠区域。",
+      "example": "在镜头前加较深的遮光筒，边缘画面可能先变暗。",
+      "caution": "边缘变暗还可能来自自然照度规律和传感器角度响应。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "stops",
+        "camera"
+      ],
+      "prerequisites": [
+        "field-stop-window"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "离轴物点的光束被镜筒或开口部分遮挡时，边缘通光量会下降。",
+          "sources": [
+            "stops",
+            "camera"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在镜头前加较深的遮光筒，边缘画面可能先变暗。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "image-sensor-field",
+      "title": "传感器尺寸与视角",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "angle of view",
+        "视场角与像高"
+      ],
+      "definition": "无穷远目标成像时，传感器半幅和有效焦距决定可记录的近似视角。",
+      "body": "对理想无畸变模型，用半幅宽与焦距之比确定最大离轴入射角；水平、垂直和对角尺寸各给不同的视角。近距离重新调焦时，倍率和有效视场可能变化。",
+      "example": "f=50 mm、传感器水平宽 36 mm，理想水平视角约 39.6°。",
+      "caution": "鱼眼与明显畸变镜头的角度映射不同。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "FOV≈2 arctan(W/2f)",
+      "variables": "W、f 用相同长度单位，FOV 先以 rad 计算。",
+      "sources": [
+        "camera",
+        "focus"
+      ],
+      "prerequisites": [
+        "thin-lens-focal-plane"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "FOV≈2 arctan(W/2f)",
+          "sources": [
+            "camera",
+            "focus"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "f=50 mm、传感器水平宽 36 mm，理想水平视角约 39.6°。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "aperture-blur-cone",
+      "title": "离焦弥散圆的光线锥",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "circle of confusion",
+        "defocus cone"
+      ],
+      "definition": "像面偏离理想汇聚平面时，几何光线锥与探测面的截面形成弥散斑。",
+      "body": "在像点附近按边缘光线构造相似三角形，弥散圆直径随离焦距离和光锥角度增大。缩小有效孔径可减小几何离焦模糊，同时会加强衍射引起的展宽。",
+      "example": "比较相同离焦量下开大光圈和收小光圈的边缘轮廓。",
+      "caution": "几何弥散圆不包含衍射、像差及像素采样。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "camera",
+        "conjugates"
+      ],
+      "prerequisites": [
+        "aperture-marginal-ray"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "像面偏离理想汇聚平面时，几何光线锥与探测面的截面形成弥散斑。",
+          "sources": [
+            "camera",
+            "conjugates"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较相同离焦量下开大光圈和收小光圈的边缘轮廓。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "depth-of-field-criterion",
+      "title": "景深的可接受模糊判据",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "景深",
+        "depth of field",
+        "物方容许离焦"
+      ],
+      "definition": "景深是一组在固定像面上满足指定弥散圆容限的物距。",
+      "body": "固定传感器位置，对候选物距分别求理想像距，再估计传感器截取光锥的模糊直径。放宽可接受直径会扩大景深，改变观看尺寸或像素判据也会改变结果。",
+      "example": "以 10 μm 作为容许像斑直径，比 20 μm 判据得到的景深更窄。",
+      "caution": "报告景深时应给出模糊容限和图像用途。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "camera"
+      ],
+      "prerequisites": [
+        "aperture-blur-cone"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "景深是一组在固定像面上满足指定弥散圆容限的物距。",
+          "sources": [
+            "camera"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "以 10 μm 作为容许像斑直径，比 20 μm 判据得到的景深更窄。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "depth-of-focus-criterion",
+      "title": "焦深的像方容差",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "焦深",
+        "depth of focus",
+        "像面允许位移"
+      ],
+      "definition": "焦深描述物体固定时，探测面在理想像面附近可移动的容许范围。",
+      "body": "在同一光锥下，传感器沿轴向移动会改变几何弥散圆。焦深以像方移动量表述，景深以物方移动量表述，二者经轴向倍率联系。显微系统需要清楚说明所采用的衍射或几何判据。",
+      "example": "固定标尺，让传感器在最佳成像位置前后移动，找出仍可读的轴向范围。",
+      "caution": "景深和焦深的单位虽相同，但参考空间不同。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "camera",
+        "conjugates"
+      ],
+      "prerequisites": [
+        "aperture-blur-cone"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "焦深描述物体固定时，探测面在理想像面附近可移动的容许范围。",
+          "sources": [
+            "camera",
+            "conjugates"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "固定标尺，让传感器在最佳成像位置前后移动，找出仍可读的轴向范围。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "pinhole-image-geometry",
+      "title": "针孔像的倍率与方向",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "pinhole magnification",
+        "暗箱成像"
+      ],
+      "definition": "针孔把来自各物点的一小束射线投到屏幕上，得到倒立几何投影。",
+      "body": "理想点孔的物点、孔和对应像点近似在一条直线上。屏幕离孔越远，像高增大，同时同样孔径通过的光相对分散。大孔让一个物点照到更宽的位置范围。",
+      "example": "屏距 30 mm、物距 300 mm，倒立像的倍率大小约为 0.1。",
+      "caution": "针孔继续缩小时衍射最终限制清晰度。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "pinhole"
+      ],
+      "prerequisites": [
+        "thin-lens-image-magnification"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "针孔把来自各物点的一小束射线投到屏幕上，得到倒立几何投影。",
+          "sources": [
+            "pinhole"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "屏距 30 mm、物距 300 mm，倒立像的倍率大小约为 0.1。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "pinhole-aperture-tradeoff",
+      "title": "针孔尺寸的几何与衍射折中",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "pinhole blur",
+        "针孔孔径优化"
+      ],
+      "definition": "针孔太大产生几何展宽，太小则由衍射主导模糊。",
+      "body": "在固定屏距时，逐步缩孔先减少有限开口造成的重叠光斑。缩到足够小时，圆孔衍射角约随波长除以孔径增大。最佳孔径取决于波长、距离和采用的清晰度指标。",
+      "example": "用三种针孔对准同一远处目标，比较边缘过渡宽度。",
+      "caution": "针孔不是普通聚焦透镜，不能套用镜头焦距定义。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "pinhole",
+        "diffraction"
+      ],
+      "prerequisites": [
+        "pinhole-image-geometry"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "针孔太大产生几何展宽，太小则由衍射主导模糊。",
+          "sources": [
+            "pinhole",
+            "diffraction"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用三种针孔对准同一远处目标，比较边缘过渡宽度。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "eye-accommodation",
+      "title": "眼睛的调节",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "accommodation",
+        "眼睛看近看远"
+      ],
+      "definition": "眼睛在视网膜位置基本固定时调节晶状体光焦度，使不同物距成像。",
+      "body": "看近时入射光更发散，若要仍在视网膜上会合，眼的总会聚能力需增加。看远时通常可以降低调节，接近眼的远点条件。年龄和个体差异会改变可调范围。",
+      "example": "由远景转而阅读近处文字，可以感受到重新对焦。",
+      "caution": "简化模型把眼视为组合光学系统，实际并非单片薄透镜。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "eye"
+      ],
+      "prerequisites": [
+        "thin-lens"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "眼睛在视网膜位置基本固定时调节晶状体光焦度，使不同物距成像。",
+          "sources": [
+            "eye"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "由远景转而阅读近处文字，可以感受到重新对焦。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "diopter-convention",
+      "title": "屈光度与焦距单位",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "diopter",
+        "眼镜度数与焦距"
+      ],
+      "definition": "屈光度是空气中焦距用米表示时倒数所用的单位。",
+      "body": "正透镜有正焦度，负透镜有负焦度。处方中用屈光度表达的是镜片的一阶聚焦能力。若出现柱镜参数，还需说明两个主方向的光焦度及轴位。",
+      "example": "+2 D 对应 +0.5 m 焦距。",
+      "caution": "毫米不能未经换算直接取倒数当屈光度。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "Φ=1/f",
+      "variables": "f 用 m，Φ 用 D 即 m⁻¹。",
+      "sources": [
+        "glasses",
+        "lens-matrix"
+      ],
+      "prerequisites": [
+        "thin-lens"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Φ=1/f",
+          "sources": [
+            "glasses",
+            "lens-matrix"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "+2 D 对应 +0.5 m 焦距。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "magnifier-angular-magnification",
+      "title": "放大镜的角放大率",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "angular magnification",
+        "简单放大镜倍率"
+      ],
+      "definition": "放大镜通过允许物体更接近眼睛而增大观察视角。",
+      "body": "把小物放在正透镜前焦面，出射光近准直，眼睛放松即可观察。比较裸眼在约定近点与透镜辅助下的角尺寸，得到近轴角放大率。结果随采用的近点和最终像距约定而变。",
+      "example": "用 25 cm 参考近点、50 mm 焦距，放松观察的标称角倍率约 5 倍。",
+      "caution": "角放大率不是投在屏幕上的横向尺寸比。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "M≈D/f（最终像在无穷远）",
+      "variables": "D 为约定裸眼近点，和 f 同一长度单位。",
+      "sources": [
+        "magnifier"
+      ],
+      "prerequisites": [
+        "thin-lens"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "M≈D/f（最终像在无穷远）",
+          "sources": [
+            "magnifier"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用 25 cm 参考近点、50 mm 焦距，放松观察的标称角倍率约 5 倍。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "compound-microscope-stages",
+      "title": "复合显微镜的两级放大",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "microscope intermediate image",
+        "显微镜两级光路"
+      ],
+      "definition": "显微物镜先形成中间像，目镜再把中间像作为物体增大观察视角。",
+      "body": "在有限筒长模型中，样品放在物镜前焦面外少量距离，得到放大的倒立中间实像。目镜把该像放在其焦面附近以供观察。物镜横向倍率与目镜角倍率分开记账。",
+      "example": "撤下目镜，用屏寻找中间像，再观察重新装上目镜的效果。",
+      "caution": "无限远校正物镜需要筒镜形成中间像。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "microscope",
+        "eyepiece"
+      ],
+      "prerequisites": [
+        "magnifier-angular-magnification"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "显微物镜先形成中间像，目镜再把中间像作为物体增大观察视角。",
+          "sources": [
+            "microscope",
+            "eyepiece"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "撤下目镜，用屏寻找中间像，再观察重新装上目镜的效果。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "microscope-objective-resolution",
+      "title": "显微物镜的倍率与分辨",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "objective magnification resolution",
+        "显微放大与分辨"
+      ],
+      "definition": "显微物镜的放大率决定像高，数值孔径与波长影响可分辨细节。",
+      "body": "把图放大可以让原有细节更容易被观察或采样，但超过光学带宽的细节不会因继续放大而出现。比较物镜时，同时核对成像侧采样和物方照明、孔径口径。",
+      "example": "两支同倍率而 NA 不同的物镜，可在相同样品上显示不同细节。",
+      "caution": "空放大不能代替增加有效孔径或改善信噪。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "microscope",
+        "diffraction"
+      ],
+      "prerequisites": [
+        "objective-na"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "显微物镜的放大率决定像高，数值孔径与波长影响可分辨细节。",
+          "sources": [
+            "microscope",
+            "diffraction"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两支同倍率而 NA 不同的物镜，可在相同样品上显示不同细节。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "keplerian-telescope",
+      "title": "开普勒望远镜的角倍率",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "Keplerian telescope",
+        "双正透镜望远镜"
+      ],
+      "definition": "开普勒型望远镜用正物镜和正目镜，将远物的方向角变换为另一方向角。",
+      "body": "远物经物镜在后焦面形成中间实像，目镜前焦面与它重合时出射准直。相同中间像高对应不同焦距形成的角度，故角倍率由两个焦距之比决定。",
+      "example": "物镜 200 mm、目镜 20 mm，角倍率大小为 10，图像方向翻转。",
+      "caution": "线性光路长度近似为两焦距之和，实际镜组以主面计。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "M_θ≈−f_obj/f_eye",
+      "variables": "两焦距同长度单位，负号表示方向翻转。",
+      "sources": [
+        "telescope"
+      ],
+      "prerequisites": [
+        "ray-afocal-condition"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "M_θ≈−f_obj/f_eye",
+          "sources": [
+            "telescope"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "物镜 200 mm、目镜 20 mm，角倍率大小为 10，图像方向翻转。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "galilean-telescope",
+      "title": "伽利略望远镜",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "Galilean telescope",
+        "正物镜负目镜"
+      ],
+      "definition": "伽利略型望远镜以负目镜截取尚未形成中间实像的会聚光束。",
+      "body": "将负目镜放在物镜焦点之前，其出射束可重新准直。焦距的有符号和给出两镜间隔，角放大率的正号意味着正立视像；目镜后不必存在易接收的实中间像。",
+      "example": "+200 mm 物镜配 −40 mm 目镜，近似间隔 160 mm，角倍率 5。",
+      "caution": "光束可用视场还受入瞳和眼的位置限制。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "telescope",
+        "two-lenses"
+      ],
+      "prerequisites": [
+        "ray-afocal-condition"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "伽利略型望远镜以负目镜截取尚未形成中间实像的会聚光束。",
+          "sources": [
+            "telescope",
+            "two-lenses"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "+200 mm 物镜配 −40 mm 目镜，近似间隔 160 mm，角倍率 5。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "telescope-exit-pupil",
+      "title": "望远镜出瞳直径",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "telescope exit pupil",
+        "目镜后亮圆"
+      ],
+      "definition": "望远镜出瞳可看作物镜孔径经目镜形成的像。",
+      "body": "对常见无焦望远镜，角倍率越大，给定物镜直径对应的出瞳越小。眼瞳小于出瞳时会截光；出瞳位置偏离眼瞳则可能损失边场。比较不同倍率时应同时看出瞳和视场。",
+      "example": "40 mm 物镜、10 倍倍率对应约 4 mm 出瞳。",
+      "caution": "该关系以物镜充当限制孔径且像方介质相同为条件。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "D_exit≈D_obj/abs(M_θ)",
+      "variables": "直径用相同单位，角倍率无量纲。",
+      "sources": [
+        "telescope",
+        "stops"
+      ],
+      "prerequisites": [
+        "exit-pupil-image"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "D_exit≈D_obj/abs(M_θ)",
+          "sources": [
+            "telescope",
+            "stops"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "40 mm 物镜、10 倍倍率对应约 4 mm 出瞳。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "ray-fan-plot",
+      "title": "横向光线像差扇图",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "ray fan plot",
+        "像面截距差"
+      ],
+      "definition": "光线扇图显示同一视场点的不同瞳孔位置对应的像面截距误差。",
+      "body": "选定观察面和理想参考像点，把穿过瞳面的射线按归一化坐标排列，再画每条线的截距与参考之差。形状能帮助辨识离焦、球差或离轴误差。",
+      "example": "移动像面后若扇图的线性斜率改变，可观察到离焦项的变化。",
+      "caution": "像面截距误差、波前误差和 RMS 斑直径应分别记录。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "aberrations"
+      ],
+      "prerequisites": [
+        "optical-aberrations"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "光线扇图显示同一视场点的不同瞳孔位置对应的像面截距误差。",
+          "sources": [
+            "aberrations"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "移动像面后若扇图的线性斜率改变，可观察到离焦项的变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "longitudinal-spherical-aberration",
+      "title": "纵向球差",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "longitudinal spherical aberration",
+        "球差轴向焦移"
+      ],
+      "definition": "纵向球差比较轴上物点不同孔径射线与光轴交点的轴向差。",
+      "body": "在有球差的系统中，近轴光线和边缘光线通常不在同一个 z 位置穿过光轴。移动观察屏能改变哪个孔径区域成像较锐利，收小光圈则会截去偏离明显的外侧射线。",
+      "example": "分别只保留近轴光与外缘光，比较最佳成像屏位置。",
+      "caution": "不要把纵向焦移直接当作探测面上的横向斑径。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "aberrations"
+      ],
+      "prerequisites": [
+        "spherical-aberration"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "纵向球差比较轴上物点不同孔径射线与光轴交点的轴向差。",
+          "sources": [
+            "aberrations"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "分别只保留近轴光与外缘光，比较最佳成像屏位置。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "oblique-astigmatism",
+      "title": "斜光束的像散",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "oblique astigmatism",
+        "子午与弧矢焦点"
+      ],
+      "definition": "离轴光束在子午和弧矢两个截面中的最佳聚焦位置可不同。",
+      "body": "由轴和主光线确定子午平面，另一个正交方向称弧矢方向。两个方向的会聚位置不同时，焦区前后可见方向不同的线状斑；只找到其中一个焦点不能同时消除两个方向的模糊。",
+      "example": "沿轴扫描离轴点源像，观察椭圆斑长轴方向的变化。",
+      "caution": "区分镜组固有像散与某个柱面元件刻意引入的像散。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "aberrations"
+      ],
+      "prerequisites": [
+        "optical-aberrations"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "离轴光束在子午和弧矢两个截面中的最佳聚焦位置可不同。",
+          "sources": [
+            "aberrations"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "沿轴扫描离轴点源像，观察椭圆斑长轴方向的变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "field-curvature-focus",
+      "title": "场曲与最佳焦面",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "field curvature",
+        "边场对焦"
+      ],
+      "definition": "即使各个物点可局部清晰，其最佳像点也可能分布在弯曲表面上。",
+      "body": "固定平面传感器时，画面中心合焦并不能保证边缘同时合焦。沿轴移动探测器分别找到不同视场的最佳焦点，即可观察焦面弯曲；也可与同一视场的子午、弧矢分离比较。",
+      "example": "分别记录中心和四角最佳焦点的轴向位置。",
+      "caution": "场曲主要是最佳焦面位置变化，畸变主要是像点位置映射变化。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "aberrations"
+      ],
+      "prerequisites": [
+        "optical-aberrations"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "即使各个物点可局部清晰，其最佳像点也可能分布在弯曲表面上。",
+          "sources": [
+            "aberrations"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "分别记录中心和四角最佳焦点的轴向位置。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "geometric-distortion",
+      "title": "成像畸变",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "geometric distortion",
+        "桶形与枕形"
+      ],
+      "definition": "畸变描述横向放大率随视场变化而使物像坐标偏离理想映射。",
+      "body": "图像上的直线可弯成桶形或枕形，即使局部点像仍然很尖锐。用已知方格靶比较理想与实测像点可测量畸变，数字校正通过重采样改变像素坐标。",
+      "example": "检查直线格点从中心到边缘的径向残差。",
+      "caution": "畸变校正不等于恢复被光学模糊丢失的高频细节。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "aberrations"
+      ],
+      "prerequisites": [
+        "thin-lens-image-magnification"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "畸变描述横向放大率随视场变化而使物像坐标偏离理想映射。",
+          "sources": [
+            "aberrations"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "检查直线格点从中心到边缘的径向残差。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "longitudinal-chromatic-aberration",
+      "title": "轴向色差",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "longitudinal chromatic aberration",
+        "不同颜色焦移"
+      ],
+      "definition": "轴向色差指不同波长的最佳焦点在轴向位置不同。",
+      "body": "玻璃折射率随波长改变，同一曲率的光焦度也随之改变。在相同观察平面，不同颜色可能出现程度不同的离焦。用窄带照明分别调焦可以区分轴向焦移与彩色像高差。",
+      "example": "对蓝、绿、红三种窄带光分别扫描像面位置。",
+      "caution": "轴向色差不是边缘彩边的唯一来源。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "aberrations"
+      ],
+      "prerequisites": [
+        "chromatic-aberration"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "轴向色差指不同波长的最佳焦点在轴向位置不同。",
+          "sources": [
+            "aberrations"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "对蓝、绿、红三种窄带光分别扫描像面位置。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "transverse-chromatic-aberration",
+      "title": "倍率色差",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "lateral color",
+        "横向色差"
+      ],
+      "definition": "倍率色差是不同波长下同一离轴物点的像高不同。",
+      "body": "当系统横向倍率随波长改变，颜色通道的几何坐标会随离轴距离逐步错开。即使把各波长分别对焦至清晰，也可能在边缘看到颜色分离。可用标定网格核查各通道的坐标对应。",
+      "example": "比较不同波长下，同一离轴标记相对于中心的像高。",
+      "caution": "通道错位还可来自数字配准或传感器结构。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "aberrations"
+      ],
+      "prerequisites": [
+        "chromatic-aberration"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "倍率色差是不同波长下同一离轴物点的像高不同。",
+          "sources": [
+            "aberrations"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较不同波长下，同一离轴标记相对于中心的像高。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "achromatic-doublet-principle",
+      "title": "消色差双片的光焦度分配",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "achromatic doublet",
+        "双片消色差"
+      ],
+      "definition": "消色差双片用不同色散材料和相反符号的光焦度抵消选定波长间的焦度差。",
+      "body": "一种玻璃的色散对总焦度的改变可以由另一种玻璃贡献的反号变化抵消。设计时还要同时达到所需的总焦度，故焦度和色散约束应联立。其余波长通常仍有残余色差。",
+      "example": "比较消色差双片与单片正镜在红蓝照明下的焦移。",
+      "caution": "两个波长焦点相同不保证全光谱焦点相同。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "aberrations",
+        "lens-matrix"
+      ],
+      "prerequisites": [
+        "longitudinal-chromatic-aberration"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "消色差双片用不同色散材料和相反符号的光焦度抵消选定波长间的焦度差。",
+          "sources": [
+            "aberrations",
+            "lens-matrix"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较消色差双片与单片正镜在红蓝照明下的焦移。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "best-focus-compromise",
+      "title": "像差存在时的最佳焦面",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "best focus",
+        "弥散最小面"
+      ],
+      "definition": "有像差时，最佳焦面依所采用的光斑或对比度指标确定。",
+      "body": "不同孔径射线和方向可能偏好不同的聚焦位置。可在一系列轴向位置计算或测量指定指标，例如 RMS 斑径或某一频率的 MTF，再从中选择满足任务的观察面。",
+      "example": "点定位任务和纹理对比度任务的最佳位置可能略有差别。",
+      "caution": "报告最佳焦面时说明指标、波长和视场。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "aberrations"
+      ],
+      "prerequisites": [
+        "ray-fan-plot"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "有像差时，最佳焦面依所采用的光斑或对比度指标确定。",
+          "sources": [
+            "aberrations"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "点定位任务和纹理对比度任务的最佳位置可能略有差别。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "camera-aperture-exposure",
+      "title": "光圈、曝光与收光",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "camera aperture exposure",
+        "通光和曝光"
+      ],
+      "definition": "固定场景和曝光时间时，开大有效孔径通常增加传感器接收的光量。",
+      "body": "光圈通过改变入瞳直径改变光锥，理想同条件下通光量大致随孔径面积变化。实际成像还受镜片透过率和边场遮光影响。通过延长曝光可以补偿部分光量下降，但运动模糊可能增加。",
+      "example": "理想 f/4 变到 f/5.6 时通光约减半。",
+      "caution": "真实透光量比较要核对镜头透过和曝光控制。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "相同条件下 E∝1/N²",
+      "variables": "N 为 f 数，E 为像面照度的相对量。",
+      "sources": [
+        "camera",
+        "stops"
+      ],
+      "prerequisites": [
+        "numerical-f-number"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "相同条件下 E∝1/N²",
+          "sources": [
+            "camera",
+            "stops"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "理想 f/4 变到 f/5.6 时通光约减半。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "pixel-geometric-sampling",
+      "title": "传感器像素与物方采样",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "object-space pixel pitch",
+        "像素物方间距"
+      ],
+      "definition": "像素间距除以横向放大率大小，可换算为物方的近轴采样间隔。",
+      "body": "镜头把物体上的长度放大到传感器，再由像素按固定距离取样。物方采样细不等于光学分辨率高，后者还受像差、孔径和衍射限制。测量尺寸前应以同平面尺度做标定。",
+      "example": "像元间距 5 μm、放大率 10，物方采样间隔约 0.5 μm。",
+      "caution": "仅给像素尺寸而不提供倍率，无法确定物方尺度。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "p_obj=p_sensor/abs(m)",
+      "variables": "两间距单位相同，m 无量纲。",
+      "sources": [
+        "camera",
+        "microscope"
+      ],
+      "prerequisites": [
+        "thin-lens-image-magnification"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "p_obj=p_sensor/abs(m)",
+          "sources": [
+            "camera",
+            "microscope"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "像元间距 5 μm、放大率 10，物方采样间隔约 0.5 μm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "paraxial-angle-error",
+      "title": "小角度近似的量级",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "sine small angle error",
+        "近轴展开"
+      ],
+      "definition": "近轴模型将正弦和正切在零角附近保留一阶项。",
+      "body": "角度采用弧度时，sinθ 与 θ 的首个差项为 −θ³/6，tanθ 与 θ 的首个差项为 θ³/3。所需精度越高，或边缘角度越大，越应使用完整的几何关系。",
+      "example": "θ=0.1 rad 时，tanθ 与 θ 的相对差约为 0.33%。",
+      "caution": "误差量级随使用的是正弦还是正切而不同。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "spherical",
+        "ray"
+      ],
+      "prerequisites": [
+        "paraxial-approximation"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "近轴模型将正弦和正切在零角附近保留一阶项。",
+          "sources": [
+            "spherical",
+            "ray"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "θ=0.1 rad 时，tanθ 与 θ 的相对差约为 0.33%。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "paraxial-mirror-power",
+      "title": "球面镜的近轴光焦度",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "spherical mirror power",
+        "球面镜焦距"
+      ],
+      "definition": "在空气中，近轴球面凹镜的焦距大小为曲率半径的一半。",
+      "body": "球面镜面法线相对光轴的倾角约为光线高度除以曲率半径，反射会改变两倍该方向角。于是接近轴向入射的射线在距镜面约半个曲率半径处会聚。",
+      "example": "曲率半径大小 200 mm 的凹镜，近轴焦距大小约 100 mm。",
+      "caution": "正负号取决于反射后轴方向约定，边缘光线还会有球差。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": "abs(f)=abs(R)/2",
+      "variables": "f、R 用同一长度单位。",
+      "sources": [
+        "ray"
+      ],
+      "prerequisites": [
+        "paraxial-approximation"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "abs(f)=abs(R)/2",
+          "sources": [
+            "ray"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "曲率半径大小 200 mm 的凹镜，近轴焦距大小约 100 mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "telecentric-chief-ray",
+      "title": "远心条件与主光线",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "telecentricity",
+        "远心主光线"
+      ],
+      "definition": "将限制孔径的共轭位置放在适当焦面，可使一侧主光线平行于光轴。",
+      "body": "孔径位于相应焦面时，从其中心出发并经过该侧透镜的近轴光线准直。物方远心时，物点小范围轴向移动仍可减小透视引起的比例变化，但图像清晰度会随离焦下降。",
+      "example": "尺寸检测中让待测片前后小移，对比普通和物方远心镜头的比例变化。",
+      "caution": "物方远心与像方远心要说明是哪侧的主光线近平行。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "stops",
+        "focus"
+      ],
+      "prerequisites": [
+        "chief-ray-stop-center"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "将限制孔径的共轭位置放在适当焦面，可使一侧主光线平行于光轴。",
+          "sources": [
+            "stops",
+            "focus"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "尺寸检测中让待测片前后小移，对比普通和物方远心镜头的比例变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "ray-matrix-reference-planes",
+      "title": "光线矩阵的参考平面",
+      "topic": "imaging",
+      "level": "undergraduate",
+      "terms": [
+        "ABCD reference planes",
+        "矩阵参考面"
+      ],
+      "definition": "系统矩阵描述两个指定截面之间的光线变换。",
+      "body": "即使中间镜组本身不动，在输入或输出端添加自由传播也会改变矩阵元素。焦度、共轭距离或倍率的解释需要知道参考面和坐标约定。比较两个计算结果前先核对这些约定。",
+      "example": "将输出参考面沿轴平移 10 mm，应在原系统矩阵左侧乘相应传播矩阵。",
+      "caution": "矩阵数值不同有时只是参考面不同。",
+      "conditions": [
+        "近轴几何光学或条目给出的光路约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "ray",
+        "thick"
+      ],
+      "prerequisites": [
+        "ray-matrix-order"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "系统矩阵描述两个指定截面之间的光线变换。",
+          "sources": [
+            "ray",
+            "thick"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将输出参考面沿轴平移 10 mm，应在原系统矩阵左侧乘相应传播矩阵。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    }
+  ]
+}

@@ -57,14 +57,32 @@ def validate(groups,cfg):
     return True
 
 
-def plan(groups,cfg):
-    from .inverse_models import LIMITS
+def plan(groups,cfg,comparison=None):
+    from .inverse_models import LIMITS, finite
     import copy
+    import re
     validate(groups,cfg)
     p={'schema':'photonguard.film-inverse-plan.v1','model':MODEL,'operation':'fit','groups':copy.deepcopy(groups),'settings':copy.deepcopy(cfg),'budget':dict(LIMITS['joint' if len(groups)>1 else 'fit']),
        'protocol':{'grid_points':241,'local_intervals_max':48,'local_maxiter':80,'relative_cost_allowance':.1,'absolute_cost_floor':1e-8},
        'profile':None,'splits':[{'holdout_indices':[],'note':'小型波长组全部拟合，没有独立验证；T=1-R 不计作第二份证据'} for _ in groups],
        'parameter_roles':{'thickness_nm':'MODEL_ESTIMATE'},'reference_sha256':None}
+    if comparison is not None:
+        required={'record_id','fit_result_id','group_count','modes'}
+        if (not isinstance(comparison,dict) or set(comparison)!=required
+                or not re.fullmatch(r'[a-f0-9]{32}',str(comparison['record_id']))
+                or not re.fullmatch(r'[a-f0-9]{64}',str(comparison['fit_result_id']))
+                or type(comparison['group_count']) is not int or not 1<=comparison['group_count']<len(groups)
+                or not isinstance(comparison['modes'],list) or not 1<=len(comparison['modes'])<=50):
+            raise ValueError('补测前候选的来源无效')
+        lo,hi=cfg['bounds']['thickness_nm']
+        for mode in comparison['modes']:
+            if not isinstance(mode,dict) or set(mode)!={'thickness_nm','interval_nm'}:
+                raise ValueError('补测前候选字段无效')
+            value, interval = mode['thickness_nm'], mode['interval_nm']
+            if (not finite(value) or not lo<=value<=hi or not isinstance(interval,list) or len(interval)!=2
+                    or any(not finite(x) for x in interval) or not lo<=interval[0]<=value<=interval[1]<=hi):
+                raise ValueError('补测前候选范围无效')
+        p['comparison']=copy.deepcopy(comparison)
     p['sha256']=digest(p);return p
 
 
@@ -74,11 +92,48 @@ def predict(wavelengths_nm,thickness_nm,fixed):
     return np.asarray([coh_tmm('s',[fixed['incident_index'],fixed['film_index'],fixed['substrate_index']],[np.inf,thickness_nm,np.inf],0,float(w))['R'] for w in wavelengths_nm])
 
 
+def _observation_impact(comparison, groups, fixed, modes, flags):
+    prefix=comparison['group_count']
+    old_waves={w for group in groups[:prefix] for w in group['dataset']['x_nm']}
+    observations=[]
+    for group in groups[prefix:]:
+        data=group['dataset']
+        observations.extend({'wavelength_nm':w,'reflectance':value,'dataset_sha256':data['sha256'],
+                             'source_kind':data['source_kind']}
+                            for w,value in zip(data['x_nm'],data['reflectance']))
+    if len(observations)>12:
+        indices=[round(i*(len(observations)-1)/11) for i in range(12)]
+        selected=[observations[i] for i in indices]
+    else:
+        selected=observations
+    waves=[point['wavelength_nm'] for point in selected]
+    fitted=[row['parameters']['thickness_nm'] for row in modes]
+    incomplete=bool({'UNRESOLVED_FILM_INTERVALS','NO_CONVERGENCE'} & set(flags))
+    rows=[]
+    for mode in comparison['modes']:
+        lo,hi=mode['interval_nm']
+        matched=[thickness for thickness in fitted if lo-1e-4<=thickness<=hi+1e-4]
+        status='MATCHED_JOINT_INTERVAL' if matched else 'INCOMPLETE' if incomplete else 'NO_JOINT_MODE_IN_INTERVAL'
+        predictions=predict(waves,mode['thickness_nm'],fixed).tolist()
+        rows.append({**mode,'predicted_reflectance':predictions,'matching_joint_modes_nm':matched,'status':status})
+    for i,point in enumerate(selected):
+        values=[row['predicted_reflectance'][i] for row in rows]
+        point['prior_prediction_range']=[min(values),max(values)]
+        point['repeats_prior_wavelength']=point['wavelength_nm'] in old_waves
+    return {'source':{key:comparison[key] for key in ('record_id','fit_result_id')},
+            'prior_mode_count':len(rows),'joint_mode_count':len(fitted),'joint_modes_nm':fitted,
+            'new_point_count':len(observations),'points':selected,'prior_modes':rows,
+            'same_wavelength_only':all(point['wavelength_nm'] in old_waves for point in observations),
+            'possible_mismatch':'POSSIBLE_MODEL_MISMATCH' in flags,'incomplete_search':incomplete,
+            'tmm_evaluations':len(rows)*len(selected)}
+
+
 def run(p,progress=None):
     import numpy as np
     from scipy.optimize import minimize_scalar
     groups=p['groups'];cfg=p['settings'];protocol=p['protocol'];began=time.monotonic();calls=0;tmm_calls=0;starts=[];gridrows=[]
-    if p!=plan(groups,cfg):raise ValueError('薄膜计划被修改')
+    comparison=p.get('comparison')
+    if p!=plan(groups,cfg,comparison):raise ValueError('薄膜计划被修改')
     class Stop(Exception):pass
     def cost(t):
         nonlocal calls,tmm_calls
@@ -117,12 +172,18 @@ def run(p,progress=None):
             ds=g['dataset'];prediction=predict(ds['x_nm'],t,cfg['fixed']);tmm_calls+=ds['rows'];err=np.asarray(ds['reflectance'])-prediction;rmse=float(np.sqrt(np.mean(err*err)))
             data.append({'x':ds['x_nm'],'x_unit':'nm','observed':ds['reflectance'],'predicted':prediction.tolist(),'residual':err.tolist(),'holdout':[False]*ds['rows'],'training_rmse':rmse,'holdout_rmse':None,'dataset_sha256':ds['sha256']})
             if rmse>max(.02,3*g['scale']):flags.append('POSSIBLE_MODEL_MISMATCH')
+    impact=None
+    if comparison and time.monotonic()-began<p['budget']['seconds']-2:
+        impact=_observation_impact(comparison,groups,cfg['fixed'],modes,flags)
+        tmm_calls+=impact['tmm_evaluations']
     result={'schema':'photonguard.film-inverse-result.v1','operation':'fit','model':MODEL,'plan_sha256':p['sha256'],'source_kind':'MODEL_ESTIMATE',
        'status':'NEEDS_REVIEW' if flags else 'FINITE_THICKNESS_ESTIMATE','usable_for_forward':False,'warnings':sorted(set(flags)),
        'estimated_parameters':best['parameters'] if best else None,'best_cost':minimum,'modes':modes,'grid':gridrows,'starts':starts,'data':data,'confidence_interval':None,
        'diagnostics':{'finite_intervals':len(intervals),'period_nm_at_first_wavelength':groups[0]['dataset']['x_nm'][0]/(2*cfg['fixed']['film_index'])},
        'resources':{'actual_residual_calls':calls,'local_optimizations':len(starts),'tmm_evaluations':tmm_calls,'elapsed_seconds':time.monotonic()-began,'model_calls':0,'fft_calls':0,'fdtd_calls':0},
        'limitations':['已知实折射率、法向入射、无损单层，只有厚度待估','有限网格与局部区间；未证明全局唯一，单波长周期歧义保留','所有反射率用于拟合；没有独立验证或置信区间','不反演 n、吸收、增益、背景；T=1-R 不构成独立观测']}
+    if comparison:
+        result['observation_impact']=impact
     result['id']=digest(result);return result
 
 

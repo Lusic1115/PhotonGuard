@@ -19,7 +19,7 @@ testpaths = ["tests"]
 include = ["photonguard*"]
 
 [tool.setuptools.package-data]
-photonguard = ["workflow_assets/*.html", "workflow_assets/*.js", "workflow_assets/*.css", "research_archive/*.json", "case_library/*.json", "case_library/*/*.json", "case_library/*/*.md", "observation_library/*.json", "observation_library/*.csv"]
+photonguard = ["workflow_assets/*.html", "workflow_assets/*.js", "workflow_assets/*.css", "experiments/knowledge_cards.json", "experiments/knowledge_data/*.json", "research_archive/*.json", "case_library/*.json", "case_library/*/*.json", "case_library/*/*.md", "observation_library/*.json", "observation_library/*.csv"]
 
 [tool.setuptools.dynamic]
 version = {attr = "photonguard.__version__"}

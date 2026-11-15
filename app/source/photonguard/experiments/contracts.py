@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy
 import math
 from ..core import digest, finite
+from .slit_formula import FULL_WIDTH
 
 VERSION = 'optical-experiments-v1'
 REQUIRED = {
@@ -16,7 +17,7 @@ PARAMETERS = {
  'gaussian': set(REQUIRED['gaussian'])|{'z_max_mm'},
 }
 VARIABLES = {'film':{'layers','layer_count','design_wavelength_um'},'diffraction':{'slit_width_um','slit_separation_um','relative_phase_rad','focal_length_mm','wavelength_nm'},'gaussian':{'focal_length_mm','screen_distance_mm'}}
-METRICS = {'film':{'reflectance','transmittance','reflectance_min','reflectance_mean','transmittance_min','transmittance_mean'},'diffraction':{'central_intensity_ratio','fringe_period_mm','first_zero_mm'},'gaussian':{'screen_radius_um','new_waist_radius_um','new_waist_z_mm'}}
+METRICS = {'film':{'reflectance','transmittance','reflectance_min','reflectance_mean','transmittance_min','transmittance_mean'},'diffraction':{'central_intensity_ratio','fringe_period_mm','first_zero_mm',FULL_WIDTH},'gaussian':{'screen_radius_um','new_waist_radius_um','new_waist_z_mm'}}
 DEFAULT_BUDGET = {'max_candidates':12,'max_fast_evaluations':24,'max_meep_validations':1,'max_fdtd':8,'worker_seconds':60,'worker_memory_mib':1024,'output_mib':64}
 ASSUMPTIONS = {
  'film':['空气两侧，正入射；线性、无损、无色散、各向同性膜层','最多8层，总厚度≤5微米；结论仅涉及实际采样波长和有限候选'],
@@ -27,7 +28,7 @@ ASSUMPTIONS = {
 def validate_spec(spec, parent=None):
     if not isinstance(spec,dict): raise ValueError('实验规格必须为JSON对象')
     s=copy.deepcopy(spec)
-    allowed={'schema_version','domain','context_kind','known_parameters','parameter_sources','assumptions','locked_parameters','allowed_variables','goal','candidate_bounds','resource_budget','parent_task_id'}
+    allowed={'schema_version','domain','context_kind','known_parameters','parameter_sources','assumptions','locked_parameters','allowed_variables','goal','candidate_bounds','candidate_rows','resource_budget','parent_task_id'}
     if set(s)-allowed: raise ValueError('不支持的实验字段：'+str(sorted(set(s)-allowed)))
     if s.get('schema_version')!=1 or type(s.get('schema_version')) is not int: raise ValueError('实验规格版本错误')
     d=s.get('domain')
@@ -52,6 +53,15 @@ def validate_spec(spec, parent=None):
         if k not in p:raise ValueError('候选变量必须有已知基准值：'+k)
         if len({digest(x) for x in v})!=len(v):raise ValueError('候选值不能重复')
         count*=len(v)
+    if 'candidate_rows' in s:
+        rows=s['candidate_rows']
+        choices={key:{digest(value) for value in values} for key,values in variables.items()}
+        if (not isinstance(rows,list) or not 1<=len(rows)<=5 or
+            any(not isinstance(row,dict) or row.keys()!=variables.keys() or
+                any(digest(value) not in choices[key] for key,value in row.items()) for row in rows) or
+            len({digest(row) for row in rows})!=len(rows)):
+            raise ValueError('只允许批准最多五组互不重复、完全在候选目录内的参数组合')
+        count=len(rows)
     locks=s.get('locked_parameters',[])
     if not isinstance(locks,list) or any(not isinstance(k,str) or k not in p for k in locks) or len(set(locks))!=len(locks):raise ValueError('锁定参数无效')
     if set(locks)&set(variables):raise ValueError('锁定参数不能列为待改变的变量')
@@ -67,6 +77,11 @@ def validate_spec(spec, parent=None):
             if not {digest(v) for v in values}<={digest(v) for v in old['allowed_variables'][k]}:raise ValueError('新版本引入原候选目录以外的数值：'+k)
         for k,values in old.get('allowed_variables',{}).items():
             if k not in variables and digest(p.get(k)) not in {digest(v) for v in values}:raise ValueError('固定原候选变量时仍须选择原目录内的值：'+k)
+        if 'candidate_rows' in old:
+            before={digest(row) for row in old['candidate_rows']}
+            keys=old['allowed_variables'].keys()
+            if 'candidate_rows' not in s or any(digest({key:row.get(key,p.get(key)) for key in keys}) not in before for row in s['candidate_rows']):
+                raise ValueError('改目标必须保留已核对的参数组合')
     bounds=s.get('candidate_bounds',{})
     if not isinstance(bounds,dict) or set(bounds)-set(variables):raise ValueError('候选边界只能约束明确变量')
     for k,b in bounds.items():
@@ -78,6 +93,7 @@ def validate_spec(spec, parent=None):
     expected_unit='um' if goal['metric'].endswith('_um') else 'mm' if goal['metric'].endswith('_mm') else 'fraction'
     if goal.get('unit',expected_unit)!=expected_unit:raise ValueError('目标单位应为'+expected_unit+'；请先转换阈值与容差')
     if d=='diffraction' and p['aperture']=='single_slit' and goal['metric']=='fringe_period_mm':raise ValueError('双缝干涉条纹周期不适用于单缝，请选择第一暗纹位置')
+    if goal['metric']==FULL_WIDTH and p.get('aperture')!='single_slit':raise ValueError('两侧第一暗纹间的中央全宽使用单缝模型')
     if goal['operator'] not in ('minimize','maximize') and not finite(goal.get('target')):raise ValueError('目标阈值未知')
     if goal['operator']=='near' and (not finite(goal.get('tolerance')) or goal['tolerance']<0):raise ValueError('接近目标需要明确误差容限')
     if goal['metric'] in ('reflectance','transmittance') and not finite(goal.get('wavelength_um')):raise ValueError('单点薄膜目标需要指定波长')

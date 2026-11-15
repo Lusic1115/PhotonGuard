@@ -1,7 +1,67 @@
 {
-  "version": "0.2.0rc9",
+  "version": "0.2.0rc28",
   "status": "LOCAL_CANDIDATE_NOT_PUBLISHED",
   "claims": [
+    {
+      "id": "continuous_study_experiment",
+      "user_function": "从学习问题准备单缝计划或导入膜厚数据；批准计算后带着结果回到原对话",
+      "own_implementation": "学习轮次与实验族绑定、计划预览、实际结果与来源对照、同一摘要保留知识与结果指纹",
+      "upstream": ["DeepSeek API optional", "NumPy FFT", "SciPy", "tmm"],
+      "evidence": ["photonguard/experiments/knowledge_experiment.py", "photonguard/experiments/knowledge_sessions.py", "tests/test_knowledge_study.py"],
+      "evidence_kind": "saved_study_turn_and_approved_experiment_result",
+      "scope": "理想单缝薄透镜焦平面；已知折射率单层膜",
+      "prohibited_inference": "将解析预测作为仪器实测，或把理论知识覆盖视作实验支持范围"
+    },
+    {
+      "id": "independent_optics_knowledge_library",
+      "user_function": "独立查阅光学正文、公式和出处，按专题学习，连续追问前一轮问题的条件及推导",
+      "own_implementation": "全文检索、专题分节、关键结论与依据、知识版本绑定的学习对话和登记公式",
+      "upstream": ["SQLite FTS5 optional", "DeepSeek API optional", "MIT OpenCourseWare reference only", "TU Delft OPEN Books reference only", "OpenStax reference only"],
+      "evidence": ["photonguard/experiments/knowledge_catalog.py", "photonguard/experiments/knowledge_learning.py", "photonguard/experiments/knowledge_sessions.py", "photonguard/experiments/knowledge_math.py", "tests/test_knowledge_study.py"],
+      "evidence_kind": "published_article_manifest_and_frozen_retrieval_fixtures",
+      "scope": "随附知识包与经本地安装的专题内容，实验能力以工作台现有登记为准",
+      "prohibited_inference": "把知识覆盖解释为新的求解能力，或把段落引用核对解释为独立科学审核"
+    },
+    {
+      "id": "slit_causal_explanation_and_goal_recovery",
+      "user_function": "按来源候选理解单缝两版变化，准备单项对照，并在现有缝片条件下恢复目标",
+      "own_implementation": "候选与版本绑定、逐项解析倍率、目录交集、恢复目标出处、显式开启新的有限验证",
+      "upstream": ["DeepSeek API optional", "NumPy FFT"],
+      "evidence": ["photonguard/experiments/learning_followup.py", "photonguard/experiments/bounded_goal.py", "tests/test_finals_learning.py"],
+      "evidence_kind": "analytic_preview_and_separately_approved_fft",
+      "scope": "理想单缝焦平面，单侧暗纹距离或中央亮区全宽",
+      "prohibited_inference": "把解析暗纹标记当作仪器测量，或声称所有语言表达均已验收"
+    },
+    {
+      "id": "learning_verification_and_film_observation_impact",
+      "user_function": "保存猜想并用对照验证，查看新增反射率观测如何改变厚度候选",
+      "own_implementation": "学习记录、只读建议、补测目录变更失效、旧候选预测与原始新增观测并列",
+      "upstream": ["DeepSeek API optional", "SciPy", "tmm"],
+      "evidence": ["photonguard/experiments/learning_record.py", "photonguard/experiments/film_inverse.py", "tests/test_film_inverse.py"],
+      "evidence_kind": "approved_tool_execution_and_saved_observation_projection",
+      "scope": "已登记验证关系、已知折射率单膜和有限搜索范围",
+      "prohibited_inference": "教学成效、仪器精度或全局唯一性"
+    },
+    {
+      "id": "guided_workbench_and_tutor",
+      "user_function": "首页描述目标或选择教学案例；侧栏解释图形与连续结果",
+      "own_implementation": "教学任务、概念检索、标记与结果绑定、跨版问答、程序核对和版本复盘",
+      "upstream": ["DeepSeek API optional", "NumPy FFT"],
+      "evidence": ["photonguard/experiments/tutor.py", "photonguard/experiments/learning_session.py", "tests/test_finals_learning.py"],
+      "evidence_kind": "saved_browser_journeys_and_live_model_receipts",
+      "scope": "已登记概念、保存结果和批准的理想模型",
+      "prohibited_inference": "保证任意模型回复正确或用自动化操作替代真人验收"
+    },
+    {
+      "id": "explicit_candidate_pairs_and_csv_lineage",
+      "user_function": "选择明确的候选组合；确认数据列和采集条件后继续分析",
+      "own_implementation": "来源和硬约束校验、精确组合批准、原始文件保留与可追踪版本链",
+      "upstream": ["NumPy", "SciPy", "tmm"],
+      "evidence": ["photonguard/experiments/bounded_goal.py", "photonguard/experiments/csv_intake.py", "tests/test_csv_intake.py"],
+      "evidence_kind": "saved_execution_and_synthetic_data_validation",
+      "scope": "有限目录与声明的光学模型，合成观测按任务注明来源",
+      "prohibited_inference": "把教学数据筛选当作仪器精度或全局唯一性"
+    },
     {
       "id": "user_task_integration",
       "user_function": "目标/数据/教学入口，主建议、结果优先和显式连续补采分析计划",

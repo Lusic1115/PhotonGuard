@@ -166,7 +166,7 @@ def plan(group, settings, operation='fit', *, parameter=None, grid_points=21, re
 def verify_plan(p):
     if p.get('model')==FILM:
         from .film_inverse import plan as build
-        if p!=build(p['groups'],p['settings']):raise ValueError('薄膜计划哈希或固定协议改变')
+        if p!=build(p['groups'],p['settings'],p.get('comparison')):raise ValueError('薄膜计划哈希或固定协议改变')
         return
     if p.get('sha256')!=digest({k:v for k,v in p.items() if k!='sha256'}):raise ValueError('计划哈希发生变化')
     validate(p['groups'],p['settings'])

@@ -14,7 +14,7 @@ from ..core import digest
 from ..workflow import WorkflowError,atomic_json
 from .registry import TOOLS
 from .planner import templates,build_plan,plan_from_text
-from .executor import execute_plan
+from .executor import admit_solver, execute_plan
 from .contracts import METRICS,validate_spec
 from .report import comparison_csv,curve_csv,report_record,compare_versions
 
@@ -24,6 +24,7 @@ class ExperimentStore:
     def __init__(self,owner):
         self.owner=owner;self.root=owner.root/'experiments';self.root.mkdir(exist_ok=True)
         self.lock=threading.RLock();self.running=set()
+        self.operation_lock=threading.Lock();self.active_operations=set()
         for path in self.root.glob('*/case.json'):
             s=json.loads(path.read_text(encoding='utf-8'))
             if s['status']=='RUNNING':
@@ -53,10 +54,33 @@ class ExperimentStore:
             reread=self.get(s['id']);receipt['display_errors']=view_errors(receipt['rendered'],reread,parent)
             receipt['delivered_error']=bool(receipt['display_errors'])
             atomic_json(self.folder(s['id'])/'case.json',s)
+    def record_knowledge_basis(self,s):
+        if s.get('kind')=='inverse':
+            from .inverse_models import FILM, GAUSSIAN, SLIT
+            model=s.get('inverse_settings',{}).get('model')
+            ident={FILM:'film-ambiguity', SLIT:'double-period', GAUSSIAN:'gaussian-lens'}.get(model)
+        else:
+            aperture=(s.get('spec') or {}).get('known_parameters',{}).get('aperture')
+            ident={'film':'quarter-wave','gaussian':'gaussian-lens',
+                   'diffraction':'double-period' if aperture=='double_slit' else 'slit-width-definitions'}.get(s.get('domain'))
+        if not ident:
+            return
+        from .knowledge_catalog import catalog
+        try:
+            book=catalog(self.owner.root)
+        except (OSError,ValueError):
+            # A broken optional local content pack must not invalidate a completed solve.
+            return
+        article=book.entries.get(ident)
+        if article:
+            fields=('id','title','definition','body','formula','variables','conditions','sources','pack','version')
+            s['knowledge_basis']={'catalog_version':book.version,'article':{key:article[key] for key in fields}}
     def presentation(self,s):
         if s.get('kind')=='inverse':
             from .inverse_report import view
             out=view(s)
+            if s.get('inverse_result'):
+                out['result_sha256']=digest(s['inverse_result'])
             parent=self.get(s['inverse_reference_parent']) if s.get('inverse_reference_parent') else {}
             out['comparison_origin']=s.get('comparison_origin') or parent.get('comparison_origin')
             root=s if s['inverse_root']==s['id'] else self.get(s['inverse_root'])
@@ -81,14 +105,33 @@ class ExperimentStore:
         view['history']=sorted(events,key=lambda e:e['at']);view['available_versions']=sorted(versions,key=lambda v:v['created_order'])
         return view
     def public_record(self,s):
-        out=copy.deepcopy(s);out['experiment_record']=self.presentation(s);return out
+        from .learning_lessons import goal_reflection, state, study_hypothesis
+        from .task_entry import data_followups
+        out=copy.deepcopy(s);out['experiment_record']=self.presentation(s)
+        if trace:=self.study_origin(s):
+            out['study_origin']=trace
+        lesson=state(self,s)
+        if lesson:out['learning_lesson']=lesson
+        elif reflection:=goal_reflection(self,s):out['goal_reflection']=reflection
+        if s['status']=='COMPLETED' and (s.get('result') or s.get('inverse_result')):
+            hypothesis=study_hypothesis(self,s)
+            if hypothesis is not None:out['study_hypothesis']=hypothesis
+        models=data_followups(s)
+        if models:out['data_followups']=models
+        return out
+    def study_origin(self, record):
+        if record.get('study_origin'):
+            return record['study_origin']
+        if record.get('family_id') and record['family_id']!=record['id']:
+            return self.get(record['family_id']).get('study_origin')
+        return None
     def event(self,s,kind,value):
         p=self.folder(s['id'])/'events';p.mkdir(exist_ok=True)
         atomic_json(p/(uuid.uuid4().hex+'.json'),{'at':now(),'kind':kind,'value':value,'case_revision':s['revision']})
     def bootstrap(self):
         rows=[];records=[]
         for path in self.root.glob('*/case.json'):
-            s=json.loads(path.read_text(encoding='utf-8'));records.append(s);rows.append({k:s.get(k) for k in ('id','title','status','domain','updated_at','family_id')})
+            s=json.loads(path.read_text(encoding='utf-8'));records.append(s);rows.append({k:s.get(k) for k in ('id','title','status','domain','kind','updated_at','family_id')})
         binding=getattr(self.owner,'ai_binding',None)
         ai=self.client.status() if self.client else binding.status() if binding else {'live_enabled':False,'reason':'此环境未启用 AI 连接。'}
         if binding:ai={**ai,'binding':binding.status()}
@@ -107,7 +150,8 @@ class ExperimentStore:
           'live_ai':bool(ai.get('live_enabled')),'analysis':importlib.util.find_spec('scipy') is not None}
         from .observation_workflow import samples
         from .case_catalog import missions
-        return {'csrf':self.owner.csrf,'tools':TOOLS,'templates':templates(),'case_library':library,'library_sha256':library_digest(),'metrics':{k:sorted(v) for k,v in METRICS.items()},'cases':sorted(rows,key=lambda x:x['updated_at'],reverse=True),'ai':ai,'capabilities':capabilities,'missions':missions(),'data_samples':samples()}
+        from .learning_lessons import catalog as learning_catalog
+        return {'csrf':self.owner.csrf,'tools':TOOLS,'templates':templates(),'case_library':library,'library_sha256':library_digest(),'metrics':{k:sorted(v) for k,v in METRICS.items()},'cases':sorted(rows,key=lambda x:x['updated_at'],reverse=True),'ai':ai,'capabilities':capabilities,'missions':missions(),'data_samples':samples(),'learning_lessons':learning_catalog()}
     def create(self,data):
         if set(data)-{'kind','template_id','text'} or data.get('kind') not in ('teaching','specified'):raise WorkflowError('请选择教学示例或指定资料')
         kind=data['kind'];text=data.get('text','');template=None
@@ -145,6 +189,8 @@ class ExperimentStore:
             if data.get('expected_revision')!=s['revision']:raise WorkflowError('资料版本已改变，请刷新后核对',409)
             kind=data.get('type')
             if s['status']=='RUNNING':raise WorkflowError('当前计划正在运行，请等待结果',409)
+            if (s.get('slit_goal') or s.get('slit_followup') or s.get('learning_comparison') or s.get('bounded_goal')) and kind in ('plan','save','library_plan','supplement','fact_update','undo_fact','session_input','session_command','session_ai'):
+                raise WorkflowError('这份计划已绑定目标与来源。请通过目标表单创建新版，或在结果页准备对照。',409)
             if s.get('kind')=='inverse':
                 from .observation_group import action
                 return action(self,s,data)
@@ -241,13 +287,21 @@ class ExperimentStore:
             if kind=='run':
                 if data.get('approve') is not True or not s.get('plan') or data.get('plan_sha256')!=s['plan']['sha256'] or s['status']!='PLANNED':raise WorkflowError('请批准当前有效计划，旧确认不能复用',409)
                 if not self.owner.allow_workers or getattr(self.owner,'simulation_context',None):raise WorkflowError('当前服务禁止新求解',403)
-                if self.running:raise WorkflowError('本工作台已有计算任务，请稍候',409)
+                if self.running:raise WorkflowError('另一项计算正在运行。本轮尚未启动，请稍后重新核对并批准计划。',409)
+                comparison = s.get('slit_followup') or s.get('learning_comparison') or s.get('bounded_goal')
+                if comparison:
+                    source = comparison['source']
+                    parent = self.verified_case(source['record_id'])
+                    if digest(parent['result']) != source['result_sha256'] or digest(parent['spec']) != s['parent_context']['source_spec_sha256']:
+                        raise WorkflowError('来源结果或约束已变化，请重新准备对照。',409)
                 if build_plan(s['spec'],s.get('parent_context'))!=s['plan']:raise WorkflowError('计划校验失败',409)
                 from .case_workflow import reserve
-                reserve(self,s)
-                self.event(s,'PLAN_APPROVED',{'actor':'BROWSER_USER_ACTION','plan_sha256':s['plan']['sha256'],'resource_budget':s['plan']['resource_budget']})
-                s['status']='RUNNING';s['approved_plan_sha256']=s['plan']['sha256'];self.running.add(s['id']);self.save(s)
-                threading.Thread(target=self._run,args=(s['id'],),daemon=True).start();return s
+                with admit_solver() as launch:
+                    reserve(self,s)
+                    self.event(s,'PLAN_APPROVED',{'actor':'BROWSER_USER_ACTION','plan_sha256':s['plan']['sha256'],'resource_budget':s['plan']['resource_budget']})
+                    s['status']='RUNNING';s['approved_plan_sha256']=s['plan']['sha256'];self.running.add(s['id']);self.save(s)
+                    launch(self._run, (s['id'],))
+                return s
             if kind=='explain':
                 if not s.get('result'):raise WorkflowError('先运行实验，再解释实际结果')
                 client=self._model(s,data);facts=[]
@@ -281,6 +335,8 @@ class ExperimentStore:
             s=self.get(ident);result=execute_plan(s['plan'],self.folder(ident)/'execution')
             with self.lock:
                 s=self.get(ident);s.update(result=result,status='COMPLETED' if result['status']=='RUN_COMPLETED' else 'FAILED')
+                if s['status']=='COMPLETED':
+                    self.record_knowledge_basis(s)
                 if s.get('parent_id'):s['parent_comparison']=compare_versions(self.get(s['parent_id']),s)
                 self.save(s)
                 # Publish a terminal result and its output accounting under one lock.
@@ -334,12 +390,11 @@ class ExperimentStore:
         if not s.get('result'):raise WorkflowError('尚无实际结果可以生成只读摘要')
         return render_summary(s,self.presentation(s))
     def export_family(self,ident):
-        """Snapshot a data family, including rejected versions, without computing."""
+        """Snapshot a task family, including rejected versions, without computing."""
         with self.lock:
             current=self.verified_case(ident)
             members=[self.get(p.parent.name) for p in self.root.glob('*/case.json')]
             members=sorted((s for s in members if s.get('family_id')==current['family_id']),key=lambda s:s['id'])
-            if not any(s.get('kind') in ('observation','inverse') for s in members):raise WorkflowError('此导出入口仅用于数据任务链')
             # Bound input and expansion before constructing in-memory ZIPs.
             limit=128*1024**2;size=0
             for s in members:
@@ -386,6 +441,11 @@ class ExperimentStore:
                 for name,raw in derived.items():files[name]=hashlib.sha256(raw).hexdigest();z.writestr(name,raw)
                 raw='原始扫描、计划与局部结果均保留；MODEL_ESTIMATE 不是真实参数保证。复跑：python -m photonguard.experiments.inverse_cli inverse-execution/request.json --out rerun --approve。教学隐藏对象不导出到分析资料；复跑使用已保存 CSV，不重新生成测量。\n'.encode()
                 files['INVERSE_README_ZH.md']=hashlib.sha256(raw).hexdigest();z.writestr('INVERSE_README_ZH.md',raw)
+            if s.get('result') or s.get('inverse_result'):
+                from .learning_record import markdown
+                raw=markdown(self,s).encode('utf-8')
+                files['LEARNING_RECORD.md']=hashlib.sha256(raw).hexdigest()
+                z.writestr('LEARNING_RECORD.md',raw)
             z.writestr('EXPORT_MANIFEST.json',json.dumps({'case_id':ident,'files':files},indent=2))
             z.writestr('README_ZH.md','模型估计不代表实测参数；原始数据未清洗。拟合复跑：python -m photonguard.experiments.inference_cli fit-execution/request.json --out rerun --approve。后续版本通过 case.json 的 forward_children / parent_id 关联，各版本可分别导出。\n' if s.get('kind')=='observation' else '这是指定理想模型和有限候选的可复核记录。计划及数值结果保存在JSON中。\n重新运行需明确再次消耗计算资源：python -m photonguard.experiments.cli run execution/plan.json --out rerun --approve\n运行完成、数值检查通过、目标达标是三个不同状态。教学结果不代表实际器件。\n')
         return buffer.getvalue()
@@ -396,6 +456,15 @@ def store_for(owner):
         return owner.experiment_store
 
 def route_get(handler,path,parts):
+    if parts[:3]==['api','experiments','knowledge']:
+        from .knowledge_routes import get as knowledge_get
+        return knowledge_get(handler,parts[3:])
+    if path=='/api/experiments/learning/cards':
+        from .tutor import knowledge_library
+        handler.json(knowledge_library());return True
+    if len(parts)==5 and parts[:4]==['api','experiments','learning','session']:
+        from .learning_session import get_session
+        handler.json(get_session(store_for(handler.store),parts[4]));return True
     if path=='/api/experiments/ai/status':
         from .ai_binding import manager_for
         handler.json(manager_for(handler.store).status());return True
@@ -409,24 +478,94 @@ def route_get(handler,path,parts):
     if len(parts)==5 and parts[:3]==['api','experiments','cases'] and parts[4]=='family-export':handler.send(store_for(handler.store).export_family(parts[3]),'application/zip');return True
     if len(parts)==5 and parts[:3]==['api','experiments','cases'] and parts[4]=='summary':handler.send(store_for(handler.store).export_summary(parts[3]),'text/html; charset=utf-8');return True
     if len(parts)==5 and parts[:3]==['api','experiments','cases'] and parts[4]=='table':handler.send(store_for(handler.store).export_table(parts[3]),'text/csv; charset=utf-8');return True
+    if len(parts) in (6,7) and parts[:3]==['api','experiments','cases'] and parts[4]=='csv' and parts[5] in ('0','1','2') and parts[6:] in ([],['analysis']):
+        from .observation_group import original_file
+        store=store_for(handler.store);record=store.verified_case(parts[3]);index=int(parts[5])
+        if record.get('kind')!='inverse':raise WorkflowError('此实验没有已导入的反向采集。',404)
+        file=original_file(store,record,index)
+        kind='analysis' if len(parts)==7 else 'original'
+        if kind=='analysis':file=store.folder(record['id'])/record['groups'][index]['raw_file']
+        handler.send(file.read_bytes(),'text/csv; charset=utf-8',filename=f'{kind}-scan-{index+1}.csv');return True
+    if len(parts)==5 and parts[:3]==['api','experiments','cases'] and parts[4]=='learning-record':
+        from .learning_record import markdown
+        store=store_for(handler.store)
+        handler.send(markdown(store,store.get(parts[3])).encode('utf-8'),'text/markdown; charset=utf-8');return True
     return False
 
 def route_post(handler,path,parts,data):
+    from .workbench_operations import HEADER, recover, submit
+    operation_ids = handler.headers.get_all(HEADER, [])
+    if len(operation_ids) > 1:
+        raise WorkflowError('一次提交只接受一个编号。')
+    operation_id = operation_ids[0] if operation_ids else None
+
+    def reply(store, execute):
+        value, status = submit(store, operation_id, path, data, execute) if operation_id is not None else execute()
+        handler.json(value, status)
+        return True
+
+    if path == '/api/experiments/operation/recover':
+        if set(data) != {'id'}:
+            raise WorkflowError('请指定要核对的提交。')
+        handler.json(recover(store_for(handler.store), data['id']))
+        return True
+    if path=='/api/experiments/csv/preview':
+        from .csv_intake import preview
+        handler.json(preview(data));return True
+    if path=='/api/experiments/knowledge/ask':
+        from .knowledge_routes import ask
+        return ask(handler,data)
+    if path=='/api/experiments/knowledge/expand-tutor':
+        from .knowledge_routes import expand_tutor
+        return expand_tutor(handler,data)
+    if path=='/api/experiments/knowledge/slit':
+        from .knowledge_experiment import slit
+        handler.json(slit(store_for(handler.store),data))
+        return True
+    if path.startswith('/api/experiments/learning/'):
+        from .learning_routes import post
+        store = store_for(handler.store)
+        if path in ('/api/experiments/learning/lesson/start', '/api/experiments/learning/slit/plan'):
+            def execute():
+                result = post(store, path, data)
+                return result, 201 if result.get('status') == 'CREATED' else 200
+            return reply(store, execute)
+        result = post(store, path, data)
+        if result is not None:
+            handler.json(result, 201 if result.get('status')=='CREATED' else 200)
+            return True
     if path=='/api/experiments/task-start':
         from .task_entry import start
         store=store_for(handler.store)
-        with store.lock:result=start(store,data)
-        handler.json(result,201 if result['status']=='CREATED' else 200);return True
+        def execute():
+            with store.lock:
+                result = start(store, data)
+            return result, 201 if result['status'] == 'CREATED' else 200
+        return reply(store, execute)
     if path=='/api/experiments/inverse':
         from .observation_group import create
         store=store_for(handler.store)
-        with store.lock:record=create(store,data)
-        handler.json(store.public_record(record),201);return True
+        def execute():
+            with store.lock:
+                from .inverse_models import FILM
+                body=dict(data)
+                binding=body.pop('study',None)
+                trace=None
+                if binding is not None:
+                    if (body.get('model')!=FILM or not isinstance(binding,dict)
+                            or set(binding)!={'session_id','turn_id'}):
+                        raise WorkflowError('请选择本轮膜厚学习记录。')
+                    from .knowledge_experiment import origin
+                    trace,_=origin(store,binding['session_id'],binding['turn_id'],domain='film')
+                return store.public_record(create(store,body,study_origin=trace)), 201
+        return reply(store, execute)
     if path=='/api/experiments/observations':
         from .observation_workflow import create
         store=store_for(handler.store)
-        with store.lock:record=create(store,data)
-        handler.json(store.public_record(record),201);return True
+        def execute():
+            with store.lock:
+                return store.public_record(create(store, data)), 201
+        return reply(store, execute)
     if path in ('/api/experiments/ai/connect','/api/experiments/ai/disconnect'):
         from .ai_binding import manager_for
         binding=manager_for(handler.store)
@@ -440,8 +579,12 @@ def route_post(handler,path,parts,data):
         handler.json({'cases':search(data.get('query',''),data.get('domain'),data.get('metric'),data.get('variables')),'library_sha256':library_digest()});return True
     if path=='/api/experiments/library/create':
         from .case_workflow import create
-        handler.json(create(store_for(handler.store),data),201);return True
-    if path=='/api/experiments/cases':handler.json(store_for(handler.store).create(data),201);return True
+        store = store_for(handler.store)
+        return reply(store, lambda: (create(store, data), 201))
+    if path=='/api/experiments/cases':
+        store = store_for(handler.store)
+        return reply(store, lambda: (store.create(data), 201))
     if len(parts)==5 and parts[:3]==['api','experiments','cases'] and parts[4]=='action':
-        store=store_for(handler.store);handler.json(store.public_record(store.action(parts[3],data)));return True
+        store = store_for(handler.store)
+        return reply(store, lambda: (store.public_record(store.action(parts[3], data)), 200))
     return False

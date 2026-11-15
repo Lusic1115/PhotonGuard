@@ -1,0 +1,2824 @@
+{
+  "id": "laser-resonators",
+  "version": "1.1.0",
+  "sources": {
+    "laser-resonator": {
+      "title": "Interactive Optics · Lasers",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap7_Lasers/Lasers_2022_01Clean.html#optical-resonator",
+      "section": "Optical Resonator",
+      "fingerprint": "sha256:9f23eb7995a920b612e33be486fbfb01495219960198b098d5fccd167dc18045",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-313": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=313",
+      "section": "§7.4 增益谱、损耗和腔模，阅读器第 313 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "laser-amplification": {
+      "title": "Interactive Optics · Lasers",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap7_Lasers/Lasers_2022_01Clean.html#amplification",
+      "section": "Amplification",
+      "fingerprint": "sha256:9f23eb7995a920b612e33be486fbfb01495219960198b098d5fccd167dc18045",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "cavities": {
+      "title": "Interactive Optics · Lasers",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap7_Lasers/Lasers_2022_01Clean.html#cavities",
+      "section": "Cavities",
+      "fingerprint": "sha256:9f23eb7995a920b612e33be486fbfb01495219960198b098d5fccd167dc18045",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-321": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=321",
+      "section": "§7.7 激光器效率，阅读器第 321 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-87": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=87",
+      "section": "§2.3.8 法布里–珀罗峰宽及 Q，阅读器第 87 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-329": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=329",
+      "section": "§7.10 脉冲间距和模数，阅读器第 329 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "laser-narrow": {
+      "title": "Interactive Optics · Lasers",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap7_Lasers/Lasers_2022_01Clean.html#narrow-spectral-width-high-temporal-coherence",
+      "section": "Narrow Spectral Width; High Temporal Coherence",
+      "fingerprint": "sha256:9f23eb7995a920b612e33be486fbfb01495219960198b098d5fccd167dc18045",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "einstein": {
+      "title": "Interactive Optics · Lasers",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap7_Lasers/Lasers_2022_01Clean.html#the-einstein-coefficients",
+      "section": "The Einstein Coefficients",
+      "fingerprint": "sha256:9f23eb7995a920b612e33be486fbfb01495219960198b098d5fccd167dc18045",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-310": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=310",
+      "section": "§7.3.6 均匀与非均匀展宽，阅读器第 310 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-316": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=316",
+      "section": "§7.4 反转与光子数速率方程，阅读器第 316 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-296": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=296",
+      "section": "§7.2 三能级与四能级激光介质，阅读器第 296 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "inversion": {
+      "title": "Interactive Optics · Lasers",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap7_Lasers/Lasers_2022_01Clean.html#population-inversion",
+      "section": "Population Inversion",
+      "fingerprint": "sha256:9f23eb7995a920b612e33be486fbfb01495219960198b098d5fccd167dc18045",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "optical-pump": {
+      "title": "Interactive Optics · Lasers",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap7_Lasers/Lasers_2022_01Clean.html#optical-pumping",
+      "section": "Optical Pumping",
+      "fingerprint": "sha256:9f23eb7995a920b612e33be486fbfb01495219960198b098d5fccd167dc18045",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "semiconductor": {
+      "title": "Interactive Optics · Lasers",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap7_Lasers/Lasers_2022_01Clean.html#semiconductor-laser",
+      "section": "Semiconductor Laser",
+      "fingerprint": "sha256:9f23eb7995a920b612e33be486fbfb01495219960198b098d5fccd167dc18045",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-100": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=100",
+      "section": "§2.4.2 波前曲率、相位与 q 参数，阅读器第 100 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-109": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=109",
+      "section": "§2.6.1 高斯光束的 ABCD 变换，阅读器第 109 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-110": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=110",
+      "section": "§2.6.1 薄透镜对 q 参数的作用，阅读器第 110 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-114": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=114",
+      "section": "§2.6.2 稳定性、往返矩阵迹与本征值，阅读器第 114 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-116": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=116",
+      "section": "§2.6.2 双镜腔稳定区与 g 参数，阅读器第 116 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-121": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=121",
+      "section": "§2.6.3 腔模频率与横模相移，阅读器第 121 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-119": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=119",
+      "section": "§2.6.2 厄米–高斯横模，阅读器第 119 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-328": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=328",
+      "section": "§7.10 锁模光谱与相干叠加，阅读器第 328 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-330": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=330",
+      "section": "§7.10.1 主动锁模，阅读器第 330 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-325": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=325",
+      "section": "§7.9 主动调 Q，阅读器第 325 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "photonics-327": {
+      "title": "Fundamentals of Photonics",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=327",
+      "section": "§7.9 被动调 Q，阅读器第 327 页",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974，Spring 2006",
+      "license": "MIT OCW 通用许可 CC BY-NC-SA 4.0，第三方资料另计",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "laser-operation": {
+      "title": "Interactive Optics · Lasers",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap7_Lasers/Lasers_2022_01Clean.html#problems-with-laser-operation",
+      "section": "Problems with Laser Operation",
+      "fingerprint": "sha256:9f23eb7995a920b612e33be486fbfb01495219960198b098d5fccd167dc18045",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    }
+  },
+  "entries": [
+    {
+      "id": "laser-oscillator-feedback",
+      "title": "光放大器如何变成振荡器",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "laser oscillator",
+        "激光反馈"
+      ],
+      "definition": "激光振荡器用反馈把放大后的光重新送入增益区。",
+      "body": "单程放大能增强经过介质的输入场，往返反馈则让共振条件下的微小初始场反复被放大。选定频率的往返增益达到损耗时可以起振，稳态由饱和和损耗共同决定。",
+      "example": "把两个反射镜放在泵浦介质两侧，比较有反馈和单程通过的输出。",
+      "caution": "能放大不代表必然起振，还要核对反馈和相位。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "laser-resonator",
+        "photonics-313"
+      ],
+      "prerequisites": [
+        "stimulated-emission"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "激光振荡器用反馈把放大后的光重新送入增益区。",
+          "sources": [
+            "laser-resonator",
+            "photonics-313"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "把两个反射镜放在泵浦介质两侧，比较有反馈和单程通过的输出。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "laser-round-trip-gain",
+      "title": "往返功率增益的记账",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "round-trip power gain",
+        "激光增益损耗预算"
+      ],
+      "definition": "往返增益乘往返功率透过率可判断小信号场在一圈后是否增强。",
+      "body": "把增益介质的光路次数、镜面反射与内部传播透过率统一成一整圈的乘积。乘积大于一时相应模可以增长；稳定振荡后增益通常会降到与损耗平衡。",
+      "example": "两次相同增益通过的功率增益各 1.1，其他往返透过为 0.9，乘积约 1.09。",
+      "caution": "振幅乘子、功率乘子和分贝不能直接混算。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": "G_rt T_rt=1（阈值）",
+      "variables": "G_rt、T_rt 为无量纲功率倍数。",
+      "sources": [
+        "photonics-313",
+        "laser-amplification"
+      ],
+      "prerequisites": [
+        "laser-threshold"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "G_rt T_rt=1（阈值）",
+          "sources": [
+            "photonics-313",
+            "laser-amplification"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两次相同增益通过的功率增益各 1.1，其他往返透过为 0.9，乘积约 1.09。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "laser-log-loss",
+      "title": "激光腔对数损耗",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "logarithmic loss",
+        "激光往返分贝"
+      ],
+      "definition": "将往返功率透过率取负自然对数，可把多项损耗写成相加。",
+      "body": "多次传播和反射的功率透过率原来以乘法组合。取对数后，每个部件的贡献可以相加，增益和损耗也可在相同的对数尺度上比较。这在低损耗近似中尤为方便。",
+      "example": "往返透过率 0.9 对应自然对数损耗约 0.105。",
+      "caution": "自然对数损耗与 dB 之间需要换底和系数。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": "ℓ=−ln(T_rt)",
+      "variables": "T_rt 是 0 至 1 之间的功率比例，ℓ 无量纲。",
+      "sources": [
+        "photonics-313",
+        "cavities"
+      ],
+      "prerequisites": [
+        "laser-round-trip-gain"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ℓ=−ln(T_rt)",
+          "sources": [
+            "photonics-313",
+            "cavities"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "往返透过率 0.9 对应自然对数损耗约 0.105。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "laser-output-coupler",
+      "title": "激光器的输出耦合镜",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "output coupler",
+        "激光半透镜",
+        "输出耦合镜",
+        "输出镜",
+        "激光为什么有一面镜子是半透的"
+      ],
+      "definition": "输出耦合镜将腔内循环光的一部分透出形成有用输出。",
+      "body": "增大透射率有机会提取更多腔内功率，也增加往返损耗和阈值。最佳透射取决于可用增益、泵浦和其余损耗，不能只按镜面透射百分数判断最终输出功率。",
+      "example": "相同泵浦下比较两种输出耦合镜的阈值与输出曲线。",
+      "caution": "要考虑镜面吸收和散射，透射不一定等于一减反射。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "cavities",
+        "photonics-321"
+      ],
+      "prerequisites": [
+        "laser-round-trip-gain"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "输出耦合镜将腔内循环光的一部分透出形成有用输出。",
+          "sources": [
+            "cavities",
+            "photonics-321"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "相同泵浦下比较两种输出耦合镜的阈值与输出曲线。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "laser-photon-lifetime",
+      "title": "腔内光子寿命",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "photon lifetime",
+        "cavity ringdown time"
+      ],
+      "definition": "停止补充能量后，腔内能量指数下降的时间常数可称光子寿命。",
+      "body": "在简化模型中，每个往返以固定比例保留能量，经过很多圈表现为指数衰减。寿命越长，腔储能衰减越慢，理想单共振通常越窄。可用关闭入射后的探测信号拟合寿命。",
+      "example": "若每 1 ns 的能量留存比例为 0.99，寿命约 99.5 ns。",
+      "caution": "衰减对象是能量或功率；场幅时间常数不同。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": "τ=−t_rt/ln(T_rt)",
+      "variables": "t_rt、τ 用 s，T_rt 为能量留存比例。",
+      "sources": [
+        "photonics-87"
+      ],
+      "prerequisites": [
+        "cavity-quality-factor"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "τ=−t_rt/ln(T_rt)",
+          "sources": [
+            "photonics-87"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若每 1 ns 的能量留存比例为 0.99，寿命约 99.5 ns。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "cavity-round-trip-time",
+      "title": "线腔与环腔的往返时间",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "cavity round trip time",
+        "腔内一圈时间"
+      ],
+      "definition": "往返时间是光在腔内走完整个闭合传播路径所需的群延迟。",
+      "body": "线性腔内光沿镜间路径往返，均匀介质下长度为两倍镜间距。环腔的长度已经是一整圈。多段介质时累加各段群时延，再用其倒数估相邻纵模间距。",
+      "example": "空气线性腔镜距 30 cm 的往返时间约 2 ns，FSR 约 500 MHz。",
+      "caution": "避免把环腔周长再乘二。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": "t_rt=Σ n_g L_segment/c",
+      "variables": "L_segment 为实际一圈中各段路径长度，t_rt 用 s。",
+      "sources": [
+        "cavities",
+        "photonics-329"
+      ],
+      "prerequisites": [
+        "free-spectral-range"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "t_rt=Σ n_g L_segment/c",
+          "sources": [
+            "cavities",
+            "photonics-329"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "空气线性腔镜距 30 cm 的往返时间约 2 ns，FSR 约 500 MHz。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "laser-resonance-vs-gain-spectrum",
+      "title": "腔共振谱与介质增益谱",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "gain envelope and cavity modes",
+        "增益谱腔模比较"
+      ],
+      "definition": "介质增益谱是连续的频率依赖，腔模则由往返相位限定在离散频率。",
+      "body": "将增益曲线、腔损耗和共振频率标在同一图上，只有落在净增益充分的频率上的腔模有增长机会。改变腔长会移动共振位置和间距，温度或泵浦也可改变增益谱。",
+      "example": "缩短腔长使模间隔增大，观察同一增益包络内允许的模数变化。",
+      "caution": "落入增益包络是候选条件，实际稳态仍取决于竞争。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-313",
+        "laser-resonator"
+      ],
+      "prerequisites": [
+        "laser-longitudinal-modes"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "介质增益谱是连续的频率依赖，腔模则由往返相位限定在离散频率。",
+          "sources": [
+            "photonics-313",
+            "laser-resonator"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "缩短腔长使模间隔增大，观察同一增益包络内允许的模数变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "longitudinal-mode-count-estimate",
+      "title": "增益区内纵模数的粗估",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "longitudinal mode count",
+        "增益带宽除FSR"
+      ],
+      "definition": "可用有净增益的频率区间宽度除以 FSR，粗估该区间容纳的纵模数量。",
+      "body": "在近似等间隔的模梳上，净增益区间两端与模线的相对位置会改变实际计数。该估计给的是可能参加振荡的频率数；增益竞争和选择器件会改变最终观测线数。",
+      "example": "有效净增益区 5 GHz、FSR 0.5 GHz 时，量级约十个纵模位置。",
+      "caution": "不要把增益介质标称半高宽直接当成净增益区。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-313"
+      ],
+      "prerequisites": [
+        "laser-resonance-vs-gain-spectrum"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "可用有净增益的频率区间宽度除以 FSR，粗估该区间容纳的纵模数量。",
+          "sources": [
+            "photonics-313"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "有效净增益区 5 GHz、FSR 0.5 GHz 时，量级约十个纵模位置。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "laser-oscillation-linewidth",
+      "title": "输出激光谱线与被动腔宽",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "laser emission linewidth",
+        "激光线宽与腔宽",
+        "激光线宽",
+        "激光器的线宽",
+        "激光输出线宽"
+      ],
+      "definition": "激光输出中单根谱线的宽度描述输出场频率和相位的稳定程度。",
+      "body": "被动腔的透射宽度由储能和损耗限定，振荡后的输出谱则还依赖受激过程、相位噪声和技术扰动。测量时应说明频率分辨率、观测时间和线宽定义。",
+      "example": "分别扫被动腔透射和记录激光输出频谱，保留两个不同的宽度读数。",
+      "caution": "多个纵模组成的包络宽度也需要单独区分。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "laser-narrow",
+        "photonics-87"
+      ],
+      "prerequisites": [
+        "cavity-linewidth"
+      ],
+      "related": [
+        "laser-resonance-vs-gain-spectrum"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "激光输出中单根谱线的宽度描述输出场频率和相位的稳定程度。",
+          "sources": [
+            "laser-narrow",
+            "photonics-87"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "分别扫被动腔透射和记录激光输出频谱，保留两个不同的宽度读数。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "laser-gain-cross-section",
+      "title": "受激跃迁截面与增益",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "stimulated cross section",
+        "受激发射截面"
+      ],
+      "definition": "受激跃迁截面把光子通量和单粒子受激跃迁率联系起来。",
+      "body": "在给定频率与偏振条件下，单位时间的受激发射概率与入射光子通量成比例。计算净增益还需考虑下能级吸收与上能级受激发射之间的竞争，截面会随频率改变。",
+      "example": "把光子通量提高一倍，弱光近似下单粒子受激跃迁率近似加倍。",
+      "caution": "截面是有效作用量，不是粒子的实际几何大小。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": "W_st=σΦ",
+      "variables": "σ 用 m²，光子通量 Φ 用 m⁻²s⁻¹，W_st 用 s⁻¹。",
+      "sources": [
+        "einstein",
+        "photonics-310"
+      ],
+      "prerequisites": [
+        "stimulated-emission"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "W_st=σΦ",
+          "sources": [
+            "einstein",
+            "photonics-310"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "把光子通量提高一倍，弱光近似下单粒子受激跃迁率近似加倍。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "spontaneous-emission-seed",
+      "title": "自发辐射对腔模的起始作用",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "spontaneous emission seed",
+        "激光起振种子"
+      ],
+      "definition": "自发辐射可为允许的腔模提供小的初始光子数。",
+      "body": "泵浦建立反转后，部分自发辐射进入有净增益的模式。相应模式在每次反馈中继续获得受激增长，直至增益饱和。存在起始光子并不保证模式超过阈值。",
+      "example": "比较低于阈值时的宽背景与跨阈值后明显增长的窄峰。",
+      "caution": "自发辐射源与有相位关系的受激放大应分别描述。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-316",
+        "laser-amplification"
+      ],
+      "prerequisites": [
+        "laser-oscillator-feedback"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "自发辐射可为允许的腔模提供小的初始光子数。",
+          "sources": [
+            "photonics-316",
+            "laser-amplification"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较低于阈值时的宽背景与跨阈值后明显增长的窄峰。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "einstein-a-and-b",
+      "title": "自发与受激的 Einstein 系数",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "Einstein coefficients",
+        "A系数B系数"
+      ],
+      "definition": "Einstein A 描述自发跃迁速率，B 与外加辐射谱密度一起决定受激跃迁速率。",
+      "body": "两能级体系中可分别写吸收、受激发射和自发发射。热平衡约束这些系数之间的关系；在激光中外部泵浦将粒子数带离热平衡，使净受激发射有机会为正。",
+      "example": "关掉外部照明后，受激项降低，自发衰减仍可继续。",
+      "caution": "辐射谱密度采用按频率或角频率定义时 B 的表示须一致。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "einstein"
+      ],
+      "prerequisites": [
+        "stimulated-emission"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "Einstein A 描述自发跃迁速率，B 与外加辐射谱密度一起决定受激跃迁速率。",
+          "sources": [
+            "einstein"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "关掉外部照明后，受激项降低，自发衰减仍可继续。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "gain-saturation-small-signal",
+      "title": "小信号增益与增益饱和",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "gain saturation",
+        "饱和增益"
+      ],
+      "definition": "信号很弱时近似获得固定增益；场变强后消耗反转，增益会下降。",
+      "body": "泵浦补充反转，受激发射消耗反转。达到稳态时两者及其他衰减共同决定粒子数。在振荡器中，达到阈值后继续提高泵浦，额外能量主要体现为腔内和输出光的增加。",
+      "example": "固定泵浦比较两个强度不同的输入信号，强信号的净放大倍数可能更小。",
+      "caution": "应说明测的是瞬态还是稳态饱和。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-316",
+        "photonics-321"
+      ],
+      "prerequisites": [
+        "laser-round-trip-gain"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "信号很弱时近似获得固定增益；场变强后消耗反转，增益会下降。",
+          "sources": [
+            "photonics-316",
+            "photonics-321"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "固定泵浦比较两个强度不同的输入信号，强信号的净放大倍数可能更小。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "homogeneous-line-broadening",
+      "title": "均匀展宽",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "homogeneous broadening",
+        "均匀增益线宽"
+      ],
+      "definition": "均匀展宽下，同类发射体在统计上具有相同的单粒子谱响应。",
+      "body": "寿命和碰撞等过程可给每个发射体类似的线形。当一个频率的强光消耗共同反转时，其他频率可获得的增益也随之降低。与不同粒子拥有不同中心频率的机制应分别建模。",
+      "example": "改变气体压力可改变碰撞过程导致的线宽。",
+      "caution": "同一介质可同时包含均匀和非均匀展宽。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-310"
+      ],
+      "prerequisites": [
+        "gain-bandwidth"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "均匀展宽下，同类发射体在统计上具有相同的单粒子谱响应。",
+          "sources": [
+            "photonics-310"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "改变气体压力可改变碰撞过程导致的线宽。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "inhomogeneous-line-broadening",
+      "title": "非均匀展宽",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "inhomogeneous broadening",
+        "非均匀增益展宽"
+      ],
+      "definition": "非均匀展宽来自发射体集合内中心频率存在分布。",
+      "body": "即使单个发射体的谱线很窄，速度、局部材料环境等差异也可让总谱变宽。特定窄频率的强信号可能主要消耗与之共振的一部分发射体，其他频段的反转仍部分保留。",
+      "example": "不同速度组的多普勒频移叠加可形成较宽气体谱。",
+      "caution": "总谱宽不能直接作为每个发射体的单独线宽。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-310"
+      ],
+      "prerequisites": [
+        "gain-bandwidth"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "非均匀展宽来自发射体集合内中心频率存在分布。",
+          "sources": [
+            "photonics-310"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "不同速度组的多普勒频移叠加可形成较宽气体谱。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "mode-competition-gain",
+      "title": "纵模之间的增益竞争",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "longitudinal mode competition",
+        "模竞争"
+      ],
+      "definition": "多个模式使用同一反转粒子群时，可以通过饱和相互影响。",
+      "body": "先增长的模式消耗部分反转，使其他模式的净增益降低。空间重叠、增益展宽和驻波分布会改变竞争强度，因此净增益谱可容纳多个模，也可能最终只有少数模振荡。",
+      "example": "在相同腔体中调整选择性元件，观察输出模的数目和强弱变化。",
+      "caution": "多个模式并存与多个模式相位锁定是不同的性质。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-313",
+        "photonics-316"
+      ],
+      "prerequisites": [
+        "gain-saturation-small-signal"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "多个模式使用同一反转粒子群时，可以通过饱和相互影响。",
+          "sources": [
+            "photonics-313",
+            "photonics-316"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在相同腔体中调整选择性元件，观察输出模的数目和强弱变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "three-level-pumping",
+      "title": "三能级激光的反转条件",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "three-level laser",
+        "基态作下能级"
+      ],
+      "definition": "三能级结构的激光下能级接近基态，必须先克服大量初始占据。",
+      "body": "泵浦将粒子激发到较高能级，再较快地落到亚稳上能级。当激光跃迁的上能级占据超过有效下能级占据时才可能有净增益。简化的等简并模型中往往需要较强泵浦。",
+      "example": "把基态作为激光下能级，与快速抽空下能级的四能级结构比较。",
+      "caution": "严格反转条件还需计入能级简并和实际跃迁截面。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-296",
+        "inversion"
+      ],
+      "prerequisites": [
+        "population-inversion"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "三能级结构的激光下能级接近基态，必须先克服大量初始占据。",
+          "sources": [
+            "photonics-296",
+            "inversion"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "把基态作为激光下能级，与快速抽空下能级的四能级结构比较。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "four-level-pumping",
+      "title": "四能级激光的下能级排空",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "four-level laser",
+        "四能级增益介质"
+      ],
+      "definition": "四能级结构使激光下能级高于基态，并能较快弛豫排空。",
+      "body": "泵浦粒子先进入高能级并转移到激光上能级。受激发射落到的下能级如果迅速返回基态，少量上能级占据就能产生反转。最终起振仍需上能级提供足够增益抵偿腔损耗。",
+      "example": "比较模型中下能级寿命远短于和接近上能级寿命时的阈值趋势。",
+      "caution": "热占据、再吸收和泵浦效率会影响实际性能。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-296"
+      ],
+      "prerequisites": [
+        "three-level-pumping"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "四能级结构使激光下能级高于基态，并能较快弛豫排空。",
+          "sources": [
+            "photonics-296"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较模型中下能级寿命远短于和接近上能级寿命时的阈值趋势。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "laser-optical-pump-absorption",
+      "title": "光泵吸收与激光输出波长",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "optical pumping",
+        "泵浦光波长"
+      ],
+      "definition": "光泵通过介质吸收在能级之间转移粒子，泵浦波长由吸收带选择。",
+      "body": "被吸收的泵浦光先建立激发粒子，随后可能发生非辐射弛豫和受激辐射。泵浦输入与输出光的能量之差可进入热或其他通道，设计中需区分入射泵功率和被吸收泵功率。",
+      "example": "扫描泵浦波长并同时观察透过泵光及激光输出。",
+      "caution": "吸收最强的位置也要与热和可用泵源条件一起权衡。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "optical-pump",
+        "photonics-296"
+      ],
+      "prerequisites": [
+        "population-inversion"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "光泵通过介质吸收在能级之间转移粒子，泵浦波长由吸收带选择。",
+          "sources": [
+            "optical-pump",
+            "photonics-296"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "扫描泵浦波长并同时观察透过泵光及激光输出。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "laser-slope-efficiency",
+      "title": "阈值以上的斜率效率",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "laser slope efficiency",
+        "泵功率输出斜率"
+      ],
+      "definition": "斜率效率是指定工作区间内输出功率相对泵功率的增量比。",
+      "body": "在阈值以上且响应近似线性的区域，拟合输出功率与泵功率的直线，斜率描述进一步加泵后有多少输出增量。功率口径是入射、吸收或电输入，会直接影响数值。",
+      "example": "泵浦从 2 W 到 3 W 时输出从 0.2 W 到 0.5 W，该区间斜率约 0.3。",
+      "caution": "斜率效率与某工作点的总功率转换效率不同。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-321"
+      ],
+      "prerequisites": [
+        "laser-threshold"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "斜率效率是指定工作区间内输出功率相对泵功率的增量比。",
+          "sources": [
+            "photonics-321"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "泵浦从 2 W 到 3 W 时输出从 0.2 W 到 0.5 W，该区间斜率约 0.3。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "laser-diode-current-threshold",
+      "title": "半导体激光的注入阈值",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "laser diode current threshold",
+        "激光二极管阈值电流",
+        "阈值电流",
+        "激光二极管起振电流"
+      ],
+      "definition": "半导体激光器用注入电流建立净增益，在阈值附近输出光功率曲线斜率改变。",
+      "body": "低电流时可观察到主要来自自发辐射的输出；足够注入使某些导模的增益抵消损耗时，受激输出显著增强。温度改变载流子分布、增益和折射率，阈值随之变化。",
+      "example": "比较保持同温和升温时的光功率对电流曲线。",
+      "caution": "光电曲线的拐点拟合方法和温控条件应注明。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "semiconductor"
+      ],
+      "prerequisites": [
+        "laser-threshold"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "半导体激光器用注入电流建立净增益，在阈值附近输出光功率曲线斜率改变。",
+          "sources": [
+            "semiconductor"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较保持同温和升温时的光功率对电流曲线。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "gaussian-q-parameter",
+      "title": "高斯光束复参数 q",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "complex beam parameter",
+        "q参数"
+      ],
+      "definition": "q 用复数同时编码理想高斯光束的波前曲率与光斑尺寸。",
+      "body": "以束腰为原点可写成 z+i z_R，传播把实部向前平移。倒数的实部给曲率倒数，虚部的量值给束半径对应的衍射尺度。这个表示便于级联近轴元件。",
+      "example": "束腰处 q 为纯虚数，说明波前曲率倒数为零。",
+      "caution": "不同教材用不同时间相位符号，虚部记号应成套使用。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": "q=z+i z_R，1/q=1/R−iλ/(πw²)",
+      "variables": "q、z、z_R、R、w、λ 用同一长度单位。",
+      "sources": [
+        "photonics-100",
+        "photonics-109"
+      ],
+      "prerequisites": [
+        "gaussian-waist",
+        "gaussian-rayleigh"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "q=z+i z_R，1/q=1/R−iλ/(πw²)",
+          "sources": [
+            "photonics-100",
+            "photonics-109"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "束腰处 q 为纯虚数，说明波前曲率倒数为零。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "gaussian-abcd-transform",
+      "title": "高斯光束的 ABCD 变换",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "Gaussian ABCD law",
+        "q分式变换"
+      ],
+      "definition": "近轴一阶系统把输入高斯 q 变为由系统矩阵决定的分式。",
+      "body": "把光路的平移和透镜矩阵按实际次序组成 ABCD，整体作用等同于依次更新每个元件的 q。输出面读到的 q 可用于继续判断束腰位置、半径和曲率。",
+      "example": "用自由传播矩阵代入，得到 q′=q+L。",
+      "caution": "这里采用同一介质的普通高度和角度矩阵口径。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": "q′=(Aq+B)/(Cq+D)",
+      "variables": "A、D 无量纲，B 用长度，C 用逆长度。",
+      "sources": [
+        "photonics-109"
+      ],
+      "prerequisites": [
+        "gaussian-q-parameter"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "q′=(Aq+B)/(Cq+D)",
+          "sources": [
+            "photonics-109"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用自由传播矩阵代入，得到 q′=q+L。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "gaussian-thin-lens-inverse-q",
+      "title": "薄透镜对高斯曲率的更新",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "thin lens inverse q",
+        "高斯倒q"
+      ],
+      "definition": "理想薄透镜使高斯束在元件平面上的逆 q 减去焦距倒数。",
+      "body": "透镜主要在场上增加二次相位，瞬时改变波前曲率而保持该平面上的束半径。变换后再做自由传播，可从新 q 推出输出束腰的位置和大小。",
+      "example": "正透镜作用在平坦波前上，使输出曲率项成为 −1/f。",
+      "caution": "曲率符号和传播方向应沿用 q 的同一约定。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": "1/q′=1/q−1/f",
+      "variables": "q、f 用同一长度单位。",
+      "sources": [
+        "photonics-110"
+      ],
+      "prerequisites": [
+        "gaussian-abcd-transform"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "1/q′=1/q−1/f",
+          "sources": [
+            "photonics-110"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "正透镜作用在平坦波前上，使输出曲率项成为 −1/f。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "gaussian-waist-from-q",
+      "title": "由 q 读出束腰的位置",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "waist location from q",
+        "q实部和束腰"
+      ],
+      "definition": "以观察面为当前参考，束腰距该平面的有符号位移等于 q 实部的相反数。",
+      "body": "若 q 实部为负，光束尚未到达束腰，沿传播方向走到负实部的相反数即可使 q 变纯虚。虚部则给这个束腰的瑞利长度，结合介质波长可求束腰半径。",
+      "example": "q=−20+i10 mm 时，束腰在当前平面下游 20 mm。",
+      "caution": "读数只适用于从当前面到束腰间无额外元件的模型。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": "Δz_waist=−Re(q)，w₀=√(λ Im(q)/π)",
+      "variables": "长度单位保持一致，采用正虚部约定。",
+      "sources": [
+        "photonics-109",
+        "photonics-110"
+      ],
+      "prerequisites": [
+        "gaussian-q-parameter"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δz_waist=−Re(q)，w₀=√(λ Im(q)/π)",
+          "sources": [
+            "photonics-109",
+            "photonics-110"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "q=−20+i10 mm 时，束腰在当前平面下游 20 mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "gaussian-gouy-phase",
+      "title": "高斯束的 Gouy 相位",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "Gouy phase",
+        "焦点附加相位"
+      ],
+      "definition": "高斯束跨越焦区时，相对平面波累积附加的轴向相位。",
+      "body": "附加相位在束腰附近变化最快，其量级由瑞利长度控制。取一类常用记号时，基模 Gouy 角为 arctan(z/z_R)，高阶横模对应更大的系数。腔内该相位会影响横模频率。",
+      "example": "在 z=±z_R 比较 Gouy 角，二者大小 45°、符号相反。",
+      "caution": "写入复场时的相位正负取决于时间因子约定。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": "ψ=arctan(z/z_R)",
+      "variables": "z 与 z_R 同单位，ψ 用 rad。",
+      "sources": [
+        "photonics-100"
+      ],
+      "prerequisites": [
+        "gaussian-rayleigh"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ψ=arctan(z/z_R)",
+          "sources": [
+            "photonics-100"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在 z=±z_R 比较 Gouy 角，二者大小 45°、符号相反。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "resonator-self-consistent-q",
+      "title": "稳定腔的自洽高斯模",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "resonator eigenmode q",
+        "往返q不变"
+      ],
+      "definition": "理想高斯腔模在同一参考面走完一圈后保持相同 q。",
+      "body": "把整个闭合光路写成往返矩阵，并令输出 q 等于输入 q，得到关于 q 的二次方程。与束半径有限的高斯模对应的是具有物理虚部符号的解。无合适解时不能假设束腰仍被束缚。",
+      "example": "换一个腔内参考面计算，物理模相同但该处 q 数值会改变。",
+      "caution": "稳定性判据与具体镜面的模式半径计算是两步。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": "Cq²+(D−A)q−B=0",
+      "variables": "A、B、C、D 为同一参考面的往返矩阵元。",
+      "sources": [
+        "photonics-114",
+        "photonics-116"
+      ],
+      "prerequisites": [
+        "gaussian-abcd-transform"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Cq²+(D−A)q−B=0",
+          "sources": [
+            "photonics-114",
+            "photonics-116"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "换一个腔内参考面计算，物理模相同但该处 q 数值会改变。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "resonator-trace-stability",
+      "title": "往返矩阵迹与腔稳定性",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "ABCD stability trace",
+        "腔矩阵迹"
+      ],
+      "definition": "对行列式为一的理想往返矩阵，迹大小可判断近轴横向轨道是否有界。",
+      "body": "若绝对半迹小于一，往返本征值为互为共轭的单位模复数，可支持稳定范围内的横向传播。半迹绝对值等于一属于边界，实际镜面误差和对准容差需另看。",
+      "example": "一组往返矩阵半迹从 0.8 变到 1.1，会由稳定区跨出。",
+      "caution": "这里只考虑近轴线性光学模型。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": "abs((A+D)/2)<1",
+      "variables": "A、D 是无量纲往返矩阵元。",
+      "sources": [
+        "photonics-114"
+      ],
+      "prerequisites": [
+        "resonator-self-consistent-q"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "abs((A+D)/2)<1",
+          "sources": [
+            "photonics-114"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "一组往返矩阵半迹从 0.8 变到 1.1，会由稳定区跨出。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "resonator-two-mirror-g",
+      "title": "双镜腔的 g 参数稳定图",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "g parameter",
+        "两镜腔稳定条件"
+      ],
+      "definition": "双镜腔可用镜间距和两镜曲率半径构造两个无量纲 g 参数。",
+      "body": "对常用曲率符号，乘积位于零和一之间的内部对应严格稳定区。平平腔和某些等号结构处于边界或退化点，需要单独讨论。改变某一镜曲率能移动工作点并改变模式尺寸。",
+      "example": "L=0.2 m、两镜 R=0.4 m，两个 g 均为 0.5，乘积 0.25。",
+      "caution": "凹凸镜的半径符号与所用公式约定一致。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": "gᵢ=1−L/Rᵢ，严格稳定区 0<g₁g₂<1",
+      "variables": "L、Rᵢ 用同一长度单位。",
+      "sources": [
+        "photonics-116"
+      ],
+      "prerequisites": [
+        "resonator-trace-stability"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "gᵢ=1−L/Rᵢ，严格稳定区 0<g₁g₂<1",
+          "sources": [
+            "photonics-116"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "L=0.2 m、两镜 R=0.4 m，两个 g 均为 0.5，乘积 0.25。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "planar-cavity-boundary",
+      "title": "平平腔的稳定边界",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "plane parallel cavity",
+        "平平腔"
+      ],
+      "definition": "两镜均为平面时，理想近轴稳定图上的 g₁g₂ 取边界值一。",
+      "body": "若往返光线有小横向斜率，平面镜无法提供曲率引起的横向恢复作用。传播可使截距逐圈偏移，有限光阑会逐步损失光。因此实际装调往往要依靠额外聚焦或适当镜面曲率。",
+      "example": "在简化光路中给输入射线轻微倾斜，观察多圈截距。",
+      "caution": "边界分类不妨碍某些特殊对准下存在恰好沿轴的射线。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-116"
+      ],
+      "prerequisites": [
+        "resonator-two-mirror-g"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "两镜均为平面时，理想近轴稳定图上的 g₁g₂ 取边界值一。",
+          "sources": [
+            "photonics-116"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在简化光路中给输入射线轻微倾斜，观察多圈截距。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "confocal-cavity-geometry",
+      "title": "共焦腔的几何条件",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "confocal resonator",
+        "共焦双镜腔"
+      ],
+      "definition": "对称共焦腔的两凹镜曲率半径等于镜间距。",
+      "body": "在近轴模型中，两镜的几何焦点在腔中心重合。该对称位置可出现特殊的横纵模频率简并，不能仅凭透射谱峰数识别纵模间距。离开精确共焦时简并通常会解除。",
+      "example": "两镜 R 均为 100 mm、间距 100 mm，符合对称共焦几何。",
+      "caution": "等号处的退化需按具体往返矩阵处理。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-116",
+        "photonics-121"
+      ],
+      "prerequisites": [
+        "resonator-two-mirror-g"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "对称共焦腔的两凹镜曲率半径等于镜间距。",
+          "sources": [
+            "photonics-116",
+            "photonics-121"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两镜 R 均为 100 mm、间距 100 mm，符合对称共焦几何。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "laser-hermite-gaussian-modes",
+      "title": "厄米–高斯横模的节点",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "Hermite Gaussian modes",
+        "TEM横模节点"
+      ],
+      "definition": "矩形对称近轴腔的高阶横模可在高斯包络上具有特定的节点结构。",
+      "body": "用两个整数分别表示横向两个方向的阶数，阶数对应强度分布中的暗线和亮瓣变化。不同横模的传播相位和耦合效率也可不同，腔内孔径可更强地损耗高阶模。",
+      "example": "在两个正交方向比较近似 TEM₁₀ 与 TEM₀₁ 的暗线位置。",
+      "caution": "实际像的方向取决于相机与腔的坐标。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-119"
+      ],
+      "prerequisites": [
+        "gaussian-tem00"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "矩形对称近轴腔的高阶横模可在高斯包络上具有特定的节点结构。",
+          "sources": [
+            "photonics-119"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在两个正交方向比较近似 TEM₁₀ 与 TEM₀₁ 的暗线位置。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "transverse-mode-frequency-spacing",
+      "title": "横模 Gouy 相位与共振频差",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "transverse mode spacing",
+        "腔横模频率"
+      ],
+      "definition": "不同横模的 Gouy 相位贡献不同，可以使同一纵模附近出现不同横模共振频率。",
+      "body": "腔模的整圈总相位包含传播相位与聚焦附加相位。不同阶数需要在不同频率才能满足同一整数相位条件，故扫描透射得到的相邻两个峰可能属于不同横模。",
+      "example": "移动耦合光束或调整角度，观察部分弱峰相对基模峰的强度变化。",
+      "caution": "用谱线测纵模 FSR 前应确认峰的模族。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-121"
+      ],
+      "prerequisites": [
+        "gaussian-gouy-phase",
+        "laser-hermite-gaussian-modes"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "不同横模的 Gouy 相位贡献不同，可以使同一纵模附近出现不同横模共振频率。",
+          "sources": [
+            "photonics-121"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "移动耦合光束或调整角度，观察部分弱峰相对基模峰的强度变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "gaussian-mode-matching",
+      "title": "用束腰和曲率做模式匹配",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "mode matching",
+        "激光腔注入匹配"
+      ],
+      "definition": "高斯模式匹配需让注入束的空间场与目标腔模在耦合面尽量重合。",
+      "body": "相同轴向和偏振条件下，束半径及波前曲率可用 q 统一比较。用一组透镜同时调节束腰位置和大小，能够提高进入目标基模的比例。横向偏心和倾角仍可引入高阶成分。",
+      "example": "改变匹配透镜位置，观察透射基模与高阶峰的相对强度。",
+      "caution": "只在一个平面看见半径相同，仍需核对波前曲率。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-109",
+        "photonics-114"
+      ],
+      "prerequisites": [
+        "gaussian-abcd-transform"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "高斯模式匹配需让注入束的空间场与目标腔模在耦合面尽量重合。",
+          "sources": [
+            "photonics-109",
+            "photonics-114"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "改变匹配透镜位置，观察透射基模与高阶峰的相对强度。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "laser-mode-locking-phase",
+      "title": "锁模的纵模相位关系",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "mode locking",
+        "纵模同步相位",
+        "锁模",
+        "锁模是怎么产生脉冲的"
+      ],
+      "definition": "锁模让多根纵模维持可重复的相对相位，从而在时域形成脉冲列。",
+      "body": "各频率分量单独连续振荡，合场在某些时刻相长叠加，在其他时刻较弱。仅看到宽而有多根频率线的光谱，还不足以说明它们已形成稳定脉冲，需要相位相关或时间证据。",
+      "example": "让一组等间隔频率同相相加，比较与随机相位时的时间波形。",
+      "caution": "模式数多和相位锁定是两个条件。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-328",
+        "photonics-329"
+      ],
+      "prerequisites": [
+        "laser-longitudinal-modes"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "锁模让多根纵模维持可重复的相对相位，从而在时域形成脉冲列。",
+          "sources": [
+            "photonics-328",
+            "photonics-329"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "让一组等间隔频率同相相加，比较与随机相位时的时间波形。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "mode-locked-repetition-rate",
+      "title": "锁模脉冲重复频率",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "pulse repetition rate",
+        "锁模重复率"
+      ],
+      "definition": "常见基频锁模中，脉冲走完一圈的时间决定输出脉冲间隔。",
+      "body": "脉冲每到输出耦合镜就透出一部分，因此每个往返可得到一个脉冲。腔内多脉冲或谐波锁模会改变输出重复率；应结合光电探测器与频谱确认工作状态。",
+      "example": "腔往返时间 10 ns 时，基频锁模重复率约 100 MHz。",
+      "caution": "重复率并非单个脉冲内的光学载波频率。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": "f_rep≈1/t_rt",
+      "variables": "t_rt 用 s，f_rep 用 Hz。",
+      "sources": [
+        "photonics-329"
+      ],
+      "prerequisites": [
+        "laser-mode-locking-phase",
+        "cavity-round-trip-time"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "f_rep≈1/t_rt",
+          "sources": [
+            "photonics-329"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "腔往返时间 10 ns 时，基频锁模重复率约 100 MHz。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "transform-limit-duration",
+      "title": "光谱宽度与可达脉宽",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "time bandwidth product",
+        "最短脉宽与谱宽"
+      ],
+      "definition": "相干脉冲的光谱宽度与其可达到的最短时间宽度相关。",
+      "body": "光谱较宽意味着可以使用更多频率分量合成更窄的峰，实际能否达到取决于频谱相位。给相同光谱添加二次相位会展宽时间包络，而光谱强度测量可能看不出变化。",
+      "example": "比较同带宽的近变换极限脉冲与带色散的啁啾脉冲。",
+      "caution": "时间带宽乘积数值依赖脉形、脉宽和谱宽口径。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-328",
+        "photonics-329"
+      ],
+      "prerequisites": [
+        "transform-limited-pulse"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "相干脉冲的光谱宽度与其可达到的最短时间宽度相关。",
+          "sources": [
+            "photonics-328",
+            "photonics-329"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较同带宽的近变换极限脉冲与带色散的啁啾脉冲。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "active-mode-locking",
+      "title": "主动锁模",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "active mode locking",
+        "调制器锁模"
+      ],
+      "definition": "主动锁模通过腔内周期调制建立相邻纵模之间的耦合。",
+      "body": "调制频率通常接近腔往返频率或其整数倍，使每圈脉冲在适当时刻经过低损耗或合适相位区间。电驱调制和腔长失配时，相位关系和输出稳定性都会改变。",
+      "example": "小幅改变驱动频率，观察光脉冲或射频谱的变化。",
+      "caution": "需要同时核对调制频率、往返时间和调制类型。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-330"
+      ],
+      "prerequisites": [
+        "laser-mode-locking-phase"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "主动锁模通过腔内周期调制建立相邻纵模之间的耦合。",
+          "sources": [
+            "photonics-330"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "小幅改变驱动频率，观察光脉冲或射频谱的变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "active-q-switching",
+      "title": "主动调 Q 的能量积累",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "active Q switching",
+        "主动开关腔损耗"
+      ],
+      "definition": "主动调 Q 先提高腔损耗抑制振荡，再迅速降低损耗释放储存能量。",
+      "body": "高损耗阶段，泵浦可以建立较大反转但光场不能明显增长。切到低损耗后，净增益突然变大，受激过程将储能集中释放为较短脉冲。之后需要时间重新建立反转。",
+      "example": "周期驱动腔内开关，比较开关时序与探测到的输出脉冲。",
+      "caution": "调 Q 的脉冲间隔往往由泵浦和开关时序决定。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-325"
+      ],
+      "prerequisites": [
+        "laser-round-trip-gain"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "主动调 Q 先提高腔损耗抑制振荡，再迅速降低损耗释放储存能量。",
+          "sources": [
+            "photonics-325"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "周期驱动腔内开关，比较开关时序与探测到的输出脉冲。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "passive-q-switching",
+      "title": "可饱和吸收的被动调 Q",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "passive Q switching",
+        "被动调Q吸收体"
+      ],
+      "definition": "被动调 Q 用随光强降低损耗的可饱和吸收体产生开关作用。",
+      "body": "弱光时吸收体透过较低，泵浦可在增益介质中积累能量。腔内强度增长后吸收减弱，损耗下降并形成能量释放脉冲。吸收恢复和泵浦补充决定后续过程。",
+      "example": "增加泵浦并观察被动调 Q 的脉冲间隔和幅度变化。",
+      "caution": "可饱和吸收也可参与其他脉冲机制，需看系统时间尺度。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-327"
+      ],
+      "prerequisites": [
+        "active-q-switching"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "被动调 Q 用随光强降低损耗的可饱和吸收体产生开关作用。",
+          "sources": [
+            "photonics-327"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "增加泵浦并观察被动调 Q 的脉冲间隔和幅度变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "q-switch-vs-mode-lock",
+      "title": "调 Q 与锁模的时间尺度",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "Q switching versus mode locking",
+        "锁模调Q比较"
+      ],
+      "definition": "调 Q 利用储能与损耗切换，锁模利用多纵模的稳定相位叠加。",
+      "body": "识别机制时结合脉宽、重复间隔和频谱。调 Q 的发脉与反转积累和开关有关；基频锁模的重复时间通常等于腔往返时间。两类过程也可能同时出现，形成较慢包络内的一串快脉冲。",
+      "example": "用足够带宽的探测器核查一个慢脉冲内部是否存在更快的脉冲列。",
+      "caution": "仅凭“输出是脉冲”无法判定是哪种机制。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-325",
+        "photonics-329"
+      ],
+      "prerequisites": [
+        "active-q-switching",
+        "laser-mode-locking-phase"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "调 Q 利用储能与损耗切换，锁模利用多纵模的稳定相位叠加。",
+          "sources": [
+            "photonics-325",
+            "photonics-329"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用足够带宽的探测器核查一个慢脉冲内部是否存在更快的脉冲列。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "laser-thermal-lens",
+      "title": "泵浦加热形成的热透镜",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "thermal lens",
+        "激光增益介质热焦度"
+      ],
+      "definition": "泵浦形成的温度分布可使增益介质产生横向相位变化。",
+      "body": "材料折射率随温度变化，且元件可能发生形变。光束经过不同径向位置时积累的光程不同，近轴下可表现为附加透镜。改变泵浦后腔的模式尺寸、稳定范围和对准可能改变。",
+      "example": "比较低泵与高泵功率时测得的输出束腰位置。",
+      "caution": "热透镜的符号和强度取决于材料、安装及冷却条件。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "laser-operation"
+      ],
+      "prerequisites": [
+        "laser-optical-pump-absorption"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "泵浦形成的温度分布可使增益介质产生横向相位变化。",
+          "sources": [
+            "laser-operation"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较低泵与高泵功率时测得的输出束腰位置。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "laser-cavity-aperture",
+      "title": "腔内孔径与高阶模损耗",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "intracavity aperture",
+        "横模孔径筛选"
+      ],
+      "definition": "有限腔内孔径会给空间扩展较大的模式引入不同程度的衍射或遮挡损耗。",
+      "body": "基模和高阶模在孔径面上的能量分布不同。调整孔径时可降低部分高阶模的净增益，但若口径太小也会损耗基模并提高阈值。判断孔径位置应结合该处各模的束半径。",
+      "example": "改变腔内光阑直径，记录模式图样和阈值变化。",
+      "caution": "孔径筛选不是完全无代价的模式变换。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-119",
+        "cavities"
+      ],
+      "prerequisites": [
+        "laser-hermite-gaussian-modes"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "有限腔内孔径会给空间扩展较大的模式引入不同程度的衍射或遮挡损耗。",
+          "sources": [
+            "photonics-119",
+            "cavities"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "改变腔内光阑直径，记录模式图样和阈值变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "laser-frequency-scan-axis",
+      "title": "腔谱扫描的频率标尺",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "frequency scan calibration",
+        "腔谱标定"
+      ],
+      "definition": "用腔谱估计 FSR 和线宽时，需要将扫频控制量转换为真实频率。",
+      "body": "驱动电压或时间在实际设备中不一定与频率严格成正比，可利用已知参考间隔校准局部尺度。拟合窄峰时还应评估探测带宽、扫描速度及采集点间距。",
+      "example": "用已知间隔的频率标记校准局部扫频轴，再读两个半高点。",
+      "caution": "直接以电压或像素差当作 GHz 会混淆控制坐标和物理量。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-87",
+        "photonics-121"
+      ],
+      "prerequisites": [
+        "cavity-linewidth"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "用腔谱估计 FSR 和线宽时，需要将扫频控制量转换为真实频率。",
+          "sources": [
+            "photonics-87",
+            "photonics-121"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用已知间隔的频率标记校准局部扫频轴，再读两个半高点。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "laser-cavity-wavelength-tuning",
+      "title": "通过光程调谐腔模",
+      "topic": "laser",
+      "level": "undergraduate",
+      "terms": [
+        "cavity tuning",
+        "改变腔长调谐频率"
+      ],
+      "definition": "固定纵模编号下，增加简单腔的光学长度会降低对应共振频率。",
+      "body": "往返相位取整数倍意味着光程要容纳整数个波长。若光程缓慢变化，同一模编号的共振频率随其倒数变化；同时增益包络与相邻模竞争可能触发输出跳模。",
+      "example": "增加空气线腔镜距后，追踪同一峰的小范围漂移。",
+      "caution": "固定编号的局部调谐规律不能直接跨越跳模。",
+      "conditions": [
+        "采用条目所述稳态、近轴或小信号约定。"
+      ],
+      "formula": "δν/ν≈−δL_opt/L_opt",
+      "variables": "长度口径前后相同，假定弱色散。",
+      "sources": [
+        "laser-resonator",
+        "photonics-313"
+      ],
+      "prerequisites": [
+        "laser-longitudinal-modes"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "δν/ν≈−δL_opt/L_opt",
+          "sources": [
+            "laser-resonator",
+            "photonics-313"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "增加空气线腔镜距后，追踪同一峰的小范围漂移。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "optical-resonator",
+      "title": "光学谐振腔",
+      "topic": "laser",
+      "level": "intro",
+      "terms": [
+        "谐振腔",
+        "光学共振腔",
+        "光学腔",
+        "激光腔",
+        "激光谐振腔",
+        "激光器里的两面镜子",
+        "两面镜子来回反射",
+        "optical resonator",
+        "optical cavity",
+        "laser cavity"
+      ],
+      "definition": "光学谐振腔是让光在一条路径上反复传播，并使满足往返相位条件的光场相干叠加的结构。",
+      "body": "最常见的例子是两面相向的镜子，光在镜间来回传播。每次往返后同相的光场更容易累积，于是出现一系列离散共振频率。也可以用闭合光路构成环形腔。被动腔需要外来光激发；作为激光腔使用时，增益介质还要补偿损耗。",
+      "example": "用窄线宽可调光照射空的双镜腔，扫过共振时可观察到离散的透射峰。",
+      "caution": "相位满足共振条件表示腔支持这个模式。判断它能否产生激光，还要比较往返增益和损耗。",
+      "conditions": [
+        "公式写的是一整圈相位，包括传播和镜面等元件引入的相移。"
+      ],
+      "formula": "φ_rt(νₘ)=2πm",
+      "variables": "φ_rt 为往返相位（rad）；νₘ 为共振频率（Hz）；m 为整数。",
+      "sources": [
+        "laser-resonator",
+        "photonics-313"
+      ],
+      "prerequisites": [],
+      "related": [
+        "fabry-perot",
+        "laser-threshold",
+        "cavity-round-trip-time"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "光学谐振腔是让光在一条路径上反复传播，并使满足往返相位条件的光场相干叠加的结构。",
+          "sources": [
+            "laser-resonator",
+            "photonics-313"
+          ]
+        },
+        {
+          "kind": "DERIVED",
+          "statement": "φ_rt(νₘ)=2πm",
+          "sources": [
+            "laser-resonator",
+            "photonics-313"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用窄线宽可调光照射空的双镜腔，扫过共振时可观察到离散的透射峰。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-14 · 原创讲解，对照所列来源核对"
+    },
+    {
+      "id": "laser-basics",
+      "title": "激光及激光器的组成",
+      "topic": "laser",
+      "level": "intro",
+      "terms": [
+        "激光",
+        "激光器",
+        "laser",
+        "激光是怎么来的",
+        "激光是怎么产生的",
+        "激光为什么能发出来",
+        "激光器怎么工作"
+      ],
+      "definition": "激光是通过受激辐射获得放大而形成的光。典型激光振荡器由泵浦源、增益介质和光学谐振腔组成。",
+      "body": "泵浦向介质供能，增益介质让合适频率的光在传播时得到放大。谐振腔把光反馈到增益介质，让某些模式反复获得增益。起振后常由部分透射的镜子取出一部分光作为输出。激光可以是连续波，也可以是脉冲。",
+      "example": "典型的电泵浦半导体激光器用注入电流供能，用有源区提供增益，并通过器件内的光学反馈起振。",
+      "caution": "方向性、频谱宽度和相干性随器件和工作方式变化。不同激光器可以有不同空间模式与频谱。",
+      "conditions": [
+        "描述典型激光振荡器及其光输出。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "laser-resonator",
+        "laser-amplification",
+        "semiconductor"
+      ],
+      "prerequisites": [],
+      "related": [
+        "optical-resonator",
+        "laser-gain-medium",
+        "laser-pumping"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "激光是通过受激辐射获得放大而形成的光。典型激光振荡器由泵浦源、增益介质和光学谐振腔组成。",
+          "sources": [
+            "laser-resonator",
+            "laser-amplification",
+            "semiconductor"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "典型的电泵浦半导体激光器用注入电流供能，用有源区提供增益，并通过器件内的光学反馈起振。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-14 · 原创讲解，对照所列来源核对"
+    },
+    {
+      "id": "laser-gain-medium",
+      "title": "激光增益介质",
+      "topic": "laser",
+      "level": "intro",
+      "terms": [
+        "增益介质",
+        "激光工作物质",
+        "激光工作介质",
+        "有源介质",
+        "增益材料",
+        "gain medium",
+        "active medium"
+      ],
+      "definition": "增益介质是在合适的泵浦条件和频率范围内，能对通过的光提供净放大的材料。",
+      "body": "泵浦改变介质内能级或载流子的分布，使合适频率下受激发射的贡献超过吸收。某束光能获得多少放大，还与它在增益介质中的传播长度和空间重叠有关。器件是否能起振由整圈的增益和损耗决定。",
+      "example": "半导体激光器的有源区提供增益。即使有源区已经放大光，仍要核对波导和腔端的损耗。",
+      "caution": "材料能发荧光只说明存在辐射跃迁。判断净增益要比较受激发射与吸收等贡献。",
+      "conditions": [
+        "讨论给定工作点下的光学小信号增益。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "laser-amplification",
+        "inversion",
+        "semiconductor"
+      ],
+      "prerequisites": [
+        "stimulated-emission"
+      ],
+      "related": [
+        "laser-pumping",
+        "laser-threshold"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "增益介质是在合适的泵浦条件和频率范围内，能对通过的光提供净放大的材料。",
+          "sources": [
+            "laser-amplification",
+            "inversion",
+            "semiconductor"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "半导体激光器的有源区提供增益。即使有源区已经放大光，仍要核对波导和腔端的损耗。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-14 · 原创讲解，对照所列来源核对"
+    },
+    {
+      "id": "laser-pumping",
+      "title": "激光泵浦",
+      "topic": "laser",
+      "level": "intro",
+      "terms": [
+        "泵浦",
+        "抽运",
+        "激光抽运",
+        "泵浦源",
+        "光泵",
+        "光泵浦",
+        "激光器怎么供能",
+        "laser pumping",
+        "optical pumping"
+      ],
+      "definition": "泵浦是把能量送入激光增益介质，以建立并维持提供光学增益所需的粒子分布。",
+      "body": "泵浦方式取决于器件。光泵靠介质吸收泵浦光，气体激光器可用放电激发，半导体激光器常用电流注入。吸收后的能量经过内部弛豫和跃迁，其中一部分进入有用激光输出，另一些以热或其他辐射形式释放。",
+      "example": "用光泵激发固体激光介质时，应分别标出泵浦波长与介质最终发出激光的波长。",
+      "caution": "记录泵浦功率时应区分输入光功率、吸收的光功率和驱动电功率。",
+      "conditions": [
+        "覆盖常见光泵、放电和载流子注入的概念。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "optical-pump",
+        "inversion",
+        "semiconductor"
+      ],
+      "prerequisites": [],
+      "related": [
+        "laser-gain-medium",
+        "laser-optical-pump-absorption"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "泵浦是把能量送入激光增益介质，以建立并维持提供光学增益所需的粒子分布。",
+          "sources": [
+            "optical-pump",
+            "inversion",
+            "semiconductor"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用光泵激发固体激光介质时，应分别标出泵浦波长与介质最终发出激光的波长。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-14 · 原创讲解，对照所列来源核对"
+    },
+    {
+      "id": "laser-transverse-modes",
+      "title": "激光横模",
+      "topic": "laser",
+      "level": "intro",
+      "terms": [
+        "横模",
+        "横向模式",
+        "腔横模",
+        "激光光斑模式",
+        "光斑为什么有多个亮瓣",
+        "transverse laser mode",
+        "transverse modes"
+      ],
+      "definition": "激光横模描述垂直于传播方向的光场如何分布，例如光斑的亮瓣、暗线和相位结构。",
+      "body": "光场在谐振腔内往返一圈以后，能保持其横截面形状的分布构成腔的横模。许多稳定近轴腔的基横模是单个近似高斯亮斑，高阶横模可以带有暗线和多个亮瓣。光阑、泵浦分布和对准情况都可能改变各模的净增益。",
+      "example": "光束分析仪上看到中心一条暗线和两侧亮瓣时，可以把这种形状与高阶横模的预测比较。",
+      "caution": "单横模描述光场的空间分布。判断是否单纵模，还需要看频谱。",
+      "conditions": [
+        "采用稳定近轴激光腔的典型模形作入门说明。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "laser-operation",
+        "photonics-119"
+      ],
+      "prerequisites": [
+        "optical-resonator"
+      ],
+      "related": [
+        "laser-hermite-gaussian-modes",
+        "laser-longitudinal-modes"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "激光横模描述垂直于传播方向的光场如何分布，例如光斑的亮瓣、暗线和相位结构。",
+          "sources": [
+            "laser-operation",
+            "photonics-119"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "光束分析仪上看到中心一条暗线和两侧亮瓣时，可以把这种形状与高阶横模的预测比较。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-14 · 原创讲解，对照所列来源核对"
+    },
+    {
+      "id": "linear-vs-ring-optical-cavity",
+      "title": "线形腔与环形腔",
+      "topic": "laser",
+      "level": "intro",
+      "terms": [
+        "线形腔",
+        "线性腔",
+        "环形腔",
+        "环形谐振腔",
+        "环腔",
+        "激光环腔",
+        "linear cavity",
+        "ring cavity"
+      ],
+      "definition": "线形腔的光沿路径往返，环形腔的光沿闭合路径绕行，两者的共振均由完整往返的相位决定。",
+      "body": "在典型双镜腔里，光从一面镜子到另一面再返回起点，所以一圈包含两次通过镜间空间。环形腔的一圈就是绕过闭合光路回到起点。均匀、弱色散介质内，若完整往返群时延相同，两种腔的相邻同族共振就有近似相同的频率间隔。",
+      "example": "空气中镜间距约 0.30 m 的线形腔与周长约 0.60 m 的环形腔，纵模间隔都约 500 MHz。",
+      "caution": "环腔的几何结构允许双向传播；要获得单向振荡，需要满足额外的器件或增益条件。",
+      "conditions": [
+        "比较同一模族并忽略频率范围内的往返群时延变化。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "photonics-313",
+        "laser-resonator"
+      ],
+      "prerequisites": [
+        "optical-resonator"
+      ],
+      "related": [
+        "cavity-round-trip-time",
+        "free-spectral-range",
+        "microring-resonator"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "线形腔的光沿路径往返，环形腔的光沿闭合路径绕行，两者的共振均由完整往返的相位决定。",
+          "sources": [
+            "photonics-313",
+            "laser-resonator"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "空气中镜间距约 0.30 m 的线形腔与周长约 0.60 m 的环形腔，纵模间隔都约 500 MHz。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-14 · 原创讲解，对照所列来源核对"
+    },
+    {
+      "id": "laser-single-frequency",
+      "title": "单纵模激光",
+      "topic": "laser",
+      "level": "intro",
+      "terms": [
+        "单频激光",
+        "单纵模",
+        "单纵模激光器",
+        "激光为什么能单频",
+        "single-frequency laser",
+        "single longitudinal mode"
+      ],
+      "definition": "单纵模工作表示激光主要在一个纵向共振频率附近振荡。",
+      "body": "谐振腔提供离散的候选频率，增益谱和各模损耗决定哪些频率有机会起振。可以适当增大纵模间隔，也可以在腔内加入选频元件，让目标模比其邻近模式有更高的净增益。实际输出还会有有限的线宽。",
+      "example": "在合适的腔中加入标准具，可让一个目标纵模所受的额外损耗小于邻近纵模。",
+      "caution": "频谱仪需要有足够分辨率和动态范围才能检查旁模。单纵模也不等同于单横模。",
+      "conditions": [
+        "对同一空间模族讨论连续波附近的激光频谱。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "laser-operation",
+        "photonics-313"
+      ],
+      "prerequisites": [
+        "laser-longitudinal-modes",
+        "laser-threshold"
+      ],
+      "related": [
+        "laser-transverse-modes",
+        "laser-oscillation-linewidth"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "单纵模工作表示激光主要在一个纵向共振频率附近振荡。",
+          "sources": [
+            "laser-operation",
+            "photonics-313"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在合适的腔中加入标准具，可让一个目标纵模所受的额外损耗小于邻近纵模。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-14 · 原创讲解，对照所列来源核对"
+    },
+    {
+      "id": "laser-semiconductor-vcsel",
+      "title": "边发射激光二极管与 VCSEL",
+      "topic": "laser",
+      "level": "intro",
+      "terms": [
+        "半导体激光器",
+        "激光二极管",
+        "二极管激光器",
+        "边发射激光器",
+        "VCSEL",
+        "垂直腔面发射激光器",
+        "laser diode",
+        "semiconductor laser"
+      ],
+      "definition": "边发射激光二极管和 VCSEL 都能通过电注入获得增益，前者沿晶片方向出光，后者沿晶片表面的法向出光。",
+      "body": "典型边发射器件的光沿片内波导传播，可借助端面反射形成腔。VCSEL 的有源区位于上下反射镜之间，腔轴沿晶片法向。两种几何会影响腔长、光束形状及阵列集成方式，具体工作模式还取决于器件结构和驱动。",
+      "example": "辨认器件剖面时，可先标出有源层所在平面，再比较出光方向相对该平面的关系。",
+      "caution": "封装可能用透镜或反射结构转折光路。判断器件类型应看芯片本身的腔和出光方向。",
+      "conditions": [
+        "比较常见电注入边发射二极管和垂直腔面发射激光器。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "semiconductor"
+      ],
+      "prerequisites": [
+        "laser-gain-medium"
+      ],
+      "related": [
+        "laser-diode-current-threshold",
+        "laser-pumping"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "边发射激光二极管和 VCSEL 都能通过电注入获得增益，前者沿晶片方向出光，后者沿晶片表面的法向出光。",
+          "sources": [
+            "semiconductor"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "辨认器件剖面时，可先标出有源层所在平面，再比较出光方向相对该平面的关系。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-14 · 原创讲解，对照所列来源核对"
+    }
+  ]
+}

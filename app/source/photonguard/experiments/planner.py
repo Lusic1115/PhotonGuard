@@ -38,8 +38,10 @@ def build_plan(spec,parent=None):
     s=validate_spec(spec,parent);d=s['domain'];variables=s['allowed_variables'];names=sorted(variables)
     from .optics import validate_parameters
     candidates=[]
-    for idx,values in enumerate(itertools.product(*(variables[k] for k in names))):
-        changes=dict(zip(names,values));p={**s['known_parameters'],**changes}
+    rows=s.get('candidate_rows')
+    if rows is None:rows=(dict(zip(names,values)) for values in itertools.product(*(variables[k] for k in names)))
+    for idx,changes in enumerate(rows):
+        p={**s['known_parameters'],**changes}
         parameters=parameters_for(d,p,s['goal'])
         try:validate_parameters(d,parameters)
         except ValueError as exc:raise ValueError(f'候选{idx+1}超出当前模型支持范围：{exc}') from None
@@ -235,6 +237,8 @@ def plan_from_text(text,context_kind='specified',client=None,ident=None,parent=N
             else:
                 return {'spec':None,'questions':['本地模式支持教学卡或完整实验JSON；自由文字请使用真实AI整理。未填写的实际参数不会自动补全。'],'actual_model_calls':0}
     try:
+        if client is not None and 'candidate_rows' in s:
+            raise ValueError('候选组合由用户在受限方案中核对，模型草稿只可提供明确目录。')
         s,normalizations=normalize_catalog_baselines(s,parent)
         if client is not None:
             s,aperture_changes=normalize_explicit_aperture(s,text);normalizations+=aperture_changes

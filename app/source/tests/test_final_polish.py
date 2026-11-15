@@ -93,23 +93,21 @@ def test_changed_constraints_reject_old_reply_and_old_qualification(store):
     assert out==before and not actions.proposal_availability(out)['currently_feasible_proposal_ids']
 
 
-def test_atomic_lock_contention_starts_no_worker_and_keeps_reserved_budget(store,monkeypatch):
-    # Real lock, no optical process. Main thread holds; worker thread cannot acquire.
+def test_atomic_lock_contention_keeps_the_inverse_plan_and_budget(store,monkeypatch):
+    # Real host lock held by an independent claimant.
     _,cfg,raw=data(m.GAUSSIAN,count=9)
     s=ow.create(store,{'model':m.GAUSSIAN,'csv_text':raw,'source_name':'OFFLINE LOCK TEST'})
     s['inverse_settings']=cfg;s=planned(store,s);raw_before=(store.folder(s['id'])/'scan-0.csv').read_bytes()
     monkeypatch.setattr(ow.subprocess,'run',lambda *a,**kw:pytest.fail('Worker must not launch during lock contention'))
     with executor.solver_mutex():
-        out=wait(store,act(store,s,'inverse_run',approve=True,plan_sha256=s['inverse_plan']['sha256']))
-    assert out['status']=='FAILED' and out['inverse_failure_type']=='SolverBusyError' and out['inverse_worker_started'] is False
-    assert '本次未启动计算' in task_view.summary(out)['pause_reason']
-    assert out['inverse_ledger']['fit_runs_reserved']==1 and out['inverse_ledger']['actual_residual_calls']==0
+        with pytest.raises(WorkflowError, match='本轮尚未启动') as error:
+            act(store,s,'inverse_run',approve=True,plan_sha256=s['inverse_plan']['sha256'])
+    assert error.value.status == 409
+    out=store.get(s['id'])
+    assert out == s and out['status'] == 'PLANNED'
+    assert out['inverse_ledger']['fit_runs_reserved']==0 and out['inverse_ledger']['actual_residual_calls']==0
     assert (store.folder(s['id'])/'scan-0.csv').read_bytes()==raw_before
-    assert not (store.folder(s['id'])/'inverse-execution/worker.log').exists()
-    child=act(store,out,'inverse_revise');child=planned(store,child)
-    assert child['status']=='PLANNED' and child['inverse_plan']['sha256']==s['inverse_plan']['sha256']
-    assert store.get(out['id'])['status']=='FAILED' and ow.root_record(store,child)['inverse_ledger']['fit_runs_reserved']==1
-    assert child['groups']==out['groups'] and not child.get('inverse_approved_sha256')
+    assert not (store.folder(s['id'])/'inverse-execution').exists() and not out.get('inverse_approved_sha256')
 
 
 def sequence_module():

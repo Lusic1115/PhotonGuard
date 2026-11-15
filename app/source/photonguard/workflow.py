@@ -26,6 +26,11 @@ import threading
 from urllib.parse import unquote, urlsplit
 import uuid
 
+# Keep route helpers and the HTTP handler on the same WorkflowError class
+# when START_PORTABLE launches this module with Python's -m option.
+if __name__ == "__main__" and __spec__ is not None:
+    sys.modules[__spec__.name] = sys.modules[__name__]
+
 from .agent import apply_patch, propose_patch
 from .core import POLICY_HASH, candidate_problem, digest, finite, load, task_problem, verify_lock
 from .report import page, render_fragment
@@ -841,33 +846,51 @@ class WorkflowHandler(BaseHTTPRequestHandler):
             self.send_header(k, v)
         if filename:
             self.send_header("Content-Disposition", f'attachment; filename="{filename}"')
-        self.end_headers()
-        if self.command != "HEAD":
-            self.wfile.write(body)
+        try:
+            self.end_headers()
+            if self.command != "HEAD":
+                self.wfile.write(body)
+        except (BrokenPipeError, ConnectionResetError):
+            # A disconnected client can read the saved operation on reconnect.
+            return
 
     def json(self, value, status=200):
         self.send(json.dumps(value, ensure_ascii=False, allow_nan=False).encode(), "application/json; charset=utf-8", status)
 
     def parts(self):
         parsed = urlsplit(self.path)
-        if parsed.netloc or parsed.scheme or parsed.query or parsed.fragment:
+        knowledge_search = self.command == 'GET' and parsed.path == '/api/experiments/knowledge/search'
+        if parsed.netloc or parsed.scheme or parsed.fragment or parsed.query and not knowledge_search:
             raise WorkflowError("不支持此请求路径")
         path = unquote(parsed.path, errors="strict")
         if any(c in path for c in ("\\", "\x00", "%")) or any(p in {".", ".."} for p in path.split("/")):
             raise WorkflowError("不安全的请求路径")
         return path, path.strip("/").split("/")
 
+    def get_experiment_api(self, path, parts):
+        from .experiments.service import route_get
+        return route_get(self,path,parts)
+
+    def post_experiment_api(self, path, parts, data):
+        from .experiments.service import route_post
+        return route_post(self,path,parts,data)
+
     def do_GET(self):
         try:
             self.headers_ok()
             path, parts = self.parts()
-            if path in {'/experiments','/experiments.js','/experiments.css','/assets/experiments.js','/assets/experiments.css'}:
+            if path in {'/knowledge','/assets/knowledge.js','/assets/knowledge.css','/assets/knowledge_figures.js',
+                        '/assets/katex.min.js','/assets/study_text.js'}:
+                name='knowledge.html' if path=='/knowledge' else parts[-1]
+                mime={'html':'text/html','js':'text/javascript','css':'text/css'}[name.rsplit('.',1)[1]]
+                self.send((ASSETS/name).read_bytes(),mime+'; charset=utf-8')
+                return
+            if path in {'/experiments','/experiments.js','/experiments.css','/assets/experiments.js','/assets/experiments.css','/assets/learning.js','/assets/slit-comparison.js','/assets/optical-apparatus.js','/assets/bounded-goal.js','/assets/csv-intake.js'}:
                 name='experiments.html' if path=='/experiments' else path.split('/')[-1]
                 self.send((ASSETS/name).read_bytes(), {'html':'text/html','js':'text/javascript','css':'text/css'}[name.rsplit('.',1)[1]]+'; charset=utf-8')
                 return
             if path.startswith('/api/experiments/'):
-                from .experiments.service import route_get
-                if route_get(self,path,parts):return
+                if self.get_experiment_api(path,parts):return
             if path in {"/", "/app.js", "/repair.js", "/style.css", "/assets/app.js", "/assets/style.css", "/assets/intake.js", "/assets/repair.js", "/assets/mode.js", "/assets/mode-report.css", "/assets/novice.js", "/assets/certificate-report.css"}:
                 name = "index.html" if path == "/" else path.split("/")[-1]
                 mime = {"certificate-report.css": "text/css", "novice.js": "text/javascript", "index.html": "text/html", "app.js": "text/javascript", "intake.js": "text/javascript", "repair.js": "text/javascript", "mode.js":"text/javascript", "style.css": "text/css", "mode-report.css": "text/css"}[name]
@@ -987,7 +1010,9 @@ class WorkflowHandler(BaseHTTPRequestHandler):
             self.headers_ok(mutate=True)
             path, parts = self.parts()
             length = int(self.headers["Content-Length"])
-            limit = 3 * 1024 * 1024 if path in ('/api/experiments/observations','/api/experiments/inverse') else MAX_BODY
+            csv_route = path in ('/api/experiments/observations','/api/experiments/inverse','/api/experiments/csv/preview','/api/experiments/task-start')
+            case_action = re.fullmatch(r'/api/experiments/cases/[a-f0-9]{32}/action',path)
+            limit = 3 * 1024 * 1024 if csv_route or case_action else MAX_BODY
             if not 0 < length <= limit:
                 raise WorkflowError("请求过大或为空", 413)
             raw = self.rfile.read(length)
@@ -997,8 +1022,7 @@ class WorkflowHandler(BaseHTTPRequestHandler):
             if not isinstance(data, dict):
                 raise WorkflowError("请求必须是 JSON 对象")
             if path.startswith('/api/experiments/'):
-                from .experiments.service import route_post
-                if route_post(self,path,parts,data):return
+                if self.post_experiment_api(path,parts,data):return
             if path == "/api/cases":
                 if 'mode' not in data or set(data) - {'mode', 'workspace_id'}:
                     raise WorkflowError('只接受 mode 和 workspace_id 字段')
@@ -1025,12 +1049,13 @@ class WorkflowHandler(BaseHTTPRequestHandler):
     do_PUT = do_PATCH = do_DELETE = do_OPTIONS = unsupported
 
 
-def make_server(root, host="127.0.0.1", port=8766, *, allow_workers=True, model_adapter=None):
+def make_server(root, host="127.0.0.1", port=8766, *, allow_workers=True, model_adapter=None,
+                handler=WorkflowHandler):
     if host != "127.0.0.1":
         raise WorkflowError("工作流仅绑定 127.0.0.1；不支持公网或全接口监听")
     store = WorkflowStore(root, allow_workers=allow_workers, model_adapter=model_adapter)
     try:
-        server = ThreadingHTTPServer((host, port), WorkflowHandler)
+        server = ThreadingHTTPServer((host, port), handler)
     except Exception:
         store.close()
         raise

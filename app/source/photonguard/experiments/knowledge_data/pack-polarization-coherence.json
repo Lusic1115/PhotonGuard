@@ -1,0 +1,1808 @@
+{
+  "id": "polarization-coherence",
+  "version": "1.0.1",
+  "sources": {
+    "jones": {
+      "title": "Interactive Optics · Polarisation",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap4_Polarisation/Polarization_2022_01Clean.html#polarisation-states-and-jones-vectors",
+      "section": "Polarisation States and Jones Vectors",
+      "fingerprint": "sha256:4d119b6735b38967485a166fc5b60ea3509465c6b3972ae0710feb5432ebf598",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "decomposition": {
+      "title": "Interactive Optics · Polarisation",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap4_Polarisation/Polarization_2022_01Clean.html#decomposition-of-an-elliptical-polarisation-state-into-sums-of-linear-of-circular-states",
+      "section": "Decomposition of an Elliptical Polarisation state into sums of Linear & of Circular States",
+      "fingerprint": "sha256:4d119b6735b38967485a166fc5b60ea3509465c6b3972ae0710feb5432ebf598",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "cascade": {
+      "title": "Interactive Optics · Polarisation",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap4_Polarisation/Polarization_2022_01Clean.html#more-on-jones-matrices",
+      "section": "More on Jones matrices",
+      "fingerprint": "sha256:4d119b6735b38967485a166fc5b60ea3509465c6b3972ae0710feb5432ebf598",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "jones-elements": {
+      "title": "Interactive Optics · Polarisation",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap4_Polarisation/Polarization_2022_01Clean.html#jones-matrices",
+      "section": "Jones Matrices",
+      "fingerprint": "sha256:4d119b6735b38967485a166fc5b60ea3509465c6b3972ae0710feb5432ebf598",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "polarizer": {
+      "title": "Interactive Optics · Polarisation",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap4_Polarisation/Polarization_2022_01Clean.html#linear-polarisers",
+      "section": "Linear Polarisers",
+      "fingerprint": "sha256:4d119b6735b38967485a166fc5b60ea3509465c6b3972ae0710feb5432ebf598",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "degree": {
+      "title": "Interactive Optics · Polarisation",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap4_Polarisation/Polarization_2022_01Clean.html#degree-of-polarisation",
+      "section": "Degree of Polarisation",
+      "fingerprint": "sha256:4d119b6735b38967485a166fc5b60ea3509465c6b3972ae0710feb5432ebf598",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "qwp": {
+      "title": "Interactive Optics · Polarisation",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap4_Polarisation/Polarization_2022_01Clean.html#quarter-wave-plates",
+      "section": "Quarter-Wave Plates",
+      "fingerprint": "sha256:4d119b6735b38967485a166fc5b60ea3509465c6b3972ae0710feb5432ebf598",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "hwp": {
+      "title": "Interactive Optics · Polarisation",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap4_Polarisation/Polarization_2022_01Clean.html#half-wave-plates",
+      "section": "Half-Wave Plates",
+      "fingerprint": "sha256:4d119b6735b38967485a166fc5b60ea3509465c6b3972ae0710feb5432ebf598",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "fwp": {
+      "title": "Interactive Optics · Polarisation",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap4_Polarisation/Polarization_2022_01Clean.html#full-wave-plates",
+      "section": "Full-Wave Plates",
+      "fingerprint": "sha256:4d119b6735b38967485a166fc5b60ea3509465c6b3972ae0710feb5432ebf598",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "pol-interference": {
+      "title": "Interactive Optics · Interference and Coherence",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap5_Interference/InterferenceCoherence_2022_01Clean.html#interference-and-polarisation",
+      "section": "Interference and polarisation",
+      "fingerprint": "sha256:c54fc6fd3b81a5311572e2f8378cdadf41ee2c672cef68bedbbd7f1032133e9e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "coherence": {
+      "title": "Interactive Optics · Interference and Coherence",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap5_Interference/InterferenceCoherence_2022_01Clean.html#coherence",
+      "section": "Coherence",
+      "fingerprint": "sha256:c54fc6fd3b81a5311572e2f8378cdadf41ee2c672cef68bedbbd7f1032133e9e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "young": {
+      "title": "Interactive Optics · Interference and Coherence",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap5_Interference/InterferenceCoherence_2022_01Clean.html#spatial-coherence-and-youngs-experiment",
+      "section": "Spatial Coherence and Young’s Experiment",
+      "fingerprint": "sha256:c54fc6fd3b81a5311572e2f8378cdadf41ee2c672cef68bedbbd7f1032133e9e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "fringe": {
+      "title": "Interactive Optics · Interference and Coherence",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap5_Interference/InterferenceCoherence_2022_01Clean.html#fringe-contrast",
+      "section": "Fringe contrast",
+      "fingerprint": "sha256:c54fc6fd3b81a5311572e2f8378cdadf41ee2c672cef68bedbbd7f1032133e9e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "polychromatic": {
+      "title": "Interactive Optics · Interference and Coherence",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap5_Interference/InterferenceCoherence_2022_01Clean.html#polychromatic-light",
+      "section": "Polychromatic Light",
+      "fingerprint": "sha256:c54fc6fd3b81a5311572e2f8378cdadf41ee2c672cef68bedbbd7f1032133e9e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "coherence-source": {
+      "title": "Interactive Optics · Interference and Coherence",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap5_Interference/InterferenceCoherence_2022_01Clean.html#coherence-of-light-sources",
+      "section": "Coherence of Light Sources",
+      "fingerprint": "sha256:c54fc6fd3b81a5311572e2f8378cdadf41ee2c672cef68bedbbd7f1032133e9e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "michelson": {
+      "title": "Interactive Optics · Interference and Coherence",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap5_Interference/InterferenceCoherence_2022_01Clean.html#temporal-coherence-and-the-michelson-interferometer",
+      "section": "Temporal Coherence and the Michelson Interferometer",
+      "fingerprint": "sha256:c54fc6fd3b81a5311572e2f8378cdadf41ee2c672cef68bedbbd7f1032133e9e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "spatial-coh": {
+      "title": "Interactive Optics · Interference and Coherence",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap5_Interference/InterferenceCoherence_2022_01Clean.html#more-on-spatial-coherence",
+      "section": "More on Spatial Coherence",
+      "fingerprint": "sha256:c54fc6fd3b81a5311572e2f8378cdadf41ee2c672cef68bedbbd7f1032133e9e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    },
+    "stellar": {
+      "title": "Interactive Optics · Interference and Coherence",
+      "url": "https://interactivetextbooks.tudelft.nl/interactive-optics/content/Chap5_Interference/InterferenceCoherence_2022_01Clean.html#stellar-interferometry",
+      "section": "Stellar Interferometry",
+      "fingerprint": "sha256:c54fc6fd3b81a5311572e2f8378cdadf41ee2c672cef68bedbbd7f1032133e9e",
+      "author": "Aurèle J.L. Adam、Sander Konijnenberg、H. Paul Urbach",
+      "edition": "第 2 版，TU Delft OPEN Books，DOI 10.59490/mt.232",
+      "license": "CC BY 4.0；另列素材依其标识",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，正文及例子为项目原创中文讲解。"
+    }
+  },
+  "entries": [
+    {
+      "id": "jones-global-phase",
+      "title": "Jones 向量的共同相位",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "Jones global phase",
+        "共同相位与偏振"
+      ],
+      "definition": "两个偏振分量乘上同一个单位模复数，不改变偏振椭圆。",
+      "body": "完全偏振光的相对分量相位和相对幅值确定偏振状态。共同相位若随时间稳定，在把整束光与另一参考束相干合成时仍可观测；只通过一个偏振分析器测功率时，共同相位因取模平方而消去。",
+      "example": "将 Jones 向量整体乘 i，比较同一偏振片后的功率。",
+      "caution": "讨论两路干涉时需保留相对于另一光束的相位。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "jones"
+      ],
+      "prerequisites": [
+        "jones-vector"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "两个偏振分量乘上同一个单位模复数，不改变偏振椭圆。",
+          "sources": [
+            "jones"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将 Jones 向量整体乘 i，比较同一偏振片后的功率。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "jones-normalization",
+      "title": "Jones 向量归一化与强度",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "normalized Jones vector",
+        "偏振态归一"
+      ],
+      "definition": "Jones 向量可归一化到模平方和为一，用来单独表达偏振态。",
+      "body": "实际场幅还包含总强度尺度。比较相同光束的偏振投影时用归一化分量即可；计算经过偏振片的绝对功率，需要把原始总光功率或场幅系数带回。",
+      "example": "将 (3,4) 归一化为 (0.6,0.8)，对应两正交线偏振功率比例 0.36 与 0.64。",
+      "caution": "归一化幅值不等于各分量的功率比例。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": "E_norm=E/√(abs(Eₓ)²+abs(Eᵧ)²)",
+      "variables": "归一前后须说明整体强度尺度。",
+      "sources": [
+        "jones"
+      ],
+      "prerequisites": [
+        "jones-vector"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "E_norm=E/√(abs(Eₓ)²+abs(Eᵧ)²)",
+          "sources": [
+            "jones"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将 (3,4) 归一化为 (0.6,0.8)，对应两正交线偏振功率比例 0.36 与 0.64。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "jones-linear-angle",
+      "title": "从 Jones 分量读线偏振角",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "linear Jones angle",
+        "线偏振方向"
+      ],
+      "definition": "两正交分量同相或反相时，可在去除共同相位后用实矢量给出方向。",
+      "body": "根据两个实分量用象限一致的反正切求角度。角度相差 180° 的实矢量表示同一偏振方向；若两分量的相对相位不是 0 或 π，则一般需要用椭圆参数描述。",
+      "example": "实分量 (1,1) 对应 45°，(−1,−1) 仍对应同一方向。",
+      "caution": "单用普通反正切可能丢失象限信息。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": "α=atan2(Eᵧ,Eₓ) mod π",
+      "variables": "Eₓ、Eᵧ 是去共同相位后的实分量。",
+      "sources": [
+        "jones"
+      ],
+      "prerequisites": [
+        "jones-vector"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "α=atan2(Eᵧ,Eₓ) mod π",
+          "sources": [
+            "jones"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "实分量 (1,1) 对应 45°，(−1,−1) 仍对应同一方向。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "circular-polarization-criterion",
+      "title": "圆偏振的幅度与相位条件",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "circular Jones",
+        "圆偏振条件"
+      ],
+      "definition": "圆偏振要求两个正交场分量等幅，并且相差四分之一周期。",
+      "body": "用复振幅记号可以写成两个分量相对因子为 +i 或 −i，两种符号对应相反旋向。旋向的命名还取决于观察视向和时间因子，因此比较教材时宜直接写出所用 Jones 向量。",
+      "example": "把等幅同相线偏振通过取向合适的四分之一波片，产生相对相位 ±π/2。",
+      "caution": "仅有 90° 相位差但幅值不等时通常为椭圆偏振。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "jones",
+        "decomposition"
+      ],
+      "prerequisites": [
+        "jones-vector"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "圆偏振要求两个正交场分量等幅，并且相差四分之一周期。",
+          "sources": [
+            "jones",
+            "decomposition"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "把等幅同相线偏振通过取向合适的四分之一波片，产生相对相位 ±π/2。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "ellipse-axis-case",
+      "title": "偏振椭圆与正交分量",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "polarization ellipse",
+        "椭圆主轴"
+      ],
+      "definition": "偏振椭圆是固定位置处电场矢量端点随时间描出的轨迹。",
+      "body": "两个场分量正交且相差四分之一周期时，所选坐标轴可以与椭圆主轴重合，半轴长度由两个幅值决定。一般相位差时主轴可相对坐标旋转，应从两分量联合判断。",
+      "example": "取 Eₓ 幅值两倍于 Eᵧ 且相差 90°，得到主轴比 2∶1 的椭圆。",
+      "caution": "只比较两个探测通道功率，无法在一般情况下确定主轴方向与旋向。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "jones",
+        "decomposition"
+      ],
+      "prerequisites": [
+        "jones-vector"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "偏振椭圆是固定位置处电场矢量端点随时间描出的轨迹。",
+          "sources": [
+            "jones",
+            "decomposition"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "取 Eₓ 幅值两倍于 Eᵧ 且相差 90°，得到主轴比 2∶1 的椭圆。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "orthogonal-polarization-product",
+      "title": "完全偏振态的正交性",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "orthogonal Jones states",
+        "偏振复内积"
+      ],
+      "definition": "两个归一化 Jones 态的共轭内积为零时，在理想偏振空间中正交。",
+      "body": "这可以判定两束光在同一探测位置不出现偏振投影的干涉交叉项。垂直线偏振是一组正交态，采用统一记号的两种相反圆偏振也是另一组。正交概念依赖复内积。",
+      "example": "将 (1,i)/√2 与 (1,−i)/√2 做共轭内积，结果为零。",
+      "caution": "仅逐分量相乘而不共轭会得到不同结果。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "jones",
+        "decomposition"
+      ],
+      "prerequisites": [
+        "jones-vector"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "两个归一化 Jones 态的共轭内积为零时，在理想偏振空间中正交。",
+          "sources": [
+            "jones",
+            "decomposition"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将 (1,i)/√2 与 (1,−i)/√2 做共轭内积，结果为零。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "jones-basis-rotation",
+      "title": "旋转偏振坐标的 Jones 表示",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "Jones basis rotation",
+        "实验室轴波片轴"
+      ],
+      "definition": "同一电场在转动后的偏振坐标中，要用旋转矩阵重新表示分量。",
+      "body": "先把输入投影到元件快慢轴，在轴坐标内施加各自的幅相响应，最后转回实验室坐标。主动旋转偏振和被动旋转坐标矩阵符号相关，先写清输入和输出能避免符号错误。",
+      "example": "用与元件轴平行的线偏振作为检查输入，旋转坐标后应只剩一个分量。",
+      "caution": "角度正方向与矩阵采用的旋转约定要一致。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "cascade"
+      ],
+      "prerequisites": [
+        "jones-vector"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "同一电场在转动后的偏振坐标中，要用旋转矩阵重新表示分量。",
+          "sources": [
+            "cascade"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用与元件轴平行的线偏振作为检查输入，旋转坐标后应只剩一个分量。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "jones-order-cascade",
+      "title": "偏振元件的矩阵顺序",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "Jones matrix order",
+        "波片偏振片级联"
+      ],
+      "definition": "用列向量时，光先经过的 Jones 元件出现在乘积右侧。",
+      "body": "透过偏振片和改变相对相位通常不能交换顺序。先偏振再过波片可生成椭圆态；反过来再通过线偏振片时，最终透过态仍沿分析器轴。计算前把各元件都写到同一坐标。",
+      "example": "把半波片和分析偏振片交换位置，比较输出态和功率。",
+      "caution": "实验照片的左右顺序未必是实际传播顺序。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": "E_out=J₂J₁E_in",
+      "variables": "J₁ 为先遇到的元件，所有矩阵采用统一基底。",
+      "sources": [
+        "cascade",
+        "jones-elements"
+      ],
+      "prerequisites": [
+        "jones-basis-rotation"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "E_out=J₂J₁E_in",
+          "sources": [
+            "cascade",
+            "jones-elements"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "把半波片和分析偏振片交换位置，比较输出态和功率。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "linear-polarizer-projector",
+      "title": "线偏振片的场投影",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "polarizer projector",
+        "偏振片振幅投影"
+      ],
+      "definition": "理想线偏振片将入射电场投影到透过轴。",
+      "body": "先将输入场沿轴分量取出，输出方向沿同一轴。对纯线偏振，两方向角差给场振幅的余弦因子；探测功率由场幅平方得到，因此余弦可以带符号，功率保持非负。",
+      "example": "偏振方向与透过轴相差 60° 时，场幅因子 0.5，功率比例 0.25。",
+      "caution": "分析椭圆态需对复场投影。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": "E_out=e(e†E_in)",
+      "variables": "e 为单位轴向列向量，† 为共轭转置。",
+      "sources": [
+        "polarizer"
+      ],
+      "prerequisites": [
+        "linear-polarizer"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "E_out=e(e†E_in)",
+          "sources": [
+            "polarizer"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "偏振方向与透过轴相差 60° 时，场幅因子 0.5，功率比例 0.25。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "malus-intensity-angle",
+      "title": "马吕斯定律的角度基准",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "Malus law",
+        "cos²偏振透射"
+      ],
+      "definition": "理想分析偏振片对线偏振光的透过功率正比于夹角余弦的平方。",
+      "body": "角度是入射偏振方向与分析器透过轴之差，可由两个独立读数相减得到。测量有背景时应先记录暗值，再用最大和最小透射核查是否接近理想模型。",
+      "example": "输入 2 mW，分析器与偏振相差 45°，理想输出 1 mW。",
+      "caution": "入射部分偏振或分析器有限消光时，最小值通常不为零。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": "I=I₀ cos²(α−θ)",
+      "variables": "角度在相同坐标系，I 与 I₀ 同单位。",
+      "sources": [
+        "polarizer"
+      ],
+      "prerequisites": [
+        "linear-polarizer-projector"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "I=I₀ cos²(α−θ)",
+          "sources": [
+            "polarizer"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "输入 2 mW，分析器与偏振相差 45°，理想输出 1 mW。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "crossed-polarizer-intermediate",
+      "title": "交叉偏振片之间插入第三片",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "three polarizers",
+        "交叉偏振中间片"
+      ],
+      "definition": "两片理想交叉偏振片之间加入非平行中间片，可让部分光通过。",
+      "body": "设第一片后的光沿 x，第三片沿 y，中间片在 45°。每个相邻轴之间相差 45°，各取一半功率，因此最终透过第一片后功率的四分之一。中间片改变偏振方向供最后一片再投影。",
+      "example": "比较有无 45° 中间片时末端探测到的光强。",
+      "caution": "结果的分母是第一片之后或整个系统之前，需注明。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "polarizer",
+        "cascade"
+      ],
+      "prerequisites": [
+        "malus-intensity-angle"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "两片理想交叉偏振片之间加入非平行中间片，可让部分光通过。",
+          "sources": [
+            "polarizer",
+            "cascade"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较有无 45° 中间片时末端探测到的光强。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "unpolarized-polarizer-half",
+      "title": "非偏振光通过理想偏振片",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "unpolarized polarizer half",
+        "非偏振透过一半"
+      ],
+      "definition": "理想非偏振光在任一线偏振轴上的平均投影功率相同，为总功率的一半。",
+      "body": "非偏振场在两个正交方向上没有稳定的相对相位，可用统计强度描述。理想分析器选择其中一个方向，转动分析器时平均透过功率不随角度变化。经过偏振片后的光可具有明确的线偏振。",
+      "example": "旋转理想分析器，测平均功率是否保持在入射一半。",
+      "caution": "真实偏振片还有插入损耗，最强透过也可低于理想值。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "degree",
+        "polarizer"
+      ],
+      "prerequisites": [
+        "linear-polarizer"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "理想非偏振光在任一线偏振轴上的平均投影功率相同，为总功率的一半。",
+          "sources": [
+            "degree",
+            "polarizer"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "旋转理想分析器，测平均功率是否保持在入射一半。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "polarizer-extinction-ratio",
+      "title": "偏振片的消光比",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "polarizer extinction ratio",
+        "平行和垂直透射"
+      ],
+      "definition": "消光比比较最大透过和最小透过的强度或功率。",
+      "body": "转动分析器时找到平行和正交读数并扣除适当背景。若最小值已经接近探测器噪声底，则数据可能只给出消光比下限。计算分贝时应使用功率比例的对数换算。",
+      "example": "最大 1 mW、最小 1 μW 时，功率消光比 1000，约 30 dB。",
+      "caution": "产品可能采用倒数口径，记录时写出分子分母。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": "ER=T_max/T_min，ER_dB=10 log₁₀(ER)",
+      "variables": "T 为功率透射比例。",
+      "sources": [
+        "polarizer"
+      ],
+      "prerequisites": [
+        "malus-intensity-angle"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ER=T_max/T_min，ER_dB=10 log₁₀(ER)",
+          "sources": [
+            "polarizer"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "最大 1 mW、最小 1 μW 时，功率消光比 1000，约 30 dB。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "retarder-fast-slow-axis",
+      "title": "波片快慢轴与延迟",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "fast slow axis",
+        "相位延迟"
+      ],
+      "definition": "波片让沿两本征轴传播的场积累不同相位。",
+      "body": "同一厚度内，两方向有效折射率不同，较慢方向累积较大相位延迟。输入投影到两轴后分别乘相位因子；只有两轴都有分量，延迟才会改变输出偏振状态。",
+      "example": "线偏振沿任一波片轴入射，出射仍保持该线偏振方向。",
+      "caution": "材料折射率和相位延迟通常依赖工作波长。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": "δ=2π Δn d/λ₀",
+      "variables": "d、λ₀ 同单位，Δn 无量纲，δ 用 rad。",
+      "sources": [
+        "jones-elements"
+      ],
+      "prerequisites": [
+        "waveplate"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "δ=2π Δn d/λ₀",
+          "sources": [
+            "jones-elements"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "线偏振沿任一波片轴入射，出射仍保持该线偏振方向。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "quarterwave-axis-alignment",
+      "title": "四分之一波片的 45° 入射条件",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "quarter wave 45 degree",
+        "波片线偏振变圆"
+      ],
+      "definition": "线偏振与波片本征轴成 45° 时，两轴获得等幅输入。",
+      "body": "理想四分之一波延迟再给其中一轴相对相位 π/2，于是输出满足圆偏振的两个条件。若入射方向改到 30°，投影幅值不等，得到椭圆态；沿某一轴时仍是线偏振。",
+      "example": "将线偏振相对快轴从 +45° 改到 −45°，检查输出旋向交换。",
+      "caution": "旋向应与所用坐标视向和相位记号一起说明。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "qwp"
+      ],
+      "prerequisites": [
+        "quarter-waveplate"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "线偏振与波片本征轴成 45° 时，两轴获得等幅输入。",
+          "sources": [
+            "qwp"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将线偏振相对快轴从 +45° 改到 −45°，检查输出旋向交换。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "quarterwave-circular-analysis",
+      "title": "用四分之一波片区分圆偏振",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "circular polarization analyzer",
+        "圆偏振测量"
+      ],
+      "definition": "理想四分之一波片可把相反圆偏振变成互相正交的线偏振。",
+      "body": "单独转动线偏振片时，两种圆偏振的平均透过相同。先用波片补偿一个四分之一周期的相对相位，使两种圆态转到不同线方向，再用固定分析器比较透射。",
+      "example": "分别输入两种已知圆态，测波片后分析器两正交轴的读数。",
+      "caution": "波片在非设计波长处可能只能部分转换。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "qwp",
+        "polarizer"
+      ],
+      "prerequisites": [
+        "quarterwave-axis-alignment"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "理想四分之一波片可把相反圆偏振变成互相正交的线偏振。",
+          "sources": [
+            "qwp",
+            "polarizer"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "分别输入两种已知圆态，测波片后分析器两正交轴的读数。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "half-waveplate-axis-scan",
+      "title": "半波片扫描输出方向",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "half-wave double angle",
+        "转波片两倍角"
+      ],
+      "definition": "固定入射偏振时，理想半波片快轴转过 Δθ，输出线偏振方向转过 2Δθ。",
+      "body": "先转到波片坐标，慢轴的相对相位 π 让该分量变号。回到实验室坐标后，输出方向为快轴角两倍减入射角。检测功率时还要再与分析偏振片的透过轴比较。",
+      "example": "快轴从 20° 转到 25°，输入不变，输出方向移动 10°。",
+      "caution": "输出的绝对角度仍包含入射偏振角。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": "Δα_out=2Δθ",
+      "variables": "角度同单位，以线偏振方向周期理解。",
+      "sources": [
+        "hwp"
+      ],
+      "prerequisites": [
+        "half-waveplate"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δα_out=2Δθ",
+          "sources": [
+            "hwp"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "快轴从 20° 转到 25°，输入不变，输出方向移动 10°。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "full-waveplate-design-wavelength",
+      "title": "全波片的设计波长",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "full wave plate",
+        "全波延迟"
+      ],
+      "definition": "全波片在设计条件下给出整周相对相位延迟。",
+      "body": "相对相位为 2π 时，两个场分量的相对复因子恢复为一，完全偏振态在理想情况下保持。改变波长后，相位延迟因真空波长及材料双折射变化而偏离整数周，可用于解释波长敏感性。",
+      "example": "在设计波长和另一窄带波长分别测相同输入态的透射。",
+      "caution": "公共相位和相对相位应分别描述。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "fwp"
+      ],
+      "prerequisites": [
+        "retarder-fast-slow-axis"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "全波片在设计条件下给出整周相对相位延迟。",
+          "sources": [
+            "fwp"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在设计波长和另一窄带波长分别测相同输入态的透射。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "retarder-wavelength-dependence",
+      "title": "波片延迟的波长依赖",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "retardance dispersion",
+        "偏离设计波长"
+      ],
+      "definition": "固定厚度的双折射波片，相位延迟通常随波长和材料双折射共同变化。",
+      "body": "设计点的四分之一波或半波关系来自固定的相位差。在另一波长，即使厚度不变，分母波长和折射率差都可能改变，输出态可能由期望圆态变为椭圆态。宽带用途应核对器件延迟规格。",
+      "example": "用两种颜色照明同一标称四分之一波片，比较转动分析器后的对比度。",
+      "caution": "不能只按 1/λ 缩放而忽略材料色散。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "fwp",
+        "jones-elements"
+      ],
+      "prerequisites": [
+        "retarder-fast-slow-axis"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "固定厚度的双折射波片，相位延迟通常随波长和材料双折射共同变化。",
+          "sources": [
+            "fwp",
+            "jones-elements"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用两种颜色照明同一标称四分之一波片，比较转动分析器后的对比度。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "polarization-degree-from-stokes",
+      "title": "用 Stokes 向量读偏振度",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "degree of polarization",
+        "DOP",
+        "偏振度"
+      ],
+      "definition": "偏振度是三个偏振 Stokes 分量构成的模长与总强度的比。",
+      "body": "先在一组规定的线偏振和圆偏振分析状态下测光强，再组成 S₀ 至 S₃。理想完全偏振时比值为一，理想非偏振时为零。实际噪声或标定误差可使估计略超物理范围。",
+      "example": "S₀=10、S₁=6、其余为零时，偏振度 0.6。",
+      "caution": "旋向分量的符号定义不会改变模长，但会影响态解释。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": "P=√(S₁²+S₂²+S₃²)/S₀",
+      "variables": "四个参量采用相同强度单位，S₀>0。",
+      "sources": [
+        "degree"
+      ],
+      "prerequisites": [
+        "stokes-parameters"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P=√(S₁²+S₂²+S₃²)/S₀",
+          "sources": [
+            "degree"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "S₀=10、S₁=6、其余为零时，偏振度 0.6。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "stokes-linear-pair-measurement",
+      "title": "用线分析器测 Stokes 差分",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "Stokes intensity differences",
+        "0和90度偏振读数"
+      ],
+      "definition": "正交线偏振分析的功率差可给出指定线基底下的 Stokes 分量。",
+      "body": "测 0° 和 90° 的理想投影可得一个差分，再测 45° 与 135° 得另一差分。每组正交强度和应与同一总强度一致，可作为稳定度检查。圆分量还需圆偏振分析。",
+      "example": "同一稳定束的 0° 与 90° 分别为 8 与 2 单位，差分为 6。",
+      "caution": "不同角度的增益、背景和总光强漂移须校正。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "degree",
+        "polarizer"
+      ],
+      "prerequisites": [
+        "stokes-parameters"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "正交线偏振分析的功率差可给出指定线基底下的 Stokes 分量。",
+          "sources": [
+            "degree",
+            "polarizer"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "同一稳定束的 0° 与 90° 分别为 8 与 2 单位，差分为 6。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "stokes-circular-component",
+      "title": "圆偏振 Stokes 分量的测量",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "Stokes S3",
+        "圆分析器读数差"
+      ],
+      "definition": "圆偏振分量可由两种正交圆分析状态下的强度差得到。",
+      "body": "在理想实验中，用波片和线分析器把左、右两种圆基矢分别转为可测线态。实际应以已知圆态校准哪一个配置定义为正，避免由于观察方向或安装轴记录不同而得到反号。",
+      "example": "对已知线偏振输入，理想圆分析两路功率相同。",
+      "caution": "采用何种左右旋和 S₃ 正号约定需随结果记录。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "degree",
+        "qwp"
+      ],
+      "prerequisites": [
+        "stokes-linear-pair-measurement"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "圆偏振分量可由两种正交圆分析状态下的强度差得到。",
+          "sources": [
+            "degree",
+            "qwp"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "对已知线偏振输入，理想圆分析两路功率相同。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "polarization-stokes-vs-jones",
+      "title": "部分偏振为何需要强度统计",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "Jones vs Stokes",
+        "非完全偏振表示"
+      ],
+      "definition": "单个 Jones 向量表达确定相干关系的两个分量，Stokes 参量可描述统计混合。",
+      "body": "若测量过程中偏振状态快速变化，单一复向量不能表达时间平均偏振度。可先对同一探测条件下的强度统计量求平均，再构造 Stokes 向量。完全偏振特例可在两种表示之间换算。",
+      "example": "等量且互不相干的水平、垂直光束叠加，平均偏振度可为零。",
+      "caution": "不要把统计混合的强度平均误写成两 Jones 场的确定相加。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "jones",
+        "degree"
+      ],
+      "prerequisites": [
+        "jones-vector",
+        "stokes-parameters"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "单个 Jones 向量表达确定相干关系的两个分量，Stokes 参量可描述统计混合。",
+          "sources": [
+            "jones",
+            "degree"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "等量且互不相干的水平、垂直光束叠加，平均偏振度可为零。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "polarization-interference-overlap",
+      "title": "偏振方向对干涉交叉项的影响",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "polarization overlap interference",
+        "正交偏振无条纹"
+      ],
+      "definition": "两束完全偏振光的交叉项带有偏振复内积因子。",
+      "body": "即使光程与时间相干条件合适，两个理想正交偏振态的交叉项也为零。若加共同分析器，两束光可能都投影到同一轴，之后重新出现条纹，强度要按投影后的幅值求。",
+      "example": "将原本正交的两束光通过 45° 线偏振片后观察干涉。",
+      "caution": "分析器会改功率和相位关系，应在其后定义测量对象。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "pol-interference"
+      ],
+      "prerequisites": [
+        "orthogonal-polarization-product"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "两束完全偏振光的交叉项带有偏振复内积因子。",
+          "sources": [
+            "pol-interference"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将原本正交的两束光通过 45° 线偏振片后观察干涉。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "mutual-coherence-definition",
+      "title": "互相干函数的时间平均",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "mutual coherence",
+        "相干函数 Γ12"
+      ],
+      "definition": "互相干函数衡量两个位置或两时刻的复光场相关。",
+      "body": "将一处场与另一处延迟后的复共轭作时间或统计平均，得到同时包含相位和关联幅度的信息。除以两处均方强度的几何平均后可比较不同亮度的光束。",
+      "example": "在稳定双缝装置中改变两缝间距和延迟，检查相干度的变化。",
+      "caution": "要说明延迟的正方向以及哪一处场取共轭。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": "γ₁₂(τ)=Γ₁₂(τ)/√(I₁I₂)",
+      "variables": "γ 无量纲，I₁、I₂ 为相同统计口径的平均强度。",
+      "sources": [
+        "coherence",
+        "young"
+      ],
+      "prerequisites": [
+        "temporal-coherence",
+        "spatial-coherence"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "γ₁₂(τ)=Γ₁₂(τ)/√(I₁I₂)",
+          "sources": [
+            "coherence",
+            "young"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在稳定双缝装置中改变两缝间距和延迟，检查相干度的变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "visibility-intensity-imbalance",
+      "title": "光强不平衡对条纹可见度的限制",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "fringe visibility imbalance",
+        "强弱光束对比度"
+      ],
+      "definition": "即使两束完全相干，强度不等也会使条纹可见度低于一。",
+      "body": "合强度的平均项是两束强度之和，振荡振幅为两强度几何平均的两倍乘相干度大小。用最大最小强度求可见度时，这个不平衡因子会和相干度相乘。",
+      "example": "两束强度为 1 和 4，完全相干时理想可见度 4/5。",
+      "caution": "先测单臂强度，才能区分不平衡和相干性降低。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": "V=2√(I₁I₂) abs(γ)/(I₁+I₂)",
+      "variables": "I₁、I₂ 为平均强度，V 无量纲。",
+      "sources": [
+        "fringe",
+        "coherence"
+      ],
+      "prerequisites": [
+        "fringe-visibility"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "V=2√(I₁I₂) abs(γ)/(I₁+I₂)",
+          "sources": [
+            "fringe",
+            "coherence"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两束强度为 1 和 4，完全相干时理想可见度 4/5。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "coherence-envelope-lineshape",
+      "title": "谱线形状与相干包络",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "coherence envelope lineshape",
+        "谱宽与相干时间"
+      ],
+      "definition": "平稳光源的一阶时间相干函数由光谱通过傅里叶关系确定。",
+      "body": "频率分布越宽，随延迟积累的相位差越快散开，相干包络通常越短。高斯谱与洛伦兹谱的包络形状和线宽换算常数不同。读到谱宽时，应同步说明频率轴与宽度定义。",
+      "example": "比较中心频率相同的窄带和宽带源，用干涉仪测可见度随延迟的变化。",
+      "caution": "相干时间通常是按某种宽度或衰减阈值定义，并无唯一通用常数。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "polychromatic",
+        "coherence-source"
+      ],
+      "prerequisites": [
+        "temporal-coherence"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "平稳光源的一阶时间相干函数由光谱通过傅里叶关系确定。",
+          "sources": [
+            "polychromatic",
+            "coherence-source"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "比较中心频率相同的窄带和宽带源，用干涉仪测可见度随延迟的变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "coherence-length-optical-path",
+      "title": "相干长度与光程差",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "相干长度",
+        "coherence length optical path",
+        "延迟换光程"
+      ],
+      "definition": "相干长度常把一定的相干时间尺度换算成对应的光程差尺度。",
+      "body": "在空气中可用光速乘相干时间得到量级；实际介质应按相关的群时延关系处理。干涉装置的机械移动和两臂光程差往往不同，反射臂常需计入往返两次。",
+      "example": "相干时间 1 ps 对应真空约 0.30 mm 光程差。",
+      "caution": "给出包络宽度定义，并注明是空气机械距离、介质长度或光程。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": "L_c≈c τ_c（真空光程）",
+      "variables": "c 用 m/s，τ_c 用 s，L_c 用 m。",
+      "sources": [
+        "michelson",
+        "coherence-source"
+      ],
+      "prerequisites": [
+        "temporal-coherence"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "L_c≈c τ_c（真空光程）",
+          "sources": [
+            "michelson",
+            "coherence-source"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "相干时间 1 ps 对应真空约 0.30 mm 光程差。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "michelson-mirror-double-pass",
+      "title": "迈克耳孙镜移的双程光程",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "Michelson double pass",
+        "镜子移动两倍光程"
+      ],
+      "definition": "在一臂反射镜沿轴移动 Δx 时，该臂光路的去回两段均改变。",
+      "body": "空气近似下两束光的光程差变化约为 2Δx，因此相位变化为波数乘 2Δx。每增加一个波长的光程差，中心亮暗完整循环一次，镜子只需移动半个波长。",
+      "example": "使用 632.8 nm 光，理想一个条纹周期对应约 316.4 nm 镜移。",
+      "caution": "镜面倾斜、介质折射率及读数方向会改变换算。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": "ΔOPL≈2Δx，Δφ=2πΔOPL/λ₀",
+      "variables": "Δx 与 λ₀ 用同一长度单位，空气近似 n=1。",
+      "sources": [
+        "michelson"
+      ],
+      "prerequisites": [
+        "michelson-interferometer"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ΔOPL≈2Δx，Δφ=2πΔOPL/λ₀",
+          "sources": [
+            "michelson"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "使用 632.8 nm 光，理想一个条纹周期对应约 316.4 nm 镜移。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "white-light-central-fringe",
+      "title": "白光干涉的零光程差定位",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "white light central fringe",
+        "白光零级条纹"
+      ],
+      "definition": "宽谱光源通常只在接近零群延迟的一小段范围内产生明显条纹。",
+      "body": "在光程匹配附近，许多频率分量的相位能够同时对齐。偏离后各颜色的条纹周期不同，叠加使总体对比度迅速下降。在色散显著的两臂，包络峰和某颜色的相位峰可能分开。",
+      "example": "先用窄带光粗对准干涉，再切宽带源寻找包络中心。",
+      "caution": "多表面反射可能产生多个包络，需核对路径归属。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "polychromatic",
+        "michelson"
+      ],
+      "prerequisites": [
+        "coherence-envelope-lineshape"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "宽谱光源通常只在接近零群延迟的一小段范围内产生明显条纹。",
+          "sources": [
+            "polychromatic",
+            "michelson"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "先用窄带光粗对准干涉，再切宽带源寻找包络中心。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "young-variable-source-size",
+      "title": "发光面积与双缝相干长度",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "source size spatial coherence",
+        "双缝光源大小"
+      ],
+      "definition": "在适用条件下，较大角尺寸的非相干光源会降低远处两点的空间相干度。",
+      "body": "把光源视为许多独立小发光点，每个点照亮双缝时有不同相位差，因而各自的条纹会横向错开。对整个源做强度平均后，缝距较大时这些错位条纹更容易互相抹平。",
+      "example": "逐步开大均匀发光面前的光阑，观察固定双缝的条纹对比下降。",
+      "caution": "同一现象也受波长、源距和照明几何影响。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "young",
+        "spatial-coh"
+      ],
+      "prerequisites": [
+        "spatial-coherence"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "在适用条件下，较大角尺寸的非相干光源会降低远处两点的空间相干度。",
+          "sources": [
+            "young",
+            "spatial-coh"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "逐步开大均匀发光面前的光阑，观察固定双缝的条纹对比下降。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "stellar-baseline-coherence",
+      "title": "基线与恒星角直径",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "stellar interferometer",
+        "星体角尺寸基线"
+      ],
+      "definition": "恒星干涉仪可用不同基线的条纹可见度约束远处光源的角尺寸。",
+      "body": "两个分离的收集点探测来自光源不同方向的平均场关联。扩大基线后，扩展源不同方向的相位差分布更宽，可见度出现可测变化。把模型曲线与多基线观测比较即可估计角尺寸。",
+      "example": "对比点状源和均匀圆盘源随基线增大的可见度趋势。",
+      "caution": "角直径推断依赖亮度分布模型、波段和仪器校准。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "stellar"
+      ],
+      "prerequisites": [
+        "young-variable-source-size"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "恒星干涉仪可用不同基线的条纹可见度约束远处光源的角尺寸。",
+          "sources": [
+            "stellar"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "对比点状源和均匀圆盘源随基线增大的可见度趋势。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "van-cittert-zernike-intuition",
+      "title": "远场源分布与空间相干",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "van Cittert Zernike",
+        "空间相干与亮度傅里叶"
+      ],
+      "definition": "在准单色远场条件下，非相干扩展源的角亮度与两点空间相干之间具有傅里叶关系。",
+      "body": "来自不同源方向的场彼此不相干，因此总关联由各方向的贡献加权相加。方向不同导致基线上的相位差不同，形成一个以基线表示的频域样本。测多个基线可以约束源分布。",
+      "example": "改变两收集点的间距和方位，观测可见度随基线的变化。",
+      "caution": "准单色、远场和源点互不相干是此表达的典型条件。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "spatial-coh",
+        "stellar"
+      ],
+      "prerequisites": [
+        "mutual-coherence-definition"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "在准单色远场条件下，非相干扩展源的角亮度与两点空间相干之间具有傅里叶关系。",
+          "sources": [
+            "spatial-coh",
+            "stellar"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "改变两收集点的间距和方位，观测可见度随基线的变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "two-frequency-visibility-beating",
+      "title": "双频光的条纹可见度拍频",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "two-frequency coherence beats",
+        "双色干涉包络"
+      ],
+      "definition": "两个相近光频率在扫描光程差时形成不同的条纹周期，叠加后会出现对比度拍频。",
+      "body": "对同一延迟，两种频率贡献的条纹相位差随延迟变化。当两种条纹反相且幅值接近时，合成条纹变弱；再同相时条纹增强。离散双频的可见度可以周期性恢复。",
+      "example": "用两条相近谱线观察迈克耳孙条纹，从包络周期估计其频差量级。",
+      "caution": "离散谱线的周期恢复不同于单一连续谱的一次衰减。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "polychromatic",
+        "michelson"
+      ],
+      "prerequisites": [
+        "coherence-envelope-lineshape"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "两个相近光频率在扫描光程差时形成不同的条纹周期，叠加后会出现对比度拍频。",
+          "sources": [
+            "polychromatic",
+            "michelson"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用两条相近谱线观察迈克耳孙条纹，从包络周期估计其频差量级。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    },
+    {
+      "id": "coherence-exposure-averaging",
+      "title": "探测曝光时间与相干平均",
+      "topic": "wave",
+      "level": "undergraduate",
+      "terms": [
+        "exposure averaging interference",
+        "相位漂移条纹"
+      ],
+      "definition": "测得的条纹取决于探测时间内交叉项是否稳定。",
+      "body": "若相对相位在一次曝光内漂移过多个周期，瞬时清楚的条纹也会在平均图像中变弱。缩短曝光可能保留瞬时图样，但单帧噪声可增大。比较可见度时应同时记录曝光和相位稳定性。",
+      "example": "固定光路，分别用短曝光和长曝光记录有轻微振动的干涉条纹。",
+      "caution": "条纹消失可能来自时间平均、偏振投影、强度差或相干性等不同原因。",
+      "conditions": [
+        "明确偏振坐标、传播方向及相干统计口径。"
+      ],
+      "formula": null,
+      "variables": null,
+      "sources": [
+        "coherence",
+        "fringe"
+      ],
+      "prerequisites": [
+        "mutual-coherence-definition"
+      ],
+      "related": [],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "测得的条纹取决于探测时间内交叉项是否稳定。",
+          "sources": [
+            "coherence",
+            "fringe"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "固定光路，分别用短曝光和长曝光记录有轻微振动的干涉条纹。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 原创讲解，已核对原文定位与适用约定"
+    }
+  ]
+}

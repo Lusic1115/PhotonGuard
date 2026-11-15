@@ -1,0 +1,3534 @@
+{
+  "id": "optical-mathematics",
+  "version": "1.0.1",
+  "sources": {
+    "phasors": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=10",
+      "section": "§2.3，复相量表示、振幅及相位，阅读器第 10 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "complex-inner": {
+      "title": "Complex Matrices and Fast Fourier Transform",
+      "author": "Gilbert Strang / MIT",
+      "edition": "MIT 18.06SC Fall 2011",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:950e648a762b0acfc5a23a478dd0de1334b2ed5e3eaabc0763b4859f464b29f0",
+      "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/53f17d47bf99d26fdc472b3177c256a8_MIT18_06SCF11_Ses3.2sum.pdf#page=1",
+      "section": "复共轭、内积与范数，阅读器第 1 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "phasor-power": {
+      "title": "Electromagnetics and Applications · Chapter 2",
+      "author": "David H. Staelin",
+      "edition": "MIT 6.013 Spring 2009",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:f89173fc1bb55b494a723003fe51de548bdff2f2fd50e50d9f6f1ee67562c82a",
+      "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/MIT6_013S09_chap02.pdf#page=36",
+      "section": "§2.7.2，周期平均功率与复表示，阅读器第 36 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "ft-properties": {
+      "title": "Signals and Systems · Fourier Transform Properties",
+      "author": "Alan V. Oppenheim",
+      "edition": "MIT RES.6-007 Lecture 9",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:e1387671beffe1440d644142a1abc2277799e1db723189c23361cf167a352da8",
+      "url": "https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/resources/lecture-9-fourier-transform-properties/",
+      "section": "Lecture 9 · Topics covered 与讲义，变换性质",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "complex-matrix": {
+      "title": "Complex Matrices and Fast Fourier Transform",
+      "author": "Gilbert Strang / MIT",
+      "edition": "MIT 18.06SC Fall 2011",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:950e648a762b0acfc5a23a478dd0de1334b2ed5e3eaabc0763b4859f464b29f0",
+      "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/53f17d47bf99d26fdc472b3177c256a8_MIT18_06SCF11_Ses3.2sum.pdf#page=2",
+      "section": "厄米矩阵、酉矩阵和本征向量，阅读器第 2 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "analytic-envelope": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=29",
+      "section": "§2.1，载频偏移及复包络，阅读器第 29 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "dft": {
+      "title": "Complex Matrices and Fast Fourier Transform",
+      "author": "Gilbert Strang / MIT",
+      "edition": "MIT 18.06SC Fall 2011",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:950e648a762b0acfc5a23a478dd0de1334b2ed5e3eaabc0763b4859f464b29f0",
+      "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/53f17d47bf99d26fdc472b3177c256a8_MIT18_06SCF11_Ses3.2sum.pdf#page=3",
+      "section": "DFT 矩阵、单位根与逆变换，阅读器第 3 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "fft": {
+      "title": "Complex Matrices and Fast Fourier Transform",
+      "author": "Gilbert Strang / MIT",
+      "edition": "MIT 18.06SC Fall 2011",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:950e648a762b0acfc5a23a478dd0de1334b2ed5e3eaabc0763b4859f464b29f0",
+      "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/53f17d47bf99d26fdc472b3177c256a8_MIT18_06SCF11_Ses3.2sum.pdf#page=4",
+      "section": "FFT 的偶奇分解，阅读器第 4 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "sampling": {
+      "title": "Signals and Systems · Sampling",
+      "author": "Alan V. Oppenheim",
+      "edition": "MIT RES.6-007 Lecture 16",
+      "license": "MIT OCW CC BY-NC-SA 4.0",
+      "fingerprint": "sha256:ab021b8d5cd4a031af158d8ad5f48c97ad4616e6f22c97d2a370bf5f61c2e654",
+      "url": "https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/8708ec068ebdea2c4ee2f38fad39fb83_MITRES_6_007S11_lec16.pdf#page=1",
+      "section": "采样定理、频谱副本与混叠，阅读器第 1 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "group-expansion": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=33",
+      "section": "§2.1，传播常数关于载频的 Taylor 展开，阅读器第 33 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "variance": {
+      "title": "Introduction to Probability · Selected Textbook Summary Material",
+      "author": "Dimitri P. Bertsekas、John N. Tsitsiklis",
+      "edition": "MIT RES.6-012 Spring 2018",
+      "license": "MIT OCW 原站条款与书籍署名",
+      "fingerprint": "sha256:e877569eb34dad4245993cfe63253e0a632fe9d7503477db1e2f9a693083f7b1",
+      "url": "https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/d973b10c2587781f86ca4f2aff49098f_MITRES_6_012S18_Textbook.pdf#page=11",
+      "section": "§2.4，方差和线性变换，阅读器第 11 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "expectation": {
+      "title": "Introduction to Probability · Selected Textbook Summary Material",
+      "author": "Dimitri P. Bertsekas、John N. Tsitsiklis",
+      "edition": "MIT RES.6-012 Spring 2018",
+      "license": "MIT OCW 原站条款与书籍署名",
+      "fingerprint": "sha256:e877569eb34dad4245993cfe63253e0a632fe9d7503477db1e2f9a693083f7b1",
+      "url": "https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/d973b10c2587781f86ca4f2aff49098f_MITRES_6_012S18_Textbook.pdf#page=10",
+      "section": "§2.4，期望与方差，阅读器第 10 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "conditional-probability": {
+      "title": "Introduction to Probability · Selected Textbook Summary Material",
+      "author": "Dimitri P. Bertsekas、John N. Tsitsiklis",
+      "edition": "MIT RES.6-012 Spring 2018",
+      "license": "MIT OCW 原站条款与书籍署名",
+      "fingerprint": "sha256:e877569eb34dad4245993cfe63253e0a632fe9d7503477db1e2f9a693083f7b1",
+      "url": "https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/d973b10c2587781f86ca4f2aff49098f_MITRES_6_012S18_Textbook.pdf#page=5",
+      "section": "§1.3，条件概率和全概率，阅读器第 5 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "independent-events": {
+      "title": "Introduction to Probability · Selected Textbook Summary Material",
+      "author": "Dimitri P. Bertsekas、John N. Tsitsiklis",
+      "edition": "MIT RES.6-012 Spring 2018",
+      "license": "MIT OCW 原站条款与书籍署名",
+      "fingerprint": "sha256:e877569eb34dad4245993cfe63253e0a632fe9d7503477db1e2f9a693083f7b1",
+      "url": "https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/d973b10c2587781f86ca4f2aff49098f_MITRES_6_012S18_Textbook.pdf#page=6",
+      "section": "§1.5，独立性，阅读器第 6 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "joint": {
+      "title": "Introduction to Probability · Selected Textbook Summary Material",
+      "author": "Dimitri P. Bertsekas、John N. Tsitsiklis",
+      "edition": "MIT RES.6-012 Spring 2018",
+      "license": "MIT OCW 原站条款与书籍署名",
+      "fingerprint": "sha256:e877569eb34dad4245993cfe63253e0a632fe9d7503477db1e2f9a693083f7b1",
+      "url": "https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/d973b10c2587781f86ca4f2aff49098f_MITRES_6_012S18_Textbook.pdf#page=12",
+      "section": "§2.5，联合与边缘分布，阅读器第 12 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "covariance": {
+      "title": "Introduction to Probability · Selected Textbook Summary Material",
+      "author": "Dimitri P. Bertsekas、John N. Tsitsiklis",
+      "edition": "MIT RES.6-012 Spring 2018",
+      "license": "MIT OCW 原站条款与书籍署名",
+      "fingerprint": "sha256:e877569eb34dad4245993cfe63253e0a632fe9d7503477db1e2f9a693083f7b1",
+      "url": "https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/d973b10c2587781f86ca4f2aff49098f_MITRES_6_012S18_Textbook.pdf#page=32",
+      "section": "进一步的随机变量性质，协方差与相关系数，阅读器第 32 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "normal": {
+      "title": "Introduction to Probability · Selected Textbook Summary Material",
+      "author": "Dimitri P. Bertsekas、John N. Tsitsiklis",
+      "edition": "MIT RES.6-012 Spring 2018",
+      "license": "MIT OCW 原站条款与书籍署名",
+      "fingerprint": "sha256:e877569eb34dad4245993cfe63253e0a632fe9d7503477db1e2f9a693083f7b1",
+      "url": "https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/d973b10c2587781f86ca4f2aff49098f_MITRES_6_012S18_Textbook.pdf#page=22",
+      "section": "正态分布与标准化，阅读器第 22 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "wave-k": {
+      "title": "Fundamentals of Photonics",
+      "author": "Franz X. Kärtner",
+      "edition": "MIT 6.974, 2006",
+      "license": "CC BY-NC-SA 4.0（MIT OCW 通用许可，第三方素材另计）",
+      "fingerprint": "sha256:91f3b1b4b0249379cd72d637f83c7b9a4ed3d8865895d803acbbb75aa64dfaac",
+      "url": "https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/bf3bdeb971819ddc9c68719d28bb2745_classnotes.pdf#page=22",
+      "section": "§2.1.2，横向电磁波与色散关系，阅读器第 22 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "random-independence": {
+      "title": "Introduction to Probability · Selected Textbook Summary Material",
+      "author": "Dimitri P. Bertsekas、John N. Tsitsiklis",
+      "edition": "MIT RES.6-012 Spring 2018",
+      "license": "MIT OCW 原站条款与书籍署名",
+      "fingerprint": "sha256:e877569eb34dad4245993cfe63253e0a632fe9d7503477db1e2f9a693083f7b1",
+      "url": "https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/d973b10c2587781f86ca4f2aff49098f_MITRES_6_012S18_Textbook.pdf#page=15",
+      "section": "§2.7，随机变量的独立性与和，阅读器第 15 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "conditional-mean": {
+      "title": "Introduction to Probability · Selected Textbook Summary Material",
+      "author": "Dimitri P. Bertsekas、John N. Tsitsiklis",
+      "edition": "MIT RES.6-012 Spring 2018",
+      "license": "MIT OCW 原站条款与书籍署名",
+      "fingerprint": "sha256:e877569eb34dad4245993cfe63253e0a632fe9d7503477db1e2f9a693083f7b1",
+      "url": "https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/d973b10c2587781f86ca4f2aff49098f_MITRES_6_012S18_Textbook.pdf#page=14",
+      "section": "§2.6，条件期望，阅读器第 14 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    },
+    "conditional-variance": {
+      "title": "Introduction to Probability · Selected Textbook Summary Material",
+      "author": "Dimitri P. Bertsekas、John N. Tsitsiklis",
+      "edition": "MIT RES.6-012 Spring 2018",
+      "license": "MIT OCW 原站条款与书籍署名",
+      "fingerprint": "sha256:e877569eb34dad4245993cfe63253e0a632fe9d7503477db1e2f9a693083f7b1",
+      "url": "https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/d973b10c2587781f86ca4f2aff49098f_MITRES_6_012S18_Textbook.pdf#page=33",
+      "section": "§4.3，全期望和全方差定律，阅读器第 33 页",
+      "accessed": "2026-11-13",
+      "rights": "REFERENCE_ONLY",
+      "excluded_material": "仅链接原始资料，中文解释与例题由项目撰写。"
+    }
+  },
+  "entries": [
+    {
+      "id": "complex-cartesian-polar",
+      "title": "复数的直角坐标与极坐标",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "complex polar form",
+        "复数幅角"
+      ],
+      "definition": "复数可用实部和虚部，或用模长与幅角表示。",
+      "body": "将实部画在横轴、虚部画在纵轴，模长就是到原点的距离。两种坐标表示同一复数，前者适合相加，后者便于相乘与比较相位。幅角要由两个分量共同确定，原点没有唯一幅角。",
+      "example": "3+4i 的模长为 5，幅角约 53.13°。",
+      "caution": "只用 arctan(y/x) 可能选错象限。",
+      "conditions": [
+        "角度用同一记号，幅角可加整数个 2π。"
+      ],
+      "formula": "z=x+iy=r exp(iφ)，r=√(x²+y²)",
+      "variables": "x、y 同单位，φ 用 rad。",
+      "prerequisites": [],
+      "related": [],
+      "sources": [
+        "phasors",
+        "complex-inner"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "z=x+iy=r exp(iφ)，r=√(x²+y²)",
+          "sources": [
+            "phasors",
+            "complex-inner"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "3+4i 的模长为 5，幅角约 53.13°。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "euler-optical-phase",
+      "title": "欧拉公式与光学相位",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "Euler formula",
+        "指数相位"
+      ],
+      "definition": "单位模复指数可以分解为余弦和正弦分量。",
+      "body": "把相位角画在单位圆上，实部是水平投影，虚部是垂直投影。波的相量乘上单位模指数只会旋转其复平面方向。读实际瞬时电场时，还应按采用的时间因子恢复实部。",
+      "example": "exp(iπ/2)=i，exp(iπ)=−1。",
+      "caution": "换用另一时间相位记号时，传播因子的符号也应一致。",
+      "conditions": [
+        "复数表示正弦稳态或单个频率分量。"
+      ],
+      "formula": "exp(iφ)=cosφ+i sinφ",
+      "variables": "φ 用 rad，两个三角函数无量纲。",
+      "prerequisites": [
+        "complex-cartesian-polar"
+      ],
+      "related": [],
+      "sources": [
+        "phasors"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "exp(iφ)=cosφ+i sinφ",
+          "sources": [
+            "phasors"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "exp(iπ/2)=i，exp(iπ)=−1。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "complex-conjugation-optics",
+      "title": "复共轭与相对相位",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "complex conjugate",
+        "取共轭"
+      ],
+      "definition": "复共轭保持实部和模长，使虚部与相位取反。",
+      "body": "光学计算中，将场乘自身共轭得到非负的强度比例量。两个不同场分量相乘且只共轭其中之一，会保留两者的相对相位，这正是干涉交叉项中需要保留的信息。",
+      "example": "对 z=2+3i，zz*=13。",
+      "caution": "直接平方 z² 保留双倍相位，与 zz* 的物理作用不同。",
+      "conditions": [
+        "同一复场约定下进行比较。"
+      ],
+      "formula": "z*=x−iy，zz*=abs(z)²",
+      "variables": "z* 表示共轭，abs 表示复模长。",
+      "prerequisites": [
+        "complex-cartesian-polar"
+      ],
+      "related": [],
+      "sources": [
+        "complex-inner",
+        "phasor-power"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "z*=x−iy，zz*=abs(z)²",
+          "sources": [
+            "complex-inner",
+            "phasor-power"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "对 z=2+3i，zz*=13。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "phasor-multiply-divide",
+      "title": "相量的乘除与相位累积",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "phasor product",
+        "相位累加"
+      ],
+      "definition": "相量相乘时模长相乘、相位相加，除法则对非零除数反向处理。",
+      "body": "透过一个光学元件可用复透射因子表示，既衰减场幅也改变相位。连续通过多级元件时乘上各自复系数。传播损耗与相位可分开算，最后恢复复场，便于检查符号。",
+      "example": "两个相位延迟分别为 π/3 与 π/6，总延迟为 π/2。",
+      "caution": "不同传播支路在合束处通常做复场相加。",
+      "conditions": [
+        "采用同一场幅定义，复除法的除数非零。"
+      ],
+      "formula": "z₁z₂=r₁r₂ exp[i(φ₁+φ₂)]",
+      "variables": "r 为非负模长，φ 用 rad。",
+      "prerequisites": [
+        "euler-optical-phase"
+      ],
+      "related": [],
+      "sources": [
+        "phasors",
+        "complex-inner"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "z₁z₂=r₁r₂ exp[i(φ₁+φ₂)]",
+          "sources": [
+            "phasors",
+            "complex-inner"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两个相位延迟分别为 π/3 与 π/6，总延迟为 π/2。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "phasor-vector-sum",
+      "title": "相量相加与干涉强度",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "phasor addition",
+        "相量图加法"
+      ],
+      "definition": "同频相干的场应相加复相量，再计算合场的平方模。",
+      "body": "两相量在复平面中按向量首尾相加。强度展开包含各自强度和相对相位的交叉项；同相增强、反相减弱。若相对相位随机并经过足够时间平均，交叉项可趋于零。",
+      "example": "两个单位幅值相量相差 120°，合场模长为 1。",
+      "caution": "不同频率或不同偏振的探测平均需要相应条件。",
+      "conditions": [
+        "同频、同偏振且空间重叠时用标量关系。"
+      ],
+      "formula": "abs(a+b)²=abs(a)²+abs(b)²+2 Re(a b*)",
+      "variables": "a、b 为同单位的复振幅。",
+      "prerequisites": [
+        "euler-optical-phase"
+      ],
+      "related": [],
+      "sources": [
+        "phasors",
+        "phasor-power"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "abs(a+b)²=abs(a)²+abs(b)²+2 Re(a b*)",
+          "sources": [
+            "phasors",
+            "phasor-power"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两个单位幅值相量相差 120°，合场模长为 1。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "phase-unwrapping-limit",
+      "title": "相位主值和展开的条件",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "phase unwrapping",
+        "相位跳变"
+      ],
+      "definition": "幅角显示常限制在一个区间，相位展开为连续记录选择相容的整周分支。",
+      "body": "连续相位跨过主值边界时，显示值可以突然跳约 2π。只有相邻点间相位变化受到约束且信噪足够时，依据最小跳跃的展开才可靠；零幅附近相位通常不稳定。",
+      "example": "连续相位从 179° 到 181°，主值可能显示为 179° 到 −179°。",
+      "caution": "采样过疏时多个展开序列都可能符合观测。",
+      "conditions": [
+        "先固定角度区间与相邻相位变化假设。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "euler-optical-phase"
+      ],
+      "related": [],
+      "sources": [
+        "phasors",
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "幅角显示常限制在一个区间，相位展开为连续记录选择相容的整周分支。",
+          "sources": [
+            "phasors",
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "连续相位从 179° 到 181°，主值可能显示为 179° 到 −179°。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "peak-rms-amplitude",
+      "title": "正弦峰值与均方根",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "peak RMS",
+        "峰值和有效值"
+      ],
+      "definition": "均方根是信号平方的平均再开方，反映给定时间尺度上的功率相关幅值。",
+      "body": "正弦信号在整周期内的平方平均为峰值平方的一半。光学相量有峰值和均方根两种常见归一化，使用峰值相量的平均功率式通常保留二分之一因子。",
+      "example": "峰值电场 10 V/m 的正弦波，其均方根约 7.07 V/m。",
+      "caution": "非正弦波须按实际形状或采样计算。",
+      "conditions": [
+        "整周期或覆盖多个周期的稳定正弦。"
+      ],
+      "formula": "x_rms=x_peak/√2",
+      "variables": "x_rms 与峰值单位相同。",
+      "prerequisites": [
+        "euler-optical-phase"
+      ],
+      "related": [],
+      "sources": [
+        "phasor-power"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "x_rms=x_peak/√2",
+          "sources": [
+            "phasor-power"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "峰值电场 10 V/m 的正弦波，其均方根约 7.07 V/m。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "orthogonal-complex-projection",
+      "title": "复内积与投影系数",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "complex projection",
+        "共轭投影"
+      ],
+      "definition": "在复向量空间中，投影系数按基向量与目标向量的共轭内积计算。",
+      "body": "先明确对哪个向量取共轭。投影到已归一的基向量时，内积给出相位和振幅；若基向量未归一，应除以其范数平方。耦合效率通常使用适当归一后的投影模平方。",
+      "example": "u=(1,i)/√2 对自身的共轭内积等于 1。",
+      "caution": "光学模式的实际内积可能带功率或阻抗权重。",
+      "conditions": [
+        "此处先采用有限维标准复内积。"
+      ],
+      "formula": "projection coefficient=(u†v)/(u†u)",
+      "variables": "u 非零，† 表示共轭转置。",
+      "prerequisites": [
+        "complex-conjugation-optics"
+      ],
+      "related": [],
+      "sources": [
+        "complex-inner"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "projection coefficient=(u†v)/(u†u)",
+          "sources": [
+            "complex-inner"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "u=(1,i)/√2 对自身的共轭内积等于 1。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "hermitian-complex-adjoint",
+      "title": "共轭转置与厄米条件",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "adjoint",
+        "Hermitian matrix"
+      ],
+      "definition": "矩阵的伴随由转置并逐元素共轭得到，等于自身的矩阵是厄米矩阵。",
+      "body": "实对称矩阵是厄米矩阵的特例。厄米矩阵对角元为实数，本征值也为实数，适合描述许多无损模型中的可观测量或生成元。仅对复矩阵做转置一般不够。",
+      "example": "矩阵 [[0,i],[−i,0]] 等于自身的共轭转置。",
+      "caution": "不要把厄米与酉的判据混同。",
+      "conditions": [
+        "使用标准复内积，矩阵是方阵。"
+      ],
+      "formula": "A†=(A*)ᵀ，厄米时 A†=A",
+      "variables": "A† 表示伴随。",
+      "prerequisites": [
+        "orthogonal-complex-projection"
+      ],
+      "related": [],
+      "sources": [
+        "complex-matrix"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "A†=(A*)ᵀ，厄米时 A†=A",
+          "sources": [
+            "complex-matrix"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "矩阵 [[0,i],[−i,0]] 等于自身的共轭转置。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "unitary-matrix-norm",
+      "title": "酉变换保持复向量范数",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "unitary norm",
+        "酉矩阵"
+      ],
+      "definition": "酉矩阵的逆矩阵等于其伴随，因此变换保持标准复内积和范数。",
+      "body": "将输出向量的内积写成 v†U†Uv。若 U†U 是单位阵，输出总平方模等于输入。理想无损偏振元件可按该性质检查，存在损耗或未收集端口时不能套用。",
+      "example": "对角元素为 1、i 的二阶矩阵改变相对相位但保持平方模总和。",
+      "caution": "单一输出分量可以增减，保持的是完整空间的总范数。",
+      "conditions": [
+        "比较使用同一归一化和完整的分量集合。"
+      ],
+      "formula": "U†U=I",
+      "variables": "I 是与 U 同阶单位矩阵。",
+      "prerequisites": [
+        "hermitian-complex-adjoint"
+      ],
+      "related": [],
+      "sources": [
+        "complex-matrix"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "U†U=I",
+          "sources": [
+            "complex-matrix"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "对角元素为 1、i 的二阶矩阵改变相对相位但保持平方模总和。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "complex-basis-coefficients",
+      "title": "正交基的展开系数",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "orthonormal expansion",
+        "复基展开"
+      ],
+      "definition": "在完备正交归一基中，向量在每个基方向的系数可由内积直接得到。",
+      "body": "把目标写成各个基向量的线性组合，两边与某一基向量取内积，其余正交项消失。若基没有覆盖完整空间，保留系数只能重构该子空间内的投影。",
+      "example": "使用水平和垂直偏振基展开 45° 单位线偏振，两个系数均为 1/√2。",
+      "caution": "非正交基的系数一般要解方程。",
+      "conditions": [
+        "所选基在所用内积下正交归一。"
+      ],
+      "formula": "c_j=u_j†v，v=Σ_j c_j u_j",
+      "variables": "c_j 为展开系数，u_j 为基向量。",
+      "prerequisites": [
+        "orthogonal-complex-projection"
+      ],
+      "related": [],
+      "sources": [
+        "complex-inner",
+        "complex-matrix"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "c_j=u_j†v，v=Σ_j c_j u_j",
+          "sources": [
+            "complex-inner",
+            "complex-matrix"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "使用水平和垂直偏振基展开 45° 单位线偏振，两个系数均为 1/√2。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "eigenvalue-mode-phase",
+      "title": "本征向量与传播相位",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "eigenvector mode",
+        "传播算符本征模"
+      ],
+      "definition": "传播算符的本征向量经过该算符后形状保持，只乘一个本征值。",
+      "body": "对于理想无损系统，本征值可以是单位模相位因子，表示该模式的相位积累。非本征输入一般展开成多个模式，各自的相位演化会使叠加后的场分布随传播变化。",
+      "example": "均匀传播中两个本征态有不同相位增量，叠加态可出现拍动。",
+      "caution": "退化本征空间内的本征基不唯一。",
+      "conditions": [
+        "线性固定算符，输入输出空间采用同一归一。"
+      ],
+      "formula": "Uv=λv",
+      "variables": "v 非零，λ 是算符的本征值。",
+      "prerequisites": [
+        "complex-basis-coefficients"
+      ],
+      "related": [],
+      "sources": [
+        "complex-matrix"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Uv=λv",
+          "sources": [
+            "complex-matrix"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "均匀传播中两个本征态有不同相位增量，叠加态可出现拍动。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "trace-basis-invariance",
+      "title": "矩阵迹的基变换不变性",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "trace cyclic",
+        "迹与基底"
+      ],
+      "definition": "矩阵迹是对角元之和，在相似变换下保持不变。",
+      "body": "矩阵乘积的迹可循环移项。对同一对象更换可逆基变换时，变换矩阵及其逆可在迹内移动到相邻处抵消。因此像总概率或密度算符纯度这样通过迹定义的量可在不同基底求。",
+      "example": "对角矩阵的两个对角元和不会因坐标旋转改变。",
+      "caution": "迹的循环性不允许随意交换非相邻项。",
+      "conditions": [
+        "有限维且乘法维数相容。"
+      ],
+      "formula": "Tr(S⁻¹AS)=Tr(A)",
+      "variables": "S 是可逆方阵。",
+      "prerequisites": [
+        "hermitian-complex-adjoint"
+      ],
+      "related": [],
+      "sources": [
+        "complex-matrix"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Tr(S⁻¹AS)=Tr(A)",
+          "sources": [
+            "complex-matrix"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "对角矩阵的两个对角元和不会因坐标旋转改变。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "fourier-transform-pair",
+      "title": "傅里叶正反变换的号约定",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "Fourier convention",
+        "正反变换符号"
+      ],
+      "definition": "傅里叶变换以复指数分析频率分量，逆变换使用对应的相反符号和归一化。",
+      "body": "选用频率 f 表示时，指数相位通常写 2πft；若用角频率 ω，指数写 ωt，积分变量和归一化因子也会变。推导前应在同一页注明所用变换对。",
+      "example": "将单位周期频率从 f=1 Hz 换为 ω=2π rad/s。",
+      "caution": "混用 f 与 ω 会造成 2π 的带宽或导数错误。",
+      "conditions": [
+        "此条采用正变换负号和普通频率 f。"
+      ],
+      "formula": "F(f)=∫x(t)e^(−i2πft)dt，x(t)=∫F(f)e^(i2πft)df",
+      "variables": "t 用 s，f 用 Hz；空间变量时相应换单位。",
+      "prerequisites": [
+        "euler-optical-phase"
+      ],
+      "related": [],
+      "sources": [
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "F(f)=∫x(t)e^(−i2πft)dt，x(t)=∫F(f)e^(i2πft)df",
+          "sources": [
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将单位周期频率从 f=1 Hz 换为 ω=2π rad/s。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "fourier-linear-superposition",
+      "title": "傅里叶变换的线性",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "Fourier linearity",
+        "频谱相加"
+      ],
+      "definition": "加权信号和的变换等于各信号变换的同权和。",
+      "body": "傅里叶积分对输入线性，可先处理各频率或不同光路贡献，再用复系数合并。若最后的观测是平方模，平方取在求和之后，通常会出现交叉项；这一非线性读出与变换本身的线性需分清。",
+      "example": "将输入拆成两个矩形窗，分别变换后以原复权重相加。",
+      "caution": "频谱强度相加与复频谱相加给出不同的结果。",
+      "conditions": [
+        "比较的信号共享同一坐标和变换约定。"
+      ],
+      "formula": "ℱ{a x+b y}=aX+bY",
+      "variables": "a、b 为常数系数。",
+      "prerequisites": [
+        "fourier-transform-pair"
+      ],
+      "related": [],
+      "sources": [
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ℱ{a x+b y}=aX+bY",
+          "sources": [
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将输入拆成两个矩形窗，分别变换后以原复权重相加。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "real-spectrum-symmetry",
+      "title": "实信号的频谱共轭对称",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "Hermitian spectrum",
+        "实信号负频"
+      ],
+      "definition": "实值信号在相反频率处的傅里叶系数互为共轭。",
+      "body": "把傅里叶指数取共轭相当于将频率改号，而实值输入本身不变。物理实电场的两侧频谱有此关系；光学复包络可携带不对称边带，不应强制镜像。",
+      "example": "实余弦在正负两个频率各有一个相同实权重的谱线。",
+      "caution": "时域实值与时域偶对称是不同性质。",
+      "conditions": [
+        "正负频率采用同一傅里叶符号。"
+      ],
+      "formula": "X(−f)=X(f)*（x 为实）",
+      "variables": "f 用 Hz，* 表示复共轭。",
+      "prerequisites": [
+        "fourier-transform-pair"
+      ],
+      "related": [],
+      "sources": [
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "X(−f)=X(f)*（x 为实）",
+          "sources": [
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "实余弦在正负两个频率各有一个相同实权重的谱线。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "fourier-even-odd",
+      "title": "偶信号与奇信号的频谱",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "even odd Fourier",
+        "奇偶变换"
+      ],
+      "definition": "实偶函数的变换为实偶，实奇函数的变换为纯虚奇函数。",
+      "body": "把复指数分为余弦和正弦。偶输入与奇的正弦项相乘后积分抵消；奇输入则使余弦项抵消。若测量原点不在图样对称中心，平移会加上线性相位。",
+      "example": "对中心矩形窗，归一变换是实的 sinc 型。",
+      "caution": "先确认积分区域、零点和输入是否为实值。",
+      "conditions": [
+        "对称积分且存在相应的傅里叶变换。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "real-spectrum-symmetry"
+      ],
+      "related": [],
+      "sources": [
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "实偶函数的变换为实偶，实奇函数的变换为纯虚奇函数。",
+          "sources": [
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "对中心矩形窗，归一变换是实的 sinc 型。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "fourier-derivative-operator",
+      "title": "微分在频域中的乘法",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "derivative Fourier",
+        "微分频域"
+      ],
+      "definition": "在合适边界下，时域一阶导数的频谱是原频谱乘 i2πf。",
+      "body": "对导数的傅里叶积分分部积分，边界项在局域信号中消失，导数转而作用到复指数。每再求一次导，就多一个同样的因子，说明差分操作常放大高频噪声。",
+      "example": "二阶导数的频域系数是 −(2πf)²。",
+      "caution": "截取数据造成的边界项需要考虑。",
+      "conditions": [
+        "信号足够平滑或采用适当广义函数解释。"
+      ],
+      "formula": "ℱ{dx/dt}=i2πfX(f)",
+      "variables": "t 用 s，f 用 Hz。",
+      "prerequisites": [
+        "fourier-transform-pair"
+      ],
+      "related": [],
+      "sources": [
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ℱ{dx/dt}=i2πfX(f)",
+          "sources": [
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "二阶导数的频域系数是 −(2πf)²。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "convolution-overlap-math",
+      "title": "卷积是滑动加权求和",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "convolution integral",
+        "滑动卷积"
+      ],
+      "definition": "卷积在每个输出位置用平移后的核对输入作加权积分。",
+      "body": "求某个输出点时，把核的自变量写成输出位置减输入位置，再遍历所有输入点。不同点源的响应可由同一核平移得到时，卷积可直接表达系统输出。",
+      "example": "将两个同宽单位矩形窗卷积，得到三角形重叠长度曲线。",
+      "caution": "互相关也滑动，但核的共轭和翻转定义不同。",
+      "conditions": [
+        "核为平移不变的响应，并采用同一坐标尺度。"
+      ],
+      "formula": "y(t)=∫x(τ)h(t−τ)dτ",
+      "variables": "τ 是积分变量；h 的单位随模型设定。",
+      "prerequisites": [
+        "fourier-transform-pair"
+      ],
+      "related": [],
+      "sources": [
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "y(t)=∫x(τ)h(t−τ)dτ",
+          "sources": [
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将两个同宽单位矩形窗卷积，得到三角形重叠长度曲线。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "convolution-frequency-product",
+      "title": "卷积与频域乘积的对应",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "convolution theorem",
+        "频域乘法"
+      ],
+      "definition": "两个函数的卷积经傅里叶变换成为对应频谱的乘积。",
+      "body": "先从时域积分出发，将内层积分变量换成坐标差，便可把两个变换积分拆开。对于连续光学信号，频域光阑或传播因子常可用这一性质说明滤波效果。",
+      "example": "将输入频谱乘低通窗，再逆变换可得到卷积模糊后的输出。",
+      "caution": "有限 FFT 的数组运算还需要处理循环边界。",
+      "conditions": [
+        "采用彼此一致的变换对和足够的积分或采样范围。"
+      ],
+      "formula": "ℱ{x*h}=X H",
+      "variables": "X、H 是同一频率坐标下的傅里叶变换。",
+      "prerequisites": [
+        "convolution-overlap-math"
+      ],
+      "related": [],
+      "sources": [
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ℱ{x*h}=X H",
+          "sources": [
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将输入频谱乘低通窗，再逆变换可得到卷积模糊后的输出。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "correlation-delay-sign",
+      "title": "互相关中的延迟正负",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "cross correlation lag",
+        "互相关滞后"
+      ],
+      "definition": "互相关随相对平移评价两信号的相似程度，并包含复共轭。",
+      "body": "将一个信号相对另一个移动，逐点相乘并累加。相关峰可提示最匹配的时间移位，但峰的正负取决于哪条信号被移动及相位约定；要用已知时延的例子固定符号。",
+      "example": "先对原信号与人为延迟的副本作相关，再读取峰移符号。",
+      "caution": "周期信号可能出现多个等价峰。",
+      "conditions": [
+        "记录选择的相关定义、采样间隔和归一。"
+      ],
+      "formula": "R_xy(τ)=∫x*(t)y(t+τ)dt",
+      "variables": "τ 为延迟，单位 s。",
+      "prerequisites": [
+        "convolution-overlap-math"
+      ],
+      "related": [],
+      "sources": [
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "R_xy(τ)=∫x*(t)y(t+τ)dt",
+          "sources": [
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "先对原信号与人为延迟的副本作相关，再读取峰移符号。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "autocorrelation-power-spectrum",
+      "title": "自相关与功率谱关系",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "autocorrelation power spectrum",
+        "相关的频谱"
+      ],
+      "definition": "有限能量信号的自相关与其频谱平方模构成傅里叶变换对。",
+      "body": "自相关可写成共轭反转信号与原信号卷积，变换后得到频谱乘其共轭。统计平稳信号有对应的功率谱密度关系，实际估计需说明时间窗和平均口径。",
+      "example": "用宽频谱信号与窄频谱信号比较相关峰的宽度。",
+      "caution": "有限能量谱与平稳随机过程的功率谱单位不同。",
+      "conditions": [
+        "固定同一傅里叶与延迟约定。"
+      ],
+      "formula": "ℱ{R_xx}=abs(X)²",
+      "variables": "R_xx 按相应的积分定义。",
+      "prerequisites": [
+        "correlation-delay-sign"
+      ],
+      "related": [],
+      "sources": [
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ℱ{R_xx}=abs(X)²",
+          "sources": [
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用宽频谱信号与窄频谱信号比较相关峰的宽度。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "complex-exponential-modulation",
+      "title": "复调制将频谱搬移到载频",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "carrier modulation",
+        "乘指数搬谱"
+      ],
+      "definition": "时域乘一个单频复指数，使频谱沿频率轴平移。",
+      "body": "把调制指数并入傅里叶核，可读出频率参数被减去载频。反向移回可从高频载波旁提取慢变包络。若乘的是实余弦，正负两个指数都存在，会得到两份移位副本。",
+      "example": "将基带包络乘 exp(i2π×10⁶t)，其谱中心向正 1 MHz 移动。",
+      "caution": "实信号调制与复解析信号调制的谱副本数量不同。",
+      "conditions": [
+        "此条采用负指数正变换。"
+      ],
+      "formula": "ℱ{x exp(i2πf₀t)}=X(f−f₀)",
+      "variables": "f 与 f₀ 均用 Hz。",
+      "prerequisites": [
+        "fourier-transform-pair"
+      ],
+      "related": [],
+      "sources": [
+        "ft-properties",
+        "analytic-envelope"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ℱ{x exp(i2πf₀t)}=X(f−f₀)",
+          "sources": [
+            "ft-properties",
+            "analytic-envelope"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将基带包络乘 exp(i2π×10⁶t)，其谱中心向正 1 MHz 移动。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "normalization-unitary-dft",
+      "title": "离散傅里叶的归一化",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "DFT normalization",
+        "FFT归一因子"
+      ],
+      "definition": "离散傅里叶的整体尺度可放在正变换、逆变换或两者对称分摊。",
+      "body": "对 N 点序列，常见工程约定是正变换不缩放，逆变换除以 N。若两边各除以 √N，矩阵为酉，离散范数直接保持。验证时应查软件的规范而非只比较峰的高度。",
+      "example": "N=4、全为 1 的输入，无归一的正变换直流为 4。",
+      "caution": "归一化不同不影响频率索引，却影响幅值和能量。",
+      "conditions": [
+        "正反变换符号相反并配对。"
+      ],
+      "formula": "对称口径的尺度为 1/√N",
+      "variables": "N 为正整数采样点数。",
+      "prerequisites": [
+        "fourier-transform-pair"
+      ],
+      "related": [],
+      "sources": [
+        "dft"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "对称口径的尺度为 1/√N",
+          "sources": [
+            "dft"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "N=4、全为 1 的输入，无归一的正变换直流为 4。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "discrete-fourier-basis",
+      "title": "DFT 基频率的正交性",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "DFT orthogonality",
+        "单位根正交"
+      ],
+      "definition": "整数频率格点的离散复指数在完整 N 点周期上彼此正交。",
+      "body": "两格点相乘并对其中一个取共轭，得到单位根等比和。相同格点时每项都为一，不同格点则相互抵消。这也说明没有落到格点上的频率可能投影到多个格点。",
+      "example": "在 4 点上比较常数序列与 (1,i,−1,−i) 的内积，结果为零。",
+      "caution": "必须使用同一 N 点周期与对应的格点。",
+      "conditions": [
+        "均匀采样、整数频率索引。"
+      ],
+      "formula": "Σ_n exp[i2π(k−m)n/N]=N δ_km",
+      "variables": "k、m 为模 N 的格点索引。",
+      "prerequisites": [
+        "normalization-unitary-dft"
+      ],
+      "related": [],
+      "sources": [
+        "dft"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Σ_n exp[i2π(k−m)n/N]=N δ_km",
+          "sources": [
+            "dft"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在 4 点上比较常数序列与 (1,i,−1,−i) 的内积，结果为零。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "fft-computation-vs-dft",
+      "title": "FFT 是计算 DFT 的算法",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "FFT vs DFT",
+        "快速傅里叶算法"
+      ],
+      "definition": "快速傅里叶变换利用代数结构减少计算离散傅里叶变换所需的运算量。",
+      "body": "例如偶数点数可以拆成偶索引和奇索引两个较短序列，各自变换后再乘相位系数组合。输入、归一和精度一致时，FFT 与直接求和实现同一数学变换。",
+      "example": "用短序列直接求和并与软件 FFT 的各复频点比较。",
+      "caution": "更换算法不能改变原数据的物理采样分辨率。",
+      "conditions": [
+        "同一数学定义和有限精度误差容限。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "discrete-fourier-basis"
+      ],
+      "related": [],
+      "sources": [
+        "fft",
+        "dft"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "快速傅里叶变换利用代数结构减少计算离散傅里叶变换所需的运算量。",
+          "sources": [
+            "fft",
+            "dft"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用短序列直接求和并与软件 FFT 的各复频点比较。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "time-sampling-alias",
+      "title": "时间采样频率和混叠",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "temporal aliasing",
+        "奈奎斯特频率"
+      ],
+      "definition": "均匀时间采样后，频率相差整数倍采样率的复指数可给出相同样本。",
+      "body": "采样点落在整数时刻 nT_s，频率相差 1/T_s 时多出的相位恰为 2πn。实信号的负频率镜像还可使高频折返为低频。应在采样前选择适当带宽和抗混叠滤波。",
+      "example": "采样率 100 Hz 时，90 Hz 实余弦可与 10 Hz 余弦给相同采样。",
+      "caution": "增加显示插值不能恢复已经混叠的频率。",
+      "conditions": [
+        "均匀采样，比较同一相位起点。"
+      ],
+      "formula": "f_s=1/T_s，基带边界 f_s/2",
+      "variables": "T_s 用 s，f_s 用 Hz。",
+      "prerequisites": [
+        "fourier-transform-pair"
+      ],
+      "related": [],
+      "sources": [
+        "sampling"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "f_s=1/T_s，基带边界 f_s/2",
+          "sources": [
+            "sampling"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "采样率 100 Hz 时，90 Hz 实余弦可与 10 Hz 余弦给相同采样。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "sample-jitter-phase",
+      "title": "采样时钟抖动造成相位误差",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "sampling jitter",
+        "时钟抖动相位"
+      ],
+      "definition": "采样时刻的小偏差会使高频信号读到不同的瞬时相位。",
+      "body": "对频率 f 的正弦，时间偏差 δt 对应约 2πfδt 的相位误差。频率越高、局部斜率越大，同一时间误差造成的读数影响越明显；它与理想均匀采样下的混叠是两种现象。",
+      "example": "100 MHz 信号遇到 1 ns 时间偏差，对应约 0.63 rad 相位偏差。",
+      "caution": "由相位误差进一步估计读数误差需要给出实际相位和波形。",
+      "conditions": [
+        "小时间偏差，单频或局部窄带分析。"
+      ],
+      "formula": "δφ=2πfδt",
+      "variables": "f 用 Hz，δt 用 s，δφ 用 rad。",
+      "prerequisites": [
+        "time-sampling-alias"
+      ],
+      "related": [],
+      "sources": [
+        "sampling",
+        "phasors"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "δφ=2πfδt",
+          "sources": [
+            "sampling",
+            "phasors"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "100 MHz 信号遇到 1 ns 时间偏差，对应约 0.63 rad 相位偏差。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "window-coherent-gain",
+      "title": "频谱窗的相干增益",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "window coherent gain",
+        "窗函数幅值修正"
+      ],
+      "definition": "对恰落格点的复正弦，乘窗会将主频点幅值缩放为窗口平均值。",
+      "body": "在目标频点求和时，正弦与分析基的相位正好抵消，各样本只剩窗口权重相加。若用于恢复标称振幅，可以按该增益校正；对非格点信号还需考虑谱泄漏。",
+      "example": "均值为 0.5 的窗使格点复正弦的峰幅值减半。",
+      "caution": "相干幅值校正与噪声等效带宽校正不同。",
+      "conditions": [
+        "窗口已知，单个复分量恰在 DFT 格点。"
+      ],
+      "formula": "G_c=(1/N)Σ_n w_n",
+      "variables": "w_n 为无量纲权重。",
+      "prerequisites": [
+        "discrete-fourier-basis"
+      ],
+      "related": [],
+      "sources": [
+        "ft-properties",
+        "dft"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "G_c=(1/N)Σ_n w_n",
+          "sources": [
+            "ft-properties",
+            "dft"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "均值为 0.5 的窗使格点复正弦的峰幅值减半。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "angular-frequency-derivative",
+      "title": "频率与角频率下的导数换算",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "d omega versus df",
+        "频率导数2π"
+      ],
+      "definition": "对同一函数改用角频率作横轴，导数需按链式法则转换。",
+      "body": "ω=2πf，所以改变相同数值的 ω 与改变相同数值的 f 代表不同物理频移。求高阶导数时每一阶都有一个换算因子。将脉冲相位的斜率读为群延迟前尤其应核对横轴。",
+      "example": "相位对 f 的斜率若为 2π ns，按 ω 的斜率为 1 ns。",
+      "caution": "将图中以 GHz 标的轴还需先转成 Hz。",
+      "conditions": [
+        "在同一物理工作点求导。"
+      ],
+      "formula": "d/dω=(1/2π)d/df",
+      "variables": "ω 用 rad/s，f 用 Hz。",
+      "prerequisites": [
+        "fourier-transform-pair"
+      ],
+      "related": [],
+      "sources": [
+        "ft-properties",
+        "group-expansion"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "d/dω=(1/2π)d/df",
+          "sources": [
+            "ft-properties",
+            "group-expansion"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "相位对 f 的斜率若为 2π ns，按 ω 的斜率为 1 ns。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "small-perturbation-linearization",
+      "title": "小扰动的一阶线性化",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "linearization",
+        "局部斜率估计"
+      ],
+      "definition": "函数在可微工作点附近可用函数值加局部斜率乘小变化近似。",
+      "body": "先固定参考参数，再保留 Taylor 展开的一阶项。它可估计波长、焦距或折射率的小偏差如何影响结果；增量变大、靠近拐折或一阶项相消时需检查更高阶。",
+      "example": "若某曲线局部斜率 3 mm/nm，波长改 0.1 nm，一阶输出变 0.3 mm。",
+      "caution": "一阶结果为零只表示局部线性贡献为零。",
+      "conditions": [
+        "参数偏移落在模型有效范围且导数存在。"
+      ],
+      "formula": "δy≈(dy/dx)δx",
+      "variables": "导数单位为 y 的单位除以 x 的单位。",
+      "prerequisites": [
+        "angular-frequency-derivative"
+      ],
+      "related": [],
+      "sources": [
+        "group-expansion"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "δy≈(dy/dx)δx",
+          "sources": [
+            "group-expansion"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若某曲线局部斜率 3 mm/nm，波长改 0.1 nm，一阶输出变 0.3 mm。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "taylor-remainder-optics",
+      "title": "估算截断项是否可忽略",
+      "topic": "math",
+      "level": "advanced",
+      "terms": [
+        "Taylor remainder",
+        "忽略高阶项"
+      ],
+      "definition": "用被舍弃的首个重要项和目标误差尺度比较，可判断局部展开是否够用。",
+      "body": "对传播相位展开时，要将高阶传播常数项乘实际传播长度。某个系数数值看起来很小，若频带宽或路径长，贡献仍可能累积到可观测。多项接近时应显式估计合成误差。",
+      "example": "在脉冲带宽边缘分别估算二阶和三阶相位，核对哪项主导。",
+      "caution": "近零的一阶或二阶项会使高阶项更重要。",
+      "conditions": [
+        "需明确频带、工作点、传播长度和可接受误差。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "small-perturbation-linearization"
+      ],
+      "related": [],
+      "sources": [
+        "group-expansion"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "用被舍弃的首个重要项和目标误差尺度比较，可判断局部展开是否够用。",
+          "sources": [
+            "group-expansion"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "在脉冲带宽边缘分别估算二阶和三阶相位，核对哪项主导。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "finite-difference-central",
+      "title": "中心差分估算导数",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "central difference",
+        "光谱两侧差分"
+      ],
+      "definition": "等距取工作点两侧的样本可用中心差分估一阶导数。",
+      "body": "对左右采样分别做 Taylor 展开再相减，偶次项消失，主差值等于两倍步长乘导数。缩小步长可减小平滑曲线的截断误差，但有读数噪声时会放大差值的不确定性。",
+      "example": "用相邻两个等距波长读数估局部折射率斜率。",
+      "caution": "非等间距需要改用对应的插值或拟合公式。",
+      "conditions": [
+        "光滑函数，两侧对称步长 h>0。"
+      ],
+      "formula": "f′(x)≈[f(x+h)−f(x−h)]/(2h)",
+      "variables": "h 采用与 x 相同的单位。",
+      "prerequisites": [
+        "small-perturbation-linearization"
+      ],
+      "related": [],
+      "sources": [
+        "group-expansion"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "f′(x)≈[f(x+h)−f(x−h)]/(2h)",
+          "sources": [
+            "group-expansion"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用相邻两个等距波长读数估局部折射率斜率。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "finite-difference-curvature",
+      "title": "三点二阶差分估计曲率",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "second difference",
+        "曲率差分"
+      ],
+      "definition": "三点等间隔数据的二阶差分可用于估算局部二阶导。",
+      "body": "左右点之和减去两倍中心值，可以抵消常数项和一次项，只留下首个二次项。若二阶差值小于采样噪声，数据不足以判定曲率为零，应报告其可分辨限。",
+      "example": "若三个等距值恰为 1、2、3，二阶差分的观测值为零。",
+      "caution": "等距公式用于不等距点会造成偏差。",
+      "conditions": [
+        "光滑函数，等距步长 h>0。"
+      ],
+      "formula": "f″(x)≈[f(x+h)−2f(x)+f(x−h)]/h²",
+      "variables": "结果单位为 f 的单位除以 x 的单位平方。",
+      "prerequisites": [
+        "finite-difference-central"
+      ],
+      "related": [],
+      "sources": [
+        "group-expansion"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "f″(x)≈[f(x+h)−2f(x)+f(x−h)]/h²",
+          "sources": [
+            "group-expansion"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若三个等距值恰为 1、2、3，二阶差分的观测值为零。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "log-amplitude-power-db",
+      "title": "场幅与功率的分贝换算",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "10log20log",
+        "分贝功率和场"
+      ],
+      "definition": "分贝以十为底表达功率比，场幅比需在同一阻抗口径下换算为功率。",
+      "body": "同阻抗下功率与场幅平方成比例，因此功率用 10 log，幅值比等效使用 20 log。若跨介质或参考阻抗不同，先由能流计算实际功率再求分贝，避免错用幅比。",
+      "example": "同阻抗下场幅减半，功率为四分之一，衰减约 6.02 dB。",
+      "caution": "必须注明相对参考量和正负方向。",
+      "conditions": [
+        "使用正的功率比，或相同阻抗下正的幅值模长比。"
+      ],
+      "formula": "10 log₁₀(P₂/P₁)=20 log₁₀(A₂/A₁)",
+      "variables": "比值无量纲。",
+      "prerequisites": [
+        "peak-rms-amplitude"
+      ],
+      "related": [],
+      "sources": [
+        "phasor-power"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "10 log₁₀(P₂/P₁)=20 log₁₀(A₂/A₁)",
+          "sources": [
+            "phasor-power"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "同阻抗下场幅减半，功率为四分之一，衰减约 6.02 dB。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "variance-of-linear-scale",
+      "title": "单位换算对方差的平方影响",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "variance scaling",
+        "方差单位换算"
+      ],
+      "definition": "随机变量乘常数后，其方差乘以常数的平方。",
+      "body": "从变量中减均值后，加常量的项消失。整体换单位的倍率则保留在偏差中，偏差平方平均使方差随倍率平方变化。标准差只乘倍率绝对值，单位与原读数相同。",
+      "example": "1 mm² 的方差换为 μm² 是 10⁶ μm²。",
+      "caution": "DN 与 DN² 必须分别换算。",
+      "conditions": [
+        "二阶矩存在，单位转换是线性的。"
+      ],
+      "formula": "Var(aX+b)=a²Var(X)",
+      "variables": "a 为尺度倍数，b 为偏移。",
+      "prerequisites": [
+        "peak-rms-amplitude"
+      ],
+      "related": [],
+      "sources": [
+        "variance"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Var(aX+b)=a²Var(X)",
+          "sources": [
+            "variance"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "1 mm² 的方差换为 μm² 是 10⁶ μm²。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "expectation-vs-observation",
+      "title": "期望与一次观测",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "expectation versus sample",
+        "平均值和单次"
+      ],
+      "definition": "期望是按概率加权的总体平均，单次观测可以明显偏离它。",
+      "body": "重复实验在稳定条件下会产生分布，每一次读数都是该分布的一个样本。用样本均值估计期望时，仍有有限样本的波动。尤其在稀疏计数中，期望可以是非整数而每次读数为整数。",
+      "example": "每窗平均 0.2 个计数，不表示任一个窗真的读到 0.2。",
+      "caution": "改变门宽或光源状态会改变被估计的总体。",
+      "conditions": [
+        "分布条件保持稳定，期望存在。"
+      ],
+      "formula": "E[X]=Σ_x x p(x)",
+      "variables": "p(x) 为离散概率。",
+      "prerequisites": [],
+      "related": [],
+      "sources": [
+        "expectation"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "E[X]=Σ_x x p(x)",
+          "sources": [
+            "expectation"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "每窗平均 0.2 个计数，不表示任一个窗真的读到 0.2。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "conditional-probability-counting",
+      "title": "条件概率按筛选后总体归一",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "conditional probability",
+        "预告后的概率"
+      ],
+      "definition": "条件概率在已知某事件发生的样本子集内重新归一化。",
+      "body": "估计某探测事件在预告触发时出现的比例，需要把同时满足两条件的记录数除以预告事件数。分母的选择会影响结果；如果条件事件从未出现，样本无法给出这个比例。",
+      "example": "200 次预告中有 50 次另一路触发，条件频率是 0.25。",
+      "caution": "条件概率不提供某一特定设备的未测参数。",
+      "conditions": [
+        "P(B)>0，样本筛选口径一致。"
+      ],
+      "formula": "P(A given B)=P(A∩B)/P(B)",
+      "variables": "A、B 为事件。",
+      "prerequisites": [],
+      "related": [],
+      "sources": [
+        "conditional-probability"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P(A given B)=P(A∩B)/P(B)",
+          "sources": [
+            "conditional-probability"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "200 次预告中有 50 次另一路触发，条件频率是 0.25。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "probability-total-event-partition",
+      "title": "按不同状态使用全概率",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "law of total probability",
+        "状态分层概率"
+      ],
+      "definition": "可把目标事件的概率拆为各互斥且覆盖全集的状态下的条件概率加权和。",
+      "body": "不同曝光模式、偏振设置或输入态可能有不同事件概率。若总体由这些条件混合而成，先分别计算条件概率，再用各状态出现的概率作为权重，不能简单对各结果等权。",
+      "example": "两种状态权重 0.8、0.2，触发概率 0.1、0.5，混合触发率为 0.18。",
+      "caution": "分层必须覆盖全部且互不重叠。",
+      "conditions": [
+        "每个权重为正的条件状态均有相应概率。"
+      ],
+      "formula": "P(A)=Σ_j P(B_j)P(A given B_j)",
+      "variables": "B_j 为划分事件。",
+      "prerequisites": [
+        "conditional-probability-counting"
+      ],
+      "related": [],
+      "sources": [
+        "conditional-probability"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P(A)=Σ_j P(B_j)P(A given B_j)",
+          "sources": [
+            "conditional-probability"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两种状态权重 0.8、0.2，触发概率 0.1、0.5，混合触发率为 0.18。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "probability-independence-test",
+      "title": "独立性与互斥性",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "independent versus exclusive",
+        "独立和互斥"
+      ],
+      "definition": "独立事件的联合概率等于各自概率的乘积，互斥则联合概率为零。",
+      "body": "两个事件都可能发生时，如果它们互斥，就已经知道其中一个发生会改变另一个的概率，因此不会同时具有非平凡独立性。实验中判断独立需由模型或数据支持，不能仅凭事件名称。",
+      "example": "同一个二选一读数的两个结果互斥，两次独立抛掷的同一结果事件可独立。",
+      "caution": "单个条件下的独立性不必在混合总体中成立。",
+      "conditions": [
+        "讨论的是同一概率空间中的事件。"
+      ],
+      "formula": "独立时 P(A∩B)=P(A)P(B)",
+      "variables": "P 为无量纲概率。",
+      "prerequisites": [
+        "conditional-probability-counting"
+      ],
+      "related": [],
+      "sources": [
+        "independent-events"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "独立时 P(A∩B)=P(A)P(B)",
+          "sources": [
+            "independent-events"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "同一个二选一读数的两个结果互斥，两次独立抛掷的同一结果事件可独立。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "joint-and-marginal-counts",
+      "title": "联合计数与边缘计数",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "joint marginal probability",
+        "边缘分布"
+      ],
+      "definition": "忽略联合分布中一个变量时，对该变量的所有互斥取值求和可得边缘分布。",
+      "body": "两探测器的每窗结果可以一起统计成二维表。沿一行或一列累加只留下对应单路分布；联合表中的关联关系可能在边缘表中消失。保留原始联合数据可支持后来重算符合统计。",
+      "example": "把所有 B 通道结果求和，得到 A 通道的单路触发概率。",
+      "caution": "边缘分布本身一般无法恢复联合分布。",
+      "conditions": [
+        "互斥取值的计数使用同一时间窗。"
+      ],
+      "formula": "p_X(x)=Σ_y p_XY(x,y)",
+      "variables": "p_XY 为联合概率质量。",
+      "prerequisites": [
+        "conditional-probability-counting"
+      ],
+      "related": [],
+      "sources": [
+        "joint"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "p_X(x)=Σ_y p_XY(x,y)",
+          "sources": [
+            "joint"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "把所有 B 通道结果求和，得到 A 通道的单路触发概率。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "covariance-common-noise",
+      "title": "协方差记录共同波动",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "covariance",
+        "共享噪声"
+      ],
+      "definition": "协方差描述两个变量在各自均值附近是否常同向或反向变化。",
+      "body": "将两路偏差乘积取平均，正值倾向同向，负值倾向反向。共用光源强度漂移常使两个探测读数相关，因此求和或差的噪声预算需要包含协方差。",
+      "example": "两个通道同时随电源波动上升，协方差可为正。",
+      "caution": "协方差为零不必然说明统计独立。",
+      "conditions": [
+        "二阶矩存在且样本配对正确。"
+      ],
+      "formula": "Cov(X,Y)=E[(X−μ_X)(Y−μ_Y)]",
+      "variables": "单位为 X 与 Y 单位之积。",
+      "prerequisites": [
+        "variance-of-linear-scale"
+      ],
+      "related": [],
+      "sources": [
+        "covariance",
+        "variance"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Cov(X,Y)=E[(X−μ_X)(Y−μ_Y)]",
+          "sources": [
+            "covariance",
+            "variance"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两个通道同时随电源波动上升，协方差可为正。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "variance-sum-difference",
+      "title": "加减两个读数的方差",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "variance difference",
+        "差分方差协方差"
+      ],
+      "definition": "两个随机读数的和或差的方差包含两路方差与交叉协方差。",
+      "body": "把去均值的和或差展开平方，可得两个单路平方项和带正负号的两倍乘积项。相减可压低共同噪声，也可能累积互不相关的噪声，因此需要判断相关性。",
+      "example": "两路各 9 DN² 且互不相关，差的方差为 18 DN²。",
+      "caution": "只在协方差为零时可省略交叉项。",
+      "conditions": [
+        "两路读数定义在相同单位，二阶矩存在。"
+      ],
+      "formula": "Var(X±Y)=Var(X)+Var(Y)±2Cov(X,Y)",
+      "variables": "方差和协方差均为读数单位的平方。",
+      "prerequisites": [
+        "covariance-common-noise"
+      ],
+      "related": [],
+      "sources": [
+        "variance",
+        "covariance"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Var(X±Y)=Var(X)+Var(Y)±2Cov(X,Y)",
+          "sources": [
+            "variance",
+            "covariance"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两路各 9 DN² 且互不相关，差的方差为 18 DN²。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "standard-score-normal",
+      "title": "标准化保留与均值的相对距离",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "z-score",
+        "标准分数"
+      ],
+      "definition": "从读数减均值并除以标准差，得到以标准差为尺度的无量纲偏离。",
+      "body": "这种变换把位置和尺度统一，可以比较单位不同的数据在各自模型中的偏离程度。若原分布为正态，变换后是标准正态；对其他分布，标准化不会把形状改成正态。",
+      "example": "均值 20、标准差 2 的读数 24 对应 z=2。",
+      "caution": "估计标准差接近零时不宜做此归一。",
+      "conditions": [
+        "使用同一总体的均值和正标准差。"
+      ],
+      "formula": "z=(x−μ)/σ",
+      "variables": "x、μ、σ 同单位，z 无量纲。",
+      "prerequisites": [
+        "variance-of-linear-scale"
+      ],
+      "related": [],
+      "sources": [
+        "normal"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "z=(x−μ)/σ",
+          "sources": [
+            "normal"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "均值 20、标准差 2 的读数 24 对应 z=2。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "phasor-reference-change",
+      "title": "相量参考时间的改写",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "phase reference time",
+        "相量时间原点"
+      ],
+      "definition": "改变时间原点会统一旋转同频相量，两个相量的相对相位保持。",
+      "body": "如果将原时间写成 t=t′+t₀，每个同频因子 exp(iωt) 都可提出公共的 exp(iωt₀)。在单频干涉里该因子从平方模消去。跨频率时因子随频率而变，对应确定的线性谱相位。",
+      "example": "将两个 1 MHz 的相量参考时刻移动 0.25 μs，各旋转 90°。",
+      "caution": "应区分仅移动参考原点与实际在一路插入延迟。",
+      "conditions": [
+        "两信号以相同时间正方向和频率表示。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "euler-optical-phase"
+      ],
+      "related": [],
+      "sources": [
+        "phasors"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "改变时间原点会统一旋转同频相量，两个相量的相对相位保持。",
+          "sources": [
+            "phasors"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将两个 1 MHz 的相量参考时刻移动 0.25 μs，各旋转 90°。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "phase-to-optical-path",
+      "title": "相位差换算光程差",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "phase optical path",
+        "相位光程"
+      ],
+      "definition": "单色传播积累的相位随光程变化，比例由真空波长决定。",
+      "body": "介质内波数是折射率乘真空波数。因此在路径上积分局部波数，可写成真空波数乘折射率加权长度。仅由某个主值相位反推路径时，要说明整波不确定性。",
+      "example": "532 nm 光的半周相位差对应 266 nm 光程差，另有整数波长分支。",
+      "caution": "镜面相位、材料界面及器件延迟可能需要另计。",
+      "conditions": [
+        "单色相位比较，统一正方向。"
+      ],
+      "formula": "Δφ=(2π/λ₀)ΔOPL",
+      "variables": "λ₀ 与 ΔOPL 同单位，Δφ 用 rad。",
+      "prerequisites": [
+        "optical-path-length"
+      ],
+      "related": [],
+      "sources": [
+        "phasors",
+        "wave-k"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δφ=(2π/λ₀)ΔOPL",
+          "sources": [
+            "phasors",
+            "wave-k"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "532 nm 光的半周相位差对应 266 nm 光程差，另有整数波长分支。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "phase-delay-wrapped",
+      "title": "正弦相位差的时延多值性",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "phase delay ambiguity",
+        "整周时延"
+      ],
+      "definition": "由单个频率的相位差求时延，只能确定到一个周期的整数倍。",
+      "body": "纯时延在频域给相位与频率成线性关系。测得某一频率处的相位主值时，多个相差整周期的时延都符合数据；可利用宽频斜率、脉冲到达或物理路径先验消除分支。",
+      "example": "10 MHz 测得相位主值零，时延也可能是 100 ns 的整数倍。",
+      "caution": "相位超前还是滞后取决于所用指数和相位差方向。",
+      "conditions": [
+        "系统近似纯时延，频率已知且非零。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "phase-to-optical-path"
+      ],
+      "related": [],
+      "sources": [
+        "phasors",
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "由单个频率的相位差求时延，只能确定到一个周期的整数倍。",
+          "sources": [
+            "phasors",
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "10 MHz 测得相位主值零，时延也可能是 100 ns 的整数倍。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "positive-frequency-analytic-signal",
+      "title": "解析信号为何保留正频率",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "analytic signal",
+        "单边复信号"
+      ],
+      "definition": "实信号可对应一个复解析表示，负频信息由共轭对称关系给出。",
+      "body": "构造解析信号时，常将正频分量乘二、负频置零、直流保持。取其实部可恢复原实信号。窄带光脉冲可由解析表示移去载频以便处理慢包络。",
+      "example": "实信号 cos(ωt) 对应的解析信号为 exp(iωt)。",
+      "caution": "解析信号与原实信号的均方量归一化不可直接混用。",
+      "conditions": [
+        "此条采用 exp(iωt) 表示正频分量。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "real-spectrum-symmetry"
+      ],
+      "related": [],
+      "sources": [
+        "analytic-envelope",
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "实信号可对应一个复解析表示，负频信息由共轭对称关系给出。",
+          "sources": [
+            "analytic-envelope",
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "实信号 cos(ωt) 对应的解析信号为 exp(iωt)。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "normalized-overlap-square",
+      "title": "归一化重叠与耦合比例",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "normalized overlap",
+        "重叠积分模平方"
+      ],
+      "definition": "归一化复内积的模平方给出两向量的匹配度，范围为零到一。",
+      "body": "先将两向量按各自范数归一，再取内积模平方。整体相位不影响这个数值，空间结构、相对相位或偏振失配则可能降低它。应用到导模时应采用正确功率内积。",
+      "example": "单位向量 (1,0) 与 (1,1)/√2 的匹配度为 1/2。",
+      "caution": "漏掉归一化会把输入亮度变化当成匹配变化。",
+      "conditions": [
+        "内积正定，两个向量均非零。"
+      ],
+      "formula": "η=abs(u†v)²/[(u†u)(v†v)]",
+      "variables": "η 无量纲。",
+      "prerequisites": [
+        "orthogonal-complex-projection"
+      ],
+      "related": [],
+      "sources": [
+        "complex-inner"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "η=abs(u†v)²/[(u†u)(v†v)]",
+          "sources": [
+            "complex-inner"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "单位向量 (1,0) 与 (1,1)/√2 的匹配度为 1/2。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "eigenvalue-degeneracy",
+      "title": "本征值简并与基底选择",
+      "topic": "math",
+      "level": "advanced",
+      "terms": [
+        "eigenvalue degeneracy",
+        "简并本征空间"
+      ],
+      "definition": "多个线性无关本征向量共享一个本征值时，可在其本征空间内选不同基。",
+      "body": "同一简并空间中的线性组合仍乘同一个传播因子。弱扰动可能解除简并，使某组方向成为自然本征基。比较模式时可先比整个子空间，再决定是否有足够信息比较单个向量。",
+      "example": "单位矩阵在任意方向都有本征值 1。",
+      "caution": "本征值相同不意味着对应空间只有一个物理状态。",
+      "conditions": [
+        "此处讨论至少有两个线性无关本征向量的情形。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "eigenvalue-mode-phase"
+      ],
+      "related": [],
+      "sources": [
+        "complex-matrix"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "多个线性无关本征向量共享一个本征值时，可在其本征空间内选不同基。",
+          "sources": [
+            "complex-matrix"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "单位矩阵在任意方向都有本征值 1。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "complex-matrix-trace-power",
+      "title": "用迹检查多分量能量",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "outer product trace",
+        "外积的迹"
+      ],
+      "definition": "一个向量与自身伴随的外积的迹等于向量的范数平方。",
+      "body": "外积的对角元就是各分量平方模。对一组非相干输入做外积平均，迹仍等于对应总平方模的平均。这样的表示既保留相关项，又可直接汇总总量。",
+      "example": "向量 (1,i) 的外积迹为 2。",
+      "caution": "相干场先相加再做外积，不能随意交换求和次序。",
+      "conditions": [
+        "有限维复向量，使用标准内积。"
+      ],
+      "formula": "Tr(vv†)=v†v",
+      "variables": "v 的各分量采用相同单位。",
+      "prerequisites": [
+        "trace-basis-invariance"
+      ],
+      "related": [],
+      "sources": [
+        "complex-inner",
+        "complex-matrix"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Tr(vv†)=v†v",
+          "sources": [
+            "complex-inner",
+            "complex-matrix"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "向量 (1,i) 的外积迹为 2。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "fourier-parseval-units",
+      "title": "积分 Parseval 的单位核对",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "Parseval units",
+        "傅里叶积分单位"
+      ],
+      "definition": "正反变换配对时，时域和频域的平方模积分可按 Parseval 关系比较。",
+      "body": "正变换含时间积分，所以频域系数比时域信号多一个秒的单位。再对频率积分时乘入 Hz，最后与时域平方积分单位一致。离散计算需要显式保留时间和频率步长。",
+      "example": "用 V 表示信号时，两侧积分均为 V²·s。",
+      "caution": "直接比较两个数组的平方和可能遗漏采样间隔。",
+      "conditions": [
+        "使用普通频率的对称积分对，信号平方可积。"
+      ],
+      "formula": "∫abs(x(t))²dt=∫abs(X(f))²df",
+      "variables": "t 用 s，f 用 Hz。",
+      "prerequisites": [
+        "fourier-transform-pair"
+      ],
+      "related": [],
+      "sources": [
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "∫abs(x(t))²dt=∫abs(X(f))²df",
+          "sources": [
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用 V 表示信号时，两侧积分均为 V²·s。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "fourier-delta-sifting",
+      "title": "冲激抽样与系统脉冲响应",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "delta function convolution",
+        "狄拉克冲激"
+      ],
+      "definition": "单位冲激卷积的作用是保留或平移输入。",
+      "body": "狄拉克冲激的面积定义为一，卷积时用其抽样性质选取对应的积分位置。光学点扩散函数可视作系统对空间点源的响应；实际亮点有尺寸，是对理想冲激的近似。",
+      "example": "将 f(x) 与 δ(x−2 mm) 卷积，得到 f(x−2 mm)。",
+      "caution": "离散冲激的幅值要和采样间隔或离散约定配合。",
+      "conditions": [
+        "线性平移不变，且按分布理解连续冲激。"
+      ],
+      "formula": "f*δ(·−a)=f(·−a)",
+      "variables": "a 是与自变量同单位的偏移。",
+      "prerequisites": [
+        "convolution-overlap-math"
+      ],
+      "related": [],
+      "sources": [
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "f*δ(·−a)=f(·−a)",
+          "sources": [
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将 f(x) 与 δ(x−2 mm) 卷积，得到 f(x−2 mm)。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "fourier-product-convolution",
+      "title": "乘以窗口为何扩散频谱",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "multiplication convolution",
+        "乘窗频谱"
+      ],
+      "definition": "时空域相乘会使两个频谱在频域卷积。",
+      "body": "有限曝光或视场相当于将原信号乘窗口。若原信号近似单频，卷积后谱峰形状接近窗口频谱并移到该频率。窗口边缘越平滑，远旁瓣可降低，但主瓣可能变宽。",
+      "example": "用相同单频分别乘短窗和长窗，再比较频谱主瓣。",
+      "caution": "窗口处理与提高仪器的实际观测带宽不同。",
+      "conditions": [
+        "选用同一频率变换约定，窗口有限。"
+      ],
+      "formula": "ℱ{xw}=X*W",
+      "variables": "X 与 W 是对应变换。",
+      "prerequisites": [
+        "convolution-frequency-product"
+      ],
+      "related": [],
+      "sources": [
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ℱ{xw}=X*W",
+          "sources": [
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "用相同单频分别乘短窗和长窗，再比较频谱主瓣。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "sampling-period-vs-window",
+      "title": "采样间距与记录长度的不同作用",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "sample spacing record length",
+        "采样率与谱分辨"
+      ],
+      "definition": "采样间隔确定频域可表示范围，记录长度影响频率分箱。",
+      "body": "如果只延长记录而不改变间隔，采样率和奈奎斯特边界保持，频率格点更密。只加快采样但维持总观测时长，会扩展范围；格点间隔主要仍由记录时长决定。",
+      "example": "持续 2 s 记录时，格点间距约 0.5 Hz。",
+      "caution": "补零增加显示点，不增加有效观测时长。",
+      "conditions": [
+        "均匀时间采样，按 N 个采样周期定义 DFT 窗。"
+      ],
+      "formula": "Δf=1/(N T_s)",
+      "variables": "T_s 为采样周期，N 为样本数。",
+      "prerequisites": [
+        "time-sampling-alias"
+      ],
+      "related": [],
+      "sources": [
+        "sampling",
+        "dft"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Δf=1/(N T_s)",
+          "sources": [
+            "sampling",
+            "dft"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "持续 2 s 记录时，格点间距约 0.5 Hz。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "sample-quantized-amplitude",
+      "title": "时间采样与振幅量化",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "sampling versus quantization",
+        "采样量化区别"
+      ],
+      "definition": "采样选择读数的时刻或位置，量化将每个读数映射到有限电平码。",
+      "body": "提高采样率可以改变可测频带，但量化位数仍决定相同满量程下的电平码间隔。提高位数可细分幅值，不能恢复时刻采样造成的混叠。二者都可能影响光学采集质量。",
+      "example": "将示波器采样率加倍，数字码的最小步长可保持不变。",
+      "caution": "满量程、增益和噪声均会影响实际有效分辨。",
+      "conditions": [
+        "考虑理想采样器与量化器的分步模型。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "time-sampling-alias"
+      ],
+      "related": [],
+      "sources": [
+        "sampling",
+        "variance"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "采样选择读数的时刻或位置，量化将每个读数映射到有限电平码。",
+          "sources": [
+            "sampling",
+            "variance"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将示波器采样率加倍，数字码的最小步长可保持不变。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "variance-of-average-independent",
+      "title": "独立重复测量平均的方差",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "variance of sample mean",
+        "平均降噪"
+      ],
+      "definition": "对独立同方差读数平均，平均值的随机方差按样本数倒数下降。",
+      "body": "对 N 个读数求和时，独立条件使各方差可相加。最后乘 1/N 的平方得到平均方差。固定偏差不会因此消失，相关或漂移也会改变这一缩放关系。",
+      "example": "16 次独立读数的平均标准差为单次的四分之一。",
+      "caution": "不要用这一关系降低未改变的校准误差。",
+      "conditions": [
+        "独立、同方差且二阶矩有限。"
+      ],
+      "formula": "Var(mean)=σ²/N",
+      "variables": "σ 为单次标准差，N 为样本数。",
+      "prerequisites": [
+        "variance-sum-difference"
+      ],
+      "related": [],
+      "sources": [
+        "variance",
+        "random-independence"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Var(mean)=σ²/N",
+          "sources": [
+            "variance",
+            "random-independence"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "16 次独立读数的平均标准差为单次的四分之一。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "mean-square-vs-variance",
+      "title": "均方包含直流与随机波动",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "mean square vs variance",
+        "均方方差区别"
+      ],
+      "definition": "均方是二阶原点矩，方差是围绕均值的二阶中心矩。",
+      "body": "将原变量写成均值加零均值偏差。平方平均的交叉项为零，因此均方等于均值平方加方差。光电信号含稳定偏置时，直接取 RMS 不等于扣掉偏置后的噪声标准差。",
+      "example": "均值 4 V、标准差 3 V 的信号 RMS 为 5 V。",
+      "caution": "同一时间窗定义均值与方差。",
+      "conditions": [
+        "二阶矩存在。"
+      ],
+      "formula": "E[X²]=Var(X)+E[X]²",
+      "variables": "均方和方差单位为 X 的单位平方。",
+      "prerequisites": [
+        "expectation-vs-observation"
+      ],
+      "related": [],
+      "sources": [
+        "variance"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "E[X²]=Var(X)+E[X]²",
+          "sources": [
+            "variance"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "均值 4 V、标准差 3 V 的信号 RMS 为 5 V。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "conditional-average-gate",
+      "title": "按触发分组计算条件平均",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "conditional mean",
+        "触发门控平均"
+      ],
+      "definition": "条件期望是只在给定条件成立时的平均读数。",
+      "body": "在触发门控中，先确定符合条件的样本集合，再按该集合的总数归一。若用所有采样窗数作分母，则得到条件贡献的总体平均，需要另乘触发概率才与条件量对应。",
+      "example": "触发率 0.2、触发时平均 5 个计数，触发子集对总体的平均贡献为 1。",
+      "caution": "应记录未触发窗是否保留与如何记值。",
+      "conditions": [
+        "触发定义固定，条件事件概率为正。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "conditional-probability-counting",
+        "expectation-vs-observation"
+      ],
+      "related": [],
+      "sources": [
+        "conditional-mean"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "条件期望是只在给定条件成立时的平均读数。",
+          "sources": [
+            "conditional-mean"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "触发率 0.2、触发时平均 5 个计数，触发子集对总体的平均贡献为 1。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "conditional-marginal-variance",
+      "title": "条件内与条件间的波动",
+      "topic": "math",
+      "level": "advanced",
+      "terms": [
+        "law of total variance",
+        "全方差"
+      ],
+      "definition": "混合总体的方差包含各条件内方差的平均，以及不同条件均值之间的方差。",
+      "body": "把总偏差分解为相对当前条件均值的波动与条件均值相对总体的偏离。交叉项条件平均为零。测量配置在两档之间切换时，即便每档内部很稳，合在一起也可能出现大方差。",
+      "example": "两组都无随机波动，但恒定值分别为 0 与 2、各占一半，总方差为 1。",
+      "caution": "不能把组间结构变化当成单一状态的本底噪声。",
+      "conditions": [
+        "二阶矩存在且条件分组明确。"
+      ],
+      "formula": "Var(X)=E[Var(X given Y)]+Var(E[X given Y])",
+      "variables": "两项均用 X 的单位平方。",
+      "prerequisites": [
+        "conditional-average-gate"
+      ],
+      "related": [],
+      "sources": [
+        "conditional-variance",
+        "variance"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Var(X)=E[Var(X given Y)]+Var(E[X given Y])",
+          "sources": [
+            "conditional-variance",
+            "variance"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两组都无随机波动，但恒定值分别为 0 与 2、各占一半，总方差为 1。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "correlation-coefficient-scale",
+      "title": "相关系数去除读数尺度",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "Pearson correlation",
+        "相关系数"
+      ],
+      "definition": "相关系数用两路标准差的乘积归一化协方差。",
+      "body": "从协方差中去除两路的幅度单位，使不同量程的线性关联可比较。若一个通道乘负比例，相关系数符号翻转；若两路都乘正比例，数值保持不变。",
+      "example": "将一路电压从 V 改为 mV，线性相关系数不变。",
+      "caution": "零相关可能仍有非线性关系，不能单独证明独立。",
+      "conditions": [
+        "两路标准差均为正且二阶矩有限。"
+      ],
+      "formula": "ρ=Cov(X,Y)/(σ_Xσ_Y)",
+      "variables": "ρ 无量纲，范围 −1 到 1。",
+      "prerequisites": [
+        "covariance-common-noise"
+      ],
+      "related": [],
+      "sources": [
+        "covariance"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "ρ=Cov(X,Y)/(σ_Xσ_Y)",
+          "sources": [
+            "covariance"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "将一路电压从 V 改为 mV，线性相关系数不变。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "gaussian-density-width",
+      "title": "正态分布的标准差与半高宽",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "normal FWHM",
+        "正态密度半高宽"
+      ],
+      "definition": "正态密度在均值两侧各距 √(2 ln2) 个标准差处达到峰值的一半。",
+      "body": "将密度值与峰值相除，归一因子抵消。令高斯指数的指数值等于二分之一，再解出离中心的正负距离。两点间距是全宽，不要只报一侧。",
+      "example": "σ=2 ns 时高斯密度 FWHM 约 4.71 ns。",
+      "caution": "先确认曲线是强度、概率密度还是复场幅度。",
+      "conditions": [
+        "单峰且确实采用 Gaussian 密度。"
+      ],
+      "formula": "FWHM=2√(2 ln2)σ",
+      "variables": "σ 与全宽单位相同。",
+      "prerequisites": [
+        "standard-score-normal"
+      ],
+      "related": [],
+      "sources": [
+        "normal"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "FWHM=2√(2 ln2)σ",
+          "sources": [
+            "normal"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "σ=2 ns 时高斯密度 FWHM 约 4.71 ns。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "uncertainty-linear-covariance",
+      "title": "线性组合的不确定度传播",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "linear covariance propagation",
+        "含相关不确定度"
+      ],
+      "definition": "两个带不确定度的量按线性系数组合时，方差需要用协方差。",
+      "body": "将每个输入偏差乘其灵敏度系数，并展开组合后的偏差平方。正相关在同号系数下增加总方差，在异号系数下可能降低总方差。量纲由各输入偏差经系数映射到输出。",
+      "example": "若 X、Y 方差均为 1，协方差 0.5，则 X−Y 的方差为 1。",
+      "caution": "非线性响应仅在小扰动时可用一阶灵敏度。",
+      "conditions": [
+        "模型线性或局部线性，输入二阶矩有限。"
+      ],
+      "formula": "Var(aX+bY)=a²Var(X)+b²Var(Y)+2ab Cov(X,Y)",
+      "variables": "a、b 将各输入单位映射到输出单位。",
+      "prerequisites": [
+        "variance-sum-difference"
+      ],
+      "related": [],
+      "sources": [
+        "variance",
+        "covariance"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Var(aX+bY)=a²Var(X)+b²Var(Y)+2ab Cov(X,Y)",
+          "sources": [
+            "variance",
+            "covariance"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "若 X、Y 方差均为 1，协方差 0.5，则 X−Y 的方差为 1。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "dimensionless-angle-radian",
+      "title": "角度换算与无量纲检查",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "degree radian",
+        "导数角度单位"
+      ],
+      "definition": "角度可以用度或弧度记，三角微分关系以弧度为通常约定。",
+      "body": "一整周既是 360° 也是 2π rad，数值转换后才可进入相位指数。将度直接代入要求弧度的三角函数会改变数值；对按度标定的曲线求导还需乘相应比例。",
+      "example": "30° 等于 π/6 rad，其正弦为 0.5。",
+      "caution": "弧度常视作无量纲，但不能据此把两种角度数值等同。",
+      "conditions": [
+        "应用到复指数、三角计算或导数换算。"
+      ],
+      "formula": "φ_rad=(π/180)φ_deg",
+      "variables": "φ_deg 为度数值。",
+      "prerequisites": [
+        "euler-optical-phase"
+      ],
+      "related": [],
+      "sources": [
+        "phasors",
+        "group-expansion"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "φ_rad=(π/180)φ_deg",
+          "sources": [
+            "phasors",
+            "group-expansion"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "30° 等于 π/6 rad，其正弦为 0.5。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "linear-complex-magnitude-error",
+      "title": "相位和幅值误差的局部分解",
+      "topic": "math",
+      "level": "advanced",
+      "terms": [
+        "complex perturbation",
+        "复数相对误差"
+      ],
+      "definition": "非零复量的小相对变化可按实部与虚部分别解释为相对幅值及相位变化。",
+      "body": "写 z′=z(1+ε)。当 ε 小时，模长比约为 1+Re ε，幅角差约为 Im ε。这个局部模型能帮助区分干涉仪中增益漂移和相位漂移。靠近零幅时这种相对化会失稳。",
+      "example": "ε≈0.01+0.02i 表示约 1% 的幅值增加和 0.02 rad 相位变化。",
+      "caution": "不能用于零幅或相对扰动很大的位置。",
+      "conditions": [
+        "基准 z 非零且 abs(ε) 远小于一。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "small-perturbation-linearization"
+      ],
+      "related": [],
+      "sources": [
+        "complex-inner",
+        "phasors"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "非零复量的小相对变化可按实部与虚部分别解释为相对幅值及相位变化。",
+          "sources": [
+            "complex-inner",
+            "phasors"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "ε≈0.01+0.02i 表示约 1% 的幅值增加和 0.02 rad 相位变化。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "complex-root-phase-branch",
+      "title": "复平方根的分支选择",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "complex square root branch",
+        "复根传播分支"
+      ],
+      "definition": "非零复数有两个互为反号的平方根，物理边界条件用来选择分支。",
+      "body": "将复数写成极坐标，平方根的模为原模平方根，相位为原幅角一半，再加一个 π 得另一根。在波动传播中，选择向外传播或向远处衰减的根与时间记号有关。",
+      "example": "对负实数 −4，两个平方根为 ±2i。",
+      "caution": "不能仅选数值函数的主值便认定方向正确。",
+      "conditions": [
+        "采用明确的传播方向和时谐约定。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "complex-cartesian-polar"
+      ],
+      "related": [],
+      "sources": [
+        "complex-inner",
+        "wave-k"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "非零复数有两个互为反号的平方根，物理边界条件用来选择分支。",
+          "sources": [
+            "complex-inner",
+            "wave-k"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "对负实数 −4，两个平方根为 ±2i。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "log-power-cascade",
+      "title": "级联功率比的对数相加",
+      "topic": "math",
+      "level": "intro",
+      "terms": [
+        "cascade dB",
+        "分贝级联"
+      ],
+      "definition": "独立级联的功率倍率相乘时，其分贝值可在统一参考口径下相加。",
+      "body": "将每个线性倍率写成十的某个幂次，乘积就等于幂次之和。光学链路常用这一关系合计增益和损耗；有相干反射或反馈时，总量可能需要先由复场模型决定。",
+      "example": "两级损耗各 3 dB，总损耗约 6 dB。",
+      "caution": "功率的绝对标度 dBm 与相对 dB 不应直接混作两个增益。",
+      "conditions": [
+        "逐级倍率适用、参考方向一致。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "log-amplitude-power-db"
+      ],
+      "related": [],
+      "sources": [
+        "phasor-power"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "独立级联的功率倍率相乘时，其分贝值可在统一参考口径下相加。",
+          "sources": [
+            "phasor-power"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "两级损耗各 3 dB，总损耗约 6 dB。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "normalized-vs-absolute-residual",
+      "title": "无量纲残差与带单位残差",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "normalized residual",
+        "残差尺度"
+      ],
+      "definition": "残差可直接保留测量单位，也可除以已知尺度变成无量纲量。",
+      "body": "给定每个点的标准不确定度时，归一残差可比较不同噪声水平的偏离程度。若方差模型不适合数据，则归一后的大小也不能按统一阈值解释；应保留原始残差和使用的尺度。",
+      "example": "观测差 0.02、标准不确定度 0.01，对应归一残差 2。",
+      "caution": "权重相关时，逐点除标准差并未消除相关性。",
+      "conditions": [
+        "尺度必须为正且与残差采用同一单位。"
+      ],
+      "formula": null,
+      "variables": null,
+      "prerequisites": [
+        "standard-score-normal",
+        "fit-residuals"
+      ],
+      "related": [],
+      "sources": [
+        "variance",
+        "normal"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DIRECT",
+          "statement": "残差可直接保留测量单位，也可除以已知尺度变成无量纲量。",
+          "sources": [
+            "variance",
+            "normal"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "观测差 0.02、标准不确定度 0.01，对应归一残差 2。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "frequency-axis-spacing-nonlinearity",
+      "title": "波长等间隔与频率轴非等间隔",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "wavelength frequency axis",
+        "光谱采样换轴"
+      ],
+      "definition": "按等间隔波长采样的光谱，换到频率轴后一般不再等间隔。",
+      "body": "真空关系 ν=c/λ 的斜率随 λ 改变。窄带可在中心波长处做局部线性换算；宽带积分或频谱变换应保留真实坐标，并在需要时处理频率密度的 Jacobian。",
+      "example": "同为 1 nm 的步长，在 500 nm 附近对应的频差大于在 1500 nm 附近。",
+      "caution": "换坐标与换谱密度的单位是两步。",
+      "conditions": [
+        "使用真空波长；近似只适用于小相对带宽。"
+      ],
+      "formula": "dν/dλ=−c/λ²",
+      "variables": "c 用 m/s，λ 用 m。",
+      "prerequisites": [
+        "angular-frequency-derivative"
+      ],
+      "related": [],
+      "sources": [
+        "wave-k",
+        "group-expansion"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "dν/dλ=−c/λ²",
+          "sources": [
+            "wave-k",
+            "group-expansion"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "同为 1 nm 的步长，在 500 nm 附近对应的频差大于在 1500 nm 附近。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "spectral-density-change-variable",
+      "title": "换横轴时谱密度的变换",
+      "topic": "math",
+      "level": "advanced",
+      "terms": [
+        "spectral Jacobian",
+        "每纳米转每赫兹",
+        "光谱功率密度",
+        "每纳米转每太赫兹",
+        "mW/nm",
+        "mW/THz"
+      ],
+      "definition": "谱密度换横轴时要乘变量换算的绝对导数，使相同物理频带的总量保持。",
+      "body": "每纳米和每赫兹表示的纵轴不是同一个数值。将一个小波段的总功率分别写为两个密度乘其带宽，可求两种密度的关系。频率轴与波长轴方向相反，密度倍率取绝对值。\n\n按真空波长 λ₀：Sν=Sλ λ₀²/c。先把 Sλ 换成 W/m，所得 Sν 为 W/Hz；再换成所需频率单位。1 mW/nm = 10⁶ W/m；1 W/Hz = 10¹⁵ mW/THz。波长间隔转频差使用 |dν/dλ|，密度变换则使用其倒数 |dλ/dν|；二者不能混用。",
+      "example": "1550 nm 处的 1 mW/nm 对应约 8.013877 mW/THz。局部 1 nm 对应约 0.1247832 THz，两种密度分别乘对应带宽均约为 1 mW。",
+      "caution": "若已给的是每个通道总功率，则不必把总功率再乘密度因子。",
+      "conditions": [
+        "坐标变换单调，谱密度定义在同一物理量上。"
+      ],
+      "formula": "Sν=Sλ abs(dλ/dν)",
+      "variables": "Sλ 为 W/m、Sν 为 W/Hz 时直接使用 SI 公式；其他单位在计算前后明确换算。",
+      "prerequisites": [
+        "frequency-axis-spacing-nonlinearity"
+      ],
+      "related": [],
+      "sources": [
+        "wave-k",
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "Sν=Sλ abs(dλ/dν)",
+          "sources": [
+            "wave-k",
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "1550 nm 处的 1 mW/nm 对应约 8.013877 mW/THz。局部 1 nm 对应约 0.1247832 THz，两种密度分别乘对应带宽均约为 1 mW。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-14 · 按功率微元守恒与真空色散关系核算单位"
+    },
+    {
+      "id": "quadratic-form-intensity",
+      "title": "测量通道的二次型读出",
+      "topic": "math",
+      "level": "advanced",
+      "terms": [
+        "quadratic form intensity",
+        "复向量强度二次型"
+      ],
+      "definition": "复场经过线性元件后取平方模，可以写成关于输入场的二次型。",
+      "body": "将输出写成 Lv，平方模成为 v†L†Lv。因此即使光学元件对场线性，最终强度对输入场仍是二次关系。适当二次型可描述通道选择或探测端口。",
+      "example": "分析器的透过功率可写成投影算符在输入态上的二次型。",
+      "caution": "若统计多个不相干输入，应按各自强度平均。",
+      "conditions": [
+        "完整记录所收集的输出通道与内积。"
+      ],
+      "formula": "P=v†(L†L)v",
+      "variables": "L 为线性场传输矩阵。",
+      "prerequisites": [
+        "hermitian-complex-adjoint"
+      ],
+      "related": [],
+      "sources": [
+        "complex-inner",
+        "complex-matrix"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "P=v†(L†L)v",
+          "sources": [
+            "complex-inner",
+            "complex-matrix"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "分析器的透过功率可写成投影算符在输入态上的二次型。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "arithmetic-vs-geometric-decay",
+      "title": "递推比例与连续指数衰减",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "discrete decay",
+        "每步损耗指数"
+      ],
+      "definition": "固定比例的离散递推可写为指数衰减形式。",
+      "body": "每一步保留比例 r，经过 N 步剩 r 的 N 次方。将它写成 exp(N ln r) 可换算连续等效衰减长度或时间。若每步比例会变化，要用实际乘积而非一个固定指数。",
+      "example": "每圈能量保留 0.99，100 圈后保留约 0.366。",
+      "caution": "用于场幅比例时，和用于功率比例的衰减常数不同。",
+      "conditions": [
+        "0<r≤1，步长固定。"
+      ],
+      "formula": "rᴺ=exp(N ln r)",
+      "variables": "r 无量纲，N 是步数。",
+      "prerequisites": [
+        "log-power-cascade"
+      ],
+      "related": [],
+      "sources": [
+        "group-expansion",
+        "ft-properties"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "rᴺ=exp(N ln r)",
+          "sources": [
+            "group-expansion",
+            "ft-properties"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "每圈能量保留 0.99，100 圈后保留约 0.366。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    },
+    {
+      "id": "error-propagation-square",
+      "title": "平方读出时小误差的倍率",
+      "topic": "math",
+      "level": "undergraduate",
+      "terms": [
+        "square law sensitivity",
+        "平方律相对误差"
+      ],
+      "definition": "对正的幅值做平方时，小的相对幅值变化会约放大两倍到平方量。",
+      "body": "设幅值 A 变为 A+δA，展开平方后有一阶交叉项和二阶小量。在线性近似下，平方量的相对变化为 2δA/A。接近零幅时应使用绝对误差或完整表达。",
+      "example": "场幅增 1%，平方量精确增 2.01%，一阶近似 2%。",
+      "caution": "跨阻抗的光功率还包含额外因子。",
+      "conditions": [
+        "A 非零、相对扰动较小，其他尺度固定。"
+      ],
+      "formula": "δ(A²)/A²≈2δA/A",
+      "variables": "幅值相对变化无量纲。",
+      "prerequisites": [
+        "small-perturbation-linearization"
+      ],
+      "related": [],
+      "sources": [
+        "group-expansion",
+        "phasor-power"
+      ],
+      "origin": "ORIGINAL",
+      "license": "GPL-2.0-or-later",
+      "status": "PUBLISHED",
+      "claims": [
+        {
+          "kind": "DERIVED",
+          "statement": "δ(A²)/A²≈2δA/A",
+          "sources": [
+            "group-expansion",
+            "phasor-power"
+          ]
+        },
+        {
+          "kind": "WORKED_EXAMPLE",
+          "statement": "场幅增 1%，平方量精确增 2.01%，一阶近似 2%。",
+          "sources": []
+        }
+      ],
+      "review": "2026-11-13 · 项目原创讲解，按章节、公式约定及示例复核"
+    }
+  ]
+}

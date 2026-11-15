@@ -52,12 +52,20 @@ def prepare(store,s,proposal_id):
 
 
 def run(store,s,data):
-    from . import observation_group as ow
     if data.get('approve') is not True or not current(s) or data.get('plan_sha256')!=s['task_plan']['sha256']:raise WorkflowError('请明确批准当前连续计划；旧批准不能沿用',409)
-    if store.running or not store.owner.allow_workers or getattr(store.owner,'simulation_context',None):raise WorkflowError('当前不能启动连续计算',409)
+    if store.running:raise WorkflowError('另一项计算正在运行。本轮尚未启动，请稍后重新核对并批准计划。',409)
+    if not store.owner.allow_workers or getattr(store.owner,'simulation_context',None):raise WorkflowError('当前环境未启用连续计算。本轮尚未启动。',409)
     import importlib.util
     if importlib.util.find_spec('scipy') is None or s['inverse_settings']['model']==m.FILM and importlib.util.find_spec('tmm') is None:raise WorkflowError('分析依赖未就绪，尚未采集或预留计算',409)
-    capacity(store,s);p=copy.deepcopy(s['task_plan'])
+    capacity(store,s)
+    from .executor import admit_solver
+    with admit_solver():
+        return _run_approved(store,s)
+
+
+def _run_approved(store,s):
+    from . import observation_group as ow
+    p=copy.deepcopy(s['task_plan'])
     receipt={'started':True,'plan_sha256':p['sha256'],'source_record_id':s['id'],'status':'STARTED','steps':[],
              'actor':'EXPLICIT_API_APPROVAL_NOT_PROOF_OF_HUMAN','selected_action_source':(p.get('research_origin') or {}).get('source_kind'),
              'model_action_id':(p.get('research_origin') or {}).get('action_id') if (p.get('research_origin') or {}).get('source_kind')=='LIVE_AI' else None}
