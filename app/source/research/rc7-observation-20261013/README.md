@@ -1,6 +1,6 @@
 # RC7 观测与统计协议有限研究
 
-这是可重跑开发证据，不是正式参赛材料。运行需要项目已有 NumPy / SciPy 环境，不使用 key、不执行 AI 请求、不运行 FFT/FDTD。
+这是可重跑的开发验证示例。运行需要项目已有 NumPy / SciPy 环境，不使用 key、不执行 AI 请求、不运行 FFT/FDTD。
 
 ```sh
 PYTHONPATH=.:local-validation/optics-optional-deps OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 \

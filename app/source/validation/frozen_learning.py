@@ -9,7 +9,7 @@ import threading
 
 from photonguard.workflow import atomic_json, make_server
 from validation.continuous_learning_evidence import Lesson, RANGE, question, slit_plan
-from validation.finals_evidence import Workbench
+from validation.workbench_client import Workbench
 
 
 def evaluate(api, case, item):

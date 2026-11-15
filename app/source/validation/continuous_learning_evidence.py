@@ -11,7 +11,7 @@ import uuid
 import zipfile
 
 from photonguard.workflow import atomic_json, make_server
-from validation.finals_evidence import FILM, Workbench, fit_observations, forward_summary
+from validation.workbench_client import FILM, Workbench, fit_observations, forward_summary
 
 TARGET = ('波长633 nm、焦距200 mm，中央亮区全宽10±0.2 mm。'
           '采用教学模型。')

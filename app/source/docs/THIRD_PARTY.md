@@ -17,7 +17,7 @@ The current inverse workflow reuses existing optical models, finite numerical op
 
 `examples/inverse` contains public synthetic teaching examples with disclosed ideal equations and fixed noise seeds. They are not hidden evaluation cases or new human trials. The reusable facade and examples retain the GPL-2.0-or-later project declaration; this inventory does not relicense any component. API credentials, installed distributions and hidden assessment truth are excluded from the source examples. Public distribution and ownership decisions remain with the owner.
 
-The dated sections below preserve historical provenance; earlier use labels do not replace this current capability inventory. No formal competition presentation or video is part of these development examples.
+The dated sections below preserve historical provenance; earlier use labels do not replace this current capability inventory.
 
 ## RC1 additions (historical, 2026-10-11)
 
@@ -32,7 +32,7 @@ Dependency inventory recorded 2026-10-05 UTC; use-status corrected 2026-10-10. T
 | Resource | Actual use | Version / license | Source |
 |---|---|---|---|
 | Meep / pymeep | Actual serial FDTD solver and field-subtraction API | 1.34.0, GPL-2.0-or-later | https://github.com/NanoComp/meep |
-| MPB | Frozen LN eigenmode research and archived evidence; no new geometry search in competition phase | 1.12.0, GPL-2.0-or-later | https://github.com/NanoComp/mpb |
+| MPB | Frozen LN eigenmode research and archived evidence | 1.12.0, GPL-2.0-or-later | https://github.com/NanoComp/mpb |
 | tmm | Independent task-derived characteristic-matrix reference | 0.2.0, MIT | https://github.com/sbyrnes321/tmm |
 | Python | CLI, worker orchestration and local HTTP UI | 3.12.14, PSF | https://www.python.org/ |
 | NumPy | Numerical arrays and finite/full-band validation | 2.5.3, BSD-3-Clause | https://numpy.org/ |
@@ -55,17 +55,3 @@ Official technical sources:
 - https://github.com/sbyrnes321/tmm/blob/master/LICENSE.txt
 
 Latest/master links support methodology but are not version locks; the actual runtime lock is authoritative for reproduction. Before external distribution, review packaging and actual dependency licenses; this document is provenance, not legal advice.
-
-
-## Competition material production, 2026-10-10
-
-| Resource | Use and distribution boundary | Obligation / status |
-|---|---|---|
-| DeepSeek deepseek-flash API | Paid runtime input/diagnosis; request receipts retained, no weights or key distributed | Third-party commercial API terms; disclose model, data scope and actual usage. Not a project-owned open model. https://api-docs.deepseek.com/ |
-| Playwright + Microsoft Edge | Local simulated browser operation and screen recording | Playwright Apache-2.0; Edge proprietary terms. No browser executable bundled. https://github.com/microsoft/playwright |
-| ReportLab + Poppler | PDF composition and rendered-page QA | ReportLab BSD; Poppler GPL. Tools are not bundled in source release. https://www.reportlab.com/opensource/ https://poppler.freedesktop.org/ |
-| FFmpeg | Conversion of actual recorded UI video to MP4 | Build-specific GPL/LGPL; encoder executable not distributed. https://ffmpeg.org/legal.html |
-| Windows SimHei font | Local Chinese PDF typography | System-installed font, font file not distributed; PDF uses standard CJK CID font without bundling system font data. |
-| Codex development assistance | Implementation, review, automation and material authoring | Disclosed separately in AI_ASSISTANCE_ZH.md; no invented human authorship or review. |
-
-The project's GPL notice is retained; upstream sources/binaries are not embedded into the source archive. Install dependencies separately from the pinned conda-forge lock and retain their notices. The final team must confirm actual ownership and submission authority before public distribution. This is a factual inventory, not a claim that every generated item is exclusively owned by the team.

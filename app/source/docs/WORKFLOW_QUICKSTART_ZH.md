@@ -46,7 +46,7 @@ bash START_WORKFLOW.sh
 默认新工作区为空，只有明确点击运行才产生本机新记录。
 
 Windows 用户可在已有 WSL 的 Linux 项目副本内执行同一个命令，然后尝试本机浏览器。
-也提供 `START_WORKFLOW.ps1`，需明确传入新审阅目录的 WSL 路径；参数例子见 `docs/LOCAL_CODEX_WORKFLOW_HANDOFF_ZH.txt`。
+也提供 `START_WORKFLOW.ps1`，需明确传入新审阅目录的 WSL 路径；参数见 `START_WORKFLOW.ps1` 的帮助说明。
 本次只验证 dot 云端 Linux；没有替你启动或验证 Windows/WSL，不假定你本地已应用此增量。
 请将它放在新目录审阅，不覆盖自己正在使用的源码和旧报告。
 

@@ -11,7 +11,7 @@ from photonguard.experiments.knowledge_catalog import Catalog, builtin_packs, ca
 from photonguard.experiments.knowledge_learning import answer
 from photonguard.experiments.knowledge_pack import update
 from photonguard.workflow import WorkflowError, make_server
-from validation.finals_evidence import Workbench
+from validation.workbench_client import Workbench
 
 
 CASES = json.loads(Path(__file__).with_name('knowledge_acceptance_cases.json').read_text(encoding='utf-8'))

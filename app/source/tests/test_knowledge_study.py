@@ -13,7 +13,7 @@ from photonguard.experiments.knowledge_experiment import _slit_input
 from photonguard.experiments.slit_goal import prepare_goal
 from photonguard.experiments.knowledge_server import KnowledgeHandler
 from photonguard.workflow import make_server
-from validation.finals_evidence import Workbench
+from validation.workbench_client import Workbench
 
 
 def test_foundation_packs_and_topical_sources(tmp_path):

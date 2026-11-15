@@ -1,6 +1,6 @@
 # 三类无 UI、无 Key 的反向实验例子
 
-这是开发复用入口，不是竞赛稿。三个脚本调用同一套有限拟合、证据和建议模块；不创建 Web 任务，不读取浏览器设置、个人 API Key 或隐藏评测对象，不调用语言模型。例子使用已公开的教学参数，不能再称盲测。
+这是开发复用入口。三个脚本调用同一套有限拟合、证据和建议模块；不创建 Web 任务，不读取浏览器设置、个人 API Key 或隐藏评测对象，不调用语言模型。例子使用已公开的教学参数，不能再称盲测。
 
 另有 RC8 小型单频校准例子：`python examples/inverse/single_frequency_calibration.py --teaching --out /tmp/pg-contrast --approve`。它只进行一次线性参照拟合，保存输入、独立暗场、策略与结果；也可用 `--input input.json` 替换教学输入。输出 `CONTRAST_AT_FREQUENCY`，不产生完整核或缝宽认证，不重置生产任务额度。
 

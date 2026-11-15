@@ -27,7 +27,7 @@
     "circular_aperture": {"title": "OpenStax University Physics 3 §4.5 · Circular Apertures and Resolution", "url": "https://openstax.org/books/university-physics-volume-3/pages/4-5-circular-apertures-and-resolution"},
     "refraction": {"title": "OpenStax University Physics 3 §1.3 · Refraction", "url": "https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction"},
     "total_reflection": {"title": "OpenStax University Physics 3 §1.4 · Total Internal Reflection", "url": "https://openstax.org/books/university-physics-volume-3/pages/1-4-total-internal-reflection"},
-    "workbench": {"title": "PhotonGuard 省赛版 · 数值模型与图表字段", "url": "https://github.com/zhou2022f1/PhotonGuard/blob/3cf4eeda000bf430accedfc5b17205111ccd5b2a/app/source/photonguard/experiments/optics.py"}
+    "workbench": {"title": "PhotonGuard 工作台 · 数值模型与图表字段", "url": "https://github.com/zhou2022f1/PhotonGuard/blob/3cf4eeda000bf430accedfc5b17205111ccd5b2a/app/source/photonguard/experiments/optics.py"}
   },
   "cards": [
     {
