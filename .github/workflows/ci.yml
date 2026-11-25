@@ -31,6 +31,7 @@ jobs:
       PYTHONPATH: ${{ github.workspace }}/app/source:${{ github.workspace }}/app/source/tests
     defaults:
       run:
+        shell: bash -el {0}
         working-directory: app/source
 
     steps:
