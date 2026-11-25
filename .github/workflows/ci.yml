@@ -71,6 +71,9 @@ jobs:
           python -m pytest -p photonguard_ci_network_guard -q \
             --junitxml=test-results/junit.xml
 
+      - name: Reproduce public LEOI-30A single-slit case
+        run: python examples/public_data/leoi30a_single_slit/analyze.py --out public-case-output
+
       - name: Add test summary
         if: always()
         run: |
@@ -101,5 +104,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: photonguard-junit-python312
-          path: app/source/test-results/junit.xml
+          path: |
+            app/source/test-results/junit.xml
+            app/source/public-case-output/
           if-no-files-found: warn
