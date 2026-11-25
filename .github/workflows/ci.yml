@@ -17,7 +17,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: photonguard-ci-\${{ github.workflow }}-\${{ github.ref }}
+  group: photonguard-ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
     env:
       DEEPSEEK_API_KEY: ""
       PHOTONGUARD_CI_OFFLINE: "1"
-      PYTHONPATH: \${{ github.workspace }}/app/source:\${{ github.workspace }}/app/source/tests
+      PYTHONPATH: ${{ github.workspace }}/app/source:${{ github.workspace }}/app/source/tests
     defaults:
       run:
         working-directory: app/source
