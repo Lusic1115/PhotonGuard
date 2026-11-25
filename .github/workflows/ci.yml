@@ -1,0 +1,99 @@
+name: PhotonGuard CI
+
+on:
+  push:
+    paths:
+      - "app/source/**"
+      - ".github/workflows/ci.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "app/source/**"
+      - ".github/workflows/ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: photonguard-ci-\${{ github.workflow }}-\${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  offline-tests:
+    name: Offline test suite (Python 3.12)
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      DEEPSEEK_API_KEY: ""
+      PHOTONGUARD_CI_OFFLINE: "1"
+      PYTHONPATH: \${{ github.workspace }}/app/source:\${{ github.workspace }}/app/source/tests
+    defaults:
+      run:
+        working-directory: app/source
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            app/source/pyproject.toml
+            app/source/release/requirements-fast.txt
+            app/source/release/requirements-analysis.txt
+
+      - name: Install project and test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install \
+            -r release/requirements-fast.txt \
+            -r release/requirements-analysis.txt \
+            pytest==9.1.1
+          python -m pip install -e .
+
+      - name: Collect tests
+        run: python -m pytest -p photonguard_ci_network_guard --collect-only -q
+
+      - name: Run offline test suite
+        run: |
+          mkdir -p test-results
+          python -m pytest -p photonguard_ci_network_guard -q \
+            --junitxml=test-results/junit.xml
+
+      - name: Add test summary
+        if: always()
+        run: |
+          python - <<'PY'
+          import os
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          report = Path("test-results/junit.xml")
+          summary = Path(os.environ["GITHUB_STEP_SUMMARY"])
+          if not report.exists():
+              summary.write_text("## PhotonGuard CI\n\nJUnit report was not generated.\n", encoding="utf-8")
+              raise SystemExit(0)
+
+          root = ET.parse(report).getroot()
+          suites = [root] if root.tag == "testsuite" else list(root.findall("testsuite"))
+          totals = {key: sum(int(suite.attrib.get(key, 0)) for suite in suites)
+                    for key in ("tests", "failures", "errors", "skipped")}
+          with summary.open("a", encoding="utf-8") as handle:
+              handle.write("## PhotonGuard CI test summary\n\n")
+              handle.write("| Metric | Count |\n|---|---:|\n")
+              for key, value in totals.items():
+                  handle.write(f"| {key} | {value} |\n")
+          PY
+
+      - name: Upload JUnit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: photonguard-junit-python312
+          path: app/source/test-results/junit.xml
+          if-no-files-found: warn
