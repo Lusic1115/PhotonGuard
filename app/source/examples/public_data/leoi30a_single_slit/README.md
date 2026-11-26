@@ -4,7 +4,7 @@
 
 **This is a transcription of a third-party public experimental manual. It is not data collected by PhotonGuard contributors or by the user.**
 
-Source: [LEOI-30A Manual](https://lambdasys.com/uploads/info/LEOI-30A-Content.pdf), Experiment 1, "Examples of Data Recording and Processing", PDF pages 3–5.
+Source: [LEOI-30A Manual](https://lambdasys.com/uploads/info/LEOI-30A-Content.pdf), Experiment 1, "Examples of Data Recording and Processing", PDF file pages 3–5 (one-based: data table on page 3, processing on pages 4–5; these are file-page indices, not printed manual page labels).
 
 The manual gives Group 4 nominal slit width 0.07 mm and distance Z = 511 - 7 = 504 mm. Its example slit-width calculation uses wavelength 650 nm; this is treated as the manual's example/specification value, not as an independently recorded per-run wavelength measurement. The manual lists central maximum X0 = 26.0 mm, current 808; first, second and third minima offsets 4.5, 8.9 and 13.0 mm; and minima-derived widths 0.0728, 0.0736 and 0.0756 mm (mean about 0.074 mm).
 
@@ -37,3 +37,15 @@ The whole-curve fit is I(X)=b+A*sinc^2((X-X0)/x1), using NumPy's normalized sinc
 ## Attribution
 
 This adds a documented public-data transcription and analysis example. It does not replace the existing solver, upstream contributions, project license or original manual attribution. Consult the source manual for its own copyright and redistribution terms.
+
+## Audit and reproduced results
+
+The 63 CSV pairs match the source PDF text table on file page 3, including 17.1 and 34.9 mm. The source's page images could not be retrieved during this audit; this comparison is against extracted PDF text. All measurements remain third-party manual data, not contributor- or user-collected data.
+
+At 650 nm and 504 mm, the whole-curve fit gives effective width 69.6373 um, baseline 11.4505, center 26.01238 mm, RMSE 6.34363 current units (0.79295% of the data range), and R-squared 0.9991826. Residuals are prediction minus reading; maximum absolute residual is 13.8876 units. Their oscillatory side-lobe structure and the minima mismatch should not be hidden by the high R-squared.
+
+The three predicted minima offsets exceed the manually tabulated offsets by 0.20437, 0.50875 and 1.11312 mm. Exact-angle minima inversion gives 72.8029, 73.6295 and 75.6251 um (mean 74.0192 um); the manual uses a small-angle approximation and rounds these to 0.0728, 0.0736 and 0.0756 mm. No uncertainty or significance can be inferred from this one scan.
+
+Symmetry about the manual center uses 31 distinct left/right pairs, excluding the center's self-comparison. Their absolute differences sum to 73 current units, mean 2.35484 units (0.29144% of peak 808), maximum 8 units. The earlier 32-pair statistic included the center and slightly understated the mean.
+
+PhotonGuard FFT RMSE is approximately 6.34865 current units after fitting baseline and scale and using the sinc fit's width. This is agreement between numerical representations with fitted parameters, not a held-out prediction or an independent experimental validation. Local audit reproduction used the evaluator's explicitly labeled NumPy fallback; the official CI runtime remains the full-suite evidence.

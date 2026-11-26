@@ -25,3 +25,14 @@ def test_whole_curve_fit_is_reproducible_and_finite():
     assert fit["rmse_current_units"]==pytest.approx(6.344,abs=.02)
     assert fit["r_squared"]>.999
     assert np.all(np.isfinite(fit["residuals_current_units"]))
+
+
+def test_analysis_counts_only_distinct_mirror_pairs(tmp_path):
+    from examples.public_data.leoi30a_single_slit.analyze import run_analysis
+    metrics = run_analysis(tmp_path / "case")
+    symmetry = metrics["symmetry_about_manual_center_26mm"]
+    # The 63 source rows contain 31 left/right pairs and one central reading.
+    assert symmetry["paired_points"] == 31
+    assert symmetry["mean_absolute_current_difference"] == pytest.approx(73 / 31)
+    assert symmetry["max_absolute_current_difference"] == 8
+    assert metrics["existing_photonguard_fft_model"]["all_checks_passed"]

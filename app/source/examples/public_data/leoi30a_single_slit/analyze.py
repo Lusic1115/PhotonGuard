@@ -90,7 +90,7 @@ def run_analysis(out):
     pairs=[]
     lookup={round(float(a),1):float(b) for a,b in zip(x,y)}
     for a,b in zip(x,y):
-        if a<=26:
+        if a<26:
             mirror=round(52-float(a),1)
             if mirror in lookup: pairs.append(abs(float(b)-lookup[mirror]))
     minima_cmp=[]
